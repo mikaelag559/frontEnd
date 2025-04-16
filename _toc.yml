@@ -6,7 +6,7 @@ root: intro
 parts:
   - caption: HTML
     chapters:
-    - file: html/1_basic_html
+    - file: html/1_basic_html.html
       sections:
       - file: html/1_basic_html/1
       - file: html/1_basic_html/2
