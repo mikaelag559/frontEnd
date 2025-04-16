@@ -1,0 +1,808 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>2. HTML fundamentals &#8212; My Front End Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'html/1_basic_html/2';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3. Working with Media" href="3.html" />
+    <link rel="prev" title="1. What is HTML?" href="1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My Front End Notes - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My Front End Notes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">HTML</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1.html">1. What is HTML?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. HTML fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.html">3. Working with Media</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.html">4. Working with links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_semantic_html.html"><a href="https://www.freecodecamp.org/learn/full-stack-developer/review-semantic-html/review-semantic-html">Resumen</a></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../3_forms_and_tables_html.html"><a href="https://www.freecodecamp.org/learn/full-stack-developer/review-html-tables-and-forms/review-html-tables-and-forms">Resumen</a></a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../4_accessibility.html">Resumen</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../css/1_basic_css.html">Resumen 1~4</a></li>
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fhtml/1_basic_html/2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/html/1_basic_html/2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>2. HTML fundamentals</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-div-elements-and-when-should-you-use-them">2.1. What are <code>div</code> elements and when should you use them?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-ids-and-classes-and-when-should-you-use-them">2.2. What are IDs and Classes and when should you use them?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id-values-in-atributes">2.2.1 <code>id</code> values in atributes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-values-in-atributes">2.2.2 <code>class</code> values in atributes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-html-entities-and-what-are-some-common-examples">2.3. What are HTML entities and what are some common examples?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-role-of-the-script-element-in-html-and-how-can-it-be-used-to-link-to-external-javascript-files">2.4. What is the role of the script element in HTML and how can it be used to link to external JavaScript files?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-role-of-the-meta-description-and-how-does-it-affect-seo">2.5. What is the role of the meta description and how does it affect SEO?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-role-of-open-graph-tags-og-and-how-do-they-affect-seo">2.6. What is the role of Open Graph Tags (<code>og:</code>) and how do they affect SEO?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="html-fundamentals">
+<h1>2. HTML fundamentals<a class="headerlink" href="#html-fundamentals" title="Link to this heading">#</a></h1>
+<section id="what-are-div-elements-and-when-should-you-use-them">
+<h2>2.1. What are <code>div</code> elements and when should you use them?<a class="headerlink" href="#what-are-div-elements-and-when-should-you-use-them" title="Link to this heading">#</a></h2>
+<p>Now that we understand what HTML is, let’s move onto the fun stuff! I am going to look at the Content Division Element - or in other words, the div:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>I like to think of the <code>div</code> as a beautiful being that can be anything you want it to be. We can give a <code>div</code> a <code>height</code>, we can give it a <code>width</code>, and we can give it a background color using CSS - or in other words styling, which we will cover in lectures coming up.</p>
+<p>We can also use it in a very basic form without styling, to hold other elements together. So for example, we can create a <code>div</code> and put a heading in it, and put a paragraph in it, and now these two elements will be grouped together:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">I</span> <span class="n">am</span> <span class="n">a</span> <span class="n">heading</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">I</span> <span class="n">am</span> <span class="n">a</span> <span class="n">paragraph</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Just be aware that there might be better elements to use when grouping these together. You might choose a <code>section</code> element, for example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">section</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">I</span> <span class="n">am</span> <span class="n">a</span> <span class="n">heading</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">I</span> <span class="n">am</span> <span class="n">a</span> <span class="n">paragraph</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">section</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is because the <code>section</code> element has semantic meaning. Semantics are the meaning of words or phrases in a language. In HTML, which is a language, elements have their own semantic meaning too. So, this means if you use a <code>section</code> element, the browser will pick up its semantic meaning and understand to treat this as a section - on desktops, mobiles, you name it.</p>
+<p>We will dive into this topic further later on. For now, just know that the <code>div</code>, does not have this. It’s like a mysterious ghost. Let’s see what else we can do to a <code>div</code>, in the next lecture.</p>
+</section>
+<section id="what-are-ids-and-classes-and-when-should-you-use-them">
+<h2>2.2. What are IDs and Classes and when should you use them?<a class="headerlink" href="#what-are-ids-and-classes-and-when-should-you-use-them" title="Link to this heading">#</a></h2>
+<p>Summary: when should you use an <code>id</code> versus a <code>class</code>?</p>
+<ul class="simple">
+<li><p>Classes are best used when you want to apply a set of styles to many elements.</p></li>
+<li><p>If you want to target a specific element, it is best to use <code>id</code> because those values need to be unique.</p></li>
+</ul>
+<section id="id-values-in-atributes">
+<h3>2.2.1 <code>id</code> values in atributes<a class="headerlink" href="#id-values-in-atributes" title="Link to this heading">#</a></h3>
+<p>The <code>id</code> attribute adds a unique identifier to an HTML element. In this example, there is an <code>h1</code> element with an <code>id</code> of <code>title</code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">h1</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="o">&gt;</span><span class="n">Movie</span> <span class="n">Review</span> <span class="n">Page</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can reference the <code>id</code> name of <code>title</code> within your JavaScript or CSS. Here’s a CSS example referencing the <code>id</code> of <code>title</code> to change the text <code>color</code> to <code>red</code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#title {</span>
+  <span class="n">color</span><span class="p">:</span> <span class="n">red</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The hash symbol (<code>#</code>) in front of <code>title</code>, tells the computer you want to target an <code>id</code> with that value. <code>id</code> names <em><strong>should not be used more than once</strong></em>, and they should always be unique. The following explame is something you SHOULD NOT DO:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="err">!</span><span class="o">--</span> <span class="n">SHOULD</span> <span class="n">NOT</span> <span class="n">DO</span> <span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="n">h1</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;main heading&quot;</span><span class="o">&gt;</span><span class="n">Main</span> <span class="n">heading</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">h2</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;main heading&quot;</span><span class="o">&gt;</span><span class="n">Sub</span> <span class="n">heading</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Another thing to note about <code>id</code> values, is that they cannot have spaces in them. Here is an example of applying the words <code>main</code> and <code>heading</code> to an <code>id</code> attribute value:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">h1</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;main heading&quot;</span><span class="o">&gt;</span><span class="n">Main</span> <span class="n">heading</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Browsers will see this space as part of the <code>id</code> which will lead to unwanted issues when it comes to styling and scripting. <code>id</code> attribute values should only contain letters, digits, underscores (_), and dashes(-).</p>
+</section>
+<section id="class-values-in-atributes">
+<h3>2.2.2 <code>class</code> values in atributes<a class="headerlink" href="#class-values-in-atributes" title="Link to this heading">#</a></h3>
+<p>In contrast to the <code>id</code> attribute, the <code>class</code> attribute value <strong>does not need to be unique</strong> and can contain spaces. Here is an example of applying a class called <code>box</code> to a <code>div</code> element:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;box&quot;</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you wanted to add multiple class names to an element, you can do so by separating the names by a space. Here is an updated example applying multiple classes to a <code>div</code> element:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;box red-box&quot;</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To apply a set of styles to that <code>box</code> class, you can reference that class inside your CSS. Here is an example of setting <code>width</code>, <code>height</code>, and <code>border</code> properties to the element with the <code>class</code> name of <code>box</code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">box</span> <span class="p">{</span>
+  <span class="n">width</span><span class="p">:</span> <span class="mi">200</span><span class="n">px</span><span class="p">;</span>
+  <span class="n">height</span><span class="p">:</span> <span class="mi">200</span><span class="n">px</span><span class="p">;</span>
+  <span class="n">border</span><span class="p">:</span> <span class="mi">2</span><span class="n">px</span> <span class="n">solid</span> <span class="n">black</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The dot symbol (<code>.</code>) in front of <code>box</code>, tells the computer you want to target a <code>class</code> with that value. When the code runs, it will search through all of your HTML document to find all elements with that class name and apply those styles.</p>
+</section>
+</section>
+<section id="what-are-html-entities-and-what-are-some-common-examples">
+<h2>2.3. What are HTML entities and what are some common examples?<a class="headerlink" href="#what-are-html-entities-and-what-are-some-common-examples" title="Link to this heading">#</a></h2>
+<p>An HTML entity, or character reference, is a set of characters used to represent a reserved character in HTML. In this example, there is a paragraph element with an image element nested inside:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">This</span> <span class="ow">is</span> <span class="n">an</span> <span class="o">&lt;</span><span class="n">img</span> <span class="o">/&gt;</span> <span class="n">element</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The text on the screen should say <code>This is an &lt;img/&gt; element</code>. However, the text currently says <code>This is an element</code>. This is happening because when the HTML parser sees the less than (<code>&lt;</code>) symbol followed by an HTML tag name, it interprets that as an HTML element.</p>
+<p>To fix this issue, you can use HTML entities. Here is an updated example using the correct HTML entities for the less than and greater than (<code>&gt;</code>) symbols.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">This</span> <span class="ow">is</span> <span class="n">an</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">img</span> <span class="o">/&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">element</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>These types of character references are known as named character references. Named references start with an ampersand sign (<code>&amp;</code>) and end with a semicolon (<code>;</code>). By using a named character reference, the HTML parser will not confuse this with an actual HTML element. Here is what the updated paragraph element looks like on the page: <code>This is an &lt;img/&gt; element</code>. Now, users will be able to see the entire image element syntax as you intended it.</p>
+<p>Another type of character reference would be the decimal numeric reference. Here is an example of using the decimal numeric reference for the less than symbol:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="err">!</span><span class="o">--</span> <span class="n">Son</span> <span class="n">lo</span> <span class="n">mismo</span> <span class="n">que</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="o">--&gt;</span>
+<span class="o">&amp;</span><span class="c1">#60;</span>
+<span class="o">&amp;</span><span class="c1">#x3C;  </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This character reference starts with an ampersand sign and hash symbol (<code>#</code>), followed by one or more decimal digits, followed by a semicolon.</p>
+</section>
+<section id="what-is-the-role-of-the-script-element-in-html-and-how-can-it-be-used-to-link-to-external-javascript-files">
+<h2>2.4. What is the role of the script element in HTML and how can it be used to link to external JavaScript files?<a class="headerlink" href="#what-is-the-role-of-the-script-element-in-html-and-how-can-it-be-used-to-link-to-external-javascript-files" title="Link to this heading">#</a></h2>
+<p>The <code>script</code> element is used to embed executable code. Most developers will use this to execute JavaScript code. JavaScript is used to add interactivity to your web pages. Common examples of using JavaScript include interactive games, image sliders, and dynamic forms that validate user input in real-time. Here is an example of using the <code>script</code> element in an HTML document:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+    <span class="n">alert</span><span class="p">(</span><span class="s2">&quot;Welcome to freeCodeCamp&quot;</span><span class="p">);</span>
+  <span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, we have an <code>alert</code> to display the message <code>Welcome to freeCodeCamp</code>. When the page first loads, the alert will pop up. Then the user can click on the OK button to dismiss the message.</p>
+<p>While you can technically write all of your JavaScript code inside the <code>script</code> tags, it is considered best practice to link to an external JavaScript file instead. Here is an example of using the <code>script</code> element to link to an external JavaScript file:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">script</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;path-to-javascript-file.js&quot;</span><span class="o">&gt;&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The reason why it is not encouraged to place all of your JavaScript inside the HTML document is because of separation of concerns. Separation of concerns is a design principle where you separate your programs into distinct sections and have each section address a separate concern. In this case, we want to separate our JavaScript code from our HTML code.</p>
+</section>
+<section id="what-is-the-role-of-the-meta-description-and-how-does-it-affect-seo">
+<h2>2.5. What is the role of the meta description and how does it affect SEO?<a class="headerlink" href="#what-is-the-role-of-the-meta-description-and-how-does-it-affect-seo" title="Link to this heading">#</a></h2>
+<p>SEO, or Search Engine Optimization, is a practice that optimizes web pages so they become more visible and rank higher on search engines. One way to improve your site’s SEO, is to provide a short description for the web page using the <code>meta</code> element. Here is an example of using the meta element to set a page description for a gardening site:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">meta</span>
+  <span class="n">name</span><span class="o">=</span><span class="s2">&quot;description&quot;</span>
+  <span class="n">content</span><span class="o">=</span><span class="s2">&quot;Discover expert tips and techniques for gardening in small spaces, choosing the right plants, and maintaining a thriving garden.&quot;</span>
+<span class="o">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>By setting the <code>name</code> attribute to <code>description</code>, it ensures that browsers, search engines, and other web tools correctly interpret this metadata. The <code>content</code> attribute is where you will place your description. It is recommended that you keep your descriptions short and concise. This is because search engines will often truncate the description based on the results page layout.</p>
+<p>Similar to other types of <code>meta</code> elements, the <code>meta</code> description will not be visible on the web page itself. One place where the page description can be found is in the search engine results page snippet. Here are some examples of page result snippets for freeCodeCamp’s subreddit and GitHub repositories:</p>
+<img src="img/meta_elements_description.png" /><p>In the examples, each of the page descriptions are located just beneath the site links. Within a couple of seconds, users can get a general sense of what the page is about and decide to click on the links for more information.</p>
+<p>Even though <code>meta</code> descriptions won’t directly affect a site’s ranking on search engine, having a strong description could result in more traffic to your website.</p>
+</section>
+<section id="what-is-the-role-of-open-graph-tags-og-and-how-do-they-affect-seo">
+<h2>2.6. What is the role of Open Graph Tags (<code>og:</code>) and how do they affect SEO?<a class="headerlink" href="#what-is-the-role-of-open-graph-tags-og-and-how-do-they-affect-seo" title="Link to this heading">#</a></h2>
+<p>The open graph protocol enables you to control how your website’s content appears across various social media platforms, such as Facebook, LinkedIn, and many more. By setting these open graph properties, you can entice users to want to click and engage with your content. You can set these properties through a collection of <code>meta</code> elements inside your HTML <code>head</code> section.</p>
+<p>The first important OG property to include would be the <code>title</code>. Here is an example of setting the OG <code>title</code> for the freeCodeCamp homepage:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">meta</span> <span class="n">content</span><span class="o">=</span><span class="s2">&quot;freeCodeCamp.org&quot;</span> <span class="nb">property</span><span class="o">=</span><span class="s2">&quot;og:title&quot;</span> <span class="o">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For the <code>property</code> attribute, you will need to specify that it is <code>og:title</code>. The <code>content</code> attribute is where you will write the title you want displayed for social media sites.</p>
+<p>The next important OG property would be the <code>type</code>. Here is an example of using the OG <code>type</code> for the freeCodeCamp homepage:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">meta</span> <span class="nb">property</span><span class="o">=</span><span class="s2">&quot;og:type&quot;</span> <span class="n">content</span><span class="o">=</span><span class="s2">&quot;website&quot;</span> <span class="o">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code>type</code> property is used to represent the type of content being shared on social media. Examples of this content include articles, websites, videos, or music.</p>
+<p>The third important OG property would be the <code>image</code>. Here is an example of setting the OG <code>image</code> for the freeCodeCamp homepage:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">meta</span>
+  <span class="n">content</span><span class="o">=</span><span class="s2">&quot;https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png&quot;</span>
+  <span class="nb">property</span><span class="o">=</span><span class="s2">&quot;og:image&quot;</span>
+<span class="o">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, the open graph image is pointing to the freeCodeCamp logo. All of these images should be high quality with good dimensions and ratios. Most social media platforms will include criteria for image requirements to help you ensure that your content displays well on their site. For example, the <a class="reference external" href="http://developers.facebook.com">developers.facebook.com</a> documentation page states:</p>
+<p>“use images that are at least 1200 by 630 pixels for the best display on high resolution devices. At the minimum, you should use images that are 600 by 315 pixels to display link page posts with larger images.”</p>
+<p>The fourth important OG property would be the <code>url</code>. Here is an example of setting the OG <code>url</code> for the freeCodeCamp homepage:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">meta</span> <span class="nb">property</span><span class="o">=</span><span class="s2">&quot;og:url&quot;</span> <span class="n">content</span><span class="o">=</span><span class="s2">&quot;https://www.freecodecamp.org&quot;</span> <span class="o">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are many more OG properties that you can set, like <code>description</code>, <code>audio</code>, <code>video</code> and <code>locale</code>. However, the open graph <code>url</code>, <code>image</code>, <code>type</code>, and <code>title</code> are the most important ones to include.</p>
+<p>So how do these open graph properties affect Search Engine Optimization? When your content is shared on social media, well-crafted OG properties can enhance the appearance for your content in users’ feeds. This can lead to higher click-through rates which could signal to search engines that your content is relevant and engaging.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./html/1_basic_html"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">1. What is HTML?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">3. Working with Media</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-div-elements-and-when-should-you-use-them">2.1. What are <code>div</code> elements and when should you use them?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-ids-and-classes-and-when-should-you-use-them">2.2. What are IDs and Classes and when should you use them?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id-values-in-atributes">2.2.1 <code>id</code> values in atributes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-values-in-atributes">2.2.2 <code>class</code> values in atributes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-html-entities-and-what-are-some-common-examples">2.3. What are HTML entities and what are some common examples?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-role-of-the-script-element-in-html-and-how-can-it-be-used-to-link-to-external-javascript-files">2.4. What is the role of the script element in HTML and how can it be used to link to external JavaScript files?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-role-of-the-meta-description-and-how-does-it-affect-seo">2.5. What is the role of the meta description and how does it affect SEO?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-role-of-open-graph-tags-og-and-how-do-they-affect-seo">2.6. What is the role of Open Graph Tags (<code>og:</code>) and how do they affect SEO?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mikaela González Pérez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

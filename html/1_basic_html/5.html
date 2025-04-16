@@ -1,0 +1,750 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Examples &#8212; My Front End Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'html/1_basic_html/5';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My Front End Notes - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My Front End Notes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">HTML</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1.html">1. What is HTML?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.html">2. HTML fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.html">3. Working with Media</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.html">4. Working with links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_semantic_html.html"><a href="https://www.freecodecamp.org/learn/full-stack-developer/review-semantic-html/review-semantic-html">Resumen</a></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../3_forms_and_tables_html.html"><a href="https://www.freecodecamp.org/learn/full-stack-developer/review-html-tables-and-forms/review-html-tables-and-forms">Resumen</a></a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../4_accessibility.html">Resumen</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../css/1_basic_css.html">Resumen 1~4</a></li>
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fhtml/1_basic_html/5.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/html/1_basic_html/5.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Examples</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-cat-photo-app">1. A Cat Photo App</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-travel-agency-page">2. A Travel Agency Page</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-video-compliation-page">3. A Video Compliation Page</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h1>
+<section id="a-cat-photo-app">
+<h2>1. A Cat Photo App<a class="headerlink" href="#a-cat-photo-app" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>The main element is used to represent the <code>main</code> content of the body of an HTML document. Content inside the main element should be unique to the document and should not be repeated in other parts of the document.</p></li>
+<li><p>To open links in a new tab, you can use the <code>target</code> attribute on the anchor (<code>a</code>) element. The target attribute specifies where to open the linked document. <code>target=”_blank”</code> opens the linked document in a new tab or window. <br> Here is the basic syntax for an <code>a</code> element with a <code>target</code> attribute:
+<br> Example Code:
+<code>  </code></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://www.freecodecamp.org&quot;</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span><span class="o">&gt;</span><span class="n">freeC</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>The <code>figure</code> element represents self-contained content and will allow you to associate an image with a caption.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">figure</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg&quot;</span> <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;A slice of lasagna on a plate.&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">figcaption</span><span class="o">&gt;</span><span class="n">Cats</span> <span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">love</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span> <span class="n">lasagna</span><span class="o">.&lt;/</span><span class="n">figcaption</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">figure</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Complete code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">meta</span> <span class="n">charset</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">CatPhotoApp</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">main</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">CatPhotoApp</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">section</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="n">Cat</span> <span class="n">Photos</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Everyone</span> <span class="n">loves</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg&quot;</span><span class="o">&gt;</span><span class="n">cute</span> <span class="n">cats</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+        <span class="n">online</span><span class="err">!</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">See</span> <span class="n">more</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://freecatphotoapp.com&quot;</span><span class="o">&gt;</span><span class="n">cat</span> <span class="n">photos</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="n">our</span> <span class="n">gallery</span><span class="o">.&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://freecatphotoapp.com&quot;</span><span class="o">&gt;&lt;</span><span class="n">img</span>
+          <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg&quot;</span>
+          <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;A cute orange cat lying on its back.&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">section</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">section</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="n">Cat</span> <span class="n">Lists</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">h3</span><span class="o">&gt;</span><span class="n">Things</span> <span class="n">cats</span> <span class="n">love</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">catnip</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">laser</span> <span class="n">pointers</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">lasagna</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+      <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">figure</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg&quot;</span>
+          <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;A slice of lasagna on a plate.&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">figcaption</span><span class="o">&gt;</span><span class="n">Cats</span> <span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">love</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span> <span class="n">lasagna</span><span class="o">.&lt;/</span><span class="n">figcaption</span><span class="o">&gt;</span>
+      <span class="o">&lt;/</span><span class="n">figure</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">h3</span><span class="o">&gt;</span><span class="n">Top</span> <span class="mi">3</span> <span class="n">things</span> <span class="n">cats</span> <span class="n">hate</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">ol</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">flea</span> <span class="n">treatment</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">thunder</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">other</span> <span class="n">cats</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+      <span class="o">&lt;/</span><span class="n">ol</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">figure</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg&quot;</span>
+          <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;Five cats looking around a field.&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">figcaption</span><span class="o">&gt;</span><span class="n">Cats</span> <span class="o">&lt;</span><span class="n">strong</span><span class="o">&gt;</span><span class="n">hate</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;</span> <span class="n">other</span> <span class="n">cats</span><span class="o">.&lt;/</span><span class="n">figcaption</span><span class="o">&gt;</span>
+      <span class="o">&lt;/</span><span class="n">figure</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">section</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">main</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">footer</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+      <span class="n">No</span> <span class="n">Copyright</span> <span class="o">-</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://www.freecodecamp.org&quot;</span><span class="o">&gt;</span><span class="n">freeCodeCamp</span><span class="o">.</span><span class="n">org</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">footer</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="a-travel-agency-page">
+<h2>2. A Travel Agency Page<a class="headerlink" href="#a-travel-agency-page" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">meta</span> <span class="n">charset</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">Travel</span> <span class="n">Agency</span> <span class="n">Page</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">meta</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;description&quot;</span> <span class="n">content</span><span class="o">=</span><span class="s2">&quot;Viaja con nosotros a tu destino soñado al mejor precio.&quot;</span> <span class="o">/&gt;</span>
+<span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">Welcome</span> <span class="n">to</span> <span class="n">Italy</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+    <span class="n">Art</span><span class="p">,</span> <span class="n">folklore</span><span class="p">,</span> <span class="n">food</span><span class="p">,</span> <span class="n">nature</span><span class="p">,</span> <span class="ow">and</span> <span class="n">more</span><span class="o">.</span> <span class="n">Choose</span> <span class="n">among</span> <span class="n">our</span> <span class="n">wide</span> <span class="n">selection</span> <span class="n">of</span> <span class="n">guided</span> <span class="n">tours</span> <span class="ow">and</span> <span class="n">excursions</span><span class="p">,</span>
+    <span class="ow">and</span> <span class="n">live</span> <span class="n">an</span> <span class="n">unforgettable</span> <span class="n">experience</span> <span class="n">exploring</span> <span class="n">Italy</span><span class="o">.</span>
+  <span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="n">Packages</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+    <span class="n">We</span> <span class="n">offer</span> <span class="n">an</span> <span class="n">extensive</span> <span class="nb">range</span> <span class="n">of</span> <span class="n">holiday</span> <span class="n">solutions</span> <span class="n">to</span> <span class="n">accommodate</span> <span class="n">the</span> <span class="n">needs</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">our</span> <span class="n">clients</span><span class="o">.</span> <span class="n">From</span> <span class="n">daily</span>
+    <span class="n">excursions</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">most</span> <span class="n">beautiful</span> <span class="n">cities</span><span class="p">,</span> <span class="n">to</span> <span class="n">thorough</span> <span class="n">tours</span> <span class="n">of</span> <span class="n">hidden</span> <span class="n">villages</span> <span class="ow">and</span> <span class="n">medieval</span> <span class="n">towns</span> <span class="n">to</span> <span class="n">discover</span>
+    <span class="n">Italy</span><span class="s1">&#39;s lesser-known sides.</span>
+  <span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://www.freecodecamp.org/learn&quot;</span><span class="o">&gt;</span><span class="n">Group</span> <span class="n">Travels</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://www.freecodecamp.org/learn&quot;</span><span class="o">&gt;</span><span class="n">Private</span> <span class="n">Tours</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="n">Top</span> <span class="n">Itineraries</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">figure</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">a</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://www.freecodecamp.org/learn&quot;</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/labs/colosseo.jpg&quot;</span> <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;Coliseo romano&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">a</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://www.freecodecamp.org/learn&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">figcaption</span><span class="o">&gt;</span><span class="n">Rome</span> <span class="ow">and</span> <span class="n">Center</span> <span class="n">Italy</span><span class="o">&lt;/</span><span class="n">figcaption</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">figure</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">figure</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">a</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://www.freecodecamp.org/learn&quot;</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/labs/alps.jpg&quot;</span> <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;Alpes italianos&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">figcaption</span><span class="o">&gt;</span><span class="n">Nature</span> <span class="ow">and</span> <span class="n">National</span> <span class="n">Parks</span><span class="o">&lt;/</span><span class="n">figcaption</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">figure</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">figure</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">a</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://www.freecodecamp.org/learn&quot;</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/labs/sea.jpg&quot;</span> <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;Costa italiana&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">figcaption</span><span class="o">&gt;</span><span class="n">South</span> <span class="n">Italy</span> <span class="ow">and</span> <span class="n">Islands</span><span class="o">&lt;/</span><span class="n">figcaption</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">figure</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="a-video-compliation-page">
+<h2>3. A Video Compliation Page<a class="headerlink" href="#a-video-compliation-page" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">meta</span> <span class="n">charset</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">Video</span> <span class="n">Compilation</span> <span class="n">Page</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">main</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">Front</span> <span class="n">End</span> <span class="n">Web</span> <span class="n">Development</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+            <span class="n">Front</span> <span class="n">End</span> <span class="n">Web</span> <span class="n">Development</span> <span class="n">involves</span> <span class="n">designing</span> <span class="ow">and</span> <span class="n">building</span> <span class="n">user</span> <span class="n">interfaces</span> <span class="n">of</span> <span class="n">websites</span> <span class="n">using</span> <span class="n">HTML</span><span class="p">,</span>
+            <span class="n">CSS</span><span class="p">,</span> <span class="ow">and</span> <span class="n">JavaScript</span><span class="o">.</span> <span class="n">It</span> <span class="n">focuses</span> <span class="n">on</span> <span class="n">creating</span> <span class="n">visually</span> <span class="n">appealing</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="ow">and</span> <span class="n">user</span><span class="o">-</span><span class="n">friendly</span>
+            <span class="n">websites</span><span class="o">.</span> <span class="n">Front</span> <span class="n">End</span> <span class="n">developers</span> <span class="n">ensure</span> <span class="n">accessibility</span><span class="p">,</span> <span class="n">performance</span> <span class="n">optimization</span><span class="p">,</span> <span class="ow">and</span> <span class="n">adherence</span> <span class="n">to</span>
+            <span class="n">web</span> <span class="n">standards</span><span class="p">,</span> <span class="n">blending</span> <span class="n">creativity</span> <span class="k">with</span> <span class="n">technical</span> <span class="n">expertise</span><span class="o">.</span>
+        <span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+
+        <span class="o">&lt;</span><span class="n">section</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="n">HTML</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+                <span class="n">HTML</span><span class="p">,</span> <span class="ow">or</span> <span class="n">HyperText</span> <span class="n">Markup</span> <span class="n">Language</span><span class="p">,</span> <span class="n">forms</span> <span class="n">the</span> <span class="n">backbone</span> <span class="n">of</span> <span class="n">web</span> <span class="n">pages</span> <span class="n">by</span> <span class="n">defining</span> <span class="n">their</span> <span class="n">basic</span>
+                <span class="n">structure</span> <span class="ow">and</span> <span class="n">layout</span><span class="o">.</span> <span class="n">It</span> <span class="n">uses</span> <span class="n">a</span> <span class="n">series</span> <span class="n">of</span> <span class="n">elements</span> <span class="n">to</span> <span class="n">display</span> <span class="n">text</span><span class="p">,</span> <span class="n">images</span><span class="p">,</span> <span class="n">lists</span><span class="p">,</span> <span class="n">tables</span><span class="p">,</span>
+                <span class="ow">and</span> <span class="n">other</span> <span class="n">static</span> <span class="n">content</span> <span class="n">on</span> <span class="n">a</span> <span class="n">web</span> <span class="n">page</span><span class="o">.</span>
+            <span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">iframe</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.youtube.com/embed/watch?v=rJO84scyxqo&amp;list=RDrJO84scyxqo&amp;start_radio=1&quot;</span>
+                <span class="n">title</span><span class="o">=</span><span class="s2">&quot;YouTube video player&quot;</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;315&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;560&quot;</span><span class="o">&gt;&lt;/</span><span class="n">iframe</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">section</span><span class="o">&gt;</span>
+
+        <span class="o">&lt;</span><span class="n">section</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="n">CSS</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+                <span class="n">CSS</span><span class="p">,</span> <span class="ow">or</span> <span class="n">Cascading</span> <span class="n">Style</span> <span class="n">Sheets</span><span class="p">,</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">control</span> <span class="n">the</span> <span class="n">visual</span> <span class="n">presentation</span> <span class="n">of</span> <span class="n">HTML</span> <span class="n">elements</span>
+                <span class="n">on</span> <span class="n">a</span> <span class="n">web</span> <span class="n">page</span><span class="o">.</span> <span class="n">It</span> <span class="n">allows</span> <span class="k">for</span> <span class="n">customized</span> <span class="n">styling</span><span class="p">,</span> <span class="n">including</span> <span class="n">colors</span><span class="p">,</span> <span class="n">fonts</span><span class="p">,</span> <span class="n">layouts</span><span class="p">,</span> <span class="ow">and</span>
+                <span class="n">spacing</span><span class="p">,</span> <span class="n">making</span> <span class="n">websites</span> <span class="n">visually</span> <span class="n">appealing</span><span class="o">.</span> <span class="n">CSS</span> <span class="n">also</span> <span class="n">supports</span> <span class="n">responsive</span> <span class="n">design</span><span class="p">,</span> <span class="n">ensuring</span>
+                <span class="n">web</span> <span class="n">pages</span> <span class="n">look</span> <span class="n">good</span> <span class="n">on</span> <span class="nb">all</span> <span class="n">devices</span><span class="o">.</span>
+            <span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">iframe</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.youtube.com/embed/watch?v=rJO84scyxqo&amp;list=RDrJO84scyxqo&amp;start_radio=1&quot;</span>
+                <span class="n">title</span><span class="o">=</span><span class="s2">&quot;YouTube video player&quot;</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;315&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;560&quot;</span><span class="o">&gt;&lt;/</span><span class="n">iframe</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">section</span><span class="o">&gt;</span>
+
+        <span class="o">&lt;</span><span class="n">section</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="n">JavaScript</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+                <span class="n">JavaScript</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">programming</span> <span class="n">language</span> <span class="n">that</span> <span class="n">adds</span> <span class="n">interactivity</span> <span class="n">to</span> <span class="n">static</span> <span class="n">web</span> <span class="n">pages</span><span class="p">,</span> <span class="n">enabling</span>
+                <span class="n">dynamic</span> <span class="n">content</span> <span class="n">updates</span><span class="p">,</span> <span class="n">form</span> <span class="n">validations</span><span class="p">,</span> <span class="n">animations</span><span class="p">,</span> <span class="ow">and</span> <span class="n">responsive</span> <span class="n">behaviors</span> <span class="n">based</span> <span class="n">on</span>
+                <span class="n">user</span> <span class="n">interactions</span> <span class="ow">and</span> <span class="n">events</span><span class="o">.</span>
+            <span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">iframe</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.youtube.com/embed/watch?v=rJO84scyxqo&amp;list=RDrJO84scyxqo&amp;start_radio=1&quot;</span>
+                <span class="n">title</span><span class="o">=</span><span class="s2">&quot;YouTube video player&quot;</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;315&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;560&quot;</span><span class="o">&gt;&lt;/</span><span class="n">iframe</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">section</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">main</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./html/1_basic_html"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-cat-photo-app">1. A Cat Photo App</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-travel-agency-page">2. A Travel Agency Page</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-video-compliation-page">3. A Video Compliation Page</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mikaela González Pérez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

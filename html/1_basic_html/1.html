@@ -1,0 +1,733 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. What is HTML? &#8212; My Front End Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'html/1_basic_html/1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2. HTML fundamentals" href="2.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="../1_basic_html.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My Front End Notes - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My Front End Notes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">HTML</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. What is HTML?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.html">2. HTML fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.html">3. Working with Media</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.html">4. Working with links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_semantic_html.html"><a href="https://www.freecodecamp.org/learn/full-stack-developer/review-semantic-html/review-semantic-html">Resumen</a></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../3_forms_and_tables_html.html"><a href="https://www.freecodecamp.org/learn/full-stack-developer/review-html-tables-and-forms/review-html-tables-and-forms">Resumen</a></a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../4_accessibility.html">Resumen</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../css/1_basic_css.html">Resumen 1~4</a></li>
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fhtml/1_basic_html/1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/html/1_basic_html/1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1. What is HTML?</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-html-and-what-role-does-it-play-on-the-web">1.1. What is HTML, and what role does it play on the web?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-attributes-and-how-do-they-work">1.2. What are attributes and how do they work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-role-of-the-link-element-in-html-and-how-can-it-be-used-to-link-to-external-stylesheets">1.3. What is the role of the link element in HTML, and how can it be used to link to external stylesheets?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-html-boilerplate-and-why-is-it-important">1.4. What is an HTML boilerplate, and why is it important?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="what-is-html">
+<h1>1. What is HTML?<a class="headerlink" href="#what-is-html" title="Link to this heading">#</a></h1>
+<section id="what-is-html-and-what-role-does-it-play-on-the-web">
+<h2>1.1. What is HTML, and what role does it play on the web?<a class="headerlink" href="#what-is-html-and-what-role-does-it-play-on-the-web" title="Link to this heading">#</a></h2>
+<p>HTML, which stands for Hypertext Markup Language, is a markup language for creating web pages. When you visit a website and see content like paragraphs, headings, links, images, and videos; that’s HTML. HTML represents the content and structure of a webpage through the use of elements. Here’s an example of a paragraph element:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Hello</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Most elements will have an opening tag and a closing tag. Sometimes those tags are referred to as start and end tags. In between those two tags, you will have the content. This content can be text or other HTML elements. Both opening and closing tags start with a left angle bracket (<code>&lt;</code>), and end with a right angle bracket (<code>&gt;</code>), with the tag name placed between these angle brackets. Here is a closer look at just the opening and closing paragraph tags:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What distinguishes an opening tag from a closing tag is the forward slash (<code>/</code>) placed immediately after the left angle bracket in a closing tag. Some HTML elements do not have a closing tag. These are known as void elements. Here is an example of an image element which is a void element:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">img</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that this image element does not have the closing tag and it does not have any content. Void elements cannot have any content and only have a start tag. If you wanted to display an image, you will need to include a couple of attributes inside your image element. An attribute is a special value used to adjust the behavior for an HTML element. Here is an example of an image element with a <code>src</code>, or source, attribute:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;image location&quot;</span> <span class="o">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code>src</code> attribute is used to specify the location for that image. For image elements, it’s good practice to include another attribute called the <code>alt</code> attribute. Here’s an example of an image element with the <code>src</code> and <code>alt</code> attributes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;example-cat-img-url&quot;</span> <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;Cat sleeping in the grass&quot;</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code>alt</code> attribute is used to provide short, descriptive text for the images. In this case, the descriptive text is a “Cat sleeping in the grass”.</p>
+<p>So, you might be wondering if HTML by itself is enough to build a website. Well, the answer is: it depends. If you’re building a small practice project that only displays text and images, HTML alone might be sufficient. However, if you’re creating a modern professional website, you will need to have HTML, CSS, and JavaScript.</p>
+<p>HTML is for the content and structure. CSS is for styling. JavaScript is for adding interactivity to your web pages. A good analogy for this is to compare HTML, CSS, and JavaScript with a complete building. HTML represents the blocks, concrete, and irons that make up the walls. It’s the foundation that makes the building strong. CSS represents the interior and exterior design that makes the house look beautiful. JavaScript represents the electrical and water system that ensures uninterrupted access to water and electricity.</p>
+</section>
+<section id="what-are-attributes-and-how-do-they-work">
+<h2>1.2. What are attributes and how do they work?<a class="headerlink" href="#what-are-attributes-and-how-do-they-work" title="Link to this heading">#</a></h2>
+<p>An attribute is a value placed inside the opening tag of an HTML element. Attributes provide additional information about the element or specify how the element should behave. Here is the basic syntax for an attribute:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">element</span> <span class="n">attribute</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="o">&gt;&lt;/</span><span class="n">element</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The attribute name is followed by an equal sign (<code>=</code>) and a value in quotes. The value can be a string or a number, depending on the attribute.</p>
+<p>Let’s take a look at a few examples of common HTML attributes. The first example is the <code>href</code> attribute, which is used to specify the URL of a link:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://www.example-website.com&quot;</span><span class="o">&gt;</span><span class="n">Visit</span> <span class="n">our</span> <span class="n">website</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Without this attribute, the link would not work because there would be no destination URL. So you must include this <code>href</code> attribute to make the link functional. Other common attributes are the <code>src</code>, or source, and <code>alt</code>, or alternative, attribute - which is used to specify the source of an image and provide alternative descriptive text for the image, respectively:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;image.jpg&quot;</span> <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;A beautiful image&quot;</span> <span class="o">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similar to the <code>href</code> attribute, the <code>src</code> attribute is required because it specifies the image file to be displayed. The <code>alt</code> attribute is not required, but it is recommended for accessibility purposes. Accessibility means making sure that everyone, including those with disabilities, can use and understand things like websites, apps, and physical spaces. You will learn more about accessibility in the upcoming lectures.</p>
+<p>Some attributes are a little unique with their syntax like the <code>checked</code> attribute shown here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;checkbox&quot;</span> <span class="n">checked</span> <span class="o">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the following example, we have an <code>input</code> element with the <code>type</code> attribute set to <code>checkbox</code>. Inputs are used to collect data from users, and the <code>type</code> attribute specifies the type of input. In this case, this input is a checkbox. You will learn more about how inputs work in the upcoming lectures. The <code>checked</code> attribute is used to specify that the checkbox should be checked by default. The <code>checked</code> attribute does not require a value. If it is present, the checkbox will be checked by default. If the attribute is not present, the checkbox will be unchecked. This is known as a boolean attribute. You will learn more about booleans in general when you get to the JavaScript section. There are several common boolean attributes you will encounter in HTML, such as <code>disabled</code>, <code>readonly</code> and <code>required</code>. These attributes are used to specify the state of an element, such as whether it is disabled, read-only, or required.</p>
+<p>HTML has many attributes that can be used to customize the behavior and appearance of elements on a webpage. Understanding how to use attributes is essential for creating interactive and accessible web content. Over the next few lectures, you will learn about more HTML attributes and how to use them effectively in your web development projects.</p>
+</section>
+<section id="what-is-the-role-of-the-link-element-in-html-and-how-can-it-be-used-to-link-to-external-stylesheets">
+<h2>1.3. What is the role of the link element in HTML, and how can it be used to link to external stylesheets?<a class="headerlink" href="#what-is-the-role-of-the-link-element-in-html-and-how-can-it-be-used-to-link-to-external-stylesheets" title="Link to this heading">#</a></h2>
+<p>Let’s learn about the <code>link</code> element, and how to use it to link to external stylesheets.</p>
+<p>The <code>link</code> element is used to link to external resources like stylesheets and site icons. Here is the basic syntax for using the <code>link</code> element for an external CSS file:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;./styles.css&quot;</span> <span class="o">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code>rel</code> attribute is used to specify the relationship between the linked resource and the HTML document. In this situation, we need to specify that this linked resource is a <code>stylesheet</code>.</p>
+<p>It is considered best practice to separate your HTML and CSS in different files. Developers will use the <code>link</code> element for their external CSS file instead of writing everything in the HTML document.</p>
+<p>The <code>href</code> attribute is used to specify the location of the URL for the external resource.</p>
+<p>The <code>dot</code> followed by a forward slash in the example tells the computer to look in the current folder, or directory, for the <code>styles.css</code> file.</p>
+<p>The <code>link</code> element should be placed inside the <code>head</code> element as seen in the following example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">meta</span> <span class="n">charset</span><span class="o">=</span><span class="s2">&quot;UTF-8&quot;</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="n">meta</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;viewport&quot;</span> <span class="n">content</span><span class="o">=</span><span class="s2">&quot;width=device-width, initial-scale=1.0&quot;</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">Examples</span> <span class="n">of</span> <span class="n">the</span> <span class="n">link</span> <span class="n">element</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;./styles.css&quot;</span> <span class="o">/&gt;</span>
+<span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Often times you will see multiple <code>link</code> elements inside a professional codebase that link to different stylesheets, fonts, and icons. Here is an example of using the <code>link</code> element to link to an external Google Font called <i>Playwright Cuba</i>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s2">&quot;preconnect&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://fonts.googleapis.com&quot;</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s2">&quot;preconnect&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://fonts.gstatic.com&quot;</span> <span class="n">crossorigin</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">link</span>
+  <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&amp;display=swap&quot;</span>
+  <span class="n">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span>
+<span class="o">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Google Fonts are a set of free and open source custom fonts that you can use inside any project. You can choose which fonts you would like to use and Google will provide you with the necessary HTML and CSS code. In this example, the <code>preconnect</code> value for the <code>rel</code> attribute tells the browser to create an early connection to the value specified in the <code>href</code> attribute. This is done to speed up loading times for these external resources.</p>
+<p>Another common use case for the <code>link</code> element is to link to icons. Here is an example of linking to a favicon:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s2">&quot;icon&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;favicon.ico&quot;</span> <span class="o">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A favicon, which is short for favorite icon, is a small icon typically displayed in the browser tab next the site title. A lot of websites will use a favicon to display their brand icon.</p>
+</section>
+<section id="what-is-an-html-boilerplate-and-why-is-it-important">
+<h2>1.4. What is an HTML boilerplate, and why is it important?<a class="headerlink" href="#what-is-an-html-boilerplate-and-why-is-it-important" title="Link to this heading">#</a></h2>
+<p>It’s like a ready-made template for your webpages. Think of it as the foundations of a house. A boilerplate includes the basic structure and essential elements every HTML document needs. It saves you time and helps ensure your pages are set up properly. Here is an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="err">!</span><span class="o">--</span><span class="n">All</span> <span class="n">other</span> <span class="n">elements</span> <span class="n">go</span> <span class="n">inside</span> <span class="n">here</span><span class="o">--&gt;</span>
+    <span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="err">!</span><span class="o">--</span><span class="n">Important</span> <span class="n">metadata</span> <span class="n">goes</span> <span class="n">here</span><span class="o">--&gt;</span>
+        <span class="o">&lt;</span><span class="n">meta</span> <span class="n">charset</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span> <span class="o">/&gt;</span>  <span class="o">&lt;</span><span class="err">!</span><span class="o">--</span> <span class="n">Hace</span> <span class="n">que</span> <span class="n">los</span> <span class="n">caracteres</span> <span class="n">especiales</span> <span class="n">se</span> <span class="n">printeen</span> <span class="n">bien</span> <span class="o">--&gt;</span>
+        <span class="o">&lt;</span><span class="n">meta</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;viewport&quot;</span>
+            <span class="n">content</span><span class="o">=</span><span class="s2">&quot;width=device-width, initial-scale=1.0&quot;</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">Document</span> <span class="n">Title</span> <span class="n">Goes</span> <span class="n">Here</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;./styles.css&quot;</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="err">!</span><span class="o">--</span><span class="n">Headings</span><span class="p">,</span> <span class="n">paragraphs</span><span class="p">,</span> <span class="n">images</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span> <span class="n">go</span> <span class="n">inside</span> <span class="n">here</span><span class="o">--&gt;</span>
+        <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">I</span> <span class="n">am</span> <span class="n">a</span> <span class="n">main</span> <span class="n">title</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Example</span> <span class="n">paragraph</span> <span class="n">text</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s break down the key parts of this boilerplate. First, there is the <code>DOCTYPE</code> declaration tells browsers which version of HTML you’re using. Next, comes the <code>html</code> tag wraps around all your content, and can specify the language of your page. Inside the html tag, you’ll find two main sections - a <code>head</code>, and a <code>body</code>.</p>
+<ul class="simple">
+<li><p>The <code>head</code> section contains important behind-the-scenes information. Your site’s metadata, contained in meta elements, has details about things like character encoding, and how websites like Twitter should preview your page’s link. Your site’s title, found in the <code>title</code> element, determines the text that appears in the browser tab or window. Finally, you’ll typically link your page’s external stylesheets in the <code>head</code> section using <code>link</code> elements.</p></li>
+<li><p>The <code>body</code> section is where all your content goes. This is what visitors actually see on your web page.</p></li>
+</ul>
+<p>Now, why is a boilerplate important? It ensures your pages are structured correctly and work well across different browsers. Using a boilerplate helps you avoid common mistakes and follow best practices. It’s a great starting point for any web project. Remember, you can customize your own boilerplate to fit your needs. As you gain experience, you might add your own preferred elements or <code>meta</code> tags. As you continue to improve your personal boilerplate, you’ll find that it saves you time when starting new projects.</p>
+<p>Next time you start a new HTML file, consider using a boilerplate. It will definitely give you a solid foundation to build on.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./html/1_basic_html"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../1_basic_html.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">2. HTML fundamentals</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-html-and-what-role-does-it-play-on-the-web">1.1. What is HTML, and what role does it play on the web?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-attributes-and-how-do-they-work">1.2. What are attributes and how do they work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-role-of-the-link-element-in-html-and-how-can-it-be-used-to-link-to-external-stylesheets">1.3. What is the role of the link element in HTML, and how can it be used to link to external stylesheets?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-html-boilerplate-and-why-is-it-important">1.4. What is an HTML boilerplate, and why is it important?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mikaela González Pérez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
