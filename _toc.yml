@@ -7,11 +7,15 @@ parts:
   - caption: HTML
     chapters:
     - file: html/1_basic_html
+      sections:
+      - file: html/1_basic_html/1
+      - file: html/1_basic_html/2
+      - file: html/1_basic_html/3
+      - file: html/1_basic_html/4
     - file: html/2_semantic_html
     - file: html/3_forms_and_tables_html
     - file: html/4_accessibility
-      # sections:
-      # - file: path/to/part1/chapter2/section1
+    
   - caption: CSS
     chapters:
     - file: css/1_basic_css
