@@ -1,0 +1,1426 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Resumen &#8212; My Front End Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'html/3_forms_and_tables_html';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Resumen" href="4_accessibility.html" />
+    <link rel="prev" title="Resumen" href="2_semantic_html.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My Front End Notes - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Front End Notes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">HTML</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1_basic_html.html"><a href="https://www.freecodecamp.org/learn/full-stack-developer/review-basic-html/basic-html-review">Resumen</a></a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="2_semantic_html.html"><a href="https://www.freecodecamp.org/learn/full-stack-developer/review-semantic-html/review-semantic-html">Resumen</a></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><a href="https://www.freecodecamp.org/learn/full-stack-developer/review-html-tables-and-forms/review-html-tables-and-forms">Resumen</a></a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="4_accessibility.html">Resumen</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../css/1_basic_css.html">Resumen 1~4</a></li>
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fhtml/3_forms_and_tables_html.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/html/3_forms_and_tables_html.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><a href="https://www.freecodecamp.org/learn/full-stack-developer/review-html-tables-and-forms/review-html-tables-and-forms">Resumen</a></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><a href="https://www.freecodecamp.org/learn/full-stack-developer/review-html-tables-and-forms/review-html-tables-and-forms">Resumen</a></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-forms">1. Working with Forms</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-forms-labels-and-inputs-work-in-html">1.1. How do forms, labels and inputs work in HTML?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-different-types-of-buttons-and-when-should-you-use-them">1.2. What are the different types of buttons and when should you use them?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-client-side-form-validation-in-html-forms">1.3. What is client-side form validation in HTML forms?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-different-form-states-and-why-are-they-important">1.4. What are the different form states and why are they important?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-build-a-hotel-feedback-form">2. Example: Build a hotel feedback form</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-build-a-survey-form">3. Example: build a survey form</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-tables">4. Working with tables</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-build-a-final-exam-table">5. Example: Build a final exam table</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-build-a-book-catalog-table">6. Example: build a book catalog table</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-html-tools">7. Working with HTML tools</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-html-validator-and-how-can-it-help-you-debug-your-code">7.1. What is an HTML validator, and how can it help you debug your code?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-use-the-dom-inspector-and-devtools-to-debug-and-build-your-projects">7.2. How do you use the DOM inspector and devtools to debug and build your projects?</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="resumen">
+<h1><a href="https://www.freecodecamp.org/learn/full-stack-developer/review-html-tables-and-forms/review-html-tables-and-forms">Resumen</a><a class="headerlink" href="#resumen" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="working-with-forms">
+<h1>1. Working with Forms<a class="headerlink" href="#working-with-forms" title="Link to this heading">#</a></h1>
+<section id="how-do-forms-labels-and-inputs-work-in-html">
+<h2>1.1. How do forms, labels and inputs work in HTML?<a class="headerlink" href="#how-do-forms-labels-and-inputs-work-in-html" title="Link to this heading">#</a></h2>
+<p>The <code>form</code> element in HTML is used to gather user information, such as names and email addresses. Here is an example of a <code>form</code> element:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;form action=&quot;url-goes-here&quot;&gt;
+  &lt;!-- input elements go here --&gt;
+&lt;/form&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code>action</code> attribute specifies where the form data will be sent upon submission. To collect specific information, like names and email addresses, you would use the <code>input</code> element. Here is an example of using an <code>input</code> element:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;form action=&quot;&quot;&gt;
+  &lt;input type=&quot;text&quot; /&gt;
+&lt;/form&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p><code>input</code> elements are void elements and do not have closing tags. The <code>type</code> attribute defines the data type expected from the user. In this case, the data would be plaintext. To add a label for the input, you would use a <code>label</code> element. Here is an example of using a <code>label</code> element with the text of <code>Full Name:</code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;form action=&quot;&quot;&gt;
+  &lt;label&gt;
+    Full Name:
+    &lt;input type=&quot;text&quot; /&gt;
+  &lt;/label&gt;
+&lt;/form&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>By nesting an <code>input</code> inside a <code>label</code> element, you create an implicit association between the <code>label</code> and the <code>input</code> field. The term “implicit” refers to something that is understood or inferred without needing to be explicitly stated or defined with additional attributes or elements. To explicitly associate a <code>label</code> with an <code>input</code>, you can use the <code>for</code> attribute. Here is an example of using the <code>for</code> attribute for an email address label:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;form action=&quot;&quot;&gt;
+  &lt;label for=&quot;email&quot;&gt; Email Address: &lt;/label&gt;
+  &lt;input type=&quot;email&quot; id=&quot;email&quot; /&gt;
+&lt;/form&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>When using an explicit association, the values for the <code>for</code> attribute and <code>id</code> need to be the same. In this case, the values are both set to <code>email</code>. The <code>email</code> type in the input provides basic validation for correctly formatted email addresses. If you want to show additional hints to the users about the expected input, you can use the <code>placeholder</code> attribute. Here is an example using the <code>placeholder</code> attribute inside the email input:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;form action=&quot;&quot;&gt;
+  &lt;label for=&quot;email&quot;&gt; Email Address: &lt;/label&gt;
+  &lt;input type=&quot;email&quot; id=&quot;email&quot; placeholder=&quot;Ex. example@email.com&quot; /&gt;
+&lt;/form&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>For the placeholder text, you want to provide helpful short text to show the format and type of data you expect from your users. In this case, the placeholder text, <code>Ex. example&#64;email</code>.com, shows the user that they must enter a correctly formatted email address.</p>
+</section>
+<section id="what-are-the-different-types-of-buttons-and-when-should-you-use-them">
+<h2>1.2. What are the different types of buttons and when should you use them?<a class="headerlink" href="#what-are-the-different-types-of-buttons-and-when-should-you-use-them" title="Link to this heading">#</a></h2>
+<p>The <code>button</code> element is used to perform a particular action when it is activated. Here is an example of a <code>button</code> element with the button text of <code>Start Game</code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;button&gt;Start Game&lt;/button&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Other examples of using the <code>button</code> element include submitting a form, showing a modal, or toggling a side menu open and closed. The <code>button</code> element has a <code>type</code> attribute which controls the behavior of the button when it is activated. The first possible value for the <code>type</code> attribute would be the <code>button</code> type. Here is an example of using the <code>button</code> element with the <code>button</code> type and a text of <code>Show Alert</code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;button type=&quot;button&quot;&gt;Show Alert&lt;/button&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>By default, the button will not do anything when activated. However, you can add some JavaScript code to make the button interactive, such as showing an alert in this case. Another possible value for the <code>type</code> attribute is the submit value. Here is an example of using a <code>button</code> element with the <code>submit</code> type:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;form action=&quot;&quot;&gt;
+  &lt;label for=&quot;email&quot;&gt;Email address:&lt;/label&gt;
+  &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; /&gt;
+  &lt;button type=&quot;submit&quot;&gt;Submit form&lt;/button&gt;
+&lt;/form&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Inside this <code>form</code> element, there is a <code>label</code> and <code>input</code> element for the user’s email address. When the user clicks on the submit button, their data will be sent to the server and will be processed. The third possible value for the <code>type</code> attribute is the <code>reset</code> value. Here is an example of a <code>form</code> element with reset and submit buttons:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;form action=&quot;&quot;&gt;
+  &lt;label for=&quot;email&quot;&gt;Email address:&lt;/label&gt;
+  &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; /&gt;
+  &lt;button type=&quot;reset&quot;&gt;Reset form&lt;/button&gt;
+  &lt;button type=&quot;submit&quot;&gt;Submit form&lt;/button&gt;
+&lt;/form&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this modified example, a <code>label</code> and <code>input</code> element are used to collect the user’s email address. When the user clicks on the reset button, then it will clear out all of their input data. It is important to note that reset buttons are usually not the best idea because they could lead to users accidentally resetting their data. Also, multiple buttons in your form could clutter up the user interface.</p>
+<p>Another way to create buttons in HTML is to use the <code>input</code> element. The <code>input</code> element also has a <code>type</code> attribute with the possible values of <code>submit</code>, <code>reset</code>, and <code>button</code>. Here is an example of using the <code>input</code> element with the <code>type</code> set to <code>button</code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;input type=&quot;button&quot; value=&quot;Show Alert&quot; /&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code>value</code> attribute is used to show the button text. So, what is the difference between using the <code>input</code> and <code>button</code> elements?</p>
+<ul class="simple">
+<li><p><code>input</code> elements are void elements, which means they cannot have child nodes, such as text, and can only have a start tag.</p></li>
+<li><p>On the other hand, the <code>button</code> element offers more flexibility because you can nest text, images, and icons inside it.</p></li>
+</ul>
+</section>
+<section id="what-is-client-side-form-validation-in-html-forms">
+<h2>1.3. What is client-side form validation in HTML forms?<a class="headerlink" href="#what-is-client-side-form-validation-in-html-forms" title="Link to this heading">#</a></h2>
+<p>When a user fills out a form on your website, it is important that they fill out all of the necessary information in the correct format. HTML form controls, like inputs, have a lot of built-in validation that you can use to check for invalid data. This will help ensure that the user fixes these mistakes before the information is submitted and processed by the server.</p>
+<p>The term “client-side” refers to everything that happens on the user’s computer or device, like the part of a website or app you interact with directly. This includes the layout, design, and any interactive features.</p>
+<p>The term “server-side” refers to everything that happens on the server, the computer, or system, that hosts the website or app. This includes processing data, running applications, and handling requests that come from the user’s device.</p>
+<p>While client-side validation is important, you also need server-side validation for added security. Malicious users can bypass client-side checks, so robust server-side measures are essential. You’ll learn more about this in a later module. For now, let’s take a look at some examples of client-side form validation.</p>
+<p>One common example of built-in form validation is to use the <code>required</code> attribute in inputs. The <code>required</code> attribute specifies that the user needs to fill out that portion of the form before it gets submitted. Here is an example of using the <code>required</code> attribute in an email input:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;form action=&quot;&quot;&gt;
+  &lt;label for=&quot;email&quot;&gt;Email Address (Required field):&lt;/label&gt;
+  &lt;input required type=&quot;email&quot; name=&quot;email&quot; id=&quot;email&quot; /&gt;
+  &lt;button type=&quot;submit&quot;&gt;Submit Form&lt;/button&gt;
+&lt;/form&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>When the user clicks on the <code>Submit Form</code> button without supplying an email address, they will be alerted that the field is required and the form will not be submitted. Each browser will have its own set of styles for showing this alert message. Another advantage of using the email input, is that email inputs have some basic validation to ensure correctly formatted email addresses. It is important to note that browsers only check for basic validation for standard email addresses. It is up to you to add additional layers of validation, which you will learn about in later modules.</p>
+<p>Other forms of validation for email inputs are to use the <code>minlength</code> and <code>maxlength</code> attributes. Here is an example using the extra validation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;form action=&quot;&quot;&gt;
+  &lt;label for=&quot;email&quot;&gt;Email Address (Required field):&lt;/label&gt;
+  &lt;input
+    required
+    type=&quot;email&quot;
+    name=&quot;email&quot;
+    id=&quot;email&quot;
+    minlength=&quot;4&quot;
+    maxlength=&quot;64&quot;
+  /&gt;
+  &lt;button type=&quot;submit&quot;&gt;Submit Form&lt;/button&gt;
+&lt;/form&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code>minlength</code> and <code>maxlength</code> attributes are used to set the minimum and maximum length in characters for the email input. If you don’t include the minimum length or exceed the max length of characters, the browser will show an alert message.</p>
+</section>
+<section id="what-are-the-different-form-states-and-why-are-they-important">
+<h2>1.4. What are the different form states and why are they important?<a class="headerlink" href="#what-are-the-different-form-states-and-why-are-they-important" title="Link to this heading">#</a></h2>
+<p>In HTML, form controls, like inputs, can be in different stages or conditions like a <code>focused</code> state, <code>readonly</code> state or <code>disabled</code> state.</p>
+<p>The first state would be considered the <code>default</code> state. The default state of an email address input is a blank input. That is what the email input looks like when it is first rendered on the page. At this point, the user has not input any information.</p>
+<p>When the user clicks on a form control or selects it with the keyboard’s tab key, then that means it is in the <code>focused</code> state. When an input is in the <code>focused</code> state, most browsers will show a blue highlighted border around the input. But you can choose to add additional styles in CSS.</p>
+<p>Another form state is the <code>disabled</code> state. This state shows users that an input cannot be focused or activated. To disable an input, you can add the <code>disabled</code> boolean attribute to the element like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;input disabled type=&quot;email&quot; name=&quot;email&quot; id=&quot;email&quot; /&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the user tries to click on the input, then the focus will not be enabled. Similar to the <code>focused</code> state, you can choose to add additional styles for the <code>disabled</code> state using CSS.</p>
+<p>Another type of form state is the <code>readonly</code> state. This is when a form control, like an input, is not editable by the user. Here is an example of setting an email input to read only:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;input
+  readonly
+  type=&quot;email&quot;
+  name=&quot;email&quot;
+  id=&quot;email&quot;
+  value=&quot;example@email.com&quot;
+/&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code>value</code> attribute is used to set the value shown inside the input field. If you tried to click on the input, you would not be able to edit the existing value.</p>
+<p>A key difference between the <code>disabled</code> state and <code>readonly</code> state is that <code>readonly</code> can be focused while the <code>disabled</code> state cannot.</p>
+<p>Understanding the different form states is important because they ensure a smooth user experience by providing clear feedback and guidance while handling errors.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="example-build-a-hotel-feedback-form">
+<h1>2. Example: Build a hotel feedback form<a class="headerlink" href="#example-build-a-hotel-feedback-form" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;Hotel Feedback Form&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Hotel Feedback Form&lt;/h1&gt;
+        &lt;p&gt;
+            Thank you for staying with us. Please provide feedback on your recent
+            stay.
+        &lt;/p&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;form method=&quot;POST&quot; action=&quot;https://hotel-feedback.freecodecamp.org&quot;&gt;
+            &lt;fieldset&gt;
+                &lt;legend&gt;Personal Information&lt;/legend&gt;
+                &lt;label for=&quot;full-name&quot;&gt;Name (required):&lt;/label&gt;
+                &lt;input type=&quot;text&quot; id=&quot;full-name&quot; name=&quot;name&quot; placeholder=&quot;Ex. John Doe&quot; required size=&quot;20&quot;&gt;
+
+                &lt;label for=&quot;email&quot;&gt;Email address (required):&lt;/label&gt;
+                &lt;input placeholder=&quot;example@email.com&quot; required id=&quot;email&quot; type=&quot;email&quot; name=&quot;email&quot; size=&quot;20&quot; /&gt;
+                &lt;label for=&quot;age&quot;&gt;Age (optional):&lt;/label&gt;
+                &lt;input type=&quot;number&quot; name=&quot;age&quot; id=&quot;age&quot; min=&quot;3&quot; max=&quot;100&quot; /&gt;
+            &lt;/fieldset&gt;
+
+            &lt;fieldset&gt;
+                &lt;legend&gt;Was this your first time at our hotel?&lt;/legend&gt;
+                &lt;label for=&quot;yes-option&quot;&gt;Yes&lt;/label&gt;
+                &lt;input id=&quot;yes-option&quot; type=&quot;radio&quot; name=&quot;hotel-stay&quot; /&gt;
+                &lt;label for=&quot;no-option&quot;&gt;No&lt;/label&gt;
+                &lt;input id=&quot;no-option&quot; type=&quot;radio&quot; name=&quot;hotel-stay&quot; /&gt;
+            &lt;/fieldset&gt;
+
+            &lt;fieldset&gt;
+                &lt;legend&gt;
+                    Why did you choose to stay at our hotel? (Check all that apply)
+                &lt;/legend&gt;
+
+                &lt;label for=&quot;ads&quot;&gt;Social Media Ads&lt;/label&gt;
+                &lt;input type=&quot;checkbox&quot; id=&quot;ads&quot; name=&quot;ads&quot; value=&quot;ads&quot; /&gt;
+
+                &lt;label for=&quot;recommendation&quot;&gt;Personal Recommendation&lt;/label&gt;
+                &lt;input type=&quot;checkbox&quot; id=&quot;recommendation&quot; name=&quot;recommendation&quot; value=&quot;recommendation&quot; /&gt;
+
+                &lt;label for=&quot;location&quot;&gt;Location&lt;/label&gt;
+                &lt;input type=&quot;checkbox&quot; id=&quot;location&quot; name=&quot;location&quot; value=&quot;location&quot; /&gt;
+
+                &lt;label for=&quot;reputation&quot;&gt;Reputation&lt;/label&gt;
+                &lt;input checked type=&quot;checkbox&quot; id=&quot;reputation&quot; name=&quot;reputation&quot; value=&quot;reputation&quot; /&gt;
+
+                &lt;label for=&quot;price&quot;&gt;Price&lt;/label&gt;
+                &lt;input type=&quot;checkbox&quot; id=&quot;price&quot; name=&quot;price&quot; value=&quot;price&quot; /&gt;
+            &lt;/fieldset&gt;
+
+            &lt;fieldset&gt;
+                &lt;legend&gt;Ratings&lt;/legend&gt;
+
+                &lt;label for=&quot;service&quot;&gt;How was the service?&lt;/label&gt;
+
+                &lt;select name=&quot;service&quot; id=&quot;service&quot;&gt;
+                    &lt;option value=&quot;poor&quot;&gt;Poor&lt;/option&gt;
+                    &lt;option value=&quot;satisfactory&quot;&gt;Satisfactory&lt;/option&gt;
+                    &lt;option value=&quot;good&quot;&gt;Good&lt;/option&gt;
+                    &lt;option value=&quot;very-good&quot;&gt;Very Good&lt;/option&gt;
+                    &lt;option selected value=&quot;excellent&quot;&gt;Excellent&lt;/option&gt;
+                &lt;/select&gt;
+
+                &lt;label for=&quot;food&quot;&gt;How was the food?&lt;/label&gt;
+
+                &lt;select name=&quot;food&quot; id=&quot;food&quot;&gt;
+                    &lt;option value=&quot;poor&quot;&gt;Poor&lt;/option&gt;
+                    &lt;option value=&quot;satisfactory&quot;&gt;Satisfactory&lt;/option&gt;
+                    &lt;option value=&quot;good&quot;&gt;Good&lt;/option&gt;
+                    &lt;option value=&quot;very-good&quot;&gt;Very Good&lt;/option&gt;
+                    &lt;option selected value=&quot;excellent&quot;&gt;Excellent&lt;/option&gt;
+                &lt;/select&gt;
+            &lt;/fieldset&gt;
+
+            &lt;label for=&quot;comments&quot;&gt;Other Comments?&lt;/label&gt;
+            &lt;textarea cols=&quot;30&quot; rows=&quot;10&quot; name=&quot;comments&quot; id=&quot;comments&quot;&gt;&lt;/textarea&gt;
+            &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Resultado:</p>
+<p><img alt="img/hotel_feedback_form.png" src="html/hotel_feedback_form.png" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="example-build-a-survey-form">
+<h1>3. Example: build a survey form<a class="headerlink" href="#example-build-a-survey-form" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;Survey Form&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1 id=&quot;title&quot;&gt;YourKidnapperWantsToMeetYou.com Survey Form&lt;/h1&gt;
+    &lt;p id=&quot;description&quot;&gt;Thank you for taking the time to help us improve the services we work so hard on providing you!&lt;/p&gt;
+
+    &lt;form id=&quot;survey-form&quot;&gt;
+
+        &lt;fieldset&gt;
+            &lt;legend&gt;Basic information&lt;/legend&gt;
+            &lt;label id=&quot;name-label&quot;&gt;Name (required):&lt;/label&gt;
+            &lt;input required id=&quot;name&quot; type=&quot;text&quot; placeholder=&quot;Ex: Christian Nightingale&quot; size=&quot;30&quot;&gt;
+            &lt;br&gt;
+            &lt;label id=&quot;email-label&quot;&gt;Email (required):&lt;/label&gt;
+            &lt;input required id=&quot;email&quot; type=&quot;email&quot; placeholder=&quot;Ex: yourFavouriteTwin@email.co.uk&quot; size=&quot;30&quot;&gt;
+            &lt;br&gt;
+            &lt;label id=&quot;number-label&quot;&gt;Age:&lt;/label&gt;
+            &lt;input required id=&quot;number&quot; type=&quot;number&quot; min=&quot;3&quot; max=&quot;100&quot; placeholder=&quot;Ex: 16&quot;&gt;
+            &lt;br&gt;&lt;br&gt;
+            &lt;label id=&quot;dropdown-name&quot;&gt;Which option best describes your current role?&lt;/label&gt;
+            &lt;select name=&quot;ocupation&quot; id=&quot;dropdown&quot;&gt;
+                &lt;option value=&quot;student&quot;&gt;Student&lt;/option&gt;
+                &lt;option value=&quot;part-time&quot;&gt;Part time job&lt;/option&gt;
+                &lt;option value=&quot;full-time&quot;&gt;Full time job&lt;/option&gt;
+                &lt;option value=&quot;prefer-not-to-say&quot;&gt;Prefer not to say&lt;/option&gt;
+            &lt;/select&gt;
+
+
+        &lt;/fieldset&gt;
+        &lt;br&gt;
+        &lt;fieldset&gt;
+            &lt;legend&gt;Tell us: how was the experience?&lt;/legend&gt;
+            &lt;label id=&quot;radio-name&quot;&gt;What role did you play during your last experience with us?&lt;/label&gt;
+            &lt;br&gt;
+            &lt;label for=&quot;victim-option&quot;&gt;Victim&lt;/label&gt;
+            &lt;input id=&quot;victim-option&quot; type=&quot;radio&quot; name=&quot;rol-name&quot; value=&quot;victim&quot;/&gt;
+            &lt;label for=&quot;aggressor-option&quot;&gt;Aggressor&lt;/label&gt;
+            &lt;input id=&quot;aggressor-option&quot; type=&quot;radio&quot; name=&quot;rol-name&quot; value=&quot;aggressor&quot;/&gt;
+            &lt;br&gt;&lt;br&gt;
+            &lt;label id=&quot;friend-name&quot;&gt;Would you recommend us to a friend (or enemy)?&lt;/label&gt;
+            &lt;br&gt;
+            &lt;label for=&quot;yes-friend&quot;&gt;Definitely&lt;/label&gt;
+            &lt;input id=&quot;yes-friend&quot; type=&quot;radio&quot; name=&quot;recommend-name&quot; value=&quot;yes-friend&quot;/&gt;
+            &lt;label for=&quot;maybe-friend&quot;&gt;Maybe&lt;/label&gt;
+            &lt;input id=&quot;maybe-friend&quot; type=&quot;radio&quot; name=&quot;recommend-name&quot; value=&quot;maybe-friend&quot;/&gt;
+            &lt;label for=&quot;no-friend&quot;&gt;Never&lt;/label&gt;
+            &lt;input id=&quot;no-friend&quot; type=&quot;radio&quot; name=&quot;recommend-name&quot; value=&quot;no-friend&quot;/&gt;
+            &lt;br&gt;&lt;br&gt;
+            &lt;label id=&quot;repeat-name&quot;&gt;Would you repeat the experience in the future?&lt;/label&gt;
+            &lt;br&gt;
+            &lt;input id=&quot;yes-repeat&quot; type=&quot;radio&quot; name=&quot;again-name&quot; value=&quot;yes-repeat&quot;/&gt;
+            &lt;label for=&quot;yes-repeat&quot;&gt;Absolutely&lt;/label&gt;&lt;br&gt;
+            &lt;input id=&quot;change-repeat&quot; type=&quot;radio&quot; name=&quot;again-name&quot; value=&quot;change-repeat&quot;/&gt;
+            &lt;label for=&quot;no-repeat&quot;&gt;Probably, but I&#39;d like a different role&lt;/label&gt;&lt;br&gt;
+            &lt;input id=&quot;maybe-repeat&quot; type=&quot;radio&quot; name=&quot;again-name&quot; value=&quot;maybe-repeat&quot;/&gt;
+            &lt;label for=&quot;maybe-repeat&quot;&gt;Maybe after a few visits to a therapist...&lt;/label&gt;&lt;br&gt;
+            &lt;input id=&quot;no-repeat&quot; type=&quot;radio&quot; name=&quot;again-name&quot; value=&quot;no-repeat&quot;/&gt;
+            &lt;label for=&quot;no-repeat&quot;&gt;Are you fucking crazy?&lt;/label&gt;
+        &lt;/fieldset&gt;
+        &lt;br&gt;&lt;br&gt;
+
+        &lt;fieldset&gt;
+            &lt;legend&gt;What could we improve? (Select as many as you&#39;d like)&lt;/legend&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;ads&quot; name=&quot;ads&quot; value=&quot;ads&quot; /&gt;
+            &lt;label for=&quot;ads&quot;&gt;Less meals per day&lt;/label&gt;&lt;br&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;recommendation&quot; name=&quot;recommendation&quot; value=&quot;recommendation&quot; /&gt;
+            &lt;label for=&quot;recommendation&quot;&gt;More strict restraints&lt;/label&gt;&lt;br&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;location&quot; name=&quot;location&quot; value=&quot;location&quot; /&gt;
+            &lt;label for=&quot;location&quot;&gt;More emotional abuse&lt;/label&gt;&lt;br&gt;
+            &lt;input checked type=&quot;checkbox&quot; id=&quot;reputation&quot; name=&quot;reputation&quot; value=&quot;reputation&quot; /&gt;
+            &lt;label for=&quot;reputation&quot;&gt;More phisical abuse&lt;/label&gt;&lt;br&gt;
+            &lt;input checked type=&quot;checkbox&quot; id=&quot;reputation&quot; name=&quot;reputation&quot; value=&quot;reputation&quot; /&gt;
+            &lt;label for=&quot;reputation&quot;&gt;More sexual abuse&lt;/label&gt;&lt;br&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;price&quot; name=&quot;price&quot; value=&quot;price&quot; /&gt;
+            &lt;label for=&quot;price&quot;&gt;Longer duration&lt;/label&gt;&lt;br&gt;
+        &lt;/fieldset&gt;
+
+        &lt;label for=&quot;comments&quot;&gt;Other Comments?&lt;/label&gt;
+        &lt;textarea cols=&quot;30&quot; rows=&quot;1&quot; name=&quot;comments&quot; id=&quot;comments&quot;&gt;&lt;/textarea&gt;
+
+        &lt;p&gt;&lt;em&gt;
+                Please, note we are not responsibles for bills such as hospital&#39;s or therapist&#39;s bill nor we can be held responsibles for any possible damage caused during the experience.
+            &lt;/em&gt;&lt;/p&gt;
+        &lt;input type=&quot;submit&quot; id=&quot;submit&quot;&gt;Submit :)&lt;/button&gt;
+
+    &lt;/form&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Resultado:</p>
+<p><img alt="img/kidnap_feedback_form.png" src="html/kidnap_feedback_form.png" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="working-with-tables">
+<h1>4. Working with tables<a class="headerlink" href="#working-with-tables" title="Link to this heading">#</a></h1>
+<p>HTML tables aren’t used as much these days as they used to be. But, as a frontend developer, you should still be familiar with them. Tables are one of the earliest ways devs had for displaying data in a browser way back in the 1990s.</p>
+<p>Here’s an example of code used to generate a table from the U.S. Bureau of Labor Statistics:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;table id=&quot;quickfacts&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th colspan=&quot;2&quot;&gt;Quick Facts: Software Developers, Quality Assurance Analysts, and Testers&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2023 Median Pay&lt;/th&gt;
+      &lt;td&gt;
+        $130,160 per year
+        &lt;br&gt;$62.58 per hour
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Typical Entry-Level Education&lt;/th&gt;
+      &lt;td&gt;Bachelor&#39;s degree&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Work Experience in a Related Occupation&lt;/th&gt;
+      &lt;td&gt;None&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;On-the-job Training&lt;/th&gt;
+      &lt;td&gt;None&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Number of Jobs, 2022&lt;/th&gt;
+      &lt;td&gt;1,795,300&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Job Outlook, 2022-32&lt;/th&gt;
+      &lt;td&gt;25% (Much faster than average)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Employment Change, 2022-32&lt;/th&gt;
+      &lt;td&gt;451,200&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;th&gt;If this table had a footer it would be here.&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<table id="quickfacts">
+  <thead>
+    <tr>
+      <th colspan="2">Quick Facts: Software Developers, Quality Assurance Analysts, and Testers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2023 Median Pay</th>
+      <td>
+        $130,160 per year
+        <br>$62.58 per hour
+      </td>
+    </tr>
+    <tr>
+      <th>Typical Entry-Level Education</th>
+      <td>Bachelor's degree</td>
+    </tr>
+    <tr>
+      <th>Work Experience in a Related Occupation</th>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>On-the-job Training</th>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>Number of Jobs, 2022</th>
+      <td>1,795,300</td>
+    </tr>
+    <tr>
+      <th>Job Outlook, 2022-32</th>
+      <td>25% (Much faster than average)</td>
+    </tr>
+    <tr>
+      <th>Employment Change, 2022-32</th>
+      <td>451,200</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th colspan="2">If this table had a footer it would be here.</th>
+    </tr>
+  </tfoot>
+</table><p>As you can see, there’s a main <code>table</code> element with an <code>id</code> set to <code>quickfacts</code>. Inside it, the table has a table head element, <code>thead</code>, table body element, <code>tbody</code>, and a table foot element, <code>tfoot</code>.</p>
+<p>The table head, body, and foot elements can each contain some number of table rows, <code>tr</code>. And each table row can contain a table header <code>th</code> which labels the data in that row. It can also contain some number of individual data cells, called table data, <code>td</code>.</p>
+<p>Now, that’s a lot of HTML elements. But don’t be intimidated – these follow a simple hierarchy.</p>
+<p>Here’s the simplest table we can create that includes all of these elements:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;The title of this table&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;th&gt;First Row&lt;/th&gt;
+          &lt;td&gt;
+              First Data Cell
+          &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Second Row&lt;/th&gt;
+          &lt;td&gt;
+              Second Data Cell
+          &lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+      &lt;tr&gt;
+          &lt;th&gt;The footer of this table, which might contain date of publication, author credits, or other meta information.&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<table>
+  <thead>
+      <tr>
+          <th colspan="2">The title of this table</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <th>First Row</th>
+          <td>
+              First Data Cell
+          </td>
+      </tr>
+      <tr>
+          <th>Second Row</th>
+          <td>
+              Second Data Cell
+          </td>
+      </tr>
+  </tbody>
+  <tfoot>
+      <tr>
+          <th colspan="2">The footer of this table, which might contain date of publication, author credits, or other meta information.</th>
+      </tr>
+  </tfoot>
+</table><p>So as you can see, the data itself is always within a <code>tr</code> – and within that <code>tr</code> element is a <code>th</code> element with a header, and a <code>td</code> element with data.</p>
+<p>Some websites will choose to use <code>div</code>s to build their own tables instead of using the more appropriate <code>table</code> element.</p>
+<p>While it is possible to display tabular data using generic <code>div</code> elements, it is still better to use the <code>table</code> element instead.</p>
+<p>Many years ago, developers might have used a <code>table</code> to position non-data elements on a webpage. This was never considered a best practice. But you may encounter some codebases where tables are still used like this.</p>
+<p>Nowadays, developers use CSS flexbox and grid to layout their designs. freeCodeCamp will cover these tools in depth later.</p>
+<p>For now, just use HTML tables for their original intended purpose: displaying tabular data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;&lt;/th&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;th rowspan=&quot;2&quot;&gt;Dogs&lt;/th&gt;
+        &lt;td&gt;Nora&lt;/td&gt;
+        &lt;td&gt;5&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Gino&lt;/td&gt;
+        &lt;td&gt;2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;th rowspan=&quot;2&quot;&gt;Cats&lt;/th&gt;
+        &lt;td&gt;Lulu&lt;/td&gt;
+        &lt;td&gt;10&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Elizabeth&lt;/td&gt;
+        &lt;td&gt;6&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+  
+</pre></div>
+</div>
+</div>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2">Dogs</th>
+      <td>Nora</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>Gino</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th rowspan="2">Cats</th>
+      <td>Lulu</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>Elizabeth</td>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="example-build-a-final-exam-table">
+<h1>5. Example: Build a final exam table<a class="headerlink" href="#example-build-a-final-exam-table" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;title&gt;Calculus Final Exams Table&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;table&gt;
+      &lt;caption&gt;
+        Calculus Final Exam Grades
+      &lt;/caption&gt;
+
+      &lt;thead&gt;     
+        &lt;tr&gt;
+          &lt;th&gt;Last Name&lt;/th&gt;
+          &lt;th&gt;First Name&lt;/th&gt;
+          &lt;th&gt;Grade&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Davis&lt;/td&gt;
+          &lt;td&gt;Alex&lt;/td&gt;
+          &lt;td&gt;54&lt;/td&gt;
+        &lt;/tr&gt;
+
+        &lt;tr&gt;
+          &lt;td&gt;Doe&lt;/td&gt;
+          &lt;td&gt;Samantha&lt;/td&gt;
+          &lt;td&gt;92&lt;/td&gt;
+        &lt;/tr&gt;
+
+        &lt;tr&gt;
+          &lt;td&gt;Rodriguez&lt;/td&gt;
+          &lt;td&gt;Marcus&lt;/td&gt;
+          &lt;td&gt;88&lt;/td&gt;
+        &lt;/tr&gt;
+
+        &lt;tr&gt;
+          &lt;td&gt;Thompson&lt;/td&gt;
+          &lt;td&gt;Jane&lt;/td&gt;
+          &lt;td&gt;77&lt;/td&gt;
+        &lt;/tr&gt;
+
+        &lt;tr&gt;
+          &lt;td&gt;Williams&lt;/td&gt;
+          &lt;td&gt;Natalie&lt;/td&gt;
+          &lt;td&gt;83&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+
+      &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td colspan=&quot;2&quot;&gt;Average Grade&lt;/td&gt;
+            &lt;td&gt;78.8&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tfoot&gt;
+    &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="example-build-a-book-catalog-table">
+<h1>6. Example: build a book catalog table<a class="headerlink" href="#example-build-a-book-catalog-table" title="Link to this heading">#</a></h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Catalog</title>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>Publication Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>How to Contribute to Open-Source Projects – A Handbook for Beginners</td>
+        <td>Hillary Nyakundi</td>
+        <td>Open Source</td>
+        <td>2023</td>
+      </tr>
+      <tr>
+        <td>Learn Linux for Beginners: From Basics to Advanced Techniques</td>
+        <td>Quincy Larson</td>
+        <td>Linux</td>
+        <td>2023</td>
+      </tr>
+      <tr>
+        <td>How to Learn to Code and Get a Developer Job</td>
+        <td>Zaira Hira</td>
+        <td>Learn To Code</td>
+        <td>2023</td>
+      </tr>
+      <tr>
+        <td>The Regular Expressions Book – RegEx for JavaScript Developers</td>
+        <td>Kolade Chris</td>
+        <td>Regular Expressions</td>
+        <td>2023</td>
+      </tr>
+      <tr>
+        <td>The Python Code Example Handbook</td>
+        <td>Farhan Hasin Chowdhury	</td>
+        <td>Python</td>
+        <td>2023</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4">Total Books: 5</td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html></section>
+<section class="tex2jax_ignore mathjax_ignore" id="working-with-html-tools">
+<h1>7. Working with HTML tools<a class="headerlink" href="#working-with-html-tools" title="Link to this heading">#</a></h1>
+<section id="what-is-an-html-validator-and-how-can-it-help-you-debug-your-code">
+<h2>7.1. What is an HTML validator, and how can it help you debug your code?<a class="headerlink" href="#what-is-an-html-validator-and-how-can-it-help-you-debug-your-code" title="Link to this heading">#</a></h2>
+<p>HTML is a very forgiving language – elements still render even when you make mistakes, like forgetting to include a closing tag.</p>
+<p>Let’s say you have an <code>h2</code> element without a closing tag:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;h1&gt;Article Topic&lt;/h1&gt;
+&lt;h2&gt;Subheading 1 &lt;/h2&gt;
+&lt;h2&gt;Subheading 2 &lt;/h2&gt;
+
+&lt;!-- This h2 does not have a closing tag --&gt;
+&lt;h2&gt;Subheading 3
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code>h2</code> without a closing tag will still render fine. This happens because browsers use a parsing algorithm that handles common errors and tries to render HTML as closely as possible to the author’s intention.</p>
+<p>But this could backfire sometimes. Let’s add a few paragraphs under the existing heading 2 tags in the code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;h1&gt;Article Topic&lt;/h1&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, nisi.&lt;/p&gt;
+
+&lt;h2&gt;Subheading 1 &lt;/h2&gt;
+&lt;p&gt;Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, doloremque.&lt;/p&gt;
+
+&lt;h2&gt;Subheading 2 &lt;/h2&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, placeat.&lt;/p&gt;
+
+&lt;!-- This h2 does not have a closing tag --&gt;
+&lt;h2&gt;Subheading 3
+&lt;p&gt;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, illum.&lt;/p&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>As a result, the paragraph element under the <code>h2</code> without a closing <code>h2</code> tag renders as heading 2. This is why you need an HTML validator.</p>
+<p>An HTML validator is a tool that checks the validity of your HTML code against the standard HTML specifications. It helps you identify errors and warnings in your HTML code, ensuring your web pages are correctly structured and compliant with web standards.</p>
+<p>Using an HTML validator benefits not only you and your future code reviews, but also anybody else going through your code, such as your teammates and open-source contributors.</p>
+<p>There are several HTML validators out there you can use. The most widely accepted one is the <code>w3.org</code> markup validation service.</p>
+<p>When you visit the site <a class="reference external" href="https://validator.w3.org/">validator.w3.org</a>, you can click on the <code>Validate by Direct Input</code> button and paste in your HTML code. When you click on the <code>Check</code> button, then a list of results will display with the errors that need to be fixed.</p>
+<p>Another HTML validator that you can use is <a class="reference external" href="https://jsonformatter.org/">jsonformatter.org</a>. You can copy and paste your HTML code inside the first editor, and when you click on the <code>Validate</code> button, it will show you any errors you have in your code.</p>
+</section>
+<section id="how-do-you-use-the-dom-inspector-and-devtools-to-debug-and-build-your-projects">
+<h2>7.2. How do you use the DOM inspector and devtools to debug and build your projects?<a class="headerlink" href="#how-do-you-use-the-dom-inspector-and-devtools-to-debug-and-build-your-projects" title="Link to this heading">#</a></h2>
+<p>When you are building out your projects, you will frequently run into issues where your programs are not working as expected. Programmers often refer to issues as bugs. The process of finding and fixing these bugs is known as debugging.</p>
+<p>To debug your code, you will need to use some tools provided by your browser. Two important tools to use would be the DOM inspector and developer tools.</p>
+<ol class="arabic simple">
+<li><p>The DOM inspector allows you to inspect the HTML structure of the page you are on. The DOM stands for Document Object Model. It is a tree-like structure that represents the elements on a page. You will learn more about the DOM in later modules.</p></li>
+<li><p>The developer tools allow you to inspect the HTML, CSS, and JavaScript of the page you are on. Let’s take a look at an HTML example that contains a small bug in the anchor element:</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;a href=&quot;https://www.freecodecamp.org/larn/&quot;&gt;freeCodeCamp curriculum&lt;/a&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>When you click on the link, it will lead to a 404 page. A 404 page is an error page that appears when a user tries to access a webpage that doesn’t exist on the server. The intent is for the link to lead to the freeCodeCamp curriculum.</p>
+<p>To see what the issue might be, you can use the developer tools:</p>
+<ul class="simple">
+<li><p>To open the developer tools in your browser, you can right-click on the page and select <code>Inspect</code>. You can also use <code>Control + Shift + I</code> I on your PC keyboard or <code>Command + Option + I</code> on your Mac.</p></li>
+<li><p>When you open developer tools in Google Chrome, you’ll see a number of tabs. The first tab is called the <code>Elements</code> tab. This tab shows you the HTML structure of the page you are on. The second tab is called the <code>Console</code> tab. This tab shows you any errors that might be occurring on the page.</p></li>
+<li><p>In the situation where you have a broken link, you can check the console to see the error messages for that broken link. The common message that continues to display for the broken link is the 404 error. The 404 error indicates that the page is not found.</p></li>
+<li><p>This lets us know that the issue is with the URL in the anchor element. When you inspect the <code>href</code> value you will see there is a typo. Right now the console message shows <code>/larn</code> against a 404, but the correct URL should be <code>/learn</code>. When the link is corrected, then it will work as expected.</p></li>
+</ul>
+<p>You will learn more about working with the developer tools throughout the certification, but this is just a short example on how it can help you debug your code.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: ""
+        },
+        kernelOptions: {
+            name: "",
+            path: "./html"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = ''</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2_semantic_html.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><a href="https://www.freecodecamp.org/learn/full-stack-developer/review-semantic-html/review-semantic-html">Resumen</a></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="4_accessibility.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Resumen</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><a href="https://www.freecodecamp.org/learn/full-stack-developer/review-html-tables-and-forms/review-html-tables-and-forms">Resumen</a></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-forms">1. Working with Forms</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-forms-labels-and-inputs-work-in-html">1.1. How do forms, labels and inputs work in HTML?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-different-types-of-buttons-and-when-should-you-use-them">1.2. What are the different types of buttons and when should you use them?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-client-side-form-validation-in-html-forms">1.3. What is client-side form validation in HTML forms?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-different-form-states-and-why-are-they-important">1.4. What are the different form states and why are they important?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-build-a-hotel-feedback-form">2. Example: Build a hotel feedback form</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-build-a-survey-form">3. Example: build a survey form</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-tables">4. Working with tables</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-build-a-final-exam-table">5. Example: Build a final exam table</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-build-a-book-catalog-table">6. Example: build a book catalog table</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-html-tools">7. Working with HTML tools</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-html-validator-and-how-can-it-help-you-debug-your-code">7.1. What is an HTML validator, and how can it help you debug your code?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-use-the-dom-inspector-and-devtools-to-debug-and-build-your-projects">7.2. How do you use the DOM inspector and devtools to debug and build your projects?</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mikaela González Pérez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
