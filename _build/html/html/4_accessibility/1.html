@@ -1,0 +1,634 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Importance of accessibility and good HTML structure - I &#8212; My Front End Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'html/4_accessibility/1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1. Importance of accessibility and good HTML structure - II" href="2.html" />
+    <link rel="prev" title="4. HTML Accessibility Review" href="../4_accessibility.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My Front End Notes - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My Front End Notes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">HTML</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1_basic_html.html">1. Basic HTML Review</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_html/1.html">1. What is HTML?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_html/2.html">2. HTML Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_html/3.html">3. Working with Media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_html/4.html">4. Working with Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_html/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2_semantic_html.html">2. Semantic HTML Review</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2_semantic_html/1.html">2.1. Why should you care about semantic HTML?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../2_semantic_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3_forms_and_tables_html.html">3. HTML Tables and Forms Review</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3_forms_and_tables_html/1.html">1. Working with Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_forms_and_tables_html/2.html">2. Working with tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_forms_and_tables_html/3.html">3. Working with HTML tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_forms_and_tables_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../4_accessibility.html">4. HTML Accessibility Review</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1. Importance of accessibility and good HTML structure - I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">1. Importance of accessibility and good HTML structure - II</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../css/1_basic_css.html">Resumen 1~4</a></li>
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/html/4_accessibility/1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1. Importance of accessibility and good HTML structure - I</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-accessibility">1.1. What is accessibility?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-screen-readers-and-who-uses-them">1.2. What are screen readers and who uses them?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-large-text-or-braille-keyboards-and-who-uses-them">1.3. What are large text or braille keyboards and who uses them?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-alternative-pointing-devices-such-as-trackballs-joysticks-and-touchpads-used-for">1.4. What are alternative pointing devices such as trackballs, joysticks, and touchpads used for?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-screen-magnifiers-used-for">1.5. What are screen magnifiers used for?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="importance-of-accessibility-and-good-html-structure-i">
+<h1>1. Importance of accessibility and good HTML structure - I<a class="headerlink" href="#importance-of-accessibility-and-good-html-structure-i" title="Link to this heading">#</a></h1>
+<section id="what-is-accessibility">
+<h2>1.1. What is accessibility?<a class="headerlink" href="#what-is-accessibility" title="Link to this heading">#</a></h2>
+<p>Accessibility involves creating products and services that everyone can use. In the context of web development, it’s making websites that everyone can understand and interact with, including people with visual, auditory, motor, and cognitive disabilities.</p>
+<p>Some examples of disabilities that can impact users’ online experience include:</p>
+<ul class="simple">
+<li><p>Blindness.</p></li>
+<li><p>Low vision.</p></li>
+<li><p>Color blindness.</p></li>
+<li><p>Deafness.</p></li>
+<li><p>Difficulty using keyboards, mice, or touchscreens.</p></li>
+<li><p>Attention disorders</p></li>
+<li><p>Memory issues.</p></li>
+<li><p>Difficulty speaking or understanding spoken language.</p></li>
+<li><p>Sensitivity to flashing lights.</p></li>
+<li><p>These are just a few of many conditions that can impact users around the world.</p></li>
+</ul>
+<p>To help you create accessible websites, the World Wide Web Consortium, known as W3C, developed a set of international standards that you can follow to make your websites more accessible and easier to use for people with disabilities.</p>
+<p>These standards are known as “The Web Content Accessibility Guidelines” (WCAG).</p>
+<p>These guidelines are designed with four core principles in mind, known as <b>POUR</b>.</p>
+<ul class="simple">
+<li><p><code>P</code> stands for Perceivable. Users must be able to perceive the information that you are presenting. For example, you can provide alternative text for images, so users who access your website with a screen reader can understand them.</p></li>
+<li><p><code>O</code> stands for Operable. Users must be able to interact with the user interface. For example, you can make sure that all functionality is accessible through the keyboard too, not just the mouse.</p></li>
+<li><p><code>U</code> stands for Understandable. Users must be able to understand the information. For example, you can avoid complex sentences and use simple language as much as possible.</p></li>
+<li><p><code>R</code> stands for Robust. A wide range of browsers and other tools, including assistive technologies, must be able to interpret the content.
+Using semantic HTML is very helpful for making your website compatible with different browsers and assistive technologies.</p></li>
+</ul>
+<p>If your content doesn’t follow any one of these core principles, not everyone will be able to use your website.</p>
+<p>To check if you are following these guidelines correctly, you can access the Quick Reference of the World Wide Web Consortium. There, you will find a comprehensive list of criteria and techniques.</p>
+<p>Accessibility is essential for web development. By developing with inclusivity in mind, you can ensure that everyone can access and engage with your content, promote equality and create a better user experience for everyone around the world.</p>
+</section>
+<section id="what-are-screen-readers-and-who-uses-them">
+<h2>1.2. What are screen readers and who uses them?<a class="headerlink" href="#what-are-screen-readers-and-who-uses-them" title="Link to this heading">#</a></h2>
+<p>Screen readers are assistive technology programs that help blind and visually impaired people use computers and mobile devices.</p>
+<p>Screen readers are not just tools for the blind and visually impaired to access computers and mobile devices.</p>
+<p>They empower these individuals to access education, work opportunities, and social media. This ensures digital inclusion and enhances their ability to participate fully in society.</p>
+<p>There’s a common misconception that screen readers are text-to-speech devices.</p>
+<p>However, text-to-speech is just one of the features of a screen reader. Some screen readers even render the text to braille output instead of speech.</p>
+<p>Apart from text-to-speech and braille output, other notable features of screen readers are navigation aids and web browsing assistance.</p>
+<p>Screen reader programs are also not only made for the blind and visually impaired. Dyslexic individuals and people with cognitive disabilities also use screen readers. All the popular operating systems out there have screen readers built into them.</p>
+<p>macOS and iOS both have VoiceOver built-in. You can turn it on on your computer by pressing <code>CMD + F5</code>. You can access it on iPhones through Settings.</p>
+<p>Windows computers have Narrator built-in. You can turn it on by pressing <code>WIN + CTRL + ENTER</code>. NonVisual Desktop Access (NVDA) and Job Access With Speech (JAWS) are also available for Windows computers. NVDA is free and open-source, while JAWS is paid.</p>
+<p>Linux has Orca for the desktop environment and Speakup for the Linux terminal.</p>
+<p>Android phones have TalkBack built-in. You can turn it on by accessing <em>Settings &gt; Special Function &gt; Accessibility &gt; Talkback</em>.</p>
+<p>Some Android devices also have Ella and Select to Speak built in.</p>
+<p>One major challenge for screen reader users is that many software developers don’t design their products with screen-reader friendliness and accessibility in mind.</p>
+<p>Even though accessibility is a broad topic, every developer needs to learn how to make their web software accessible for the blind and visually impaired, as well as other groups of people with disabilities.</p>
+<p>This demonstrates empathy and a commitment to inclusivity, ensuring that all users can benefit from their work.</p>
+</section>
+<section id="what-are-large-text-or-braille-keyboards-and-who-uses-them">
+<h2>1.3. What are large text or braille keyboards and who uses them?<a class="headerlink" href="#what-are-large-text-or-braille-keyboards-and-who-uses-them" title="Link to this heading">#</a></h2>
+<p>Large text and braille keyboards are designed for users with visual disabilities. In Large Text Keyboards, also called Large Print Keyboards, the letters, numbers, and symbols are larger compared to standard keyboards. This design is helpful for people who may find smaller text in the keys difficult to see. Most of them also have enhanced contrast and brightness.</p>
+<p>A large print keyboard made by the brand MaxiAids has yellow keys with black, big, and bold letters, numbers, and symbols on them. This is helpful for people with low vision.</p>
+<p>Another keybord is the black large print keyboard with white print on the keys. This keyboard is also backlit, so users can adjust its brightness to different lighting conditions.</p>
+<p>While large print keyboards provide visual cues for users with low vision, braille keyboards provide a completely tactile experience for people with more severe vision disabilities, including people who are blind.</p>
+<p>Braille is a tactile reading and writing system. It consists of raised dots arranged in specific patterns to represent letters, numbers, and punctuation.</p>
+<p>Braille keyboards use this system to help users find the right keys on the keyboard by feeling these patterns with their fingers. The keys have raised dots in patterns that represent letters, numbers and symbols.</p>
+<p>And some keyboards combine both approaches- large fonts and braille patterns in the keys. This is helpful for people with visual disabilities and for people who are learning braille.</p>
+<p>Large text and braille keyboards are tools that empower people with visual disabilities. By providing alternative input methods, these assistive technologies ensure that everyone can be part of the digital world.</p>
+</section>
+<section id="what-are-alternative-pointing-devices-such-as-trackballs-joysticks-and-touchpads-used-for">
+<h2>1.4. What are alternative pointing devices such as trackballs, joysticks, and touchpads used for?<a class="headerlink" href="#what-are-alternative-pointing-devices-such-as-trackballs-joysticks-and-touchpads-used-for" title="Link to this heading">#</a></h2>
+<p>Alternative pointing devices are input devices that make good alternatives to the traditional mouse. They are essential for improving computer accessibility for those with disabilities, forelimb impairments, and limited mobility.</p>
+<p>Common examples of alternative pointing devices are trackballs, joysticks, and touchpads.</p>
+<p>A trackball is a stationary pointing device that consists of a large, movable ball within a socket. It also includes additional buttons for clicking and performing other functions.</p>
+<p>Unlike the traditional mouse, which requires movement around a surface to control the cursor, a trackball remains in place. Users manipulate the ball directly with their fingers, thumb, or palm to move the cursor on the screen.</p>
+<p>Some traditional mice also have a trackball on the top or side. These mice could make a good starting point if you want to gradually switch to a trackball.</p>
+<p>Trackballs reduce the physical movement the user needs for navigation, making them ideal for users with mobility issues. Apart from that, if you need high precision and have limited desk space, a trackball is more ideal than a traditional mouse.</p>
+<p>A joystick is a pointing device primarily designed for games and certain industrial applications like machinery control. It consists of a lever that pivots up, down, left, and right, and often includes additional buttons for various actions</p>
+<p>Joysticks provide precise control over movement and actions within digital environments. This makes them popular for flight simulators, cranes, driving games, and other applications requiring precise directional input.</p>
+<p>Because joysticks accommodate larger and more deliberate movements, they are beneficial for individuals with tremors and unsteady hands.</p>
+<p>They also reduce the strain and pain that comes with repetitive movements, making them ideal for individuals with arthritis and carpal tunnel syndrome.</p>
+<p>A touchpad is a flat, touch-sensitive device built into laptops and some keyboards. It allows users to control the cursor on the screen by sliding their fingers across its surface.</p>
+<p>Apart from the surface for cursor control, touchpads also feature buttons that emulate the actions of a traditional mouse, such as right-click and left-click.</p>
+<p>Most people see touchpads as a better alternative to a mouse because they significantly enhance navigation by supporting multi-touch gestures like pinch-to-zoom, two-finger scrolling, tap-to-click, and three-finger swipes.</p>
+<p>Touchpad is ideal for individuals with low arm or hand movement because the forelimb is almost always stationary while using it. It is also suitable for people with arthritis and joint pain because they don’t get to move their arms too much.</p>
+</section>
+<section id="what-are-screen-magnifiers-used-for">
+<h2>1.5. What are screen magnifiers used for?<a class="headerlink" href="#what-are-screen-magnifiers-used-for" title="Link to this heading">#</a></h2>
+<p>Screen magnifiers are tools that help people with low vision and other visual impairments better access digital content and the web.</p>
+<p>Let’s delve deeper into what these tools are and the role they play in digital content accessibility.</p>
+<p>Screen magnifiers work by enlarging texts, graphics, and other elements on a computer or mobile device screen. Many screen magnifiers allow users to enlarge the display by more than 200%. Users can then navigate the page using their pointing device or keyboard. Additionally, most magnifiers offer customizable zoom percentages and other features in their settings.</p>
+<p>Screen magnifiers primarily help people with low vision read text, as small fonts in documents or applications can be challenging for them. By enlarging the text, they can read emails, articles, and other content without straining their eyes. Screen magnifiers also assist with web browsing. They help users locate and click on buttons, links, and other interactive elements that might be difficult to see. This improved visibility ensures that users can browse websites, fill out forms, and engage in online activities without difficulty.</p>
+<p>Therefore, software developers need to make their digital products accessible to people with low vision. Some considerations include:</p>
+<ul class="simple">
+<li><p>Using scalable fonts so the user can resize the page without the layout breaking.</p></li>
+<li><p>Ensuring the user interface adapts to different screen sizes through responsive design.</p></li>
+<li><p>Using high-contrast color schemes and customizable colors.</p></li>
+<li><p>Implementing a non-sticky and tiny navbar so users can still see content when using magnifiers.</p></li>
+<li><p>Using regular HTML text instead of images of text.</p></li>
+<li><p>Providing feedback directly next to the element that triggers it, and more.</p></li>
+</ul>
+<p>All the mainstay Operating Systems have at least one magnifier built into them by their manufacturers:</p>
+<ul class="simple">
+<li><p>macOS and iOS both have Zoom. You can turn it on on Mac by going to Settings, filter by Accessibility, and then click on “Zoom”. Toggle the “Use keyboard shortcuts to zoom” option to enable it.</p>
+<ul>
+<li><p>You can turn it on on iPhone through <em>Settings &gt; Accessibility &gt; Zoom</em>.</p></li>
+</ul>
+</li>
+<li><p>Android devices have Magnification. To turn it on, go to <em>Settings &gt; Special Function &gt; Accessibility&gt; Magnification</em>. Since this may vary from device to device, you can search for “Magnification” on the settings homepage to access it.</p></li>
+<li><p>Windows has Magnifier. You can use it by going to <em>Settings &gt; Ease of Access &gt; Magnifier</em>.</p></li>
+<li><p>The magnifiers for Linux operating systems vary. It is either Zoom or Magnifier.</p></li>
+</ul>
+<p>Apart from the ones built into operating systems, some useful third party screen magnifiers are:</p>
+<ul class="simple">
+<li><p>ZoomText for Windows.</p></li>
+<li><p>ClaroView for both Mac and Windows.</p></li>
+<li><p>iZoom for Windows.</p></li>
+<li><p>Zoomify - Screen Magnifier for Mac.</p></li>
+<li><p>LunarPluse for Windows.</p></li>
+<li><p>Loupe for Mac.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./html/4_accessibility"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../4_accessibility.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">4. HTML Accessibility Review</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">1. Importance of accessibility and good HTML structure - II</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-accessibility">1.1. What is accessibility?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-screen-readers-and-who-uses-them">1.2. What are screen readers and who uses them?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-large-text-or-braille-keyboards-and-who-uses-them">1.3. What are large text or braille keyboards and who uses them?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-alternative-pointing-devices-such-as-trackballs-joysticks-and-touchpads-used-for">1.4. What are alternative pointing devices such as trackballs, joysticks, and touchpads used for?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-screen-magnifiers-used-for">1.5. What are screen magnifiers used for?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mikaela González Pérez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

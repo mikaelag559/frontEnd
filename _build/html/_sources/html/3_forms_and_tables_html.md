@@ -1,12 +1,8 @@
-## Index
+# 3. HTML Tables and Forms Review
 
-1.  [Working with Forms](/html/3_forms_and_tables_html/1.md)
-2.  [Working with tables](/html/3_forms_and_tables_html/2.md)
-3.  [Working with HTML tools](/html/3_forms_and_tables_html/3.md)
-4.  [Examples](/html/3_forms_and_tables_html/4.md)
+```{contents}
+```
 
-HTML Tables and Forms Review
-============================
 
 HTML Form Elements and Attributes
 ---------------------------------

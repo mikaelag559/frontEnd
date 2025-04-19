@@ -1,0 +1,691 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Importance of accessibility and good HTML structure - II &#8212; My Front End Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'html/4_accessibility/2';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Resumen 1~4" href="../../css/1_basic_css.html" />
+    <link rel="prev" title="1. Importance of accessibility and good HTML structure - I" href="1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My Front End Notes - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My Front End Notes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">HTML</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1_basic_html.html">1. Basic HTML Review</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_html/1.html">1. What is HTML?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_html/2.html">2. HTML Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_html/3.html">3. Working with Media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_html/4.html">4. Working with Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_html/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2_semantic_html.html">2. Semantic HTML Review</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2_semantic_html/1.html">2.1. Why should you care about semantic HTML?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../2_semantic_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3_forms_and_tables_html.html">3. HTML Tables and Forms Review</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3_forms_and_tables_html/1.html">1. Working with Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_forms_and_tables_html/2.html">2. Working with tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_forms_and_tables_html/3.html">3. Working with HTML tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_forms_and_tables_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../4_accessibility.html">4. HTML Accessibility Review</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1.html">1. Importance of accessibility and good HTML structure - I</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1. Importance of accessibility and good HTML structure - II</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../css/1_basic_css.html">Resumen 1~4</a></li>
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/html/4_accessibility/2.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1. Importance of accessibility and good HTML structure - II</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-voice-recognition-software-used-for">1.6. What is voice recognition software used for?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-some-common-accessibility-auditing-tools-to-use">1.7. What are some common accessibility auditing tools to use?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-proper-heading-level-structure-affect-accessibility">1.8. How does proper heading level structure affect accessibility?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-best-practices-for-tables-and-accessibility">1.9. What are best practices for tables and accessibility?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-it-important-for-inputs-to-have-an-associated-label">1.10. Why is it important for inputs to have an associated label?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="importance-of-accessibility-and-good-html-structure-ii">
+<h1>1. Importance of accessibility and good HTML structure - II<a class="headerlink" href="#importance-of-accessibility-and-good-html-structure-ii" title="Link to this heading">#</a></h1>
+<section id="what-is-voice-recognition-software-used-for">
+<h2>1.6. What is voice recognition software used for?<a class="headerlink" href="#what-is-voice-recognition-software-used-for" title="Link to this heading">#</a></h2>
+<p>Voice recognition software helps people with disabilities interact with computers and other digital devices. Let’s discuss what voice recognition software is and the role it plays in digital inclusion.</p>
+<p>In the context of accessibility, voice recognition tools let people with disabilities use their voice to pass commands to perform various tasks instead of using traditional input devices like keyboards and mice. This includes writing emails and other documents, surfing the net, and controlling smart home devices.</p>
+<p>Because voice recognition software tools eliminate the need for physical interaction, they empower people with disabilities with significant independence and control over their environment.</p>
+<p>Here are the specific people who may find voice recognition software significantly helpful:</p>
+<ul class="simple">
+<li><p>People with visual impairments, including those with low-vision or blindness.</p></li>
+<li><p>Individuals with mobility impairments, such as limited use of hands and arms or conditions like arthritis and carpal tunnel syndrome.</p></li>
+<li><p>Those recovering from hand or arm injuries.</p></li>
+<li><p>Individuals with cognitive disorders, like memory issues or attention deficit disorders.</p></li>
+<li><p>Elderly individuals who might find it easier to use voice commands.</p></li>
+</ul>
+<p>Note that people with disabilities are not the only ones who use voice recognition technology. Law enforcement agencies, gamers, drivers, and busy professionals also use voice recognition tools.</p>
+<p>A few examples of voice recognition software that allows people to interact with their computer include Voice Control for macOS/iOS, Voice Access for Android, and Windows Speech Recognition for Windows (referred to as Voice Access in the most recent versions of Windows). Dragon by Nuance is a popular third-party voice recognition software for Windows.</p>
+</section>
+<section id="what-are-some-common-accessibility-auditing-tools-to-use">
+<h2>1.7. What are some common accessibility auditing tools to use?<a class="headerlink" href="#what-are-some-common-accessibility-auditing-tools-to-use" title="Link to this heading">#</a></h2>
+<p>Accessibility is a crucial yet often overlooked aspect of digital content. When making your digital content accessible, it’s important to ensure it meets accessibility standards.</p>
+<p>An accessibility auditing tool is an application that helps you improve the accessibility of your digital content by reporting accessibility issues that can be easily found through automated testing. This content includes websites, web applications, and mobile apps.</p>
+<p>It is important to note that while automated accessibility tools have a role in improving accessibility, they typically will only find about a third of all possible accessibility issues. Therefore, it is important not to rely on them entirely to evaluate the accessibility of your content. Manual testing, preferably by people with disabilities, will always be required to ensure that your content is as accessible as possible.</p>
+<p>Let’s look at some free tools that can help you improve the accessibility of your digital content.</p>
+<p>Google Lighthouse is a popular web metric checker you can use directly within Chrome DevTools or online. This means you can check not only live websites but also locally-developed ones.</p>
+<p>The metrics you can check include accessibility, SEO, best practices, and performance.</p>
+<p>To use Lighthouse, open your DevTools by pressing F12 and switching to the Lighthouse tab. Select the metrics you want to check, choose the device you want to test on, and click the “Analyze page load” button.</p>
+<p>An accessibility score will appear after the check is complete, along with a list of any issues that need fixing.</p>
+<p>If you want more reliable metrics, consider using the web version. The downside is that it doesn’t support testing local websites. You can access the web version on pagespeed.web.dev.</p>
+<p>WAVE is another reliable accessibility checker you can use as a Chrome extension or on the web. All you need to do is enter the URL of your website and a comprehensive accessibility report will be generated for you. This report includes accessibility features implemented, ARIA, and contrasts.</p>
+<p>The IBM Equal Accessibility Checker is another robust tool for improving digital content accessibility. With it, you can scan your websites for accessibility issues and generate a detailed report.</p>
+<p>You can use it as a Chrome extension or Firefox add-on.</p>
+<p>To use the IBM Accessibility Checker as a Chrome extension, download it from the Chrome web store. Open your Devtools by pressing F12 and selecting the “Accessibility Checker” tab located in the Elements panel. Click the scan button to start the check and a report will be generated for you. You can export the report as a spreadsheet and an HTML file by clicking the “Export XLS” button.</p>
+<p>Please keep in mind, while these automated tools help you make your content more accessible, a perfect score from any of them does not mean that your content is entirely accessible. The range of issues that these tools test for is limited, and manual testing will always be needed to ensure a more accessible experience for everyone.</p>
+</section>
+<section id="how-does-proper-heading-level-structure-affect-accessibility">
+<h2>1.8. How does proper heading level structure affect accessibility?<a class="headerlink" href="#how-does-proper-heading-level-structure-affect-accessibility" title="Link to this heading">#</a></h2>
+<p>In an earlier lecture video, you learned about proper heading level structure. In this video, you will learn how a good heading structure affects accessibility.</p>
+<p>Proper use of headings creates a visual hierarchy for users to navigate and understand your web page. Using a logical heading hierarchy allows screen reader users to understand the structure of your content and navigate your content quickly. Creating appropriate heading text that accurately describes the content that follows helps everyone find the information they need on your site. As an additional benefit, well-formed headings may also improve the SEO of your site.</p>
+<p>Think of headings as the foundation of your site. Without a good foundation, the accessibility of your content will suffer.</p>
+<p>Let’s look at how you can make your web projects friendly for people who use assistive technologies by using headings correctly.</p>
+<p>Headings, ranging from h1 to h6, create a navigational structure for screen reader users. Screen readers can list all headings on a page, allowing users to jump directly to the sections they need. So, correctly arranging headings is important for helping these users avoid unnecessary content and finding the information they are looking for quickly.</p>
+<p>People with partial sight or cognitive disabilities need to process information quickly and easily to reduce cognitive load.</p>
+<p>While proper arrangement of headings is important, it is also necessary to make heading texts clear and descriptive.</p>
+<p>Here are some key practices to follow to use headings properly:</p>
+<ul class="simple">
+<li><p>Use headings in a hierarchy that reflects clear organization. For example, the page title should be an h1, major sections should be introduced with h2 headings, subsections with h3 , and so on, down to h6.</p></li>
+<li><p>Don’t skip from h1 to h3, or from h2 to h4, and so on.</p></li>
+<li><p>Use clear and descriptive text that summarizes the content that follows each heading.</p></li>
+<li><p>Don’t use a heading in isolation – some content must follow the heading.</p></li>
+<li><p>Use appropriate headings where necessary instead of formatting text to look like headings.</p></li>
+<li><p>Each page should have a single h1 element representing the main topic or title.</p></li>
+</ul>
+<p>Here’s a basic markup that represents how you should use headings on a page:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- Page title --&gt;</span>
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>What is HTML<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- First section --&gt;</span>
+<span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Introduction to HTML<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+    HTML stands for HyperText Markup Language. It is the standard language for
+    creating web pages.
+  <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+<span class="cm">&lt;!-- Second section --&gt;</span>
+<span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>History of HTML<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>HTML began to take shape in the early 90s<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Origins<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+    HTML was created by Tim Berners-Lee in 1991. It has evolved significantly
+    over the years.
+  <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="what-are-best-practices-for-tables-and-accessibility">
+<h2>1.9. What are best practices for tables and accessibility?<a class="headerlink" href="#what-are-best-practices-for-tables-and-accessibility" title="Link to this heading">#</a></h2>
+<p>When we see a table, we immediately start making visual associations between the data and the headers.</p>
+<p>For example, let’s say we have a table representing our pets. We have two dogs and two cats and the table is showing us their names and ages. While a sighted person may be able to understand the relationships in this table, making the connections between the values and the headers is much harder for people who use screen readers to navigate the table.</p>
+<p>As a web developer, you are in charge of creating these associations and structuring your HTML markup in a way that is also easy for screen reader users to interpret.</p>
+<p>So, let’s see how you can create accessible tables that everyone can understand. The first best practice that we will cover is using table caption. With the <code>caption</code> element, you can write the caption (or title) of a table, so users, especially those who use assistive technologies, can quickly understand the table’s purpose and content. You should place the <code>caption</code> element immediately after the opening tag of the <code>table</code> element. This way, screen readers and other assistive technologies can provide more context by announcing the caption before reading the content.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>Our Pets<span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
+  <span class="cm">&lt;!-- Table Rows and Columns --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Now let’s talk about row and column headers. Headers are special cells, typically found at the start of a row or column, that describe the type of data stored in the row or column. You can define a row or column header with the table header element, <code>th</code>.</p>
+<p>For example, the code below creates a table for two pets. Every row has a row header (the name of the pet) and every column has a column header, which describes what the data in the column represents (age and type).</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>Our Pets<span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="cm">&lt;!-- Column Headers --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Name<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Age<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Type<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Nora<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span> <span class="cm">&lt;!-- Row Header --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>5<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Dog<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Gino<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span> <span class="cm">&lt;!-- Row Header --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Cat<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Notice that the above code has a <code>caption</code> element immediately after the opening <code>table</code> element. Then, inside the table head (<code>thead</code>) element, it has the column headers (Name, Age, and Type). In the second and third rows, inside the table body (<code>tbody</code>) element, we find the data for each one of our pets. The names of the pets are the row headers because they are inside table header elements (th).</p>
+<p>Associating the data cells with their corresponding headers is also very important for screen readers. The <code>scope</code> attribute determines if a header is a row header or a column header. Screen readers may guess this correctly from the table’s structure, but it’s usually recommended to explicitly indicate the <code>scope</code> to ensure clarity.</p>
+<p>The <code>scope</code> attribute has four possible values. The two you will use most often are <code>col</code> for column and <code>row</code> for row. In the code below, you can see that we added the <code>scope</code> attribute to the column and row headers. The three column headers (Name, Age, and Type) have a <code>scope</code> of <code>col</code>, column.</p>
+<p>The two row headers (Nora and Gino) have a <code>scope</code> of <code>row</code>.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>Our Pets<span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="cm">&lt;!-- Now they have scope --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">th</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;col&quot;</span><span class="p">&gt;</span>Name<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">th</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;col&quot;</span><span class="p">&gt;</span>Age<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">th</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;col&quot;</span><span class="p">&gt;</span>Type<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">th</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>Nora<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>5<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Dog<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">th</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>Gino<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Cat<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>If a column or row header spans across multiple cells, the scope will also be applied to each one of the cells individually.</p>
+<p>In this table, the cell with Nora’s age (5) will have one column header (Age) and two row headers (Dogs and Nora). Gino’s age (2) will also have one column header (Age) and two row headers (Dogs and Gino).</p>
+<p>However, some screen readers may not be able to interpret tables with complex structures, so you should also try to flatten the table as much as possible to avoid row and column headers that span across multiple cells.</p>
+<p>Your goal should always be to make sure users can access this information, even if their screen readers can handle complex table structures.</p>
+<p>Now, for cell width, it’s recommended to avoid using fixed values. You should use relative values instead, like percentages. Also, try to avoid defining cell height. This will allow users to adjust the text size to fit their needs.</p>
+<p>And finally, you should let the browser determine the table width whenever possible, to reduce the need for horizontal scrolling.</p>
+<p>HTML tables are essential for presenting structured data in an accessible and understandable format. By following these accessibility guidelines, you can create tables that are easy to understand for everyone.</p>
+</section>
+<section id="why-is-it-important-for-inputs-to-have-an-associated-label">
+<h2>1.10. Why is it important for inputs to have an associated label?<a class="headerlink" href="#why-is-it-important-for-inputs-to-have-an-associated-label" title="Link to this heading">#</a></h2>
+<p>Labels on input fields might seem like small details, but they play a crucial role in making forms easier for everyone to use.</p>
+<p>Labels help people with disabilities, make forms more user-friendly for everyone, and ultimately improve form conversion rates.</p>
+<p>Let’s dive into why adding labels to input elements is important for accessibility and usability.</p>
+<p>Screen readers often rely on labels to describe the purpose of input fields. In order for this to work properly, the label must be programmatically associated with the input. While there are several ways to do that, the most common is to use the HTML label element.</p>
+<p>Here’s how to associate a label with an input:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;name&quot;</span><span class="p">&gt;</span>Your Name<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>In this example, the for attribute of the label element is associated with the id of the input element. This connection allows screen readers to announce the label when the input is in a focused state, allowing screen reader users to understand the purpose of the input.</p>
+<p>Associating labels with all input fields also benefits SEO. With proper labels, search engines will understand the page content better, leading to a positive impact on the page search rankings.</p>
+<p>But it is important to understand that you’re making content for humans, not search engines. So, you should make sure the labels are as clear and descriptive as possible.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./html/4_accessibility"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">1. Importance of accessibility and good HTML structure - I</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../css/1_basic_css.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Resumen 1~4</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-voice-recognition-software-used-for">1.6. What is voice recognition software used for?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-some-common-accessibility-auditing-tools-to-use">1.7. What are some common accessibility auditing tools to use?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-proper-heading-level-structure-affect-accessibility">1.8. How does proper heading level structure affect accessibility?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-best-practices-for-tables-and-accessibility">1.9. What are best practices for tables and accessibility?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-it-important-for-inputs-to-have-an-associated-label">1.10. Why is it important for inputs to have an associated label?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mikaela González Pérez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
