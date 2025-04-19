@@ -1,0 +1,1081 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Examples &#8212; My Front End Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'html/3_forms_and_tables_html/4';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Resumen" href="../4_accessibility.html" />
+    <link rel="prev" title="3. Working with HTML tools" href="3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My Front End Notes - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My Front End Notes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">HTML</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1_basic_html.html">Basic HTML Review</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_html/1.html">1. What is HTML?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_html/2.html">2. HTML Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_html/3.html">3. Working with Media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_html/4.html">4. Working with Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_html/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2_semantic_html.html">Semantic HTML Review</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2_semantic_html/1.html">2.1. Why should you care about semantic HTML?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../2_semantic_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_forms_and_tables_html.html">Index</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../4_accessibility.html">Resumen</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../css/1_basic_css.html">Resumen 1~4</a></li>
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/html/3_forms_and_tables_html/4.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Examples</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-hotel-feedback-form">1. A Hotel Feedback Form</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kidnapping-survey-form">2. Kidnapping Survey Form</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-final-exam-table">3. A Final Exam Table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-book-catalog-table">4. A Book Catalog Table</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h1>
+<section id="a-hotel-feedback-form">
+<h2>1. A Hotel Feedback Form<a class="headerlink" href="#a-hotel-feedback-form" title="Link to this heading">#</a></h2>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Hotel Feedback Form<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hotel Feedback Form<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+            Thank you for staying with us. Please provide feedback on your recent
+            stay.
+        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;https://hotel-feedback.freecodecamp.org&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>Personal Information<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;full-name&quot;</span><span class="p">&gt;</span>Name (required):<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;full-name&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Ex. John Doe&quot;</span> <span class="na">required</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;20&quot;</span><span class="p">&gt;</span>
+
+                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;email&quot;</span><span class="p">&gt;</span>Email address (required):<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;example@email.com&quot;</span> <span class="na">required</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;20&quot;</span> <span class="p">/&gt;</span>
+                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;age&quot;</span><span class="p">&gt;</span>Age (optional):<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;age&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;age&quot;</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;3&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="p">/&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+
+            <span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>Was this your first time at our hotel?<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;yes-option&quot;</span><span class="p">&gt;</span>Yes<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;yes-option&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;hotel-stay&quot;</span> <span class="p">/&gt;</span>
+                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;no-option&quot;</span><span class="p">&gt;</span>No<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;no-option&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;hotel-stay&quot;</span> <span class="p">/&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+
+            <span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>
+                    Why did you choose to stay at our hotel? (Check all that apply)
+                <span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
+
+                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;ads&quot;</span><span class="p">&gt;</span>Social Media Ads<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;ads&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;ads&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;ads&quot;</span> <span class="p">/&gt;</span>
+
+                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;recommendation&quot;</span><span class="p">&gt;</span>Personal Recommendation<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;recommendation&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;recommendation&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;recommendation&quot;</span> <span class="p">/&gt;</span>
+
+                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;location&quot;</span><span class="p">&gt;</span>Location<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;location&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;location&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;location&quot;</span> <span class="p">/&gt;</span>
+
+                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;reputation&quot;</span><span class="p">&gt;</span>Reputation<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">checked</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;reputation&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;reputation&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;reputation&quot;</span> <span class="p">/&gt;</span>
+
+                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;price&quot;</span><span class="p">&gt;</span>Price<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;price&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;price&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;price&quot;</span> <span class="p">/&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+
+            <span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>Ratings<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
+
+                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;service&quot;</span><span class="p">&gt;</span>How was the service?<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+
+                <span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;service&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;service&quot;</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;poor&quot;</span><span class="p">&gt;</span>Poor<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;satisfactory&quot;</span><span class="p">&gt;</span>Satisfactory<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;good&quot;</span><span class="p">&gt;</span>Good<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;very-good&quot;</span><span class="p">&gt;</span>Very Good<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">selected</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;excellent&quot;</span><span class="p">&gt;</span>Excellent<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+
+                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;food&quot;</span><span class="p">&gt;</span>How was the food?<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+
+                <span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;food&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;food&quot;</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;poor&quot;</span><span class="p">&gt;</span>Poor<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;satisfactory&quot;</span><span class="p">&gt;</span>Satisfactory<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;good&quot;</span><span class="p">&gt;</span>Good<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;very-good&quot;</span><span class="p">&gt;</span>Very Good<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">selected</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;excellent&quot;</span><span class="p">&gt;</span>Excellent<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;comments&quot;</span><span class="p">&gt;</span>Other Comments?<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">cols</span><span class="o">=</span><span class="s">&quot;30&quot;</span> <span class="na">rows</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;comments&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;comments&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Result:</p>
+<body>
+    <header>
+        <h1>Hotel Feedback Form</h1>
+        <p>
+            Thank you for staying with us. Please provide feedback on your recent
+            stay.
+        </p>
+    </header>
+    <main>
+        <form>
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="full-name">Name (required):</label>
+                <input type="text" id="full-name" name="name" placeholder="Ex. John Doe" required size="20">
+                <label for="email">Email address (required):</label>
+                <input placeholder="example@email.com" required id="email" type="email" name="email" size="20" />
+                <label for="age">Age (optional):</label>
+                <input type="number" name="age" id="age" min="3" max="100" />
+            </fieldset>
+            <fieldset>
+                <legend>Was this your first time at our hotel?</legend>
+                <label for="yes-option">Yes</label>
+                <input id="yes-option" type="radio" name="hotel-stay" />
+                <label for="no-option">No</label>
+                <input id="no-option" type="radio" name="hotel-stay" />
+            </fieldset>
+            <fieldset>
+                <legend>
+                    Why did you choose to stay at our hotel? (Check all that apply)
+                </legend>
+                <label for="ads">Social Media Ads</label>
+                <input type="checkbox" id="ads" name="ads" value="ads" />
+                <label for="recommendation">Personal Recommendation</label>
+                <input type="checkbox" id="recommendation" name="recommendation" value="recommendation" />
+                <label for="location">Location</label>
+                <input type="checkbox" id="location" name="location" value="location" />
+                <label for="reputation">Reputation</label>
+                <input checked type="checkbox" id="reputation" name="reputation" value="reputation" />
+                <label for="price">Price</label>
+                <input type="checkbox" id="price" name="price" value="price" />
+            </fieldset>
+            <fieldset>
+                <legend>Ratings</legend>
+                <label for="service">How was the service?</label>
+                <select name="service" id="service">
+                    <option value="poor">Poor</option>
+                    <option value="satisfactory">Satisfactory</option>
+                    <option value="good">Good</option>
+                    <option value="very-good">Very Good</option>
+                    <option selected value="excellent">Excellent</option>
+                </select>
+                <label for="food">How was the food?</label>
+                <select name="food" id="food">
+                    <option value="poor">Poor</option>
+                    <option value="satisfactory">Satisfactory</option>
+                    <option value="good">Good</option>
+                    <option value="very-good">Very Good</option>
+                    <option selected value="excellent">Excellent</option>
+                </select>
+            </fieldset>
+            <label for="comments">Other Comments?</label>
+            <textarea cols="30" rows="10" name="comments" id="comments"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+</body>
+</section>
+<section id="kidnapping-survey-form">
+<h2>2. Kidnapping Survey Form<a class="headerlink" href="#kidnapping-survey-form" title="Link to this heading">#</a></h2>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Survey Form<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;title&quot;</span><span class="p">&gt;</span>YourKidnapperWantsToMeetYou.com Survey Form<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;description&quot;</span><span class="p">&gt;</span>Thank you for taking the time to help us improve the services we work so hard on providing you!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;survey-form&quot;</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>Basic information<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;name-label&quot;</span><span class="p">&gt;</span>Name (required):<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">required</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Ex: Christian Nightingale&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;30&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;email-label&quot;</span><span class="p">&gt;</span>Email (required):<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">required</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Ex: yourFavouriteTwin@email.co.uk&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;30&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;number-label&quot;</span><span class="p">&gt;</span>Age:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">required</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;3&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Ex: 16&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;dropdown-name&quot;</span><span class="p">&gt;</span>Which option best describes your current role?<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;ocupation&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;dropdown&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;student&quot;</span><span class="p">&gt;</span>Student<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;part-time&quot;</span><span class="p">&gt;</span>Part time job<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;full-time&quot;</span><span class="p">&gt;</span>Full time job<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;prefer-not-to-say&quot;</span><span class="p">&gt;</span>Prefer not to say<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+
+
+        <span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>Tell us: how was the experience?<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;radio-name&quot;</span><span class="p">&gt;</span>What role did you play during your last experience with us?<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;victim-option&quot;</span><span class="p">&gt;</span>Victim<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;victim-option&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;rol-name&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;victim&quot;</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;aggressor-option&quot;</span><span class="p">&gt;</span>Aggressor<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;aggressor-option&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;rol-name&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;aggressor&quot;</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;friend-name&quot;</span><span class="p">&gt;</span>Would you recommend us to a friend (or enemy)?<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;yes-friend&quot;</span><span class="p">&gt;</span>Definitely<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;yes-friend&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;recommend-name&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;yes-friend&quot;</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;maybe-friend&quot;</span><span class="p">&gt;</span>Maybe<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;maybe-friend&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;recommend-name&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;maybe-friend&quot;</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;no-friend&quot;</span><span class="p">&gt;</span>Never<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;no-friend&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;recommend-name&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;no-friend&quot;</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;repeat-name&quot;</span><span class="p">&gt;</span>Would you repeat the experience in the future?<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;yes-repeat&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;again-name&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;yes-repeat&quot;</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;yes-repeat&quot;</span><span class="p">&gt;</span>Absolutely<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;change-repeat&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;again-name&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;change-repeat&quot;</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;no-repeat&quot;</span><span class="p">&gt;</span>Probably, but I&#39;d like a different role<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;maybe-repeat&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;again-name&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;maybe-repeat&quot;</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;maybe-repeat&quot;</span><span class="p">&gt;</span>Maybe after a few visits to a therapist...<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;no-repeat&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;again-name&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;no-repeat&quot;</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;no-repeat&quot;</span><span class="p">&gt;</span>Are you fucking crazy?<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>What could we improve? (Select as many as you&#39;d like)<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;ads&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;ads&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;ads&quot;</span> <span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;ads&quot;</span><span class="p">&gt;</span>Less meals per day<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;recommendation&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;recommendation&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;recommendation&quot;</span> <span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;recommendation&quot;</span><span class="p">&gt;</span>More strict restraints<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;location&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;location&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;location&quot;</span> <span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;location&quot;</span><span class="p">&gt;</span>More emotional abuse<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">checked</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;reputation&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;reputation&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;reputation&quot;</span> <span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;reputation&quot;</span><span class="p">&gt;</span>More phisical abuse<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">checked</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;reputation&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;reputation&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;reputation&quot;</span> <span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;reputation&quot;</span><span class="p">&gt;</span>More sexual abuse<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;price&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;price&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;price&quot;</span> <span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;price&quot;</span><span class="p">&gt;</span>Longer duration<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;comments&quot;</span><span class="p">&gt;</span>Other Comments?<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">cols</span><span class="o">=</span><span class="s">&quot;30&quot;</span> <span class="na">rows</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;comments&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;comments&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">em</span><span class="p">&gt;</span>
+                Please, note we are not responsibles for bills such as hospital&#39;s or therapist&#39;s bill nor we can be held responsibles for any possible damage caused during the experience.
+            <span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Submit :)<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Result:</p>
+<body>
+    <h1 id="title">YourKidnapperWantsToMeetYou.com Survey Form</h1>
+    <p id="description">Thank you for taking the time to help us improve the services we work so hard on providing you!</p>
+    <form id="survey-form">
+        <fieldset>
+            <legend>Basic information</legend>
+            <label id="name-label">Name (required):</label>
+            <input required id="name" type="text" placeholder="Ex: Christian Nightingale" size="30">
+            <br>
+            <label id="email-label">Email (required):</label>
+            <input required id="email" type="email" placeholder="Ex: yourFavouriteTwin@email.co.uk" size="30">
+            <br>
+            <label id="number-label">Age:</label>
+            <input required id="number" type="number" min="3" max="100" placeholder="Ex: 16">
+            <br><br>
+            <label id="dropdown-name">Which option best describes your current role?</label>
+            <select name="ocupation" id="dropdown">
+                <option value="student">Student</option>
+                <option value="part-time">Part time job</option>
+                <option value="full-time">Full time job</option>
+                <option value="prefer-not-to-say">Prefer not to say</option>
+            </select>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Tell us: how was the experience?</legend>
+            <label id="radio-name">What role did you play during your last experience with us?</label>
+            <br>
+            <label for="victim-option">Victim</label>
+            <input id="victim-option" type="radio" name="rol-name" value="victim"/>
+            <label for="aggressor-option">Aggressor</label>
+            <input id="aggressor-option" type="radio" name="rol-name" value="aggressor"/>
+            <br><br>
+            <label id="friend-name">Would you recommend us to a friend (or enemy)?</label>
+            <br>
+            <label for="yes-friend">Definitely</label>
+            <input id="yes-friend" type="radio" name="recommend-name" value="yes-friend"/>
+            <label for="maybe-friend">Maybe</label>
+            <input id="maybe-friend" type="radio" name="recommend-name" value="maybe-friend"/>
+            <label for="no-friend">Never</label>
+            <input id="no-friend" type="radio" name="recommend-name" value="no-friend"/>
+            <br><br>
+            <label id="repeat-name">Would you repeat the experience in the future?</label>
+            <br>
+            <input id="yes-repeat" type="radio" name="again-name" value="yes-repeat"/>
+            <label for="yes-repeat">Absolutely</label><br>
+            <input id="change-repeat" type="radio" name="again-name" value="change-repeat"/>
+            <label for="no-repeat">Probably, but I'd like a different role</label><br>
+            <input id="maybe-repeat" type="radio" name="again-name" value="maybe-repeat"/>
+            <label for="maybe-repeat">Maybe after a few visits to a therapist...</label><br>
+            <input id="no-repeat" type="radio" name="again-name" value="no-repeat"/>
+            <label for="no-repeat">Are you fucking crazy?</label>
+        </fieldset>
+        <br><br>
+        <fieldset>
+            <legend>What could we improve? (Select as many as you'd like)</legend>
+            <input type="checkbox" id="ads" name="ads" value="ads" />
+            <label for="ads">Less meals per day</label><br>
+            <input type="checkbox" id="recommendation" name="recommendation" value="recommendation" />
+            <label for="recommendation">More strict restraints</label><br>
+            <input type="checkbox" id="location" name="location" value="location" />
+            <label for="location">More emotional abuse</label><br>
+            <input checked type="checkbox" id="reputation" name="reputation" value="reputation" />
+            <label for="reputation">More phisical abuse</label><br>
+            <input checked type="checkbox" id="reputation" name="reputation" value="reputation" />
+            <label for="reputation">More sexual abuse</label><br>
+            <input type="checkbox" id="price" name="price" value="price" />
+            <label for="price">Longer duration</label><br>
+        </fieldset>
+        <label for="comments">Other Comments?</label>
+        <textarea cols="30" rows="1" name="comments" id="comments"></textarea>
+        <p><em>
+                Please, note we are not responsibles for bills such as hospital's or therapist's bill nor we can be held responsibles for any possible damage caused during the experience.
+            </em></p>
+        <input type="submit" id="submit">Submit :)</button>
+    </form>
+</body>
+</section>
+<section id="a-final-exam-table">
+<h2>3. A Final Exam Table<a class="headerlink" href="#a-final-exam-table" title="Link to this heading">#</a></h2>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Calculus Final Exams Table<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>
+        Calculus Final Exam Grades
+      <span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
+
+      <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>     
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Last Name<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>First Name<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Grade<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+
+      <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Davis<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Alex<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>54<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Doe<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Samantha<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>92<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Rodriguez<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Marcus<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>88<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Thompson<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Jane<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>77<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Williams<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Natalie<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>83<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+
+      <span class="p">&lt;</span><span class="nt">tfoot</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&quot;2&quot;</span><span class="p">&gt;</span>Average Grade<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>78.8<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tfoot</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Result:</p>
+<body>
+<table>
+    <caption>
+    Calculus Final Exam Grades
+    </caption>
+    <thead>     
+    <tr>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Grade</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Davis</td>
+        <td>Alex</td>
+        <td>54</td>
+    </tr>
+    <tr>
+        <td>Doe</td>
+        <td>Samantha</td>
+        <td>92</td>
+    </tr>
+    <tr>
+        <td>Rodriguez</td>
+        <td>Marcus</td>
+        <td>88</td>
+    </tr>
+    <tr>
+        <td>Thompson</td>
+        <td>Jane</td>
+        <td>77</td>
+    </tr>
+    <tr>
+        <td>Williams</td>
+        <td>Natalie</td>
+        <td>83</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="2">Average Grade</td>
+        <td>78.8</td>
+    </tr>
+    </tfoot>
+</table>
+</body>
+</section>
+<section id="a-book-catalog-table">
+<h2>4. A Book Catalog Table<a class="headerlink" href="#a-book-catalog-table" title="Link to this heading">#</a></h2>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Book Catalog<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Title<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Author<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Genre<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Publication Year<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>How to Contribute to Open-Source Projects – A Handbook for Beginners<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Hillary Nyakundi<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Open Source<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>2023<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Learn Linux for Beginners: From Basics to Advanced Techniques<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Quincy Larson<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Linux<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>2023<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>How to Learn to Code and Get a Developer Job<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Zaira Hira<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Learn To Code<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>2023<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>The Regular Expressions Book – RegEx for JavaScript Developers<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Kolade Chris<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Regular Expressions<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>2023<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>The Python Code Example Handbook<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Farhan Hasin Chowdhury	<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Python<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>2023<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tfoot</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&quot;4&quot;</span><span class="p">&gt;</span>Total Books: 5<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tfoot</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Result:</p>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>Publication Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>How to Contribute to Open-Source Projects – A Handbook for Beginners</td>
+        <td>Hillary Nyakundi</td>
+        <td>Open Source</td>
+        <td>2023</td>
+      </tr>
+      <tr>
+        <td>Learn Linux for Beginners: From Basics to Advanced Techniques</td>
+        <td>Quincy Larson</td>
+        <td>Linux</td>
+        <td>2023</td>
+      </tr>
+      <tr>
+        <td>How to Learn to Code and Get a Developer Job</td>
+        <td>Zaira Hira</td>
+        <td>Learn To Code</td>
+        <td>2023</td>
+      </tr>
+      <tr>
+        <td>The Regular Expressions Book – RegEx for JavaScript Developers</td>
+        <td>Kolade Chris</td>
+        <td>Regular Expressions</td>
+        <td>2023</td>
+      </tr>
+      <tr>
+        <td>The Python Code Example Handbook</td>
+        <td>Farhan Hasin Chowdhury	</td>
+        <td>Python</td>
+        <td>2023</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4">Total Books: 5</td>
+      </tr>
+    </tfoot>
+  </table>
+</body></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./html/3_forms_and_tables_html"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">3. Working with HTML tools</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../4_accessibility.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Resumen</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-hotel-feedback-form">1. A Hotel Feedback Form</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kidnapping-survey-form">2. Kidnapping Survey Form</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-final-exam-table">3. A Final Exam Table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-book-catalog-table">4. A Book Catalog Table</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mikaela González Pérez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

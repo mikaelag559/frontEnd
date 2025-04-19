@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'html/1_basic_html/3';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4. Working with links" href="4.html" />
-    <link rel="prev" title="2. HTML fundamentals" href="2.html" />
+    <link rel="next" title="4. Working with Links" href="4.html" />
+    <link rel="prev" title="2. HTML Fundamentals" href="2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,13 +183,14 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../1_basic_html.html">Basic HTML Review</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1.html">1. What is HTML?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.html">2. HTML fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">2. HTML Fundamentals</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">3. Working with Media</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4.html">4. Working with links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.html">4. Working with Links</a></li>
 <li class="toctree-l2"><a class="reference internal" href="5.html">Examples</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_semantic_html.html"><a href="https://www.freecodecamp.org/learn/full-stack-developer/review-semantic-html/review-semantic-html">Resumen</a></a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2_semantic_html.html">Semantic HTML Review</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2_semantic_html/1.html">2.1. Why should you care about semantic HTML?</a></li>
 
 
 
@@ -202,16 +203,10 @@
 
 
 
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../3_forms_and_tables_html.html"><a href="https://www.freecodecamp.org/learn/full-stack-developer/review-html-tables-and-forms/review-html-tables-and-forms">Resumen</a></a></li>
-
-
-
-
-
-
+<li class="toctree-l2"><a class="reference internal" href="../2_semantic_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_forms_and_tables_html.html">Index</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../4_accessibility.html">Resumen</a></li>
 
@@ -271,53 +266,6 @@
 
 
 
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fhtml/1_basic_html/3.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
 <div class="dropdown dropdown-download-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
     <i class="fas fa-download"></i>
@@ -326,7 +274,7 @@
       
       
       
-      <li><a href="../../_sources/html/1_basic_html/3.ipynb" target="_blank"
+      <li><a href="../../_sources/html/1_basic_html/3.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -336,7 +284,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -443,29 +391,17 @@ document.write(`
 <h2>3.1. What are replaced elements and what are some examples?<a class="headerlink" href="#what-are-replaced-elements-and-what-are-some-examples" title="Link to this heading">#</a></h2>
 <p>A replaced element is an element whose content is determined by an external resource rather than by CSS itself. CSS, or cascading stylesheets, is used to add styles to a web page. Common examples of replaced elements include the image, iframe, and video elements.</p>
 <p>With replaced elements, you can control the position, or layout of an element. But your CSS cannot directly modify the content of that element. This might be easier to explain with some examples. Consider the image element, which embeds an image on your web page:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;example-img-url&quot;</span> <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;Descriptive text goes here&quot;</span><span class="o">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;example-img-url&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Descriptive text goes here&quot;</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>The element itself is replaced with the external object: the image. Your CSS can control things like the positioning of the image, or apply a filter to it, but you cannot actually modify the image itself. A more robust example might be the <code>iframe</code> element, which embeds an external site on your web page:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">iframe</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.example.com&quot;</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Example Site&quot;</span><span class="o">&gt;&lt;/</span><span class="n">iframe</span><span class="o">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.example.com&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;Example Site&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>Common examples for using the <code>iframe</code> element would be to embed Maps or YouTube videos onto the page. The element itself is replaced with the external object: the site. Your CSS can change the positioning of the embedded site, but you cannot modify the site’s contents. To dive a bit further, if the embedded site has an <code>h1</code> element, your CSS would not be able to style that <code>h1</code> element. You cannot change the size, font color, and so on.</p>
 <p>There are some other replaced elements, such as <code>video</code>, and <code>embed</code>. And some elements behave as replaced elements under specific circumstances. Here’s an example of an <code>input</code> element with the <code>type</code> attribute set to <code>image</code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;image&quot;</span> <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;Descriptive text goes here&quot;</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;example-img-url&quot;</span><span class="o">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;image&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Descriptive text goes here&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;example-img-url&quot;</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>This type of <code>input</code> is considered to be a replaced element, but other <code>input</code> types like <code>text</code>, or <code>email</code> are not replaced elements.</p>
 </section>
@@ -503,175 +439,127 @@ document.write(`
 <h2>3.5. What are the role of the HTML audio and video elements and how do they work?<a class="headerlink" href="#what-are-the-role-of-the-html-audio-and-video-elements-and-how-do-they-work" title="Link to this heading">#</a></h2>
 <p>The <code>audio</code> and <code>video</code> elements allow you to add sound and video content to your HTML documents. The <code>audio</code> element supports popular audio formats like mp3, wav, and ogg. The <code>video</code> element supports mp4, ogg, and webm formats.</p>
 <p>To include audio content on your web page, you can use the <code>audio</code> element with the <code>src</code> attribute pointing to the location of your audio file:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">audio</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;CrystalizeThatInnerChild.mp3&quot;</span><span class="o">&gt;&lt;/</span><span class="n">audio</span><span class="o">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">audio</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;CrystalizeThatInnerChild.mp3&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>If you try to run this example, you’ll see that nothing shows up on the page. However, if you inspect the page with the developer tools, you’ll see the <code>audio</code> element is indeed on the page. If you want to see the audio player on the page, then you can add the <code>audio</code> element with the <code>controls</code> attribute:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">audio</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;CrystalizeThatInnerChild.mp3&quot;</span> <span class="n">controls</span><span class="o">&gt;&lt;/</span><span class="n">audio</span><span class="o">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">audio</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;CrystalizeThatInnerChild.mp3&quot;</span> <span class="na">controls</span><span class="p">&gt;&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>The <code>controls</code> attribute enables users to manage audio playback, including adjusting volume, and pausing, or resuming playback. The <code>controls</code> attribute is a boolean attribute that can be added to an element to enable built-in playback controls. If omitted, no controls will be shown.</p>
 <p>Apart from the <code>src</code> and <code>controls</code> attributes, there are several other attributes that enhance the functionality of the <code>audio</code> element. The <code>loop</code> attribute is a boolean attribute that makes the audio replay continuously. Here’s an example of using the <code>loop</code> attribute to play one of Quincy Larson’s songs titled “Can’t stay down”:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">audio</span>
-  <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/js-music-player/can&#39;t-stay-down.mp3&quot;</span>
-  <span class="n">loop</span>
-  <span class="n">controls</span>
-<span class="o">&gt;&lt;/</span><span class="n">audio</span><span class="o">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">audio</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.freecodecamp.org/curriculum/js-music-player/can&#39;t-stay-down.mp3&quot;</span>
+  <span class="na">loop</span>
+  <span class="na">controls</span>
+<span class="p">&gt;&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>When the song reaches the end, it will loop back around and play it again from the beginning. Another attribute you can use is the <code>muted</code> attribute. When present in the <code>audio</code> element, this boolean attribute will start the audio in a muted state. Here’s an example of using the <code>muted</code> attribute:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">audio</span>
-  <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/js-music-player/can&#39;t-stay-down.mp3&quot;</span>
-  <span class="n">loop</span>
-  <span class="n">controls</span>
-  <span class="n">muted</span>
-<span class="o">&gt;&lt;/</span><span class="n">audio</span><span class="o">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">audio</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.freecodecamp.org/curriculum/js-music-player/can&#39;t-stay-down.mp3&quot;</span>
+  <span class="na">loop</span>
+  <span class="na">controls</span>
+  <span class="na">muted</span>
+<span class="p">&gt;&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>When you start the song in the browser, you’ll not hear anything. To hear the music you will need to click on the volume icon.</p>
 <p>When it comes to audio file types, there are differences in which browsers support which type. To accommodate this, you can use <code>source</code> elements inside the <code>audio</code> element and the browser will select the first source that it understands. Here’s an example of using multiple <code>source</code> elements for an <code>audio</code> element:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">audio</span> <span class="n">controls</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">source</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;audio.ogg&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;audio/ogg&quot;</span> <span class="o">/&gt;</span>
-  <span class="o">&lt;</span><span class="n">source</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;audio.wav&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;audio/wav&quot;</span> <span class="o">/&gt;</span>
-  <span class="o">&lt;</span><span class="n">source</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;audio.mp3&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;audio/mpeg&quot;</span> <span class="o">/&gt;</span>
-<span class="o">&lt;/</span><span class="n">audio</span><span class="o">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">audio</span> <span class="na">controls</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;audio.ogg&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;audio/ogg&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;audio.wav&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;audio/wav&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;audio.mp3&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;audio/mpeg&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>The browser will first start with the ogg type, and if it can’t play the audio, then it’ll move down to the next type in the list.</p>
 <p>All the attributes we have learned so far are also supported in the <code>video</code> element. Here’s an example of using a <code>video</code> element with the <code>loop</code>, <code>muted</code>, and <code>controls</code> attributes:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">video</span>
-  <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4&quot;</span>
-  <span class="n">loop</span>
-  <span class="n">controls</span>
-  <span class="n">muted</span>
-<span class="o">&gt;&lt;/</span><span class="n">video</span><span class="o">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">video</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4&quot;</span>
+  <span class="na">loop</span>
+  <span class="na">controls</span>
+  <span class="na">muted</span>
+<span class="p">&gt;&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>For the <code>src</code>, or source attribute, we are using a video called “Big Buck Bunny” from <a class="reference external" href="http://archive.org">archive.org</a>. If you wanted to display an image while the video is downloading, you can use the <code>poster</code> attribute. This attribute is not available for <code>audio</code> elements and is unique to the <code>video</code> element. Here’s an example of using the <code>poster</code> attribute with content provided by <a class="reference external" href="http://peach.blender.org">peach.blender.org</a>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">video</span>
-  <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4&quot;</span>
-  <span class="n">loop</span>
-  <span class="n">controls</span>
-  <span class="n">muted</span>
-  <span class="n">poster</span><span class="o">=</span><span class="s2">&quot;https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217&quot;</span>
-  <span class="n">width</span><span class="o">=</span><span class="s2">&quot;620&quot;</span>
-<span class="o">&gt;&lt;/</span><span class="n">video</span><span class="o">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">video</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4&quot;</span>
+  <span class="na">loop</span>
+  <span class="na">controls</span>
+  <span class="na">muted</span>
+  <span class="na">poster</span><span class="o">=</span><span class="s">&quot;https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217&quot;</span>
+  <span class="na">width</span><span class="o">=</span><span class="s">&quot;620&quot;</span>
+<span class="p">&gt;&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>This example is also using the <code>width</code> attribute to set the width to 620 pixels so the video fits better on the screen.</p>
 </section>
 <section id="how-to-embed-videos-using-iframe-element">
 <h2>3.6. How to embed videos using <code>iframe</code> element?<a class="headerlink" href="#how-to-embed-videos-using-iframe-element" title="Link to this heading">#</a></h2>
 <p>First, what exactly is the <code>iframe</code> element? <code>iframe</code> stands for inline frame. It’s an inline element used to embed other HTML content directly within the HTML page. That HTML content could be a video, map, another HTML element, or even other web pages. Here’s what the syntax of the <code>iframe</code> element looks like:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">iframe</span>
-  <span class="n">src</span><span class="o">=</span><span class="s2">&quot;video-url&quot;</span>
-  <span class="n">width</span><span class="o">=</span><span class="s2">&quot;width-value&quot;</span>
-  <span class="n">height</span><span class="o">=</span><span class="s2">&quot;height-value&quot;</span>
-  <span class="n">allowfullscreen</span>
-<span class="o">&gt;&lt;/</span><span class="n">iframe</span><span class="o">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">iframe</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;video-url&quot;</span>
+  <span class="na">width</span><span class="o">=</span><span class="s">&quot;width-value&quot;</span>
+  <span class="na">height</span><span class="o">=</span><span class="s">&quot;height-value&quot;</span>
+  <span class="na">allowfullscreen</span>
+<span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>The <code>src</code> attribute specifies the URL of the page you want to embed. The <code>width</code> attribute specifies the width of the <code>iframe</code>. The <code>height</code> attribute specifies the height of the <code>iframe</code>. The <code>allowfullscreen</code> attribute allows the user to display the <code>iframe</code> in full screen mode. It’s also a good practice to specify a <code>title</code> attribute for the <code>iframe</code>, as it’s important for accessibility.</p>
 <p>To embed a video within an <code>iframe</code> you can copy it directly from popular video services like YouTube and Vimeo, or define it yourself with the <code>src</code> attribute pointing to the URL of that video. Here’s an example of embedding a popular freeCodeCamp course from YouTube:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">A</span> <span class="n">freeCodeCamp</span> <span class="n">YouTube</span> <span class="n">Video</span> <span class="n">Embedded</span> <span class="k">with</span> <span class="n">the</span> <span class="n">iframe</span> <span class="n">Element</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>A freeCodeCamp YouTube Video Embedded with the iframe Element<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 
-<span class="o">&lt;</span><span class="n">iframe</span>
-  <span class="n">width</span><span class="o">=</span><span class="s2">&quot;560&quot;</span>
-  <span class="n">height</span><span class="o">=</span><span class="s2">&quot;315&quot;</span>
-  <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.youtube.com/embed/PkZNo7MFNFg?si=-UBVIUNM3csdeiWF&quot;</span>
-  <span class="n">title</span><span class="o">=</span><span class="s2">&quot;YouTube video player&quot;</span>
-  <span class="n">allow</span><span class="o">=</span><span class="s2">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;</span>
-  <span class="n">referrerpolicy</span><span class="o">=</span><span class="s2">&quot;strict-origin-when-cross-origin&quot;</span>
-  <span class="n">allowfullscreen</span>
-<span class="o">&gt;&lt;/</span><span class="n">iframe</span><span class="o">&gt;</span>
+<span class="p">&lt;</span><span class="nt">iframe</span>
+  <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span>
+  <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/PkZNo7MFNFg?si=-UBVIUNM3csdeiWF&quot;</span>
+  <span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span>
+  <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;</span>
+  <span class="na">referrerpolicy</span><span class="o">=</span><span class="s">&quot;strict-origin-when-cross-origin&quot;</span>
+  <span class="na">allowfullscreen</span>
+<span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>You can then customize the <code>iframe</code> to your needs or even define your own by copying the link to the YouTube video and pasting it in as the URL value. The caveat is that you must replace <a class="reference external" href="https://youtu.be">https://youtu.be</a> with <b><a class="reference external" href="https://youtube.com/embed/">https://youtube.com/embed/</a></b>.</p>
 <p><a class="reference external" href="http://youtu.be">youtu.be</a> is the domain when you copy the share link and <a class="reference external" href="http://youtube.com/embed/">youtube.com/embed/</a> is the domain required for embedding videos with the <b>iframe</b> element. Here’s an example of that:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">iframe</span>
-  <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://youtube.com/embed/gp5H0Vw39yw?si=Rb_2nDK6abv1iIAM&quot;</span>
-  <span class="n">title</span><span class="o">=</span><span class="s2">&quot;freeCodeCamp Typescript Course&quot;</span>
-  <span class="n">width</span><span class="o">=</span><span class="s2">&quot;500&quot;</span>
-  <span class="n">height</span><span class="o">=</span><span class="s2">&quot;285&quot;</span>
-  <span class="n">allowfullscreen</span>
-<span class="o">&gt;&lt;/</span><span class="n">iframe</span><span class="o">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">iframe</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://youtube.com/embed/gp5H0Vw39yw?si=Rb_2nDK6abv1iIAM&quot;</span>
+  <span class="na">title</span><span class="o">=</span><span class="s">&quot;freeCodeCamp Typescript Course&quot;</span>
+  <span class="na">width</span><span class="o">=</span><span class="s">&quot;500&quot;</span>
+  <span class="na">height</span><span class="o">=</span><span class="s">&quot;285&quot;</span>
+  <span class="na">allowfullscreen</span>
+<span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>Note that the video can come from anywhere. It doesn’t have to come from video services like YouTube and Vimeo. Here’s a video from Pixabay embedded with the <code>iframe</code> element:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">A</span> <span class="n">Video</span> <span class="kn">from</span><span class="w"> </span><span class="nn">Pixabay</span> <span class="n">Embedded</span> <span class="k">with</span> <span class="n">the</span> <span class="n">iframe</span> <span class="n">Element</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>A Video from Pixabay Embedded with the iframe Element<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 
-<span class="o">&lt;</span><span class="n">iframe</span>
-  <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://cdn.pixabay.com/video/2022/07/24/125310-733046613_large.mp4&quot;</span>
-  <span class="n">width</span><span class="o">=</span><span class="s2">&quot;500&quot;</span>
-  <span class="n">height</span><span class="o">=</span><span class="s2">&quot;285&quot;</span>
-<span class="o">&gt;&lt;/</span><span class="n">iframe</span><span class="o">&gt;</span>
+<span class="p">&lt;</span><span class="nt">iframe</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.pixabay.com/video/2022/07/24/125310-733046613_large.mp4&quot;</span>
+  <span class="na">width</span><span class="o">=</span><span class="s">&quot;500&quot;</span>
+  <span class="na">height</span><span class="o">=</span><span class="s">&quot;285&quot;</span>
+<span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>Don’t forget you can also embed a map, another web page, or direct HTML within the <code>iframe</code> element. Here’s a map I was able to embed with the <code>iframe</code> element:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">A</span> <span class="n">Map</span> <span class="kn">from</span><span class="w"> </span><span class="nn">Openstreetmap.org</span> <span class="n">Embedded</span> <span class="k">with</span> <span class="n">the</span> <span class="n">iframe</span> <span class="n">Element</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>A Map from Openstreetmap.org Embedded with the iframe Element<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 
-<span class="o">&lt;</span><span class="n">iframe</span>
-  <span class="n">width</span><span class="o">=</span><span class="s2">&quot;425&quot;</span>
-  <span class="n">height</span><span class="o">=</span><span class="s2">&quot;350&quot;</span>
-  <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.openstreetmap.org/export/embed.html?bbox=3.006134033203125%2C6.150112578753815%2C3.6357879638671875%2C6.749850810550778&amp;amp;layer=mapnik&quot;</span>
-  <span class="n">style</span><span class="o">=</span><span class="s2">&quot;border: 1px solid rgb(255, 1, 1)&quot;</span>
-<span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">iframe</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">br</span> <span class="o">/&gt;</span>
-<span class="o">&lt;</span><span class="n">small</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://www.openstreetmap.org/#map=11/6.4501/3.3210&quot;</span><span class="o">&gt;</span>
-    <span class="n">View</span> <span class="n">Larger</span> <span class="n">Map</span>
-  <span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">small</span><span class="o">&gt;</span>
+<span class="p">&lt;</span><span class="nt">iframe</span>
+  <span class="na">width</span><span class="o">=</span><span class="s">&quot;425&quot;</span>
+  <span class="na">height</span><span class="o">=</span><span class="s">&quot;350&quot;</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.openstreetmap.org/export/embed.html?bbox=3.006134033203125%2C6.150112578753815%2C3.6357879638671875%2C6.749850810550778&amp;amp;layer=mapnik&quot;</span>
+  <span class="na">style</span><span class="o">=</span><span class="s">&quot;border: 1px solid rgb(255, 1, 1)&quot;</span>
+<span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.openstreetmap.org/#map=11/6.4501/3.3210&quot;</span><span class="p">&gt;</span>
+    View Larger Map
+  <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>If you want to embed direct HTML within the <code>iframe</code> element you have to use the <code>srcdoc</code> attribute instead of <code>src</code>.</p>
 </section>
@@ -713,7 +601,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">2. HTML fundamentals</p>
+        <p class="prev-next-title">2. HTML Fundamentals</p>
       </div>
     </a>
     <a class="right-next"
@@ -721,7 +609,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">4. Working with links</p>
+        <p class="prev-next-title">4. Working with Links</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

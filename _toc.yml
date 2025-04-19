@@ -8,7 +8,7 @@ defaults:
 
 parts:
   - caption: HTML
-    maxdepth: 3
+    maxdepth: 10
     chapters:
     - file: html/1_basic_html
       sections:
@@ -28,6 +28,9 @@ parts:
       - file: html/3_forms_and_tables_html/3
       - file: html/3_forms_and_tables_html/4
     - file: html/4_accessibility
+      sections:
+        - file: html/4_accessibility/1
+        - file: html/4_accessibility/2
     
   - caption: CSS
     maxdepth: 3

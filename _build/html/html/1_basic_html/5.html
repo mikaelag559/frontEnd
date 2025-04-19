@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'html/1_basic_html/5';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Resumen" href="../2_semantic_html.html" />
-    <link rel="prev" title="4. Working with links" href="4.html" />
+    <link rel="next" title="Semantic HTML Review" href="../2_semantic_html.html" />
+    <link rel="prev" title="4. Working with Links" href="4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,13 +183,14 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../1_basic_html.html">Basic HTML Review</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1.html">1. What is HTML?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.html">2. HTML fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">2. HTML Fundamentals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.html">3. Working with Media</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4.html">4. Working with links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.html">4. Working with Links</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Examples</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_semantic_html.html"><a href="https://www.freecodecamp.org/learn/full-stack-developer/review-semantic-html/review-semantic-html">Resumen</a></a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2_semantic_html.html">Semantic HTML Review</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2_semantic_html/1.html">2.1. Why should you care about semantic HTML?</a></li>
 
 
 
@@ -202,16 +203,10 @@
 
 
 
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../3_forms_and_tables_html.html"><a href="https://www.freecodecamp.org/learn/full-stack-developer/review-html-tables-and-forms/review-html-tables-and-forms">Resumen</a></a></li>
-
-
-
-
-
-
+<li class="toctree-l2"><a class="reference internal" href="../2_semantic_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_forms_and_tables_html.html">Index</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../4_accessibility.html">Resumen</a></li>
 
@@ -271,53 +266,6 @@
 
 
 
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fhtml/1_basic_html/5.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
 <div class="dropdown dropdown-download-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
     <i class="fas fa-download"></i>
@@ -326,7 +274,7 @@
       
       
       
-      <li><a href="../../_sources/html/1_basic_html/5.ipynb" target="_blank"
+      <li><a href="../../_sources/html/1_basic_html/5.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -336,7 +284,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -444,206 +392,186 @@ document.write(`
 <br> Example Code:
 <code>  </code></p></li>
 </ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://www.freecodecamp.org&quot;</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span><span class="o">&gt;</span><span class="n">freeC</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.freecodecamp.org&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span>freeC
 </pre></div>
-</div>
-</div>
 </div>
 <ol class="arabic simple" start="3">
 <li><p>The <code>figure</code> element represents self-contained content and will allow you to associate an image with a caption.</p></li>
 </ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">figure</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg&quot;</span> <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;A slice of lasagna on a plate.&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">figcaption</span><span class="o">&gt;</span><span class="n">Cats</span> <span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">love</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span> <span class="n">lasagna</span><span class="o">.&lt;/</span><span class="n">figcaption</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">figure</span><span class="o">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">figure</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;A slice of lasagna on a plate.&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>Cats <span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span>love<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span> lasagna.<span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>Complete code:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">html</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="o">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
 
-<span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">meta</span> <span class="n">charset</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">CatPhotoApp</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>CatPhotoApp<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 
-<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">main</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">CatPhotoApp</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">section</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="n">Cat</span> <span class="n">Photos</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Everyone</span> <span class="n">loves</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg&quot;</span><span class="o">&gt;</span><span class="n">cute</span> <span class="n">cats</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
-        <span class="n">online</span><span class="err">!</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">See</span> <span class="n">more</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://freecatphotoapp.com&quot;</span><span class="o">&gt;</span><span class="n">cat</span> <span class="n">photos</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="n">our</span> <span class="n">gallery</span><span class="o">.&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://freecatphotoapp.com&quot;</span><span class="o">&gt;&lt;</span><span class="n">img</span>
-          <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg&quot;</span>
-          <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;A cute orange cat lying on its back.&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">section</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">section</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="n">Cat</span> <span class="n">Lists</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">h3</span><span class="o">&gt;</span><span class="n">Things</span> <span class="n">cats</span> <span class="n">love</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">catnip</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">laser</span> <span class="n">pointers</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">lasagna</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-      <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">figure</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg&quot;</span>
-          <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;A slice of lasagna on a plate.&quot;</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">figcaption</span><span class="o">&gt;</span><span class="n">Cats</span> <span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">love</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span> <span class="n">lasagna</span><span class="o">.&lt;/</span><span class="n">figcaption</span><span class="o">&gt;</span>
-      <span class="o">&lt;/</span><span class="n">figure</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">h3</span><span class="o">&gt;</span><span class="n">Top</span> <span class="mi">3</span> <span class="n">things</span> <span class="n">cats</span> <span class="n">hate</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">ol</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">flea</span> <span class="n">treatment</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">thunder</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">other</span> <span class="n">cats</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-      <span class="o">&lt;/</span><span class="n">ol</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">figure</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg&quot;</span>
-          <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;Five cats looking around a field.&quot;</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">figcaption</span><span class="o">&gt;</span><span class="n">Cats</span> <span class="o">&lt;</span><span class="n">strong</span><span class="o">&gt;</span><span class="n">hate</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;</span> <span class="n">other</span> <span class="n">cats</span><span class="o">.&lt;/</span><span class="n">figcaption</span><span class="o">&gt;</span>
-      <span class="o">&lt;/</span><span class="n">figure</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">section</span><span class="o">&gt;</span>
-  <span class="o">&lt;/</span><span class="n">main</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">footer</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-      <span class="n">No</span> <span class="n">Copyright</span> <span class="o">-</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://www.freecodecamp.org&quot;</span><span class="o">&gt;</span><span class="n">freeCodeCamp</span><span class="o">.</span><span class="n">org</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-  <span class="o">&lt;/</span><span class="n">footer</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>CatPhotoApp<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Cat Photos<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Everyone loves <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg&quot;</span><span class="p">&gt;</span>cute cats<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+        online!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>See more <span class="p">&lt;</span><span class="nt">a</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://freecatphotoapp.com&quot;</span><span class="p">&gt;</span>cat photos<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> in our gallery.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://freecatphotoapp.com&quot;</span><span class="p">&gt;&lt;</span><span class="nt">img</span>
+          <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg&quot;</span>
+          <span class="na">alt</span><span class="o">=</span><span class="s">&quot;A cute orange cat lying on its back.&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Cat Lists<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Things cats love:<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>catnip<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>laser pointers<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>lasagna<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">figure</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg&quot;</span>
+          <span class="na">alt</span><span class="o">=</span><span class="s">&quot;A slice of lasagna on a plate.&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>Cats <span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span>love<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span> lasagna.<span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Top 3 things cats hate:<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>flea treatment<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>thunder<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>other cats<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">figure</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg&quot;</span>
+          <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Five cats looking around a field.&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>Cats <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>hate<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> other cats.<span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+      No Copyright - <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.freecodecamp.org&quot;</span><span class="p">&gt;</span>freeCodeCamp.org<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 
-<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="a-travel-agency-page">
 <h2>2. A Travel Agency Page<a class="headerlink" href="#a-travel-agency-page" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">html</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="o">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
 
-<span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">meta</span> <span class="n">charset</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">Travel</span> <span class="n">Agency</span> <span class="n">Page</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">meta</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;description&quot;</span> <span class="n">content</span><span class="o">=</span><span class="s2">&quot;Viaja con nosotros a tu destino soñado al mejor precio.&quot;</span> <span class="o">/&gt;</span>
-<span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Travel Agency Page<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;description&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Viaja con nosotros a tu destino soñado al mejor precio.&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 
-<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">Welcome</span> <span class="n">to</span> <span class="n">Italy</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-    <span class="n">Art</span><span class="p">,</span> <span class="n">folklore</span><span class="p">,</span> <span class="n">food</span><span class="p">,</span> <span class="n">nature</span><span class="p">,</span> <span class="ow">and</span> <span class="n">more</span><span class="o">.</span> <span class="n">Choose</span> <span class="n">among</span> <span class="n">our</span> <span class="n">wide</span> <span class="n">selection</span> <span class="n">of</span> <span class="n">guided</span> <span class="n">tours</span> <span class="ow">and</span> <span class="n">excursions</span><span class="p">,</span>
-    <span class="ow">and</span> <span class="n">live</span> <span class="n">an</span> <span class="n">unforgettable</span> <span class="n">experience</span> <span class="n">exploring</span> <span class="n">Italy</span><span class="o">.</span>
-  <span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="n">Packages</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-    <span class="n">We</span> <span class="n">offer</span> <span class="n">an</span> <span class="n">extensive</span> <span class="nb">range</span> <span class="n">of</span> <span class="n">holiday</span> <span class="n">solutions</span> <span class="n">to</span> <span class="n">accommodate</span> <span class="n">the</span> <span class="n">needs</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">our</span> <span class="n">clients</span><span class="o">.</span> <span class="n">From</span> <span class="n">daily</span>
-    <span class="n">excursions</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">most</span> <span class="n">beautiful</span> <span class="n">cities</span><span class="p">,</span> <span class="n">to</span> <span class="n">thorough</span> <span class="n">tours</span> <span class="n">of</span> <span class="n">hidden</span> <span class="n">villages</span> <span class="ow">and</span> <span class="n">medieval</span> <span class="n">towns</span> <span class="n">to</span> <span class="n">discover</span>
-    <span class="n">Italy</span><span class="s1">&#39;s lesser-known sides.</span>
-  <span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://www.freecodecamp.org/learn&quot;</span><span class="o">&gt;</span><span class="n">Group</span> <span class="n">Travels</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://www.freecodecamp.org/learn&quot;</span><span class="o">&gt;</span><span class="n">Private</span> <span class="n">Tours</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-  <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="n">Top</span> <span class="n">Itineraries</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">figure</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">a</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://www.freecodecamp.org/learn&quot;</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/labs/colosseo.jpg&quot;</span> <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;Coliseo romano&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">a</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://www.freecodecamp.org/learn&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">figcaption</span><span class="o">&gt;</span><span class="n">Rome</span> <span class="ow">and</span> <span class="n">Center</span> <span class="n">Italy</span><span class="o">&lt;/</span><span class="n">figcaption</span><span class="o">&gt;</span>
-  <span class="o">&lt;/</span><span class="n">figure</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">figure</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">a</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://www.freecodecamp.org/learn&quot;</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/labs/alps.jpg&quot;</span> <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;Alpes italianos&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">figcaption</span><span class="o">&gt;</span><span class="n">Nature</span> <span class="ow">and</span> <span class="n">National</span> <span class="n">Parks</span><span class="o">&lt;/</span><span class="n">figcaption</span><span class="o">&gt;</span>
-  <span class="o">&lt;/</span><span class="n">figure</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">figure</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">a</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://www.freecodecamp.org/learn&quot;</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/labs/sea.jpg&quot;</span> <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;Costa italiana&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">figcaption</span><span class="o">&gt;</span><span class="n">South</span> <span class="n">Italy</span> <span class="ow">and</span> <span class="n">Islands</span><span class="o">&lt;/</span><span class="n">figcaption</span><span class="o">&gt;</span>
-  <span class="o">&lt;/</span><span class="n">figure</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Welcome to Italy<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+    Art, folklore, food, nature, and more. Choose among our wide selection of guided tours and excursions,
+    and live an unforgettable experience exploring Italy.
+  <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Packages<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+    We offer an extensive range of holiday solutions to accommodate the needs of all our clients. From daily
+    excursions in the most beautiful cities, to thorough tours of hidden villages and medieval towns to discover
+    Italy&#39;s lesser-known sides.
+  <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.freecodecamp.org/learn&quot;</span><span class="p">&gt;</span>Group Travels<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.freecodecamp.org/learn&quot;</span><span class="p">&gt;</span>Private Tours<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Top Itineraries<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">figure</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.freecodecamp.org/learn&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.freecodecamp.org/curriculum/labs/colosseo.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Coliseo romano&quot;</span><span class="p">&gt;</span>
+    <span class="err">&lt;</span>/a target=&quot;_blank&quot; href=&quot;https://www.freecodecamp.org/learn&quot;&gt;
+    <span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>Rome and Center Italy<span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">figure</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.freecodecamp.org/learn&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.freecodecamp.org/curriculum/labs/alps.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Alpes italianos&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>Nature and National Parks<span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">figure</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.freecodecamp.org/learn&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.freecodecamp.org/curriculum/labs/sea.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Costa italiana&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>South Italy and Islands<span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 
-<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="a-video-compliation-page">
 <h2>3. A Video Compliation Page<a class="headerlink" href="#a-video-compliation-page" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">html</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="o">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
 
-<span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">meta</span> <span class="n">charset</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">Video</span> <span class="n">Compilation</span> <span class="n">Page</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Video Compilation Page<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 
-<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">main</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">Front</span> <span class="n">End</span> <span class="n">Web</span> <span class="n">Development</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-            <span class="n">Front</span> <span class="n">End</span> <span class="n">Web</span> <span class="n">Development</span> <span class="n">involves</span> <span class="n">designing</span> <span class="ow">and</span> <span class="n">building</span> <span class="n">user</span> <span class="n">interfaces</span> <span class="n">of</span> <span class="n">websites</span> <span class="n">using</span> <span class="n">HTML</span><span class="p">,</span>
-            <span class="n">CSS</span><span class="p">,</span> <span class="ow">and</span> <span class="n">JavaScript</span><span class="o">.</span> <span class="n">It</span> <span class="n">focuses</span> <span class="n">on</span> <span class="n">creating</span> <span class="n">visually</span> <span class="n">appealing</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="ow">and</span> <span class="n">user</span><span class="o">-</span><span class="n">friendly</span>
-            <span class="n">websites</span><span class="o">.</span> <span class="n">Front</span> <span class="n">End</span> <span class="n">developers</span> <span class="n">ensure</span> <span class="n">accessibility</span><span class="p">,</span> <span class="n">performance</span> <span class="n">optimization</span><span class="p">,</span> <span class="ow">and</span> <span class="n">adherence</span> <span class="n">to</span>
-            <span class="n">web</span> <span class="n">standards</span><span class="p">,</span> <span class="n">blending</span> <span class="n">creativity</span> <span class="k">with</span> <span class="n">technical</span> <span class="n">expertise</span><span class="o">.</span>
-        <span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Front End Web Development<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+            Front End Web Development involves designing and building user interfaces of websites using HTML,
+            CSS, and JavaScript. It focuses on creating visually appealing, interactive, and user-friendly
+            websites. Front End developers ensure accessibility, performance optimization, and adherence to
+            web standards, blending creativity with technical expertise.
+        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
-        <span class="o">&lt;</span><span class="n">section</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="n">HTML</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-                <span class="n">HTML</span><span class="p">,</span> <span class="ow">or</span> <span class="n">HyperText</span> <span class="n">Markup</span> <span class="n">Language</span><span class="p">,</span> <span class="n">forms</span> <span class="n">the</span> <span class="n">backbone</span> <span class="n">of</span> <span class="n">web</span> <span class="n">pages</span> <span class="n">by</span> <span class="n">defining</span> <span class="n">their</span> <span class="n">basic</span>
-                <span class="n">structure</span> <span class="ow">and</span> <span class="n">layout</span><span class="o">.</span> <span class="n">It</span> <span class="n">uses</span> <span class="n">a</span> <span class="n">series</span> <span class="n">of</span> <span class="n">elements</span> <span class="n">to</span> <span class="n">display</span> <span class="n">text</span><span class="p">,</span> <span class="n">images</span><span class="p">,</span> <span class="n">lists</span><span class="p">,</span> <span class="n">tables</span><span class="p">,</span>
-                <span class="ow">and</span> <span class="n">other</span> <span class="n">static</span> <span class="n">content</span> <span class="n">on</span> <span class="n">a</span> <span class="n">web</span> <span class="n">page</span><span class="o">.</span>
-            <span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">iframe</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.youtube.com/embed/watch?v=rJO84scyxqo&amp;list=RDrJO84scyxqo&amp;start_radio=1&quot;</span>
-                <span class="n">title</span><span class="o">=</span><span class="s2">&quot;YouTube video player&quot;</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;315&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;560&quot;</span><span class="o">&gt;&lt;/</span><span class="n">iframe</span><span class="o">&gt;</span>
-        <span class="o">&lt;/</span><span class="n">section</span><span class="o">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>HTML<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+                HTML, or HyperText Markup Language, forms the backbone of web pages by defining their basic
+                structure and layout. It uses a series of elements to display text, images, lists, tables,
+                and other static content on a web page.
+            <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/watch?v=rJO84scyxqo&amp;list=RDrJO84scyxqo&amp;start_radio=1&quot;</span>
+                <span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
 
-        <span class="o">&lt;</span><span class="n">section</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="n">CSS</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-                <span class="n">CSS</span><span class="p">,</span> <span class="ow">or</span> <span class="n">Cascading</span> <span class="n">Style</span> <span class="n">Sheets</span><span class="p">,</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">control</span> <span class="n">the</span> <span class="n">visual</span> <span class="n">presentation</span> <span class="n">of</span> <span class="n">HTML</span> <span class="n">elements</span>
-                <span class="n">on</span> <span class="n">a</span> <span class="n">web</span> <span class="n">page</span><span class="o">.</span> <span class="n">It</span> <span class="n">allows</span> <span class="k">for</span> <span class="n">customized</span> <span class="n">styling</span><span class="p">,</span> <span class="n">including</span> <span class="n">colors</span><span class="p">,</span> <span class="n">fonts</span><span class="p">,</span> <span class="n">layouts</span><span class="p">,</span> <span class="ow">and</span>
-                <span class="n">spacing</span><span class="p">,</span> <span class="n">making</span> <span class="n">websites</span> <span class="n">visually</span> <span class="n">appealing</span><span class="o">.</span> <span class="n">CSS</span> <span class="n">also</span> <span class="n">supports</span> <span class="n">responsive</span> <span class="n">design</span><span class="p">,</span> <span class="n">ensuring</span>
-                <span class="n">web</span> <span class="n">pages</span> <span class="n">look</span> <span class="n">good</span> <span class="n">on</span> <span class="nb">all</span> <span class="n">devices</span><span class="o">.</span>
-            <span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">iframe</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.youtube.com/embed/watch?v=rJO84scyxqo&amp;list=RDrJO84scyxqo&amp;start_radio=1&quot;</span>
-                <span class="n">title</span><span class="o">=</span><span class="s2">&quot;YouTube video player&quot;</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;315&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;560&quot;</span><span class="o">&gt;&lt;/</span><span class="n">iframe</span><span class="o">&gt;</span>
-        <span class="o">&lt;/</span><span class="n">section</span><span class="o">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>CSS<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+                CSS, or Cascading Style Sheets, is used to control the visual presentation of HTML elements
+                on a web page. It allows for customized styling, including colors, fonts, layouts, and
+                spacing, making websites visually appealing. CSS also supports responsive design, ensuring
+                web pages look good on all devices.
+            <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/watch?v=rJO84scyxqo&amp;list=RDrJO84scyxqo&amp;start_radio=1&quot;</span>
+                <span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
 
-        <span class="o">&lt;</span><span class="n">section</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="n">JavaScript</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-                <span class="n">JavaScript</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">programming</span> <span class="n">language</span> <span class="n">that</span> <span class="n">adds</span> <span class="n">interactivity</span> <span class="n">to</span> <span class="n">static</span> <span class="n">web</span> <span class="n">pages</span><span class="p">,</span> <span class="n">enabling</span>
-                <span class="n">dynamic</span> <span class="n">content</span> <span class="n">updates</span><span class="p">,</span> <span class="n">form</span> <span class="n">validations</span><span class="p">,</span> <span class="n">animations</span><span class="p">,</span> <span class="ow">and</span> <span class="n">responsive</span> <span class="n">behaviors</span> <span class="n">based</span> <span class="n">on</span>
-                <span class="n">user</span> <span class="n">interactions</span> <span class="ow">and</span> <span class="n">events</span><span class="o">.</span>
-            <span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">iframe</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.youtube.com/embed/watch?v=rJO84scyxqo&amp;list=RDrJO84scyxqo&amp;start_radio=1&quot;</span>
-                <span class="n">title</span><span class="o">=</span><span class="s2">&quot;YouTube video player&quot;</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;315&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;560&quot;</span><span class="o">&gt;&lt;/</span><span class="n">iframe</span><span class="o">&gt;</span>
-        <span class="o">&lt;/</span><span class="n">section</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">main</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>JavaScript<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+                JavaScript is a programming language that adds interactivity to static web pages, enabling
+                dynamic content updates, form validations, animations, and responsive behaviors based on
+                user interactions and events.
+            <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/watch?v=rJO84scyxqo&amp;list=RDrJO84scyxqo&amp;start_radio=1&quot;</span>
+                <span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 
-<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-</div>
 </div>
 </section>
 </section>
@@ -684,7 +612,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">4. Working with links</p>
+        <p class="prev-next-title">4. Working with Links</p>
       </div>
     </a>
     <a class="right-next"
@@ -692,7 +620,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><a href="https://www.freecodecamp.org/learn/full-stack-developer/review-semantic-html/review-semantic-html">Resumen</a></p>
+        <p class="prev-next-title">Semantic HTML Review</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

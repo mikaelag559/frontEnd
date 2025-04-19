@@ -1,5 +1,4 @@
-Semantic HTML Review
-====================
+# 2. Semantic HTML Review
 
 ```{contents}
 ```
