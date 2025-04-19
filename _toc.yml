@@ -36,6 +36,11 @@ parts:
         - file: html/4_accessibility/5
     
   - caption: CSS
-    maxdepth: 3
+    maxdepth: 10
     chapters:
     - file: css/1_basic_css
+      sections:
+        - file: css/1_basic_css/1
+        - file: css/1_basic_css/2
+        - file: css/1_basic_css/3
+        - file: css/1_basic_css/4
