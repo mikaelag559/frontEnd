@@ -1,6 +1,9 @@
 
 # 4. HTML Accessibility
 
+```{contents}
+```
+
 Introduction to Accessibility
 -----------------------------
 

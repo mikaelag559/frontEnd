@@ -1,0 +1,747 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Importance of accessibility and good HTML structure - III &#8212; My Front End Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'html/4_accessibility/3';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1. Importance of accessibility and good HTML structure - IV" href="4.html" />
+    <link rel="prev" title="1. Importance of accessibility and good HTML structure - II" href="2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My Front End Notes - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My Front End Notes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">HTML</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1_basic_html.html">1. Basic HTML</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_html/1.html">1. What is HTML?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_html/2.html">2. HTML Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_html/3.html">3. Working with Media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_html/4.html">4. Working with Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_html/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2_semantic_html.html">2. Semantic HTML Review</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2_semantic_html/1.html">2. Semantic HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_semantic_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3_forms_and_tables_html.html">3. HTML Tables and Forms</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3_forms_and_tables_html/1.html">1. Working with Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_forms_and_tables_html/2.html">2. Working with tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_forms_and_tables_html/3.html">3. Working with HTML tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_forms_and_tables_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../4_accessibility.html">4. HTML Accessibility</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1.html">1. Importance of accessibility and good HTML structure - I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">1. Importance of accessibility and good HTML structure - II</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1. Importance of accessibility and good HTML structure - III</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.html">1. Importance of accessibility and good HTML structure - IV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.html">1. Importance of accessibility and good HTML structure - V</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../css/1_basic_css.html">Resumen 1~4</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/html/4_accessibility/3.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1. Importance of accessibility and good HTML structure - III</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-purpose-of-wai-aria-and-how-does-it-work">1.11. What is the purpose of WAI-ARIA, and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-aria-roles">1.12. What are ARIA roles?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-roles-of-the-aria-label-and-aria-labelledby-attributes">1.13. What are the roles of the <code class="docutils literal notranslate"><span class="pre">aria-label</span></code> and <code class="docutils literal notranslate"><span class="pre">aria-labelledby</span></code> attributes?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-aria-hidden-attribute-and-how-does-it-work">1.14. What is the <code class="docutils literal notranslate"><span class="pre">aria-hidden</span></code> attribute, and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-aria-expanded-attribute-and-how-does-it-work">1.15. What is the <code class="docutils literal notranslate"><span class="pre">aria-expanded</span></code> attribute, and how does it work?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="importance-of-accessibility-and-good-html-structure-iii">
+<h1>1. Importance of accessibility and good HTML structure - III<a class="headerlink" href="#importance-of-accessibility-and-good-html-structure-iii" title="Link to this heading">#</a></h1>
+<section id="what-is-the-purpose-of-wai-aria-and-how-does-it-work">
+<h2>1.11. What is the purpose of WAI-ARIA, and how does it work?<a class="headerlink" href="#what-is-the-purpose-of-wai-aria-and-how-does-it-work" title="Link to this heading">#</a></h2>
+<p>Making static content accessible can be relatively straightforward, but dynamic content can be more challenging. This is where WAI-ARIA comes in.</p>
+<p>Let’s look at what WAI-ARIA is, its purpose, how it works, and some examples.</p>
+<p>WAI-ARIA stands for Web Accessibility Initiative - Accessible Rich Internet Applications. It’s a specification that enhances accessibility for dynamic content and UI (User Interface) components.</p>
+<p>Note that WCAG and WAI-ARIA are not the same. WCAG provides general guidelines for web accessibility, while WAI-ARIA offers specific rules for making dynamic and interactive content accessible for users of assistive technologies.</p>
+<p>So, the primary purpose of WAI-ARIA is to improve accessibility for dynamic content and UI components that do not have native HTML equivalents.</p>
+<p>WAI-ARIA works by introducing a set of attributes you can add to HTML elements to provide additional semantic information. These attributes are categorized into roles, states, and properties.</p>
+<p>ARIA role defines the purpose of an element within a website or web app. Here is an example of setting the role to <code class="docutils literal notranslate"><span class="pre">button</span></code> for a <code class="docutils literal notranslate"><span class="pre">div</span></code> element.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;button&quot;</span><span class="p">&gt;</span>Click Me<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>By doing this you are indicating to assistive technology that the element is a button. Roles do not provide any functionality however. Merely giving this <code class="docutils literal notranslate"><span class="pre">div</span></code> a <code class="docutils literal notranslate"><span class="pre">role</span></code> of <code class="docutils literal notranslate"><span class="pre">button</span></code> will not make it act like a button. To make it look and behave like a button you would need to use CSS and JavaScript to get the desired result. It is always better to use the native <code class="docutils literal notranslate"><span class="pre">button</span></code> or <code class="docutils literal notranslate"><span class="pre">input</span></code> element with <code class="docutils literal notranslate"><span class="pre">type=&quot;button&quot;</span></code> instead.</p>
+<p>Since HTML alone does not provide a way to make custom UI components like tabbed navigation (tab list) accessible, ARIA roles can be very helpful.</p>
+<p>Here’s what a tablist could look like with the <code class="docutils literal notranslate"><span class="pre">role</span></code> attribute:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;tablist&quot;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;Football Match Dashboard&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span>
+        <span class="na">role</span><span class="o">=</span><span class="s">&quot;tab&quot;</span>
+        <span class="na">aria-selected</span><span class="o">=</span><span class="s">&quot;true&quot;</span>
+        <span class="na">aria-controls</span><span class="o">=</span><span class="s">&quot;match-info-panel&quot;</span>
+        <span class="na">id</span><span class="o">=</span><span class="s">&quot;match-info-tab&quot;</span><span class="p">&gt;</span>
+        Match Info
+    <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">button</span>
+        <span class="na">role</span><span class="o">=</span><span class="s">&quot;tab&quot;</span>
+        <span class="na">aria-selected</span><span class="o">=</span><span class="s">&quot;false&quot;</span>
+        <span class="na">aria-controls</span><span class="o">=</span><span class="s">&quot;player-stats-panel&quot;</span>
+        <span class="na">id</span><span class="o">=</span><span class="s">&quot;player-stats-tab&quot;</span><span class="p">&gt;</span>
+        Player Stats
+    <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Each tab in the tablist will have an associated tab panel that will display when its tab is selected. Each tab panel will have a <code class="docutils literal notranslate"><span class="pre">role</span></code> of <code class="docutils literal notranslate"><span class="pre">tabpanel</span></code>.</p>
+<p>Here’s what each of those tab panels could look like:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> 
+    <span class="na">role</span><span class="o">=</span><span class="s">&quot;tabpanel&quot;</span>
+    <span class="na">id</span><span class="o">=</span><span class="s">&quot;match-info-panel&quot;</span> 
+    <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">&quot;match-info-tab&quot;</span>
+<span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+        Details about the match, including date,
+        time, venue, and current score.
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span>
+    <span class="na">role</span><span class="o">=</span><span class="s">&quot;tabpanel&quot;</span>
+    <span class="na">id</span><span class="o">=</span><span class="s">&quot;player-stats-panel&quot;</span>
+    <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">&quot;player-stats-tab&quot;</span>
+    <span class="na">hidden</span>
+<span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+        Individual player statistics such as goals,
+        assists, and minutes played.
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>ARIA state describes the current status of an element, which can change based on user interactions. An example is the <code class="docutils literal notranslate"><span class="pre">aria-expanded</span></code> attribute for collapsible sections:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">aria-expanded</span><span class="o">=</span><span class="s">&quot;false&quot;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&quot;more-info&quot;</span><span class="p">&gt;</span>
+    More Info
+<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;more-info&quot;</span> <span class="na">hidden</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is additional information.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Again, this is merely describing the state, it does not provide any functionality. You would have to use JavaScript to change the state of the attribute when the user clicks the button.</p>
+<p>ARIA properties provide additional details about elements. For example, the <code class="docutils literal notranslate"><span class="pre">aria-labelledby</span></code> property lets you connect an element to a specific label:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h2</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;header-id&quot;</span><span class="p">&gt;</span>About freeCodeCamp<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;button-id&quot;</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">&quot;header-id button-id&quot;</span><span class="p">&gt;</span>Learn More<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>This will make the elements understandable and navigable for users of assistive technologies.</p>
+<p>To get the best out of WAI-ARIA, try to stick with native HTML whenever possible since it generally provides more accessibility out of the box.</p>
+<p>Use WAI-ARIA only when HTML falls short, and don’t forget to test with assistive technologies like screen readers, or have people with disabilities test your work. Also, make sure your WAI-ARIA states and properties update with the content in real time. Avoid overusing ARIA as it can be confusing many times.</p>
+</section>
+<section id="what-are-aria-roles">
+<h2>1.12. What are ARIA roles?<a class="headerlink" href="#what-are-aria-roles" title="Link to this heading">#</a></h2>
+<p>ARIA stands for Accessible Rich Internet Applications.</p>
+<p>ARIA roles specify the semantic meaning of HTML elements. They’re essential for making web content accessible to people who use assistive technologies, like screen readers.</p>
+<p>HTML has semantic and non-semantic elements, based on whether they convey meaning about their content.</p>
+<p>Many semantic HTML elements already have an ARIA role assigned by default. For example, the <code class="docutils literal notranslate"><span class="pre">button</span></code> element has a default ARIA role of <code class="docutils literal notranslate"><span class="pre">button</span></code>.</p>
+<p>But non-semantic elements don’t have a role. For example, screen readers will not know how to interpret the purpose of a <code class="docutils literal notranslate"><span class="pre">div</span></code> if you don’t specify its role explicitly.</p>
+<p>To specify the ARIA role of an element, you just need to add the <code class="docutils literal notranslate"><span class="pre">role</span></code> attribute, like this <code class="docutils literal notranslate"><span class="pre">role=&quot;ARIA</span> <span class="pre">role&quot;</span></code>, where value is the name of a role in the ARIA specification.</p>
+<p>It is important to note that specifying a role on an element only does one thing: It informs assistive technology of the purpose of the element. It does not add any functionality or behavior to the element. If people expect a role to behave a certain way, it is up to you, the developer, to add that expected behavior. For example, adding a <code class="docutils literal notranslate"><span class="pre">role</span></code> of <code class="docutils literal notranslate"><span class="pre">button</span></code> to a <code class="docutils literal notranslate"><span class="pre">div</span></code> does not automatically make it clickable with a mouse or usable with a keyboard. It is the responsibility of the developer to add the expected behavior that allows the <code class="docutils literal notranslate"><span class="pre">div</span></code> to act like a button, and in most cases, it is just better to use the <code class="docutils literal notranslate"><span class="pre">button</span></code> element.</p>
+<p>There are six main categories of ARIA roles:</p>
+<ul class="simple">
+<li><p>Document structure roles</p></li>
+<li><p>Widget roles</p></li>
+<li><p>Landmark roles</p></li>
+<li><p>Live region roles</p></li>
+<li><p>Window roles</p></li>
+<li><p>And Abstract roles</p></li>
+</ul>
+<p>Let’s take a look at them in more detail.</p>
+<p>Document structure roles define the overall structure of the web page. With these roles, assistive technologies can understand the relationships between different sections and help users navigate the content.</p>
+<p>However, most of the document structure roles are not used in modern web development because browsers already support equivalent semantic HTML elements, which should be prioritized whenever possible.</p>
+<p>You should specify the roles that don’t have an equivalent semantic element. For example: <code class="docutils literal notranslate"><span class="pre">toolbar</span></code>, <code class="docutils literal notranslate"><span class="pre">tooltip</span></code>, <code class="docutils literal notranslate"><span class="pre">feed</span></code>, <code class="docutils literal notranslate"><span class="pre">math</span></code>, <code class="docutils literal notranslate"><span class="pre">presentation</span></code>, <code class="docutils literal notranslate"><span class="pre">none</span></code>, and <code class="docutils literal notranslate"><span class="pre">note</span></code>.</p>
+<p>There are other similar roles but these are the most commonly used ones. This is an example of a <code class="docutils literal notranslate"><span class="pre">div</span></code> with the <code class="docutils literal notranslate"><span class="pre">math</span></code> ARIA role. The <code class="docutils literal notranslate"><span class="pre">div</span></code> contains a mathematical equation.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;math&quot;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;x squared + y squared = 3&quot;</span><span class="p">&gt;</span>
+    x<span class="p">&lt;</span><span class="nt">sup</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">sup</span><span class="p">&gt;</span> + y<span class="p">&lt;</span><span class="nt">sup</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">sup</span><span class="p">&gt;</span> = 3
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>You’ll also notice that the <code class="docutils literal notranslate"><span class="pre">div</span></code> has an <code class="docutils literal notranslate"><span class="pre">aria-label</span></code> attribute. The value of this attribute should be a string that represents the expression.</p>
+<p>Widget roles define the purpose and functionality of interactive elements, like scrollbars.</p>
+<p>Examples of widget roles include <code class="docutils literal notranslate"><span class="pre">scrollbar</span></code>, <code class="docutils literal notranslate"><span class="pre">searchbox</span></code>, <code class="docutils literal notranslate"><span class="pre">separator</span></code> (when focusable), <code class="docutils literal notranslate"><span class="pre">slider</span></code>, <code class="docutils literal notranslate"><span class="pre">spinbutton</span></code>, <code class="docutils literal notranslate"><span class="pre">switch</span></code>, <code class="docutils literal notranslate"><span class="pre">tab</span></code>, <code class="docutils literal notranslate"><span class="pre">tabpanel</span></code>, and <code class="docutils literal notranslate"><span class="pre">treeitem</span></code>.</p>
+<p>Some of these roles have equivalent semantic elements. You should prioritize the semantic element over the role if there is one. For example, you should favor using the HTML <code class="docutils literal notranslate"><span class="pre">button</span></code> element over adding a <code class="docutils literal notranslate"><span class="pre">role</span></code> of <code class="docutils literal notranslate"><span class="pre">button</span></code> to a <code class="docutils literal notranslate"><span class="pre">div</span></code>.</p>
+<p>Landmark roles classify and label the primary sections of a web page. Screen readers use them to provide convenient navigation to important sections of a page. You should use them sparingly to keep the overall layout simple and easy to understand. Examples of landmark roles are <code class="docutils literal notranslate"><span class="pre">banner</span></code>, <code class="docutils literal notranslate"><span class="pre">complementary</span></code>, <code class="docutils literal notranslate"><span class="pre">contentinfo</span></code>, <code class="docutils literal notranslate"><span class="pre">form</span></code>, <code class="docutils literal notranslate"><span class="pre">main</span></code>, <code class="docutils literal notranslate"><span class="pre">navigation</span></code>, <code class="docutils literal notranslate"><span class="pre">region</span></code>, and <code class="docutils literal notranslate"><span class="pre">search</span></code>. Each of these roles has a corresponding HTML equivalent, such as <code class="docutils literal notranslate"><span class="pre">header</span></code>, <code class="docutils literal notranslate"><span class="pre">footer</span></code>, <code class="docutils literal notranslate"><span class="pre">aside</span></code>, <code class="docutils literal notranslate"><span class="pre">form</span></code>, <code class="docutils literal notranslate"><span class="pre">main</span></code>, <code class="docutils literal notranslate"><span class="pre">nav</span></code>, <code class="docutils literal notranslate"><span class="pre">section</span></code>, and <code class="docutils literal notranslate"><span class="pre">search</span></code>. If you use the proper HTML elements to define the sections of your page then it is not necessary to explicitly add the <code class="docutils literal notranslate"><span class="pre">role</span></code> attribute to these elements.</p>
+<p>Live region roles define elements with content that will change dynamically. This way, screen readers and other assistive technologies can announce changes to users with visual disabilities. These roles include: <code class="docutils literal notranslate"><span class="pre">alert</span></code>, <code class="docutils literal notranslate"><span class="pre">log</span></code>, <code class="docutils literal notranslate"><span class="pre">marquee</span></code>, <code class="docutils literal notranslate"><span class="pre">status</span></code>, and <code class="docutils literal notranslate"><span class="pre">timer</span></code>.</p>
+<p>Window roles define sub-windows, like pop up modal dialogues. These roles include <code class="docutils literal notranslate"><span class="pre">alertdialog</span></code> and <code class="docutils literal notranslate"><span class="pre">dialog</span></code>. Please note that it is now considered a best practice to use the HTML <code class="docutils literal notranslate"><span class="pre">dialog</span></code> element and its associated JavaScript methods instead of manually creating a dialog.</p>
+<p>And finally, we have abstract roles. These roles help organize the document. They’re only meant to be used internally by the browser, not by developers, so you should know that they exist but you shouldn’t use them on your websites or web applications.</p>
+<p>With ARIA roles, you can create accessible and inclusive websites and web applications. They provide semantic information about the purpose and function of HTML elements.</p>
+<p>Screen readers and other assistive technologies use this information to help users understand the content of your page and set expectations for how to use it, which helps ensure that everyone can have a great user experience.</p>
+</section>
+<section id="what-are-the-roles-of-the-aria-label-and-aria-labelledby-attributes">
+<h2>1.13. What are the roles of the <code class="docutils literal notranslate"><span class="pre">aria-label</span></code> and <code class="docutils literal notranslate"><span class="pre">aria-labelledby</span></code> attributes?<a class="headerlink" href="#what-are-the-roles-of-the-aria-label-and-aria-labelledby-attributes" title="Link to this heading">#</a></h2>
+<p>It is important to make sure that all users, including those living with disabilities, can access websites without issues.</p>
+<p>For people using screen readers, the <code class="docutils literal notranslate"><span class="pre">aria-label</span></code> and <code class="docutils literal notranslate"><span class="pre">aria-labelledby</span></code> attributes provide crucial information about page elements that might be unclear or invisible.</p>
+<p>Let’s look at what the <code class="docutils literal notranslate"><span class="pre">aria-label</span></code> and <code class="docutils literal notranslate"><span class="pre">aria-labelledby</span></code> attributes are and the roles they play in making the web accessible to people with visual impairments and related disabilities.</p>
+<p>You’ll notice both <code class="docutils literal notranslate"><span class="pre">aria-label</span></code> and <code class="docutils literal notranslate"><span class="pre">aria-labelledby</span></code> are prefixed with aria. So what does that mean? ARIA stands for Accessible Rich Internet Applications. It’s a set of attributes prefixed with <code class="docutils literal notranslate"><span class="pre">aria-</span></code>, which lets developers communicate the purpose of elements to assistive technologies. The <code class="docutils literal notranslate"><span class="pre">aria-label</span></code> attribute is an invisible label for interactive elements. It adds a text label to an element that screen readers can read.</p>
+<p><code class="docutils literal notranslate"><span class="pre">aria-label</span></code> is especially useful for elements that do not have visible text but still need to be described by screen readers. For example, buttons with only icons often need <code class="docutils literal notranslate"><span class="pre">aria-label</span></code> to convey their purpose.</p>
+<p>Here is an example:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;Search&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;fas fa-search&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>In this case, a screen reader may announce this button as <code class="docutils literal notranslate"><span class="pre">Search,</span> <span class="pre">button</span></code>, even though the button only contains an icon. The <code class="docutils literal notranslate"><span class="pre">aria-label</span></code> attribute tells screen readers what text to use in place of the icon.</p>
+<p>If the button contained the text “Search” instead of an icon, then there would be no need for the <code class="docutils literal notranslate"><span class="pre">aria-label</span></code> attribute as the text would provide the label for the button.</p>
+<p>For input elements, the <code class="docutils literal notranslate"><span class="pre">aria-label</span></code> attribute provides a label directly if there isn’t a visible label associated with the input.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">aria-labelledby</span></code> attribute does the exact same thing as the <code class="docutils literal notranslate"><span class="pre">aria-label</span></code> attribute, but instead of defining the text directly in the attribute, you use a reference to text that already exists on the page. The existing text must have an <code class="docutils literal notranslate"><span class="pre">id</span></code> attribute, which will be used for the reference value in the <code class="docutils literal notranslate"><span class="pre">aria-labelledby</span></code> attribute.</p>
+<p>Here’s an example:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">&quot;search-btn&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;search-btn&quot;</span><span class="p">&gt;</span>Search<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>In this case, the text for the button is being used as the label for the search input. Screen readers will announce the input as something like <code class="docutils literal notranslate"><span class="pre">Search,</span> <span class="pre">edit</span></code>. If you later decide you want to change the button text to <code class="docutils literal notranslate"><span class="pre">Find</span></code>, the label for the input will automatically be updated to the new text since it is referencing the button text. Combining multiple <code class="docutils literal notranslate"><span class="pre">id</span></code> values into a single <code class="docutils literal notranslate"><span class="pre">aria-labelledby</span></code> attribute value is also possible. Here’s how that works:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;volume-label&quot;</span><span class="p">&gt;</span>Volume<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;volume-details&quot;</span><span class="p">&gt;</span>Adjust the volume level<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span>
+    <span class="na">type</span><span class="o">=</span><span class="s">&quot;range&quot;</span>
+    <span class="na">min</span><span class="o">=</span><span class="s">&quot;0&quot;</span>
+    <span class="na">max</span><span class="o">=</span><span class="s">&quot;100&quot;</span>
+    <span class="na">value</span><span class="o">=</span><span class="s">&quot;30&quot;</span>
+    <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">&quot;volume-label volume-details&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>For the slider, the screen reader will look out for the content of the <code class="docutils literal notranslate"><span class="pre">volume-label</span></code> and <code class="docutils literal notranslate"><span class="pre">volume-details</span></code> elements and announce <code class="docutils literal notranslate"><span class="pre">Volume</span> <span class="pre">Adjust</span> <span class="pre">the</span> <span class="pre">volume</span> <span class="pre">level</span></code>.</p>
+<p>You’ve seen that both <code class="docutils literal notranslate"><span class="pre">aria-label</span></code> and <code class="docutils literal notranslate"><span class="pre">aria-labelledby</span></code> attributes help screen readers understand what elements do. So, which one should you use? Since they both provide the same functionality, either can be used, but there may be a few advantages to using <code class="docutils literal notranslate"><span class="pre">aria-labelledby</span></code> over <code class="docutils literal notranslate"><span class="pre">aria-label</span></code>:</p>
+<ul class="simple">
+<li><p>If someone is using a translation service to translate the content on your page, the text in an <code class="docutils literal notranslate"><span class="pre">aria-label</span></code> attribute may not always be translated.</p></li>
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">aria-labelledby</span></code> can also help prevent a mismatch between the visible label text and the invisible label for screen reader users since updating the visible text will automatically update the invisible label.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aria-labelledby</span></code> can make it much easier to programmatically create complex invisible labels consisting of multiple sources of text.</p></li>
+</ul>
+<p>One last note, do not use <code class="docutils literal notranslate"><span class="pre">aria-label</span></code> and <code class="docutils literal notranslate"><span class="pre">aria-labelledby</span></code> on an element at the same time. In this case, the invisible label for screen readers will always be determined by <code class="docutils literal notranslate"><span class="pre">aria-labelledby</span></code> and <code class="docutils literal notranslate"><span class="pre">aria-label</span></code> will be completely ignored.</p>
+</section>
+<section id="what-is-the-aria-hidden-attribute-and-how-does-it-work">
+<h2>1.14. What is the <code class="docutils literal notranslate"><span class="pre">aria-hidden</span></code> attribute, and how does it work?<a class="headerlink" href="#what-is-the-aria-hidden-attribute-and-how-does-it-work" title="Link to this heading">#</a></h2>
+<p>If you ever need to display content while at the same time hiding it from people who use assistive technology, like screen readers, you can use the <code class="docutils literal notranslate"><span class="pre">aria-hidden</span></code> attribute.</p>
+<p>You just need to add it to the HTML element that you want to hide and set its value to <code class="docutils literal notranslate"><span class="pre">true</span></code>, like you can see over here: <code class="docutils literal notranslate"><span class="pre">aria-hidden=&quot;true&quot;</span></code>.</p>
+<p>This attribute hides the element and all of its children from the accessibility tree, while keeping them visible on the page. Common use cases include:</p>
+<ul class="simple">
+<li><p>Icons and images that only have a decorative purpose.</p></li>
+<li><p>Duplicated content.</p></li>
+</ul>
+<p>It is important to remember that <code class="docutils literal notranslate"><span class="pre">aria-hidden</span></code> only hides content from assistive technology, such as screen readers. If the content should be hidden from everyone, then you should not use <code class="docutils literal notranslate"><span class="pre">aria-hidden</span></code> to hide it. For example, a hamburger menu that is currently collapsed must be hidden from all keyboard users, not just screen reader users. In this case you could set the CSS <code class="docutils literal notranslate"><span class="pre">display</span></code> property to <code class="docutils literal notranslate"><span class="pre">none</span></code> on the menu to remove it from the DOM when it is collapsed.</p>
+<p>You should never use <code class="docutils literal notranslate"><span class="pre">aria-hidden</span></code> to hide an element that is focusable with the keyboard. The <code class="docutils literal notranslate"><span class="pre">aria-hidden</span></code> attribute only removes the element from the accessibility tree. It does not remove it from the DOM. Thus, it will still be possible for screen reader users to tab to the element, but their screen reader will not announce the element, effectively causing them to focus on “nothing”.</p>
+<p>Here’s an example where we hide an icon from the accessibility tree by adding the <code class="docutils literal notranslate"><span class="pre">aria-hidden</span></code> attribute with a value of <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<p>We only keep the text exposed to assistive technologies to avoid any confusion that may arise from the redundancy of having both an icon and text for the same purpose.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;fa-solid fa-gear&quot;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;label&quot;</span><span class="p">&gt;</span>Settings<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>You do not need to use <code class="docutils literal notranslate"><span class="pre">aria-hidden</span></code> when:</p>
+<ul class="simple">
+<li><p>The HTML element already has a <code class="docutils literal notranslate"><span class="pre">hidden</span></code> attribute.</p></li>
+<li><p>The element or the element’s ancestor is already hidden with <code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">none</span></code>.</p></li>
+<li><p>The element or the element’s ancestor is already hidden with <code class="docutils literal notranslate"><span class="pre">visibility:</span> <span class="pre">hidden</span></code>.</p></li>
+</ul>
+<p>In these three cases, the element is already removed from the DOM and thus hidden from the accessibility tree, so the <code class="docutils literal notranslate"><span class="pre">aria-hidden</span></code> attribute is not necessary.</p>
+<p>As with using any aria attributes, you should always test with assistive technologies, and preferably having people with disabilities test your work, to make sure that it’s easy to understand, even with these hidden elements.</p>
+<p>You should also know that setting <code class="docutils literal notranslate"><span class="pre">aria-hidden</span></code> to <code class="docutils literal notranslate"><span class="pre">false</span></code> will not expose the element to assistive technologies if any of its parents has this attribute set to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">aria-hidden</span></code> attribute is used to hide elements from people who use assistive technology, such as screen reader users.</p>
+<p>While it can be helpful for hiding purely decorative elements and duplicated content, it should be used sparingly to avoid hindering accessibility.</p>
+<p>In general, all content and functionality available on the page should also be available to people using assistive technology. The use case for <code class="docutils literal notranslate"><span class="pre">aria-hidden</span></code> is very narrow and should be limited primarily to making the experience cleaner for screen reader users by removing purely decorative or duplicate information. Do not use <code class="docutils literal notranslate"><span class="pre">aria-hidden</span></code> to hide content that you don’t think screen reader users would be interested in. Screen reader users deserve to have access to all information on the page.</p>
+<p>By following these best practices and testing the user experience, you can create inclusive online experiences for everyone.</p>
+</section>
+<section id="what-is-the-aria-expanded-attribute-and-how-does-it-work">
+<h2>1.15. What is the <code class="docutils literal notranslate"><span class="pre">aria-expanded</span></code> attribute, and how does it work?<a class="headerlink" href="#what-is-the-aria-expanded-attribute-and-how-does-it-work" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">aria-expanded</span></code> attribute is used for accessibility purposes to indicate if a control is expanded or collapsed. It’s used in conjunction with collapsible widgets like menus, accordions and other disclosure widgets that control the visibility of content. The <code class="docutils literal notranslate"><span class="pre">aria-expanded</span></code> attribute is set to <code class="docutils literal notranslate"><span class="pre">true</span></code> if the control is expanded, or <code class="docutils literal notranslate"><span class="pre">false</span></code> if it is collapsed.</p>
+<p>The information provided by <code class="docutils literal notranslate"><span class="pre">aria-expanded</span></code> allows people using screen readers to understand the current state of the control (whether it is expanded or collapsed).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">aria-expanded</span></code> attribute is applied to the interactive element that toggles the visibility of a collapsible widget. For example, if a button toggles an expandable menu, the <code class="docutils literal notranslate"><span class="pre">aria-expanded</span></code> attribute is placed on the button.</p>
+<p>When the menu is expanded, the <code class="docutils literal notranslate"><span class="pre">aria-expanded</span></code> attribute should be set to <code class="docutils literal notranslate"><span class="pre">true</span></code> like in this example:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">aria-expanded</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;</span>Menu<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>When the menu is collapsed, it should be set to <code class="docutils literal notranslate"><span class="pre">false</span></code> instead.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">aria-expanded</span><span class="o">=</span><span class="s">&quot;false&quot;</span><span class="p">&gt;</span>Menu<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>You must always have the <code class="docutils literal notranslate"><span class="pre">aria-expanded</span></code> attribute set to either <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code> on the controlling element. For example, if a button toggles the visibility of a menu, the default value for <code class="docutils literal notranslate"><span class="pre">aria-expanded</span></code> should be based on the default visibility of the menu.</p>
+<p>If the menu is expanded by default, <code class="docutils literal notranslate"><span class="pre">aria-expanded</span></code> should initially be set to <code class="docutils literal notranslate"><span class="pre">true</span></code>. If the menu is collapsed by default, <code class="docutils literal notranslate"><span class="pre">aria-expanded</span></code> should initially be set of <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p>The value of <code class="docutils literal notranslate"><span class="pre">aria-expanded</span></code> should be updated dynamically using JavaScript as the user interacts with the element.</p>
+<p>Additionally, the properties, <code class="docutils literal notranslate"><span class="pre">aria-controls</span></code> and <code class="docutils literal notranslate"><span class="pre">aria-owns</span></code> can be used in combination with <code class="docutils literal notranslate"><span class="pre">aria-expanded</span></code> to establish a programmatic connection between the controlling element and the element it controls.</p>
+<p>Let’s start with <code class="docutils literal notranslate"><span class="pre">aria-controls</span></code>. When used with <code class="docutils literal notranslate"><span class="pre">aria-expanded</span></code>, the <code class="docutils literal notranslate"><span class="pre">aria-controls</span></code> attribute is used to specify the element being controlled. For example, a button might expand or collapse a list acting as a menu. The value of <code class="docutils literal notranslate"><span class="pre">aria-controls</span></code> will be the <code class="docutils literal notranslate"><span class="pre">id</span></code> of the controlled element (the menu list in this example).</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">aria-expanded</span><span class="o">=</span><span class="s">&quot;false&quot;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&quot;menu1&quot;</span><span class="p">&gt;</span>Menu<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;menu1&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Notice that the list immediately follows the controlling button. For expandable controls like this, it is best to have the expanded content immediately follow the element that controls it in the DOM. This prevents screen reader users from having to search for the expanded content, and makes it easier for keyboard users to navigate through any interactive controls in the expanded content.</p>
+<p>If it is not possible to place the expanded content immediately after the controlling element, the <code class="docutils literal notranslate"><span class="pre">aria-owns</span></code> attribute allows you to virtually move it after the control in the accessibility tree. This allows assistive technology like screen readers to pretend the expanded content is placed directly after the control in the DOM.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">aria-owns</span><span class="o">=</span><span class="s">&quot;menu1&quot;</span> <span class="na">aria-expanded</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;</span>Menu<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
+    <span class="cm">&lt;!-- an entire page worth of content ---&gt;</span>
+<span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;menu1&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>There are drawbacks to using the <code class="docutils literal notranslate"><span class="pre">aria-owns</span></code> attribute. It creates unnecessary verbosity for screen reader users since most screen readers will automatically read out the entire contents of the expanded element when first expanded. It also does not change the tab order, potentially forcing keyboard users to tab through all of the other interactive controls on the page before reaching the expanded content, unless you manage the tabbing order with JavaScript.</p>
+<p>Ideally, the expandable content should be placed after the control element, and the <code class="docutils literal notranslate"><span class="pre">aria-owns</span></code> attribute should only be used in a worst case scenario when that is not possible. If it must be used, you will need to thoroughly test with a wide range of screen readers and browsers to ensure that your implementation is accessible for everyone.</p>
+<p>And just a reminder, when you use either <code class="docutils literal notranslate"><span class="pre">aria-controls</span></code> or <code class="docutils literal notranslate"><span class="pre">aria-owns</span></code>, the value of <code class="docutils literal notranslate"><span class="pre">aria-expanded</span></code> must continue to be updated as the control is expanded and collapsed.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">aria-expanded</span></code> attribute indicates whether a control is expanded or collapsed. This information is essential for screen reader users, helping them understand the current state of collapsible elements like menus, accordions, and other similar disclosure widgets.</p>
+<p>By using <code class="docutils literal notranslate"><span class="pre">aria-expanded</span></code> correctly, you can create an intuitive user experience for everyone.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./html/4_accessibility"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">1. Importance of accessibility and good HTML structure - II</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="4.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">1. Importance of accessibility and good HTML structure - IV</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-purpose-of-wai-aria-and-how-does-it-work">1.11. What is the purpose of WAI-ARIA, and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-aria-roles">1.12. What are ARIA roles?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-roles-of-the-aria-label-and-aria-labelledby-attributes">1.13. What are the roles of the <code class="docutils literal notranslate"><span class="pre">aria-label</span></code> and <code class="docutils literal notranslate"><span class="pre">aria-labelledby</span></code> attributes?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-aria-hidden-attribute-and-how-does-it-work">1.14. What is the <code class="docutils literal notranslate"><span class="pre">aria-hidden</span></code> attribute, and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-aria-expanded-attribute-and-how-does-it-work">1.15. What is the <code class="docutils literal notranslate"><span class="pre">aria-expanded</span></code> attribute, and how does it work?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mikaela González Pérez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

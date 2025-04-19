@@ -204,17 +204,15 @@
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">4. HTML Accessibility</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="4_accessibility/1.html">1. Importance of accessibility and good HTML structure - I</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4_accessibility/2.html">1. Importance of accessibility and good HTML structure - II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_accessibility/3.html">1. Importance of accessibility and good HTML structure - III</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_accessibility/4.html">1. Importance of accessibility and good HTML structure - IV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_accessibility/5.html">1. Importance of accessibility and good HTML structure - V</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../css/1_basic_css.html">Resumen 1~4</a></li>
-
-
-
-
-
 
 </ul>
 
@@ -381,15 +379,29 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="html-accessibility">
-<h1>4. HTML Accessibility<a class="headerlink" href="#html-accessibility" title="Link to this heading">#</a></h1>
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">4. HTML Accessibility</a><a class="headerlink" href="#html-accessibility" title="Link to this heading">#</a></h1>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#html-accessibility" id="id1">4. HTML Accessibility</a></p>
+<ul>
+<li><p><a class="reference internal" href="#introduction-to-accessibility" id="id2">Introduction to Accessibility</a></p></li>
+<li><p><a class="reference internal" href="#assistive-technology-for-accessibility" id="id3">Assistive Technology for Accessibility</a></p></li>
+<li><p><a class="reference internal" href="#accessibility-auditing-tools" id="id4">Accessibility Auditing Tools</a></p></li>
+<li><p><a class="reference internal" href="#accessibility-best-practices" id="id5">Accessibility Best Practices</a></p></li>
+<li><p><a class="reference internal" href="#wai-aria-roles-and-attributes" id="id6">WAI-ARIA, Roles, and Attributes</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
 <section id="introduction-to-accessibility">
-<h2>Introduction to Accessibility<a class="headerlink" href="#introduction-to-accessibility" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Introduction to Accessibility</a><a class="headerlink" href="#introduction-to-accessibility" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Web Content Accessibility Guidelines</strong>: The Web Content Accessibility Guidelines (WCAG) are a set of guidelines for making web content more accessible to people with disabilities. The four principles of WCAG are POUR which stands for Perceivable, Operable, Understandable, and Robust.</p></li>
 </ul>
 </section>
 <section id="assistive-technology-for-accessibility">
-<h2>Assistive Technology for Accessibility<a class="headerlink" href="#assistive-technology-for-accessibility" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Assistive Technology for Accessibility</a><a class="headerlink" href="#assistive-technology-for-accessibility" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Screen readers</strong>: Software programs that read the content of a computer screen out loud. They are used by people who are blind or visually impaired to access the web.</p></li>
 <li><p><strong>Large text or braille keyboards</strong>: Used by people with visual impairments to access the web.</p></li>
@@ -399,13 +411,13 @@ document.write(`
 </ul>
 </section>
 <section id="accessibility-auditing-tools">
-<h2>Accessibility Auditing Tools<a class="headerlink" href="#accessibility-auditing-tools" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Accessibility Auditing Tools</a><a class="headerlink" href="#accessibility-auditing-tools" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Common Accessibility Tools</strong>: Google Lighthouse, Wave, IBM Equal Accessibility Checker, and axe DevTools are some of the common accessibility tools used to audit the accessibility of a website.</p></li>
 </ul>
 </section>
 <section id="accessibility-best-practices">
-<h2>Accessibility Best Practices<a class="headerlink" href="#accessibility-best-practices" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Accessibility Best Practices</a><a class="headerlink" href="#accessibility-best-practices" title="Link to this heading">#</a></h2>
 <ul>
 <li><p><strong>Proper heading level structure</strong>: You should use proper heading levels to create a logical structure for your content. This helps people using assistive technologies understand the content of your website.</p></li>
 <li><p><strong>Accessibility and Tables</strong>: When using tables, you should use the <code class="docutils literal notranslate"><span class="pre">th</span></code> element to define header cells and the <code class="docutils literal notranslate"><span class="pre">td</span></code> element to define data cells. This helps people using assistive technologies understand the structure of the table. With the <code class="docutils literal notranslate"><span class="pre">caption</span></code> element, you can write the caption (or title) of a table, so users, especially those who use assistive technologies, can quickly understand the table’s purpose and content. You should place the <code class="docutils literal notranslate"><span class="pre">caption</span></code> element immediately after the opening tag of the <code class="docutils literal notranslate"><span class="pre">table</span></code> element. This way, screen readers and other assistive technologies can provide more context by announcing the caption before reading the content.</p></li>
@@ -428,7 +440,7 @@ document.write(`
 </ul>
 </section>
 <section id="wai-aria-roles-and-attributes">
-<h2>WAI-ARIA, Roles, and Attributes<a class="headerlink" href="#wai-aria-roles-and-attributes" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">WAI-ARIA, Roles, and Attributes</a><a class="headerlink" href="#wai-aria-roles-and-attributes" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>WAI-ARIA</strong>: It stands for Web Accessibility Initiative - Accessible Rich Internet Applications. It is a set of attributes that can be added to HTML elements to improve accessibility. It provides additional information to assistive technologies about the purpose and structure of the content.</p></li>
 <li><p><strong>Aria roles</strong>: A set of predefined roles that can be added to HTML elements to define their purpose. This helps people using assistive technologies understand the content of the website. Examples include <code class="docutils literal notranslate"><span class="pre">role=&quot;tab&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">role=&quot;menu&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">role=&quot;alert&quot;</span></code>.</p></li>
