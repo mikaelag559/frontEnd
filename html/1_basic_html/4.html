@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4. Working with links &#8212; My Front End Notes</title>
+    <title>4. Working with Links &#8212; My Front End Notes</title>
   
   
   
@@ -183,13 +183,14 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../1_basic_html.html">Basic HTML Review</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1.html">1. What is HTML?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.html">2. HTML fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">2. HTML Fundamentals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.html">3. Working with Media</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">4. Working with links</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4. Working with Links</a></li>
 <li class="toctree-l2"><a class="reference internal" href="5.html">Examples</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_semantic_html.html"><a href="https://www.freecodecamp.org/learn/full-stack-developer/review-semantic-html/review-semantic-html">Resumen</a></a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2_semantic_html.html">Semantic HTML Review</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2_semantic_html/1.html">2.1. Why should you care about semantic HTML?</a></li>
 
 
 
@@ -202,16 +203,10 @@
 
 
 
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../3_forms_and_tables_html.html"><a href="https://www.freecodecamp.org/learn/full-stack-developer/review-html-tables-and-forms/review-html-tables-and-forms">Resumen</a></a></li>
-
-
-
-
-
-
+<li class="toctree-l2"><a class="reference internal" href="../2_semantic_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_forms_and_tables_html.html">Index</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../4_accessibility.html">Resumen</a></li>
 
@@ -271,53 +266,6 @@
 
 
 
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fhtml/1_basic_html/4.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
 <div class="dropdown dropdown-download-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
     <i class="fas fa-download"></i>
@@ -326,7 +274,7 @@
       
       
       
-      <li><a href="../../_sources/html/1_basic_html/4.ipynb" target="_blank"
+      <li><a href="../../_sources/html/1_basic_html/4.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -336,7 +284,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -410,7 +358,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>4. Working with links</h1>
+    <h1>4. Working with Links</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -436,16 +384,12 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="working-with-links">
-<h1>4. Working with links<a class="headerlink" href="#working-with-links" title="Link to this heading">#</a></h1>
+<h1>4. Working with Links<a class="headerlink" href="#working-with-links" title="Link to this heading">#</a></h1>
 <section id="what-are-the-different-target-attribute-types-and-how-do-they-work">
 <h2>4.1. What are the different target attribute types and how do they work?<a class="headerlink" href="#what-are-the-different-target-attribute-types-and-how-do-they-work" title="Link to this heading">#</a></h2>
 <p>You may have seen the <code>target</code> attribute on anchor elements, or links. This important attribute tells the browser where to open the URL for the anchor element:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://freecodecamp.org&quot;</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span><span class="o">&gt;</span><span class="n">Visit</span> <span class="n">freeCodeCamp</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://freecodecamp.org&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span>Visit freeCodeCamp<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>There are four important possible values for this attribute. Note that each value is preceded by an underscore.</p>
 <ol class="arabic simple">
@@ -462,50 +406,34 @@ document.write(`
 <p>A path is a string that specifies the location of a file or directory in a file system. In web development, paths let developers link to resources like images, stylesheets, scripts, and other web pages. There are absolute and relative paths - both are essential when specifying file locations within a file system. Let’s look at the two so you can decide which one of them to use and when.</p>
 <p>An absolute path is a complete link to a resource. It starts from the root directory, includes every other directory, and finally the filename and extension. The “root directory” refers to the top-level directory or folder in a hierarchy.</p>
 <p>An absolute path also includes the protocol - which could be <code>http</code>, <code>https</code>, and <code>file</code> and the domain name if the resource is on the web. Here’s an example of an absolute path that links to the freeCodeCamp logo:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://design-style-guide.freecodecamp.org/img/fcc_secondary_small.svg&quot;</span><span class="o">&gt;</span>
-  <span class="n">View</span> <span class="n">fCC</span> <span class="n">Logo</span>
-<span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://design-style-guide.freecodecamp.org/img/fcc_secondary_small.svg&quot;</span><span class="p">&gt;</span>
+  View fCC Logo
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>In this example, the protocol is <code>https</code>, the domain name is <code>design-style-guide.freecodecamp.org</code>, and the filename is <code>fcc_secondary_small.svg</code>.</p>
 <p>Now, what if the resource you want to link to using an absolute path is on your local machine? Here’s how to link to the <code>about.html</code> file with an absolute path:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-  <span class="n">Read</span> <span class="n">more</span> <span class="n">on</span> <span class="n">the</span>
-  <span class="o">&lt;</span><span class="n">a</span>
-    <span class="n">href</span><span class="o">=</span><span class="s2">&quot;/Users/user/Desktop/fCC/script-code/absolute-vs-relative-paths/pages/about.html&quot;</span>
-    <span class="o">&gt;</span><span class="n">About</span> <span class="n">Page</span><span class="o">&lt;/</span><span class="n">a</span>
-    <span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+  Read more on the
+  <span class="p">&lt;</span><span class="nt">a</span>
+    <span class="na">href</span><span class="o">=</span><span class="s">&quot;/Users/user/Desktop/fCC/script-code/absolute-vs-relative-paths/pages/about.html&quot;</span>
+    <span class="p">&gt;</span>About Page<span class="p">&lt;/</span><span class="nt">a</span>
+    <span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>It looks like this because we are going into a folder called <code>Users</code>, then into a folder called <code>user</code>, then into a folder called <code>Desktop</code>, then into a folder called <code>fCC</code>, then into a folder called <code>script-code</code>, then into a folder called <code>absolute-vs-relative-paths</code>, then into a folder called <code>pages</code> to finally get the <code>about.html</code> file.</p>
 <p>Here’s what the absolute URL looks like in the browser address bar:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span><span class="p">:</span><span class="o">///</span><span class="n">Users</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">Desktop</span><span class="o">/</span><span class="n">fCC</span><span class="o">/</span><span class="n">script</span><span class="o">-</span><span class="n">code</span><span class="o">/</span><span class="n">absolute</span><span class="o">-</span><span class="n">vs</span><span class="o">-</span><span class="n">relative</span><span class="o">-</span><span class="n">paths</span><span class="o">/</span><span class="n">pages</span><span class="o">/</span><span class="n">about</span><span class="o">.</span><span class="n">html</span>
+<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>file:///Users/user/Desktop/fCC/script-code/absolute-vs-relative-paths/pages/about.html
 </pre></div>
-</div>
-</div>
 </div>
 <p>The URL includes the protocol, <code>file://</code>. It also include the path, which looks like this: <code>/Users/user/Desktop/fCC/script-code/absolute-vs-relative-paths/pages/</code>, and represents the series of folders that lead to the file. And finally, it also includes the <code>about.html</code>, which is the filename and the extension.</p>
 <p>Now, lets look at the relative path. A relative path specifies the location of a file relative to the directory of the current file. It does not include the protocol or the domain name, making it shorter and more flexible for internal links within the same website. Here’s an example of linking to the <code>about.html</code> page from the <code>contact.html</code> page, both of which are in the same folder:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-  <span class="n">Read</span> <span class="n">more</span> <span class="n">on</span> <span class="n">the</span>
-  <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;about.html&quot;</span><span class="o">&gt;</span><span class="n">About</span> <span class="n">Page</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+  Read more on the
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;about.html&quot;</span><span class="p">&gt;</span>About Page<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>So imagine you are on the <code>contact.html</code> page, and because the <code>about.html</code> page is in the same place, you simply get the filename. This is an example of using a relative file path.</p>
 <p>So, which should you use and when; an absolute path or a relative path? Here are the rules you should follow:</p>
@@ -526,18 +454,14 @@ document.write(`
 <li><p>Double dots, however, are much more common to access files outside of the current working directory.</p></li>
 </ol>
 <p>For example, given this file tree:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my</span><span class="o">-</span><span class="n">app</span><span class="o">/</span>
-<span class="err">├─</span> <span class="n">public</span><span class="o">/</span>
-<span class="err">│</span>  <span class="err">├─</span> <span class="n">favicon</span><span class="o">.</span><span class="n">ico</span>
-<span class="err">│</span>  <span class="err">├─</span> <span class="n">index</span><span class="o">.</span><span class="n">html</span>
-<span class="err">├─</span> <span class="n">src</span><span class="o">/</span>
-<span class="err">│</span>  <span class="err">├─</span> <span class="n">index</span><span class="o">.</span><span class="n">css</span>
-<span class="err">│</span>  <span class="err">├─</span> <span class="n">index</span><span class="o">.</span><span class="n">js</span>
+<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>my-app/
+├─ public/
+│  ├─ favicon.ico
+│  ├─ index.html
+├─ src/
+│  ├─ index.css
+│  ├─ index.js
 </pre></div>
-</div>
-</div>
 </div>
 <p>If your <code>public/index.html</code> file needed to load the <code>favicon.ico</code> file, you would use a relative path with a single dot to access the current directory: <code>./favicon.ico</code>. If your <code>public/index.html</code> file needed to load the <code>index.css</code> file, you would use a relative path with double dots to navigate to the parent <code>my-app</code> directory first, then to the <code>src</code> directory, and finally to your file: <code>../src/index.css</code>.</p>
 </section>
