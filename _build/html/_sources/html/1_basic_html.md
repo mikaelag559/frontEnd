@@ -1,9 +1,6 @@
 Basic HTML Review
 =================
 
-```{contents}
-```
-
 HTML Basics
 -----------
 

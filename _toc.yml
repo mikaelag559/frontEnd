@@ -3,20 +3,33 @@
 
 format: jb-book
 root: intro
+defaults:
+  titlesonly: True
+
 parts:
   - caption: HTML
+    maxdepth: 3
     chapters:
-    - file: html/1_basic_html.md
+    - file: html/1_basic_html
       sections:
-      - file: html/1_basic_html/1.ipynb
-      - file: html/1_basic_html/2.ipynb
-      - file: html/1_basic_html/3.ipynb
-      - file: html/1_basic_html/4.ipynb
-      - file: html/1_basic_html/5.ipynb
-    - file: html/2_semantic_html.ipynb
-    - file: html/3_forms_and_tables_html.ipynb
-    - file: html/4_accessibility.ipynb
+      - file: html/1_basic_html/1
+      - file: html/1_basic_html/2
+      - file: html/1_basic_html/3
+      - file: html/1_basic_html/4
+      - file: html/1_basic_html/5
+    - file: html/2_semantic_html
+      sections:
+        - file: html/2_semantic_html/1
+        - file: html/2_semantic_html/4
+    - file: html/3_forms_and_tables_html
+      sections:
+      - file: html/3_forms_and_tables_html/1
+      - file: html/3_forms_and_tables_html/2
+      - file: html/3_forms_and_tables_html/3
+      - file: html/3_forms_and_tables_html/4
+    - file: html/4_accessibility
     
   - caption: CSS
+    maxdepth: 3
     chapters:
-    - file: css/1_basic_css.ipynb
+    - file: css/1_basic_css
