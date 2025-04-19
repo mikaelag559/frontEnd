@@ -31,6 +31,9 @@ parts:
       sections:
         - file: html/4_accessibility/1
         - file: html/4_accessibility/2
+        - file: html/4_accessibility/3
+        - file: html/4_accessibility/4
+        - file: html/4_accessibility/5
     
   - caption: CSS
     maxdepth: 3

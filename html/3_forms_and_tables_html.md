@@ -1,4 +1,4 @@
-# 3. HTML Tables and Forms Review
+# 3. HTML Tables and Forms
 
 ```{contents}
 ```

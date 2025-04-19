@@ -1,5 +1,5 @@
 
-# 4. HTML Accessibility Review
+# 4. HTML Accessibility
 
 Introduction to Accessibility
 -----------------------------

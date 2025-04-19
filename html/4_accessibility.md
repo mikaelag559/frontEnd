@@ -1,5 +1,8 @@
 
-# 4. HTML Accessibility Review
+# 4. HTML Accessibility
+
+```{contents}
+```
 
 Introduction to Accessibility
 -----------------------------
