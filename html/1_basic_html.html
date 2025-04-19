@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Basic HTML &#8212; My Front End Notes</title>
+    <title>Basic HTML Review &#8212; My Front End Notes</title>
   
   
   
@@ -181,7 +181,7 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">HTML</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Basic HTML</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Basic HTML Review</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="1_basic_html/1.html">1. What is HTML?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="1_basic_html/2.html">2. HTML fundamentals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="1_basic_html/3.html">3. Working with Media</a></li>
@@ -326,7 +326,7 @@
       
       
       
-      <li><a href="../_sources/html/1_basic_html.ipynb" target="_blank"
+      <li><a href="../_sources/html/1_basic_html.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -336,7 +336,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -397,7 +397,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -408,11 +410,29 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Basic HTML</h1>
+    <h1>Basic HTML Review</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#html-basics">HTML Basics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-html-elements">Common HTML elements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifiers-and-grouping">Identifiers and Grouping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-characters-and-linking">Special Characters and Linking</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boilerplate-and-encoding">Boilerplate and Encoding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seo-and-social-sharing">SEO and Social Sharing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#media-elements-and-optimization">Media Elements and Optimization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multimedia-integration">Multimedia Integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-attribute-types">Target attribute types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-vs-relative-paths">Absolute vs. Relative Paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-states">Link states</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -422,9 +442,438 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="basic-html">
-<h1>Basic HTML<a class="headerlink" href="#basic-html" title="Link to this heading">#</a></h1>
-<p><a href="https://www.freecodecamp.org/learn/full-stack-developer/review-basic-html/basic-html-review">Resumen</a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="basic-html-review">
+<h1>Basic HTML Review<a class="headerlink" href="#basic-html-review" title="Link to this heading">#</a></h1>
+<section id="html-basics">
+<h2>HTML Basics<a class="headerlink" href="#html-basics" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Role of HTML</strong>: HTML represents the content and structure of the web page.</p></li>
+<li><p><strong>HTML Elements</strong>: Elements are the building blocks for an HTML document. They represent headings, paragraphs, links, images and more. Most HTML elements consist of an opening tag (<code class="docutils literal notranslate"><span class="pre">&lt;elementName&gt;</span></code>) and a closing tag (<code class="docutils literal notranslate"><span class="pre">&lt;/elementName&gt;</span></code>).</p></li>
+</ul>
+<p>Here is the basic syntax:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;elementName&gt;Content goes here&lt;/elementName&gt;
+</pre></div>
+</div>
+<ul>
+<li><p><strong>Void Elements</strong>: Void elements cannot have any content and only have a start tag. Examples include <code class="docutils literal notranslate"><span class="pre">img</span></code> and <code class="docutils literal notranslate"><span class="pre">meta</span></code> elements.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>It is common to see some codebases that include a forward slash <code class="docutils literal notranslate"><span class="pre">/</span></code> inside the void element. Both of these are acceptable:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">img</span><span class="p">/&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Attributes</strong>: An attribute is a value placed inside the opening tag of an HTML element. Attributes provide additional information about the element or specify how the element should behave. Here is the basic syntax for an attribute:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">element</span> <span class="na">attribute</span><span class="o">=</span><span class="s">&quot;value&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">element</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>A boolean attribute is an attribute that can either be present or absent in an HTML tag. If present, the value is true otherwise it is false. Examples of boolean attributes include <code class="docutils literal notranslate"><span class="pre">disabled</span></code>, <code class="docutils literal notranslate"><span class="pre">readonly</span></code>, and <code class="docutils literal notranslate"><span class="pre">required</span></code>.</p>
+<ul>
+<li><p><strong>Comments</strong>: Comments are used in programming to leave notes for yourself and other developers in your code. Here is the syntax for a comment in HTML:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!--This is an HTML comment.--&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="common-html-elements">
+<h2>Common HTML elements<a class="headerlink" href="#common-html-elements" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>Heading Elements</strong>: There are six heading elements in HTML. The <code class="docutils literal notranslate"><span class="pre">h1</span></code> through <code class="docutils literal notranslate"><span class="pre">h6</span></code> heading elements are used to signify the importance of content below them. The lower the number, the higher the importance, so <code class="docutils literal notranslate"><span class="pre">h2</span></code> elements have less importance than <code class="docutils literal notranslate"><span class="pre">h1</span></code> elements.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>most important heading element<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>second most important heading element<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>third most important heading element<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>fourth most important heading element<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>fifth most important heading element<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h6</span><span class="p">&gt;</span>least important heading element<span class="p">&lt;/</span><span class="nt">h6</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Paragraph Elements</strong>: This is used for paragraphs on a web page.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is a paragraph element.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">img</span></code> Elements</strong>: The <code class="docutils literal notranslate"><span class="pre">img</span></code> element is used to add images to the web page. The <code class="docutils literal notranslate"><span class="pre">src</span></code> attribute is used to specify the location for that image. For image elements, it’s good practice to include another attribute called the <code class="docutils literal notranslate"><span class="pre">alt</span></code> attribute. Here’s an example of an <code class="docutils literal notranslate"><span class="pre">img</span></code> element with the <code class="docutils literal notranslate"><span class="pre">src</span></code> and <code class="docutils literal notranslate"><span class="pre">alt</span></code> attributes:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;A slice of lasagna on a plate.&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">body</span></code> Element</strong>: This element is used to represent the content for the HTML document.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>CatPhotoApp<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is a paragraph element.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>    
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">section</span></code> Elements</strong>: This element is used to divide up content into smaller sections.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>About Me<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hi, I am Jane Doe and I am a web developer.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">div</span></code> Elements</strong>: This element is a generic HTML element that does not hold any semantic meaning. It is used as a generic container to hold other HTML elements.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>I am a heading<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>I am a paragraph<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Anchor (<code class="docutils literal notranslate"><span class="pre">a</span></code>) Elements</strong>: These elements are used to apply links to a web page. The <code class="docutils literal notranslate"><span class="pre">href</span></code> attribute is used to specify where the link should go when the user clicks on it.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg&quot;</span><span class="p">&gt;</span>cute cats<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Unordered (<code class="docutils literal notranslate"><span class="pre">ul</span></code>) and Ordered (<code class="docutils literal notranslate"><span class="pre">ol</span></code>) List Elements</strong>: To create a bulleted list of items you should use the <code class="docutils literal notranslate"><span class="pre">ul</span></code> element with one or more <code class="docutils literal notranslate"><span class="pre">li</span></code> elements nested inside like this:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>catnip<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>laser pointers<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>lasagna<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>To create an ordered list of items you should use the <code class="docutils literal notranslate"><span class="pre">ol</span></code> element:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>flea treatment<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>thunder<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>other cats<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Emphasis (<code class="docutils literal notranslate"><span class="pre">em</span></code>) Element</strong>: This is used to place emphasis on a piece of text.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Cats <span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span>love<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span> lasagna.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>  
+</pre></div>
+</div>
+</li>
+<li><p><strong>Strong Importance (<code class="docutils literal notranslate"><span class="pre">strong</span></code>) Element</strong>: This element is used to place strong emphasis on text to indicate a sense of urgency and seriousness.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Important:<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> Before proceeding, make sure to wear your safety goggles. 
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">figure</span></code> and <code class="docutils literal notranslate"><span class="pre">figcaption</span></code> Elements</strong>: The <code class="docutils literal notranslate"><span class="pre">figure</span></code> element is used to group content like images and diagrams. The <code class="docutils literal notranslate"><span class="pre">figcaption</span></code> element is used to represent a caption for that content inside the <code class="docutils literal notranslate"><span class="pre">figure</span></code> element.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">figure</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Five cats looking around a field.&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>Cats <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>hate<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> other cats.<span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>  
+<span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">main</span></code> Element</strong>: This element is used to represent the main content for a web page.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">footer</span></code> Element</strong>: This element is placed at the bottom of the HTML document and usually contains copyright information and other important page links.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+    No Copyright - <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.freecodecamp.org&quot;</span><span class="p">&gt;</span>freeCodeCamp.org<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="identifiers-and-grouping">
+<h2>Identifiers and Grouping<a class="headerlink" href="#identifiers-and-grouping" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>IDs</strong>: Unique element identifiers for HTML elements. ID names should only be used once per HTML document.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;title&quot;</span><span class="p">&gt;</span>Movie Review Page<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>ID names cannot have spaces. If your ID name contains multiple words then you can use dashes between the words like this:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;red-box&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Classes</strong>: Classes are used to group elements for styling and behavior.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;box&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Unlike IDs, you can reuse the same class name throughout the HTML document. The <code class="docutils literal notranslate"><span class="pre">class</span></code> value can also have spaces like this:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;box red-box&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;box blue-box&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="special-characters-and-linking">
+<h2>Special Characters and Linking<a class="headerlink" href="#special-characters-and-linking" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>HTML entities</strong>: An HTML entity, or character reference, is a set of characters used to represent a reserved character in HTML. Examples include the ampersand (<code class="docutils literal notranslate"><span class="pre">&amp;amp;</span></code>) symbol and the less than symbol (<code class="docutils literal notranslate"><span class="pre">&amp;lt;</span></code>).</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is an <span class="ni">&amp;lt;</span>img /<span class="ni">&amp;gt;</span> element<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">link</span></code> Element</strong>: This element is used to link to external resources like stylesheets and site icons. Here is the basic syntax for using the <code class="docutils literal notranslate"><span class="pre">link</span></code> element for an external CSS file:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;./styles.css&quot;</span> <span class="p">/&gt;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">rel</span></code> attribute is used to specify the relationship between the linked resource and the HTML document. The <code class="docutils literal notranslate"><span class="pre">href</span></code> attribute is used to specify the location of the URL for the external resource.</p>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">script</span></code> Element</strong>: This element is used to embed executable code.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Welcome to freeCodeCamp&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>While you can technically write all of your JavaScript code inside the <code class="docutils literal notranslate"><span class="pre">script</span></code> tags, it is considered best practice to link to an external JavaScript file instead. Here is an example of using the <code class="docutils literal notranslate"><span class="pre">script</span></code> element to link to an external JavaScript file:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;path-to-javascript-file.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">src</span></code> attribute is used here to specify the location for that external JavaScript file.</p>
+</li>
+</ul>
+</section>
+<section id="boilerplate-and-encoding">
+<h2>Boilerplate and Encoding<a class="headerlink" href="#boilerplate-and-encoding" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>HTML boilerplate</strong>: This is a boilerplate that includes the basic structure and essential elements every HTML document needs.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>freeCodeCamp<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;./styles.css&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="cm">&lt;!--Headings, paragraphs, images, etc. go inside here--&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">DOCTYPE</span></code></strong>: This is used to tell browsers which version of HTML you’re using.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">html</span></code> Element</strong>: This represents the top level element or the root of an HTML document. To specify the language for the document, you should use the <code class="docutils literal notranslate"><span class="pre">lang</span></code> attribute.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">head</span></code> Element</strong>: The <code class="docutils literal notranslate"><span class="pre">head</span></code> section contains important meta data which is behind-the-scenes information needed for browsers and search engines.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">meta</span></code> Elements</strong>: These elements represent your site’s metadata. These element have details about things like character encoding, and how websites like Twitter should preview your page’s link and more.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">title</span></code> Element</strong>: This element is used to set the text that appears in the browser tab or window.</p></li>
+<li><p><strong>UTF-8 character encoding</strong>: UTF-8, or UCS Transformation Format 8, is a standardized character encoding widely used on the web. Character encoding is the method computers use to store characters as data. The <code class="docutils literal notranslate"><span class="pre">charset</span></code> attribute is used inside of a <code class="docutils literal notranslate"><span class="pre">meta</span></code> element to set the character encoding to UTF-8.</p></li>
+</ul>
+</section>
+<section id="seo-and-social-sharing">
+<h2>SEO and Social Sharing<a class="headerlink" href="#seo-and-social-sharing" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>SEO</strong>: Search Engine Optimization is a practice that optimizes web pages so they become more visible and rank higher on search engines.</p></li>
+<li><p><strong>Meta (<code class="docutils literal notranslate"><span class="pre">description</span></code>) Element</strong>: This is used to provide a short description for the web page and impacting SEO.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">meta</span>
+  <span class="na">name</span><span class="o">=</span><span class="s">&quot;description&quot;</span>
+  <span class="na">content</span><span class="o">=</span><span class="s">&quot;Discover expert tips and techniques for gardening in small spaces, choosing the right plants, and maintaining a thriving garden.&quot;</span>
+<span class="p">/&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Open Graph tags</strong>: The open graph protocol enables you to control how your website’s content appears across various social media platforms, such as Facebook, LinkedIn, and many more.</p></li>
+</ul>
+<p>By setting these open graph properties, you can entice users to want to click and engage with your content. You can set these properties through a collection of <code class="docutils literal notranslate"><span class="pre">meta</span></code> elements inside your HTML <code class="docutils literal notranslate"><span class="pre">head</span></code> section.</p>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">og:title</span></code> Property</strong>: This is used to set the title that displays for social media posts.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;freeCodeCamp.org&quot;</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:title&quot;</span> <span class="p">/&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">og:type</span></code> Property</strong>: The <code class="docutils literal notranslate"><span class="pre">type</span></code> property is used to represent the type of content being shared on social media. Examples of this content include articles, websites, videos, or music.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:type&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;website&quot;</span> <span class="p">/&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">og:image</span></code> Property</strong>: This is used to set the image shown for social media posts.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">meta</span>
+  <span class="na">content</span><span class="o">=</span><span class="s">&quot;https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png&quot;</span>
+  <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:image&quot;</span>
+<span class="p">/&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">og:url</span></code> Property</strong>: This is used to set the URL that users will click on for the social media posts.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:url&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;https://www.freecodecamp.org&quot;</span> <span class="p">/&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="media-elements-and-optimization">
+<h2>Media Elements and Optimization<a class="headerlink" href="#media-elements-and-optimization" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>Replaced elements</strong>: A replaced element is an element whose content is determined by an external resource rather than by CSS itself. An example would be an <code class="docutils literal notranslate"><span class="pre">iframe</span></code> element. <code class="docutils literal notranslate"><span class="pre">iframe</span></code> stands for inline frame. It’s an inline element used to embed other HTML content directly within the HTML page.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.example.com&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;Example Site&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>You can include the <code class="docutils literal notranslate"><span class="pre">allowfullscreen</span></code> attribute which allows the user to display the iframe in full screen mode.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">iframe</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;video-url&quot;</span>
+  <span class="na">width</span><span class="o">=</span><span class="s">&quot;width-value&quot;</span>
+  <span class="na">height</span><span class="o">=</span><span class="s">&quot;height-value&quot;</span>
+  <span class="na">allowfullscreen</span>
+<span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>To embed a video within an <code class="docutils literal notranslate"><span class="pre">iframe</span></code> you can copy it directly from popular video services like YouTube and Vimeo, or define it yourself with the <code class="docutils literal notranslate"><span class="pre">src</span></code> attribute pointing to the URL of that video. Here’s an example of embedding a popular freeCodeCamp course from YouTube:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>A freeCodeCamp YouTube Video Embedded with the iframe Element<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">iframe</span>
+  <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span>
+  <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/PkZNo7MFNFg?si=-UBVIUNM3csdeiWF&quot;</span>
+  <span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span>
+  <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;</span>
+  <span class="na">referrerpolicy</span><span class="o">=</span><span class="s">&quot;strict-origin-when-cross-origin&quot;</span>
+  <span class="na">allowfullscreen</span>
+<span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>There are some other replaced elements, such as <code class="docutils literal notranslate"><span class="pre">video</span></code>, and <code class="docutils literal notranslate"><span class="pre">embed</span></code>. And some elements behave as replaced elements under specific circumstances. Here’s an example of an <code class="docutils literal notranslate"><span class="pre">input</span></code> element with the <code class="docutils literal notranslate"><span class="pre">type</span></code> attribute set to <code class="docutils literal notranslate"><span class="pre">image</span></code>:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;image&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Descriptive text goes here&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;example-img-url&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Optimizing media</strong>: There are three tools to consider when using media, such as images, on your web pages: the size, the format, and the compression. A compression algorithm is used to reduce the size for files or data.</p></li>
+<li><p><strong>Image formats</strong>: Two of the most common file formats are PNG and JPG, but these are no longer the most ideal formats for serving images. Unless you need support for older browsers, you should consider using a more optimized format, like WEBP or AVIF.</p></li>
+<li><p><strong>Image licenses</strong>: An image under the public domain has no copyright attached to it and is free to be used without any restrictions. Images licensed specifically under the Creative Commons 0 license are considered public domain. Some images might be released under a permissive license, like a Creative Commons license, or the BSD license that freeCodeCamp uses.</p></li>
+<li><p><strong>SVGs</strong>: Scalable Vector Graphics track data based on paths and equations to plot points, lines, and curves. What this really means is that a vector graphic, like an SVG, can be scaled to any size without impacting the quality.</p></li>
+</ul>
+</section>
+<section id="multimedia-integration">
+<h2>Multimedia Integration<a class="headerlink" href="#multimedia-integration" title="Link to this heading">#</a></h2>
+<p><strong><code class="docutils literal notranslate"><span class="pre">audio</span></code> and <code class="docutils literal notranslate"><span class="pre">video</span></code> Elements</strong>: The <code class="docutils literal notranslate"><span class="pre">audio</span></code> and <code class="docutils literal notranslate"><span class="pre">video</span></code> elements allow you to add sound and video content to your HTML documents. The <code class="docutils literal notranslate"><span class="pre">audio</span></code> element supports popular audio formats like mp3, wav, and ogg. The <code class="docutils literal notranslate"><span class="pre">video</span></code> element supports mp4, ogg, and webm formats.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">audio</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;CrystalizeThatInnerChild.mp3&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">controls</span></code> Attribute</strong>: If you want to see the audio player on the page, then you can add the <code class="docutils literal notranslate"><span class="pre">audio</span></code> element with the <code class="docutils literal notranslate"><span class="pre">controls</span></code> attribute:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">audio</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;CrystalizeThatInnerChild.mp3&quot;</span> <span class="na">controls</span><span class="p">&gt;&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">controls</span></code> attribute enables users to manage audio playback, including adjusting volume, and pausing, or resuming playback. The <code class="docutils literal notranslate"><span class="pre">controls</span></code> attribute is a boolean attribute that can be added to an element to enable built-in playback controls. If omitted, no controls will be shown.</p>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">loop</span></code> Attribute</strong>: The <code class="docutils literal notranslate"><span class="pre">loop</span></code> attribute is a boolean attribute that makes the audio replay continuously.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">audio</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.freecodecamp.org/curriculum/js-music-player/can&#39;t-stay-down.mp3&quot;</span>
+  <span class="na">loop</span>
+  <span class="na">controls</span>
+<span class="p">&gt;&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">muted</span></code> Attribute</strong>: When present in the <code class="docutils literal notranslate"><span class="pre">audio</span></code> element, the <code class="docutils literal notranslate"><span class="pre">muted</span></code> boolean attribute will start the audio in a muted state.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">audio</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.freecodecamp.org/curriculum/js-music-player/can&#39;t-stay-down.mp3&quot;</span>
+  <span class="na">loop</span>
+  <span class="na">controls</span>
+  <span class="na">muted</span>
+<span class="p">&gt;&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">source</span></code> Element</strong>: When it comes to audio file types, there are differences in which browsers support which type. To accommodate this, you can use <code class="docutils literal notranslate"><span class="pre">source</span></code> elements inside the <code class="docutils literal notranslate"><span class="pre">audio</span></code> element and the browser will select the first source that it understands. Here’s an example of using multiple <code class="docutils literal notranslate"><span class="pre">source</span></code> elements for an <code class="docutils literal notranslate"><span class="pre">audio</span></code> element:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">audio</span> <span class="na">controls</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;audio.ogg&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;audio/ogg&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;audio.wav&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;audio/wav&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;audio.mp3&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;audio/mpeg&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>All the attributes we have learned so far are also supported in the <code class="docutils literal notranslate"><span class="pre">video</span></code> element. Here’s an example of using a <code class="docutils literal notranslate"><span class="pre">video</span></code> element with the <code class="docutils literal notranslate"><span class="pre">loop</span></code>, <code class="docutils literal notranslate"><span class="pre">controls</span></code>, and <code class="docutils literal notranslate"><span class="pre">muted</span></code> attributes:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">video</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4&quot;</span>
+  <span class="na">loop</span>
+  <span class="na">controls</span>
+  <span class="na">muted</span>
+<span class="p">&gt;&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">poster</span></code> Attribute</strong>: If you wanted to display an image while the video is downloading, you can use the <code class="docutils literal notranslate"><span class="pre">poster</span></code> attribute. This attribute is not available for <code class="docutils literal notranslate"><span class="pre">audio</span></code> elements and is <strong>unique to the <code class="docutils literal notranslate"><span class="pre">video</span></code> element</strong>.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">video</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4&quot;</span>
+  <span class="na">loop</span>
+  <span class="na">controls</span>
+  <span class="na">muted</span>
+  <span class="na">poster</span><span class="o">=</span><span class="s">&quot;https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217&quot;</span>
+  <span class="na">width</span><span class="o">=</span><span class="s">&quot;620&quot;</span>
+<span class="p">&gt;&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="target-attribute-types">
+<h2>Target attribute types<a class="headerlink" href="#target-attribute-types" title="Link to this heading">#</a></h2>
+<p><strong><code class="docutils literal notranslate"><span class="pre">target</span></code> Attribute</strong>: This attribute tells the browser where to open the URL for the anchor element. There are four important possible values for this attribute: <code class="docutils literal notranslate"><span class="pre">_self</span></code>, <code class="docutils literal notranslate"><span class="pre">_blank</span></code>, <code class="docutils literal notranslate"><span class="pre">_parent</span></code> and <code class="docutils literal notranslate"><span class="pre">_top</span></code>. There is a fifth value, called <code class="docutils literal notranslate"><span class="pre">_unfencedTop</span></code>, which is currently used for the experimental <code class="docutils literal notranslate"><span class="pre">FencedFrame</span></code> API. You probably won’t have a reason to use this one yet.</p>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">_self</span></code> Value</strong>: This is the default value for the <code class="docutils literal notranslate"><span class="pre">target</span></code> attribute. This opens the link in the current browsing context. In most cases, this will be the current tab or window.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://freecodecamp.org&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_self&quot;</span><span class="p">&gt;</span>Visit freeCodeCamp<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">_blank</span></code> Value</strong>: This opens the link in a new browsing context. Typically, this will open in a new tab. But some users might configure their browsers to open a new window instead.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://freecodecamp.org&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span>Visit freeCodeCamp<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">_parent</span></code> Value</strong>: This opens the link in the parent of the current context. For example, if your website has an iframe, a <code class="docutils literal notranslate"><span class="pre">_parent</span></code> value in that iframe would open in your website’s tab/window, not in the embedded frame.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://freecodecamp.org&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_parent&quot;</span><span class="p">&gt;</span>Visit freeCodeCamp<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">_top</span></code> Value</strong>: This opens the link in the top-most browsing context - think “the parent of the parent”. This is similar to <code class="docutils literal notranslate"><span class="pre">_parent</span></code>, but the link will always open in the full browser tab/window, even for nested embedded frames.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://freecodecamp.org&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_top&quot;</span><span class="p">&gt;</span>Visit freeCodeCamp<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="absolute-vs-relative-paths">
+<h2>Absolute vs. Relative Paths<a class="headerlink" href="#absolute-vs-relative-paths" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>Path definition</strong>: A path is a string that specifies the location of a file or directory in a file system. In web development, paths let developers link to resources like images, stylesheets, scripts, and other web pages.</p></li>
+<li><p><strong>Path Syntax</strong>: There are three key syntaxes to know. First is the slash, which can be a backslash (<code class="docutils literal notranslate"><span class="pre">\</span></code>) or forward slash (<code class="docutils literal notranslate"><span class="pre">/</span></code>) depending on your operating system. The second is the single dot (<code class="docutils literal notranslate"><span class="pre">.</span></code>). And finally, we have the double dot (<code class="docutils literal notranslate"><span class="pre">..</span></code>). The slash is known as the “path separator”. It is used to indicate a break in the text between folder or file names. A single dot points to the current directory, and two dots point to the parent directory.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+<span class="o">./</span><span class="n">favicon</span><span class="o">.</span><span class="n">ico</span>
+<span class="o">../</span><span class="n">src</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">css</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Absolute Path</strong>: An absolute path is a complete link to a resource. It starts from the root directory, includes every other directory, and finally the filename and extension. The “root directory” refers to the top-level directory or folder in a hierarchy. An absolute path also includes the protocol - which could be <code class="docutils literal notranslate"><span class="pre">http</span></code>, <code class="docutils literal notranslate"><span class="pre">https</span></code>, and <code class="docutils literal notranslate"><span class="pre">file</span></code> and the domain name if the resource is on the web. Here’s an example of an absolute path that links to the freeCodeCamp logo:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://design-style-guide.freecodecamp.org/img/fcc_secondary_small.svg&quot;</span><span class="p">&gt;</span>
+  View fCC Logo
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Relative Path</strong>: A relative path specifies the location of a file relative to the directory of the current file. It does not include the protocol or the domain name, making it shorter and more flexible for internal links within the same website. Here’s an example of linking to the <code class="docutils literal notranslate"><span class="pre">about.html</span></code> page from the <code class="docutils literal notranslate"><span class="pre">contact.html</span></code> page, both of which are in the same folder:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+  Read more on the
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;about.html&quot;</span><span class="p">&gt;</span>About Page<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="link-states">
+<h2>Link states<a class="headerlink" href="#link-states" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">:link</span></code></strong>: This is the default state. This state represents a link which the user has not visited, clicked, or interacted with yet. You can think of this state as providing the base styles for all links on your page. The other states build on top of it.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">:visited</span></code></strong>: This applies when a user has already visited the page being linked to. By default, this turns the link purple - but you can leverage CSS to provide a different visual indication to the user.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">:hover</span></code></strong>: This state applies when a user is hovering their cursor over a link. This state is helpful for providing extra attention to a link, to ensure a user actually intends to click it.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">:focus</span></code></strong>: This state applies when we focus on a link.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">:active</span></code></strong>: This state applies to links that are being activated by the user. This typically means clicking on the link with the primary mouse button by left clicking, in most cases.</p></li>
+</ul>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -438,16 +887,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "html5"
+            mode: "python"
         },
         kernelOptions: {
-            name: "html5",
+            name: "python3",
             path: "./html"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'html5'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -483,6 +932,31 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#html-basics">HTML Basics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-html-elements">Common HTML elements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifiers-and-grouping">Identifiers and Grouping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-characters-and-linking">Special Characters and Linking</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boilerplate-and-encoding">Boilerplate and Encoding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seo-and-social-sharing">SEO and Social Sharing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#media-elements-and-optimization">Media Elements and Optimization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multimedia-integration">Multimedia Integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-attribute-types">Target attribute types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-vs-relative-paths">Absolute vs. Relative Paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-states">Link states</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
