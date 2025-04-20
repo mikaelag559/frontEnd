@@ -44,3 +44,14 @@ parts:
         - file: css/1_basic_css/2
         - file: css/1_basic_css/3
         - file: css/1_basic_css/4
+
+  - caption: JavaScript
+    maxdepth: 10
+    chapters:
+    - file: javaScript/1_variables_n_strings
+      sections:
+        - file: javaScript/1_variables_n_strings/1
+        - file: javaScript/1_variables_n_strings/2
+        - file: javaScript/1_variables_n_strings/3
+        - file: javaScript/1_variables_n_strings/4
+        - file: javaScript/1_variables_n_strings/5
