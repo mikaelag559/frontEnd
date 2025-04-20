@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; My Front End Notes</title>
+    <title>Variables and Strings Summary &#8212; My Front End Notes</title>
   
   
   
@@ -217,12 +217,15 @@
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1_variables_n_strings/1.html">1. Introduction to JavaScript</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_variables_n_strings/2.html">2. Working with Data Types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_variables_n_strings/3.html">3. Working with Strings in JavaScript</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_variables_n_strings/4.html">4. Working with Common String Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_variables_n_strings/5.html">Examples</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Variables and Strings Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_variables_n_strings/1.html">1. Introduction to JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_variables_n_strings/2.html">2. Working with Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_variables_n_strings/3.html">3. Working with Strings in JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_variables_n_strings/4.html">4. Working with Common String Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_variables_n_strings/5.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -361,11 +364,22 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Variables and Strings Summary</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-basics">String Basics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#template-literals-template-strings-and-string-interpolation">Template Literals (Template Strings) and String Interpolation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ascii-the-charcodeat-method-and-the-fromcharcode-method">ASCII, the <code class="docutils literal notranslate"><span class="pre">charCodeAt()</span></code> Method and the <code class="docutils literal notranslate"><span class="pre">fromCharCode()</span></code> Method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-common-string-methods">Other Common String Methods</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -375,8 +389,104 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="variables-and-strings-summary">
+<h1>Variables and Strings Summary<a class="headerlink" href="#variables-and-strings-summary" title="Link to this heading">#</a></h1>
+<section id="string-basics">
+<h2>String Basics<a class="headerlink" href="#string-basics" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>Definition</strong>: A string is a sequence of characters wrapped in either single quotes, double quotes or backticks. Strings are primitive data types and they are immutable. Immutability means that once a string is created, is cannot be changed.</p></li>
+<li><p><strong>Accessing Characters from a String</strong>: To access a character from a string you can use bracket notation and pass in the index number. An index is the position of a character within a string, and it is zero-based.</p>
+<p>const developer = “Jessica”;
+developer[0] // J</p>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">\n</span></code> (Newline Character)</strong>: You can create a newline in a string by using the <code class="docutils literal notranslate"><span class="pre">\n</span></code> newline character.</p>
+<p>const poem = “Roses are red,\nViolets are blue,\nJavaScript is fun,\nAnd so are you.”;
+console.log(poem);</p>
+</li>
+<li><p><strong>Escaping Strings</strong>: You can escape characters in a string by placing backlashes (<code class="docutils literal notranslate"><span class="pre">\</span></code>) in front of the quotes.</p>
+<p>const statement = “She said, “Hello!””;
+console.log(statement); // She said, “Hello!”</p>
+</li>
+</ul>
+</section>
+<section id="template-literals-template-strings-and-string-interpolation">
+<h2>Template Literals (Template Strings) and String Interpolation<a class="headerlink" href="#template-literals-template-strings-and-string-interpolation" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>Definition</strong>: Template literals are defined with backticks (`). They allow for easier string manipulation, including embedding variables directly inside a string, a feature known as string interpolation.</p>
+<p>const name = “Jessica”;
+const greeting = <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">${name}!</span></code>; // “Hello, Jessica!”</p>
+</li>
+</ul>
+</section>
+<section id="ascii-the-charcodeat-method-and-the-fromcharcode-method">
+<h2>ASCII, the <code class="docutils literal notranslate"><span class="pre">charCodeAt()</span></code> Method and the <code class="docutils literal notranslate"><span class="pre">fromCharCode()</span></code> Method<a class="headerlink" href="#ascii-the-charcodeat-method-and-the-fromcharcode-method" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>ASCII</strong>: ASCII, short for American Standard Code for Information Interchange, is a character encoding standard used in computers to represent text. It assigns a numeric value to each character, which is universally recognized by machines.</p></li>
+<li><p><strong>The <code class="docutils literal notranslate"><span class="pre">charCodeAt()</span></code> Method</strong>: This method is called on a string and returns the ASCII code of the character at a specified index.</p>
+<p>const letter = “A”;
+console.log(letter.charCodeAt(0));  // 65</p>
+</li>
+<li><p><strong>The <code class="docutils literal notranslate"><span class="pre">fromCharCode()</span></code> Method</strong>: This method converts an ASCII code into its corresponding character.</p>
+<p>const char = String.fromCharCode(65);
+console.log(char);  // A</p>
+</li>
+</ul>
+</section>
+<section id="other-common-string-methods">
+<h2>Other Common String Methods<a class="headerlink" href="#other-common-string-methods" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>The <code class="docutils literal notranslate"><span class="pre">indexOf</span></code> Method</strong>: This method is used to search for a substring within a string. If the substring is found, <code class="docutils literal notranslate"><span class="pre">indexOf</span></code> returns the index (or position) of the first occurrence of that substring. If the substring is not found, <code class="docutils literal notranslate"><span class="pre">indexOf</span></code> returns -1, which indicates that the search was unsuccessful.</p>
+<p>const text = “The quick brown fox jumps over the lazy dog.”;
+console.log(text.indexOf(“fox”)); // 16
+console.log(text.indexOf(“cat”)); // -1</p>
+</li>
+<li><p><strong>The <code class="docutils literal notranslate"><span class="pre">includes()</span></code> Method</strong>: This method is used to check if a string contains a specific substring. If the substring is found within the string, the method returns true. Otherwise, it returns false.</p>
+<p>const text = “The quick brown fox jumps over the lazy dog.”;
+console.log(text.includes(“fox”)); // true
+console.log(text.includes(“cat”)); // false</p>
+</li>
+<li><p><strong>The <code class="docutils literal notranslate"><span class="pre">slice()</span></code> Method</strong>: This method extracts a portion of a string and returns a new string, without modifying the original string. It takes two parameters: the starting index and the optional ending index.</p>
+<p>const text = “freeCodeCamp”;
+console.log(text.slice(0, 4));  // “free”
+console.log(text.slice(4, 8));  // “Code”
+console.log(text.slice(8, 12)); // “Camp”</p>
+</li>
+<li><p><strong>The <code class="docutils literal notranslate"><span class="pre">toUpperCase()</span></code> Method</strong>: This method converts all the characters to uppercase letters and returns a new string with all uppercase characters.</p>
+<p>const text = “Hello, world!”;
+console.log(text.toUpperCase()); // “HELLO, WORLD!”</p>
+</li>
+<li><p><strong>The <code class="docutils literal notranslate"><span class="pre">toLowerCase()</span></code> Method</strong>: This method converts all characters in a string to lowercase.</p>
+<p>const text = “HELLO, WORLD!”
+console.log(text.toLowerCase()); // “hello, world!”</p>
+</li>
+<li><p><strong>The <code class="docutils literal notranslate"><span class="pre">replace()</span></code> Method</strong>: This method is used to find a specified value (like a word or character) in a string and replace it with another value.</p>
+<p>const text = “I like cats”;
+console.log(text.replace(“cats”, “dogs”)); // “I like dogs”</p>
+</li>
+<li><p><strong>The <code class="docutils literal notranslate"><span class="pre">repeat()</span></code> Method</strong>: This method is used to repeat a string a specified number of times.</p>
+<p>const text = “Hello”;
+console.log(text.repeat(3)); // “HelloHelloHello”</p>
+</li>
+<li><p><strong>The <code class="docutils literal notranslate"><span class="pre">trim()</span></code> Method</strong>: This method is used to remove whitespaces from both the beginning and the end of a string.</p>
+<p>const text = “  Hello, world!  “;
+console.log(text.trim()); // “Hello, world!”</p>
+</li>
+<li><p><strong>The <code class="docutils literal notranslate"><span class="pre">trimStart()</span></code> Method</strong>: This method removes whitespaces from the beginning (or “start”) of the string.</p>
+<p>const text = “  Hello, world!  “;
+console.log(text.trimStart()); // “Hello, world!  “</p>
+</li>
+<li><p><strong>The <code class="docutils literal notranslate"><span class="pre">trimEnd()</span></code> Method</strong>: This method removes whitespaces from the end of the string.</p>
+<p>const text = “ Hello, world! “;
+console.log(text.trimEnd()); // “  Hello, world!”</p>
+</li>
+<li><p><strong>The <code class="docutils literal notranslate"><span class="pre">prompt()</span></code> Method</strong>: This method of thw <code class="docutils literal notranslate"><span class="pre">window</span></code> is used to get information from a user through the form of a dialog box. This method takes two arguments. The first argument is the message which will appear inside the dialog box, typically prompting the user to enter information. The second one is a default value which is optional and will fill the input field initially.</p>
+<p>const answer = window.prompt(“What’s your favorite animal?”); // This will change depending on what the user answers</p>
+</li>
+</ul>
+</section>
+<div class="toctree-wrapper compound">
 </div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -432,6 +542,24 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-basics">String Basics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#template-literals-template-strings-and-string-interpolation">Template Literals (Template Strings) and String Interpolation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ascii-the-charcodeat-method-and-the-fromcharcode-method">ASCII, the <code class="docutils literal notranslate"><span class="pre">charCodeAt()</span></code> Method and the <code class="docutils literal notranslate"><span class="pre">fromCharCode()</span></code> Method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-common-string-methods">Other Common String Methods</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
