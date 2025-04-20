@@ -1,4 +1,4 @@
-# 3. HTML Tables and Forms
+# 3. HTML Tables and Forms Summary
 
 ```{contents}
 ```

@@ -1,0 +1,1076 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. What is CSS? &#8212; My Front End Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'css/1_basic_css/1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2. CSS Specificity, the Cascade Algorithm and Inheritance" href="2.html" />
+    <link rel="prev" title="Resumen 1~4" href="../1_basic_css.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My Front End Notes - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My Front End Notes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">HTML</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/1_basic_html.html">1. Basic HTML</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/1.html">1. What is HTML?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/2.html">2. HTML Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/3.html">3. Working with Media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/4.html">4. Working with Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/2_semantic_html.html">2. Semantic HTML Review</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/2_semantic_html/1.html">2. Semantic HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/2_semantic_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/3_forms_and_tables_html.html">3. HTML Tables and Forms</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/1.html">1. Working with Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/2.html">2. Working with tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/3.html">3. Working with HTML tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/4_accessibility.html">4. HTML Accessibility</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/1.html">1. Importance of accessibility and good HTML structure - I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/2.html">1. Importance of accessibility and good HTML structure - II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/3.html">1. Importance of accessibility and good HTML structure - III</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/4.html">1. Importance of accessibility and good HTML structure - IV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/5.html">1. Importance of accessibility and good HTML structure - V</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1_basic_css.html">Resumen 1~4</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/css/1_basic_css/1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1. What is CSS?</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-css-and-what-is-its-role-on-the-web">1.1. What is CSS, and what is its role on the web?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-basic-anatomy-of-a-css-rule">1.2. What is the basic anatomy of a CSS rule?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-meta-viewport-element-used-for">1.3. What is the meta viewport element used for?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-some-default-browser-styles-applied-to-html">1.4. What are some default browser styles applied to HTML?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-inline-internal-and-external-css-and-when-should-you-use-each-one">1.5. What are inline, internal and external CSS and when should you use each one?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-width-and-height-work">1.6. How do width and height work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-different-types-of-css-combinators">1.7. What are the different types of CSS combinators?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-difference-between-inline-and-block-level-elements">1.8. What is the difference between inline and block-level elements?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-inline-block-work-and-how-does-it-differ-from-inline-and-block-elements">1.9. How does <code>inline-block</code> work and how does it differ from inline and block elements?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-margins-and-padding-and-how-do-they-work">1.10. What are margins and padding and how do they work?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="what-is-css">
+<h1>1. What is CSS?<a class="headerlink" href="#what-is-css" title="Link to this heading">#</a></h1>
+<section id="what-is-css-and-what-is-its-role-on-the-web">
+<h2>1.1. What is CSS, and what is its role on the web?<a class="headerlink" href="#what-is-css-and-what-is-its-role-on-the-web" title="Link to this heading">#</a></h2>
+<p>CSS, which stands for Cascading Style Sheets, is a crucial component of modern web development. It’s a markup language used to apply styles for HTML. In simpler terms, if HTML is the structure of a web page, CSS is what makes it look good.</p>
+<p>The primary role of CSS is to separate the content of a web page from its visual presentation. This separation allows web developers to create more flexible and maintainable websites. With CSS, you can control the layout, colors, fonts, and overall visual appearance of web pages without altering the HTML structure.</p>
+<p>Let’s consider a simple analogy. If you think of a website as a house, HTML would be the foundation and framework, while CSS would be the paint, wallpaper, and decorations that make the house visually appealing and unique.</p>
+<p>CSS works by selecting HTML elements and applying styles to them. These styles can include properties like color, font size, and many more. By changing these properties, you can dramatically alter how a web page looks without changing its content.</p>
+<p>One of the most powerful aspects of CSS is its ability to create responsive designs. This means that with CSS, you can make your website look great on any device, whether it’s a desktop computer, a tablet, or a smartphone. CSS allows you to adjust layouts, font sizes, and other visual elements based on the screen size of the device viewing the website.</p>
+<p>Another important feature of CSS is its cascading nature, which is where the “cascading” in its name comes from. This means that styles can be inherited and overridden, allowing for a hierarchical structure of styling.</p>
+<p>CSS also supports the use of external stylesheets. This means you can keep all your styling rules in a separate file, which can then be linked to multiple HTML pages. This feature greatly enhances the maintainability of websites, especially larger ones. Instead of having to change styles on each individual page, you can make changes in one CSS file that will affect all linked pages.</p>
+<p>In the world of web development, CSS plays a vital role in creating visually appealing, responsive, and user-friendly websites. It allows developers to transform simple HTML documents into engaging web experiences that capture users’ attention and enhance their interaction with web content.</p>
+</section>
+<section id="what-is-the-basic-anatomy-of-a-css-rule">
+<h2>1.2. What is the basic anatomy of a CSS rule?<a class="headerlink" href="#what-is-the-basic-anatomy-of-a-css-rule" title="Link to this heading">#</a></h2>
+<p>CSS is responsible for the styles of a web page. All of these styles are made up of various CSS rules.</p>
+<p>A CSS rule is made up of two main parts: a selector and a declaration block.</p>
+<p>Let’s take a look at the basic syntax:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">selector</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">property</span><span class="p">:</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>A selector is a pattern used in CSS to identify and target specific HTML elements for styling.</p>
+<p>Examples of selectors include type selectors, class selectors, and ID selectors.</p>
+<p>The curly braces provided in the basic syntax are known as a declaration block. A declaration block applies a set of styles for a given selector, or selectors.</p>
+<p>Inside the declaration block, you will have a series of declarations. Each declaration consists of a property and a value.</p>
+<p>The property is the CSS identifier that specifies which feature is being styled. An example of a property would be the <code>background-color</code> property.</p>
+<p>The value would be the specific setting applied to that property. For example, if the property is <code>background-color</code>, a value could be <code>purple</code>, which sets the background color to purple.</p>
+<p>After each property name, you need to place a colon, and after each value, you should have a semicolon.</p>
+<p>Now that you know the syntax for a CSS rule, let’s take a look at an example.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this CSS rule, a type selector targets all paragraph elements on the page.</p>
+<p>Inside the declaration block, there is a one declaration.</p>
+<p>The declaration consists of the <code>color</code> property with a value set to <code>blue</code>. This will change the text color for all paragraph elements to <code>blue</code>.</p>
+<p>If you want to apply the same set of styles to multiple selectors, you can create a selector list with each selector separated by a comma.</p>
+<p>Here is an example of styling multiple selectors:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">#</span><span class="nn">title</span><span class="o">,</span>
+<span class="p">.</span><span class="nc">subheading</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">navy</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this selector list, there is an <code>id</code> selector targeting the HTML element with the <code>id</code> value of <code>title</code>. All <code>id</code> selectors must start with a hash <code>#</code> symbol.</p>
+<p>Then there is a comma followed by a <code>class</code> selector that targets all HTML elements with the <code>class</code> value of <code>subheading</code>. All class selectors must start with a dot <code>.</code>.</p>
+<p>The entire selector list will receive the same styling, with the text color set to <code>navy</code>.</p>
+</section>
+<section id="what-is-the-meta-viewport-element-used-for">
+<h2>1.3. What is the meta viewport element used for?<a class="headerlink" href="#what-is-the-meta-viewport-element-used-for" title="Link to this heading">#</a></h2>
+<p>The meta viewport element is a crucial component in responsive web design.</p>
+<p>It’s a special HTML meta element that gives the browser instructions on how to control the page’s dimensions and scaling on different devices, particularly on mobile phones and tablets.</p>
+<p>Let’s take a look at the basic syntax of the meta viewport element:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>This element is typically placed in the <code>head</code> section of your HTML document. But what does each part of the element mean?</p>
+<p>The <code>width=device-width</code> part tells the browser to set the width of the page to match the screen width of the device. This is essential for creating responsive layouts that adapt to different screen sizes.</p>
+<p>The <code>initial-scale=1.0</code> sets the initial zoom level when the page is first loaded. A value of 1.0 means that the page is displayed at <code>100%</code> zoom, without any scaling.</p>
+<p>By using the meta viewport element, you’re ensuring that your web pages are displayed properly on mobile devices.</p>
+<p>Without it, mobile browsers will typically render the page at a desktop screen width and then scale it down, which can result in a poor user experience with tiny, hard-to-read text.</p>
+<p>The meta viewport element also allows you to control whether users can zoom in and out of your web pages.</p>
+<p>While it’s possible to disable zooming with the <code>user-scalable=no</code> attribute, it’s generally recommended to avoid this for accessibility reasons.</p>
+<p>Many users rely on the ability to zoom for better readability, especially those with visual impairments.</p>
+<p>Here’s an example of what <span style="color: red;">NOT TO DO</span>:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0, user-scalable=no&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Instead, it’s better to design your website to be responsive and readable at different zoom levels, ensuring that all users can comfortably access your content.</p>
+<p>The meta viewport element plays a crucial role in creating mobile-friendly websites.</p>
+<p>It ensures that your carefully crafted responsive designs are displayed as intended on various devices, providing a better user experience for all visitors to your site.</p>
+</section>
+<section id="what-are-some-default-browser-styles-applied-to-html">
+<h2>1.4. What are some default browser styles applied to HTML?<a class="headerlink" href="#what-are-some-default-browser-styles-applied-to-html" title="Link to this heading">#</a></h2>
+<p>When you start working with HTML and CSS, you’ll notice that some styles are applied to your web pages even before you write any CSS. These styles are called “default browser styles” or “user-agent styles”.</p>
+<p>These default browser styles provide basic formatting to ensure that HTML elements are displayed in a readable way across all browsers.</p>
+<p>However, these styles can vary slightly from one browser to another, which is why it’s important to understand them when designing a consistent look for your website.</p>
+<p>Let’s take a look at some common default browser styles applied to various HTML elements.</p>
+<p>Headings are one of the most commonly used HTML elements and are styled by default to have varying sizes and weights.</p>
+<p>For example, <code>h1</code> (the highest-level heading) is usually bold and larger in font size compared to lower-level headings like <code>h2</code>, <code>h3</code>, and so on.</p>
+<p>These heading tags help define the hierarchy and structure of your content.</p>
+<p>The following example shows all six heading elements from <code>h1</code> to <code>h6</code>.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Heading 1<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Heading 2<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Heading 3<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Heading 4<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Heading 5<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h6</span><span class="p">&gt;</span>Heading 6<span class="p">&lt;/</span><span class="nt">h6</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Another element with default styles is the <code>hr</code> element, which creates a horizontal rule often used to visually separate sections of content. Browsers generally apply a simple line style to this element.</p>
+<p>To understand it better, let’s look at this code example:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Paragraph 1<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Paragraph 2<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Paragraph 3<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Paragraph 4<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>The horizontal rule appears as a thin line with spacing above and below the text to distinguish between sections of content.</p>
+<p>Next, we will look at the <code>blockquote</code> element.</p>
+<p>Blockquotes are used to indicate a section of text that is a quotation from another source. Browsers typically add indentation and sometimes italicize the text.</p>
+<p>The indentation helps set blockquotes apart from the rest of the text, making it clear that this content is quoted from another source.</p>
+<p>Let’s take a look at this code example:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Paragraph 1<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Paragraph 2<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">blockquote</span><span class="p">&gt;</span>I think, therefore I am. (Rene Descartes)<span class="p">&lt;/</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Paragraph 3<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Paragraph 4<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>In the example above, the <code>blockquote</code> element will produce an indent on the text, applied by the default browser styles.</p>
+<p>Another element with default styles is the anchor element (<code>&lt;a&gt;</code>), which is styled with a default blue color and underlining to make it recognizable as a link.</p>
+<p>Let’s take at look at the following HTML example:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Paragraph 1<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Paragraph 2<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://freecodecamp.org/&quot;</span><span class="p">&gt;</span>Visit the freeCodeCamp learn page<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Paragraph 3<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Paragraph 4<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>The above code has four paragraph elements with an anchor element in the middle. The anchor element is styled in blue with an underline to show users to go to the freeCodeCamp learn page.</p>
+<p>Finally, we’ll look at the unordered and ordered list elements.</p>
+<p>Browsers add basic formatting to lists, including indentation and bullets or numbers, depending on whether you are using an unordered list (<code>ul</code>) or an ordered list (<code>ol</code>).</p>
+<p>Let’s take a look at an example:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Sample Paragraph<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>item 1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>item 2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>item 3<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>item<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>another item<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>yet another item<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Ending Paragraph<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>In the above code example, we are using an unordered list and an ordered list. Both of these lists will be slightly indented to the right by default.</p>
+<p>For all of these examples, you saw how the browser applied default spacing, varying font sizes, and weights to these HTML elements.</p>
+<p>In later lecture videos, you will learn how to reset some of these default styles using a CSS reset.</p>
+</section>
+<section id="what-are-inline-internal-and-external-css-and-when-should-you-use-each-one">
+<h2>1.5. What are inline, internal and external CSS and when should you use each one?<a class="headerlink" href="#what-are-inline-internal-and-external-css-and-when-should-you-use-each-one" title="Link to this heading">#</a></h2>
+<p>CSS can be applied to a webpage in three main ways: inline, internal, or external.</p>
+<p>Each method has its own use case, advantages, and limitations, and knowing when to use each one is essential for writing clean, efficient, and maintainable code.</p>
+<p>Let’s break down the three types of CSS and when you should use them.</p>
+<p><strong>Inline CSS</strong> is written directly within an HTML element using the <code>style</code> attribute. It applies styles to a specific element.</p>
+<p>Here’s an example using inline CSS:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color: red;&quot;</span><span class="p">&gt;</span>This is an inline-styled paragraph.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>In this example, we are using the <code>style</code> attribute to set the paragraph text to <code>red</code>.</p>
+<p>Inline CSS is generally used for quick, one-off styles or to override other styles for a specific element.</p>
+<p>However, it should be avoided in most cases because it can clutter the HTML and make the code harder to maintain.</p>
+<p>Most of the time, it’s better to use internal or external CSS to keep your styles organized and maintainable.</p>
+<p><strong>Internal CSS</strong> is written within the <code>style</code> tags inside the <code>head</code> section of an HTML document. It applies styles to the entire page and is useful when you need to style a single document.</p>
+<p>Here’s an example of internal CSS:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This paragraph is styled using internal CSS.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>In the above example, the internal CSS applies blue text to all <code>p</code> elements on the page.</p>
+<p><b>Internal CSS is best used when you need to apply styles to a specific page rather than across multiple pages.</b> It’s useful for single-page websites or when the styles don’t need to be reused elsewhere.</p>
+<p>However, there are some downsides, such as not promoting reusability across multiple pages. Additionally, like inline CSS, it mixes HTML and CSS, making the code harder to maintain in larger projects.</p>
+<p><strong>External CSS</strong> is written in a separate <code>.css</code> file and linked to the HTML document using the <code>link</code> element in the <code>head</code> section.</p>
+<p>It allows you to style multiple pages consistently and is the preferred method in professional web development.</p>
+<p>Here’s the HTML part of our code example:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;styles.css&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This paragraph is styled using external CSS.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>In an earlier lecture, you learned that the <code>link</code> element has a <code>rel</code> attribute that specifies the relationship between the current document and the linked resource, such as linking to a stylesheet or an external resource.</p>
+<p>On the other hand, the <code>href</code> attribute specifies the URL of the linked resource, indicating where the resource should be retrieved from.</p>
+<p>Here the CSS portion of the same example in separate file named <code>style.css</code>.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">green</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This example targets all paragraph elements on the page and sets the text color to green.</p>
+<p>External CSS is ideal for large projects where you want to maintain a consistent style across multiple pages.</p>
+<p>It promotes separation of concerns by having HTML handle the structure and CSS handle the styling, which makes the code more maintainable and scalable.</p>
+<p>Understanding when to use each type of CSS is crucial for efficient and effective web development.</p>
+<p>In most cases, external CSS should be your go-to approach, especially for larger and more complex projects.</p>
+</section>
+<section id="how-do-width-and-height-work">
+<h2>1.6. How do width and height work?<a class="headerlink" href="#how-do-width-and-height-work" title="Link to this heading">#</a></h2>
+<p>In CSS, the <code>width</code> and <code>height</code> properties are used to control the dimensions of elements on a webpage.</p>
+<p>These properties can be defined in different units such as pixels (<code>px</code>), percentages (<code>%</code>), viewport units (<code>vw</code>, <code>vh</code>), and more.</p>
+<p>The <code>width</code> property specifies the width of an element. If you do not specify a width, then the default is set to <code>auto</code>. This means the element will take up the full width of its parent container.</p>
+<p>The <code>height</code> property specifies the height of an element. Similarly, the height is <code>auto</code> by default, which means it will adjust to the content inside.</p>
+<p>Here’s an example using the <code>width</code> and <code>height</code> properties:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">.</span><span class="nc">box</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">      </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">      </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">skyblue</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;box&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>In this example, we have a <code>div</code> element with class named <code>box</code>. This element will be occupying <code>100px</code> in height and width, whereas the background color will be <code>skyblue</code>.</p>
+<p>Pixels are a fixed-size unit of measurement in CSS, providing precise control over dimensions.</p>
+<p>The <code>min-width</code> property specifies the minimum width an element can be. Even if the content inside is smaller, the element won’t shrink below this value.</p>
+<p>The <code>min-height</code> specifies the minimum height an element can be. It ensures that the element does not become shorter than the set value.</p>
+<p>Here is an example:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">.</span><span class="nc">box</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">      </span><span class="k">min-width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">      </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">      </span><span class="k">min-height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">      </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightcoral</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;box&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>The above example demonstrates how <code>min-width</code> and <code>min-height</code> work.</p>
+<p>Even though the box has its <code>width</code> and <code>height</code> set to 50px, it will actually be <code>100px</code> by <code>100px</code>. This is because the <code>min-width</code> and <code>min-height</code> are set to <code>100px</code>, which are larger than the specified <code>width</code> and <code>height</code>.</p>
+<p>Remember, if <code>min-width</code> or <code>min-height</code> are larger than the <code>width</code> or <code>height</code>, they will override the smaller values. This ensures that elements don’t become too small, which is important for maintaining a consistent and usable design.</p>
+<p>The <code>max-width</code> specifies the maximum width an element can grow to, even if there is enough space for it to be wider.</p>
+<p>The <code>max-height</code> specifies the maximum height an element can grow to, regardless of the content size.</p>
+<p>Here is an example:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">.</span><span class="nc">box</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">      </span><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">      </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">      </span><span class="k">max-height</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">      </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightgreen</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;box&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>The above example demonstrates how <code>max-width</code> and <code>max-height</code> override <code>width</code> and <code>height</code>. Even though the box is set to <code>200px</code> by <code>200px</code>, it will actually be <code>150px</code> by <code>150px</code>. This is because the <code>max-width</code> and <code>max-height</code> are set to <code>150px</code>, which is smaller.</p>
+<p>Remember, when <code>max-width</code> or <code>max-height</code> are smaller than <code>width</code> or <code>height</code>, they take precedence. This is important for controlling the maximum size of elements in your layouts.</p>
+<p>CSS prioritizes <code>min-width</code> and <code>min-height</code> over <code>width</code> and <code>height</code>. <code>max-width</code> and <code>max-height</code> restrict dimensions if values exceed their limits.</p>
+<p>For example, if you set <code>width</code> to <code>600px</code> and <code>max-width</code> to <code>500px</code>, the element will be limited to <code>500px</code> wide. The <code>max-width</code> overrides the wider setting, keeping the element within the specified maximum size.</p>
+<p>This ensures elements stay within desired size ranges, regardless of standard width and height values.</p>
+</section>
+<section id="what-are-the-different-types-of-css-combinators">
+<h2>1.7. What are the different types of CSS combinators?<a class="headerlink" href="#what-are-the-different-types-of-css-combinators" title="Link to this heading">#</a></h2>
+<p>CSS combinators are used to define the relationship between selectors in CSS. They help in selecting elements based on their relationship to other elements, which allows for more precise and efficient styling.</p>
+<p>We will discuss some primary CSS combinators and their use cases, starting with the descendant combinator.</p>
+<p>A descendant combinator is used to target elements matched by the second selector if they are nested within an ancestor element that matches the first selector. An ancestor can be a parent element or a parent’s parent.</p>
+<p>To better understand how this works, let’s take a look at an example.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">figure</span><span class="w"> </span><span class="nt">img</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In the above example, we use the descendant combinator to select all image elements inside <code>figure</code> elements and apply a <code>solid black</code> border on all four sides.</p>
+<p>Note that a <code>space</code> is used between the parent and child selector.</p>
+<p>In this case, the <code>figure</code> would be the parent and the <code>img</code> would be the child.</p>
+<p>If you had multiple images inside a <code>figure</code> element, using the descendant combinator would be a good way to apply a solid black border around each of those images.</p>
+<p>Another type of combinator would be the child combinator.</p>
+<p>The child combinator (<code>&gt;</code>) in CSS is used to select elements that are direct children of a specified parent element.</p>
+<p>This combinator targets only elements with a specific parent, making your CSS rules more precise and preventing unintended styling of deeper nested elements.</p>
+<p>Let’s take a look at the following HTML example:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>First<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Second<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Third<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>In above HTML structure, the <code>container</code> class is applied to a <code>div</code> element.</p>
+<p>Inside this container, there is a direct child <code>p</code> element (“First”), followed by two additional <code>div</code> elements, each containing a <code>p</code> element (“Second” and “Third”).</p>
+<p>The first <code>p</code> element is a direct child of the <code>.container</code> element, while the other two <code>p</code> elements are nested inside other <code>div</code> elements, making them deeper descendants.</p>
+<p>To apply styles to just the direct child of the <code>container</code> class, you can use the child combinator like this:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">container</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In the above example, we are only targeting the direct child of <code>container</code> class. This will give the direct child the text color of <code>blue</code>.</p>
+<p>Because the other two paragraph elements are nested inside <code>div</code> elements, they are not considered direct children of the <code>container</code> class and will not get the text color of blue.</p>
+<p>Another common combinator would be the next-sibling combinator.</p>
+<p>The next-sibling combinator (<code>+</code>) in CSS selects an element that immediately follows a specified sibling element. This combinator is useful when you want to apply styles to an element that directly follows another element, allowing for targeted styling based on the element’s position relative to its siblings.</p>
+<p>Let’s take a look at the following HTML example:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">figure</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">img</span>
+    <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg&quot;</span>
+    <span class="na">alt</span><span class="o">=</span><span class="s">&quot;A cute orange cat lying on its back.&quot;</span>
+  <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>A cute orange cat lying on its back.<span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Here, we have a <code>figure</code> element containing an <code>img</code> element followed by a <code>figcaption</code> element. The <code>figcaption</code> element is the immediate sibling of the <code>img</code> element.</p>
+<p>If you wanted to apply a black border around the <code>figcaption</code> element, you can use the next-sibling combinator like this:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">img</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nt">figcaption</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, the next-sibling combinator (<code>+</code>) selects the <code>figcaption</code> element that immediately follows the <code>img</code> element. The applied CSS rule adds a <code>4px solid black border</code> around the <code>figcaption</code>.</p>
+<p>Another common combinator is the subsequent-sibling combinator.</p>
+<p>The subsequent-sibling combinator (<code>~</code>) in CSS selects all siblings of a specified element that come after it.</p>
+<p>Unlike the next-sibling combinator, which targets only the immediately following sibling, the subsequent-sibling combinator (<code>~</code>) can target any siblings that follow the specified element, offering greater flexibility in styling.</p>
+<p>Let’s take a look at the following HTML example:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Subheading<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>First paragraph.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Second paragraph.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Third paragraph.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Another paragraph element<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>In this HTML structure, we have an <code>h2</code> element followed by four paragraph elements. The paragraph elements are siblings of the <code>h2</code> element.</p>
+<p>If you want to style all of the paragraph elements that come after the <code>h2</code> element, then you can use the subsequent-sibling combinator like this:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">h2</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">green</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, all paragraph elements following the <code>h2</code> element will have the text color green.</p>
+<p>The subsequent-sibling combinator (<code>~</code>) targets all paragraph siblings that appear after the <code>h2</code> element, regardless of whether they are immediate siblings.</p>
+<p>In conclusion, understanding and using various CSS combinators allows you to apply precise styles to your HTML elements, enhancing the control and flexibility of your design.</p>
+<p>By mastering these selectors, you can create more sophisticated and targeted styling rules that improve both the appearance and functionality of your web pages.</p>
+</section>
+<section id="what-is-the-difference-between-inline-and-block-level-elements">
+<h2>1.8. What is the difference between inline and block-level elements?<a class="headerlink" href="#what-is-the-difference-between-inline-and-block-level-elements" title="Link to this heading">#</a></h2>
+<p>In HTML and CSS, elements are classified as either <b>inline elements</b> or <b>block-level elements</b>, and this classification dictates how they behave in the document layout.</p>
+<p>Understanding this difference is crucial for controlling how your content is displayed on a webpage.</p>
+<p>Block-level elements are elements that take up the full width available to them by default, stretching across the width of their container.</p>
+<p>These elements always start on a new line and push other content to the next line, creating a “block” of content.</p>
+<p>Block-level elements have the CSS property <code>display: block;</code> applied by default. This property ensures that the element stretches to fill the container’s width and appears on a new line.</p>
+<p>Some common block-level elements are <code>div</code> elements, paragraphs, headings, ordered lists, unordered lists, and section elements.</p>
+<p>Here is a code example of a block-level element:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;border: 2px solid red;&quot;</span><span class="p">&gt;</span>
+  First paragraph
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Second paragraph<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Resultado:</p>
+<p style="border: 2px solid red;">
+First paragraph
+</p>
+<p>Second paragraph</p>
+<p>In this example, we have two paragraph elements where the first one has a red border around it.</p>
+<p>The two paragraph elements do not share the same line because they are block level elements by default.</p>
+<p>So, both paragraph elements will take up the full width of its container, which in this case is the <code>body</code> element.</p>
+<p>Block-level elements are ideal when you want content to stack vertically, such as paragraphs, sections, or larger blocks of content. They’re commonly used to define the layout and structure of a webpage.</p>
+<hr>
+<p>Inline elements, unlike block-level elements, only take up as much width as they need and do not start on a new line. These elements flow within the content, allowing text and other inline elements to appear alongside them.</p>
+<p>Inline elements have the CSS property <code>display: inline;</code> applied by default. This property ensures that the element remains within the flow of the content and does not break onto a new line.</p>
+<p>Common inline elements are <code>span</code>, <code>anchor</code>, and <code>img</code> elements.</p>
+<p>Here’s an example to better understand inline elements:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is a
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color: red; border: 2px solid green;&quot;</span><span class="p">&gt;</span>red<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+  word inside a paragraph.
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Resultado:</p>
+<p>This is a
+  <span style="color: red; border: 2px solid green;">red</span>
+  word inside a paragraph.
+</p>
+<p>In this example, we have a <code>span</code> element nested inside of a paragraph element. The <code>span</code> element has a <code>red</code> text color with a <code>green</code> border around it so you can see the highlighted word better.</p>
+<p>As you can see, the <code>span</code> element only takes up as much space as the word “red” and does not push the following content to a new line.</p>
+<p>Inline elements are best used for styling smaller portions of text or content within a line, such as emphasizing a word, creating hyperlinks, or applying specific styles to parts of a paragraph.</p>
+</section>
+<section id="how-does-inline-block-work-and-how-does-it-differ-from-inline-and-block-elements">
+<h2>1.9. How does <code>inline-block</code> work and how does it differ from inline and block elements?<a class="headerlink" href="#how-does-inline-block-work-and-how-does-it-differ-from-inline-and-block-elements" title="Link to this heading">#</a></h2>
+<p>When working with CSS, you often encounter three different types of display behaviors for elements: <code>inline</code>, <code>block</code>, and <code>inline-block</code>.</p>
+<p>Each of these properties affects how elements are positioned and how they interact with other elements on the page.</p>
+<p>In this lecture, we will focus on how the <code>inline-block</code> property works and how it differs from both inline and block-level elements.</p>
+<p>Block-level elements behave like large containers or “blocks” that take up the full width of their parent container. They always start on a new line, and their height and width can be adjusted.</p>
+<p>Inline elements only take up as much space as they need. They flow within the surrounding content and do not break onto a new line.</p>
+<p>The <code>inline-block</code> property is a hybrid of these two behaviors. Like inline elements, <code>inline-block</code> elements remain in the text flow without starting on a new line.</p>
+<p>However, unlike inline elements, you can adjust the width and height of an <code>inline-block</code> element, just as you would with block-level elements.</p>
+<p>In short, the key difference between <code>inline</code> and <code>inline-block</code> is that <code>inline</code> elements cannot have their size controlled, whereas <code>inline-block</code> elements allow for full control over dimensions while still staying inline with other content.</p>
+<p>Let’s take a look at an example.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;inline-block-element element1&quot;</span><span class="p">&gt;</span>Inline-Block Element 1<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;inline-block-element element2&quot;</span><span class="p">&gt;</span>Inline-Block Element 2<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>In the above example, we have a <code>div</code> with a class of <code>container</code>. Inside that <code>div</code> element, we have two <code>span</code> elements.</p>
+<p>Here is the accompanying CSS:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">inline-block-element</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline-block</span><span class="p">;</span>
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">element1</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightblue</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">element2</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightgreen</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Each of the span elements is set to <code>display:inline-block</code> and has a width and height set as well.</p>
+<p>The inline-block elements will appear side by side because they behave like inline elements, but they also have a specified width and height, which gives them block-like properties.</p>
+<p>But, if you remove the <code>display: inline-block</code> property, neither the <code>height</code> nor the <code>width</code> will be applied even though you defined it clearly.</p>
+<p>Here is the revised CSS:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">inline-block-element</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">element1</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightblue</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">element2</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightgreen</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this code, we removed the <code>display: inline-block;</code> property but kept everything else intact. Here, the <code>span</code> elements revert to their default behavior as inline elements.</p>
+<p>As a result, the specified width and height are ignored, and the elements only take up the space needed for their content.</p>
+<p>Understanding how <code>inline-block</code> works is useful because you can use it for creating layouts that require both alignment and dimension control within a continuous text flow.</p>
+</section>
+<section id="what-are-margins-and-padding-and-how-do-they-work">
+<h2>1.10. What are margins and padding and how do they work?<a class="headerlink" href="#what-are-margins-and-padding-and-how-do-they-work" title="Link to this heading">#</a></h2>
+<p>Margin and padding are essential properties in CSS for creating well-structured, readable, and visually appealing web pages.</p>
+<p>Margins control the space outside an element, helping to separate it from other elements and define the layout structure, while padding controls the space inside an element, improving content readability and aesthetic appeal.</p>
+<p>To better understand the differences between <code>margin</code> and <code>padding</code>, let’s take a look at some examples.</p>
+<p>Here is an HTML example of three paragraph elements on the page:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Paragraph one<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Paragraph two<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Paragraph three<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>To apply spacing to the top of each paragraph element, you can use the <code>margin-top</code> property like this:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, we are applying <code>20px</code> of margin only to the top of each paragraph element.</p>
+<p>We also have a solid black border on all four sides so you can see the margin better.</p>
+<p>The four different <code>margin</code> properties are <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> and <code>margin-left</code>.</p>
+<p>Here is an example of using all four properties:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Paragraph one<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Paragraph two<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Paragraph three<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">margin-right</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">margin-left</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, we are assigning spacing values on all four sides of the paragraph element. A solid black border has also been added so you can see the margins better.</p>
+<p>Another way to use the <code>margin</code> property is with shorthand notation. You can specify one, two, three, or four values at once. Let’s explore these options together.</p>
+<p>When using a singular value on the <code>margin</code> shorthand, that exact value will be applied to all four sides of the target element.</p>
+<p>Here is an example of using a single value on <code>margin</code> shorthand:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This code example will apply <code>10px</code> of <code>margin</code> equally to all four sides of the paragraph element.</p>
+<p>When using two values, the first value applies to the <code>top</code> and <code>bottom</code>, while the second value applies to the <code>left</code> and <code>right</code> sides of the element.</p>
+<p>Here is an example of using of two values for the <code>margin</code> shorthand:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This sets the <code>top</code> and <code>bottom</code> margins to <code>10px</code>, and <code>20px</code> for the <code>left</code> and <code>right</code> margins for the paragraph element.</p>
+<p>If three values are provided, the first value applies to the <code>top</code> margin, the second value to the <code>left</code> and <code>right</code> margin, and the third value to the <code>bottom</code> margin.</p>
+<p>Here is an example to better understand:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="w"> </span><span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This sets the margin to <code>10px</code> for the <code>top</code>, <code>20px</code> for the <code>left</code> and <code>right</code>, and <code>30px</code> for the <code>bottom</code>.</p>
+<p>When using four values, this gives you more control, as you can independently specify each margin value for each side of the target element.</p>
+<p>The first value targets the <code>top</code>, the second value targets the <code>right</code>, the third value targets the <code>bottom</code>, and the fourth value targets the <code>left</code>.</p>
+<p>Here is an example of using the margin shorthand with four values:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="w"> </span><span class="mi">30</span><span class="kt">px</span><span class="w"> </span><span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This sets the margin to <code>10px</code> for the <code>top</code>, <code>20px</code> for the <code>right</code>, <code>30px</code> for the <code>bottom</code>, and <code>40px</code> for the <code>left</code>.</p>
+<hr>
+The <code>padding</code> property is used to apply space inside the element, between the content and its border.
+<p>Like the <code>margin</code> property, the four <code>padding</code> properties are <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> and <code>padding-left</code>.</p>
+<p>Here’s an example on how to set the <code>padding</code> for a paragraph element:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Paragraph one<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Paragraph two<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Paragraph three<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">padding-top</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">padding-right</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">padding-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">padding-left</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This sets the padding to <code>10px</code> for the <code>top</code>, <code>20px</code> for the <code>right</code>, <code>30px</code> for the <code>bottom</code>, and <code>40px</code> for the <code>left</code>.</p>
+<p>As you can see that, <code>padding</code> is applied to the content which is inside the border, unlike <code>margin</code> which applies to outside the border.</p>
+<p>Just like the <code>margin</code> property, you can also choose to use the shorthand for the <code>padding</code> property.</p>
+<p>You can either specify one, two, three, or four values on the <code>padding</code> shorthand property as well.</p>
+<p>Here is an example of using the <code>padding</code> shorthand for paragraph element from earlier:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="w"> </span><span class="mi">30</span><span class="kt">px</span><span class="w"> </span><span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In the example, using the shorthand the code will set the padding to <code>10px</code> for the <code>top</code>, <code>20px</code> for the <code>right</code>, <code>30px</code> for the <code>bottom</code>, and <code>40px</code> for the <code>left</code> of the paragraph element.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./css/1_basic_css"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../1_basic_css.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Resumen 1~4</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">2. CSS Specificity, the Cascade Algorithm and Inheritance</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-css-and-what-is-its-role-on-the-web">1.1. What is CSS, and what is its role on the web?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-basic-anatomy-of-a-css-rule">1.2. What is the basic anatomy of a CSS rule?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-meta-viewport-element-used-for">1.3. What is the meta viewport element used for?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-some-default-browser-styles-applied-to-html">1.4. What are some default browser styles applied to HTML?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-inline-internal-and-external-css-and-when-should-you-use-each-one">1.5. What are inline, internal and external CSS and when should you use each one?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-width-and-height-work">1.6. How do width and height work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-different-types-of-css-combinators">1.7. What are the different types of CSS combinators?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-difference-between-inline-and-block-level-elements">1.8. What is the difference between inline and block-level elements?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-inline-block-work-and-how-does-it-differ-from-inline-and-block-elements">1.9. How does <code>inline-block</code> work and how does it differ from inline and block elements?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-margins-and-padding-and-how-do-they-work">1.10. What are margins and padding and how do they work?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mikaela González Pérez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
