@@ -122,13 +122,13 @@ Different Types of CSS Combinators
     
 Here is a short video from Youtube that sums it all up:
 
-<iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/shorts/HQyEa2TwW3o?feature=share"
-    title="YouTube video player"
-    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin"
+<iframe 
+    width="488" 
+    height="867" 
+    src="https://www.youtube.com/embed/HQyEa2TwW3o" 
+    title="Css Combinators" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
     allowfullscreen
 ></iframe>
 
@@ -160,3 +160,4 @@ CSS Specificity
 *   **`!important` keyword**: used to give a style rule the highest priority, allowing it to override any other declarations for a property. When used, it forces the browser to apply the specified style, regardless of the specificity of other selectors. You should be cautious when using `!important` because it can make your CSS harder to maintain and debug.
 *   **Cascade Algorithm**: An algorithm used to decide which CSS rules to apply when there are multiple styles targeting the same element. It ensures that the most appropriate styles are used, based on a set of well-defined rules.
 *   **CSS Inheritance**: The process by which styles are passed down from parent elements to their children. Inheritance allows you to define styles at a higher level in the document tree and have them apply to multiple elements without explicitly specifying them for each element.
+
