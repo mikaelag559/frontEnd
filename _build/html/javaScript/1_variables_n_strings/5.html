@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'javaScript/1_variables_n_strings/5';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Booleans and Numbers Summary" href="../2_booleans_n_numbers.html" />
     <link rel="prev" title="4. Working with Common String Methods" href="4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -211,17 +212,31 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../css/1_basic_css.html">Resumen 1~4</a></li>
-
-
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/1_basic_css.html">Basic CSS Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/1.html">1. What Is CSS?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/2.html">2. CSS Specificity, the Cascade Algorithm and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/3.html">3. Styling Lists and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/4.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1.html">1. Introduction to JavaScript</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2.html">2. Working with Data Types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3.html">3. Working with Strings in JavaScript</a></li>
-<li class="toctree-l1"><a class="reference internal" href="4.html">4. Working with Common String Methods</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Examples</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../1_variables_n_strings.html">Variables and Strings Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1.html">1. Introduction to JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">2. Working with Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.html">3. Working with Strings in JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.html">4. Working with Common String Methods</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2_booleans_n_numbers.html">Booleans and Numbers Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/1.html">1. Working with Numbers, Booleans and the Math Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/2.html">2. Working with Numbers and Common Number Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/3.html">3. Understanding Comparisons and Conditional Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/4.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -347,7 +362,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -363,6 +380,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-bot-chat">1. A Bot Chat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-storyteller">2. A Storyteller</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-teacher-chatbot">3. A Teacher ChatBot</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -374,6 +401,146 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="examples">
 <h1>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h1>
+<section id="a-bot-chat">
+<h2>1. A Bot Chat<a class="headerlink" href="#a-bot-chat" title="Link to this heading">#</a></h2>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hi there!&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;I am excited to talk to you.&quot;</span><span class="p">);</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">bot</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">botLocation</span><span class="p">;</span>
+
+<span class="nx">bot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;teacherBot&quot;</span><span class="p">;</span>
+<span class="nx">botLocation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;the universe&quot;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Allow me to introduce myself.&quot;</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">botIntroduction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;My name is &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">bot</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;.&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">botIntroduction</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">botLocationSentence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;I live in &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">botLocation</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;.&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">botLocationSentence</span><span class="p">);</span>
+
+<span class="nx">bot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;professorBot&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">nicknameIntroduction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;My nickname is &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">bot</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;.&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nicknameIntroduction</span><span class="p">);</span>
+
+<span class="nx">bot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;awesomeTeacherBot&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">newNicknameGreeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;I love my nickname but I wish people would call me &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">bot</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;.&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newNicknameGreeting</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">favoriteSubject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Computer Science&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">favoriteSubjectSentence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;My favorite subject is &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">favoriteSubject</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;.&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">favoriteSubjectSentence</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Well, it was nice to talk to you. Have a nice day!&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="a-storyteller">
+<h2>2. A Storyteller<a class="headerlink" href="#a-storyteller" title="Link to this heading">#</a></h2>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">adjective</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;fast&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">noun</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;rabbit&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">verb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;jumps&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">place</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;garden&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">adjective2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;huge&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">noun2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;carrots&quot;</span><span class="p">;</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">firstStory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Once upon a time, there was a &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">adjective</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">noun</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; who loved to eat &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">noun2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;. The &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">noun</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; lived in a &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">place</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; and had &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">adjective2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; nostrils that blew fire when it was &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">verb</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;.&quot;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;First story: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">firstStory</span><span class="p">);</span>
+
+<span class="nx">adjective</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;slow&quot;</span><span class="p">;</span>
+<span class="nx">noun</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;turtle&quot;</span><span class="p">;</span>
+<span class="nx">verb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;eating&quot;</span><span class="p">;</span>
+<span class="nx">place</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;graden pond&quot;</span><span class="p">;</span>
+<span class="nx">adjective2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;tiny&quot;</span><span class="p">;</span>
+<span class="nx">noun2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;lettuce&quot;</span><span class="p">;</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">secondStory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Once upon a time, there was a &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">adjective</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">noun</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; who loved to eat &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">noun2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;. The &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">noun</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; lived in a &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">place</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; and had &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">adjective2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; nostrils that blew fire when it was &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">verb</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;.&quot;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\nSecond story: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">secondStory</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Console:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>// running tests
+// tests completed
+// console output
+First story: Once upon a time, there was a fast rabbit who loved to eat carrots. The rabbit lived in a garden and had huge nostrils that blew fire when it was jumps.
+
+Second story: Once upon a time, there was a slow turtle who loved to eat lettuce. The turtle lived in a graden pond and had tiny nostrils that blew fire when it was eating.
+</pre></div>
+</div>
+</section>
+<section id="a-teacher-chatbot">
+<h2>3. A Teacher ChatBot<a class="headerlink" href="#a-teacher-chatbot" title="Link to this heading">#</a></h2>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hi there!&quot;</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">botName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;teacherBot&quot;</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`My name is </span><span class="si">${</span><span class="nx">botName</span><span class="si">}</span><span class="sb">.`</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">subject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;JavaScript&quot;</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">topic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;strings&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">sentence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`Today, you will learn about </span><span class="si">${</span><span class="nx">topic</span><span class="si">}</span><span class="sb"> in </span><span class="si">${</span><span class="nx">subject</span><span class="si">}</span><span class="sb">.`</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sentence</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">strLengthIntro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`Here is an example of using the length property on the word </span><span class="si">${</span><span class="nx">subject</span><span class="si">}</span><span class="sb">.`</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">strLengthIntro</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">subject</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Here is an example of using the length property on the word </span><span class="si">${</span><span class="nx">topic</span><span class="si">}</span><span class="sb">.`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">topic</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Here is an example of accessing the first letter in the word </span><span class="si">${</span><span class="nx">subject</span><span class="si">}</span><span class="sb">.`</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">subject</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Here is an example of accessing the second letter in the word </span><span class="si">${</span><span class="nx">subject</span><span class="si">}</span><span class="sb">.`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">subject</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Here is an example of accessing the last letter in the word </span><span class="si">${</span><span class="nx">subject</span><span class="si">}</span><span class="sb">.`</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">lastCharacter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">subject</span><span class="p">[</span><span class="nx">subject</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lastCharacter</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">learningIsFunSentence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Learning is fun.&quot;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Here are examples of finding the positions of substrings in the sentence.&quot;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">learningIsFunSentence</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;Learning&quot;</span><span class="p">));</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">learningIsFunSentence</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;fun&quot;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">learningIsFunSentence</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;learning&quot;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;I hope you enjoyed learning today.&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Console:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Hi there!
+My name is teacherBot.
+Today, you will learn about strings in JavaScript.
+Here is an example of using the length property on the word JavaScript.
+10
+Here is an example of using the length property on the word strings.
+7
+Here is an example of accessing the first letter in the word JavaScript.
+J
+Here is an example of accessing the second letter in the word JavaScript.
+a
+Here is an example of accessing the last letter in the word JavaScript.
+t
+Here are examples of finding the positions of substrings in the sentence.
+0
+12
+-1
+I hope you enjoyed learning today.
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -415,12 +582,38 @@ document.write(`
         <p class="prev-next-title">4. Working with Common String Methods</p>
       </div>
     </a>
+    <a class="right-next"
+       href="../2_booleans_n_numbers.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Booleans and Numbers Summary</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-bot-chat">1. A Bot Chat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-storyteller">2. A Storyteller</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-teacher-chatbot">3. A Teacher ChatBot</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

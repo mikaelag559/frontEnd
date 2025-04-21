@@ -8,7 +8,7 @@ defaults:
 
 parts:
   - caption: HTML
-    maxdepth: 10
+    maxdepth: 3
     chapters:
     - file: html/1_basic_html
       sections:
@@ -36,7 +36,7 @@ parts:
         - file: html/4_accessibility/5
     
   - caption: CSS
-    maxdepth: 10
+    maxdepth: 3
     chapters:
     - file: css/1_basic_css
       sections:
@@ -46,7 +46,7 @@ parts:
         - file: css/1_basic_css/4
 
   - caption: JavaScript
-    maxdepth: 10
+    maxdepth: 3
     chapters:
     - file: javaScript/1_variables_n_strings
       sections:
@@ -55,3 +55,9 @@ parts:
         - file: javaScript/1_variables_n_strings/3
         - file: javaScript/1_variables_n_strings/4
         - file: javaScript/1_variables_n_strings/5
+    - file: javaScript/2_booleans_n_numbers
+      sections:
+        - file: javaScript/2_booleans_n_numbers/1
+        - file: javaScript/2_booleans_n_numbers/2
+        - file: javaScript/2_booleans_n_numbers/3
+        - file: javaScript/2_booleans_n_numbers/4

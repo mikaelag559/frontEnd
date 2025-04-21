@@ -212,17 +212,31 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../css/1_basic_css.html">Resumen 1~4</a></li>
-
-
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/1_basic_css.html">Basic CSS Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/1.html">1. What Is CSS?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/2.html">2. CSS Specificity, the Cascade Algorithm and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/3.html">3. Styling Lists and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/4.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1.html">1. Introduction to JavaScript</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2.html">2. Working with Data Types</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Working with Strings in JavaScript</a></li>
-<li class="toctree-l1"><a class="reference internal" href="4.html">4. Working with Common String Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5.html">Examples</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../1_variables_n_strings.html">Variables and Strings Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1.html">1. Introduction to JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">2. Working with Data Types</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3. Working with Strings in JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.html">4. Working with Common String Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2_booleans_n_numbers.html">Booleans and Numbers Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/1.html">1. Working with Numbers, Booleans and the Math Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/2.html">2. Working with Numbers and Common Number Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/3.html">3. Understanding Comparisons and Conditional Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/4.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -348,7 +362,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -364,6 +380,18 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-bracket-notation-and-how-do-you-access-characters-from-a-string">3.1. What is bracket notation and how do you access characters from a string?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-create-a-newline-in-strings-and-escape-strings-in-javascript">3.2. How do you create a newline in strings and escape strings in JavaScript?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-template-literals-and-what-is-string-interpolation">3.3. What are template literals and what is string interpolation?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-you-find-the-position-of-a-substring-in-a-string">3.4. How can you find the position of a substring in a string?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-prompt-method-and-how-does-it-work">3.5. What is the <code class="docutils literal notranslate"><span class="pre">prompt()</span></code> method, and how does it work?</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -375,6 +403,179 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="working-with-strings-in-javascript">
 <h1>3. Working with Strings in JavaScript<a class="headerlink" href="#working-with-strings-in-javascript" title="Link to this heading">#</a></h1>
+<section id="what-is-bracket-notation-and-how-do-you-access-characters-from-a-string">
+<h2>3.1. What is bracket notation and how do you access characters from a string?<a class="headerlink" href="#what-is-bracket-notation-and-how-do-you-access-characters-from-a-string" title="Link to this heading">#</a></h2>
+<p>In JavaScript, strings are treated as sequences of characters, and each character in a string can be accessed using bracket notation. This allows you to retrieve a specific character from a string based on its position, which is called its index.</p>
+<p>An index is the position of a character within a string, and it is zero-based. This means that the first character of a string has an index of <code class="docutils literal notranslate"><span class="pre">0</span></code>, the second character has an index of <code class="docutils literal notranslate"><span class="pre">1</span></code>, and so on.</p>
+<p>For example, in the string <code class="docutils literal notranslate"><span class="pre">hello</span></code>, the character <code class="docutils literal notranslate"><span class="pre">h</span></code> is at index <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">e</span></code> is at index <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">l</span></code> is at index <code class="docutils literal notranslate"><span class="pre">2</span></code>, and so on.</p>
+<p>Bracket notation uses square brackets (<code class="docutils literal notranslate"><span class="pre">[]</span></code>) and the index of the character you want to access. Let’s look at an example:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span><span class="w"> </span><span class="c1">// Output: &quot;e&quot;</span>
+</pre></div>
+</div>
+<p>In this example, we can access the character at index <code class="docutils literal notranslate"><span class="pre">1</span></code>, which is <code class="docutils literal notranslate"><span class="pre">e</span></code>.</p>
+<p>To get the last character of a string, you can use the length of the string minus one. The <code class="docutils literal notranslate"><span class="pre">length</span></code> property of a string tells you how many characters it contains, so to access the last character, you would subtract one from the length:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">[</span><span class="nx">greeting</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">]);</span><span class="w"> </span><span class="c1">// Output: &quot;o&quot;</span>
+</pre></div>
+</div>
+<p>In this case, the <code class="docutils literal notranslate"><span class="pre">length</span></code> of <code class="docutils literal notranslate"><span class="pre">hello</span></code> is <code class="docutils literal notranslate"><span class="pre">5</span></code>, and the last character (<code class="docutils literal notranslate"><span class="pre">o</span></code>) is at index <code class="docutils literal notranslate"><span class="pre">4</span></code> which is <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p>
+<p>If you want to get multiple characters, you can use bracket notation like this:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">firstTwo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">greeting</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">greeting</span><span class="p">[</span><span class="mf">1</span><span class="p">];</span><span class="w"> </span><span class="c1">// Output: &quot;he&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstTwo</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>In this example, we are concatenating the first and second characters using bracket notation to form the string <code class="docutils literal notranslate"><span class="pre">he</span></code>.</p>
+<p>Bracket notation is useful when you need to access specific characters in a string, such as extracting initials from a name or checking a specific letter for validation.</p>
+</section>
+<section id="how-do-you-create-a-newline-in-strings-and-escape-strings-in-javascript">
+<h2>3.2. How do you create a newline in strings and escape strings in JavaScript?<a class="headerlink" href="#how-do-you-create-a-newline-in-strings-and-escape-strings-in-javascript" title="Link to this heading">#</a></h2>
+<p>When working with strings in JavaScript, there are times when you need to include special characters that the JavaScript engine might otherwise misinterpret.</p>
+<p>Two common tasks involve creating a newline within a string and escaping certain characters (like quotes) to make sure they appear correctly.</p>
+<p>In many programming languages, including JavaScript, you can create a newline in a string using a special character called an escape sequence. The most common escape sequence for newlines is <code class="docutils literal notranslate"><span class="pre">\n</span></code>.</p>
+<p>For example, if you want to break a string into multiple lines, you would use <code class="docutils literal notranslate"><span class="pre">\n</span></code> where you want the new line to begin:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">poem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Roses are red,\nViolets are blue,\nJavaScript is fun,\nAnd so are you.&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">poem</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The output will be:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Roses are red,
+Violets are blue,
+JavaScript is fun,
+And so are you.
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">\n</span></code> escape sequence tells JavaScript to insert a line break at that point, which results in the string being displayed across multiple lines.</p>
+<p>Another important concept when working with strings is escaping characters. Sometimes, you need to include characters in your string that JavaScript normally uses for something else, such as quotes.</p>
+<p>If you simply use quotes inside a string without escaping them, it can cause an error because JavaScript will think you’re trying to end the string.</p>
+<p>For example, <span style="color:red">this will cause an error</span>:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">statement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;She said, &quot;</span><span class="nx">Hello</span><span class="o">!</span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>JavaScript gets confused because it thinks the string ends after the word <code class="docutils literal notranslate"><span class="pre">&quot;said,&quot;</span></code> but, you want the quotes around <code class="docutils literal notranslate"><span class="pre">&quot;Hello!&quot;</span></code> to be part of the string.</p>
+<p>To fix this, you can escape the inner quotes by placing a backslash (<code class="docutils literal notranslate"><span class="pre">\</span></code>) before them:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">statement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;She said, \&quot;Hello!\&quot;&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">statement</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: She said, &quot;Hello!&quot;</span>
+</pre></div>
+</div>
+<p>The backslash tells JavaScript to treat the quotes as literal characters, so they appear correctly in the output.</p>
+<p>You can also escape other special characters, such as the backslash itself (<code class="docutils literal notranslate"><span class="pre">\\</span></code>), or single quotes within a string surrounded by single quotes (<code class="docutils literal notranslate"><span class="pre">\'</span></code>).</p>
+<p>Here’s another example using single quotes:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">quote</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;It\&#39;s a beautiful day!&#39;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">quote</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: It&#39;s a beautiful day!</span>
+</pre></div>
+</div>
+<p>By escaping the single quote with <code class="docutils literal notranslate"><span class="pre">\'</span></code>, JavaScript knows to include it as part of the string rather than ending the string early.</p>
+<p>Escaping and creating newlines are essential when you’re formatting output or handling special characters in strings. These techniques help you prevent errors and ensure your text appears exactly as intended.</p>
+</section>
+<section id="what-are-template-literals-and-what-is-string-interpolation">
+<h2>3.3. What are template literals and what is string interpolation?<a class="headerlink" href="#what-are-template-literals-and-what-is-string-interpolation" title="Link to this heading">#</a></h2>
+<p>In JavaScript, template literals are a powerful and flexible way to work with strings. Unlike regular strings, which use single (<code class="docutils literal notranslate"><span class="pre">'</span></code>) or double (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>) quotes, template literals are defined with backticks (<code class="docutils literal notranslate"><span class="pre">`</span></code>).</p>
+<p>They allow for easier string manipulation, including embedding variables directly inside a string, a feature known as string interpolation.</p>
+<p>Template literals make it easier to create strings that span multiple lines or include expressions (like variables or even JavaScript code) directly within the string.</p>
+<p>Here’s a basic example of a template literal:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">;</span><span class="w"> </span><span class="c1">// Output: &quot;Hello, Alice!&quot;</span>
+</pre></div>
+</div>
+<p>Notice the use of backticks instead of single or double quotes. The <code class="docutils literal notranslate"><span class="pre">${name}</span></code> syntax is an example of string interpolation, where the value of the variable <code class="docutils literal notranslate"><span class="pre">name</span></code> is directly inserted into the string.</p>
+<p>String interpolation allows you to embed variables and expressions inside a string. This is a significant improvement over the older method, where you would concatenate strings and variables using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator.</p>
+<p>Here is an example using string concatenation and the plus (<code class="docutils literal notranslate"><span class="pre">+</span></code>) operator:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">25</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;My name is &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; and I am &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; years old.&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: &quot;My name is Alice and I am 25 years old.&quot;</span>
+</pre></div>
+</div>
+<p>And here is an example using template literals and string interpolation:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`My name is </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb"> and I am </span><span class="si">${</span><span class="nx">age</span><span class="si">}</span><span class="sb"> years old.`</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: &quot;My name is Alice and I am 25 years old.&quot;</span>
+</pre></div>
+</div>
+<p>As you can see, string interpolation with template literals is much cleaner and easier to read, especially when you’re working with multiple variables.</p>
+<p>Another great feature of template literals is that they support multiline strings. With regular strings, you would need to use escape characters (<code class="docutils literal notranslate"><span class="pre">\n</span></code>) to create new lines. With template literals, you can simply write the string across multiple lines, and the formatting is preserved:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">poem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`Roses are red,</span>
+<span class="sb">Violets are blue,</span>
+<span class="sb">JavaScript is fun,</span>
+<span class="sb">And so are you.`</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">poem</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The output will retain the line breaks as written:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Roses</span> <span class="n">are</span> <span class="n">red</span><span class="p">,</span>
+<span class="n">Violets</span> <span class="n">are</span> <span class="n">blue</span><span class="p">,</span>
+<span class="n">JavaScript</span> <span class="ow">is</span> <span class="n">fun</span><span class="p">,</span>
+<span class="n">And</span> <span class="n">so</span> <span class="n">are</span> <span class="n">you</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Template literals are particularly useful when you need to include variables or expressions in strings, format complex strings, or work with multiline text. They are more concise and readable compared to traditional string concatenation.</p>
+</section>
+<section id="how-can-you-find-the-position-of-a-substring-in-a-string">
+<h2>3.4. How can you find the position of a substring in a string?<a class="headerlink" href="#how-can-you-find-the-position-of-a-substring-in-a-string" title="Link to this heading">#</a></h2>
+<p>When working with strings in JavaScript, there may be times when you need to locate the position of a specific substring within a larger string.</p>
+<p>A substring is a sequence of characters that appears within a larger string. For example, in the string <code class="docutils literal notranslate"><span class="pre">hello</span> <span class="pre">world</span></code>, <code class="docutils literal notranslate"><span class="pre">hello</span></code> and <code class="docutils literal notranslate"><span class="pre">world</span></code> are substrings.</p>
+<p>To locate the position of a substring inside of a string, you can use the <code class="docutils literal notranslate"><span class="pre">indexOf()</span></code> method. The <code class="docutils literal notranslate"><span class="pre">indexOf()</span></code> method in JavaScript allows you to search for a substring within a string.</p>
+<p>If the substring is found, <code class="docutils literal notranslate"><span class="pre">indexOf()</span></code> returns the index (or position) of the first occurrence of that substring. If the substring is not found, <code class="docutils literal notranslate"><span class="pre">indexOf()</span></code> returns <code class="docutils literal notranslate"><span class="pre">-1</span></code>, which indicates that the search was unsuccessful.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">indexOf()</span></code> method takes two arguments: the first is the substring you want to find within the larger string, and the second is an option starting position for the search. If you don’t provide a starting position, the search will begin at the start of the string.</p>
+<p>In this context, an <strong>argument</strong> is a value you give to a function or method when you call it, enabling that function or method to perform its task using the specific information you provide. You will learn more about arguments in future lecture videos.</p>
+<p>Here is an example of using the <code class="docutils literal notranslate"><span class="pre">indexOf()</span></code> method to find the position for the string <code class="docutils literal notranslate"><span class="pre">awesome</span></code>:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">sentence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;JavaScript is awesome!&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sentence</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;awesome!&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">position</span><span class="p">);</span><span class="w"> </span><span class="c1">// 14</span>
+</pre></div>
+</div>
+<p>In this example, the word <code class="docutils literal notranslate"><span class="pre">awesome</span></code> starts at index <code class="docutils literal notranslate"><span class="pre">14</span></code> in the string <code class="docutils literal notranslate"><span class="pre">JavaScript</span> <span class="pre">is</span> <span class="pre">awesome!</span></code>, so the <code class="docutils literal notranslate"><span class="pre">indexOf()</span></code> method returns <code class="docutils literal notranslate"><span class="pre">14</span></code>.</p>
+<p>Now, let’s see what happens when the substring isn’t found:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">sentence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;JavaScript is awesome!&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sentence</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;fantastic&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">position</span><span class="p">);</span><span class="w"> </span><span class="c1">// -1</span>
+</pre></div>
+</div>
+<p>Since the word <code class="docutils literal notranslate"><span class="pre">fantastic</span></code> does not appear in the string, the method returns <code class="docutils literal notranslate"><span class="pre">-1</span></code>.</p>
+<p>You can also specify where to begin searching within the string by providing a second argument to <code class="docutils literal notranslate"><span class="pre">indexOf()</span></code>. Here’s an example:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">sentence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;JavaScript is awesome, and JavaScript is powerful!&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sentence</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">position</span><span class="p">);</span><span class="w"> </span><span class="c1">// 27</span>
+</pre></div>
+</div>
+<p>In this case, the search for <code class="docutils literal notranslate"><span class="pre">JavaScript</span></code> begins after the 10th character, and so the second occurrence of <code class="docutils literal notranslate"><span class="pre">JavaScript</span></code> is found at index <code class="docutils literal notranslate"><span class="pre">27</span></code>.</p>
+<p>It is important to note that the <code class="docutils literal notranslate"><span class="pre">indexOf()</span></code> method is case sensitive.</p>
+<p>In this example, the following would return <code class="docutils literal notranslate"><span class="pre">-1</span></code> because the capital letter <code class="docutils literal notranslate"><span class="pre">F</span></code> is not found in the string <code class="docutils literal notranslate"><span class="pre">freeCodeCamp</span></code>.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;freeCodeCamp&quot;</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;F&quot;</span><span class="p">))</span><span class="w"> </span><span class="c1">// -1</span>
+</pre></div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">indexOf()</span></code> can be very useful when you need to check if a substring is present in a string and to determine its position for further operations.</p>
+</section>
+<section id="what-is-the-prompt-method-and-how-does-it-work">
+<h2>3.5. What is the <code class="docutils literal notranslate"><span class="pre">prompt()</span></code> method, and how does it work?<a class="headerlink" href="#what-is-the-prompt-method-and-how-does-it-work" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">prompt()</span></code> method is an important part of JavaScript’s interaction with the user. It’s one of the simplest ways to get input from a user through a small pop-up dialog box.</p>
+<p>You’ll often see it used in cases where the webpage needs a piece of information from the user, such as a name or some other form of text input.</p>
+<p>So, what exactly does the <code class="docutils literal notranslate"><span class="pre">prompt()</span></code> method do? It opens a dialog box that asks the user for some input, and then it returns the text entered by the user as a string.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">prompt()</span></code> method takes two arguments: The first one is the message which will appear inside the dialog box, typically prompting the user to enter information. And the second one is a default value which is optional and will fill the input field initially.</p>
+<p>Here’s an example of how it works:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">userName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;What is your name?&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Guest&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>In this example, the <code class="docutils literal notranslate"><span class="pre">prompt()</span></code> method displays a dialog box with the message <code class="docutils literal notranslate"><span class="pre">What</span> <span class="pre">is</span> <span class="pre">your</span> <span class="pre">name?</span></code> and an input field that initially contains the value <code class="docutils literal notranslate"><span class="pre">Guest</span></code>.</p>
+<p>If the user types their name and presses “OK”, the <code class="docutils literal notranslate"><span class="pre">userName</span></code> variable will store the entered value. If the user presses “Cancel,” the <code class="docutils literal notranslate"><span class="pre">userName</span></code> variable will be set to <code class="docutils literal notranslate"><span class="pre">null</span></code>. <code class="docutils literal notranslate"><span class="pre">null</span></code> signifies that the user did not provide any input.</p>
+<p>When the page first loads, you’ll see the prompt dialog box appear with the message <code class="docutils literal notranslate"><span class="pre">What</span> <span class="pre">is</span> <span class="pre">your</span> <span class="pre">name?</span></code> and the input field pre-filled with <code class="docutils literal notranslate"><span class="pre">Guest</span></code>.</p>
+<p>Keep in mind that the <code class="docutils literal notranslate"><span class="pre">prompt()</span></code> method will halt the execution of the script until the user interacts with the dialog box.</p>
+<p>This means the rest of your JavaScript code won’t run until the user either provides input and clicks “OK”, or cancels the prompt.</p>
+<p>One other point to consider is that while <code class="docutils literal notranslate"><span class="pre">prompt()</span></code> is useful for quick testing or small applications, it’s generally avoided in modern, complex web applications due to its disruptive nature and inconsistent behavior across different browsers.</p>
+<p>Here’s an example:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;How old are you?&quot;</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">age</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;You are &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; years old.&quot;</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;User cancelled the prompt.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, if the user provides input, it will be displayed in the console. If they cancel, the console will log that the user canceled the prompt.</p>
+<p>By understanding the <code class="docutils literal notranslate"><span class="pre">prompt()</span></code> method, you gain a simple way to interact with users and retrieve information directly through the browser, even though it may not be widely used in modern web applications.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -431,6 +632,25 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-bracket-notation-and-how-do-you-access-characters-from-a-string">3.1. What is bracket notation and how do you access characters from a string?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-create-a-newline-in-strings-and-escape-strings-in-javascript">3.2. How do you create a newline in strings and escape strings in JavaScript?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-template-literals-and-what-is-string-interpolation">3.3. What are template literals and what is string interpolation?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-you-find-the-position-of-a-substring-in-a-string">3.4. How can you find the position of a substring in a string?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-prompt-method-and-how-does-it-work">3.5. What is the <code class="docutils literal notranslate"><span class="pre">prompt()</span></code> method, and how does it work?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

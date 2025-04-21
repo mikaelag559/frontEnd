@@ -212,17 +212,31 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../css/1_basic_css.html">Resumen 1~4</a></li>
-
-
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/1_basic_css.html">Basic CSS Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/1.html">1. What Is CSS?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/2.html">2. CSS Specificity, the Cascade Algorithm and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/3.html">3. Styling Lists and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/4.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1.html">1. Introduction to JavaScript</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2.html">2. Working with Data Types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3.html">3. Working with Strings in JavaScript</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Working with Common String Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5.html">Examples</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../1_variables_n_strings.html">Variables and Strings Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1.html">1. Introduction to JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">2. Working with Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.html">3. Working with Strings in JavaScript</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4. Working with Common String Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2_booleans_n_numbers.html">Booleans and Numbers Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/1.html">1. Working with Numbers, Booleans and the Math Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/2.html">2. Working with Numbers and Common Number Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/3.html">3. Understanding Comparisons and Conditional Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/4.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -348,7 +362,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -364,6 +380,20 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-ascii-and-how-does-it-work-with-charcodeat-and-fromcharcode">4.1. what is ASCII and how does it work with <code class="docutils literal notranslate"><span class="pre">charCodeAt()</span></code> and <code class="docutils literal notranslate"><span class="pre">fromCharCode()</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-you-test-if-a-string-contains-a-specific-substring-in-javascript">4.2. How can you test if a string contains a specific substring in JavaScript?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-you-extract-a-substring-from-a-string">4.3. How can you extract a substring from a string?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-you-change-the-casing-for-a-string">4.4. How can you change the casing for a string?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-you-replace-parts-of-a-string-with-another">4.5. How can you replace parts of a string with another?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-you-repeat-a-string-a-x-number-of-times">4.6. How can you repeat a string a x number of times?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-you-trim-whitespace-from-a-string">4.7. How can you trim whitespace from a string?</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -375,6 +405,271 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="working-with-common-string-methods">
 <h1>4. Working with Common String Methods<a class="headerlink" href="#working-with-common-string-methods" title="Link to this heading">#</a></h1>
+<section id="what-is-ascii-and-how-does-it-work-with-charcodeat-and-fromcharcode">
+<h2>4.1. what is ASCII and how does it work with <code class="docutils literal notranslate"><span class="pre">charCodeAt()</span></code> and <code class="docutils literal notranslate"><span class="pre">fromCharCode()</span></code>?<a class="headerlink" href="#what-is-ascii-and-how-does-it-work-with-charcodeat-and-fromcharcode" title="Link to this heading">#</a></h2>
+<p>In programming, understanding how characters are represented as numbers is fundamental. This is where ASCII comes in. ASCII, short for American Standard Code for Information Interchange, is a character encoding standard used in computers to represent text. It assigns a numeric value to each character, which is universally recognized by machines.</p>
+<p>In this lecture, we will explore what ASCII is, how it works, and how you can use JavaScript methods like <code class="docutils literal notranslate"><span class="pre">charCodeAt()</span></code> and <code class="docutils literal notranslate"><span class="pre">fromCharCode()</span></code> to interact with ASCII values.</p>
+<p>ASCII is a system for encoding characters such as letters, digits, and symbols into numerical values. Each character is mapped to a specific number.</p>
+<p>For example, the capital letter <code class="docutils literal notranslate"><span class="pre">A</span></code> is represented by the number <code class="docutils literal notranslate"><span class="pre">65</span></code> in ASCII, while the lowercase <code class="docutils literal notranslate"><span class="pre">a</span></code> is represented by <code class="docutils literal notranslate"><span class="pre">97</span></code>. This encoding allows computers to store and manipulate text.</p>
+<p>The ASCII standard covers 128 characters including:</p>
+<ul class="simple">
+<li><p>Uppercase and lowercase English letters (A-Z, a-z).</p></li>
+<li><p>Numbers (0-9).</p></li>
+<li><p>Common punctuation marks and symbols (!, &#64;, #, and so on).</p></li>
+<li><p>Control characters (such as newline and tab).</p></li>
+</ul>
+<p>In JavaScript, you can easily access the ASCII code of a character using the <code class="docutils literal notranslate"><span class="pre">charCodeAt()</span></code> method. This method is called on a string and returns the ASCII code of the character at a specified index.</p>
+<p>Let’s take a look at an example:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">letter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;A&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">letter</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="mf">0</span><span class="p">));</span><span class="w">  </span><span class="c1">// Output: 65</span>
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">A</span></code> is the first character of the string, and calling <code class="docutils literal notranslate"><span class="pre">charCodeAt(0)</span></code> returns its ASCII value, <code class="docutils literal notranslate"><span class="pre">65</span></code>.</p>
+<p>You can also use this method with other characters to find their ASCII values:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">symbol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;!&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">symbol</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="mf">0</span><span class="p">));</span><span class="w">  </span><span class="c1">// Output: 33</span>
+</pre></div>
+</div>
+<p>Here, the ASCII code for the exclamation mark <code class="docutils literal notranslate"><span class="pre">!</span></code> is returned as <code class="docutils literal notranslate"><span class="pre">33</span></code>.</p>
+<p>While <code class="docutils literal notranslate"><span class="pre">charCodeAt()</span></code> helps you retrieve the ASCII value of a character, the <code class="docutils literal notranslate"><span class="pre">fromCharCode()</span></code> method allows you to do the opposite: convert an ASCII code into its corresponding character.</p>
+<p>Let’s see this in action:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="kr">char</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="mf">65</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kr">char</span><span class="p">);</span><span class="w">  </span><span class="c1">// Output: A</span>
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">fromCharCode(65)</span></code> converts the ASCII value <code class="docutils literal notranslate"><span class="pre">65</span></code> back to the character <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p>
+<p>Another example would be converting the number <code class="docutils literal notranslate"><span class="pre">97</span></code> to its corresponding lowercase letter:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="kr">char</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="mf">97</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kr">char</span><span class="p">);</span><span class="w">  </span><span class="c1">// Output: a</span>
+</pre></div>
+</div>
+<p>These methods are particularly useful when you need to manipulate or compare characters based on their ASCII values.</p>
+<p>For instance, you might use <code class="docutils literal notranslate"><span class="pre">charCodeAt()</span></code> to check if a character is uppercase, lowercase, or a digit by comparing its ASCII value.</p>
+<p>On the other hand, <code class="docutils literal notranslate"><span class="pre">fromCharCode()</span></code> can be used to dynamically generate characters from their ASCII codes.</p>
+</section>
+<section id="how-can-you-test-if-a-string-contains-a-specific-substring-in-javascript">
+<h2>4.2. How can you test if a string contains a specific substring in JavaScript?<a class="headerlink" href="#how-can-you-test-if-a-string-contains-a-specific-substring-in-javascript" title="Link to this heading">#</a></h2>
+<p>When working with strings in JavaScript, there are many cases where you might need to check whether a string contains a specific substring, which is a smaller part of that string.</p>
+<p>For example, you might want to check if a user’s input includes a specific word or character before performing some action. One way to achieve this is by using the <code class="docutils literal notranslate"><span class="pre">includes()</span></code> method.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">includes()</span></code> method is used to check if a string contains a specific substring. If the substring is found within the string, the method returns <code class="docutils literal notranslate"><span class="pre">true</span></code> otherwise, it returns <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p>Here’s the basic syntax:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="nx">string</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">searchValue</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>For the syntax, the <code class="docutils literal notranslate"><span class="pre">searchValue</span></code> is the substring you want to look for within the string. And here’s an example:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">phrase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;JavaScript is awesome!&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">phrase</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;awesome&quot;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w">  </span><span class="c1">// true</span>
+</pre></div>
+</div>
+<p>In this example, the word <code class="docutils literal notranslate"><span class="pre">awesome</span></code> is found within the string <code class="docutils literal notranslate"><span class="pre">JavaScript</span> <span class="pre">is</span> <span class="pre">awesome!</span></code>, so the <code class="docutils literal notranslate"><span class="pre">includes()</span></code> method returns <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<p>It’s important to note that the <code class="docutils literal notranslate"><span class="pre">includes()</span></code> method is case-sensitive. This means that the exact match of the characters is required, including their case.</p>
+<p>For example:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">phrase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;JavaScript is awesome!&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">phrase</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;Awesome&quot;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w">  </span><span class="c1">// Output: false</span>
+</pre></div>
+</div>
+<p>Since <code class="docutils literal notranslate"><span class="pre">Awesome</span></code> (with an uppercase <code class="docutils literal notranslate"><span class="pre">A</span></code>) does not match <code class="docutils literal notranslate"><span class="pre">awesome</span></code> (with a lowercase <code class="docutils literal notranslate"><span class="pre">a</span></code>), the result is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p>You can also use the <code class="docutils literal notranslate"><span class="pre">includes()</span></code> method to check for a substring starting at a specific index in the string by providing a second parameter:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello, JavaScript world!&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">7</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w">  </span><span class="c1">// true</span>
+</pre></div>
+</div>
+<p>Here, the search for the substring <code class="docutils literal notranslate"><span class="pre">JavaScript</span></code> starts from the 7th position in the string, ensuring it skips any characters before this position.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">includes()</span></code> method only returns a <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code> result. It does not provide information on where the substring is located in the string or how many times it occurs. If you need that level of detail, other methods, such as the <code class="docutils literal notranslate"><span class="pre">indexOf()</span></code> method might be more suitable.</p>
+</section>
+<section id="how-can-you-extract-a-substring-from-a-string">
+<h2>4.3. How can you extract a substring from a string?<a class="headerlink" href="#how-can-you-extract-a-substring-from-a-string" title="Link to this heading">#</a></h2>
+<p>When working with strings in JavaScript, you often need to extract a portion or substring from a larger string.</p>
+<p>For example, you may want to extract part of a word, a specific character sequence, or just a fragment of a sentence.</p>
+<p>JavaScript provides several methods for this task, one of the most commonly used being the <code class="docutils literal notranslate"><span class="pre">slice()</span></code> method.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">slice()</span></code> method allows you to extract a portion of a string and returns a new string, without modifying the original string. It takes two parameters: the starting index and the optional ending index.</p>
+<p>Here’s the basic syntax:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="nx">string</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">startIndex</span><span class="p">,</span><span class="w"> </span><span class="nx">endIndex</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">startIndex</span></code> is the position where the extraction starts. <code class="docutils literal notranslate"><span class="pre">endIndex</span></code> is where the extraction ends. If not provided, <code class="docutils literal notranslate"><span class="pre">slice()</span></code> extracts until the end of the string.</p>
+<p>Let’s look at a simple example of extracting part of a string:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">message</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">);</span><span class="w">  </span><span class="c1">// Output: Hello</span>
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">slice(0,</span> <span class="pre">5)</span></code> extracts characters starting from index <code class="docutils literal notranslate"><span class="pre">0</span></code> up to but not including index <code class="docutils literal notranslate"><span class="pre">5</span></code>. As a result, the word <code class="docutils literal notranslate"><span class="pre">Hello</span></code> is extracted.</p>
+<p>If you omit the second parameter, <code class="docutils literal notranslate"><span class="pre">slice()</span></code> will extract everything from the start index to the end of the string:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">world</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">message</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">7</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">world</span><span class="p">);</span><span class="w">  </span><span class="c1">// Output: world!</span>
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">slice(7)</span></code> extracts the string from index <code class="docutils literal notranslate"><span class="pre">7</span></code> to the end of the string, resulting in <code class="docutils literal notranslate"><span class="pre">world!</span></code>.</p>
+<p>You can also use negative numbers as indexes. When you use a negative number, it counts backward from the end of the string:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;JavaScript is fun!&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">lastWord</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">message</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="o">-</span><span class="mf">4</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lastWord</span><span class="p">);</span><span class="w">  </span><span class="c1">// Output: fun!</span>
+</pre></div>
+</div>
+<p>In this case, <code class="docutils literal notranslate"><span class="pre">slice(-4)</span></code> extracts the last four characters from the string, giving us <code class="docutils literal notranslate"><span class="pre">fun!</span></code>.</p>
+<p>Let’s say you want to extract a section from the middle of a string. You can provide both the starting and ending indexes to precisely control which part of the string you want:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;I love JavaScript!&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">language</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">message</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">7</span><span class="p">,</span><span class="w"> </span><span class="mf">17</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">language</span><span class="p">);</span><span class="w">  </span><span class="c1">// Output: JavaScript</span>
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">slice(7,</span> <span class="pre">17)</span></code> extracts the substring starting at index 7 and ending right before index <code class="docutils literal notranslate"><span class="pre">17</span></code>, which is the word <code class="docutils literal notranslate"><span class="pre">JavaScript</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">slice()</span></code> method is a powerful tool for extracting parts of a string in JavaScript.</p>
+<p>You specify the start and end indexes, and the method returns a new string that contains the extracted portion.</p>
+<p>With options for positive, negative, and omitted indexes, you can adapt it to various situations without altering the original string.</p>
+</section>
+<section id="how-can-you-change-the-casing-for-a-string">
+<h2>4.4. How can you change the casing for a string?<a class="headerlink" href="#how-can-you-change-the-casing-for-a-string" title="Link to this heading">#</a></h2>
+<p>When working with strings in JavaScript, there are many situations where you might need to adjust the case of the text, such as transforming all letters to uppercase for a heading or converting text to lowercase for uniformity.</p>
+<p>Luckily, JavaScript makes this easy with two built-in methods: <code class="docutils literal notranslate"><span class="pre">toUpperCase()</span></code> and <code class="docutils literal notranslate"><span class="pre">toLowerCase()</span></code>.</p>
+<ol class="arabic">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">toUpperCase()</span></code> method converts all the characters to uppercase letters and returns a new string with all uppercase characters. This is useful when you want to emphasize text or create consistency in the format of strings.</p>
+<p>Let’s see an example:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">uppercaseGreeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">greeting</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">uppercaseGreeting</span><span class="p">);</span><span class="w">  </span><span class="c1">// Output: &quot;HELLO, WORLD!&quot;</span>
+</pre></div>
+</div>
+<p>In this code, the <code class="docutils literal notranslate"><span class="pre">toUpperCase()</span></code> method transforms the entire string into uppercase letters.</p>
+<p>The original string remains unchanged because <code class="docutils literal notranslate"><span class="pre">toUpperCase()</span></code> returns a new string, rather than modifying the original one.</p>
+</li>
+<li><p>On the flip side, the <code class="docutils literal notranslate"><span class="pre">toLowerCase()</span></code> method converts all characters in a string to lowercase. This is helpful when you need to standardize input, such as when comparing user-provided text or making case-insensitive checks.</p>
+<p>Let’s look at an example:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">shout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;I AM LEARNING JAVASCRIPT!&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">lowercaseShout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">shout</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lowercaseShout</span><span class="p">);</span><span class="w">  </span><span class="c1">// Output: &quot;i am learning javascript!&quot;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">toLowerCase()</span></code> method converts all characters to lowercase, making the string less aggressive, while leaving the original string unchanged.</p>
+</li>
+</ol>
+<p>In summary, the <code class="docutils literal notranslate"><span class="pre">toUpperCase()</span></code> and <code class="docutils literal notranslate"><span class="pre">toLowerCase()</span></code> methods in JavaScript are powerful tools for transforming strings into all uppercase or lowercase letters.</p>
+<p>These methods are particularly useful for standardizing text input, making case-insensitive comparisons, and ensuring design consistency.</p>
+<p>With these simple yet effective methods, you can handle text manipulation in a more controlled and predictable way.</p>
+</section>
+<section id="how-can-you-replace-parts-of-a-string-with-another">
+<h2>4.5. How can you replace parts of a string with another?<a class="headerlink" href="#how-can-you-replace-parts-of-a-string-with-another" title="Link to this heading">#</a></h2>
+<p>In JavaScript, there are many scenarios where you may need to replace a portion of a string with another string.</p>
+<p>For instance, you might need to update user information in a URL, change the formatting of dates, or correct errors in user-generated content.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">replace()</span></code> method in JavaScript allows you to find a specified value (like a word or character) in a string and replace it with another value.</p>
+<p>Here is the basic syntax:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="nx">string</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">searchValue</span><span class="p">,</span><span class="w"> </span><span class="nx">newValue</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">searchValue</span></code> is the value you want to search for in the string. It can be either a string or a regular expression (regex), which describes patterns in text. This allows you to search for and manipulate strings in a flexible and powerful way. You’ll learn more about regular expressions in future lecture videos.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">newValue</span></code> is the value that will replace the <code class="docutils literal notranslate"><span class="pre">searchValue</span></code>. Here’s a simple example:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;I love JavaScript!&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">newText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;coding&quot;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newText</span><span class="p">);</span><span class="w">  </span><span class="c1">// Output: &quot;I love coding!&quot;</span>
+</pre></div>
+</div>
+<p>In this example, the word <code class="docutils literal notranslate"><span class="pre">JavaScript</span></code> is found within the string and is replaced with <code class="docutils literal notranslate"><span class="pre">coding</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">replace()</span></code> method is case-sensitive, meaning that it will only find exact matches of the <code class="docutils literal notranslate"><span class="pre">searchValue</span></code>. For example:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">sentence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;I enjoy working with JavaScript.&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">updatedSentence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sentence</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&quot;javascript&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;coding&quot;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">updatedSentence</span><span class="p">);</span><span class="w">  </span><span class="c1">// Output: &quot;I enjoy working with JavaScript.&quot;</span>
+</pre></div>
+</div>
+<p>Here, since <code class="docutils literal notranslate"><span class="pre">javascript</span></code> (with lowercase <code class="docutils literal notranslate"><span class="pre">j</span></code>) does not match <code class="docutils literal notranslate"><span class="pre">JavaScript</span></code> (with uppercase <code class="docutils literal notranslate"><span class="pre">J</span></code>), the replacement is not made.</p>
+<p>By default, the <code class="docutils literal notranslate"><span class="pre">replace()</span></code> method will only replace the first occurrence of the <code class="docutils literal notranslate"><span class="pre">searchValue</span></code>. If the value appears multiple times in the string, only the first one will be replaced:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">phrase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello, world! Welcome to the world of coding.&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">updatedPhrase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">phrase</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&quot;world&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;universe&quot;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">updatedPhrase</span><span class="p">);</span><span class="w">  </span><span class="c1">// Output: &quot;Hello, universe! Welcome to the world of coding.&quot;</span>
+</pre></div>
+</div>
+<p>Notice that only the first occurrence of <code class="docutils literal notranslate"><span class="pre">world</span></code> is replaced with <code class="docutils literal notranslate"><span class="pre">universe</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">replace()</span></code> method in JavaScript is a powerful and flexible tool for string manipulation. It lets you replace specific parts of a string, whether you’re dealing with individual characters, words, or complex patterns using regular expressions.</p>
+<p>While it’s ideal for straightforward replacements, understanding its case sensitivity and default behavior (like replacing only the first occurrence) can help you use it more effectively.</p>
+</section>
+<section id="how-can-you-repeat-a-string-a-x-number-of-times">
+<h2>4.6. How can you repeat a string a x number of times?<a class="headerlink" href="#how-can-you-repeat-a-string-a-x-number-of-times" title="Link to this heading">#</a></h2>
+<p>When working with JavaScript, you may encounter situations where you need to repeat a string a specific number of times.</p>
+<p>Whether you’re generating repeated patterns or simply duplicating text, the <code class="docutils literal notranslate"><span class="pre">repeat()</span></code> method provides a simple and effective way to achieve this.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">repeat()</span></code> method is a built-in function in JavaScript that allows you to repeat a string a specified number of times. Here is the basic syntax:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="nx">string</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="nx">count</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">string</span></code> is the string that you want to repeat, and <code class="docutils literal notranslate"><span class="pre">count</span></code> is the number of times you want the string to be repeated. Here’s an example:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">word</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello!&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">repeatedWord</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">word</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mf">3</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">repeatedWord</span><span class="p">);</span><span class="w">  </span><span class="c1">// Output: &quot;Hello!Hello!Hello!&quot;</span>
+</pre></div>
+</div>
+<p>In this case, the string <code class="docutils literal notranslate"><span class="pre">Hello!</span></code> is repeated three times, resulting in <code class="docutils literal notranslate"><span class="pre">Hello!Hello!Hello!</span></code>.</p>
+<p>While the <code class="docutils literal notranslate"><span class="pre">repeat()</span></code> method is useful, there are a few exceptions and limitations to keep in mind.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">count</span></code> parameter must be a non-negative number. If you pass a negative number, JavaScript will throw a <code class="docutils literal notranslate"><span class="pre">RangeError</span></code>.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">word</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Test&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">word</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="o">-</span><span class="mf">1</span><span class="p">));</span><span class="w">  </span><span class="c1">// Throws RangeError: Invalid count value</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">count</span></code> must be a finite number. If you try to repeat a string an infinite number of times or use <code class="docutils literal notranslate"><span class="pre">Infinity</span></code> as the count, you will also get a <code class="docutils literal notranslate"><span class="pre">RangeError</span></code>.</p>
+<p>In JavaScript, <code class="docutils literal notranslate"><span class="pre">Infinity</span></code> is a special value that represents an infinite quantity. It’s used to denote numbers that are larger than any finite number.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">word</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Test&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">word</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="kc">Infinity</span><span class="p">));</span><span class="w">  </span><span class="c1">// Throws RangeError: Invalid count value</span>
+</pre></div>
+</div>
+<p>If the count is not an integer (such as a decimal like <code class="docutils literal notranslate"><span class="pre">2.5</span></code>), the <code class="docutils literal notranslate"><span class="pre">repeat()</span></code> method will round it down to the nearest integer.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">word</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Test&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">word</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mf">2.5</span><span class="p">));</span><span class="w">  </span><span class="c1">// Output: &quot;TestTest&quot;</span>
+</pre></div>
+</div>
+<p>If you pass <code class="docutils literal notranslate"><span class="pre">0</span></code> as the count, the <code class="docutils literal notranslate"><span class="pre">repeat()</span></code> method will return an empty string.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">word</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Test&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">word</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mf">0</span><span class="p">));</span><span class="w">  </span><span class="c1">// Output: &quot;&quot;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">repeat()</span></code> method can simplify tasks that involve string duplication, making your code more concise and readable.</p>
+<p>Whether you’re generating repeated text patterns or filling a space with characters, <code class="docutils literal notranslate"><span class="pre">repeat()</span></code> can save you from writing loops or more complex code.</p>
+</section>
+<section id="how-can-you-trim-whitespace-from-a-string">
+<h2>4.7. How can you trim whitespace from a string?<a class="headerlink" href="#how-can-you-trim-whitespace-from-a-string" title="Link to this heading">#</a></h2>
+<p>When working with strings in JavaScript, it’s common to encounter unwanted whitespace at the beginning or end of a string. Whitespace can interfere with operations like comparison, storage, or display, which is why it’s important to know how to remove it efficiently.</p>
+<p>In this lecture, we’ll explore how you can trim whitespace using JavaScript’s <code class="docutils literal notranslate"><span class="pre">trim()</span></code>, <code class="docutils literal notranslate"><span class="pre">trimStart()</span></code>, and <code class="docutils literal notranslate"><span class="pre">trimEnd()</span></code> methods.</p>
+<p>Whitespace refers to spaces, tabs, or line breaks that occur in a string but are not visible characters. For example:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;   Hello, world!   &quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>In this case, there are spaces before and after the visible text, <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">world!</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">trim()</span></code> method is the most commonly used way to remove whitespace from both the beginning and the end of a string. Here’s an example:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;   Hello!   &quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">trimmedMessage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">message</span><span class="p">.</span><span class="nx">trim</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">trimmedMessage</span><span class="p">);</span><span class="w">  </span><span class="c1">// Output: &quot;Hello!&quot;</span>
+</pre></div>
+</div>
+<p>In this case, the <code class="docutils literal notranslate"><span class="pre">trim()</span></code> method removes all the leading and trailing spaces, leaving just <code class="docutils literal notranslate"><span class="pre">Hello!</span></code>. Note that any whitespace within the string (between words, for example) is left untouched by <code class="docutils literal notranslate"><span class="pre">trim()</span></code>.</p>
+<p>Sometimes, you may only want to remove whitespace from either the beginning or the end of a string, but not both. This is where <code class="docutils literal notranslate"><span class="pre">trimStart()</span></code> and <code class="docutils literal notranslate"><span class="pre">trimEnd()</span></code> come in.</p>
+<p><code class="docutils literal notranslate"><span class="pre">trimStart()</span></code> removes whitespace from the beginning (or start) of the string.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;   Hello!   &quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">trimmedStart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">greeting</span><span class="p">.</span><span class="nx">trimStart</span><span class="p">();</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">trimmedStart</span><span class="p">);</span><span class="w">  </span><span class="c1">// Output: &quot;Hello!   &quot;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">trimEnd()</span></code> removes whitespace from the end of the string.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;   Hello!   &quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">trimmedEnd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">greeting</span><span class="p">.</span><span class="nx">trimEnd</span><span class="p">();</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">trimmedEnd</span><span class="p">);</span><span class="w">  </span><span class="c1">// Output: &quot;   Hello!&quot;</span>
+</pre></div>
+</div>
+<p>These methods give you more precise control over which part of the string you want to clean up.</p>
+<p>In summary, trimming whitespace is an essential part of working with strings in JavaScript. Whether you want to clean up input data or ensure consistent string comparisons, you can use <code class="docutils literal notranslate"><span class="pre">trim()</span></code> to remove whitespace from both sides of a string, or use <code class="docutils literal notranslate"><span class="pre">trimStart()</span></code> and <code class="docutils literal notranslate"><span class="pre">trimEnd()</span></code> to target specific sides.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -431,6 +726,27 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-ascii-and-how-does-it-work-with-charcodeat-and-fromcharcode">4.1. what is ASCII and how does it work with <code class="docutils literal notranslate"><span class="pre">charCodeAt()</span></code> and <code class="docutils literal notranslate"><span class="pre">fromCharCode()</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-you-test-if-a-string-contains-a-specific-substring-in-javascript">4.2. How can you test if a string contains a specific substring in JavaScript?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-you-extract-a-substring-from-a-string">4.3. How can you extract a substring from a string?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-you-change-the-casing-for-a-string">4.4. How can you change the casing for a string?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-you-replace-parts-of-a-string-with-another">4.5. How can you replace parts of a string with another?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-you-repeat-a-string-a-x-number-of-times">4.6. How can you repeat a string a x number of times?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-you-trim-whitespace-from-a-string">4.7. How can you trim whitespace from a string?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
