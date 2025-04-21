@@ -1,6 +1,9 @@
-# Basic CSS Summary
+<div style="text-align: justify">
 
-Review the concepts below to prepare for the upcoming quiz.
+# 1. Basic CSS Summary
+
+```{contents}
+```
 
 CSS Basics
 ----------
@@ -203,3 +206,5 @@ Gradients
 
 *   **`linear-gradient()` Function**: This CSS function is used to create a transition between multiple colors along a straight line.
 *   **`radial-gradient()` Function**: This CSS function creates an image that radiates from a particular point, like a circle or an ellipse, and gradually transitions between multiple colors.
+
+</div>

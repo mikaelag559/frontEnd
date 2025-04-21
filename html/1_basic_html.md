@@ -1,3 +1,5 @@
+<div style="text-align: justify">
+
 # 1. Basic HTML Summary
 
 ```{contents}
@@ -507,3 +509,5 @@ Link states
 *   **`:hover`**: This state applies when a user is hovering their cursor over a link. This state is helpful for providing extra attention to a link, to ensure a user actually intends to click it.
 *   **`:focus`**: This state applies when we focus on a link.
 *   **`:active`**: This state applies to links that are being activated by the user. This typically means clicking on the link with the primary mouse button by left clicking, in most cases.
+
+</div>

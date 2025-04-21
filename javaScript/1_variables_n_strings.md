@@ -1,4 +1,9 @@
-# Variables and Strings Summary
+<div style="text-align: justify">
+
+# 1. Variables and Strings Summary
+
+```{contents}
+```
 
 Working with HTML, CSS, and JavaScript
 --------------------------------------
@@ -362,3 +367,5 @@ Other Common String Methods
     const answer = window.prompt("What's your favorite animal?"); 
     // This will change depending on what the user answers
     ```
+
+</div>

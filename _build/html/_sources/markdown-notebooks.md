@@ -12,6 +12,8 @@ kernelspec:
   name: python3
 ---
 
+<div style="text-align: justify">
+
 # Notebooks with MyST Markdown
 
 Jupyter Book also lets you write text-based notebooks using MyST Markdown.

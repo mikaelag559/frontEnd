@@ -1,4 +1,6 @@
 
+<div style="text-align: justify">
+
 # 4. HTML Accessibility Summary
 
 ```{contents}
@@ -176,3 +178,5 @@ There are six main categories of ARIA roles:
         <p id="password-help">Your password must be at least 8 characters long.</p>
     </form>
     ```
+
+</div>

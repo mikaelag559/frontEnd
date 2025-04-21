@@ -1,3 +1,5 @@
+<div style="text-align: justify">
+
 # 2. Semantic HTML Summary
 
 ```{contents}
@@ -188,3 +190,5 @@ Semantic HTML Elements
       Due to unforeseen weather conditions, the hike has been cancelled.
     </p>
     ```
+
+</div>
