@@ -1,3 +1,5 @@
+<div style="text-align: justify">
+
 # 3. HTML Tables and Forms Summary
 
 ```{contents}
@@ -184,3 +186,5 @@ Working with HTML Tools
 *   **HTML validator**: a tool that checks the syntax of HTML code to ensure it is valid.
 *   **DOM inspector**: a tool that allows you to inspect and modify the HTML structure of a web page.
 *   **Devtools**: a set of web developer tools built directly into the browser that helps you debug, profile, and analyze web pages.
+
+</div>

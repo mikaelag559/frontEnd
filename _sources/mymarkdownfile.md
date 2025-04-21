@@ -1,3 +1,5 @@
+<div style="text-align: justify">
+
 # Here's my sample title
 
 This is some sample text.
