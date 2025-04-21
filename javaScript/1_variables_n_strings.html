@@ -212,9 +212,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../css/1_basic_css.html">Resumen 1~4</a></li>
-
-
+<li class="toctree-l1 has-children"><a class="reference internal" href="../css/1_basic_css.html">Basic CSS Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../css/1_basic_css/1.html">1. What Is CSS?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/1_basic_css/2.html">2. CSS Specificity, the Cascade Algorithm and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/1_basic_css/3.html">3. Styling Lists and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/1_basic_css/4.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
 <ul class="current nav bd-sidenav">
@@ -224,6 +228,13 @@
 <li class="toctree-l2"><a class="reference internal" href="1_variables_n_strings/3.html">3. Working with Strings in JavaScript</a></li>
 <li class="toctree-l2"><a class="reference internal" href="1_variables_n_strings/4.html">4. Working with Common String Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="1_variables_n_strings/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="2_booleans_n_numbers.html">Booleans and Numbers Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="2_booleans_n_numbers/1.html">1. Working with Numbers, Booleans and the Math Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_booleans_n_numbers/2.html">2. Working with Numbers and Common Number Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_booleans_n_numbers/3.html">3. Understanding Comparisons and Conditional Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_booleans_n_numbers/4.html">Examples</a></li>
 </ul>
 </details></li>
 </ul>
@@ -374,6 +385,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-html-css-and-javascript">Working with HTML, CSS, and JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types-in-javascript">Data Types in JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-in-javascript">Variables in JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-naming-conventions">Variable Naming Conventions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-and-string-immutability-in-javascript">Strings and String immutability in JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-concatenation-in-javascript">String Concatenation in JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-messages-with-console-log">Logging Messages with <code class="docutils literal notranslate"><span class="pre">console.log()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semicolons-in-javascript">Semicolons in JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comments-in-javascript">Comments in JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#javascript-as-a-dynamically-typed-language">JavaScript as a Dynamically Typed Language</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-typeof-operator">Using the <code class="docutils literal notranslate"><span class="pre">typeof</span></code> Operator</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-basics">String Basics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#template-literals-template-strings-and-string-interpolation">Template Literals (Template Strings) and String Interpolation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ascii-the-charcodeat-method-and-the-fromcharcode-method">ASCII, the <code class="docutils literal notranslate"><span class="pre">charCodeAt()</span></code> Method and the <code class="docutils literal notranslate"><span class="pre">fromCharCode()</span></code> Method</a></li>
@@ -391,21 +413,234 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="variables-and-strings-summary">
 <h1>Variables and Strings Summary<a class="headerlink" href="#variables-and-strings-summary" title="Link to this heading">#</a></h1>
+<section id="working-with-html-css-and-javascript">
+<h2>Working with HTML, CSS, and JavaScript<a class="headerlink" href="#working-with-html-css-and-javascript" title="Link to this heading">#</a></h2>
+<p>While HTML and CSS provide website structure, JavaScript brings interactivity to websites by enabling complex functionality, such as handling user input, animating elements, and even building full web applications.</p>
+</section>
+<section id="data-types-in-javascript">
+<h2>Data Types in JavaScript<a class="headerlink" href="#data-types-in-javascript" title="Link to this heading">#</a></h2>
+<p>Data types help the program understand the kind of data it’s working with, whether it’s a number, text, or something else.</p>
+<ul>
+<li><p><strong>Number</strong>: A number represents both integers and floating-point values. Examples of integers include 7, 19, and 90.</p></li>
+<li><p><strong>Floating point</strong>: A floating point number is a number with a decimal point. Examples include 3.14, 0.5, and 0.0001.</p></li>
+<li><p><strong>String</strong>: A string is a sequence of characters, or text, enclosed in quotes. <code class="docutils literal notranslate"><span class="pre">&quot;I</span> <span class="pre">like</span> <span class="pre">coding&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">'JavaScript</span> <span class="pre">is</span> <span class="pre">fun'</span></code> are examples of strings.</p></li>
+<li><p><strong>Boolean</strong>: A boolean represents one of two possible values: <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>. You can use a boolean to represent a condition, such as <code class="docutils literal notranslate"><span class="pre">isLoggedIn</span> <span class="pre">=</span> <span class="pre">true</span></code>.</p></li>
+<li><p><strong>Undefined and Null</strong>: An <code class="docutils literal notranslate"><span class="pre">undefined</span></code> value is a variable that has been declared but not assigned a value. A <code class="docutils literal notranslate"><span class="pre">null</span></code> value is an empty value, or a variable that has intentionally been assigned a value of <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p></li>
+<li><p><strong>Object</strong>: An object is a collection of key-value pairs. The key is the property name, and the value is the property value.</p>
+<p>Here, the <code class="docutils literal notranslate"><span class="pre">pet</span></code> object has three properties or keys: <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">age</span></code>, and <code class="docutils literal notranslate"><span class="pre">type</span></code>. The values are <code class="docutils literal notranslate"><span class="pre">Fluffy</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code>, and <code class="docutils literal notranslate"><span class="pre">dog</span></code>, respectively.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">pet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Fluffy&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;dog&quot;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Symbol</strong>: The Symbol data type is a unique and immutable value that may be used as an identifier for object properties.</p>
+<p>In this example below, two symbols are created with the same description, but they are not equal.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">crypticKey1</span><span class="o">=</span><span class="w"> </span><span class="nb">Symbol</span><span class="p">(</span><span class="s2">&quot;saltNpepper&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">crypticKey2</span><span class="o">=</span><span class="w"> </span><span class="nb">Symbol</span><span class="p">(</span><span class="s2">&quot;saltNpepper&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">crypticKey1</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">crypticKey2</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>BigInt</strong>: When the number is too large for the <code class="docutils literal notranslate"><span class="pre">Number</span></code> data type, you can use the BigInt data type to represent integers of arbitrary length.</p>
+<p>By adding an <code class="docutils literal notranslate"><span class="pre">n</span></code> to the end of the number, you can create a BigInt.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">veryBigNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1234567890123456789012345678901234567890n</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="variables-in-javascript">
+<h2>Variables in JavaScript<a class="headerlink" href="#variables-in-javascript" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Variables can be declared using the <code class="docutils literal notranslate"><span class="pre">let</span></code> keyword.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">cityName</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p>To assign a value to a variable, you can use the assignment operator <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="nx">cityName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;New York&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Variables declared using <code class="docutils literal notranslate"><span class="pre">let</span></code> can be reassigned a new value.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="nx">cityName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Los Angeles&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">cityName</span><span class="p">);</span><span class="w"> </span><span class="c1">// Los Angeles</span>
+</pre></div>
+</div>
+</li>
+<li><p>Apart from <code class="docutils literal notranslate"><span class="pre">let</span></code>, you can also use <code class="docutils literal notranslate"><span class="pre">const</span></code> to declare a variable. However, a <code class="docutils literal notranslate"><span class="pre">const</span></code> variable cannot be reassigned a new value.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">cityName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;New York&quot;</span><span class="p">;</span>
+<span class="nx">cityName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Los Angeles&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// TypeError: Assignment to constant variable.</span>
+</pre></div>
+</div>
+</li>
+<li><p>Variables declared using <code class="docutils literal notranslate"><span class="pre">const</span></code> find uses in declaring constants, that are not allowed to change throughout the code, such as <code class="docutils literal notranslate"><span class="pre">PI</span></code> or <code class="docutils literal notranslate"><span class="pre">MAX_SIZE</span></code>.</p></li>
+</ul>
+</section>
+<section id="variable-naming-conventions">
+<h2>Variable Naming Conventions<a class="headerlink" href="#variable-naming-conventions" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Variable names should be descriptive and meaningful.</p></li>
+<li><p>Variable names should be camelCase like <code class="docutils literal notranslate"><span class="pre">cityName</span></code>, <code class="docutils literal notranslate"><span class="pre">isLoggedIn</span></code>, and <code class="docutils literal notranslate"><span class="pre">veryBigNumber</span></code>.</p></li>
+<li><p>Variable names should not start with a number. They must begin with a letter, <code class="docutils literal notranslate"><span class="pre">_</span></code>, or <code class="docutils literal notranslate"><span class="pre">$</span></code>.</p></li>
+<li><p>Variable names should not contain spaces or special characters, except for <code class="docutils literal notranslate"><span class="pre">_</span></code> and <code class="docutils literal notranslate"><span class="pre">$</span></code>.</p></li>
+<li><p>Variable names should not be reserved keywords.</p></li>
+<li><p>Variable names are case-sensitive. <code class="docutils literal notranslate"><span class="pre">age</span></code> and <code class="docutils literal notranslate"><span class="pre">Age</span></code> are different variables.</p></li>
+</ul>
+</section>
+<section id="strings-and-string-immutability-in-javascript">
+<h2>Strings and String immutability in JavaScript<a class="headerlink" href="#strings-and-string-immutability-in-javascript" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Strings are sequences of characters enclosed in quotes. They can be created using single quotes and double quotes.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">correctWay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;This is a string&#39;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">alsoCorrect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;This is also a string&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Strings are immutable in JavaScript. This means that once a string is created, you cannot change the characters in the string. However, you can still reassign strings to a new value.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">firstName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">;</span>
+<span class="nx">firstName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jane&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Reassigning the string to a new value</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="string-concatenation-in-javascript">
+<h2>String Concatenation in JavaScript<a class="headerlink" href="#string-concatenation-in-javascript" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Concatenation is the process of joining multiple strings or combining strings with variables that hold text. The <code class="docutils literal notranslate"><span class="pre">+</span></code> operator is one of the simplest and most frequently used methods to concatenate strings.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">studentName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Asad&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">studentAge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">25</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">studentInfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">studentName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; is &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">studentAge</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; years old.&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">studentInfo</span><span class="p">);</span><span class="w"> </span><span class="c1">// Asad is 25 years old.</span>
+</pre></div>
+</div>
+</li>
+<li><p>If you need to add or append to an existing string, then you can use the <code class="docutils literal notranslate"><span class="pre">+=</span></code> operator. This is helpful when you want to build upon a string by adding more text to it over time.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Welcome to programming, &quot;</span><span class="p">;</span>
+<span class="nx">message</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">&quot;Asad!&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span><span class="w"> </span><span class="c1">// Welcome to programming, Asad!</span>
+</pre></div>
+</div>
+</li>
+<li><p>Another way you can concatenate strings is to use the <code class="docutils literal notranslate"><span class="pre">concat()</span></code> method. This method joins two or more strings together.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">firstName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">lastName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Doe&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">fullName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">firstName</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">lastName</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fullName</span><span class="p">);</span><span class="w"> </span><span class="c1">// John Doe</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="logging-messages-with-console-log">
+<h2>Logging Messages with <code class="docutils literal notranslate"><span class="pre">console.log()</span></code><a class="headerlink" href="#logging-messages-with-console-log" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">console.log()</span></code> method is used to log messages to the console. It’s a helpful tool for debugging and testing your code.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">);</span>
+<span class="c1">// Output: Hello, World!</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="semicolons-in-javascript">
+<h2>Semicolons in JavaScript<a class="headerlink" href="#semicolons-in-javascript" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Semicolons are primarily used to mark the end of a statement. This helps the JavaScript engine understand the separation of individual instructions, which is crucial for correct execution.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// first statement ends here</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">42</span><span class="p">;</span><span class="w"> </span><span class="c1">// second statement starts here</span>
+</pre></div>
+</div>
+</li>
+<li><p>Semicolons help prevent ambiguities in code execution and ensure that statements are correctly terminated.</p></li>
+</ul>
+</section>
+<section id="comments-in-javascript">
+<h2>Comments in JavaScript<a class="headerlink" href="#comments-in-javascript" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Any line of code that is commented out is ignored by the JavaScript engine. Comments are used to explain code, make notes, or temporarily disable code.</p></li>
+<li><p>Single-line comments are created using <code class="docutils literal notranslate"><span class="pre">//</span></code>.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="c1">// This is a single-line comment and will be ignored by the JavaScript engine</span>
+</pre></div>
+</div>
+</li>
+<li><p>Multi-line comments are created using <code class="docutils literal notranslate"><span class="pre">/*</span></code> to start the comment and <code class="docutils literal notranslate"><span class="pre">*/</span></code> to end the comment.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">This is a multi-line comment.</span>
+<span class="cm">It can span multiple lines.</span>
+<span class="cm">*/</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="javascript-as-a-dynamically-typed-language">
+<h2>JavaScript as a Dynamically Typed Language<a class="headerlink" href="#javascript-as-a-dynamically-typed-language" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>JavaScript is a dynamically typed language, which means that you don’t have to specify the data type of a variable when you declare it. The JavaScript engine automatically determines the data type based on the value assigned to the variable.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">404</span><span class="p">;</span><span class="w"> </span><span class="c1">// JavaScript treats error as a number</span>
+<span class="nx">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Not Found&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// JavaScript now treats error as a string</span>
+</pre></div>
+</div>
+</li>
+<li><p>Other languages, like Java, that are not dynamically typed would result in an error:</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kr">int</span><span class="w"> </span><span class="nx">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">404</span><span class="p">;</span><span class="w"> </span><span class="c1">// value must always be an integer</span>
+<span class="nx">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Not Found&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// This would cause an error in Java</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="using-the-typeof-operator">
+<h2>Using the <code class="docutils literal notranslate"><span class="pre">typeof</span></code> Operator<a class="headerlink" href="#using-the-typeof-operator" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">typeof</span></code> operator is used to check the data type of a variable. It returns a string indicating the type of the variable.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">25</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">age</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;number&quot;</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">isLoggedIn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">isLoggedIn</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;boolean&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>However, there’s a well-known quirk in JavaScript when it comes to <code class="docutils literal notranslate"><span class="pre">null</span></code>. The <code class="docutils literal notranslate"><span class="pre">typeof</span></code> operator returns <code class="docutils literal notranslate"><span class="pre">&quot;object&quot;</span></code> for <code class="docutils literal notranslate"><span class="pre">null</span></code> values.</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">user</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;object&quot;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
 <section id="string-basics">
 <h2>String Basics<a class="headerlink" href="#string-basics" title="Link to this heading">#</a></h2>
 <ul>
 <li><p><strong>Definition</strong>: A string is a sequence of characters wrapped in either single quotes, double quotes or backticks. Strings are primitive data types and they are immutable. Immutability means that once a string is created, is cannot be changed.</p></li>
 <li><p><strong>Accessing Characters from a String</strong>: To access a character from a string you can use bracket notation and pass in the index number. An index is the position of a character within a string, and it is zero-based.</p>
-<p>const developer = “Jessica”;
-developer[0] // J</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">developer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jessica&quot;</span><span class="p">;</span>
+<span class="nx">developer</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="c1">// J</span>
+</pre></div>
+</div>
 </li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">\n</span></code> (Newline Character)</strong>: You can create a newline in a string by using the <code class="docutils literal notranslate"><span class="pre">\n</span></code> newline character.</p>
-<p>const poem = “Roses are red,\nViolets are blue,\nJavaScript is fun,\nAnd so are you.”;
-console.log(poem);</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">poem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Roses are red,\nViolets are blue,\nJavaScript is fun,\nAnd so are you.&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">poem</span><span class="p">);</span>
+
+<span class="cm">/* Roses are red,</span>
+<span class="cm">Violets are blue,</span>
+<span class="cm">JavaScript is fun,</span>
+<span class="cm">And so are you. */</span>
+</pre></div>
+</div>
 </li>
 <li><p><strong>Escaping Strings</strong>: You can escape characters in a string by placing backlashes (<code class="docutils literal notranslate"><span class="pre">\</span></code>) in front of the quotes.</p>
-<p>const statement = “She said, “Hello!””;
-console.log(statement); // She said, “Hello!”</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">statement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;She said, \&quot;Hello!\&quot;&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">statement</span><span class="p">);</span><span class="w"> </span><span class="c1">// She said, &quot;Hello!&quot;</span>
+</pre></div>
+</div>
 </li>
 </ul>
 </section>
@@ -413,8 +648,10 @@ console.log(statement); // She said, “Hello!”</p>
 <h2>Template Literals (Template Strings) and String Interpolation<a class="headerlink" href="#template-literals-template-strings-and-string-interpolation" title="Link to this heading">#</a></h2>
 <ul>
 <li><p><strong>Definition</strong>: Template literals are defined with backticks (`). They allow for easier string manipulation, including embedding variables directly inside a string, a feature known as string interpolation.</p>
-<p>const name = “Jessica”;
-const greeting = <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">${name}!</span></code>; // “Hello, Jessica!”</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jessica&quot;</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">;</span><span class="w"> </span><span class="c1">// &quot;Hello, Jessica!&quot;</span>
+</pre></div>
+</div>
 </li>
 </ul>
 </section>
@@ -423,12 +660,16 @@ const greeting = <code class="docutils literal notranslate"><span class="pre">He
 <ul>
 <li><p><strong>ASCII</strong>: ASCII, short for American Standard Code for Information Interchange, is a character encoding standard used in computers to represent text. It assigns a numeric value to each character, which is universally recognized by machines.</p></li>
 <li><p><strong>The <code class="docutils literal notranslate"><span class="pre">charCodeAt()</span></code> Method</strong>: This method is called on a string and returns the ASCII code of the character at a specified index.</p>
-<p>const letter = “A”;
-console.log(letter.charCodeAt(0));  // 65</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">letter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;A&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">letter</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="mf">0</span><span class="p">));</span><span class="w">  </span><span class="c1">// 65</span>
+</pre></div>
+</div>
 </li>
 <li><p><strong>The <code class="docutils literal notranslate"><span class="pre">fromCharCode()</span></code> Method</strong>: This method converts an ASCII code into its corresponding character.</p>
-<p>const char = String.fromCharCode(65);
-console.log(char);  // A</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="kr">char</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="mf">65</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kr">char</span><span class="p">);</span><span class="w">  </span><span class="c1">// A</span>
+</pre></div>
+</div>
 </li>
 </ul>
 </section>
@@ -436,51 +677,74 @@ console.log(char);  // A</p>
 <h2>Other Common String Methods<a class="headerlink" href="#other-common-string-methods" title="Link to this heading">#</a></h2>
 <ul>
 <li><p><strong>The <code class="docutils literal notranslate"><span class="pre">indexOf</span></code> Method</strong>: This method is used to search for a substring within a string. If the substring is found, <code class="docutils literal notranslate"><span class="pre">indexOf</span></code> returns the index (or position) of the first occurrence of that substring. If the substring is not found, <code class="docutils literal notranslate"><span class="pre">indexOf</span></code> returns -1, which indicates that the search was unsuccessful.</p>
-<p>const text = “The quick brown fox jumps over the lazy dog.”;
-console.log(text.indexOf(“fox”)); // 16
-console.log(text.indexOf(“cat”)); // -1</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;The quick brown fox jumps over the lazy dog.&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;fox&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// 16</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;cat&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// -1</span>
+</pre></div>
+</div>
 </li>
 <li><p><strong>The <code class="docutils literal notranslate"><span class="pre">includes()</span></code> Method</strong>: This method is used to check if a string contains a specific substring. If the substring is found within the string, the method returns true. Otherwise, it returns false.</p>
-<p>const text = “The quick brown fox jumps over the lazy dog.”;
-console.log(text.includes(“fox”)); // true
-console.log(text.includes(“cat”)); // false</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;The quick brown fox jumps over the lazy dog.&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;fox&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;cat&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
+</pre></div>
+</div>
 </li>
 <li><p><strong>The <code class="docutils literal notranslate"><span class="pre">slice()</span></code> Method</strong>: This method extracts a portion of a string and returns a new string, without modifying the original string. It takes two parameters: the starting index and the optional ending index.</p>
-<p>const text = “freeCodeCamp”;
-console.log(text.slice(0, 4));  // “free”
-console.log(text.slice(4, 8));  // “Code”
-console.log(text.slice(8, 12)); // “Camp”</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;freeCodeCamp&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">));</span><span class="w">  </span><span class="c1">// &quot;free&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">));</span><span class="w">  </span><span class="c1">// &quot;Code&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">8</span><span class="p">,</span><span class="w"> </span><span class="mf">12</span><span class="p">));</span><span class="w"> </span><span class="c1">// &quot;Camp&quot;</span>
+</pre></div>
+</div>
 </li>
 <li><p><strong>The <code class="docutils literal notranslate"><span class="pre">toUpperCase()</span></code> Method</strong>: This method converts all the characters to uppercase letters and returns a new string with all uppercase characters.</p>
-<p>const text = “Hello, world!”;
-console.log(text.toUpperCase()); // “HELLO, WORLD!”</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">());</span><span class="w"> </span><span class="c1">// &quot;HELLO, WORLD!&quot;</span>
+</pre></div>
+</div>
 </li>
 <li><p><strong>The <code class="docutils literal notranslate"><span class="pre">toLowerCase()</span></code> Method</strong>: This method converts all characters in a string to lowercase.</p>
-<p>const text = “HELLO, WORLD!”
-console.log(text.toLowerCase()); // “hello, world!”</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;HELLO, WORLD!&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">());</span><span class="w"> </span><span class="c1">// &quot;hello, world!&quot;</span>
+</pre></div>
+</div>
 </li>
 <li><p><strong>The <code class="docutils literal notranslate"><span class="pre">replace()</span></code> Method</strong>: This method is used to find a specified value (like a word or character) in a string and replace it with another value.</p>
-<p>const text = “I like cats”;
-console.log(text.replace(“cats”, “dogs”)); // “I like dogs”</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;I like cats&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&quot;cats&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;dogs&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// &quot;I like dogs&quot;</span>
+</pre></div>
+</div>
 </li>
 <li><p><strong>The <code class="docutils literal notranslate"><span class="pre">repeat()</span></code> Method</strong>: This method is used to repeat a string a specified number of times.</p>
-<p>const text = “Hello”;
-console.log(text.repeat(3)); // “HelloHelloHello”</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mf">3</span><span class="p">));</span><span class="w"> </span><span class="c1">// &quot;HelloHelloHello&quot;</span>
+</pre></div>
+</div>
 </li>
 <li><p><strong>The <code class="docutils literal notranslate"><span class="pre">trim()</span></code> Method</strong>: This method is used to remove whitespaces from both the beginning and the end of a string.</p>
-<p>const text = “  Hello, world!  “;
-console.log(text.trim()); // “Hello, world!”</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;  Hello, world!  &quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">trim</span><span class="p">());</span><span class="w"> </span><span class="c1">// &quot;Hello, world!&quot;</span>
+</pre></div>
+</div>
 </li>
 <li><p><strong>The <code class="docutils literal notranslate"><span class="pre">trimStart()</span></code> Method</strong>: This method removes whitespaces from the beginning (or “start”) of the string.</p>
-<p>const text = “  Hello, world!  “;
-console.log(text.trimStart()); // “Hello, world!  “</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;  Hello, world!  &quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">trimStart</span><span class="p">());</span><span class="w"> </span><span class="c1">// &quot;Hello, world!  &quot;</span>
+</pre></div>
+</div>
 </li>
 <li><p><strong>The <code class="docutils literal notranslate"><span class="pre">trimEnd()</span></code> Method</strong>: This method removes whitespaces from the end of the string.</p>
-<p>const text = “ Hello, world! “;
-console.log(text.trimEnd()); // “  Hello, world!”</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot; Hello, world! &quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">trimEnd</span><span class="p">());</span><span class="w"> </span><span class="c1">// &quot;  Hello, world!&quot;</span>
+</pre></div>
+</div>
 </li>
 <li><p><strong>The <code class="docutils literal notranslate"><span class="pre">prompt()</span></code> Method</strong>: This method of thw <code class="docutils literal notranslate"><span class="pre">window</span></code> is used to get information from a user through the form of a dialog box. This method takes two arguments. The first argument is the message which will appear inside the dialog box, typically prompting the user to enter information. The second one is a default value which is optional and will fill the input field initially.</p>
-<p>const answer = window.prompt(“What’s your favorite animal?”); // This will change depending on what the user answers</p>
+<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">answer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;What&#39;s your favorite animal?&quot;</span><span class="p">);</span><span class="w"> </span>
+<span class="c1">// This will change depending on what the user answers</span>
+</pre></div>
+</div>
 </li>
 </ul>
 </section>
@@ -552,6 +816,17 @@ console.log(text.trimEnd()); // “  Hello, world!”</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-html-css-and-javascript">Working with HTML, CSS, and JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types-in-javascript">Data Types in JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-in-javascript">Variables in JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-naming-conventions">Variable Naming Conventions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-and-string-immutability-in-javascript">Strings and String immutability in JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-concatenation-in-javascript">String Concatenation in JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-messages-with-console-log">Logging Messages with <code class="docutils literal notranslate"><span class="pre">console.log()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semicolons-in-javascript">Semicolons in JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comments-in-javascript">Comments in JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#javascript-as-a-dynamically-typed-language">JavaScript as a Dynamically Typed Language</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-typeof-operator">Using the <code class="docutils literal notranslate"><span class="pre">typeof</span></code> Operator</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-basics">String Basics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#template-literals-template-strings-and-string-interpolation">Template Literals (Template Strings) and String Interpolation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ascii-the-charcodeat-method-and-the-fromcharcode-method">ASCII, the <code class="docutils literal notranslate"><span class="pre">charCodeAt()</span></code> Method and the <code class="docutils literal notranslate"><span class="pre">fromCharCode()</span></code> Method</a></li>
