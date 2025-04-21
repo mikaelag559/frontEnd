@@ -7,6 +7,7 @@ These are the notes I took while attending the [freeCodeCamp](https://www.freeco
 This site was made possible thanks to [Jupyter Book](https://jupyterbook.org/en/stable/intro.html) and [GitHub Pages](https://pages.github.com/).
 
 ## Index
+<hr>
 
 ```{tableofcontents}
 ```
