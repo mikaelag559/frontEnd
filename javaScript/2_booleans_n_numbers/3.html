@@ -238,6 +238,11 @@
 <li class="toctree-l2"><a class="reference internal" href="4.html">Examples</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3_functions.html">Functions Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3_functions/1.html">1. Working with Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_functions/2.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -363,7 +368,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -379,6 +386,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-comparisons-work-with-null-and-undefined-data-types">3.1. How do comparisons work with <code class="docutils literal notranslate"><span class="pre">null</span></code> and <code class="docutils literal notranslate"><span class="pre">undefined</span></code> data types?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-switch-statements-and-how-do-they-differ-from-if-else-if-else-chains">3.2. What are <code class="docutils literal notranslate"><span class="pre">switch</span></code> statements and how do they differ from <code class="docutils literal notranslate"><span class="pre">if/else</span> <span class="pre">if/else</span></code> chains?</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -391,7 +407,118 @@ document.write(`
   <div style="text-align: justify">
 <section class="tex2jax_ignore mathjax_ignore" id="understanding-comparisons-and-conditional-review">
 <h1>3. Understanding Comparisons and Conditional Review<a class="headerlink" href="#understanding-comparisons-and-conditional-review" title="Link to this heading">#</a></h1>
+<section id="how-do-comparisons-work-with-null-and-undefined-data-types">
+<h2>3.1. How do comparisons work with <code class="docutils literal notranslate"><span class="pre">null</span></code> and <code class="docutils literal notranslate"><span class="pre">undefined</span></code> data types?<a class="headerlink" href="#how-do-comparisons-work-with-null-and-undefined-data-types" title="Link to this heading">#</a></h2>
+<p>In JavaScript, <code class="docutils literal notranslate"><span class="pre">null</span></code> and <code class="docutils literal notranslate"><span class="pre">undefined</span></code> are two distinct data types that represent the absence of a value, but they behave differently in comparisons. Understanding how these types interact in various comparison scenarios is crucial for writing robust and bug-free code.</p>
+<ol class="arabic simple">
+<li><p>Let’s start with the <code class="docutils literal notranslate"><span class="pre">undefined</span></code> type. A variable is <code class="docutils literal notranslate"><span class="pre">undefined</span></code> when it has been declared but hasn’t been assigned a value. It’s the default value of uninitialized variables and function parameters that weren’t provided an argument.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">null</span></code> type, on the other hand, is an assignment value that represents a deliberate non-value. It’s often used to indicate that a variable intentionally has no value.</p></li>
+</ol>
+<p>When comparing <code class="docutils literal notranslate"><span class="pre">null</span></code> and <code class="docutils literal notranslate"><span class="pre">undefined</span></code> using the equality operator (<code class="docutils literal notranslate"><span class="pre">==</span></code>), JavaScript performs type coercion. This means it tries to convert the operands to the same type before making the comparison. In this case, <code class="docutils literal notranslate"><span class="pre">null</span></code> and <code class="docutils literal notranslate"><span class="pre">undefined</span></code> are considered equal:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">undefined</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</pre></div>
+</div>
+<p>However, when using the strict equality operator (<code class="docutils literal notranslate"><span class="pre">===</span></code>), which checks both value and type without performing type coercion, <code class="docutils literal notranslate"><span class="pre">null</span></code> and <code class="docutils literal notranslate"><span class="pre">undefined</span></code> are not equal:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">undefined</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+</pre></div>
+</div>
+<p>This difference is important to keep in mind when writing conditional statements or performing equality checks in your code. When comparing <code class="docutils literal notranslate"><span class="pre">null</span></code> or <code class="docutils literal notranslate"><span class="pre">undefined</span></code> with other values using the equality operator (<code class="docutils literal notranslate"><span class="pre">==</span></code>), the behavior can be unexpected. For example:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w">  </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">undefined</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">undefined</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+</pre></div>
+</div>
+<p>These comparisons return <code class="docutils literal notranslate"><span class="pre">false</span></code> because <code class="docutils literal notranslate"><span class="pre">null</span></code> and <code class="docutils literal notranslate"><span class="pre">undefined</span></code> are only equal to each other (and themselves) when using the equality operator. The behavior of <code class="docutils literal notranslate"><span class="pre">null</span></code> in other comparisons is particularly tricky:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w">  </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">undefined</span></code>, on the other hand, always converts to <code class="docutils literal notranslate"><span class="pre">NaN</span></code> in numeric contexts, which makes all numeric comparisons with <code class="docutils literal notranslate"><span class="pre">undefined</span></code> return <code class="docutils literal notranslate"><span class="pre">false</span></code>:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">undefined</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w">  </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">undefined</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w">  </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">undefined</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+</pre></div>
+</div>
+<p>Given these nuances, it’s generally recommended to use the strict equality operator when comparing values, especially when dealing with <code class="docutils literal notranslate"><span class="pre">null</span></code> and <code class="docutils literal notranslate"><span class="pre">undefined</span></code>. This approach helps avoid unexpected type coercion and makes your code’s behavior more predictable.</p>
+<p>In summary, while <code class="docutils literal notranslate"><span class="pre">null</span></code> and <code class="docutils literal notranslate"><span class="pre">undefined</span></code> are both used to represent the absence of a value, they behave differently in comparisons. Understanding these differences is key to writing clear and error-free JavaScript code.</p>
+</section>
+<section id="what-are-switch-statements-and-how-do-they-differ-from-if-else-if-else-chains">
+<h2>3.2. What are <code class="docutils literal notranslate"><span class="pre">switch</span></code> statements and how do they differ from <code class="docutils literal notranslate"><span class="pre">if/else</span> <span class="pre">if/else</span></code> chains?<a class="headerlink" href="#what-are-switch-statements-and-how-do-they-differ-from-if-else-if-else-chains" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">switch</span></code> statements and <code class="docutils literal notranslate"><span class="pre">if/else</span> <span class="pre">if/else</span></code> chains are both control flow structures in programming that allow us to execute different code blocks based on certain conditions. However, they have distinct characteristics and use cases.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement evaluates an expression and matches its value against a series of <code class="docutils literal notranslate"><span class="pre">case</span></code> clauses. When a match is found, the code block associated with that <code class="docutils literal notranslate"><span class="pre">case</span></code> is executed. Here’s a basic structure of a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">expression</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="nx">value1</span><span class="o">:</span>
+<span class="w">    </span><span class="c1">// code to be executed if expression === value1</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="nx">value2</span><span class="o">:</span>
+<span class="w">    </span><span class="c1">// code to be executed if expression === value2</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">default</span><span class="o">:</span>
+<span class="w">    </span><span class="c1">// code to be executed if expression doesn&#39;t match any case</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">break</span></code> statement at the end of each <code class="docutils literal notranslate"><span class="pre">case</span></code> is crucial. It tells the program to exit the switch block once a matching <code class="docutils literal notranslate"><span class="pre">case</span></code> has been executed. Without it, the program would continue executing subsequent cases, a behavior known as “fall-through”.</p>
+<p><code class="docutils literal notranslate"><span class="pre">switch</span></code> statements are typically used when you’re comparing a single variable against multiple possible values. They’re especially useful when you have many potential conditions to check against a single variable. Here is an example using a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement for the days of the week:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">dayOfWeek</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"> </span>
+
+<span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">dayOfWeek</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mf">1</span><span class="o">:</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;It&#39;s Monday! Time to start the week strong.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mf">2</span><span class="o">:</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;It&#39;s Tuesday! Keep the momentum going.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mf">3</span><span class="o">:</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;It&#39;s Wednesday! We&#39;re halfway there.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mf">4</span><span class="o">:</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;It&#39;s Thursday! Almost the weekend.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mf">5</span><span class="o">:</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;It&#39;s Friday! The weekend is near.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mf">6</span><span class="o">:</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;It&#39;s Saturday! Enjoy your weekend.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mf">7</span><span class="o">:</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;It&#39;s Sunday! Rest and recharge.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">default</span><span class="o">:</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Invalid day! Please enter a number between 1 and 7.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">switch</span></code> statements can be more readable and concise when dealing with many possible values for a single variable.</p>
+<p><code class="docutils literal notranslate"><span class="pre">if/else</span> <span class="pre">if</span></code> statements on the other hand are more flexible. They can evaluate complex conditions and different variables in each clause. This makes them suitable for a wider range of scenarios. Here is an example of when you might use an <code class="docutils literal notranslate"><span class="pre">if/else</span></code> statement over a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">creditScore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">720</span><span class="p">;</span><span class="w"> </span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">annualIncome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">60000</span><span class="p">;</span><span class="w"> </span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">loanAmount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">200000</span><span class="p">;</span><span class="w"> </span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">eligibilityStatus</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">creditScore</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">750</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">annualIncome</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">80000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">eligibilityStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Eligible for premium loan rates.&quot;</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">creditScore</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">700</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">annualIncome</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">50000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">eligibilityStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Eligible for standard loan rates.&quot;</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">creditScore</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">650</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">annualIncome</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">40000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">eligibilityStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Eligible for subprime loan rates.&quot;</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">creditScore</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">650</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">eligibilityStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Not eligible due to low credit score.&quot;</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">eligibilityStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Not eligible due to insufficient income.&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">eligibilityStatus</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>In this example, we have a person’s annual income and credit score and checking what types of loan they would qualify for. Since we are dealing with more complex logical evaluations and multiple variables, it is better to use an <code class="docutils literal notranslate"><span class="pre">if/else</span></code> statement here versus a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement.</p>
+<p>It’s worth noting that <code class="docutils literal notranslate"><span class="pre">switch</span></code> statements in JavaScript use strict comparison (<code class="docutils literal notranslate"><span class="pre">===</span></code>), which means they don’t perform type coercion. This can be an advantage in terms of predictability and avoiding subtle bugs.</p>
+<p>In summary, while both <code class="docutils literal notranslate"><span class="pre">switch</span></code> statements and <code class="docutils literal notranslate"><span class="pre">if/else</span> <span class="pre">if</span></code> chains allow for multiple-branch logic in your code, they have different strengths. <code class="docutils literal notranslate"><span class="pre">switch</span></code> statements excel at handling multiple possible values for a single variable, while <code class="docutils literal notranslate"><span class="pre">if/else</span> <span class="pre">if</span></code> chains offer more flexibility for complex conditions. The choice between them often comes down to the specific requirements of your code and personal or team coding style preferences.</p>
 </div></section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -447,6 +574,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-comparisons-work-with-null-and-undefined-data-types">3.1. How do comparisons work with <code class="docutils literal notranslate"><span class="pre">null</span></code> and <code class="docutils literal notranslate"><span class="pre">undefined</span></code> data types?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-switch-statements-and-how-do-they-differ-from-if-else-if-else-chains">3.2. What are <code class="docutils literal notranslate"><span class="pre">switch</span></code> statements and how do they differ from <code class="docutils literal notranslate"><span class="pre">if/else</span> <span class="pre">if/else</span></code> chains?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

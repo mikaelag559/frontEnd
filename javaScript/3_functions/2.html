@@ -57,11 +57,10 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'javaScript/2_booleans_n_numbers/4';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'javaScript/3_functions/2';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Functions Summary" href="../3_functions.html" />
-    <link rel="prev" title="3. Understanding Comparisons and Conditional Review" href="3.html" />
+    <link rel="prev" title="1. Working with Functions" href="1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -231,16 +230,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../1_variables_n_strings/5.html">Examples</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../2_booleans_n_numbers.html">2. Booleans and Numbers Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="1.html">1. Working with Numbers, Booleans and the Math Object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.html">2. Working with Numbers and Common Number Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.html">3. Understanding Comparisons and Conditional Review</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Examples</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2_booleans_n_numbers.html">2. Booleans and Numbers Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/1.html">1. Working with Numbers, Booleans and the Math Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/2.html">2. Working with Numbers and Common Number Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/3.html">3. Understanding Comparisons and Conditional Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/4.html">Examples</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../3_functions.html">Functions Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../3_functions/1.html">1. Working with Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../3_functions/2.html">Examples</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../3_functions.html">Functions Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1.html">1. Working with Functions</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Examples</a></li>
 </ul>
 </details></li>
 </ul>
@@ -297,7 +296,7 @@
       
       
       
-      <li><a href="../../_sources/javaScript/2_booleans_n_numbers/4.md" target="_blank"
+      <li><a href="../../_sources/javaScript/3_functions/2.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -391,8 +390,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-math-bot">1. A Math Bot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-fortune-teller">2. A Fortune Teller</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-calculator">1. A Calculator</a></li>
 </ul>
             </nav>
         </div>
@@ -407,100 +405,61 @@ document.write(`
   <div style="text-align: justify">
 <section class="tex2jax_ignore mathjax_ignore" id="examples">
 <h1>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h1>
-<section id="a-math-bot">
-<h2>1. A Math Bot<a class="headerlink" href="#a-math-bot" title="Link to this heading">#</a></h2>
-<p>script.js</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">botName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;MathBot&quot;</span><span class="p">;</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`Hi there! My name is </span><span class="si">${</span><span class="nx">botName</span><span class="si">}</span><span class="sb"> and I am here to teach you about the Math object!`</span><span class="p">;</span>
+<section id="a-calculator">
+<h2>1. A Calculator<a class="headerlink" href="#a-calculator" title="Link to this heading">#</a></h2>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// Sum</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">calculateSum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">num1</span><span class="p">,</span><span class="w"> </span><span class="nx">num2</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">num1</span><span class="si">}</span><span class="sb"> + </span><span class="si">${</span><span class="nx">num2</span><span class="si">}</span><span class="sb"> = </span><span class="si">${</span><span class="nx">num1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">num2</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calculateSum</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calculateSum</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calculateSum</span><span class="p">(</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">));</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">);</span>
+<span class="c1">// Difference</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">calculateDifference</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">num1</span><span class="p">,</span><span class="w"> </span><span class="nx">num2</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">num1</span><span class="si">}</span><span class="sb"> - </span><span class="si">${</span><span class="nx">num2</span><span class="si">}</span><span class="sb"> = </span><span class="si">${</span><span class="nx">calculateSum</span><span class="p">(</span><span class="nx">num1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="nx">num2</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calculateDifference</span><span class="p">(</span><span class="mf">22</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calculateDifference</span><span class="p">(</span><span class="mf">12</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calculateDifference</span><span class="p">(</span><span class="mf">17</span><span class="p">,</span><span class="w"> </span><span class="mf">9</span><span class="p">));</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The Math.random() method returns a pseudo random number between 0 and less than 1.&quot;</span><span class="p">);</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">randomNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">randomNum</span><span class="p">);</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Now, generate a random number between two values.&quot;</span><span class="p">);</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">randomNum2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="nx">max</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">min</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">min</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">randomNum2</span><span class="p">);</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The Math.floor() method rounds the value down to the nearest whole integer.&quot;</span><span class="p">);</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">numRoundedDown</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="mf">6.7</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numRoundedDown</span><span class="p">);</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The Math.ceil() method rounds the value up to the nearest whole integer.&quot;</span><span class="p">);</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">numRoundedUp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="mf">3.2</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numRoundedUp</span><span class="p">);</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
-<span class="w">  </span><span class="s2">&quot;The Math.round() method rounds the value to the nearest whole integer.&quot;</span>
-<span class="p">);</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">numRounded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mf">2.7</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numRounded</span><span class="p">);</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">numRounded2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mf">11.2</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numRounded2</span><span class="p">);</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The Math.max() and Math.min() methods are used to get the maximum and minimum number from a range.&quot;</span><span class="p">);</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">maxNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">125</span><span class="p">,</span><span class="w"> </span><span class="mf">55</span><span class="p">,</span><span class="w"> </span><span class="mf">24</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">maxNum</span><span class="p">);</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">minNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">90</span><span class="p">,</span><span class="w"> </span><span class="mf">14</span><span class="p">,</span><span class="w"> </span><span class="mf">90</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">minNum</span><span class="p">);</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;It was fun learning about the different Math methods with you!&quot;</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>Console:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Hi there! My name is MathBot and I am here to teach you about the Math object!
-The Math.random() method returns a pseudo random number between 0 and less than 1.
-0.2825284788060257
-Now, generate a random number between two values.
-61.08191319235549
-The Math.floor() method rounds the value down to the nearest whole integer.
-6
-The Math.ceil() method rounds the value up to the nearest whole integer.
-4
-The Math.round() method rounds the value to the nearest whole integer.
-3
-11
-The Math.max() and Math.min() methods are used to get the maximum and minimum number from a range.
-125
-2
-It was fun learning about the different Math methods with you!
-</pre></div>
-</div>
-</section>
-<section id="a-fortune-teller">
-<h2>2. A Fortune Teller<a class="headerlink" href="#a-fortune-teller" title="Link to this heading">#</a></h2>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">fortune1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Your cat will look very cuddly today.&quot;</span><span class="p">;</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">fortune2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;The weather will be nice tomorrow.&quot;</span><span class="p">;</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">fortune3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Be cautious of your new neighbours.&quot;</span><span class="p">;</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">fortune4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;You will find a new hobby soon.&quot;</span><span class="p">;</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">fortune5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;It would be wise to avoid the color red today.&quot;</span><span class="p">;</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">randomNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">selectedFortune</span><span class="p">;</span>
-
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">randomNumber</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">selectedFortune</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fortune1</span><span class="p">;</span>
-<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">randomNumber</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">selectedFortune</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fortune2</span><span class="p">;</span>
-<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">randomNumber</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">selectedFortune</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fortune3</span><span class="p">;</span>
-<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">randomNumber</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">4</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">selectedFortune</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fortune4</span><span class="p">;</span>
-<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">randomNumber</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">selectedFortune</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fortune5</span><span class="p">;</span>
+<span class="c1">// Product</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">calculateProduct</span><span class="p">(</span><span class="nx">num1</span><span class="p">,</span><span class="w"> </span><span class="nx">num2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">num1</span><span class="si">}</span><span class="sb"> x </span><span class="si">${</span><span class="nx">num2</span><span class="si">}</span><span class="sb"> = </span><span class="si">${</span><span class="nx">num1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">num2</span><span class="si">}</span><span class="sb">`</span><span class="w"> </span><span class="c1">// In this case, return is compulsory</span>
 <span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calculateProduct</span><span class="p">(</span><span class="mf">13</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">));</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">selectedFortune</span><span class="p">)</span>
+<span class="c1">// Quotient</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">calculateQuotient</span><span class="p">(</span><span class="nx">num1</span><span class="p">,</span><span class="w"> </span><span class="nx">num2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">num2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">num1</span><span class="si">}</span><span class="sb"> / </span><span class="si">${</span><span class="nx">num2</span><span class="si">}</span><span class="sb">: Error: Division by zero`</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">num1</span><span class="si">}</span><span class="sb"> / </span><span class="si">${</span><span class="nx">num2</span><span class="si">}</span><span class="sb"> = </span><span class="si">${</span><span class="nx">num1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">num2</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calculateQuotient</span><span class="p">(</span><span class="mf">7</span><span class="p">,</span><span class="w"> </span><span class="mf">11</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calculateQuotient</span><span class="p">(</span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">));</span>
+
+<span class="c1">// Square</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">calculateSquare</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">num</span><span class="si">}</span><span class="sb">^2 = </span><span class="si">${</span><span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calculateSquare</span><span class="p">(</span><span class="mf">2</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calculateSquare</span><span class="p">(</span><span class="mf">9</span><span class="p">));</span>
+
+<span class="c1">// Square Root</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">calculateSquareRoot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="sb">`sqrt(</span><span class="si">${</span><span class="nx">num</span><span class="si">}</span><span class="sb">) = </span><span class="si">${</span><span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calculateSquareRoot</span><span class="p">(</span><span class="mf">25</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calculateSquareRoot</span><span class="p">(</span><span class="mf">100</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>console:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>2 + 5 = 7
+10 + 10 = 20
+5 + 5 = 10
+22 - 5 = 22 + -5 = 17
+12 - 1 = 12 + -1 = 11
+17 - 9 = 17 + -9 = 8
+13 x 5 = 2.6
+7 / 11 = 0.6363636363636364
+3 / 0: Error: Division by zero
+2^2 = 4
+9^2 = 81
+sqrt(25) = 5
+sqrt(100) = 10
 </pre></div>
 </div>
 </div></section>
@@ -519,7 +478,7 @@ It was fun learning about the different Math methods with you!
         },
         kernelOptions: {
             name: "python3",
-            path: "./javaScript/2_booleans_n_numbers"
+            path: "./javaScript/3_functions"
         },
         predefinedOutput: true
     }
@@ -537,22 +496,13 @@ It was fun learning about the different Math methods with you!
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="3.html"
+       href="1.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">3. Understanding Comparisons and Conditional Review</p>
+        <p class="prev-next-title">1. Working with Functions</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="../3_functions.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Functions Summary</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -570,8 +520,7 @@ It was fun learning about the different Math methods with you!
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-math-bot">1. A Math Bot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-fortune-teller">2. A Fortune Teller</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-calculator">1. A Calculator</a></li>
 </ul>
   </nav></div>
 
