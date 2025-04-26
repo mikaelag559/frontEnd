@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Examples &#8212; My Front End Notes</title>
+    <title>4. Working with Backgrounds and Borders &#8212; My Front End Notes</title>
   
   
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'css/1_basic_css/4';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1. Variables and Strings Summary" href="../../javaScript/1_variables_n_strings.html" />
+    <link rel="next" title="Examples" href="5.html" />
     <link rel="prev" title="3. Styling Lists and Links" href="3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -153,8 +153,8 @@
       
     
     
-    <img src="../../_static/logo.png" class="logo__image only-light" alt="My Front End Notes - Home"/>
-    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My Front End Notes - Home"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt="My Front End Notes - Home"/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="My Front End Notes - Home"/>`);</script>
   
   
 </a></div>
@@ -216,7 +216,8 @@
 <li class="toctree-l2"><a class="reference internal" href="1.html">1. What Is CSS?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2.html">2. CSS Specificity, the Cascade Algorithm and Inheritance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.html">3. Styling Lists and Links</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Examples</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4. Working with Backgrounds and Borders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.html">Examples</a></li>
 </ul>
 </details></li>
 </ul>
@@ -375,7 +376,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Examples</h1>
+    <h1>4. Working with Backgrounds and Borders</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -385,8 +386,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-cafe-menu">1. A Cafe Menu</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-business-card">2. A Business Card</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-work-with-background-image-size-repeat-position-and-attachment-in-css">4.1. How do you work with background image size, repeat, position and attachment in CSS?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-background-gradient-and-how-does-it-work">4.2. What is a background gradient and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-some-accessibility-considerations-for-backgrounds">4.3. What are some accessibility considerations for backgrounds?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-different-ways-you-can-add-borders-around-images">4.4. What are the different ways you can add borders around images?</a></li>
 </ul>
             </nav>
         </div>
@@ -399,291 +402,235 @@ document.write(`
                 <article class="bd-article">
                   
   <div style="text-align: justify">
-<section class="tex2jax_ignore mathjax_ignore" id="examples">
-<h1>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h1>
-<section id="a-cafe-menu">
-<h2>1. A Cafe Menu<a class="headerlink" href="#a-cafe-menu" title="Link to this heading">#</a></h2>
-<p>index.html:</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span> <span class="p">/&gt;</span>
-        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span> <span class="p">/&gt;</span>
-        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Cafe Menu<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;styles.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;menu&quot;</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>CAMPER CAFE<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;established&quot;</span><span class="p">&gt;</span>Est. 2020<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
-                    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Coffee<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-                    <span class="p">&lt;</span><span class="nt">img</span>
-                        <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg&quot;</span>
-                        <span class="na">alt</span><span class="o">=</span><span class="s">&quot;coffee icon&quot;</span> <span class="p">/&gt;</span>
-                    <span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item&quot;</span><span class="p">&gt;</span>
-                        <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;flavor&quot;</span><span class="p">&gt;</span>French Vanilla<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">p</span>
-                            <span class="na">class</span><span class="o">=</span><span class="s">&quot;price&quot;</span><span class="p">&gt;</span>3.00<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-                    <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
-                    <span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item&quot;</span><span class="p">&gt;</span>
-                        <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;flavor&quot;</span><span class="p">&gt;</span>Caramel Macchiato<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">p</span>
-                            <span class="na">class</span><span class="o">=</span><span class="s">&quot;price&quot;</span><span class="p">&gt;</span>3.75<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-                    <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
-                    <span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item&quot;</span><span class="p">&gt;</span>
-                        <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;flavor&quot;</span><span class="p">&gt;</span>Pumpkin Spice<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">p</span>
-                            <span class="na">class</span><span class="o">=</span><span class="s">&quot;price&quot;</span><span class="p">&gt;</span>3.50<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-                    <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
-                    <span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item&quot;</span><span class="p">&gt;</span>
-                        <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;flavor&quot;</span><span class="p">&gt;</span>Hazelnut<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;price&quot;</span><span class="p">&gt;</span>4.00<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-                    <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
-                    <span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item&quot;</span><span class="p">&gt;</span>
-                        <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;flavor&quot;</span><span class="p">&gt;</span>Mocha<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;price&quot;</span><span class="p">&gt;</span>4.50<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-                    <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
-                <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
-                    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Desserts<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-                    <span class="p">&lt;</span><span class="nt">img</span>
-                        <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.freecodecamp.org/curriculum/css-cafe/pie.jpg&quot;</span>
-                        <span class="na">alt</span><span class="o">=</span><span class="s">&quot;pie icon&quot;</span> <span class="p">/&gt;</span>
-                    <span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item&quot;</span><span class="p">&gt;</span>
-                        <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;dessert&quot;</span><span class="p">&gt;</span>Donut<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;price&quot;</span><span class="p">&gt;</span>1.50<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-                    <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
-                    <span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item&quot;</span><span class="p">&gt;</span>
-                        <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;dessert&quot;</span><span class="p">&gt;</span>Cherry Pie<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">p</span>
-                            <span class="na">class</span><span class="o">=</span><span class="s">&quot;price&quot;</span><span class="p">&gt;</span>2.75<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-                    <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
-                    <span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item&quot;</span><span class="p">&gt;</span>
-                        <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;dessert&quot;</span><span class="p">&gt;</span>Cheesecake<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">p</span>
-                            <span class="na">class</span><span class="o">=</span><span class="s">&quot;price&quot;</span><span class="p">&gt;</span>3.00<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-                    <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
-                    <span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item&quot;</span><span class="p">&gt;</span>
-                        <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;dessert&quot;</span><span class="p">&gt;</span>Cinnamon Roll<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">p</span>
-                            <span class="na">class</span><span class="o">=</span><span class="s">&quot;price&quot;</span><span class="p">&gt;</span>2.50<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-                    <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
-                <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
-            <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">hr</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;bottom-line&quot;</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">address</span><span class="p">&gt;</span>
-                    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.freecodecamp.org&quot;</span>
-                            <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span>Visit our website<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-                    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-                    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;address&quot;</span><span class="p">&gt;</span>123 Free Code Camp Drive<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-                <span class="p">&lt;/</span><span class="nt">address</span><span class="p">&gt;</span>
-            <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-<p>styles.css:</p>
+<section class="tex2jax_ignore mathjax_ignore" id="working-with-backgrounds-and-borders">
+<h1>4. Working with Backgrounds and Borders<a class="headerlink" href="#working-with-backgrounds-and-borders" title="Link to this heading">#</a></h1>
+<section id="how-do-you-work-with-background-image-size-repeat-position-and-attachment-in-css">
+<h2>4.1. How do you work with background image size, repeat, position and attachment in CSS?<a class="headerlink" href="#how-do-you-work-with-background-image-size-repeat-position-and-attachment-in-css" title="Link to this heading">#</a></h2>
+<p>When working with background images in CSS, you have several properties at your disposal to control how these images are displayed.</p>
+<p>The main properties we’ll focus on are <code class="docutils literal notranslate"><span class="pre">background-size</span></code>, <code class="docutils literal notranslate"><span class="pre">background-repeat</span></code>, <code class="docutils literal notranslate"><span class="pre">background-position</span></code>, and <code class="docutils literal notranslate"><span class="pre">background-attachment</span></code>.</p>
+<ol class="arabic">
+<li><p>Let’s first take a look at the <code class="docutils literal notranslate"><span class="pre">background-image</span></code> property:</p>
 <div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="sx">https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg</span><span class="p">);</span>
-<span class="w">  </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
-<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">h1</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
-<span class="w">  </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">  </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">h2</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="p">.</span><span class="nc">established</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">italic</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">h1</span><span class="o">,</span><span class="w"> </span><span class="nt">h2</span><span class="o">,</span><span class="w"> </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="p">.</span><span class="nc">menu</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="kt">%</span><span class="p">;</span>
-<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">burlywood</span><span class="p">;</span>
-<span class="w">  </span><span class="k">margin-left</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
-<span class="w">  </span><span class="k">margin-right</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
-<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
-<span class="w">  </span><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">img</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">block</span><span class="p">;</span>
-<span class="w">  </span><span class="k">margin-left</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
-<span class="w">  </span><span class="k">margin-right</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">hr</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="p">;</span>
-<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">brown</span><span class="p">;</span>
-<span class="w">  </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="kc">brown</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="p">.</span><span class="nc">bottom-line</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">h1</span><span class="o">,</span><span class="w"> </span><span class="nt">h2</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">Impact</span><span class="p">,</span><span class="w"> </span><span class="kc">serif</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="p">.</span><span class="nc">item</span><span class="w"> </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline-block</span><span class="p">;</span>
-<span class="w">  </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
-<span class="w">  </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
-<span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="p">.</span><span class="nc">flavor</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">dessert</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">left</span><span class="p">;</span>
-<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="kt">%</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="p">.</span><span class="nc">price</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">right</span><span class="p">;</span>
-<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="kt">%</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c">/* FOOTER */</span>
-
-<span class="nt">footer</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">address</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">normal</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="p">.</span><span class="nc">address</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">a</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">a</span><span class="p">:</span><span class="nd">visited</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">a</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">brown</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">a</span><span class="p">:</span><span class="nd">active</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">brown</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>The above CSS sets a cat background image for the <code class="docutils literal notranslate"><span class="pre">body</span></code> element.</p>
+<p>If you want to set the size for the background image, you can use the <code class="docutils literal notranslate"><span class="pre">background-size</span></code> property.</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">contain</span></code> to scale the image as large as possible without cropping or stretching.</p>
+<p>Here’s an example with <code class="docutils literal notranslate"><span class="pre">background-size:</span> <span class="pre">contain</span></code>:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">background-size</span><span class="p">:</span><span class="w"> </span><span class="kc">contain</span><span class="p">;</span>
+<span class="w">    </span><span class="k">min-height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>We are setting the <code class="docutils literal notranslate"><span class="pre">min-height</span></code> to <code class="docutils literal notranslate"><span class="pre">100px</span></code> so the background image is visible and the layout maintains a baseline height, ensuring that even with minimal content, the design appears balanced and visually appealing.</p>
+<p>If we change the <code class="docutils literal notranslate"><span class="pre">background-size</span></code> property to use the <code class="docutils literal notranslate"><span class="pre">cover</span></code> value, then the background image will scale to cover the entire <code class="docutils literal notranslate"><span class="pre">body</span></code> element while maintaining its aspect ratio.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">background-size</span><span class="p">:</span><span class="w"> </span><span class="kc">cover</span><span class="p">;</span>
+<span class="w">    </span><span class="k">min-height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>In the previous examples, you probably noticed that the background image would continuously repeat.</p>
+<p>By default, background images repeat both horizontally and vertically to fill the entire element. However, you can control this behavior.</p>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">background-repeat</span></code> property with the value set to <code class="docutils literal notranslate"><span class="pre">no-repeat</span></code>.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">background-size</span><span class="p">:</span><span class="w"> </span><span class="kc">contain</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-repeat</span><span class="p">:</span><span class="w"> </span><span class="kc">no-repeat</span><span class="p">;</span><span class="w"> </span><span class="c">/* The image appears once */</span>
+<span class="w">    </span><span class="k">min-height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>With the <code class="docutils literal notranslate"><span class="pre">background-size</span></code> set to <code class="docutils literal notranslate"><span class="pre">contain</span></code> and the <code class="docutils literal notranslate"><span class="pre">background-repeat</span></code> set to <code class="docutils literal notranslate"><span class="pre">no-repeat</span></code>, the image will no longer repeat on the screen.</p>
+<p>If you wanted to repeat the background image horizontally, you can use the <code class="docutils literal notranslate"><span class="pre">repeat-x</span></code> value for the <code class="docutils literal notranslate"><span class="pre">background-repeat</span></code> property.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">background-size</span><span class="p">:</span><span class="w"> </span><span class="kc">contain</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-repeat</span><span class="p">:</span><span class="w"> </span><span class="kc">repeat-x</span><span class="p">;</span><span class="w"> </span><span class="c">/* The image repeats horizontally */</span>
+<span class="w">    </span><span class="k">min-height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If you wanted to repeat the background image vertically, you can use the <code class="docutils literal notranslate"><span class="pre">repeat-y</span></code> value for the <code class="docutils literal notranslate"><span class="pre">background-repeat</span></code> property.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">background-size</span><span class="p">:</span><span class="w"> </span><span class="kc">contain</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-repeat</span><span class="p">:</span><span class="w"> </span><span class="kc">repeat-y</span><span class="p">;</span><span class="w"> </span><span class="c">/* The image repeats vertically */</span>
+<span class="w">    </span><span class="k">min-height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>To position a background image on the screen, you can use the <code class="docutils literal notranslate"><span class="pre">background-position</span></code> property.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">background-position</span></code> property allows you to set where in the element the background image appears. You can use keywords like <code class="docutils literal notranslate"><span class="pre">top</span></code>, <code class="docutils literal notranslate"><span class="pre">bottom</span></code>, <code class="docutils literal notranslate"><span class="pre">left</span></code>, <code class="docutils literal notranslate"><span class="pre">right</span></code>, and <code class="docutils literal notranslate"><span class="pre">center</span></code>, or specific pixel or percentage values.</p>
+<p>Here is an example using the <code class="docutils literal notranslate"><span class="pre">center</span></code> and <code class="docutils literal notranslate"><span class="pre">top</span></code> for the <code class="docutils literal notranslate"><span class="pre">background-position</span></code>:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">background-size</span><span class="p">:</span><span class="w"> </span><span class="kc">contain</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-repeat</span><span class="p">:</span><span class="w"> </span><span class="kc">no-repeat</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-position</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="w"> </span><span class="kc">top</span><span class="p">;</span>
+<span class="w">    </span><span class="k">min-height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This CSS code positions the background image at the center of the element horizontally and at the top vertically.</p>
+</li>
+<li><p>Lastly, <code class="docutils literal notranslate"><span class="pre">background-attachment</span></code> determines whether the background image scrolls with the content or remains fixed when the page is scrolled.</p>
+<p>The main values are <code class="docutils literal notranslate"><span class="pre">scroll</span></code> (default), where the background image scrolls with the content, and <code class="docutils literal notranslate"><span class="pre">fixed</span></code>, where the background image stays in the same position on the screen.</p>
+<p>Here is an example using the <code class="docutils literal notranslate"><span class="pre">fixed</span></code> value for the <code class="docutils literal notranslate"><span class="pre">background-attachment</span></code> property:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">background-position</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="w"> </span><span class="kc">top</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-attachment</span><span class="p">:</span><span class="w"> </span><span class="kc">fixed</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This CSS code sets the background image to remain fixed in place even when the page is scrolled.</p>
+</li>
+</ol>
+<p>If you wanted to combine a few of the properties into one line, you can do that by using the shorthand <code class="docutils literal notranslate"><span class="pre">background</span></code> property.</p>
+<p>Here is an example:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="w"> </span><span class="kc">top</span><span class="w"> </span><span class="kc">fixed</span>
+<span class="w">    </span><span class="nb">url</span><span class="p">(</span><span class="s2">&quot;https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The above example combines the <code class="docutils literal notranslate"><span class="pre">background-image</span></code>, <code class="docutils literal notranslate"><span class="pre">background-position</span></code>, and <code class="docutils literal notranslate"><span class="pre">background-attachment</span></code> into a single line.</p>
+<p>By mastering these properties, you’ll have great control over how background images are displayed in your web designs, allowing for more visually appealing and functional layouts.</p>
 </section>
-<section id="a-business-card">
-<h2>2. A Business Card<a class="headerlink" href="#a-business-card" title="Link to this heading">#</a></h2>
-<p>index.html:</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Business Card<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;styles.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;business-card&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;profile-image&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.freecodecamp.org/curriculum/labs/flower.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;flor rosa&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;full-name&quot;</span><span class="p">&gt;</span>Mikaela González<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;designation&quot;</span><span class="p">&gt;</span>Software Engineer<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;company&quot;</span><span class="p">&gt;</span>Vasalto<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>Email: mgonzalez@vasalto.com<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>Phone: +34 711 780 070<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;freeCodeCamp.com&quot;</span><span class="p">&gt;</span>Portfolio<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;social-media&quot;</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Connect with me<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;freeCodeCamp.com&quot;</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;logo&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Twitter logo&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;freeCodeCamp.com&quot;</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;logo&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;LinkedIn logo&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;freeCodeCamp.com&quot;</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;logo&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;GitHub logo&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+<section id="what-is-a-background-gradient-and-how-does-it-work">
+<h2>4.2. What is a background gradient and how does it work?<a class="headerlink" href="#what-is-a-background-gradient-and-how-does-it-work" title="Link to this heading">#</a></h2>
+<p>A background gradient in CSS is a smooth transition between two or more colors that can be applied to the background of an element. Gradients allow you to create visually appealing backgrounds without needing images.</p>
+<p>There are two main types of gradients in CSS: linear gradients and radial gradients.</p>
+<p>A linear gradient transitions colors along a straight line. You can define the direction and the colors involved.</p>
+<ol class="arabic">
+<li><p>Here is the basic syntax:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">background</span><span class="o">:</span><span class="w"> </span><span class="nt">linear-gradient</span><span class="o">(</span><span class="nt">direction</span><span class="o">,</span><span class="w"> </span><span class="nt">color-stop1</span><span class="o">,</span><span class="w"> </span><span class="nt">color-stop2</span><span class="o">,</span><span class="w"> </span><span class="o">...);</span>
 </pre></div>
 </div>
-<p>styles.css:</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="kc">rosybrown</span><span class="p">;</span>
-<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="n">Arial</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="w">  </span>
-<span class="w">  </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c">/* Otra forma de escribir lo mismo sería: </span>
-<span class="c">      margin: 5px 0;  */</span>
-<span class="w">    </span><span class="k">margin-top</span><span class="p">:</span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
-<span class="w">    </span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="w">  </span>
-<span class="w">  </span><span class="p">.</span><span class="nc">full-name</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="mh">#596F70</span><span class="p">;</span>
-<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="mi">25</span><span class="kt">px</span><span class="p">;</span>
-<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="w">  </span>
-<span class="w">  </span><span class="p">.</span><span class="nc">designation</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="mh">#858585</span><span class="p">;</span>
-<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="w">  </span>
-<span class="w">  </span><span class="p">.</span><span class="nc">company</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="mh">#B0AFB0</span><span class="p">;</span>
-<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="mi">18</span><span class="kt">px</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="w">  </span>
-<span class="w">  </span><span class="p">.</span><span class="nc">business-card</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
-<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
-<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="kc">white</span><span class="p">;</span>
-<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
-<span class="w">    </span><span class="k">margin-top</span><span class="p">:</span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
-<span class="w">    </span><span class="k">margin-left</span><span class="p">:</span><span class="kc">auto</span><span class="p">;</span>
-<span class="w">    </span><span class="k">margin-right</span><span class="p">:</span><span class="kc">auto</span><span class="p">;</span>
-<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="w">  </span>
-<span class="w">  </span><span class="p">.</span><span class="nc">profile-image</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">max-width</span><span class="p">:</span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="w">  </span>
-<span class="w">  </span><span class="p">.</span><span class="nc">social-media</span><span class="w"> </span><span class="nt">a</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="kc">rosybrown</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="w">  </span>
-<span class="w">  </span><span class="nt">a</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="w">  </span>
-<span class="w">  </span><span class="nt">a</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">underline</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="w">  </span>
-<span class="w">  </span><span class="p">.</span><span class="nc">logo</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">max-width</span><span class="p">:</span><span class="mi">8</span><span class="kt">%</span><span class="p">;</span>
-<span class="w">    </span><span class="k">margin-left</span><span class="p">:</span><span class="mi">4</span><span class="kt">%</span><span class="p">;</span>
-<span class="w">    </span><span class="k">margin-right</span><span class="p">:</span><span class="mi">4</span><span class="kt">%</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="w">  </span>
-<span class="w">  </span><span class="p">.</span><span class="nc">logo</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="kc">grey</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
+<p>In this example, we are using the <code class="docutils literal notranslate"><span class="pre">background</span></code> CSS property with a value of the <code class="docutils literal notranslate"><span class="pre">linear</span> <span class="pre">gradient</span></code>.</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">direction</span></code> specifies the direction of the gradient. It can be an angle (such as <code class="docutils literal notranslate"><span class="pre">45deg</span></code>), a keyword (such as <code class="docutils literal notranslate"><span class="pre">to</span> <span class="pre">right</span></code>, <code class="docutils literal notranslate"><span class="pre">to</span> <span class="pre">bottom</span></code>), or a side/corner.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">color-stop</span></code> specifies the colors and positions where the gradient transitions occur.</p></li>
+</ul>
+<p>To better understand how linear gradients work, let’s take a look at the following example:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">linear-gradient</span><span class="p">{</span>
+<span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">to</span><span class="w"> </span><span class="kc">right</span><span class="p">,</span><span class="w"> </span><span class="kc">red</span><span class="p">,</span><span class="w"> </span><span class="kc">yellow</span><span class="p">);</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="kt">vh</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
+<p>This CSS creates a linear gradient that transitions from <code class="docutils literal notranslate"><span class="pre">red</span></code> on the <code class="docutils literal notranslate"><span class="pre">left</span></code> to <code class="docutils literal notranslate"><span class="pre">yellow</span></code> on the <code class="docutils literal notranslate"><span class="pre">right</span></code>. The gradient is applied to an element with a height of <code class="docutils literal notranslate"><span class="pre">40%</span></code> of the viewport height. You’ll learn more about <code class="docutils literal notranslate"><span class="pre">vh</span></code> units in a future lecture video.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">to</span> <span class="pre">right</span></code> direction means the gradient runs horizontally from left to right.</p>
+</li>
+<li><p>Another type of gradient would be the <code class="docutils literal notranslate"><span class="pre">radial</span></code> gradient.</p>
+<p>A radial gradient transitions colors radiating from an origin (usually the center) outward in a circular or elliptical shape.</p>
+<p>Here is the basic syntax:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">background</span><span class="o">:</span><span class="w"> </span><span class="nt">radial-gradient</span><span class="o">(</span><span class="nt">shape</span><span class="w"> </span><span class="nt">size</span><span class="w"> </span><span class="nt">at</span><span class="w"> </span><span class="nt">position</span><span class="o">,</span><span class="w"> </span><span class="nt">color-stop1</span><span class="o">,</span><span class="w"> </span><span class="nt">color-stop2</span><span class="o">,</span><span class="w"> </span><span class="o">...)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>On the syntax, the <code class="docutils literal notranslate"><span class="pre">shape</span></code> specifies the shape of gradient which could be <code class="docutils literal notranslate"><span class="pre">circle</span></code> or <code class="docutils literal notranslate"><span class="pre">ellipse</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">size</span></code> determines the size of the gradient’s ending shape which could be <code class="docutils literal notranslate"><span class="pre">closest-side</span></code>, <code class="docutils literal notranslate"><span class="pre">closest-corner</span></code>, <code class="docutils literal notranslate"><span class="pre">farthest-side</span></code>, <code class="docutils literal notranslate"><span class="pre">farthest-corner</span></code>, <code class="docutils literal notranslate"><span class="pre">contain</span></code>, or <code class="docutils literal notranslate"><span class="pre">cover</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">position</span></code> determines the position of the gradient’s center which could be specified using keywords (such as <code class="docutils literal notranslate"><span class="pre">center</span></code>, <code class="docutils literal notranslate"><span class="pre">top</span> <span class="pre">left</span></code>, <code class="docutils literal notranslate"><span class="pre">bottom</span> <span class="pre">right</span></code>) or precise values (such as <code class="docutils literal notranslate"><span class="pre">50%</span> <span class="pre">50%</span></code>, <code class="docutils literal notranslate"><span class="pre">10px</span> <span class="pre">20px</span></code>).</p></li>
+<li><p>Lastly, <code class="docutils literal notranslate"><span class="pre">color</span> <span class="pre">stops</span></code> are a list of colors that the gradient transitions through. Each color stop can optionally include a position value (percentage or length) indicating where the color should be placed.</p></li>
+</ul>
+<p>An example would be:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">radial-gradient</span><span class="p">{</span>
+<span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">radial-gradient</span><span class="p">(</span><span class="kc">circle</span><span class="w"> </span><span class="n">closest</span><span class="nv">-side</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="kc">center</span><span class="p">,</span><span class="w"> </span><span class="kc">red</span><span class="p">,</span><span class="w"> </span><span class="kc">yellow</span><span class="w"> </span><span class="mi">50</span><span class="kt">%</span><span class="p">,</span><span class="w"> </span><span class="kc">green</span><span class="p">);</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="kt">vh</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This CSS creates a circular radial gradient centered in the element. It starts with <code class="docutils literal notranslate"><span class="pre">red</span></code> at the center, transitions to <code class="docutils literal notranslate"><span class="pre">yellow</span></code> at <code class="docutils literal notranslate"><span class="pre">50%</span></code> of the radius, and ends with <code class="docutils literal notranslate"><span class="pre">green</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">closest-side</span></code> keyword makes the gradient’s ending shape fit the closest side of the element. The gradient is applied to an element with a height of <code class="docutils literal notranslate"><span class="pre">60%</span></code> of the viewport height.</p>
+<p><img alt="gradient example" src="../../_images/css_1_4_gradient_example.png" /></p>
+</li>
+</ol>
+<p>Understanding how to work with CSS gradients can significantly enhance your designs by providing visually appealing backgrounds without the need for images.</p>
+<p>With options like linear gradients for smooth transitions and radial gradients for circular effects, they offer both flexibility and creativity in web design.</p>
+</section>
+<section id="what-are-some-accessibility-considerations-for-backgrounds">
+<h2>4.3. What are some accessibility considerations for backgrounds?<a class="headerlink" href="#what-are-some-accessibility-considerations-for-backgrounds" title="Link to this heading">#</a></h2>
+<p>In web design, backgrounds play a vital role in defining the overall look and feel of a webpage.</p>
+<p>However, when designing with backgrounds, it’s crucial to consider accessibility to ensure your content is usable and readable by all users, including those with visual impairments.</p>
+<p>One of the primary accessibility concerns related to backgrounds is ensuring that there is sufficient contrast between the background and the text.</p>
+<p>Without adequate contrast, users with visual impairments, including those with low vision or color blindness, may struggle to read the content on your page.</p>
+<p>Contrast refers to the difference in lightness or darkness between two colors. Sufficient contrast between the background color and the text color is essential for readability.</p>
+<p>The Web Content Accessibility Guidelines (WCAG) recommend a minimum contrast ratio of 4.5:1 for normal text and 3:1 for large text.</p>
+<p>For example, placing white text on a light-gray background would result in poor contrast, making the text difficult to read. However, white text on a dark-blue background would provide good contrast, enhancing readability for all users.</p>
+<p>Here’s an example of poor contrast:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color: lightgray; background-color: whitesmoke;&quot;</span><span class="p">&gt;</span>
+    This is an example of poor contrast.
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Now, here’s an example of good contrast:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color: white; background-color: darkslategray;&quot;</span><span class="p">&gt;</span>
+    This is an example of good contrast.
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Another consideration is avoiding placing text over busy or complex backgrounds, such as images or gradients with multiple colors. Busy backgrounds can make it hard to distinguish the text from the background, regardless of the contrast.</p>
+<p>If you must use a background image, it’s a good idea to apply a semi-transparent overlay or a solid color behind the text to make it more readable. Here’s an example of how you can do this:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">background-image-text</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="s1">&#39;fcc-logo.svg&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.75</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This code places a semi-transparent black overlay behind the text, improving its readability against the background image.</p>
+<p>When designing backgrounds, avoid using color as the sole means of conveying information. For example, using just color to indicate an error or success message (such as red for error or green for success) can be problematic for users with color blindness.</p>
+<p>In addition to color, you should use symbols or text to convey information. For example, alongside a red error message, you could use an icon or bold text to make it clear that there’s an error.</p>
+<p>Though less common, background audio or videos can also affect accessibility.</p>
+<p>Background music or auto-playing videos can be distracting for some users, particularly those with cognitive disabilities. If you include background audio, always provide a way for users to mute or pause the audio.</p>
+<p>By taking these accessibility considerations into account, you can create more inclusive designs that ensure your content is readable and usable by all users, regardless of their abilities.</p>
+</section>
+<section id="what-are-the-different-ways-you-can-add-borders-around-images">
+<h2>4.4. What are the different ways you can add borders around images?<a class="headerlink" href="#what-are-the-different-ways-you-can-add-borders-around-images" title="Link to this heading">#</a></h2>
+<p>In CSS, there are several ways to add borders around images, each offering different styling options and levels of control.</p>
+<p>Let’s explore some of the most common and versatile methods.</p>
+<p>The most straightforward way to add a border to an image is by using the <code class="docutils literal notranslate"><span class="pre">border</span></code> property. This property is a shorthand that allows you to set the width, style, and color of the border all at once.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">img</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This CSS rule adds a 2-pixel wide, solid red border around all <code class="docutils literal notranslate"><span class="pre">img</span></code> elements. You can adjust the width, style (such as <code class="docutils literal notranslate"><span class="pre">dashed</span></code>, <code class="docutils literal notranslate"><span class="pre">dotted</span></code>, or <code class="docutils literal notranslate"><span class="pre">double</span></code>), and color to suit your design needs.</p>
+<p>If you need more control over individual sides of the border, you can use the specific border properties for each side:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">img</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">border-top</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border-right</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">dashed</span><span class="w"> </span><span class="kc">green</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="w"> </span><span class="kc">dotted</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border-left</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="kc">double</span><span class="w"> </span><span class="kc">yellow</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This allows you to create unique border styles for each side of the image.</p>
+<p>Another way to create a border effect is by using the <code class="docutils literal notranslate"><span class="pre">outline</span></code> property. While similar to border, outline doesn’t affect the element’s dimensions or layout:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">img</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">outline</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">gold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This creates a gold outline around the image without changing its size or position.</p>
+<p>If you want to create rounded corners on your border, you can use the <code class="docutils literal notranslate"><span class="pre">border-radius</span></code> property in conjunction with border:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">img</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Remember, these techniques can be combined and customized to create unique border effects. The choice of method depends on your specific design requirements and the level of complexity you need.</p>
 </div></section>
 </section>
 
@@ -727,11 +674,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../../javaScript/1_variables_n_strings.html"
+       href="5.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">1. Variables and Strings Summary</p>
+        <p class="prev-next-title">Examples</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -751,8 +698,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-cafe-menu">1. A Cafe Menu</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-business-card">2. A Business Card</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-work-with-background-image-size-repeat-position-and-attachment-in-css">4.1. How do you work with background image size, repeat, position and attachment in CSS?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-background-gradient-and-how-does-it-work">4.2. What is a background gradient and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-some-accessibility-considerations-for-backgrounds">4.3. What are some accessibility considerations for backgrounds?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-different-ways-you-can-add-borders-around-images">4.4. What are the different ways you can add borders around images?</a></li>
 </ul>
   </nav></div>
 
