@@ -1,6 +1,6 @@
 <div style="text-align: justify">
 
-# Functions Summary
+# 3. Functions Summary
 
 ## JavaScript Functions
 
