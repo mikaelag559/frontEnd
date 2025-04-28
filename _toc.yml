@@ -44,6 +44,7 @@ parts:
         - file: css/1_basic_css/2
         - file: css/1_basic_css/3
         - file: css/1_basic_css/4
+        - file: css/1_basic_css/5
 
   - caption: JavaScript
     maxdepth: 3

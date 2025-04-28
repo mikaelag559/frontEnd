@@ -153,8 +153,8 @@
       
     
     
-    <img src="../../_static/logo.png" class="logo__image only-light" alt="My Front End Notes - Home"/>
-    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My Front End Notes - Home"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt="My Front End Notes - Home"/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="My Front End Notes - Home"/>`);</script>
   
   
 </a></div>
@@ -216,7 +216,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/1.html">1. What Is CSS?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/2.html">2. CSS Specificity, the Cascade Algorithm and Inheritance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/3.html">3. Styling Lists and Links</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/4.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/4.html">4. Working with Backgrounds and Borders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/5.html">Examples</a></li>
 </ul>
 </details></li>
 </ul>
@@ -499,6 +500,8 @@ document.write(`
 </div>
 <p>Result:</p>
 <body>
+  <div id="blanco" style="border: 2px solid white; padding: 0px;">
+  <div id="negro" style="border: 2px solid black; padding: 10px;">
     <header>
         <h1>Hotel Feedback Form</h1>
         <p>
@@ -508,7 +511,7 @@ document.write(`
     </header>
     <main>
         <form>
-            <fieldset>
+            <fieldset style="border: 1px solid; padding: 0px;">
                 <legend>Personal Information</legend>
                 <label for="full-name">Name (required):</label>
                 <input type="text" id="full-name" name="name" placeholder="Ex. John Doe" required size="20">
@@ -524,7 +527,7 @@ document.write(`
                 <label for="no-option">No</label>
                 <input id="no-option" type="radio" name="hotel-stay" />
             </fieldset>
-            <fieldset>
+            <fieldset style="border: 1px solid; padding: 0px;">
                 <legend>
                     Why did you choose to stay at our hotel? (Check all that apply)
                 </legend>
@@ -539,7 +542,7 @@ document.write(`
                 <label for="price">Price</label>
                 <input type="checkbox" id="price" name="price" value="price" />
             </fieldset>
-            <fieldset>
+            <fieldset style="border: 1px solid; padding: 0px;">
                 <legend>Ratings</legend>
                 <label for="service">How was the service?</label>
                 <select name="service" id="service">
@@ -563,6 +566,8 @@ document.write(`
             <button type="submit">Submit</button>
         </form>
     </main>
+  </div>
+  </div>
 </body>
 </section>
 <section id="kidnapping-survey-form">
@@ -656,7 +661,7 @@ document.write(`
         <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">em</span><span class="p">&gt;</span>
                 Please, note we are not responsibles for bills such as hospital&#39;s or therapist&#39;s bill nor we can be held responsibles for any possible damage caused during the experience.
             <span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Submit :)<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Submit :)<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 
     <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 
@@ -667,10 +672,12 @@ document.write(`
 </div>
 <p>Result:</p>
 <body>
+  <div id="blanco" style="border: 2px solid white; padding: 0px;">
+  <div id="negro" style="border: 2px solid black; padding: 10px;">
     <h1 id="title">YourKidnapperWantsToMeetYou.com Survey Form</h1>
     <p id="description">Thank you for taking the time to help us improve the services we work so hard on providing you!</p>
     <form id="survey-form">
-        <fieldset>
+        <fieldset style="border: 1px solid; padding: 0px;">
             <legend>Basic information</legend>
             <label id="name-label">Name (required):</label>
             <input required id="name" type="text" placeholder="Ex: Christian Nightingale" size="30">
@@ -690,7 +697,7 @@ document.write(`
             </select>
         </fieldset>
         <br>
-        <fieldset>
+        <fieldset style="border: 1px solid; padding: 0px;">
             <legend>Tell us: how was the experience?</legend>
             <label id="radio-name">What role did you play during your last experience with us?</label>
             <br>
@@ -720,7 +727,7 @@ document.write(`
             <label for="no-repeat">Are you fucking crazy?</label>
         </fieldset>
         <br><br>
-        <fieldset>
+        <fieldset style="border: 1px solid; padding: 0px;">
             <legend>What could we improve? (Select as many as you'd like)</legend>
             <input type="checkbox" id="ads" name="ads" value="ads" />
             <label for="ads">Less meals per day</label><br>
@@ -740,8 +747,10 @@ document.write(`
         <p><em>
                 Please, note we are not responsibles for bills such as hospital's or therapist's bill nor we can be held responsibles for any possible damage caused during the experience.
             </em></p>
-        <input type="submit" id="submit">Submit :)</button>
+        <button type="submit" id="submit">Submit :)</button>
     </form>
+  </div>
+  </div>
 </body>
 </section>
 <section id="a-final-exam-table">
