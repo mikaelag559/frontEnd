@@ -175,7 +175,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../intro.html">
-                    Welcome to my front end web development notes
+                    Welcome to my web development notes
                 </a>
             </li>
         </ul>
@@ -236,6 +236,11 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2. Working with Numbers and Common Number Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.html">3. Understanding Comparisons and Conditional Review</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3_functions.html">3. Functions Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3_functions/1.html">1. Working with Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_functions/2.html">Examples</a></li>
 </ul>
 </details></li>
 </ul>
@@ -363,7 +368,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -379,6 +386,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-nan-and-how-does-isnan-work">2.1. What is <code class="docutils literal notranslate"><span class="pre">NaN</span></code> and how does <code class="docutils literal notranslate"><span class="pre">isNaN</span></code> work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-the-parsefloat-and-parseint-methods-work">2.2. How do the <code class="docutils literal notranslate"><span class="pre">parseFloat()</span></code> and <code class="docutils literal notranslate"><span class="pre">parseInt()</span></code> methods work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-tofixed-method-and-how-does-it-work">2.3. What is the <code class="docutils literal notranslate"><span class="pre">.toFixed()</span></code> method and how does it work?</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -391,7 +408,131 @@ document.write(`
   <div style="text-align: justify">
 <section class="tex2jax_ignore mathjax_ignore" id="working-with-numbers-and-common-number-methods">
 <h1>2. Working with Numbers and Common Number Methods<a class="headerlink" href="#working-with-numbers-and-common-number-methods" title="Link to this heading">#</a></h1>
+<section id="what-is-nan-and-how-does-isnan-work">
+<h2>2.1. What is <code class="docutils literal notranslate"><span class="pre">NaN</span></code> and how does <code class="docutils literal notranslate"><span class="pre">isNaN</span></code> work?<a class="headerlink" href="#what-is-nan-and-how-does-isnan-work" title="Link to this heading">#</a></h2>
+<p>In JavaScript, <code class="docutils literal notranslate"><span class="pre">NaN</span></code> stands for “Not a Number”. It’s a special value that represents an unrepresentable or undefined numerical result. <code class="docutils literal notranslate"><span class="pre">NaN</span></code> is a property of the global object, and it’s also considered a type of number in JavaScript, which might seem counterintuitive at first.</p>
+<p><code class="docutils literal notranslate"><span class="pre">NaN</span></code> is typically the result of operations that should return a number but can’t produce a meaningful numerical value. For example:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: NaN</span>
+</pre></div>
+</div>
+<p>In this case, dividing zero by zero is mathematically undefined, so JavaScript returns <code class="docutils literal notranslate"><span class="pre">NaN</span></code>. One peculiar property of <code class="docutils literal notranslate"><span class="pre">NaN</span></code> is that it’s not equal to anything, including itself:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">NaN</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">NaN</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: false</span>
+</pre></div>
+</div>
+<p>This unique behavior makes it challenging to check if a value is <code class="docutils literal notranslate"><span class="pre">NaN</span></code> using standard comparison operators. To address this, JavaScript provides the <code class="docutils literal notranslate"><span class="pre">isNaN()</span></code> function. The <code class="docutils literal notranslate"><span class="pre">isNaN()</span></code> function property is used to determine whether a value is <code class="docutils literal notranslate"><span class="pre">NaN</span></code> or not. However, it’s important to understand how <code class="docutils literal notranslate"><span class="pre">isNaN()</span></code> works, as it can sometimes produce unexpected results. Here’s how <code class="docutils literal notranslate"><span class="pre">isNaN()</span></code> behaves:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="kc">NaN</span><span class="p">));</span><span class="w">       </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="kc">undefined</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">isNaN</span><span class="p">({}));</span><span class="w">        </span><span class="c1">// true</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span><span class="w">      </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="kc">null</span><span class="p">));</span><span class="w">      </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="mf">37</span><span class="p">));</span><span class="w">        </span><span class="c1">// false</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="s2">&quot;37&quot;</span><span class="p">));</span><span class="w">      </span><span class="c1">// false: &quot;37&quot; is converted to 37</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="s2">&quot;37.37&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false: &quot;37.37&quot; is converted to 37.37</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">));</span><span class="w">        </span><span class="c1">// false: empty string is converted to 0</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">));</span><span class="w">       </span><span class="c1">// false: string with a space is converted to 0</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="s2">&quot;blabla&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// true: &quot;blabla&quot; is not a number</span>
+</pre></div>
+</div>
+<p>As you can see, <code class="docutils literal notranslate"><span class="pre">isNaN()</span></code> first attempts to convert the parameter to a number. If it can’t be converted, it returns <code class="docutils literal notranslate"><span class="pre">true</span></code>. This behavior can lead to some surprising results, especially when dealing with strings that can be coerced into numbers.</p>
+<p>Due to these potential inconsistencies, ES6 introduced <code class="docutils literal notranslate"><span class="pre">Number.isNaN()</span></code>. This method does not attempt to convert the parameter to a number before testing. It only returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the value is exactly <code class="docutils literal notranslate"><span class="pre">NaN</span></code>:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">.</span><span class="nb">isNaN</span><span class="p">(</span><span class="kc">NaN</span><span class="p">));</span><span class="w">        </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">.</span><span class="nb">isNaN</span><span class="p">(</span><span class="nb">Number</span><span class="p">.</span><span class="kc">NaN</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">.</span><span class="nb">isNaN</span><span class="p">(</span><span class="mf">0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">0</span><span class="p">));</span><span class="w">      </span><span class="c1">// true</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">.</span><span class="nb">isNaN</span><span class="p">(</span><span class="s2">&quot;NaN&quot;</span><span class="p">));</span><span class="w">      </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">.</span><span class="nb">isNaN</span><span class="p">(</span><span class="kc">undefined</span><span class="p">));</span><span class="w">  </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">.</span><span class="nb">isNaN</span><span class="p">({}));</span><span class="w">         </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">.</span><span class="nb">isNaN</span><span class="p">(</span><span class="s2">&quot;blabla&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Number.isNaN()</span></code> provides a more reliable way to check for <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values, especially in cases where type coercion might lead to unexpected results with the global <code class="docutils literal notranslate"><span class="pre">isNaN()</span></code> function. In practice, when dealing with numerical operations or user inputs that should be numbers, it’s often necessary to check for <code class="docutils literal notranslate"><span class="pre">NaN</span></code> to handle errors or unexpected inputs gracefully. For example:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">divide</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">Number</span><span class="p">.</span><span class="nb">isNaN</span><span class="p">(</span><span class="nx">result</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Error: Division resulted in NaN&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">divide</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">));</span><span class="w">  </span><span class="c1">// 5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">divide</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">));</span><span class="w">  </span><span class="c1">// Infinity</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">divide</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">));</span><span class="w">   </span><span class="c1">// &quot;Error: Division resulted in NaN&quot;</span>
+</pre></div>
+</div>
+<p>In this example, we’re using <code class="docutils literal notranslate"><span class="pre">Number.isNaN()</span></code> to catch cases where the division operation results in <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, allowing us to handle this scenario appropriately. Understanding <code class="docutils literal notranslate"><span class="pre">NaN</span></code> and how to properly check for it is crucial for writing robust JavaScript code, especially when dealing with mathematical operations or parsing user inputs.</p>
+</section>
+<section id="how-do-the-parsefloat-and-parseint-methods-work">
+<h2>2.2. How do the <code class="docutils literal notranslate"><span class="pre">parseFloat()</span></code> and <code class="docutils literal notranslate"><span class="pre">parseInt()</span></code> methods work?<a class="headerlink" href="#how-do-the-parsefloat-and-parseint-methods-work" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">parseFloat()</span></code> and <code class="docutils literal notranslate"><span class="pre">parseInt()</span></code> are two essential methods in JavaScript for converting strings to numbers. These methods are particularly useful when dealing with user input or processing data that comes in string format but needs to be treated as numerical values.</p>
+<ol class="arabic">
+<li><p>Let’s start with <code class="docutils literal notranslate"><span class="pre">parseFloat()</span></code>. This method parses a string argument and returns a floating-point number. It’s designed to extract a number from the beginning of a string, even if the string contains non-numeric characters later on. Remember that floats are numbers with decimal points. Here’s how <code class="docutils literal notranslate"><span class="pre">parseFloat()</span></code> works:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseFloat</span><span class="p">(</span><span class="s2">&quot;3.14&quot;</span><span class="p">));</span><span class="w">     </span><span class="c1">// Output: 3.14</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseFloat</span><span class="p">(</span><span class="s2">&quot;3.14 abc&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// Output: 3.14</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseFloat</span><span class="p">(</span><span class="s2">&quot;3.14.5&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// Output: 3.14</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseFloat</span><span class="p">(</span><span class="s2">&quot;abc 3.14&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// Output: NaN</span>
+</pre></div>
+</div>
+<p>As you can see, <code class="docutils literal notranslate"><span class="pre">parseFloat()</span></code> starts parsing from the beginning of the string and continues until it encounters a character that can’t be part of a floating-point number. If it can’t find a valid number at the start of the string, it returns <code class="docutils literal notranslate"><span class="pre">NaN</span></code> (Not a Number).</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">parseInt()</span></code>, on the other hand, parses a string argument and returns an integer. Like <code class="docutils literal notranslate"><span class="pre">parseFloat()</span></code>, it starts from the beginning of the string, but it stops at the first non-digit character. Here’s how <code class="docutils literal notranslate"><span class="pre">parseInt()</span></code> works:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;42&quot;</span><span class="p">));</span><span class="w">       </span><span class="c1">// Output: 42</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;42px&quot;</span><span class="p">));</span><span class="w">     </span><span class="c1">// Output: 42</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;3.14&quot;</span><span class="p">));</span><span class="w">     </span><span class="c1">// Output: 3</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;abc123&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// Output: NaN</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">parseInt()</span></code> stops parsing at the first non-digit it encounters. For floating-point numbers, it returns only the integer part. If it can’t find a valid integer at the start of the string, it returns <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p>
+</li>
+</ol>
+<p>Both methods have some noteworthy behaviors. They ignore leading whitespace:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseFloat</span><span class="p">(</span><span class="s2">&quot;  3.14&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// Output: 3.14</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;  42&quot;</span><span class="p">));</span><span class="w">      </span><span class="c1">// Output: 42</span>
+</pre></div>
+</div>
+<p>They handle plus and minus signs at the beginning of the string:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseFloat</span><span class="p">(</span><span class="s2">&quot;+3.14&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// Output: 3.14</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;-42&quot;</span><span class="p">));</span><span class="w">      </span><span class="c1">// Output: -42</span>
+</pre></div>
+</div>
+<p>It’s worth noting that while these methods are powerful, they have some limitations. For instance, they don’t handle all number formats, such as scientific notation, directly. For more complex parsing needs, you might need to use additional techniques or libraries.</p>
+<p>In conclusion, <code class="docutils literal notranslate"><span class="pre">parseFloat()</span></code> and <code class="docutils literal notranslate"><span class="pre">parseInt()</span></code> are valuable tools for converting strings to numbers in JavaScript. Understanding how they work and their specific behaviors allows you to handle numeric data more effectively in your applications, especially when dealing with user inputs or external data sources.</p>
+</section>
+<section id="what-is-the-tofixed-method-and-how-does-it-work">
+<h2>2.3. What is the <code class="docutils literal notranslate"><span class="pre">.toFixed()</span></code> method and how does it work?<a class="headerlink" href="#what-is-the-tofixed-method-and-how-does-it-work" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">.toFixed()</span></code> method is a built-in JavaScript function that formats a number using fixed-point notation. It’s particularly useful when you need to control the number of decimal places in a number, especially for displaying currency values or when working with precise measurements.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">.toFixed()</span></code> method is called on a number and takes one optional argument, which is the number of digits to appear after the decimal point. It returns a string representation of the number with the specified number of decimal places. Here’s a basic example of how <code class="docutils literal notranslate"><span class="pre">.toFixed()</span></code> works:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">));</span><span class="w"> </span><span class="c1">// Output: &quot;3.14&quot;</span>
+</pre></div>
+</div>
+<p>In this case, we’re limiting the number of decimal places to two. So, <code class="docutils literal notranslate"><span class="pre">3.14159</span></code> becomes <code class="docutils literal notranslate"><span class="pre">3.14</span></code>. It’s important to note that <code class="docutils literal notranslate"><span class="pre">.toFixed()</span></code> returns a string, not a number. This is because the method is primarily intended for formatting numbers for display, not for further calculations.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">.toFixed()</span></code> method rounds the number to the nearest value that can be represented with the specified number of decimal places. This rounding behavior is important to understand:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="mf">3.14159</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">3</span><span class="p">));</span><span class="w">  </span><span class="c1">// Output: &quot;3.142&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="mf">3.14449</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">3</span><span class="p">));</span><span class="w">  </span><span class="c1">// Output: &quot;3.144&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="mf">3.14550</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">3</span><span class="p">));</span><span class="w">  </span><span class="c1">// Output: &quot;3.146&quot;</span>
+</pre></div>
+</div>
+<p>As you can see, <code class="docutils literal notranslate"><span class="pre">.toFixed()</span></code> rounds up when the next digit is <code class="docutils literal notranslate"><span class="pre">5</span></code> or greater, and rounds down otherwise. If you call <code class="docutils literal notranslate"><span class="pre">.toFixed()</span></code> without arguments, it defaults to <code class="docutils literal notranslate"><span class="pre">0</span></code> decimal places:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">());</span><span class="w"> </span><span class="c1">// Output: &quot;3&quot;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">.toFixed()</span></code> method can be particularly useful when working with financial calculations or displaying prices:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">19.99</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">taxRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.08</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">price</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="nx">price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">taxRate</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Total: $&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">total</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">));</span><span class="w"> </span><span class="c1">// Output: &quot;Total: $21.59&quot;</span>
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">.toFixed(2)</span></code> ensures that the total is always displayed with two decimal places, which is standard for currency in many countries.</p>
+<p>In conclusion, the <code class="docutils literal notranslate"><span class="pre">.toFixed()</span></code> method is a powerful tool for formatting numbers in JavaScript, particularly when you need to control the display of decimal places. While it’s primarily used for formatting output, remember its behavior, especially when precise calculations are needed.</p>
 </div></section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -447,6 +588,23 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-nan-and-how-does-isnan-work">2.1. What is <code class="docutils literal notranslate"><span class="pre">NaN</span></code> and how does <code class="docutils literal notranslate"><span class="pre">isNaN</span></code> work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-the-parsefloat-and-parseint-methods-work">2.2. How do the <code class="docutils literal notranslate"><span class="pre">parseFloat()</span></code> and <code class="docutils literal notranslate"><span class="pre">parseInt()</span></code> methods work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-tofixed-method-and-how-does-it-work">2.3. What is the <code class="docutils literal notranslate"><span class="pre">.toFixed()</span></code> method and how does it work?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
