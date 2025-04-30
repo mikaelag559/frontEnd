@@ -175,7 +175,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../intro.html">
-                    Welcome to my front end web development notes
+                    Welcome to my web development notes
                 </a>
             </li>
         </ul>
@@ -236,6 +236,11 @@
 <li class="toctree-l2"><a class="reference internal" href="2.html">2. Working with Numbers and Common Number Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.html">3. Understanding Comparisons and Conditional Review</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3_functions.html">3. Functions Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3_functions/1.html">1. Working with Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_functions/2.html">Examples</a></li>
 </ul>
 </details></li>
 </ul>
@@ -363,7 +368,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -379,6 +386,26 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-number-type-in-javascript-and-what-are-the-different-types-of-numbers-available">1.1. What is the <code class="docutils literal notranslate"><span class="pre">Number</span></code> type in JavaScript and what are the different types of numbers available?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-different-arithmetic-operators-in-javascript">1.2. What are the different arithmetic operators in JavaScript?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-when-you-try-to-do-calculations-with-numbers-and-strings">1.3. What happens when you try to do calculations with numbers and strings?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-operator-precedence-work">1.4. How does operator precedence work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-the-increment-and-decrement-operators-work">1.5. How do the increment and decrement operators work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-compound-assignment-operators-in-javascript-and-how-do-they-work">1.6. What are compound assignment operators in JavaScript and how do they work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-booleans-and-how-do-they-work-with-equality-and-inequality-operators">1.7. What are booleans and how do they work with equality and inequality operators?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-comparison-operators-and-how-do-they-work">1.8. What are comparison operators and how do they work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-unary-operators-and-how-do-they-work">1.9. What are unary operators and how do they work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-bitwise-operators-and-how-do-they-work">1.10. What are bitwise operators and how do they work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-conditional-statements-and-how-do-if-else-statements-work">1.11. What are conditional statements and how do <code class="docutils literal notranslate"><span class="pre">if/else</span></code> statements work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-binary-logical-operators-and-how-do-they-work">1.12. What are binary logical operators and how do they work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-math-object-in-javascript-and-what-are-some-common-methods">1.13. What is the <code class="docutils literal notranslate"><span class="pre">Math</span></code> object in JavaScript and what are some common methods?</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -391,7 +418,808 @@ document.write(`
   <div style="text-align: justify">
 <section class="tex2jax_ignore mathjax_ignore" id="working-with-numbers-booleans-and-the-math-object">
 <h1>1. Working with Numbers, Booleans and the Math Object<a class="headerlink" href="#working-with-numbers-booleans-and-the-math-object" title="Link to this heading">#</a></h1>
+<section id="what-is-the-number-type-in-javascript-and-what-are-the-different-types-of-numbers-available">
+<h2>1.1. What is the <code class="docutils literal notranslate"><span class="pre">Number</span></code> type in JavaScript and what are the different types of numbers available?<a class="headerlink" href="#what-is-the-number-type-in-javascript-and-what-are-the-different-types-of-numbers-available" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">Number</span></code> type is one of the most used data types in JavaScript and other programming languages. Numbers might seem simple, but there’s a lot to explore when it comes to numbers in JavaScript. So, let’s take a deeper look. In JavaScript, the <code class="docutils literal notranslate"><span class="pre">Number</span></code> data type represents a numeric value.</p>
+<p>Unlike many other programming languages that separate integers and floating-point numbers into different types, JavaScript uses one unified <code class="docutils literal notranslate"><span class="pre">Number</span></code> type to account for numbers. This means you can work with whole numbers, decimals, and even special numeric values all under the same <code class="docutils literal notranslate"><span class="pre">Number</span></code> data type umbrella.</p>
+<p>Here’s a basic example showing you integers, floating point numbers, and negative numbers are all of type number:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">wholeNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">50</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">decimalNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4.5</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">negativeNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mf">7</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">wholeNumber</span><span class="p">);</span><span class="w"> </span><span class="c1">// number</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">decimalNumber</span><span class="p">);</span><span class="w"> </span><span class="c1">// number</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">negativeNumber</span><span class="p">);</span><span class="w"> </span><span class="c1">// number</span>
+</pre></div>
+</div>
+<p>JavaScript’s <code class="docutils literal notranslate"><span class="pre">Number</span></code> type includes various kinds of numeric values, ranging from simple integers and floating-point numbers to special cases like <code class="docutils literal notranslate"><span class="pre">Infinity</span></code> and <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, or “Not a Number”. Let’s break down the main types you’ll encounter. Integers are whole numbers without any fractional or decimal part. They can be positive, negative, or zero. Here are some examples:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">positiveInteger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">negativeInteger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mf">25</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">zero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">positiveInteger</span><span class="p">);</span><span class="w"> </span><span class="c1">// number</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">negativeInteger</span><span class="p">);</span><span class="w"> </span><span class="c1">// number</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">zero</span><span class="p">);</span><span class="w"> </span><span class="c1">// number</span>
+</pre></div>
+</div>
+<p>Floating point numbers are numbers with decimal points. They’re often referred to as just “floats” by JavaScript developers. Floats are useful when you need more precision, such as when you’re dealing with measurements or currencies. Here are some examples:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">floatingPointNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4.5</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">anotherFloat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">89.56</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">oneMoreFloat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">16.462</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">floatingPointNumber</span><span class="p">);</span><span class="w"> </span><span class="c1">// number</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">anotherFloat</span><span class="p">);</span><span class="w"> </span><span class="c1">// number</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">oneMoreFloat</span><span class="p">);</span><span class="w"> </span><span class="c1">// number</span>
+</pre></div>
+</div>
+<p>JavaScript can represent numbers that are beyond the maximum limit with <code class="docutils literal notranslate"><span class="pre">Infinity</span></code>. You’ll encounter this when you try to divide a number by zero or on rare occasions, exceed the upper boundary of the <code class="docutils literal notranslate"><span class="pre">Number</span></code> type. Here’s an example:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">infiniteNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">infiniteNumber</span><span class="p">);</span><span class="w"> </span><span class="c1">// Infinity</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">infiniteNumber</span><span class="p">);</span><span class="w"> </span><span class="c1">// number</span>
+</pre></div>
+</div>
+<p>Sometimes in JavaScript, some mathematical operations don’t result in a valid number. For instance, if you try to perform a mathematical operation on something that isn’t a number, you’ll get <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, which stands for “Not a Number”:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">notANumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;hello world&#39;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">notANumber</span><span class="p">);</span><span class="w"> </span><span class="c1">// NaN</span>
+</pre></div>
+</div>
+<p>Surprisingly, the type of <code class="docutils literal notranslate"><span class="pre">NaN</span></code> is also <code class="docutils literal notranslate"><span class="pre">Number</span></code>:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">notANumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;hello world&#39;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">notANumber</span><span class="p">);</span><span class="w"> </span><span class="c1">// number</span>
+</pre></div>
+</div>
+<p>Apart from the standard decimal system (base 10), JavaScript also supports numbers in different bases such as binary, octal, and hexadecimal. Binary is a base-2 system that uses only digits 1 and 0. Octal is a base-8 system that uses only digits 0 to 7. Hexadecimal is a base-16 system that uses digits 0 to 9 and letters a to f, like you see in CSS hex colors.</p>
+</section>
+<section id="what-are-the-different-arithmetic-operators-in-javascript">
+<h2>1.2. What are the different arithmetic operators in JavaScript?<a class="headerlink" href="#what-are-the-different-arithmetic-operators-in-javascript" title="Link to this heading">#</a></h2>
+<p>JavaScript provides tools to perform basic arithmetic operations on numbers, such as addition, subtraction, multiplication, and division. JavaScript also includes operators for more complex arithmetic operations, such as remainder and exponentiation.</p>
+<p>All these tools are called arithmetic operators. Let’s look at these operators in detail, how to use them and how to combine them.</p>
+<p>The addition operator is a plus sign (<code class="docutils literal notranslate"><span class="pre">+</span></code>). The addition operator allows you to find the total of two or more numbers. In addition operations, the order of the numbers doesn’t matter:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">num1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">num2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">num3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">15</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">result1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">num1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">num2</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">num2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">num1</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">num2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">num1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">num3</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result1</span><span class="p">);</span><span class="w"> </span><span class="c1">// 15</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result2</span><span class="p">);</span><span class="w"> </span><span class="c1">// 15</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result3</span><span class="p">);</span><span class="w"> </span><span class="c1">// 30</span>
+</pre></div>
+</div>
+<p>The subtraction operator is a minus sign (<code class="docutils literal notranslate"><span class="pre">-</span></code>). It allows you to find the difference between two numbers. Use the minus sign when you want to subtract a number from another number, usually a smaller one from a bigger one:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">difference</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">difference</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5</span>
+</pre></div>
+</div>
+<p>If a smaller number comes first, you’ll get a negative result:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">difference</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">difference</span><span class="p">);</span><span class="w"> </span><span class="c1">// -5</span>
+</pre></div>
+</div>
+<p>You can also assign the numbers to variables and do the subtraction with the variable names:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">num1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">num2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">num1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">num2</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5</span>
+</pre></div>
+</div>
+<p>In JavaScript, the multiplication operator is represented by an asterisk (<code class="docutils literal notranslate"><span class="pre">*</span></code>) and is used to find the product of two or more numbers. The order of the numbers you’re multiplying does not matter:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">num1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">num2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">num3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">15</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">result1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">num1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">num2</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">num2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">num1</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">num2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">num1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">num3</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result1</span><span class="p">);</span><span class="w"> </span><span class="c1">// 50</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result2</span><span class="p">);</span><span class="w"> </span><span class="c1">// 50</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result3</span><span class="p">);</span><span class="w"> </span><span class="c1">// 750</span>
+</pre></div>
+</div>
+<p>In JavaScript, the division operator is a slash (<code class="docutils literal notranslate"><span class="pre">/</span></code>), which differs from the division symbol used in traditional math (<code class="docutils literal notranslate"><span class="pre">÷</span></code>). You perform division operations with the division operator. The order of the numbers you’re dividing matters in this case:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">num1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">num2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">num3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">15</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">result1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">num1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">num2</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">num2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">num1</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">num2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">num1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">num3</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result1</span><span class="p">);</span><span class="w"> </span><span class="c1">// 2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result2</span><span class="p">);</span><span class="w"> </span><span class="c1">// 0.5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result3</span><span class="p">);</span><span class="w"> </span><span class="c1">// 0.03333333333333333</span>
+</pre></div>
+</div>
+<p>It’s important to note that if you try to divide by zero, JavaScript will return <code class="docutils literal notranslate"><span class="pre">Infinity</span></code>:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// Infinity</span>
+</pre></div>
+</div>
+<p>Make sure to avoid those types of calculations so you don’t end up with unexpected results in your code.</p>
+<p>The remainder operator, represented by a percentage sign (<code class="docutils literal notranslate"><span class="pre">%</span></code>), returns the remainder of a division. The remainder in math is the leftover value after performing division:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">num1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">num2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">remainder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">num1</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="nx">num2</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">remainder</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1</span>
+</pre></div>
+</div>
+<p>The exponentiation operator, represented by a double asterisk (<code class="docutils literal notranslate"><span class="pre">**</span></code>), raises one number to the power of another:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">num1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">num2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">exponent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">num1</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="nx">num2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">exponent</span><span class="p">);</span><span class="w"> </span><span class="c1">// 8</span>
+</pre></div>
+</div>
+<p>It’s possible to mix operators in a single operation or expression:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">8</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">4</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// 18</span>
+</pre></div>
+</div>
+<p>When you mix different operators in a single expression, the JavaScript engine follows a system called operator precedence to determine the order of operations. Operator precedence determines the order in which operations are executed in expressions. You will learn more about operator precedence in future lecture videos.</p>
+</section>
+<section id="what-happens-when-you-try-to-do-calculations-with-numbers-and-strings">
+<h2>1.3. What happens when you try to do calculations with numbers and strings?<a class="headerlink" href="#what-happens-when-you-try-to-do-calculations-with-numbers-and-strings" title="Link to this heading">#</a></h2>
+<p>JavaScript is a language where things sometimes work in surprising, or even weird, ways. One such surprise occurs when you mix numbers and strings in calculations. The first thing you’ll probably try is to add a number and a string. In JavaScript, the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator does double duty. It handles both addition and string concatenation, which is a way to join two strings together.</p>
+<p>When you use <code class="docutils literal notranslate"><span class="pre">+</span></code> with a number and a string, JavaScript decides to treat them both as strings and joins them together. If you check the type of the result with the <code class="docutils literal notranslate"><span class="pre">typeof</span></code> operator, you’d see it’s indeed a string:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;10&#39;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// 510</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// string</span>
+</pre></div>
+</div>
+<p>What do you think will happen if you switch the order of <code class="docutils literal notranslate"><span class="pre">5</span></code> and <code class="docutils literal notranslate"><span class="pre">'10'</span></code>?</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;10&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// 105</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// string</span>
+</pre></div>
+</div>
+<p>You can see the same thing happened. JavaScript sees a string in <code class="docutils literal notranslate"><span class="pre">'10'</span></code> and a number in <code class="docutils literal notranslate"><span class="pre">5</span></code>, so it converts the number to a string and concatenates them. This is known as type coercion. Type coercion is when a value from one data type is converted into another.</p>
+<p>Things get more interesting when you try to perform other arithmetic operations like subtraction, multiplication, or division with a string and number. In these cases, JavaScript tries to convert the string into a number before doing the math – another type coercion! Here’s what happens:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">subtractionResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;10&#39;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">subtractionResult</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">subtractionResult</span><span class="p">);</span><span class="w"> </span><span class="c1">// number</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">multiplicationResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;10&#39;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">multiplicationResult</span><span class="p">);</span><span class="w"> </span><span class="c1">// 20</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">multiplicationResult</span><span class="p">);</span><span class="w"> </span><span class="c1">// number</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">divisionResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;20&#39;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">divisionResult</span><span class="p">);</span><span class="w"> </span><span class="c1">// 10</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">divisionResult</span><span class="p">);</span><span class="w"> </span><span class="c1">// number</span>
+</pre></div>
+</div>
+<p>In the examples above, JavaScript successfully converts the string <code class="docutils literal notranslate"><span class="pre">'10'</span></code> or <code class="docutils literal notranslate"><span class="pre">'20'</span></code> to a number and then performs the calculation. As a result, <code class="docutils literal notranslate"><span class="pre">'10'</span> <span class="pre">-</span> <span class="pre">5</span></code> yields <code class="docutils literal notranslate"><span class="pre">5</span></code>, <code class="docutils literal notranslate"><span class="pre">'10'</span> <span class="pre">*</span> <span class="pre">2</span></code> gives <code class="docutils literal notranslate"><span class="pre">20</span></code>, and <code class="docutils literal notranslate"><span class="pre">'20'</span> <span class="pre">/</span> <span class="pre">2</span></code> results in <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p>
+<p>But what if the string doesn’t look like a number? Let’s see what happens in that case:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">subtractionResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;abc&#39;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">subtractionResult</span><span class="p">);</span><span class="w"> </span><span class="c1">// NaN</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">subtractionResult</span><span class="p">);</span><span class="w"> </span><span class="c1">// number</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">multiplicationResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;abc&#39;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">multiplicationResult</span><span class="p">);</span><span class="w"> </span><span class="c1">// NaN</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">multiplicationResult</span><span class="p">);</span><span class="w"> </span><span class="c1">// number</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">divisionResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;abc&#39;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">divisionResult</span><span class="p">);</span><span class="w"> </span><span class="c1">// NaN</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">divisionResult</span><span class="p">);</span><span class="w"> </span><span class="c1">// number</span>
+</pre></div>
+</div>
+<p>In the examples above, the string <code class="docutils literal notranslate"><span class="pre">'abc'</span></code> does not represent a valid numeric value, so JavaScript cannot convert it into a meaningful number. When such conversion fails, JavaScript returns <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, which stands for “Not a Number”. <code class="docutils literal notranslate"><span class="pre">NaN</span></code> is a special value of the <code class="docutils literal notranslate"><span class="pre">Number</span></code> type that represents an invalid or unrepresentable number.</p>
+<p>What if you perform arithmetic operations with a boolean (<code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>)? Let’s see what happens. JavaScript treats booleans as numbers in mathematical operations: <code class="docutils literal notranslate"><span class="pre">true</span></code> becomes <code class="docutils literal notranslate"><span class="pre">1</span></code>, and <code class="docutils literal notranslate"><span class="pre">false</span></code> becomes <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">result1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result1</span><span class="p">);</span><span class="w"> </span><span class="c1">// 2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">result1</span><span class="p">);</span><span class="w"> </span><span class="c1">// number</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">result2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result2</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">result2</span><span class="p">);</span><span class="w"> </span><span class="c1">// number</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">result3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hello&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result3</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;Hellotrue&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">result3</span><span class="p">);</span><span class="w"> </span><span class="c1">// string</span>
+</pre></div>
+</div>
+<p>In the first two examples, <code class="docutils literal notranslate"><span class="pre">true</span> <span class="pre">+</span> <span class="pre">1</span></code> resulted in <code class="docutils literal notranslate"><span class="pre">2</span></code>, and <code class="docutils literal notranslate"><span class="pre">false</span> <span class="pre">+</span> <span class="pre">1</span></code> resulted in <code class="docutils literal notranslate"><span class="pre">1</span></code>. In the third example, <code class="docutils literal notranslate"><span class="pre">'Hello'</span> <span class="pre">+</span> <span class="pre">true</span></code>, JavaScript converted <code class="docutils literal notranslate"><span class="pre">true</span></code> to a string and concatenates it with <code class="docutils literal notranslate"><span class="pre">'Hello'</span></code>, resulting in <code class="docutils literal notranslate"><span class="pre">'Hellotrue'</span></code>, which is a string.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">null</span></code> and <code class="docutils literal notranslate"><span class="pre">undefined</span></code>, JavaScript treats <code class="docutils literal notranslate"><span class="pre">null</span></code> as <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">undefined</span></code> as <code class="docutils literal notranslate"><span class="pre">NaN</span></code> in mathematical operations:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">result1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result1</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">result1</span><span class="p">);</span><span class="w"> </span><span class="c1">// number</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">result2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">undefined</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result2</span><span class="p">);</span><span class="w"> </span><span class="c1">// NaN</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">result2</span><span class="p">);</span><span class="w"> </span><span class="c1">// number</span>
+</pre></div>
+</div>
+<p>JavaScript often performs type coercion, automatically converting data types such as numbers, strings, and booleans in sometimes unexpected ways. Understanding these conversions is crucial for avoiding bugs and writing robust code in your projects.</p>
+</section>
+<section id="how-does-operator-precedence-work">
+<h2>1.4. How does operator precedence work?<a class="headerlink" href="#how-does-operator-precedence-work" title="Link to this heading">#</a></h2>
+<p>If you write an expression with several operators in JavaScript, how does JavaScript decide which one to evaluate first? This is where operator precedence comes in. Let’s explore operator precedence in detail with code examples, and also what happens when operators have the same precedence.</p>
+<p>Operator precedence determines the order in which operations are evaluated in an expression. Operators with higher precedence are evaluated before those with lower precedence. Think of operator precedence like in math, where division and multiplication happen before addition and subtraction.</p>
+<p>Without following this rule, basic equations would give you the wrong answer. JavaScript works the same way. It has its own rules for which operators come first, second, and so on. For example, take a look at the expression below:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">4</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// 14</span>
+</pre></div>
+</div>
+<p>If JavaScript evaluated this expression from left to right, you’d expect <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">=</span> <span class="pre">5</span></code>, then <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">*</span> <span class="pre">4</span> <span class="pre">=</span> <span class="pre">20</span></code>. But because multiplication has a higher precedence than addition, JavaScript evaluates the <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">4</span></code> part first, resulting in <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">12</span> <span class="pre">=</span> <span class="pre">14</span></code>.</p>
+<p>Sometimes, you may want certain parts of your expression to run first, regardless of precedence rules. You can use parentheses, <code class="docutils literal notranslate"><span class="pre">()</span></code>, to do this. Anything inside parentheses is evaluated first, no matter what. Let’s make the <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span></code> part of the previous example evaluate first:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">3</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">4</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// 20</span>
+</pre></div>
+</div>
+<p>In the example above, the parentheses force JavaScript to evaluate <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span></code> first, and then multiply the result by <code class="docutils literal notranslate"><span class="pre">4</span></code>. This gives you <code class="docutils literal notranslate"><span class="pre">20</span></code> instead of <code class="docutils literal notranslate"><span class="pre">14</span></code>.</p>
+<p>The division operator has more precedence than addition or subtraction too:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">6</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// 4</span>
+</pre></div>
+</div>
+<p>If JavaScript evaluated this expression from left to right, you might expect <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">6</span> <span class="pre">=</span> <span class="pre">8</span></code>, then <code class="docutils literal notranslate"><span class="pre">8</span> <span class="pre">/</span> <span class="pre">3</span> <span class="pre">=</span> <span class="pre">2.67</span></code>. But since division has a higher precedence than addition, JavaScript evaluates the division first: <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">/</span> <span class="pre">3</span> <span class="pre">=</span> <span class="pre">2</span></code>, and then adds <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">2</span></code>, giving the result <code class="docutils literal notranslate"><span class="pre">4</span></code>.</p>
+<p>So, in both multiplication and division, those operations will always take place before addition and subtraction unless you use parentheses to change the order. So what happens if the operators have the same precedence? JavaScript uses associativity to figure out the order to evaluate them.</p>
+<p>Associativity is what tells JavaScript whether to evaluate operators from left to right or right to left. For most operators like addition and multiplication, associativity is left to right. So, JavaScript processes these from the leftmost side of the expression to the right:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// 11</span>
+</pre></div>
+</div>
+<p>First, <code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">-</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">8</span></code>, then <code class="docutils literal notranslate"><span class="pre">8</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">=</span> <span class="pre">11</span></code>. JavaScript moves left to right in this case. Some operators, like assignment (<code class="docutils literal notranslate"><span class="pre">=</span></code>), are right-to-left associative. This means the right side of the expression gets evaluated first:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// 10</span>
+</pre></div>
+</div>
+<p>In the example above, JavaScript assigns <code class="docutils literal notranslate"><span class="pre">5</span></code> to <code class="docutils literal notranslate"><span class="pre">b</span></code> first, then assigns <code class="docutils literal notranslate"><span class="pre">b</span></code> (which is now <code class="docutils literal notranslate"><span class="pre">5</span></code>) to <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+<p>The exponent operator is also right-to-left associative:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// 512</span>
+</pre></div>
+</div>
+<p>First, JavaScript evaluates <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">**</span> <span class="pre">2</span></code>, which equals <code class="docutils literal notranslate"><span class="pre">9</span></code>, then, it evaluates <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">**</span> <span class="pre">9</span></code>, which equals <code class="docutils literal notranslate"><span class="pre">512</span></code>. If the exponent operator had left-to-right associativity, JavaScript would have calculated <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">**</span> <span class="pre">3</span></code> first to get <code class="docutils literal notranslate"><span class="pre">8</span></code>, then <code class="docutils literal notranslate"><span class="pre">8</span> <span class="pre">**</span> <span class="pre">2</span></code> to get <code class="docutils literal notranslate"><span class="pre">64</span></code>.</p>
+</section>
+<section id="how-do-the-increment-and-decrement-operators-work">
+<h2>1.5. How do the increment and decrement operators work?<a class="headerlink" href="#how-do-the-increment-and-decrement-operators-work" title="Link to this heading">#</a></h2>
+<p>If you’re working with numbers and need to increase or decrease a value by one, the increment and decrement operators make the job easier. Let’s break it down in a simple way.</p>
+<p>The increment and decrement operators are represented by <code class="docutils literal notranslate"><span class="pre">++</span></code> and <code class="docutils literal notranslate"><span class="pre">--</span></code>, respectively. They both allow you to adjust the value of a variable by <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<p>Instead of writing something like <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">-</span> <span class="pre">1</span></code>, you can simply use <code class="docutils literal notranslate"><span class="pre">x++</span></code> to add <code class="docutils literal notranslate"><span class="pre">1</span></code>, or <code class="docutils literal notranslate"><span class="pre">x--</span></code> to subtract <code class="docutils literal notranslate"><span class="pre">1</span></code>. It’s faster, cleaner, and easier to read.</p>
+<p>There’s a twist to how the increment and decrement operators work: they come in two forms, prefix and postfix, with the difference being when the value gets updated. For the increment operator, prefix is <code class="docutils literal notranslate"><span class="pre">++x</span></code> and postfix is <code class="docutils literal notranslate"><span class="pre">x++</span></code>.</p>
+<p>Prefix (<code class="docutils literal notranslate"><span class="pre">++x</span></code>) increases the value of the variable first, then returns a new value. Postfix (<code class="docutils literal notranslate"><span class="pre">x++</span></code>) returns the current value of the variable first, then increases it:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">++</span><span class="nx">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// 6</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// 6</span>
+</pre></div>
+</div>
+<p>In the code above, <code class="docutils literal notranslate"><span class="pre">++x</span></code> means “increment <code class="docutils literal notranslate"><span class="pre">x</span></code> first, then use it”. So when you log <code class="docutils literal notranslate"><span class="pre">++x</span></code>, you immediately get the incremented value, which is <code class="docutils literal notranslate"><span class="pre">6</span></code>.</p>
+<p>Now, let’s take a look at an example using the postfix:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">y</span><span class="o">++</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">y</span><span class="p">);</span><span class="w"> </span><span class="c1">// 6</span>
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">y++</span></code> means “use <code class="docutils literal notranslate"><span class="pre">y</span></code> first, then increment it”. When you log <code class="docutils literal notranslate"><span class="pre">y++</span></code>, you get <code class="docutils literal notranslate"><span class="pre">5</span></code>, but <code class="docutils literal notranslate"><span class="pre">y</span></code> becomes <code class="docutils literal notranslate"><span class="pre">6</span></code> after that line of code.</p>
+<p>The decrement operator does the same thing as increment, except it decreases the value by <code class="docutils literal notranslate"><span class="pre">1</span></code>. Again, there are two forms: prefix (<code class="docutils literal notranslate"><span class="pre">--x</span></code>) decreases the value of the variable first, then returns the new value. And postfix (<code class="docutils literal notranslate"><span class="pre">x--</span></code>) returns the current value first, then decreases it:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">--</span><span class="nx">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// 4</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// 4</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">y</span><span class="o">--</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">y</span><span class="p">);</span><span class="w"> </span><span class="c1">// 4</span>
+</pre></div>
+</div>
+<p>So, which should you use: prefix or postfix? In many cases, it doesn’t matter which one you use. Both get the job done. However, if you’re using the value immediately in an expression, the difference becomes important. Let’s take a look at this example:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">++</span><span class="nx">a</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// 6 (a was incremented before assignment)</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">c</span><span class="o">++</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">d</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5 (c was incremented after assignment)</span>
+</pre></div>
+</div>
+<p>So, if you need the updated value right away, use prefix. If you want the current value first and you don’t care about the increment until later, go with postfix.</p>
+</section>
+<section id="what-are-compound-assignment-operators-in-javascript-and-how-do-they-work">
+<h2>1.6. What are compound assignment operators in JavaScript and how do they work?<a class="headerlink" href="#what-are-compound-assignment-operators-in-javascript-and-how-do-they-work" title="Link to this heading">#</a></h2>
+<p>In JavaScript, all arithmetic operators have a compound assignment form. Compound assignment operators allow you to perform a mathematical operation and reassign the result back to the variable in one line of code. Instead of writing something like this:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span><span class="w"> </span><span class="c1">// 7</span>
+</pre></div>
+</div>
+<p>You can write something like this:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="nx">num</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span><span class="w"> </span><span class="c1">// 7</span>
+</pre></div>
+</div>
+<p>Notice how <code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">+=</span> <span class="pre">2</span></code> combines both the addition and assignment steps into one. This saves time and reduces clutter in your code. Let’s dive deeper into the most common compound assignment operators in JavaScript.</p>
+<p>As you’ve already seen, the <code class="docutils literal notranslate"><span class="pre">+=</span></code> operator lets you add a value to an existing variable. It is known as the addition assignment operator. The addition assignment operator takes the current value of the variable, adds the specified number to it, and then assigns the result back to the variable:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="nx">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">total</span><span class="p">);</span><span class="w"> </span><span class="c1">// 15</span>
+</pre></div>
+</div>
+<p>As you might guess, there’s a subtraction assignment operator denoted by <code class="docutils literal notranslate"><span class="pre">-=</span></code>. The subtraction assignment operator subtracts the specified value from the current value of the variable and assigns the new value back to the variable:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">20</span><span class="p">;</span>
+<span class="nx">score</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mf">7</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">score</span><span class="p">);</span><span class="w"> </span><span class="c1">// 13</span>
+</pre></div>
+</div>
+<p>If you didn’t use the subtraction assignment, you’d have done something like this:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">20</span><span class="p">;</span>
+<span class="nx">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">7</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">score</span><span class="p">);</span><span class="w"> </span><span class="c1">// 13</span>
+</pre></div>
+</div>
+<p>The multiplication assignment operator is represented by <code class="docutils literal notranslate"><span class="pre">*=</span></code>. It multiplies the current value of the variable by the specified number and reassigns it back to the variable:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">points</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="nx">points</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">points</span><span class="p">);</span><span class="w"> </span><span class="c1">// 15</span>
+</pre></div>
+</div>
+<p>Lastly, there’s a division assignment operator denoted by <code class="docutils literal notranslate"><span class="pre">/=</span></code>. Just like others before it, it lets you divide the current value of a variable by a number you specify, then assign the result back to the variable:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span>
+<span class="nx">balance</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mf">4</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">balance</span><span class="p">);</span><span class="w"> </span><span class="c1">// 25</span>
+</pre></div>
+</div>
+<p>Remember there’s a compound assignment operator for every operator in JavaScript. So, apart from the four already mentioned, we also have:</p>
+<ul class="simple">
+<li><p>Remainder assignment operator (<code class="docutils literal notranslate"><span class="pre">%=</span></code>), which divides a variable by the specified number and assigns the remainder to the variable.</p></li>
+<li><p>Exponent assignment operator (<code class="docutils literal notranslate"><span class="pre">**=</span></code>), which raises a variable to the power of the specified number and reassigns the result to the variable.</p></li>
+<li><p>Bitwise AND assignment operator (<code class="docutils literal notranslate"><span class="pre">&amp;=</span></code>), which performs a bitwise AND operation with the specified number and reassigns the result to the variable.</p></li>
+<li><p>Bitwise OR assignment operator (<code class="docutils literal notranslate"><span class="pre">|=</span></code>), which performs a bitwise OR operation with the specified number and reassigns the result to the variable.</p></li>
+</ul>
+</section>
+<section id="what-are-booleans-and-how-do-they-work-with-equality-and-inequality-operators">
+<h2>1.7. What are booleans and how do they work with equality and inequality operators?<a class="headerlink" href="#what-are-booleans-and-how-do-they-work-with-equality-and-inequality-operators" title="Link to this heading">#</a></h2>
+<p>In an earlier lecture video, you were first introduced to the concept of booleans, but in this video, we will dive deeper into how booleans work and how the equality and inequality operators work.</p>
+<p>Booleans are a data type with only <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code> values. They’re useful because they allow you to do something based on some conditions. Booleans are essential when you want to evaluate whether something should happen or not, like deciding if someone can access a certain feature in your app. Here is an example of setting the value <code class="docutils literal notranslate"><span class="pre">true</span></code> to a variable called <code class="docutils literal notranslate"><span class="pre">isOldEnoughToDrive</span></code>:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">isOldEnoughToDrive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isOldEnoughToDrive</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</pre></div>
+</div>
+<p>You can use this variable inside a conditional like this:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">isOldEnoughToDrive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isOldEnoughToDrive</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;You&#39;re old enough to drive&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// You&#39;re old enough to drive</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Sorry, you are not old enough to drive&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>A conditional helps you make decisions in your code based on a condition. This example uses what is called an <code class="docutils literal notranslate"><span class="pre">if/else</span></code> statement.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">isOldEnoughToDrive</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, then the sentence <code class="docutils literal notranslate"><span class="pre">You're</span> <span class="pre">old</span> <span class="pre">enough</span> <span class="pre">to</span> <span class="pre">drive</span></code> will be logged to the console. Otherwise, if the <code class="docutils literal notranslate"><span class="pre">isOldEnoughToDrive</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, then the sentence <code class="docutils literal notranslate"><span class="pre">Sorry,</span> <span class="pre">you</span> <span class="pre">are</span> <span class="pre">not</span> <span class="pre">old</span> <span class="pre">enough</span> <span class="pre">to</span> <span class="pre">drive</span></code> will be logged to the console. Since the <code class="docutils literal notranslate"><span class="pre">isOldEnoughToDrive</span></code> variable is set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the first sentence will be logged to the console. You will learn more about <code class="docutils literal notranslate"><span class="pre">if/else</span></code> statements in a future lecture video.</p>
+<p>To compare two values, you can use either the equality or strict equality operator. The result of the comparison will be a boolean of either <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>. Here is an example of using the equality operator to compare a string and a number. The equality operator is represented by a double equals sign (<code class="docutils literal notranslate"><span class="pre">==</span></code>).</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">5</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;5&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</pre></div>
+</div>
+<p>In this example, JavaScript converts the string <code class="docutils literal notranslate"><span class="pre">&quot;5&quot;</span></code> into the number <code class="docutils literal notranslate"><span class="pre">5</span></code> and then checks if they are equal. Since both values are now the same, the result is true. The equality operator uses type coercion before checking if each value is equal.</p>
+<p>This differs from the strict equality operator, which does not perform type coercion. The strict equality operator will check if the types are the same and if the values are the same. Here is an example using the strict equality operator to compare a number and string. This operator is represented by a triple equals sign (<code class="docutils literal notranslate"><span class="pre">===</span></code>).</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">5</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;5&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+</pre></div>
+</div>
+<p>The following comparison will be <code class="docutils literal notranslate"><span class="pre">false</span></code>, because a string data type is not the same as a number data type. If you need to check if something is not equal to another value, then you can use the inequality or strict inequality operators. Here is an example of using the inequality operator (<code class="docutils literal notranslate"><span class="pre">!=</span></code>) to compare a number with a string.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">5</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;5&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+</pre></div>
+</div>
+<p>In this example, the result would be <code class="docutils literal notranslate"><span class="pre">false</span></code> because the inequality operator first converts the string value to a number and then compares the values. Since the values would be the same it will return <code class="docutils literal notranslate"><span class="pre">false</span></code>. If you tried to use the strict inequality operator, then you would get a different result. The strict inequality operator is represented by an exclamation mark followed by two equal signs (<code class="docutils literal notranslate"><span class="pre">!==</span></code>).</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">5</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s2">&quot;5&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</pre></div>
+</div>
+<p>The result would be <code class="docutils literal notranslate"><span class="pre">true</span></code> because the strict inequality operator does not perform any type coercion. Since the number <code class="docutils literal notranslate"><span class="pre">5</span></code> is not equal to the string <code class="docutils literal notranslate"><span class="pre">&quot;5&quot;</span></code>, then the result is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<p>It is considered best practice to use strict inequality and equality operators whenever possible, as they do not perform type coercion. Most of the time in professional projects, you will see codebases that usually prefer these two operators over the inequality and equality operators.</p>
+</section>
+<section id="what-are-comparison-operators-and-how-do-they-work">
+<h2>1.8. What are comparison operators and how do they work?<a class="headerlink" href="#what-are-comparison-operators-and-how-do-they-work" title="Link to this heading">#</a></h2>
+<p>Comparison operators allow you to compare two values and return a <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code> result. You can then use the result to make a decision or control the flow of your program. You use comparisons in <code class="docutils literal notranslate"><span class="pre">if</span></code> statements, loops, and many other situations where you need to make decisions based on certain conditions. Let’s dive into the most common comparison operators and see how they work.</p>
+<p>The greater than operator, represented by a right-angle bracket (<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>), checks if the value on the left is greater than the one on the right:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">9</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</pre></div>
+</div>
+<p>The greater than or equal operator, represented by a right-angle bracket and the equals sign (<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>), checks if the value on the left is either greater than or equal to the one on the right:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">9</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">c</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</pre></div>
+</div>
+<p>The lesser than operator, represented by a left-angle bracket (<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>) works similarly to <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, but in reverse. It checks if the value on the left is smaller than the one on the right:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">9</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+</pre></div>
+</div>
+<p>The less than or equal operator, represented by a left-angle bracket and the equals sign (<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>) checks if the value on the left is smaller than or equal to the one on the right:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">9</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nx">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nx">c</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</pre></div>
+</div>
+</section>
+<section id="what-are-unary-operators-and-how-do-they-work">
+<h2>1.9. What are unary operators and how do they work?<a class="headerlink" href="#what-are-unary-operators-and-how-do-they-work" title="Link to this heading">#</a></h2>
+<p>Unary operators act on a single operand to perform operations like type conversion, value manipulation, or checking certain conditions. Let’s look at some common unary operators and how they work.</p>
+<p>The unary plus operator converts its operand into a number. If the operand is already a number, it remains unchanged.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;42&#39;</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">strToNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">+</span><span class="nx">str</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">strToNum</span><span class="p">);</span><span class="w"> </span><span class="c1">// 42</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">str</span><span class="p">);</span><span class="w"> </span><span class="c1">// string</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">strToNum</span><span class="p">);</span><span class="w"> </span><span class="c1">// number</span>
+</pre></div>
+</div>
+<p>Unary plus is handy when you want to make sure you’re working with a numeric value. As you might guess, there’s a unary negation operator. It negates the value of the operand. It works similarly to the unary plus, except it flips the sign.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;42&#39;</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">strToNegativeNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="nx">str</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">strToNegativeNum</span><span class="p">);</span><span class="w"> </span><span class="c1">// -42</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">str</span><span class="p">);</span><span class="w"> </span><span class="c1">// string</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">strToNegativeNum</span><span class="p">);</span><span class="w"> </span><span class="c1">// number</span>
+</pre></div>
+</div>
+<p>The logical NOT operator, represented by an exclamation mark (<code class="docutils literal notranslate"><span class="pre">!</span></code>), is another unary operator. It flips the boolean value of its operand. So, if the operand is <code class="docutils literal notranslate"><span class="pre">true</span></code>, it becomes <code class="docutils literal notranslate"><span class="pre">false</span></code>, and if it’s <code class="docutils literal notranslate"><span class="pre">false</span></code>, it becomes <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">isOnline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">!</span><span class="nx">isOnline</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">isOffline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">!</span><span class="nx">isOffline</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</pre></div>
+</div>
+<p>The bitwise NOT operator is a less commonly used unary operator. Represented by a tilde, <code class="docutils literal notranslate"><span class="pre">~</span></code>, it inverts the binary representation of a number. Computers store numbers in binary format (1s and 0s). The <code class="docutils literal notranslate"><span class="pre">~</span></code> operator flips every bit, meaning it changes all 1s to 0s and all 0s to 1s. You will learn more about binary and bits in a future lecture video.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// The binary for 5 is 00000101</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">~</span><span class="nx">num</span><span class="p">);</span><span class="w"> </span><span class="c1">// -6</span>
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">5</span></code> became <code class="docutils literal notranslate"><span class="pre">-6</span></code> because by applying the <code class="docutils literal notranslate"><span class="pre">~</span></code> operator to <code class="docutils literal notranslate"><span class="pre">5</span></code>, you get <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">(5</span> <span class="pre">+</span> <span class="pre">1)</span></code>, which equals <code class="docutils literal notranslate"><span class="pre">-6</span></code> due to two’s complement representation. Two’s complement is a way computers represent negative numbers in binary. You probably won’t use the bitwise NOT often unless you’re working with low-level programming tasks like manipulating bits directly.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">void</span></code> keyword is a unary operator that evaluates an expression and returns <code class="docutils literal notranslate"><span class="pre">undefined</span></code>.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">void</span><span class="w"> </span><span class="p">(</span><span class="mf">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// undefined</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code> is also commonly used in hyperlinks to prevent navigation:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">a</span><span class="w"> </span><span class="nx">href</span><span class="o">=</span><span class="s2">&quot;javascript:void(0);&quot;</span><span class="o">&gt;</span><span class="nx">Click</span><span class="w"> </span><span class="nx">Me</span><span class="o">&lt;</span><span class="err">/a&gt;</span>
+</pre></div>
+</div>
+<p>Finally, there is the <code class="docutils literal notranslate"><span class="pre">typeof</span></code> operator which you learned about in previous lecture videos. This returns the type of its operand as a string.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hello world&#39;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">value</span><span class="p">);</span><span class="w"> </span><span class="c1">// string</span>
+</pre></div>
+</div>
+</section>
+<section id="what-are-bitwise-operators-and-how-do-they-work">
+<h2>1.10. What are bitwise operators and how do they work?<a class="headerlink" href="#what-are-bitwise-operators-and-how-do-they-work" title="Link to this heading">#</a></h2>
+<p>Bitwise operators in JavaScript are special operators that work on the binary representations of numbers. To understand bitwise operators, we first need to grasp the concept of bits and binary numbers. In computing, a bit is the most basic unit of information. It can have only two values: <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code>. Binary is a number system that uses only these two digits to represent all numbers.</p>
+<p>For example, the binary representation of the decimal number <code class="docutils literal notranslate"><span class="pre">10</span></code> is <code class="docutils literal notranslate"><span class="pre">1010</span></code>. In this system, each digit represents a power of <code class="docutils literal notranslate"><span class="pre">2</span></code>, starting from the rightmost digit and increasing as we move left.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>1</p></th>
+<th class="head"><p>0</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>0</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1 · 23</p></td>
+<td><p>0 · 22</p></td>
+<td><p>1 · 21</p></td>
+<td><p>0 · 20</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In the table above, the first row shows the binary number <code class="docutils literal notranslate"><span class="pre">1010</span></code>, the second row shows the power of <code class="docutils literal notranslate"><span class="pre">2</span></code> represented by each binary position, and the third row shows the result of each multiplication. If you add all the values in the third row, they total <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p>
+<p>Now, let’s dive into bitwise operators. These operators perform operations on the binary representations of numbers. JavaScript provides several bitwise operators, including AND (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>), OR (<code class="docutils literal notranslate"><span class="pre">|</span></code>), XOR (<code class="docutils literal notranslate"><span class="pre">^</span></code>), NOT (<code class="docutils literal notranslate"><span class="pre">~</span></code>), left shift (<code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>), and right shift (<code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>).</p>
+<p>The bitwise AND (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>) operator returns a <code class="docutils literal notranslate"><span class="pre">1</span></code> in each bit position for which the corresponding bits of both operands are <code class="docutils literal notranslate"><span class="pre">1</span></code>. Here’s an example:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w">  </span><span class="c1">// Binary: 101</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w">  </span><span class="c1">// Binary: 011</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w">  </span><span class="c1">// Output: 1 (Binary: 001)</span>
+</pre></div>
+</div>
+<p>In this example, we perform a bitwise AND operation on <code class="docutils literal notranslate"><span class="pre">5</span></code> (<code class="docutils literal notranslate"><span class="pre">101</span></code> in binary) and <code class="docutils literal notranslate"><span class="pre">3</span></code> (<code class="docutils literal notranslate"><span class="pre">011</span></code> in binary). The result is <code class="docutils literal notranslate"><span class="pre">1</span></code> (<code class="docutils literal notranslate"><span class="pre">001</span></code> in binary) because only the rightmost bit is <code class="docutils literal notranslate"><span class="pre">1</span></code> in both numbers.</p>
+<p>The bitwise OR (<code class="docutils literal notranslate"><span class="pre">|</span></code>) operator returns a <code class="docutils literal notranslate"><span class="pre">1</span></code> in each bit position for which the corresponding bits of either or both operands are <code class="docutils literal notranslate"><span class="pre">1</span></code>. For example:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w">  </span><span class="c1">// Binary: 101</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w">  </span><span class="c1">// Binary: 011</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w">  </span><span class="c1">// Output: 7 (Binary: 111)</span>
+</pre></div>
+</div>
+<p>Here, the result is <code class="docutils literal notranslate"><span class="pre">7</span></code> (<code class="docutils literal notranslate"><span class="pre">111</span></code> in binary) because at least one of the bits is <code class="docutils literal notranslate"><span class="pre">1</span></code> in each position.</p>
+<p>The bitwise XOR (<code class="docutils literal notranslate"><span class="pre">^</span></code>) operator returns a <code class="docutils literal notranslate"><span class="pre">1</span></code> in each bit position for which the corresponding bits of either, but not both, operands are <code class="docutils literal notranslate"><span class="pre">1</span></code>. For instance:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w">  </span><span class="c1">// Binary: 101</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w">  </span><span class="c1">// Binary: 011</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w">  </span><span class="c1">// Output: 6 (Binary: 110)</span>
+</pre></div>
+</div>
+<p>The result is <code class="docutils literal notranslate"><span class="pre">6</span></code> (<code class="docutils literal notranslate"><span class="pre">110</span></code> in binary) because the first and second bits from the right are different in the two numbers.</p>
+<p>The bitwise NOT (<code class="docutils literal notranslate"><span class="pre">~</span></code>) operator inverts all the bits of its operand. For example:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w">  </span><span class="c1">// Binary: 101</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">~</span><span class="nx">a</span><span class="p">);</span><span class="w">  </span><span class="c1">// Output: -6</span>
+</pre></div>
+</div>
+<p>This might seem surprising, but it’s because of how negative numbers are represented in binary using two’s complement.</p>
+<p>The left shift (<code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>) operator shifts all bits to the left by a specified number of positions. For example:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w">  </span><span class="c1">// Binary: 101</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span><span class="w">  </span><span class="c1">// Output: 10 (Binary: 1010)</span>
+</pre></div>
+</div>
+<p>Here, all bits are shifted one position to the left, effectively multiplying the number by <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
+<p>The right shift (<code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>) operator shifts all bits to the right. For example:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w">  </span><span class="c1">// Binary: 101</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span><span class="w">  </span><span class="c1">// Output: 2 (Binary: 10)</span>
+</pre></div>
+</div>
+<p>Here, all bits are shifted one position to the right, effectively dividing the number by <code class="docutils literal notranslate"><span class="pre">2</span></code> and rounding down.</p>
+<p>Bitwise operators are often used in low-level programming and cryptography. While they may not be as commonly used in everyday JavaScript programming, understanding them can be beneficial for certain specialized tasks and can deepen your understanding of how computers work at a fundamental level.</p>
+</section>
+<section id="what-are-conditional-statements-and-how-do-if-else-statements-work">
+<h2>1.11. What are conditional statements and how do <code class="docutils literal notranslate"><span class="pre">if/else</span></code> statements work?<a class="headerlink" href="#what-are-conditional-statements-and-how-do-if-else-statements-work" title="Link to this heading">#</a></h2>
+<p>Conditional statements let you make decisions in your JavaScript code. They allow your program to flow in a particular way based on certain conditions. Let’s take a look at how <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, and the ternary operator work to let you control the flow of your code.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">if</span></code> statement takes a condition and runs a block of code if that condition is truthy. Truthy values are any values that result in <code class="docutils literal notranslate"><span class="pre">true</span></code> when evaluated in a Boolean context like an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. Here are examples of truthy values:</p>
+<ul class="simple">
+<li><p>non-empty strings, for example, <code class="docutils literal notranslate"><span class="pre">hello</span></code></p></li>
+<li><p>any number other than <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">-0</span></code>, for example, <code class="docutils literal notranslate"><span class="pre">4</span></code>, <code class="docutils literal notranslate"><span class="pre">-5</span></code>, and others</p></li>
+<li><p>arrays</p></li>
+<li><p>objects</p></li>
+<li><p>the boolean <code class="docutils literal notranslate"><span class="pre">true</span></code></p></li>
+</ul>
+<p>On the other hand, falsy values are values that evaluate to <code class="docutils literal notranslate"><span class="pre">false</span></code> in a boolean context. JavaScript has few falsy values, which makes them easy to remember. Here are a few falsy values:</p>
+<ul class="simple">
+<li><p>boolean <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> (zero)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> (empty string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">null</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">undefined</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NaN</span></code> (Not a Number)</p></li>
+</ul>
+<p>Now, that we have a basic understanding of truthy and falsy values, let’s see how it works with <code class="docutils literal notranslate"><span class="pre">if</span></code> statements. In this first example, we are using a couple of <code class="docutils literal notranslate"><span class="pre">if</span></code> statements to check against truthy and falsy values:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;This will not run.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot;freeCodeCamp&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;This will run.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Since <code class="docutils literal notranslate"><span class="pre">null</span></code> is a falsy value, the message inside the block will never be logged to the console. But for the second <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, the string <code class="docutils literal notranslate"><span class="pre">freeCodeCamp</span></code> is a truthy value, and will be considered <code class="docutils literal notranslate"><span class="pre">true</span></code> in this boolean context of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. As a result, the message <code class="docutils literal notranslate"><span class="pre">This</span> <span class="pre">will</span> <span class="pre">run.</span></code> will be logged to the console.</p>
+<p>Let’s take a look at a few more examples on how <code class="docutils literal notranslate"><span class="pre">if</span></code> statements work with different comparison operators. Here is an example of using an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to check if the user is eligible to vote:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">22</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">18</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;You&#39;re eligible to vote&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// You&#39;re eligible to vote</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, since <code class="docutils literal notranslate"><span class="pre">age</span></code> is currently <code class="docutils literal notranslate"><span class="pre">22</span></code>, this means the condition will evaluate to <code class="docutils literal notranslate"><span class="pre">true</span></code> because <code class="docutils literal notranslate"><span class="pre">22</span></code> is greater than or equal to <code class="docutils literal notranslate"><span class="pre">18</span></code>. So the message <code class="docutils literal notranslate"><span class="pre">You're</span> <span class="pre">eligible</span> <span class="pre">to</span> <span class="pre">vote</span></code> will be logged to the console. If we change the example so <code class="docutils literal notranslate"><span class="pre">age</span></code> is now <code class="docutils literal notranslate"><span class="pre">15</span></code>, then the condition will evaluate to <code class="docutils literal notranslate"><span class="pre">false</span></code> and the message will not be logged to the console:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">15</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">18</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;You&#39;re eligible to vote&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Code not running because age is less than 18</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>When a condition is <code class="docutils literal notranslate"><span class="pre">false</span></code>, then you can use an <code class="docutils literal notranslate"><span class="pre">else</span></code> clause:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">15</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">18</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;You&#39;re eligible to vote&quot;</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;You&#39;re not eligible to vote&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// You&#39;re not eligible to vote</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">15</span></code> is not greater than or equal to <code class="docutils literal notranslate"><span class="pre">18</span></code>, so the condition would be <code class="docutils literal notranslate"><span class="pre">false</span></code>. The code inside the <code class="docutils literal notranslate"><span class="pre">else</span></code> block will run in this case.</p>
+<p>If you want to check multiple conditions, you can use an <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> block. This allows your program to choose between more than two paths.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">87</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">90</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;You got an A&#39;</span><span class="p">);</span><span class="w"> </span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">80</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;You got a B&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// You got a B</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">70</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;You got a C&#39;</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;You failed! You need to study more!&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Since the <code class="docutils literal notranslate"><span class="pre">score</span></code> is currently <code class="docutils literal notranslate"><span class="pre">87</span></code>, then the message of <code class="docutils literal notranslate"><span class="pre">You</span> <span class="pre">got</span> <span class="pre">a</span> <span class="pre">B</span></code> would be logged to the console.</p>
+<p>The ternary operator is a compact way to write simple <code class="docutils literal notranslate"><span class="pre">if/else</span></code> statements. It has three parts: a condition, a result if the condition is true, and a result if it is false. Here’s the basic syntax:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">condition</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">expressionIfTrue</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">expressionIfFalse</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Here’s an example dealing with weather temperatures in Celsius:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">weather</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">temperature</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">25</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;sunny&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;cool&#39;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`It&#39;s a </span><span class="si">${</span><span class="nx">weather</span><span class="si">}</span><span class="sb"> day!`</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">temperature</span></code> is greater than <code class="docutils literal notranslate"><span class="pre">25</span></code>, the code above logs <code class="docutils literal notranslate"><span class="pre">It's</span> <span class="pre">a</span> <span class="pre">sunny</span> <span class="pre">day!</span></code>. If <code class="docutils literal notranslate"><span class="pre">temperature</span></code> is ever less than <code class="docutils literal notranslate"><span class="pre">25</span></code>, it logs <code class="docutils literal notranslate"><span class="pre">It's</span> <span class="pre">a</span> <span class="pre">cool</span> <span class="pre">day!</span></code>.</p>
+<p>So, which should you use between an if statement and a ternary? Use a ternary while dealing with a single condition or single expressions, or when you want a compact syntax for simple logic. Use <code class="docutils literal notranslate"><span class="pre">if/else</span></code> statements when you’re dealing with complex conditions and multiple statements, as things become unreadable if you nest ternaries.</p>
+</section>
+<section id="what-are-binary-logical-operators-and-how-do-they-work">
+<h2>1.12. What are binary logical operators and how do they work?<a class="headerlink" href="#what-are-binary-logical-operators-and-how-do-they-work" title="Link to this heading">#</a></h2>
+<p>Binary logical operators help you evaluate two expressions and return a result based on their truthiness. Let’s look at the three most common binary logical operators: logical AND, logical OR, and the nullish coalescing operator.</p>
+<p>The logical AND operator is represented by a double ampersand (<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>). It checks if both operands are true and returns a result. If both operands are truthy, it returns the second value, that is, the one on the right:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="s1">&#39;hello&#39;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// hello</span>
+</pre></div>
+</div>
+<p>In the example above, the text <code class="docutils literal notranslate"><span class="pre">hello</span></code> is logged to the console because both operands are <code class="docutils literal notranslate"><span class="pre">true</span></code>. If either operand is falsy, it returns the falsy value:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// 0</span>
+</pre></div>
+</div>
+<p>Since <code class="docutils literal notranslate"><span class="pre">0</span></code> is a falsy value, the number <code class="docutils literal notranslate"><span class="pre">0</span></code> is logged to the console. And if both operands are falsy, it returns the first falsy value:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+</pre></div>
+</div>
+<p>Since <code class="docutils literal notranslate"><span class="pre">false</span></code> is a falsey value, then <code class="docutils literal notranslate"><span class="pre">false</span></code> is logged to the console. The logical AND operator is useful when you want to check multiple conditions and ensure that all are true before proceeding. Here is an example:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mf">2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">4</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;The if block runs&#39;</span><span class="p">);</span><span class="w"> </span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;The else block runs&#39;</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span>
+</pre></div>
+</div>
+<p>In the condition, since <code class="docutils literal notranslate"><span class="pre">2</span></code> is less than <code class="docutils literal notranslate"><span class="pre">3</span></code> AND <code class="docutils literal notranslate"><span class="pre">3</span></code> is less than <code class="docutils literal notranslate"><span class="pre">4</span></code>, then the sentence <code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">if</span> <span class="pre">block</span> <span class="pre">runs</span></code> will be logged to the console.</p>
+<p>The logical OR operator checks if at least one of the operands is truthy. If the first operand is truthy, it returns that value:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;This is truthy&#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// This is truthy</span>
+</pre></div>
+</div>
+<p>If the first operand is falsy but the second is truthy, the second value will be logged to the console:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;This is truthy&#39;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// This is truthy</span>
+</pre></div>
+</div>
+<p>It is common to use the logical OR operator in <code class="docutils literal notranslate"><span class="pre">if/else</span></code> statements like this:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">userInput</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">userInput</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;Guest&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;A user is present&#39;</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;No user detected&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Since we didn’t assign a value to the <code class="docutils literal notranslate"><span class="pre">userInput</span></code> variable, it is currently <code class="docutils literal notranslate"><span class="pre">undefined</span></code>. The condition in the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement checks if either the <code class="docutils literal notranslate"><span class="pre">userInput</span></code> variable or the string <code class="docutils literal notranslate"><span class="pre">Guest</span></code> are truthy. Since the string <code class="docutils literal notranslate"><span class="pre">Guest</span></code> is true in a boolean context like this, the string <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">user</span> <span class="pre">is</span> <span class="pre">present</span></code> will be logged to the console.</p>
+<p>The nullish coalescing operator is more sophisticated than logical OR and logical AND. Represented by a double question mark (<code class="docutils literal notranslate"><span class="pre">??</span></code>), it helps in scenarios where you want to return a value only if the first one is <code class="docutils literal notranslate"><span class="pre">null</span></code> or <code class="docutils literal notranslate"><span class="pre">undefined</span></code>. Here is an example of working with the nullish coalescing operator:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s1">&#39;default&#39;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// default</span>
+</pre></div>
+</div>
+<p>Since <code class="docutils literal notranslate"><span class="pre">null</span></code> is a falsey value, the string <code class="docutils literal notranslate"><span class="pre">default</span></code> would be logged to the console. The nullish coalescing operator is incredibly useful in situations where <code class="docutils literal notranslate"><span class="pre">null</span></code> or <code class="docutils literal notranslate"><span class="pre">undefined</span></code> are the only values that should trigger a fallback or default value. Here is an example of dealing with a user’s preference settings:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">userSettings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="nx">theme</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w"> </span><span class="nx">volume</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w"> </span><span class="nx">notifications</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">userSettings</span><span class="p">.</span><span class="nx">theme</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s1">&#39;light&#39;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">theme</span><span class="p">);</span><span class="w"> </span><span class="c1">// light</span>
+</pre></div>
+</div>
+<p>In the example above, we have an object called <code class="docutils literal notranslate"><span class="pre">userSettings</span></code> that contains <code class="docutils literal notranslate"><span class="pre">theme</span></code>, <code class="docutils literal notranslate"><span class="pre">volume</span></code> and <code class="docutils literal notranslate"><span class="pre">notifications</span></code> properties. We are accessing the <code class="docutils literal notranslate"><span class="pre">theme</span></code> using dot notation like <code class="docutils literal notranslate"><span class="pre">userSettings.theme</span></code>. You will learn more about how to work with objects in a future lecture video. Since the user’s <code class="docutils literal notranslate"><span class="pre">theme</span></code> is currently set to <code class="docutils literal notranslate"><span class="pre">null</span></code>, then the string <code class="docutils literal notranslate"><span class="pre">light</span></code> will be logged to the console.</p>
+</section>
+<section id="what-is-the-math-object-in-javascript-and-what-are-some-common-methods">
+<h2>1.13. What is the <code class="docutils literal notranslate"><span class="pre">Math</span></code> object in JavaScript and what are some common methods?<a class="headerlink" href="#what-is-the-math-object-in-javascript-and-what-are-some-common-methods" title="Link to this heading">#</a></h2>
+<p>When diving into JavaScript, you’ll quickly discover that performing mathematical operations is a common task. While basic arithmetic operators can handle simple calculations, JavaScript offers a built-in <code class="docutils literal notranslate"><span class="pre">Math</span></code> object to tackle more complex math challenges.</p>
+<p>This handy tool provides a variety of methods that make it easier to perform advanced calculations and manipulate numbers. Let’s explore these methods and see how they can simplify your coding experience.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Math.random()</span></code> method generates a random floating-point number between <code class="docutils literal notranslate"><span class="pre">0</span></code> (inclusive) and <code class="docutils literal notranslate"><span class="pre">1</span></code> (exclusive). This means the possible output can be <code class="docutils literal notranslate"><span class="pre">0</span></code>, but it will never actually reach <code class="docutils literal notranslate"><span class="pre">1</span></code>. Here is an example working with the <code class="docutils literal notranslate"><span class="pre">Math.random()</span></code> method:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">randomNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">();</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">randomNum</span><span class="p">);</span><span class="w"> </span>
+<span class="c1">// any number between 0 and 1 – 0 inclusive and 1 exclusive</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Math.min()</span></code> and <code class="docutils literal notranslate"><span class="pre">Math.max()</span></code> both take a set of numbers and return the minimum and maximum value, respectively. Here is an example of working both of those methods:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">smallest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">9</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">smallest</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">largest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">9</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">largest</span><span class="p">);</span><span class="w"> </span><span class="c1">// 9</span>
+</pre></div>
+</div>
+<p>The first <code class="docutils literal notranslate"><span class="pre">console.log()</span></code> will log the number <code class="docutils literal notranslate"><span class="pre">1</span></code>, since <code class="docutils literal notranslate"><span class="pre">1</span></code> is the smallest in that list of numbers. And the second <code class="docutils literal notranslate"><span class="pre">console.log()</span></code> will log the number <code class="docutils literal notranslate"><span class="pre">9</span></code>, since <code class="docutils literal notranslate"><span class="pre">9</span></code> is the largest numbers in that list.</p>
+<p>If you wanted to round numbers up or down to the nearest whole integer, you could use the <code class="docutils literal notranslate"><span class="pre">Math.ceil()</span></code> and <code class="docutils literal notranslate"><span class="pre">Math.floor()</span></code> methods. Here is an example of working with <code class="docutils literal notranslate"><span class="pre">Math.ceil()</span></code>:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="mf">4.3</span><span class="p">));</span><span class="w"> </span><span class="c1">// 5</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Math.ceil()</span></code> will round <code class="docutils literal notranslate"><span class="pre">4.3</span></code> up to the nearest whole integer, which is <code class="docutils literal notranslate"><span class="pre">5</span></code> in this case. Now, let’s take a look at rounding a number down:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="mf">4.7</span><span class="p">));</span><span class="w"> </span><span class="c1">// 4</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Math.floor()</span></code> will round <code class="docutils literal notranslate"><span class="pre">4.7</span></code> down to the nearest whole integer, which is <code class="docutils literal notranslate"><span class="pre">4</span></code> in this case. <code class="docutils literal notranslate"><span class="pre">Math.round()</span></code> is the hybrid of <code class="docutils literal notranslate"><span class="pre">Math.ceil()</span></code> and <code class="docutils literal notranslate"><span class="pre">Math.floor()</span></code>. It rounds a number to its nearest integer, taking the decimal point into account:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mf">2.3</span><span class="p">));</span><span class="w"> </span><span class="c1">// 2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mf">4.5</span><span class="p">));</span><span class="w"> </span><span class="c1">// 5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mf">4.8</span><span class="p">));</span><span class="w"> </span><span class="c1">// 5</span>
+</pre></div>
+</div>
+<p>So, if the decimal point is less than <code class="docutils literal notranslate"><span class="pre">5</span></code>, the number is rounded down. And if the decimal point is <code class="docutils literal notranslate"><span class="pre">5</span></code> or greater, the number is rounded up. A practical application of <code class="docutils literal notranslate"><span class="pre">Math.floor()</span></code> and <code class="docutils literal notranslate"><span class="pre">Math.random()</span></code> is to generate a random number between two whole numbers. Here’s the syntax for that:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="nx">max</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">min</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">min</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Generating a random number between <code class="docutils literal notranslate"><span class="pre">20</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code> would look like this:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">randomNumBtw1And20</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">20</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">randomNumBtw1And20</span><span class="p">);</span><span class="w"> </span>
+</pre></div>
+</div>
+<p>Another helpful <code class="docutils literal notranslate"><span class="pre">Math</span></code> method would be the <code class="docutils literal notranslate"><span class="pre">Math.trunc()</span></code> method. <code class="docutils literal notranslate"><span class="pre">Math.trunc()</span></code> removes the decimal part of a number, returning only the integer portion, without rounding:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">trunc</span><span class="p">(</span><span class="mf">2.9</span><span class="p">));</span><span class="w"> </span><span class="c1">// 2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">trunc</span><span class="p">(</span><span class="mf">9.1</span><span class="p">));</span><span class="w"> </span><span class="c1">// 9</span>
+</pre></div>
+</div>
+<p>If you need to get the square root or cube root of a number, you can use the <code class="docutils literal notranslate"><span class="pre">Math.sqrt()</span></code> and <code class="docutils literal notranslate"><span class="pre">Math.cbrt()</span></code> methods, respectively:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="mf">81</span><span class="p">));</span><span class="w"> </span><span class="c1">// 9</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">cbrt</span><span class="p">(</span><span class="mf">27</span><span class="p">));</span><span class="w"> </span><span class="c1">// 3</span>
+</pre></div>
+</div>
+<p>The first log statement, will log <code class="docutils literal notranslate"><span class="pre">9</span></code> because the square root of <code class="docutils literal notranslate"><span class="pre">81</span></code> is <code class="docutils literal notranslate"><span class="pre">9</span></code>, while the second log statement will log <code class="docutils literal notranslate"><span class="pre">3</span></code> because the cube root of <code class="docutils literal notranslate"><span class="pre">27</span></code> is <code class="docutils literal notranslate"><span class="pre">3</span></code>. If you need to get the absolute value of a number, you can use the <code class="docutils literal notranslate"><span class="pre">Math.abs()</span></code> method:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="o">-</span><span class="mf">5</span><span class="p">));</span><span class="w"> </span><span class="c1">// 5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="mf">5</span><span class="p">));</span><span class="w"> </span><span class="c1">// 5</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Math.abs()</span></code> returns the absolute value of a number, turning negatives into positives. The last method we will look at will be the <code class="docutils literal notranslate"><span class="pre">Math.pow()</span></code> method:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">));</span><span class="w"> </span><span class="c1">// 8</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mf">8</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">));</span><span class="w"> </span><span class="c1">// 64</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Math.pow()</span></code> takes two numbers and raise the first to the power of the second. There are many more methods that belong to the <code class="docutils literal notranslate"><span class="pre">Math</span></code> object, that you can explore on your own. However, these are just a few of the more commonly used ones found in JavaScript codebases.</p>
 </div></section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -447,6 +1275,33 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-number-type-in-javascript-and-what-are-the-different-types-of-numbers-available">1.1. What is the <code class="docutils literal notranslate"><span class="pre">Number</span></code> type in JavaScript and what are the different types of numbers available?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-different-arithmetic-operators-in-javascript">1.2. What are the different arithmetic operators in JavaScript?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-when-you-try-to-do-calculations-with-numbers-and-strings">1.3. What happens when you try to do calculations with numbers and strings?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-operator-precedence-work">1.4. How does operator precedence work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-the-increment-and-decrement-operators-work">1.5. How do the increment and decrement operators work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-compound-assignment-operators-in-javascript-and-how-do-they-work">1.6. What are compound assignment operators in JavaScript and how do they work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-booleans-and-how-do-they-work-with-equality-and-inequality-operators">1.7. What are booleans and how do they work with equality and inequality operators?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-comparison-operators-and-how-do-they-work">1.8. What are comparison operators and how do they work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-unary-operators-and-how-do-they-work">1.9. What are unary operators and how do they work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-bitwise-operators-and-how-do-they-work">1.10. What are bitwise operators and how do they work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-conditional-statements-and-how-do-if-else-statements-work">1.11. What are conditional statements and how do <code class="docutils literal notranslate"><span class="pre">if/else</span></code> statements work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-binary-logical-operators-and-how-do-they-work">1.12. What are binary logical operators and how do they work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-math-object-in-javascript-and-what-are-some-common-methods">1.13. What is the <code class="docutils literal notranslate"><span class="pre">Math</span></code> object in JavaScript and what are some common methods?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
