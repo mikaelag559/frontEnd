@@ -45,6 +45,11 @@ parts:
         - file: css/1_basic_css/3
         - file: css/1_basic_css/4
         - file: css/1_basic_css/5
+    - file: css\2_design
+      sections:
+        - file: css/2_design/1
+        - file: css/2_design/2
+        - file: css/2_design/3
 
   - caption: JavaScript
     maxdepth: 3
@@ -66,3 +71,8 @@ parts:
       sections: 
         - file: javaScript/3_functions/1
         - file: javaScript/3_functions/2
+    - file: javaScript/4_arrays
+      sections:
+        -file: javaScript/4_functions/1
+        -file: javaScript/4_functions/2
+        -file: javaScript/4_functions/3
