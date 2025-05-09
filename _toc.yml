@@ -45,11 +45,19 @@ parts:
         - file: css/1_basic_css/3
         - file: css/1_basic_css/4
         - file: css/1_basic_css/5
-    - file: css\2_design
+    - file: css/2_design
       sections:
         - file: css/2_design/1
         - file: css/2_design/2
         - file: css/2_design/3
+    - file: css/3_absolute_n_relative_units
+      sections:
+        - file: css/3_absolute_n_relative_units/1
+        - file: ccss/3_absolute_n_relative_units/2
+    - file: css/4_pseudo_classes_n_elements
+      sections:
+        - file: css/4_pseudo_classes_n_elements/1
+        - file: ccss/4_pseudo_classes_n_elements/2
 
   - caption: JavaScript
     maxdepth: 3
@@ -76,3 +84,7 @@ parts:
         -file: javaScript/4_functions/1
         -file: javaScript/4_functions/2
         -file: javaScript/4_functions/3
+    - file: javaScript/5_objects
+      sections: 
+        - file: javaScript/5_objects/1
+        - file: javaScript/5_objects/2
