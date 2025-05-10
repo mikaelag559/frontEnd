@@ -1,0 +1,1111 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Working with Objects &#8212; My Front End Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'javaScript/5_objects/1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Examples" href="2.html" />
+    <link rel="prev" title="5. Objects Summary" href="../5_objects.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt="My Front End Notes - Home"/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="My Front End Notes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to my web development notes
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">HTML</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/1_basic_html.html">1. Basic HTML Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/1.html">1. What is HTML?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/2.html">2. HTML Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/3.html">3. Working with Media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/4.html">4. Working with Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/2_semantic_html.html">2. Semantic HTML Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/2_semantic_html/1.html">2. Semantic HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/2_semantic_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/3_forms_and_tables_html.html">3. HTML Tables and Forms Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/1.html">1. Working with Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/2.html">2. Working with Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/3.html">3. Working with HTML Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/4_accessibility.html">4. HTML Accessibility Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/1.html">1. Importance of Accessibility and Good HTML Structure - I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/2.html">1. Importance of Accessibility and Good HTML Structure - II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/3.html">1. Importance of Accessibility and Good HTML Structure - III</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/4.html">1. Importance of Accessibility and Good HTML Structure - IV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/5.html">1. Importance of Accessibility and Good HTML Structure - V</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/1_basic_css.html">1. Basic CSS Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/1.html">1. What Is CSS?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/2.html">2. CSS Specificity, the Cascade Algorithm and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/3.html">3. Styling Lists and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/4.html">4. Working with Backgrounds and Borders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/2_design.html">2. Design Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/2_design/1.html">1. User Interface Design Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/2_design/2.html">2. User-Centered Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/2_design/3.html">3. Common Design Tools</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/3_absolute_n_relative_units.html">1. CSS Relative and Absolute Units Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/3_absolute_n_relative_units/1.html">1. Working  with Relative and Absolute Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/3_absolute_n_relative_units/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/4_pseudo_classes_n_elements.html">1. CSS Pseudo-classes Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/4_pseudo_classes_n_elements/1.html">1. Working with Pseudo-Classes and Pseudo-Elements in CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/4_pseudo_classes_n_elements/2.html">Examples</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1_variables_n_strings.html">1. Variables and Strings Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1_variables_n_strings/1.html">1. Introduction to JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_variables_n_strings/2.html">2. Working with Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_variables_n_strings/3.html">3. Working with Strings in JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_variables_n_strings/4.html">4. Working with Common String Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_variables_n_strings/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2_booleans_n_numbers.html">2. Booleans and Numbers Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/1.html">1. Working with Numbers, Booleans and the Math Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/2.html">2. Working with Numbers and Common Number Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/3.html">3. Understanding Comparisons and Conditional Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3_functions.html">3. Functions Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3_functions/1.html">1. Working with Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_functions/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4_arrays.html">4. Arrays Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4_functions/1.html">1. Working with Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_functions/2.html">2. Working with Common Array Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_functions/3.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../5_objects.html">5. Objects Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1. Working with Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">Examples</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/javaScript/5_objects/1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1. Working with Objects</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-javascript-object-and-how-can-you-access-properties-from-an-object">1.1. What is a JavaScript object and how can you access properties from an object?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-object-destructuring-and-how-does-it-work">1.2. What is object destructuring and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-you-remove-properties-from-an-object">1.3. How can you remove properties from an object?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-check-if-an-object-has-a-property">1.4. How to check if an object has a property?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-work-with-accessing-properties-from-nested-objects-and-arrays-in-objects">1.5. How do you work with accessing properties from nested objects and arrays in objects?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-difference-between-primitive-and-non-primitive-data-types">1.6. What is the difference between primitive and non-primitive data types?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-difference-between-functions-and-methods">1.7. What is the difference between functions and methods?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-object-constructor-and-when-should-you-use-it">1.8. What is the <code class="docutils literal notranslate"><span class="pre">Object()</span></code> constructor and when should you use it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-optional-chaining-operator-and-how-does-it-work">1.9. What is the optional chaining operator <code class="docutils literal notranslate"><span class="pre">?.</span></code> and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-json-and-how-do-you-access-values-using-bracket-and-dot-notation">1.10. What is JSON and how do you access values using bracket and dot notation?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-json-parse-and-json-stringify-work">1.11. How do <code class="docutils literal notranslate"><span class="pre">JSON.parse()</span></code> and <code class="docutils literal notranslate"><span class="pre">JSON.stringify()</span></code> work?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div style="text-align: justify">
+<section class="tex2jax_ignore mathjax_ignore" id="working-with-objects">
+<h1>1. Working with Objects<a class="headerlink" href="#working-with-objects" title="Link to this heading">#</a></h1>
+<section id="what-is-a-javascript-object-and-how-can-you-access-properties-from-an-object">
+<h2>1.1. What is a JavaScript object and how can you access properties from an object?<a class="headerlink" href="#what-is-a-javascript-object-and-how-can-you-access-properties-from-an-object" title="Link to this heading">#</a></h2>
+<p>In JavaScript, an object is a fundamental data structure that allows you to store and organize related data and functionality. You can think of an object as a container that holds various pieces of information, much like a filing cabinet holds different folders and documents.</p>
+<p>These pieces of information are called properties, and they consist of a name (or key) and a value.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">exampleObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">propertyName</span><span class="o">:</span><span class="w"> </span><span class="nx">value</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Objects are incredibly versatile and form the backbone of JavaScript. In fact, almost everything in JavaScript is an object or can be treated as one. This includes arrays, functions, and even primitive data types like strings and numbers when used in certain ways.</p>
+<p>This object-centric nature of JavaScript is one of the reasons it’s such a flexible and powerful language. Let’s look at how you can create an object:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;New York&quot;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>In this example, we’ve created an object called <code class="docutils literal notranslate"><span class="pre">person</span></code> with three properties: <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">age</span></code>, and <code class="docutils literal notranslate"><span class="pre">city</span></code>. Each property has a name and a value, separated by a colon.</p>
+<p>Now, let’s explore how you can access these properties. There are two main ways to access object properties in JavaScript: dot notation and bracket notation.</p>
+<ol class="arabic">
+<li><p>Dot notation is the most common and straightforward way to access object properties. Here is the basic syntax for dot notation:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">objectName</span><span class="p">.</span><span class="nx">propertyName</span>
+</pre></div>
+</div>
+<p>Here’s how you would use dot notation with our <code class="docutils literal notranslate"><span class="pre">person</span></code> object:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;New York&quot;</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w">  </span><span class="c1">// Alice</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span><span class="w">   </span><span class="c1">// 30</span>
+</pre></div>
+</div>
+<p>Dot notation is concise and easy to read, making it the preferred choice when you know the exact name of the property you want to access and that name is a valid JavaScript identifier (meaning it doesn’t start with a number and doesn’t contain special characters or spaces).</p>
+</li>
+<li><p>Bracket notation, on the other hand, allows you to access object properties using a string inside square brackets. Here’s how you would use bracket notation:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;New York&quot;</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]);</span><span class="w"> </span><span class="c1">// Alice</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]);</span><span class="w"> </span><span class="c1">//  30</span>
+</pre></div>
+</div>
+<p>Bracket notation is more flexible than dot notation because it allows you to use property names that aren’t valid JavaScript identifiers. For example, if you had a property name with spaces or that starts with a number, you’d need to use bracket notation:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">oddObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;1stProperty&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;property with spaces&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;World&quot;</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">oddObject</span><span class="p">[</span><span class="s2">&quot;1stProperty&quot;</span><span class="p">]);</span><span class="w">  </span><span class="c1">// Hello</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">oddObject</span><span class="p">[</span><span class="s2">&quot;property with spaces&quot;</span><span class="p">]);</span><span class="w">  </span><span class="c1">// World</span>
+</pre></div>
+</div>
+<p>Another advantage of bracket notation is that it allows you to use variables to access properties dynamically:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Wonderland&quot;</span>
+<span class="p">};</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">propertyName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;city&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">[</span><span class="nx">propertyName</span><span class="p">]);</span><span class="w"> </span><span class="c1">// Wonderland</span>
+</pre></div>
+</div>
+<p>This flexibility makes bracket notation particularly useful when you don’t know the exact property name at the time you’re writing the code, or when you’re working with property names that come from user input or some other dynamic source.</p>
+</li>
+</ol>
+<p>It’s worth noting that objects in JavaScript are incredibly powerful and versatile. They can contain not just simple values like strings and numbers, but also arrays, or other objects.</p>
+<p>Understanding objects and how to work with them is crucial in JavaScript because they’re used extensively throughout the language and in many JavaScript libraries and frameworks.</p>
+<p>As you continue to learn and work with JavaScript, you’ll find that mastering objects opens up a world of possibilities for creating complex and powerful applications.</p>
+</section>
+<section id="what-is-object-destructuring-and-how-does-it-work">
+<h2>1.2. What is object destructuring and how does it work?<a class="headerlink" href="#what-is-object-destructuring-and-how-does-it-work" title="Link to this heading">#</a></h2>
+<p>Object destructuring is a powerful feature in JavaScript that allows you to extract values from objects and assign them to variables in a more concise and readable way. It’s part of the ES6 (ECMAScript 2015) specification and has become an essential tool for many JavaScript developers.</p>
+<p>Destructuring can simplify your code, especially when working with complex objects or when you need to extract multiple values at once.</p>
+<p>At its core, object destructuring is about unpacking values from objects into distinct variables. Instead of accessing object properties one by one, you can extract multiple properties in a single statement. This can make your code cleaner and more efficient.</p>
+<p>Let’s start with an example to illustrate how object destructuring works:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;New York&quot;</span><span class="w"> </span><span class="p">};</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">person</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span><span class="w"> </span><span class="c1">// Alice</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">age</span><span class="p">);</span><span class="w">  </span><span class="c1">// 30</span>
+</pre></div>
+</div>
+<p>In this example, we’re extracting the <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code> properties from the <code class="docutils literal notranslate"><span class="pre">person</span></code> object and assigning them to variables with the same names.</p>
+<p>One of the powerful aspects of object destructuring is that you can assign the extracted values to variables with different names. This is particularly useful when you’re working with objects that have property names that might conflict with existing variables or when you want to use a different name:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;New York&quot;</span><span class="w"> </span><span class="p">};</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="nx">personName</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="nx">personAge</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">person</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">personName</span><span class="p">);</span><span class="w"> </span><span class="c1">// Alice</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">personAge</span><span class="p">);</span><span class="w"> </span><span class="c1">//  30</span>
+</pre></div>
+</div>
+<p>In this case, we’re extracting the <code class="docutils literal notranslate"><span class="pre">name</span></code> property and assigning it to a variable called <code class="docutils literal notranslate"><span class="pre">personName</span></code>, and doing the same with <code class="docutils literal notranslate"><span class="pre">age</span></code> and <code class="docutils literal notranslate"><span class="pre">personAge</span></code>.</p>
+<p>Object destructuring also allows you to set default values. If a property doesn’t exist in the object you’re destructuring, you can specify a fallback value:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;New York&quot;</span><span class="w"> </span><span class="p">};</span>
+<span class="kd">let</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="p">,</span><span class="w"> </span><span class="nx">country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Unknown&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">person</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">country</span><span class="p">);</span><span class="w"> </span><span class="c1">// Unknown</span>
+</pre></div>
+</div>
+<p>Here, since <code class="docutils literal notranslate"><span class="pre">country</span></code> doesn’t exist in our <code class="docutils literal notranslate"><span class="pre">person</span></code> object, it gets the default value <code class="docutils literal notranslate"><span class="pre">Unknown</span></code>.</p>
+<p>Now, let’s talk about the shorthand notation in object destructuring. When you’re creating objects, especially when the property names match variable names, you can use a shorthand syntax:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Bob&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">25</span><span class="p">;</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span><span class="w"> </span><span class="c1">// { name: &quot;Bob&quot;, age: 25 }</span>
+</pre></div>
+</div>
+<p>The code above takes the properties with the same name as our variables and assigns them the values of those variables.</p>
+<p>This shorthand notation is particularly useful when you’re returning objects from functions or creating objects with multiple properties:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">createPerson</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createPerson</span><span class="p">(</span><span class="s2">&quot;Charlie&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">35</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span><span class="w"> </span><span class="c1">// { name: &quot;Charlie&quot;, age: 35 }</span>
+</pre></div>
+</div>
+<p>Object destructuring and the shorthand object notation are powerful features that can make your code more concise and easier to read. They’re especially useful when working with complex data structures, or when you need to pass multiple parameters to functions.</p>
+</section>
+<section id="how-can-you-remove-properties-from-an-object">
+<h2>1.3. How can you remove properties from an object?<a class="headerlink" href="#how-can-you-remove-properties-from-an-object" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>There are several ways to remove properties from an object, with the <code class="docutils literal notranslate"><span class="pre">delete</span></code> operator being the most straightforward and commonly used method.</p>
+<p>When you use <code class="docutils literal notranslate"><span class="pre">delete</span></code>, it removes the selected property from the object. Here’s an example of how to use the <code class="docutils literal notranslate"><span class="pre">delete</span></code> operator:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">job</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Engineer&quot;</span>
+<span class="p">};</span>
+
+<span class="ow">delete</span><span class="w"> </span><span class="nx">person</span><span class="p">.</span><span class="nx">job</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">job</span><span class="p">);</span><span class="w"> </span><span class="c1">// undefined</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span><span class="w">     </span><span class="c1">// {name: &quot;Alice&quot;, age: 30}</span>
+</pre></div>
+</div>
+<p>In this example, we start with a <code class="docutils literal notranslate"><span class="pre">person</span></code> object that has three properties: <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">age</span></code>, and <code class="docutils literal notranslate"><span class="pre">job</span></code>. Then, we use the <code class="docutils literal notranslate"><span class="pre">delete</span></code> operator to remove the <code class="docutils literal notranslate"><span class="pre">job</span></code> property. After the deletion, the <code class="docutils literal notranslate"><span class="pre">person</span></code> object no longer has the <code class="docutils literal notranslate"><span class="pre">job</span></code> property.</p>
+</li>
+<li><p>Another way to remove properties is by using destructuring assignment with rest parameters. This approach doesn’t actually delete the property, but it creates a new object without the specified properties:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">job</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Designer&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;New York&quot;</span>
+<span class="p">};</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">job</span><span class="p">,</span><span class="w"> </span><span class="nx">city</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">remainingProperties</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">person</span><span class="p">;</span>
+
+<span class="c1">// { name: &quot;Bob&quot;, age: 25 }</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">remainingProperties</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>In this example, we use destructuring to extract <code class="docutils literal notranslate"><span class="pre">job</span></code> and <code class="docutils literal notranslate"><span class="pre">city</span></code> from the <code class="docutils literal notranslate"><span class="pre">person</span></code> object, and collect the remaining properties into a new object called <code class="docutils literal notranslate"><span class="pre">remainingProperties</span></code>. This creates a new object without the <code class="docutils literal notranslate"><span class="pre">job</span></code> and <code class="docutils literal notranslate"><span class="pre">city</span></code> properties.</p>
+</li>
+</ol>
+</section>
+<section id="how-to-check-if-an-object-has-a-property">
+<h2>1.4. How to check if an object has a property?<a class="headerlink" href="#how-to-check-if-an-object-has-a-property" title="Link to this heading">#</a></h2>
+<p>In JavaScript, there are several ways to check if an object has a specific property. Understanding these methods is important for working effectively with objects, especially when you’re dealing with data from external sources or when you need to ensure certain properties exist before using them.</p>
+<p>We’ll explore three common approaches: the <code class="docutils literal notranslate"><span class="pre">hasOwnProperty()</span></code> method, the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator, and checking against <code class="docutils literal notranslate"><span class="pre">undefined</span></code>.</p>
+<ol class="arabic">
+<li><p>Let’s start with the <code class="docutils literal notranslate"><span class="pre">hasOwnProperty()</span></code> method. This method returns a boolean indicating whether the object has the specified property as its own property. Here’s an example:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s2">&quot;job&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
+</pre></div>
+</div>
+<p>In this example, we have an object called <code class="docutils literal notranslate"><span class="pre">person</span></code> with two properties: <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code>. To check if <code class="docutils literal notranslate"><span class="pre">name</span></code> is a property in the <code class="docutils literal notranslate"><span class="pre">person</span></code> object, we use the <code class="docutils literal notranslate"><span class="pre">hasOwnProperty()</span></code> method. Since <code class="docutils literal notranslate"><span class="pre">name</span></code> is a property, it will return <code class="docutils literal notranslate"><span class="pre">true</span></code>. But when we use the <code class="docutils literal notranslate"><span class="pre">hasOwnProperty()</span></code> to check if <code class="docutils literal notranslate"><span class="pre">job</span></code> is a property, it will return <code class="docutils literal notranslate"><span class="pre">false</span></code> because it does not exist in the object.</p>
+</li>
+<li><p>Another way to check for the existence of a property in an object is to use the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator. Like <code class="docutils literal notranslate"><span class="pre">hasOwnProperty()</span></code>, the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator will return <code class="docutils literal notranslate"><span class="pre">true</span></code> if the property exists on the object. Here’s how you can use it:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span>
+<span class="p">};</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">person</span><span class="p">);</span><span class="w">  </span><span class="c1">// true</span>
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">&quot;name&quot;</span> <span class="pre">in</span> <span class="pre">person</span></code> returns <code class="docutils literal notranslate"><span class="pre">true</span></code> because <code class="docutils literal notranslate"><span class="pre">name</span></code> is a property of <code class="docutils literal notranslate"><span class="pre">person</span></code>.</p>
+</li>
+<li><p>The third method involves checking if a property is <code class="docutils literal notranslate"><span class="pre">undefined</span></code>. This approach can be useful, but it has some limitations. Here’s an example:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">brand</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Toyota&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">model</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Corolla&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">year</span><span class="o">:</span><span class="w"> </span><span class="mf">2020</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">car</span><span class="p">.</span><span class="nx">brand</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">undefined</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">car</span><span class="p">.</span><span class="nx">color</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">undefined</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+</pre></div>
+</div>
+<p>In this code, we check if <code class="docutils literal notranslate"><span class="pre">car.brand</span></code> and <code class="docutils literal notranslate"><span class="pre">car.color</span></code> are not <code class="docutils literal notranslate"><span class="pre">undefined</span></code>. This works because accessing a non-existent property on an object returns <code class="docutils literal notranslate"><span class="pre">undefined</span></code>.</p>
+ <div style="color:red;">However, this method can give false negatives if a property explicitly has the value `undefined`.</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">a</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="p">};</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">a</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">undefined</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>In practice, the choice between these methods often depends on the specific requirements of your code. Understanding the differences between them will help you make the right choice in different scenarios.</p>
+</section>
+<section id="how-do-you-work-with-accessing-properties-from-nested-objects-and-arrays-in-objects">
+<h2>1.5. How do you work with accessing properties from nested objects and arrays in objects?<a class="headerlink" href="#how-do-you-work-with-accessing-properties-from-nested-objects-and-arrays-in-objects" title="Link to this heading">#</a></h2>
+<p>When working with JavaScript, you’ll often encounter complex data structures that involve nested objects and arrays within objects. These structures can represent rich, hierarchical data, but they also require a clear understanding of how to access and manipulate the data within them. Let’s explore how to navigate these nested structures effectively.</p>
+<p>Accessing properties from nested objects involves using the dot notation or bracket notation, much like accessing properties from simple objects. However, you’ll need to chain these accessors to drill down into the nested structure.</p>
+<p>For example, let’s consider a nested object representing a person with contact information:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">contact</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;alice@example.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">phone</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">home</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;123-456-7890&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">work</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;098-765-4321&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>To access <code class="docutils literal notranslate"><span class="pre">Alice</span></code>’s work phone number, you would chain the property accessors like this:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">contact</span><span class="p">.</span><span class="nx">phone</span><span class="p">.</span><span class="nx">work</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;098-765-4321&quot;</span>
+</pre></div>
+</div>
+<p>You can also use bracket notation, which is particularly useful when property names include spaces or special characters, or when you’re using variables to access properties:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">[</span><span class="s1">&#39;contact&#39;</span><span class="p">][</span><span class="s1">&#39;phone&#39;</span><span class="p">][</span><span class="s1">&#39;work&#39;</span><span class="p">]);</span><span class="w"> </span><span class="c1">// &quot;098-765-4321&quot;</span>
+</pre></div>
+</div>
+<p>Now, let’s take a look at how we can access data where one of the object properties has the value of an array. Here is a modified <code class="docutils literal notranslate"><span class="pre">person</span></code> object that includes an array of addresses:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">addresses</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;home&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">street</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;123 Main St&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Anytown&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;work&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">street</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;456 Market St&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Workville&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Here is an example of how to access <code class="docutils literal notranslate"><span class="pre">Alice</span></code>’s work address city:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">addresses</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">city</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;Workville&quot;</span>
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">person.addresses</span></code> refers to the array of addresses. To access the second address in that array, we use bracket notation and index <code class="docutils literal notranslate"><span class="pre">1</span></code>. Then, we use dot notation to access the <code class="docutils literal notranslate"><span class="pre">city</span></code> from that address object.</p>
+<p>Understanding how to access properties in nested objects and arrays is essential when working with complex data structures. In future workshops and labs, you will have the opportunity to practice working with these types of data structures.</p>
+</section>
+<section id="what-is-the-difference-between-primitive-and-non-primitive-data-types">
+<h2>1.6. What is the difference between primitive and non-primitive data types?<a class="headerlink" href="#what-is-the-difference-between-primitive-and-non-primitive-data-types" title="Link to this heading">#</a></h2>
+<p>In JavaScript, understanding the difference between primitive and non-primitive data types is important for writing efficient and bug-free code. These two categories of data types behave differently in terms of how they are stored in memory and how they are manipulated in your programs.</p>
+<ol class="arabic">
+<li><p>Primitive data types are the simplest form of data in JavaScript. They include numbers, strings, booleans, <code class="docutils literal notranslate"><span class="pre">null</span></code>, <code class="docutils literal notranslate"><span class="pre">undefined</span></code>, and symbols. These types are called “primitive” because they represent single values and are not objects.</p>
+<p>When you work with primitive data types, you’re dealing directly with their values. For example, when you create a variable with a primitive value, that value is stored directly in the variable.</p>
+<p>Primitive values are immutable, which means once they are created, their value cannot be changed. However, you can reassign a new value to the variable. Here’s an example of working with primitive data types:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">num1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">num2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">num1</span><span class="p">;</span>
+<span class="nx">num1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num2</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5</span>
+</pre></div>
+</div>
+<p>In this example, we are assigning a primitive value (<code class="docutils literal notranslate"><span class="pre">5</span></code>) from <code class="docutils literal notranslate"><span class="pre">num1</span></code> to <code class="docutils literal notranslate"><span class="pre">num2</span></code>. This creates an independent copy of the value. As a result, any changes made to the original variable (<code class="docutils literal notranslate"><span class="pre">num1</span></code>) do not affect the copy (<code class="docutils literal notranslate"><span class="pre">num2</span></code>).</p>
+</li>
+<li><p>Non-primitive data types, on the other hand, are more complex. In JavaScript, these are objects, which include regular objects, arrays, and functions. Unlike primitives, non-primitive types can hold multiple values as properties or elements.</p>
+<p>When you create a variable with a non-primitive value, what’s stored in the variable is actually a reference to the location in memory where the object is stored, not the object itself. This leads to some important differences in behavior. Here’s an example with non-primitive types:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">originalPerson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="w"> </span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">copiedPerson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">originalPerson</span><span class="p">;</span>
+
+<span class="nx">originalPerson</span><span class="p">.</span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">31</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">copiedPerson</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span><span class="w"> </span><span class="c1">// 31</span>
+</pre></div>
+</div>
+<p>In this example we have an object called <code class="docutils literal notranslate"><span class="pre">originalPerson</span></code> with two properties of <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code>. We then assign the <code class="docutils literal notranslate"><span class="pre">originalPerson</span></code> object to a variable called <code class="docutils literal notranslate"><span class="pre">copiedPerson</span></code>.</p>
+<p>Then we update the <code class="docutils literal notranslate"><span class="pre">age</span></code> value for the <code class="docutils literal notranslate"><span class="pre">originalPerson</span></code> object. When we log the <code class="docutils literal notranslate"><span class="pre">age</span></code> property of <code class="docutils literal notranslate"><span class="pre">copiedPerson</span></code> object it shows the updated value.</p>
+<p>But why is that happening? This occurs because both <code class="docutils literal notranslate"><span class="pre">originalPerson</span></code> and <code class="docutils literal notranslate"><span class="pre">copiedPerson</span></code> are referencing the same object in memory.</p>
+ <div style="color:red;">In JavaScript, when you assign an object to another variable, you're copying the reference to the object, not the object itself. This is known as shallow copying by reference. As a result, any changes made to the object through one reference are reflected in all references to that object.</div>
+</li>
+</ol>
+</section>
+<section id="what-is-the-difference-between-functions-and-methods">
+<h2>1.7. What is the difference between functions and methods?<a class="headerlink" href="#what-is-the-difference-between-functions-and-methods" title="Link to this heading">#</a></h2>
+<p>In JavaScript, functions and object methods are both ways to encapsulate reusable code, but they have some key differences in how they are defined, used, and the context in which they operate. Understanding these differences is crucial for writing effective and organized JavaScript code.</p>
+<p>As you learned in earlier modules, functions are reusable blocks of code that perform a specific task:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">greet</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Hello, &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;!&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greet</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// &quot;Hello, Alice!&quot;</span>
+</pre></div>
+</div>
+<p>Object methods, on the other hand, are functions that are associated with an object. They are defined as properties of an object and can access and manipulate the object’s data. Here’s an example of an object with a method:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">sayHello</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Hello, my name is &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">sayHello</span><span class="p">());</span><span class="w"> </span><span class="c1">// &quot;Hello, my name is Bob&quot;</span>
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">sayHello</span></code> is a method of the <code class="docutils literal notranslate"><span class="pre">person</span></code> object. The <code class="docutils literal notranslate"><span class="pre">this</span></code> keyword allows the <code class="docutils literal notranslate"><span class="pre">sayHello</span></code> method to access the properties of the object named <code class="docutils literal notranslate"><span class="pre">person</span></code>. You will learn more about the <code class="docutils literal notranslate"><span class="pre">this</span></code> keyword in future lectures.</p>
+<ul class="simple">
+<li><p>A difference between functions and methods is how they are invoked. Functions are called by their name, while methods are called using dot notation on the object they belong to. For example, we call the <code class="docutils literal notranslate"><span class="pre">greet</span></code> function as <code class="docutils literal notranslate"><span class="pre">greet(&quot;Alice&quot;)</span></code>, but we call the <code class="docutils literal notranslate"><span class="pre">sayHello</span></code> method as <code class="docutils literal notranslate"><span class="pre">person.sayHello()</span></code>.</p></li>
+<li><p>Another important difference is the context in which they operate. Regular functions have their own scope, but they don’t have a built-in reference to any particular object. Methods, however, are bound to their object and can access its properties and other methods using the <code class="docutils literal notranslate"><span class="pre">this</span></code> keyword.</p></li>
+</ul>
+<p>A key point to note is that, methods help in organizing code into logical objects, while functions are used for more general, reusable code.</p>
+<p>Understanding the difference between functions and object methods is important as you progress in your JavaScript journey. While they may seem similar at first, recognizing when to use each will help you write more organized, efficient, and better code.</p>
+</section>
+<section id="what-is-the-object-constructor-and-when-should-you-use-it">
+<h2>1.8. What is the <code class="docutils literal notranslate"><span class="pre">Object()</span></code> constructor and when should you use it?<a class="headerlink" href="#what-is-the-object-constructor-and-when-should-you-use-it" title="Link to this heading">#</a></h2>
+<p>In JavaScript, a constructor is a special type of function used to create and initialize objects. It is invoked with the <code class="docutils literal notranslate"><span class="pre">new</span></code> keyword and can initialize properties and methods on the newly created object.</p>
+<p>In this video, we will take a look at how to work with the <code class="docutils literal notranslate"><span class="pre">Object()</span></code> constructor. The <code class="docutils literal notranslate"><span class="pre">Object()</span></code> constructor creates a new empty object. Here is an example:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="ow">new</span><span class="w"> </span><span class="nb">Object</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>When you call <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Object()</span></code>, it returns a new object that can be used to store values.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Object()</span></code> constructor can be used with or without the <code class="docutils literal notranslate"><span class="pre">new</span></code> keyword. When called as a function without <code class="docutils literal notranslate"><span class="pre">new</span></code>, it behaves differently depending on the type of value passed to it. Here’s an example of using the <code class="docutils literal notranslate"><span class="pre">Object()</span></code> constructor without the <code class="docutils literal notranslate"><span class="pre">new</span></code> keyword:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">42</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">numObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span><span class="w"> </span><span class="c1">// Creates an object wrapper for the number</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numObj</span><span class="p">);</span><span class="w"> </span><span class="c1">// 42</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">numObj</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;object&quot;</span>
+</pre></div>
+</div>
+<p>The first <code class="docutils literal notranslate"><span class="pre">console.log</span></code> will show <code class="docutils literal notranslate"><span class="pre">42</span></code>, but it is important to note that this is not a regular number. As you can see in the second <code class="docutils literal notranslate"><span class="pre">console.log</span></code>, <code class="docutils literal notranslate"><span class="pre">numObj</span></code> is an object. This is happening because we used the <code class="docutils literal notranslate"><span class="pre">Object()</span></code> constructor to turn that input of a number into an object.</p>
+<p>What happens if we try to pass <code class="docutils literal notranslate"><span class="pre">null</span></code> or <code class="docutils literal notranslate"><span class="pre">undefined</span></code> to the <code class="docutils literal notranslate"><span class="pre">Object()</span></code> constructor?</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">newObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Object</span><span class="p">(</span><span class="kc">undefined</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newObj</span><span class="p">);</span><span class="w"> </span><span class="c1">// {}</span>
+</pre></div>
+</div>
+<p>Well, the result will be an empty object. Another use case for the <code class="docutils literal notranslate"><span class="pre">Object()</span></code> constructor is when you’re working with a value of unknown type and you need to ensure it’s an object. Let’s take a look at the following example:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">toObject</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">value</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">undefined</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{};</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">value</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">Object</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">toObject</span><span class="p">(</span><span class="kc">null</span><span class="p">));</span><span class="w">  </span><span class="c1">// {}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">toObject</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span><span class="w">  </span><span class="c1">// {}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">toObject</span><span class="p">([</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">]));</span><span class="w"> </span><span class="c1">// [1, 2, 3]</span>
+</pre></div>
+</div>
+<p>In this example, we have a function called <code class="docutils literal notranslate"><span class="pre">toObject</span></code>. The second condition will check if the value is a type of object and will return the value if the condition is <code class="docutils literal notranslate"><span class="pre">true</span></code>. This condition will check for objects as well as arrays since arrays are special types of objects.</p>
+<p>If neither of the conditions is true, the function returns <code class="docutils literal notranslate"><span class="pre">Object(value)</span></code>, which converts the input into an object. This works for values like numbers, strings, and booleans</p>
+<p>Most of the time you will not be using the <code class="docutils literal notranslate"><span class="pre">Object()</span></code> constructor to create new objects because you will be using object literal syntax instead (e.g., <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">objectLiteral</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">name:</span> <span class="pre">&quot;Beau&quot;</span> <span class="pre">}</span></code>). But it is still good to understand the basics of working with the Object constructor.</p>
+</section>
+<section id="what-is-the-optional-chaining-operator-and-how-does-it-work">
+<h2>1.9. What is the optional chaining operator <code class="docutils literal notranslate"><span class="pre">?.</span></code> and how does it work?<a class="headerlink" href="#what-is-the-optional-chaining-operator-and-how-does-it-work" title="Link to this heading">#</a></h2>
+<p>The optional chaining operator (<code class="docutils literal notranslate"><span class="pre">?.</span></code>) is a useful tool in JavaScript that lets you safely access object properties or call methods without worrying whether they exist. It’s like a safety net for working with objects that might have missing parts.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;Alice&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">job</span><span class="p">);</span><span class="w"> </span><span class="c1">// undefined</span>
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">person.name</span> <span class="pre">exists</span></code>, so it logs <code class="docutils literal notranslate"><span class="pre">Alice</span></code>. But <code class="docutils literal notranslate"><span class="pre">person.job</span></code> doesn’t exist, so it gives us <code class="docutils literal notranslate"><span class="pre">undefined</span></code>.</p>
+<p>Now, let’s say we want to access a property of an object that might not exist:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">address</span><span class="p">.</span><span class="nx">street</span><span class="p">);</span><span class="w"> </span><span class="c1">// This will throw an error!</span>
+</pre></div>
+</div>
+<p>This example will throw an <code class="docutils literal notranslate"><span class="pre">Uncaught</span> <span class="pre">TypeError</span></code>. Since <code class="docutils literal notranslate"><span class="pre">person.address</span></code> is <code class="docutils literal notranslate"><span class="pre">undefined</span></code>, we are not able to access the <code class="docutils literal notranslate"><span class="pre">street</span></code> property. This is where the optional chaining operator comes in handy. Here is an example of using the optional chaining operator:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">profile</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;john@example.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">street</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;123 Main St&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Somewhere&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">profile</span><span class="o">?</span><span class="p">.</span><span class="nx">address</span><span class="o">?</span><span class="p">.</span><span class="nx">street</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;123 Main St&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">profile</span><span class="o">?</span><span class="p">.</span><span class="nx">phone</span><span class="o">?</span><span class="p">.</span><span class="nx">number</span><span class="p">);</span><span class="w">   </span><span class="c1">// undefined</span>
+</pre></div>
+</div>
+<p>By using the optional chaining operator, we are telling JavaScript to only continue with the operation if the object (or the value before the <code class="docutils literal notranslate"><span class="pre">?.</span></code>) exists and is not <code class="docutils literal notranslate"><span class="pre">null</span></code> or <code class="docutils literal notranslate"><span class="pre">undefined</span></code>.</p>
+<p>If the value before the <code class="docutils literal notranslate"><span class="pre">?.</span></code> is <code class="docutils literal notranslate"><span class="pre">null</span></code> or <code class="docutils literal notranslate"><span class="pre">undefined</span></code>, JavaScript returns <code class="docutils literal notranslate"><span class="pre">undefined</span></code> rather than attempting to proceed with the operation and throwing an error.</p>
+<p>Remember, the optional chaining operator is most useful when you’re not sure if a property or method exists. It helps prevent errors and makes your code more robust.</p>
+</section>
+<section id="what-is-json-and-how-do-you-access-values-using-bracket-and-dot-notation">
+<h2>1.10. What is JSON and how do you access values using bracket and dot notation?<a class="headerlink" href="#what-is-json-and-how-do-you-access-values-using-bracket-and-dot-notation" title="Link to this heading">#</a></h2>
+<p>JSON stands for JavaScript Object Notation. It is a lightweight, text-based data format that is commonly used to exchange data between a server and a web application.</p>
+<p>One of the reasons why JSON is so popular in web development is because it is both machine-parseable and human-readable.</p>
+<p>Since JSON is language-independent, you can easily send JSON data from a Java application to a Python application, or from a JavaScript application to a C# application.</p>
+<p>JSON supports many data types including objects, arrays, strings, booleans, null, and numbers.</p>
+<p>Here’s an example of a JSON object:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="c1">// example.json</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;isStudent&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;list of courses&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Mathematics&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Physics&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Computer Science&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>As you can see, JSON uses key-value pairs to store information and each pair is separated by a comma. Each key must be wrapped in double quotes, otherwise you will get an error.</p>
+<p>To access data from a JSON object, you can either use dot or bracket notation. In this example, we are using dot notation to access the <code class="docutils literal notranslate"><span class="pre">age</span></code> from the JSON object:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./example.json&quot;</span><span class="w"> </span><span class="nx">assert</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;json&quot;</span><span class="w"> </span><span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This particular example is using what is known as an <code class="docutils literal notranslate"><span class="pre">import</span></code> statement, which imports the JSON object into this file so we have access to it. You will learn more about the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement in a future lecture.</p>
+<p>You can also use bracket notation to access information from JSON objects. Here is an example of accessing the <code class="docutils literal notranslate"><span class="pre">list</span> <span class="pre">of</span> <span class="pre">courses</span></code> array:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./example.json&quot;</span><span class="w"> </span><span class="nx">assert</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;json&quot;</span><span class="w"> </span><span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">[</span><span class="s2">&quot;list of courses&quot;</span><span class="p">]);</span>
+</pre></div>
+</div>
+<p>Using bracket notation is particularly useful here because the key contains multiple words separated by spaces. If we tried to use dot notation, it would result in an error.</p>
+<p>In summary, JSON is a versatile format that can store many data types, including arrays and nested objects. By using dot notation or bracket notation, you can easily access the values stored within a JSON object.</p>
+</section>
+<section id="how-do-json-parse-and-json-stringify-work">
+<h2>1.11. How do <code class="docutils literal notranslate"><span class="pre">JSON.parse()</span></code> and <code class="docutils literal notranslate"><span class="pre">JSON.stringify()</span></code> work?<a class="headerlink" href="#how-do-json-parse-and-json-stringify-work" title="Link to this heading">#</a></h2>
+<p>There are two powerful methods in JavaScript for handling JSON data: <code class="docutils literal notranslate"><span class="pre">JSON.parse()</span></code> and <code class="docutils literal notranslate"><span class="pre">JSON.stringify()</span></code>. These methods are commonly used to convert between JSON strings and JavaScript objects.</p>
+<p><code class="docutils literal notranslate"><span class="pre">JSON.stringify()</span></code> is used to convert a JavaScript object into a JSON string. This is useful when you want to store or transmit data in a format that can be easily shared or transferred between systems.</p>
+<ol class="arabic">
+<li><p>Here’s how you can use the <code class="docutils literal notranslate"><span class="pre">JSON.stringify()</span></code> method:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">isAdmin</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">};</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">jsonString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">jsonString</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>In the example, the JavaScript object <code class="docutils literal notranslate"><span class="pre">user</span></code> is converted into a JSON string that looks like this:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="err">&#39;</span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;John&quot;</span><span class="p">,</span><span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;isAdmin&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">}</span><span class="err">&#39;</span>
+</pre></div>
+</div>
+<ul>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">JSON.stringify()</span></code> method also accepts an optional parameter called a replacer, which can be a function or an array. Here is an example of using an array for the optional replacer parameter:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">developerObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">isAwesome</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">isMusician</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">country</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;USA&quot;</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="c1">// result: {&quot;firstName&quot;:&quot;Jessica&quot;,&quot;country&quot;:&quot;USA&quot;}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">developerObj</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;firstName&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;country&quot;</span><span class="p">]));</span>
+</pre></div>
+</div>
+<p>In this example, we have a <code class="docutils literal notranslate"><span class="pre">developerObj</span></code> with four properties. When we use the <code class="docutils literal notranslate"><span class="pre">JSON.stringify()</span></code> method, we can pass in an array for the second parameter and specify which properties we want stringified. The result will be a stringified object containing only the <code class="docutils literal notranslate"><span class="pre">firstName</span></code> and <code class="docutils literal notranslate"><span class="pre">country</span></code> properties.</p>
+</li>
+<li><p>Another optional parameter for the <code class="docutils literal notranslate"><span class="pre">JSON.stringify()</span></code> method would be the spacer parameter. This allows you to control the spacing at the beggining of each line for the stringified result:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">developerObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">isAwesome</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">isMusician</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">country</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;USA&quot;</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">developerObj</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">));</span>
+
+<span class="cm">/* result</span>
+<span class="cm">{</span>
+<span class="cm">  &quot;firstName&quot;: &quot;Jessica&quot;,</span>
+<span class="cm">  &quot;isAwesome&quot;: true,</span>
+<span class="cm">  &quot;isMusician&quot;: true,</span>
+<span class="cm">  &quot;country&quot;: &quot;USA&quot;</span>
+<span class="cm">}</span>
+<span class="cm">*/</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">developerObj</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">));</span>
+
+<span class="cm">/* result</span>
+<span class="cm">{</span>
+<span class="cm">          &quot;firstName&quot;: &quot;Jessica&quot;,</span>
+<span class="cm">          &quot;isAwesome&quot;: true,</span>
+<span class="cm">          &quot;isMusician&quot;: true,</span>
+<span class="cm">          &quot;country&quot;: &quot;USA&quot;</span>
+<span class="cm">}</span>
+<span class="cm">*/</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Most of the time you will not be using either of these optional parameters for the <code class="docutils literal notranslate"><span class="pre">JSON.stringify()</span></code> method but it is still helpful to be aware of them.</p>
+</li>
+<li><p>Another method you will be using a lot in your programming is the <code class="docutils literal notranslate"><span class="pre">JSON.parse()</span></code> method. <code class="docutils literal notranslate"><span class="pre">JSON.parse()</span></code> converts a JSON string back into a JavaScript object. This is useful when you retrieve JSON data from a web server or from <code class="docutils literal notranslate"><span class="pre">localStorage</span></code> and you need to manipulate the data in your application. You will learn more about <code class="docutils literal notranslate"><span class="pre">localStorage</span></code> in a future lecture.</p>
+<p>Here’s an example on how to work with the <code class="docutils literal notranslate"><span class="pre">JSON.parse()</span></code> method:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">jsonString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;{&quot;name&quot;:&quot;John&quot;,&quot;age&quot;:30,&quot;isAdmin&quot;:true}&#39;</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">userObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">jsonString</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The JSON string is parsed back into a JavaScript object that looks like this:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">isAdmin</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This allows you to work with the data in your program as a normal JavaScript object, making it easier to manipulate and use.</p>
+</li>
+</ol>
+<p>In future modules, we will continue to learn more about how to work with JSON and the <code class="docutils literal notranslate"><span class="pre">JSON.parse()</span></code> and <code class="docutils literal notranslate"><span class="pre">JSON.stringify()</span></code> methods.</p>
+</div></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./javaScript/5_objects"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../5_objects.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">5. Objects Summary</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Examples</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-javascript-object-and-how-can-you-access-properties-from-an-object">1.1. What is a JavaScript object and how can you access properties from an object?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-object-destructuring-and-how-does-it-work">1.2. What is object destructuring and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-you-remove-properties-from-an-object">1.3. How can you remove properties from an object?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-check-if-an-object-has-a-property">1.4. How to check if an object has a property?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-work-with-accessing-properties-from-nested-objects-and-arrays-in-objects">1.5. How do you work with accessing properties from nested objects and arrays in objects?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-difference-between-primitive-and-non-primitive-data-types">1.6. What is the difference between primitive and non-primitive data types?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-difference-between-functions-and-methods">1.7. What is the difference between functions and methods?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-object-constructor-and-when-should-you-use-it">1.8. What is the <code class="docutils literal notranslate"><span class="pre">Object()</span></code> constructor and when should you use it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-optional-chaining-operator-and-how-does-it-work">1.9. What is the optional chaining operator <code class="docutils literal notranslate"><span class="pre">?.</span></code> and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-json-and-how-do-you-access-values-using-bracket-and-dot-notation">1.10. What is JSON and how do you access values using bracket and dot notation?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-json-parse-and-json-stringify-work">1.11. How do <code class="docutils literal notranslate"><span class="pre">JSON.parse()</span></code> and <code class="docutils literal notranslate"><span class="pre">JSON.stringify()</span></code> work?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mikaela González Pérez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

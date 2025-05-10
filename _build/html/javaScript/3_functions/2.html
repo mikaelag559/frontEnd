@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'javaScript/3_functions/2';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4. Arrays Summary" href="../4_arrays.html" />
     <link rel="prev" title="1. Working with Functions" href="1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -219,6 +220,22 @@
 <li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/5.html">Examples</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/2_design.html">2. Design Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/2_design/1.html">1. User Interface Design Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/2_design/2.html">2. User-Centered Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/2_design/3.html">3. Common Design Tools</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/3_absolute_n_relative_units.html">1. CSS Relative and Absolute Units Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/3_absolute_n_relative_units/1.html">1. Working  with Relative and Absolute Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/3_absolute_n_relative_units/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/4_pseudo_classes_n_elements.html">1. CSS Pseudo-classes Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/4_pseudo_classes_n_elements/1.html">1. Working with Pseudo-Classes and Pseudo-Elements in CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/4_pseudo_classes_n_elements/2.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
 <ul class="current nav bd-sidenav">
@@ -240,6 +257,17 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../3_functions.html">3. Functions Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1.html">1. Working with Functions</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4_arrays.html">4. Arrays Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4_functions/1.html">1. Working with Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_functions/2.html">2. Working with Common Array Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_functions/3.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../5_objects.html">5. Objects Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../5_objects/1.html">1. Working with Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../5_objects/2.html">Examples</a></li>
 </ul>
 </details></li>
 </ul>
@@ -391,6 +419,9 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-calculator">1. A Calculator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-email-masker">2. An email Masker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-loan-qualification-checker">3. A Loan Qualification Checker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-leap-year-calculator">4. A Leap Year Calculator</a></li>
 </ul>
             </nav>
         </div>
@@ -462,6 +493,101 @@ sqrt(25) = 5
 sqrt(100) = 10
 </pre></div>
 </div>
+</section>
+<section id="an-email-masker">
+<h2>2. An email Masker<a class="headerlink" href="#an-email-masker" title="Link to this heading">#</a></h2>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">maskEmail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">email</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Encontramos la posición de la arroba, que nos va a delimitar la cantidad de asteriscos</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">arroba</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">email</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;@&quot;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">email</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">arroba</span><span class="p">)</span>
+
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">masked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">email</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+<span class="w">  </span><span class="nx">masked</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="nx">arroba</span><span class="o">-</span><span class="mf">2</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">masked</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">email</span><span class="p">[</span><span class="nx">arroba</span><span class="o">-</span><span class="mf">1</span><span class="p">];</span>
+<span class="w">  </span><span class="nx">masked</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">domain</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">masked</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;apple.pie@example.com&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">maskEmail</span><span class="p">(</span><span class="nx">email</span><span class="p">));</span>
+
+<span class="nx">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;freecodecamp@example.com&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">maskEmail</span><span class="p">(</span><span class="nx">email</span><span class="p">));</span>
+
+<span class="nx">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;freecodecamp@email.com&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">maskEmail</span><span class="p">(</span><span class="nx">email</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>console:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a*******e@example.com
+f**********p@example.com
+f**********p@email.com
+</pre></div>
+</div>
+</section>
+<section id="a-loan-qualification-checker">
+<h2>3. A Loan Qualification Checker<a class="headerlink" href="#a-loan-qualification-checker" title="Link to this heading">#</a></h2>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">minIncomeForDuplex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">60000</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">minCreditScoreForDuplex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">700</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">minIncomeForCondo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">45000</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">minCreditScoreForCondo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">680</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">minIncomeForCar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30000</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">minCreditScoreForCar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">650</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">getLoanMessage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">annualIncome</span><span class="p">,</span><span class="w"> </span><span class="nx">creditScore</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="nx">creditScore</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">minCreditScoreForDuplex</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">annualIncome</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">minIncomeForDuplex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;You qualify for a duplex, condo, and car loan.&quot;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">annualIncome</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">minIncomeForCondo</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">creditScore</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">minCreditScoreForCondo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;You qualify for a condo and car loan.&quot;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">annualIncome</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">minIncomeForCar</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">creditScore</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">minCreditScoreForCar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;You qualify for a car loan.&quot;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;You don&#39;t qualify for any loans.&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">duplexLoanMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getLoanMessage</span><span class="p">(</span><span class="mf">85000</span><span class="p">,</span><span class="w"> </span><span class="mf">850</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">condoLoanMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getLoanMessage</span><span class="p">(</span><span class="mf">65000</span><span class="p">,</span><span class="w"> </span><span class="mf">690</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">carLoanMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getLoanMessage</span><span class="p">(</span><span class="mf">45000</span><span class="p">,</span><span class="w"> </span><span class="mf">660</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">noLoanMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getLoanMessage</span><span class="p">(</span><span class="mf">25000</span><span class="p">,</span><span class="w"> </span><span class="mf">550</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">duplexLoanMsg</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">condoLoanMsg</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">carLoanMsg</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">noLoanMsg</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>console:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>You qualify for a duplex, condo, and car loan.
+You qualify for a condo and car loan.
+You qualify for a car loan.
+You don&#39;t qualify for any loans.
+</pre></div>
+</div>
+</section>
+<section id="a-leap-year-calculator">
+<h2>4. A Leap Year Calculator<a class="headerlink" href="#a-leap-year-calculator" title="Link to this heading">#</a></h2>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">isLeapYear</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">year</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">year</span><span class="o">%</span><span class="mf">400</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">year</span><span class="si">}</span><span class="sb"> is a leap year.`</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">year</span><span class="o">%</span><span class="mf">100</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">year</span><span class="si">}</span><span class="sb"> is not a leap year.`</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">year</span><span class="o">%</span><span class="mf">4</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">year</span><span class="si">}</span><span class="sb"> is a leap year.`</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">year</span><span class="si">}</span><span class="sb"> is not a leap year.`</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2000</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">isLeapYear</span><span class="p">(</span><span class="nx">year</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
+</pre></div>
+</div>
 </div></section>
 </section>
 
@@ -504,6 +630,15 @@ sqrt(100) = 10
         <p class="prev-next-title">1. Working with Functions</p>
       </div>
     </a>
+    <a class="right-next"
+       href="../4_arrays.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">4. Arrays Summary</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -521,6 +656,9 @@ sqrt(100) = 10
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-calculator">1. A Calculator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-email-masker">2. An email Masker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-loan-qualification-checker">3. A Loan Qualification Checker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-leap-year-calculator">4. A Leap Year Calculator</a></li>
 </ul>
   </nav></div>
 
