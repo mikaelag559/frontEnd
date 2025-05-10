@@ -1,0 +1,769 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4. Arrays Summary &#8212; My Front End Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'javaScript/4_arrays';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Working with Arrays" href="4_functions/1.html" />
+    <link rel="prev" title="Examples" href="3_functions/2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="My Front End Notes - Home"/>
+    <script>document.write(`<img src="../_static/logo.svg" class="logo__image only-dark" alt="My Front End Notes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to my web development notes
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">HTML</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../html/1_basic_html.html">1. Basic HTML Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../html/1_basic_html/1.html">1. What is HTML?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../html/1_basic_html/2.html">2. HTML Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../html/1_basic_html/3.html">3. Working with Media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../html/1_basic_html/4.html">4. Working with Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../html/1_basic_html/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../html/2_semantic_html.html">2. Semantic HTML Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../html/2_semantic_html/1.html">2. Semantic HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../html/2_semantic_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../html/3_forms_and_tables_html.html">3. HTML Tables and Forms Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../html/3_forms_and_tables_html/1.html">1. Working with Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../html/3_forms_and_tables_html/2.html">2. Working with Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../html/3_forms_and_tables_html/3.html">3. Working with HTML Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../html/3_forms_and_tables_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../html/4_accessibility.html">4. HTML Accessibility Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../html/4_accessibility/1.html">1. Importance of Accessibility and Good HTML Structure - I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../html/4_accessibility/2.html">1. Importance of Accessibility and Good HTML Structure - II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../html/4_accessibility/3.html">1. Importance of Accessibility and Good HTML Structure - III</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../html/4_accessibility/4.html">1. Importance of Accessibility and Good HTML Structure - IV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../html/4_accessibility/5.html">1. Importance of Accessibility and Good HTML Structure - V</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../css/1_basic_css.html">1. Basic CSS Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../css/1_basic_css/1.html">1. What Is CSS?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/1_basic_css/2.html">2. CSS Specificity, the Cascade Algorithm and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/1_basic_css/3.html">3. Styling Lists and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/1_basic_css/4.html">4. Working with Backgrounds and Borders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/1_basic_css/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../css/2_design.html">2. Design Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../css/2_design/1.html">1. User Interface Design Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/2_design/2.html">2. User-Centered Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/2_design/3.html">3. Common Design Tools</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../css/3_absolute_n_relative_units.html">1. CSS Relative and Absolute Units Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../css/3_absolute_n_relative_units/1.html">1. Working  with Relative and Absolute Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/3_absolute_n_relative_units/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../css/4_pseudo_classes_n_elements.html">1. CSS Pseudo-classes Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../css/4_pseudo_classes_n_elements/1.html">1. Working with Pseudo-Classes and Pseudo-Elements in CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/4_pseudo_classes_n_elements/2.html">Examples</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="1_variables_n_strings.html">1. Variables and Strings Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_variables_n_strings/1.html">1. Introduction to JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_variables_n_strings/2.html">2. Working with Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_variables_n_strings/3.html">3. Working with Strings in JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_variables_n_strings/4.html">4. Working with Common String Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_variables_n_strings/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="2_booleans_n_numbers.html">2. Booleans and Numbers Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="2_booleans_n_numbers/1.html">1. Working with Numbers, Booleans and the Math Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_booleans_n_numbers/2.html">2. Working with Numbers and Common Number Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_booleans_n_numbers/3.html">3. Understanding Comparisons and Conditional Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_booleans_n_numbers/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="3_functions.html">3. Functions Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="3_functions/1.html">1. Working with Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_functions/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">4. Arrays Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="4_functions/1.html">1. Working with Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_functions/2.html">2. Working with Common Array Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_functions/3.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="5_objects.html">5. Objects Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="5_objects/1.html">1. Working with Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_objects/2.html">Examples</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/javaScript/4_arrays.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>4. Arrays Summary</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#javascript-array-basics">JavaScript Array Basics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-dimensional-arrays">Two Dimensional Arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-destructuring">Array Destructuring</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-array-methods">Common Array Methods</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div style="text-align: justify">
+<section class="tex2jax_ignore mathjax_ignore" id="arrays-summary">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">4. Arrays Summary</a><a class="headerlink" href="#arrays-summary" title="Link to this heading">#</a></h1>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#arrays-summary" id="id1">4. Arrays Summary</a></p>
+<ul>
+<li><p><a class="reference internal" href="#javascript-array-basics" id="id2">JavaScript Array Basics</a></p></li>
+<li><p><a class="reference internal" href="#two-dimensional-arrays" id="id3">Two Dimensional Arrays</a></p></li>
+<li><p><a class="reference internal" href="#array-destructuring" id="id4">Array Destructuring</a></p></li>
+<li><p><a class="reference internal" href="#common-array-methods" id="id5">Common Array Methods</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="javascript-array-basics">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">JavaScript Array Basics</a><a class="headerlink" href="#javascript-array-basics" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>Definition</strong>: A JavaScript array is an ordered collection of values, each identified by a numeric index. The values in a JavaScript array can be of different data types, including numbers, strings, booleans, objects, and even other arrays. Arrays are contiguous in memory, which means that all elements are stored in a single, continuous block of memory locations, allowing for efficient indexing and fast access to elements by their index.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">developers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Naomi&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Tom&quot;</span><span class="p">];</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Accessing Elements From Arrays</strong>: To access elements from an array, you will need to reference the array followed by its index number inside square brackets. JavaScript arrays are zero based indexed which means the first element is at index 0, the second element is at index 1, etc. If you try to access an index that doesn’t exist for the array, then JavaScript will return <code class="docutils literal notranslate"><span class="pre">undefined</span></code>.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">developers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Naomi&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Tom&quot;</span><span class="p">];</span>
+<span class="nx">developers</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="c1">// &quot;Jessica&quot;</span>
+<span class="nx">developers</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="c1">// &quot;Naomi&quot;</span>
+
+<span class="nx">developers</span><span class="p">[</span><span class="mf">10</span><span class="p">]</span><span class="w"> </span><span class="c1">// undefined</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">length</span></code> Property</strong>: This property is used to return the number of items in a array.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">developers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Naomi&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Tom&quot;</span><span class="p">];</span>
+<span class="nx">developers</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="c1">// 3</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Updating Elements in an Array</strong>: To update an element in an array, you use the assignment operator (<code class="docutils literal notranslate"><span class="pre">=</span></code>) to assign a new value to the element at a specific index.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">fruits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;banana&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;cherry&#39;</span><span class="p">];</span>
+<span class="nx">fruits</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;blueberry&#39;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fruits</span><span class="p">);</span><span class="w"> </span><span class="c1">// [&#39;apple&#39;, &#39;blueberry&#39;, &#39;cherry&#39;]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="two-dimensional-arrays">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Two Dimensional Arrays</a><a class="headerlink" href="#two-dimensional-arrays" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>Definition</strong>: A two-dimensional array is essentially an array of arrays. It’s used to represent data that has a natural grid-like structure, such as a chessboard, a spreadsheet, or pixels in an image. To access an element in a two-dimensional array, you need two indices: one for the row and one for the column.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">chessboard</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">[</span><span class="s1">&#39;R&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;N&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Q&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;K&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;N&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;R&#39;</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;P&#39;</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="s1">&#39;p&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;p&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;p&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;p&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;p&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;p&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;p&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;p&#39;</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;n&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;q&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;n&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;r&#39;</span><span class="p">]</span>
+<span class="p">];</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">chessboard</span><span class="p">[</span><span class="mf">0</span><span class="p">][</span><span class="mf">3</span><span class="p">]);</span><span class="w"> </span><span class="c1">// &quot;Q&quot;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="array-destructuring">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Array Destructuring</a><a class="headerlink" href="#array-destructuring" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>Definition</strong>: Array destructuring is a feature in JavaScript that allows you to extract values from arrays and assign them to variables in a more concise and readable way. It provides a convenient syntax for unpacking array elements into distinct variables.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">fruits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;banana&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;orange&quot;</span><span class="p">];</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">first</span><span class="p">,</span><span class="w"> </span><span class="nx">second</span><span class="p">,</span><span class="w"> </span><span class="nx">third</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fruits</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">first</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;apple&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">second</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;banana&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">third</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;orange&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Rest Syntax</strong>: This allows you to capture the remaining elements of an array that haven’t been destructured into a new array.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">fruits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;banana&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;orange&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mango&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;kiwi&quot;</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">first</span><span class="p">,</span><span class="w"> </span><span class="nx">second</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">rest</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fruits</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">first</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;apple&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">second</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;banana&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rest</span><span class="p">);</span><span class="w"> </span><span class="c1">// [&quot;orange&quot;,&quot;mango&quot;,&quot;kiwi&quot;]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="common-array-methods">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Common Array Methods</a><a class="headerlink" href="#common-array-methods" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">push()</span></code> Method</strong>: This method is used to add elements to the end of the array and will return the new length.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">desserts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;cake&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cookies&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pie&quot;</span><span class="p">];</span>
+<span class="nx">desserts</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">&quot;ice cream&quot;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desserts</span><span class="p">);</span><span class="w"> </span><span class="c1">// [&quot;cake&quot;, &quot;cookies&quot;, &quot;pie&quot;, &quot;ice cream&quot;];</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">pop()</span></code> Method</strong>: This method is used to remove the last element from an array and will return that removed element. If the array is empty, then the return value will be <code class="docutils literal notranslate"><span class="pre">undefined</span></code>.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">desserts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;cake&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cookies&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pie&quot;</span><span class="p">];</span>
+<span class="nx">desserts</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desserts</span><span class="p">);</span><span class="w"> </span><span class="c1">// [&quot;cake&quot;, &quot;cookies&quot;];</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">shift()</span></code> Method</strong>: This method is used to remove the first element from an array and return that removed element. If the array is empty, then the return value will be <code class="docutils literal notranslate"><span class="pre">undefined</span></code>.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">desserts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;cake&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cookies&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pie&quot;</span><span class="p">];</span>
+<span class="nx">desserts</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desserts</span><span class="p">);</span><span class="w"> </span><span class="c1">// [&quot;cookies&quot;, &quot;pie&quot;];</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">unshift()</span></code> Method</strong>: This method is used to add elements to the beginning of the array and will return the new length.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">desserts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;cake&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cookies&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pie&quot;</span><span class="p">];</span>
+<span class="nx">desserts</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="s2">&quot;ice cream&quot;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desserts</span><span class="p">);</span><span class="w"> </span><span class="c1">// [&quot;ice cream&quot;, &quot;cake&quot;, &quot;cookies&quot;, &quot;pie&quot;];</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">indexOf()</span></code> Method</strong>: This method is useful for finding the first index of a specific element within an array. If the element cannot be found, then it will return -1.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">fruits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;banana&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;orange&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;banana&quot;</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fruits</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;banana&quot;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">index</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fruits</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;not found&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// -1</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">splice()</span></code> Method</strong>: This method is used to add or remove elements from any position in an array. The return value for the <code class="docutils literal notranslate"><span class="pre">splice()</span></code> method will be an array of the items removed from the array. If nothing is removed, then an empty array will be returned. This method will mutate the original array, modifying it in place rather than creating a new array. The first argument specifies the index at which to begin modifying the array. The second argument is the number of elements you wish to remove. The following arguments are the elements you wish to add.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">colors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;green&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;blue&quot;</span><span class="p">];</span>
+<span class="nx">colors</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;yellow&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;purple&quot;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">colors</span><span class="p">);</span><span class="w"> </span><span class="c1">// [&quot;red&quot;, &quot;yellow&quot;, &quot;purple&quot;, &quot;green&quot;, &quot;blue&quot;]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">includes()</span></code> Method</strong>: This method is used to check if an array contains a specific value. This method returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the array contains the specified element, and <code class="docutils literal notranslate"><span class="pre">false</span></code> otherwise.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">programmingLanguages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;C++&quot;</span><span class="p">];</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programmingLanguages</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;Perl&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">concat()</span></code> Method</strong>: This method creates a new array by merging two or more arrays.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">programmingLanguages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;C++&quot;</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">newList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">programmingLanguages</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="s2">&quot;Perl&quot;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newList</span><span class="p">);</span><span class="w"> </span><span class="c1">// [&quot;JavaScript&quot;, &quot;Python&quot;, &quot;C++&quot;, &quot;Perl&quot;]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">slice()</span></code> Method</strong>: This method returns a shallow copy of a portion of the array at a specified index or the entire array. A shallow copy will copy the reference to the array instead of duplicating it.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">programmingLanguages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;C++&quot;</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">newList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">programmingLanguages</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newList</span><span class="p">);</span><span class="w"> </span><span class="c1">// [&quot;Python&quot;, &quot;C++&quot;]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Spread Syntax</strong>: The spread syntax is used to create shallow copies of an array.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">originalArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">shallowCopiedArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="nx">originalArray</span><span class="p">];</span>
+
+<span class="nx">shallowCopiedArray</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mf">4</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">originalArray</span><span class="p">);</span><span class="w"> </span><span class="c1">// [1, 2, 3]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">shallowCopiedArray</span><span class="p">);</span><span class="w"> </span><span class="c1">// [1, 2, 3, 4]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">split()</span></code> Method</strong>: This method divides a string into an array of substrings and specifies where each split should happen based on a given separator. If no separator is provided, the method returns an array containing the original string as a single element.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">charArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">charArray</span><span class="p">);</span><span class="w"> </span><span class="c1">// [&quot;h&quot;,&quot;e&quot;,&quot;l&quot;,&quot;l&quot;,&quot;o&quot;]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">reverse()</span></code> Method</strong>: This method reverses an array in place.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">desserts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;cake&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cookies&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pie&quot;</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desserts</span><span class="p">.</span><span class="nx">reverse</span><span class="p">());</span><span class="w"> </span><span class="c1">// [&quot;pie&quot;,&quot;cookies&quot;,&quot;cake&quot;]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">join()</span></code> Method</strong>: This method concatenates all the elements of an array into a single string, with each element separated by a specified separator. If no separator is provided, or an empty string (<code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>) is used, the elements will be joined without any separator.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">reversedArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;l&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;l&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;e&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;h&quot;</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">reversedString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">reversedArray</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">reversedString</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;olleh&quot;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div></section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./javaScript"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="3_functions/2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Examples</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="4_functions/1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">1. Working with Arrays</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#javascript-array-basics">JavaScript Array Basics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-dimensional-arrays">Two Dimensional Arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-destructuring">Array Destructuring</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-array-methods">Common Array Methods</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mikaela González Pérez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,732 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. User Interface Design Fundamentals &#8212; My Front End Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'css/2_design/1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2. User-Centered Design" href="2.html" />
+    <link rel="prev" title="2. Design Summary" href="../2_design.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt="My Front End Notes - Home"/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="My Front End Notes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to my web development notes
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">HTML</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/1_basic_html.html">1. Basic HTML Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/1.html">1. What is HTML?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/2.html">2. HTML Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/3.html">3. Working with Media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/4.html">4. Working with Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/2_semantic_html.html">2. Semantic HTML Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/2_semantic_html/1.html">2. Semantic HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/2_semantic_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/3_forms_and_tables_html.html">3. HTML Tables and Forms Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/1.html">1. Working with Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/2.html">2. Working with Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/3.html">3. Working with HTML Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/4_accessibility.html">4. HTML Accessibility Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/1.html">1. Importance of Accessibility and Good HTML Structure - I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/2.html">1. Importance of Accessibility and Good HTML Structure - II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/3.html">1. Importance of Accessibility and Good HTML Structure - III</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/4.html">1. Importance of Accessibility and Good HTML Structure - IV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/5.html">1. Importance of Accessibility and Good HTML Structure - V</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1_basic_css.html">1. Basic CSS Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/1.html">1. What Is CSS?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/2.html">2. CSS Specificity, the Cascade Algorithm and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/3.html">3. Styling Lists and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/4.html">4. Working with Backgrounds and Borders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../2_design.html">2. Design Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1. User Interface Design Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">2. User-Centered Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.html">3. Common Design Tools</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3_absolute_n_relative_units.html">1. CSS Relative and Absolute Units Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3_absolute_n_relative_units/1.html">1. Working  with Relative and Absolute Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_absolute_n_relative_units/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4_pseudo_classes_n_elements.html">1. CSS Pseudo-classes Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4_pseudo_classes_n_elements/1.html">1. Working with Pseudo-Classes and Pseudo-Elements in CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_pseudo_classes_n_elements/2.html">Examples</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/1_variables_n_strings.html">1. Variables and Strings Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/1.html">1. Introduction to JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/2.html">2. Working with Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/3.html">3. Working with Strings in JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/4.html">4. Working with Common String Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers.html">2. Booleans and Numbers Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers/1.html">1. Working with Numbers, Booleans and the Math Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers/2.html">2. Working with Numbers and Common Number Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers/3.html">3. Understanding Comparisons and Conditional Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/3_functions.html">3. Functions Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/3_functions/1.html">1. Working with Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/3_functions/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/4_arrays.html">4. Arrays Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/4_functions/1.html">1. Working with Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/4_functions/2.html">2. Working with Common Array Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/4_functions/3.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/5_objects.html">5. Objects Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/5_objects/1.html">1. Working with Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/5_objects/2.html">Examples</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/css/2_design/1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1. User Interface Design Fundamentals</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-common-design-terms-to-help-you-communicate-with-designers">1.1. What are common design terms to help you communicate with designers?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-create-good-background-and-foreground-contrast-in-your-designs">1.2. How do you create good background and foreground contrast in your designs?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-importance-of-good-visual-hierarchy-in-design">1.3. What is the importance of good visual hierarchy in design?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-scale-work-in-design">1.4. How does scale work in design?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-alignment-work-in-design">1.5. How does alignment work in design?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-importance-of-whitespace-in-design">1.6. What is the importance of whitespace in design?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-best-practices-for-working-with-images-in-your-designs">1.7. What are best practices for working with images in your designs?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-progressive-enhancement">1.8. What is progressive enhancement?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div style="text-align: justify">
+<section class="tex2jax_ignore mathjax_ignore" id="user-interface-design-fundamentals">
+<h1>1. User Interface Design Fundamentals<a class="headerlink" href="#user-interface-design-fundamentals" title="Link to this heading">#</a></h1>
+<section id="what-are-common-design-terms-to-help-you-communicate-with-designers">
+<h2>1.1. What are common design terms to help you communicate with designers?<a class="headerlink" href="#what-are-common-design-terms-to-help-you-communicate-with-designers" title="Link to this heading">#</a></h2>
+<p>As a developer, you may need to work closely with designers. If you understand basic design terminology, you’ll have a shared vocabulary and you’ll be able to participate in the design process more actively. This can make your workflow more efficient and result in a better user experience.</p>
+<ul class="simple">
+<li><p>So let’s dive in. We’ll start with the term layout. <strong>Layout</strong> is how the visual elements are arranged on a page or screen to communicate a message. These elements may include text, images, and white space. The layout is like the blueprint of a design. Designers must consider the placement, size, and hierarchy of each element.</p></li>
+<li><p>The term that is closely related to layout is alignment. <strong>Alignment</strong> is how the elements are placed in relation to one another. Using alignment correctly is helpful for making the design look clean and organized. Designers create visual order by aligning elements along imaginary lines, edges, or a central point.</p></li>
+<li><p>Great. Now let’s talk about composition. <strong>Composition</strong> is the art of arranging elements to create a harmonious design. It determines how elements like images, text, and shapes relate to each other and contribute to the design in an artistic way. While layout mostly focuses on the placement of the elements, composition also considers the artistic impact that this placement will have in the overall design.</p></li>
+<li><p>Composition is closely related to concepts of balance. <strong>Balance</strong> is how the visual weight is distributed within a composition. Designers aim to create an equilibrium through symmetrical or asymmetrical arrangements. A balanced design feels harmonious.</p></li>
+<li><p><strong>Hierarchy</strong> is another important concept that you should know. Hierarchy establishes the order of importance of the elements in a design. It’s about making sure the most important information is noticed first. You can implement a visual hierarchy with size, color, contrast, alignment, white space, and even typography.</p></li>
+<li><p>To create clear distinctions between the elements, you can use contrast. <strong>Contrast</strong> is helpful for guiding user attention to what you want to emphasize. You can do this through variations in color, size, shape, texture, or any other visual characteristic. Strong contrast is also helpful for improving readability.</p></li>
+<li><p>Another helpful term is white space. <strong>White Space</strong>, also known as “negative space”, is the empty space in a design. It’s the area surrounding the elements. You might be surprised to know that white space is not necessarily white. Actually, it can be space in any color or texture. Its purpose is to improve the readability and enhance the visual hierarchy of a design.</p></li>
+</ul>
+<p>These are general design concepts that you will find very often, but you may also find design terms that are more closely related to software development.</p>
+<ul class="simple">
+<li><p>The <strong>user interface</strong>, also known as UI, is how humans interact with computers. A user interface includes the visual and interactive elements that users can see on their screens, like icons, images, text, menus, links, and buttons.</p></li>
+<li><p>The <strong>user experience</strong>, also known as UX, is about how users feel when using a product or service. An application with a well-designed user experience is intuitive, easy to use, efficient, accessible, and enjoyable. The user interface plays a key role in making the user experience as easy and enjoyable as possible, so they are very closely related.</p></li>
+</ul>
+<p>These are some of the common terms that you should know to communicate with designers. With this knowledge, now you can take a more active role in the design process.</p>
+</section>
+<section id="how-do-you-create-good-background-and-foreground-contrast-in-your-designs">
+<h2>1.2. How do you create good background and foreground contrast in your designs?<a class="headerlink" href="#how-do-you-create-good-background-and-foreground-contrast-in-your-designs" title="Link to this heading">#</a></h2>
+<p>First, you may need to familiarize yourself with contrast. Contrast is the difference between two colors - or how easy it is to tell them apart.</p>
+<p>Colors with a higher contrast will be more visually distinct, whereas colors with a lower contrast will be more visually similar. For example, black and white have a very high contrast ratio. Whereas light blue and light purple have less of a contrast.</p>
+<p><img alt="Contrast_example" src="../../_images/css_2_1_contrast.svg" /></p>
+<p>Of course, in these examples the distinction might be made clearer because of the layout. But what about applying these colors to text? You can have the high contrast black text on a white background. And the low contrast purple text on a blue background.</p>
+<div style="background:white;color:black;">
+    <p>This is some example test written on a high contrast background. </p>
+</div>
+<div style="background:lightblue;color:#ff8bff;">
+    <p>This is some example test written on a low contrast background. </p>
+</div>
+<p>But how do you determine what is a “good enough” contrast? You can’t base it solely on how the text looks to you, as every user will have a different experience. Thankfully, the <strong>Web Content Accessibility Guidelines</strong>, or WCAG, provide a standard for this:</p>
+<ul class="simple">
+<li><p>Text with a contrast ratio of <strong>4.5:1</strong> is considered the AA standard, which is the bare minimum you should follow to be accessible to most users.</p></li>
+<li><p>Text with a contrast ratio of <strong>7:1</strong> is considered the AAA standard, and ensures the best level of accessibility.</p></li>
+</ul>
+<p>There are a number of websites that can check the contrast ratio between two colors, but most browsers will allow you to do this directly in the developer tools on your website.</p>
+<p>Let’s open the developer tools and inspect the text elements of the example site.</p>
+<p>The black text on a white background has a contrast ratio of 21:1, which more than meets the AAA standard. The purple text on a blue background, however, has a contrast ratio of 1.48:1, which does not even meet the AA standard.</p>
+<p>How can you fix this? Well, there are three aspects that impact the contrast ratio.</p>
+<ol class="arabic">
+<li><p>The first is the <strong>hue</strong>, which represents the general color type, like red, blue, orange. Let’s shift to a hue that is further away from blue. In this case, let’s use red.</p></li>
+<li><p>Unfortunately, this change only brought the contrast ratio to 1.49:1, which means you need to change the <strong>saturation</strong>, or the “amount” of color present. Let’s increase the amount of red in the text. That brings us much closer to the goal, with a 3.54:1 contrast ratio.</p></li>
+<li><p>However, you can potentially get even closer by changing the last value, which is <strong>lightness</strong>. Lightness represents how much white is present in the color.</p>
+<p>Let’s decrease the lightness of the red. Now there is a much darker red against the light blue background, which brings the contrast ratio to 10.34:1.</p>
+</li>
+</ol>
+<p>You could continue to adjust the colors to find the balance between the visual effect you want and an accessible contrast ratio. But it is important to remember that accessibility should always take precedence.</p>
+</section>
+<section id="what-is-the-importance-of-good-visual-hierarchy-in-design">
+<h2>1.3. What is the importance of good visual hierarchy in design?<a class="headerlink" href="#what-is-the-importance-of-good-visual-hierarchy-in-design" title="Link to this heading">#</a></h2>
+<p>Visual hierarchy refers to the way you layout and display the content of your page to guide the viewer’s attention.</p>
+<p>A strong hierarchy can provide a clear path for the eye to follow, ensuring that the information you convey is consumed in the order that you intended.</p>
+<p>Let’s consider a basic page layout in which the HTML for the page is semantically correct, but the styling applied does not create a strong visual hierarchy.</p>
+<p>If the font size isn’t distinct, there is no visible indication of the document flow, although things are separated by headings.</p>
+<p>To create a visual hierarchy, you should apply different font sizes to the heading tiers. You could also use something like a “callout box” to highlight a specific section.</p>
+<p>Visual hierarchy can also help increase your user conversion. For example, you can take advantage of the callout box to further draw attention to a Call to Action (CTA) button.</p>
+<p>With the CTA button being visually tied to the work history section, it guides the user to the vital information and the action you want them to take based on that information.</p>
+<p>Finally, your visual hierarchy can be important for conveying other components, like a navigation bar or a footer.</p>
+<p>This makes it easier for your users to find the essential information that they may be looking for.</p>
+</section>
+<section id="how-does-scale-work-in-design">
+<h2>1.4. How does scale work in design?<a class="headerlink" href="#how-does-scale-work-in-design" title="Link to this heading">#</a></h2>
+<p>The “scale” of something refers to its size.</p>
+<p>When you’re looking at scaling in your web design, you’re looking at the size relationships between different elements, and how these elements might adapt to different screen sizes.</p>
+<p>Using the correct scale for your elements plays an important role in visual hierarchy. Larger elements will draw more attention, which can guide your users through the content in the way that you want.</p>
+<p>For example, the visual separation between a heading and a paragraph draws your reader’s attention, but the scale should be appropriate to get an eye-catching text that pulls your reader to that section.</p>
+<p>Scale doesn’t apply just to text, though. It’s also important for images. And while the scale of a banner image might make sense for a desktop layout, it might be too large on a mobile layout.</p>
+<p>By scaling an image down to a more appropriate ratio, you can keep the visual impact while ensuring the information on the site is visible.</p>
+<p>Scale is also important for interactivity, and the ability to actually use your website. If the text in a navigation bar is not at an appropriate scale, mobile phone users will have a hard time tapping on the links.</p>
+<p>And if you scale it appropriately, you end up with links that are not only easier to read, but easier to click on for your mobile users.</p>
+</section>
+<section id="how-does-alignment-work-in-design">
+<h2>1.5. How does alignment work in design?<a class="headerlink" href="#how-does-alignment-work-in-design" title="Link to this heading">#</a></h2>
+<p>When you are designing web pages, it is important to create cohesive and visually appealing designs. One way to achieve this is through the use of alignment.</p>
+<p>Alignment is the process of arranging text and images in a way that creates a visual connection between elements. It helps to create a sense of order and organization on the page, making it easier for users to navigate and understand the content.</p>
+<p>There are several types of alignment you can use, but the basic ones are:</p>
+<ul class="simple">
+<li><p>left alignment</p></li>
+<li><p>center alignment</p></li>
+<li><p>right alignment</p></li>
+<li><p>justified alignment</p></li>
+<li><p>vertical alignment</p></li>
+</ul>
+<p>Left, right, and center alignments are all subtypes of horizontal alignment, while vertical alignment is used to align elements along a vertical axis.</p>
+<p>Let’s take a closer look at each type of alignment and how you can use them in your designs.</p>
+<ol class="arabic">
+<li><p><strong>Left alignment</strong> is commonly used with text where each element is aligned to the left margin. Aligning all of the headings and paragraphs on a web page to the left margin makes it easier for the user to read and follow the content.</p></li>
+<li><p>The opposite of left alignment is <strong>right alignment</strong>, where each element is aligned to the right margin. This is often used on websites to display additional content like promotional banners or advertisements.</p>
+<p>For example, an ad that is aligned to the right margin makes it stand out from the rest of the content on the page but doesn’t distract the user from the main content.</p>
+</li>
+<li><p><strong>Center alignment</strong> is where elements are centered on the page. This is often used for headings, logos, and other important elements that you want to draw attention to.</p></li>
+<li><p><strong>Justified alignment</strong> is when text is aligned to both the left and right margins. This is typically used for descriptive passages or articles, and creates a clean and professional look.</p></li>
+<li><p>The last type of alignment is <strong>vertical alignment</strong>, which is used to align elements along a vertical axis.</p>
+<p>Vertical alignment can be used, for example, for a contact form on a website. Aligning all of the form inputs like the name, email, and message fields along a vertical axis makes it easier for the user to fill out the form.</p>
+</li>
+</ol>
+<p>By using different types of alignment, you can create a sense of order and organization on the page that makes it easier for users to navigate and understand the content.</p>
+</section>
+<section id="what-is-the-importance-of-whitespace-in-design">
+<h2>1.6. What is the importance of whitespace in design?<a class="headerlink" href="#what-is-the-importance-of-whitespace-in-design" title="Link to this heading">#</a></h2>
+<p>White space refers to any type of space around elements like images, text, and buttons. White space is important in design because it helps to create a balance between the elements on the page.</p>
+<p>For example, let’s consider a call-to-action (CTA) button. CTAs are used to encourage users to take a specific action like signing up for a newsletter or making a purchase. By using white space effectively, we can help to make a CTA button more prominent and encourage users to click on it.</p>
+<p>Now let’s take a closer look at the different types of white space:</p>
+<ol class="arabic">
+<li><p><strong>Macro white space</strong> is the space between larger elements like images, text blocks, and buttons.</p>
+<ul class="simple">
+<li><p><strong>Active white</strong> space is the space that is intentionally created to help guide the user’s eye and draw attention to certain elements on the page.</p></li>
+<li><p>In contrast to active white space, there is also passive white space. <strong>Passive white space</strong> is the space that is left over after all the elements on a page have been placed.</p></li>
+</ul>
+</li>
+<li><p>Another type of whitespace would be <strong>micro white space</strong>. This is the space between individual characters in a line of text.</p>
+<p>Micro white space is important because it helps to improve readability and legibility, making it easier for users to scan and understand the content.</p>
+</li>
+</ol>
+<p>When designing your web pages, you always want to be mindful of the <strong>law of proximity</strong>:</p>
+<blockquote>
+<div><p>Elements that are close together are perceived as being related, while elements that are far apart are perceived as being unrelated.</p>
+</div></blockquote>
+<p>You can use white space to help group related elements together and help navigate users through the content on your page.</p>
+</section>
+<section id="what-are-best-practices-for-working-with-images-in-your-designs">
+<h2>1.7. What are best practices for working with images in your designs?<a class="headerlink" href="#what-are-best-practices-for-working-with-images-in-your-designs" title="Link to this heading">#</a></h2>
+<p>Adding images to your websites is a great way to engage your users and increase the visual appeal of your site. But there are a few things to consider when working with images in your designs.</p>
+<ol class="arabic">
+<li><p>The first thing to consider is creating <strong>responsive images</strong>. Responsive images are images that scale to fit the size of the screen they are being viewed on. This is important because it ensures that your images look good on all devices, from desktops to mobile phones.</p></li>
+<li><p>Another thing to consider is the <strong>resolution for images</strong>. Higher quality images with better resolution have more pixels per inch. Pixels are small squares that make up an image.</p>
+<p>Pixels per inch, or PPI, is the number of pixels in one inch of an image. The higher the PPI, the better the image quality.</p>
+<p>You want to make sure that your images are high quality and look good on all devices. This means that you should use high resolution images that are optimized for the web.</p>
+</li>
+<li><p>Another thing to consider is the <strong>size of your images</strong> and how they fit within the spaces in the layout. You want to make sure that your images are the right size and are not too large or too small.</p>
+<p>Using large images that are meant to fit in smaller spaces in the design can slow down your website and make it harder for users to load your site. You want to make sure that your images are the right size and are optimized for the web.</p>
+</li>
+<li><p>When it comes to <strong>image placement</strong>, you want to think about balance, hierarchy, and alignment to help ensure your images are optimized for the web.</p>
+<ul class="simple">
+<li><p><strong>Balance</strong> is the distribution of visual weight in a design. You want to make sure there is a good balance between text and images on the site so it creates a harmonious design.</p></li>
+<li><p><strong>Hierarchy</strong> is the order in which elements are viewed on a page. You want to make sure that images that align with important content are placed higher than images that are less important.</p></li>
+<li><p><strong>Alignment</strong> is the placement of elements in relation to each other. You want to make sure that your images are aligned with the text and other elements on your site so that it creates a cohesive design.</p></li>
+</ul>
+</li>
+<li><p>The last thing to consider is <strong>accessibility for images</strong>. You want to make sure that your images are accessible to all users, including those with visual impairments. This means that you should use alt text for your images so that screen readers can read the text to users who are visually impaired.</p></li>
+</ol>
+</section>
+<section id="what-is-progressive-enhancement">
+<h2>1.8. What is progressive enhancement?<a class="headerlink" href="#what-is-progressive-enhancement" title="Link to this heading">#</a></h2>
+<p>Progressive enhancement is a design approach that ensures all users, regardless of browser or device, can access the essential content and functionality of an application.</p>
+<p>It focuses on delivering a core experience that works for everyone, while offering extra features and improvements to users with more advanced browsers or better internet connections.</p>
+<p>The progressive enhancement approach lives by these core principles:</p>
+<ul class="simple">
+<li><p>All core content and basic functionality should be accessible on all browsers</p></li>
+<li><p>All advanced layouts should be provided through external CSS stylesheets</p></li>
+<li><p>All advanced functionality should be provided through external JavaScript files</p></li>
+<li><p>A user’s browser preferences should be respected</p></li>
+</ul>
+<p>Using a progressive enhancement approach makes your applications more accessible because all core content and functionality should not be blocked in unsupported environments.</p>
+<p>In terms of speed, a progressive enhancement approach can also help improve the performance of your applications.</p>
+<p>Those users that are working with slower internet connection speeds will still be able to access the content because the browser will download the necessary resources first.</p>
+<p>When it comes to SEO, progressive enhancement can also help improve the visibility of your applications.</p>
+<p>Search engines will be able to crawl the content of your applications because the core content is available in the initial HTML response.</p>
+<p>While some have criticized this approach deeming that it is not always realistic for applications that rely heavily on JavaScript for their functionality, it is still a good practice to follow when building applications.</p>
+</div></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./css/2_design"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../2_design.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">2. Design Summary</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">2. User-Centered Design</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-common-design-terms-to-help-you-communicate-with-designers">1.1. What are common design terms to help you communicate with designers?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-create-good-background-and-foreground-contrast-in-your-designs">1.2. How do you create good background and foreground contrast in your designs?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-importance-of-good-visual-hierarchy-in-design">1.3. What is the importance of good visual hierarchy in design?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-scale-work-in-design">1.4. How does scale work in design?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-alignment-work-in-design">1.5. How does alignment work in design?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-importance-of-whitespace-in-design">1.6. What is the importance of whitespace in design?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-best-practices-for-working-with-images-in-your-designs">1.7. What are best practices for working with images in your designs?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-progressive-enhancement">1.8. What is progressive enhancement?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mikaela González Pérez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

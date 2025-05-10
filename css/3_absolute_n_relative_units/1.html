@@ -1,0 +1,815 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Working with Relative and Absolute Units &#8212; My Front End Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'css/3_absolute_n_relative_units/1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Examples" href="2.html" />
+    <link rel="prev" title="1. CSS Relative and Absolute Units Summary" href="../3_absolute_n_relative_units.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt="My Front End Notes - Home"/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="My Front End Notes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to my web development notes
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">HTML</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/1_basic_html.html">1. Basic HTML Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/1.html">1. What is HTML?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/2.html">2. HTML Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/3.html">3. Working with Media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/4.html">4. Working with Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/2_semantic_html.html">2. Semantic HTML Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/2_semantic_html/1.html">2. Semantic HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/2_semantic_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/3_forms_and_tables_html.html">3. HTML Tables and Forms Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/1.html">1. Working with Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/2.html">2. Working with Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/3.html">3. Working with HTML Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/4_accessibility.html">4. HTML Accessibility Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/1.html">1. Importance of Accessibility and Good HTML Structure - I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/2.html">1. Importance of Accessibility and Good HTML Structure - II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/3.html">1. Importance of Accessibility and Good HTML Structure - III</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/4.html">1. Importance of Accessibility and Good HTML Structure - IV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/5.html">1. Importance of Accessibility and Good HTML Structure - V</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1_basic_css.html">1. Basic CSS Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/1.html">1. What Is CSS?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/2.html">2. CSS Specificity, the Cascade Algorithm and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/3.html">3. Styling Lists and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/4.html">4. Working with Backgrounds and Borders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2_design.html">2. Design Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2_design/1.html">1. User Interface Design Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_design/2.html">2. User-Centered Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_design/3.html">3. Common Design Tools</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../3_absolute_n_relative_units.html">1. CSS Relative and Absolute Units Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1. Working  with Relative and Absolute Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4_pseudo_classes_n_elements.html">1. CSS Pseudo-classes Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4_pseudo_classes_n_elements/1.html">1. Working with Pseudo-Classes and Pseudo-Elements in CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_pseudo_classes_n_elements/2.html">Examples</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/1_variables_n_strings.html">1. Variables and Strings Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/1.html">1. Introduction to JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/2.html">2. Working with Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/3.html">3. Working with Strings in JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/4.html">4. Working with Common String Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers.html">2. Booleans and Numbers Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers/1.html">1. Working with Numbers, Booleans and the Math Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers/2.html">2. Working with Numbers and Common Number Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers/3.html">3. Understanding Comparisons and Conditional Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/3_functions.html">3. Functions Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/3_functions/1.html">1. Working with Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/3_functions/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/4_arrays.html">4. Arrays Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/4_functions/1.html">1. Working with Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/4_functions/2.html">2. Working with Common Array Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/4_functions/3.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/5_objects.html">5. Objects Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/5_objects/1.html">1. Working with Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/5_objects/2.html">Examples</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/css/3_absolute_n_relative_units/1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1. Working  with Relative and Absolute Units</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-absolute-units-in-css-and-when-should-you-use-them">1.1. What are absolute units in CSS and when should you use them?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-percentages-in-css-and-when-should-you-use-them">1.2. What are percentages in CSS and when should you use them?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-ems-and-rems-in-css-and-when-should-you-use-them">1.3. What are <code class="docutils literal notranslate"><span class="pre">em</span></code>s and <code class="docutils literal notranslate"><span class="pre">rem</span></code>s in CSS and when should you use them?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-vh-and-vw-units-and-when-should-you-use-them">1.3. What are <code class="docutils literal notranslate"><span class="pre">vh</span></code> and <code class="docutils literal notranslate"><span class="pre">vw</span></code> units and when should you use them?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-calc-function-and-how-does-it-work">1.4. What is the <code class="docutils literal notranslate"><span class="pre">calc()</span></code> function and how does it work?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div style="text-align: justify">
+<section class="tex2jax_ignore mathjax_ignore" id="working-with-relative-and-absolute-units">
+<h1>1. Working  with Relative and Absolute Units<a class="headerlink" href="#working-with-relative-and-absolute-units" title="Link to this heading">#</a></h1>
+<section id="what-are-absolute-units-in-css-and-when-should-you-use-them">
+<h2>1.1. What are absolute units in CSS and when should you use them?<a class="headerlink" href="#what-are-absolute-units-in-css-and-when-should-you-use-them" title="Link to this heading">#</a></h2>
+<p>As you design your pages, you will work with different properties like widths, heights, padding, margins, and more. When you define these properties, you will need to specify the length units of measurement you want to use.</p>
+<p>There are two types of units you can use to define these properties: relative units and absolute units. In this lecture, we will just focus on absolute units.</p>
+<ul class="simple">
+<li><p>Absolute length units are of fixed length and are not relative to anything else.</p></li>
+<li><p>Relative means that the length is relative to something else, like the size of the screen or the size of the parent element.</p></li>
+</ul>
+<p>Let’s start with some absolute units:</p>
+<ol class="arabic">
+<li><p>The most common absolute unit is the <strong>pixel (<code class="docutils literal notranslate"><span class="pre">px</span></code>)</strong>. Pixels are a fixed-size unit of measurement in CSS, providing precise control over dimensions. This means that 1px is always equal to 1/96th of an inch.</p>
+<p>It is important to note that while 1px is standardized as 1/96th of an inch for the purposes of CSS layout, the actual physical size of a pixel may differ depending on the display.</p>
+<p>Let’s take a look at an example of using pixels to set the width and height for a box:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">box</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, we have a red box with a width and height set to <code class="docutils literal notranslate"><span class="pre">100px</span></code>. The dimensions for this box will stay the same regardless of changes pertaining to the screen size.</p>
+<p>So, if you are on a device with a small screen, the box will still be <code class="docutils literal notranslate"><span class="pre">100px</span></code> wide. If you are on a large desktop screen, the box will still be <code class="docutils literal notranslate"><span class="pre">100px</span></code> wide.</p>
+<p>So, when should you use absolute units like pixels? Well, it depends on the situation. But generally you will use pixels where you need precise control over element dimensions, spacing, and layout. Sometimes you might use pixels for margins, padding, and borders.</p>
+<p>Here is an example of using pixels to set the margin for a box:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">box</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Remember that margin is the space outside of the box. So, in this example, the box will have a margin of <code class="docutils literal notranslate"><span class="pre">10px</span></code> on all sides.</p>
+</li>
+</ol>
+<p>Other types of absolute units include the following:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">in</span></code> (inches) unit, which is equal to 96px</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">cm</span></code> (centimeters) unit, which is equal to 25.2/64 of an inch</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">mm</span></code> (millimeters) unit, which is equal to 1/10th of a centimeter</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">q</span></code> (quarter-millimeters) unit, which is equal to 1/40th of a centimeter</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">pc</span></code> (picas) unit, which is equal to 1/6th of an inch</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">pt</span></code> (points) unit, which is equal to 1/72th of an inch</p></li>
+</ul>
+<p>Most of these units will be used for print and not for screens.</p>
+<p>While the most common unit you will use is pixels, it is important to know that the other absolute units exist.</p>
+</section>
+<section id="what-are-percentages-in-css-and-when-should-you-use-them">
+<h2>1.2. What are percentages in CSS and when should you use them?<a class="headerlink" href="#what-are-percentages-in-css-and-when-should-you-use-them" title="Link to this heading">#</a></h2>
+<p>Percentages in CSS are relative units that allow you to define sizes, dimensions, and other properties as a proportion of their parent element. When you use a percentage value, you’re essentially saying, “Make this X% of its container.”</p>
+<p>For example, if you set <code class="docutils literal notranslate"><span class="pre">width:</span> <span class="pre">50%</span></code> on an element, it will occupy half the width of its parent container. This makes percentages incredibly useful for creating responsive designs that adapt to different screen sizes.</p>
+<p>Percentages are ideal for creating fluid layouts that adjust to various screen sizes. For instance, setting a container to <code class="docutils literal notranslate"><span class="pre">width:</span> <span class="pre">80%</span></code> ensures it takes up 80% of its parent’s width, regardless of the device.</p>
+<p>Using percentages for flexible images is another common practice. By applying <code class="docutils literal notranslate"><span class="pre">max-width:</span> <span class="pre">100%</span></code> to images, you allow them to scale down on smaller screens while maintaining their aspect ratio.</p>
+<p>While less common, percentages can also be used for font sizes to create scalable typography. For example, <code class="docutils literal notranslate"><span class="pre">font-size:</span> <span class="pre">120%</span></code> would make the text 20% larger than its parent’s font size.</p>
+<p>Percentages can be particularly handy for vertical centering. Here’s an example of how you might use percentages with the transform property to center an element vertically:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">center-me</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">absolute</span><span class="p">;</span>
+<span class="w">  </span><span class="k">top</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">  </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">translateY</span><span class="p">(</span><span class="mi">-50</span><span class="kt">%</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This code positions the element 50% from the top of its container, then uses transform to move it back up by half its own height, effectively centering it vertically.</p>
+<p>Remember, percentages are always relative to something. For horizontal properties like <code class="docutils literal notranslate"><span class="pre">width</span></code>, they’re relative to the parent’s width. For vertical properties like <code class="docutils literal notranslate"><span class="pre">height</span></code>, they’re usually relative to the parent’s height (if specified).</p>
+<p>However, be cautious when nesting elements with percentage-based dimensions, as this can lead to unexpected results. Also, keep in mind that percentage-based heights can be tricky if the parent doesn’t have a defined height.</p>
+<p>In summary, percentages in CSS are powerful tools for creating flexible, responsive designs. Use them when you want elements to scale proportionally to their containers or when you need layouts that adapt seamlessly to different screen sizes.</p>
+</section>
+<section id="what-are-ems-and-rems-in-css-and-when-should-you-use-them">
+<h2>1.3. What are <code class="docutils literal notranslate"><span class="pre">em</span></code>s and <code class="docutils literal notranslate"><span class="pre">rem</span></code>s in CSS and when should you use them?<a class="headerlink" href="#what-are-ems-and-rems-in-css-and-when-should-you-use-them" title="Link to this heading">#</a></h2>
+<p>In the previous lecture, we learned about absolute length units like pixels. While absolute units can be helpful in certain situations, there will be times when you want to use relative units.</p>
+<p>In this lecture, we will learn about two relative units: <code class="docutils literal notranslate"><span class="pre">em</span></code>s and <code class="docutils literal notranslate"><span class="pre">rem</span></code>s.</p>
+<ol class="arabic">
+<li><p><code class="docutils literal notranslate"><span class="pre">em</span></code> units are relative to the font size of the element. If you are using ems for the <code class="docutils literal notranslate"><span class="pre">font-size</span></code> property, the size of the text will be relative to the font size of the parent element.</p>
+<p>To better understand how this works, let’s take a look at an example:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;para&quot;</span><span class="p">&gt;</span>I am a paragraph element<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;blue-box&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>For the HTML, we have a paragraph and <code class="docutils literal notranslate"><span class="pre">div</span></code> element. The paragraph element has a class of <code class="docutils literal notranslate"><span class="pre">para</span></code>, and the <code class="docutils literal notranslate"><span class="pre">div</span></code> element has a class of <code class="docutils literal notranslate"><span class="pre">blue-box</span></code>.</p>
+<p>Here is the accompanying CSS:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">para</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">em</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">blue-box</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Here is how it would look like:</p>
+ <p class="para" style="font-size: 20px; margin-bottom: 1.5em; border: 2px solid red;">I am a paragraph element</p>
+ <div class="blue-box" style="background-color: blue; color: white; padding: 10px;"></div>
+ <br>
+<p>For the <code class="docutils literal notranslate"><span class="pre">para</span></code> class, we set the <code class="docutils literal notranslate"><span class="pre">font-size</span></code> to <code class="docutils literal notranslate"><span class="pre">20px</span></code> and the <code class="docutils literal notranslate"><span class="pre">margin-bottom</span></code> to <code class="docutils literal notranslate"><span class="pre">1.5em</span></code>. This means that the margin will be 1.5 times the font size of the paragraph element. <code class="docutils literal notranslate"><span class="pre">1.5em</span></code> results in 30 pixels of margin at the bottom of the paragraph. We have also set a <code class="docutils literal notranslate"><span class="pre">border</span></code> of <code class="docutils literal notranslate"><span class="pre">2px</span> <span class="pre">solid</span> <span class="pre">red</span></code> so you can see the margins better.</p>
+<p>For the <code class="docutils literal notranslate"><span class="pre">blue-box</span></code> class, we set the background color to <code class="docutils literal notranslate"><span class="pre">blue</span></code>, the text color to <code class="docutils literal notranslate"><span class="pre">white</span></code>, and the <code class="docutils literal notranslate"><span class="pre">padding</span></code> to <code class="docutils literal notranslate"><span class="pre">10px</span></code> on all four sides.</p>
+<p>From the example, there’ll be a clear space between the bottom of the paragraph element and the blue box.</p>
+<ul>
+<li><p>So what happens if we remove the <code class="docutils literal notranslate"><span class="pre">font-size</span></code> property from the <code class="docutils literal notranslate"><span class="pre">para</span></code> class?</p>
+<p>Well, the bottom margin will be relative to the font size of the parent element. In this case, the parent element is the body element, which has a default font size of <code class="docutils literal notranslate"><span class="pre">16px</span></code>.</p>
+</li>
+</ul>
+<p>Good use cases for <code class="docutils literal notranslate"><span class="pre">em</span></code>s would be when you are working with modular components like buttons or cards. By using <code class="docutils literal notranslate"><span class="pre">em</span></code> units, you can ensure that all aspects of the component (such as padding, margin, and borders) scale proportionally with the font size, keeping consistent proportions.</p>
+</li>
+</ol>
+<p>So, up until this point, we have been setting the font size for an element using pixels. But that does present some challenges for users:</p>
+<p>Inside your browser settings, you can control the default font size.</p>
+<p>For those with visual impairments, they may increase the font size to make it easier to read. But if you are setting pixels for the font sizes in your web designs, the text will not scale proportionally with the rest of the content.</p>
+<ol class="arabic" start="2">
+<li><p>One way to address this issue is to use <code class="docutils literal notranslate"><span class="pre">rem</span></code> units for typography. A <code class="docutils literal notranslate"><span class="pre">rem</span></code> unit is relative to the font size of the root element, which is the <code class="docutils literal notranslate"><span class="pre">html</span></code> element.</p>
+<p>By default, the font size of the <code class="docutils literal notranslate"><span class="pre">html</span></code> element is <code class="docutils literal notranslate"><span class="pre">16px</span></code>. If the user increases the font size in their browser settings, the font size of the <code class="docutils literal notranslate"><span class="pre">html</span></code> element will increase, and all rem units will scale proportionally.</p>
+<p>Here is an example of using the <code class="docutils literal notranslate"><span class="pre">rem</span></code> unit for the font size instead of pixels:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">para</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">    </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">em</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>By setting the font size to <code class="docutils literal notranslate"><span class="pre">1.2rem</span></code>, the font size of the paragraph element will be 1.2 times the font size of the root element. If the user hasn’t changed the default font size, the font size of the paragraph element will be <code class="docutils literal notranslate"><span class="pre">19.2px</span></code> because it is 1.2 times <code class="docutils literal notranslate"><span class="pre">16px</span></code>.</p>
+<p>So when should you use <code class="docutils literal notranslate"><span class="pre">rem</span></code> units? <code class="docutils literal notranslate"><span class="pre">rem</span></code> units are preferred over pixels for typography because they scale proportionally with the user’s browser settings. This makes your content more accessible to users with visual impairments.</p>
+<p><code class="docutils literal notranslate"><span class="pre">rem</span></code> units can also help maintain consistent spacing and layout across different elements.</p>
+</li>
+</ol>
+</section>
+<section id="what-are-vh-and-vw-units-and-when-should-you-use-them">
+<h2>1.3. What are <code class="docutils literal notranslate"><span class="pre">vh</span></code> and <code class="docutils literal notranslate"><span class="pre">vw</span></code> units and when should you use them?<a class="headerlink" href="#what-are-vh-and-vw-units-and-when-should-you-use-them" title="Link to this heading">#</a></h2>
+<p>In CSS, <code class="docutils literal notranslate"><span class="pre">vh</span></code> and <code class="docutils literal notranslate"><span class="pre">vw</span></code> are viewport-relative units that allow you to size elements based on the dimensions of the browser window. These units are particularly useful for creating responsive designs that adapt to different screen sizes. Remember that <strong>the viewport</strong> is the region of the screen used to display a portion of the total image shown and is everything that is currently visible.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vh</span></code> stands for <strong>“viewport height”</strong> and <code class="docutils literal notranslate"><span class="pre">1vh</span></code> is equal to 1% of the viewport’s height.</p></li>
+<li><p>Similarly, <code class="docutils literal notranslate"><span class="pre">vw</span></code> stands for <strong>“viewport width”</strong> and <code class="docutils literal notranslate"><span class="pre">1vw</span></code> is equal to 1% of the viewport’s width.</p></li>
+</ul>
+<p>This means that if you set an element’s height to <code class="docutils literal notranslate"><span class="pre">100vh</span></code>, it will occupy the full height of the viewport, regardless of the actual pixel dimensions of the device.</p>
+<p>These units are especially handy when you want to create full-screen layouts or elements that maintain a specific proportion of the screen.</p>
+<p>For example, you might want to use them to create a hero section that always fills the entire screen:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">hero</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">vh</span><span class="p">;</span>
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">vw</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This CSS ensures that the hero section will always be exactly the size of the viewport, regardless of the device’s screen size.</p>
+<p><code class="docutils literal notranslate"><span class="pre">vh</span></code> and <code class="docutils literal notranslate"><span class="pre">vw</span></code> units can also be used for typography to create responsive text sizes. For instance:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">vw</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This will set the font size of <code class="docutils literal notranslate"><span class="pre">h1</span></code> elements to 5% of the viewport width, allowing the text to scale smoothly with the browser window size.</p>
+<p>One of the advantages of <code class="docutils literal notranslate"><span class="pre">vh</span></code> and <code class="docutils literal notranslate"><span class="pre">vw</span></code> units is that they respond to changes in the viewport size in real-time. This means that if a user resizes their browser window, elements sized with these units will adjust accordingly without needing to reload the page. However, it’s important to use these units judiciously. Setting font sizes solely with <code class="docutils literal notranslate"><span class="pre">vw</span></code> units, for example, can lead to text becoming too small on narrow screens or too large on wide screens.</p>
+<p>Another consideration is that on mobile devices, the viewport height can change when the browser’s address bar appears or disappears, which can cause unexpected layout shifts if you’re using <code class="docutils literal notranslate"><span class="pre">vh</span></code> units extensively.</p>
+<p>In summary, <code class="docutils literal notranslate"><span class="pre">vh</span></code> and <code class="docutils literal notranslate"><span class="pre">vw</span></code> units are powerful tools for creating responsive layouts and elements that adapt to the viewport size. They’re particularly useful for full-screen sections, maintaining aspect ratios and creating smoothly scaling designs. However, they should be used thoughtfully and often in combination with other CSS techniques to ensure the best user experience across all devices.</p>
+</section>
+<section id="what-is-the-calc-function-and-how-does-it-work">
+<h2>1.4. What is the <code class="docutils literal notranslate"><span class="pre">calc()</span></code> function and how does it work?<a class="headerlink" href="#what-is-the-calc-function-and-how-does-it-work" title="Link to this heading">#</a></h2>
+<p>With the <code class="docutils literal notranslate"><span class="pre">calc()</span></code> CSS function, you can perform calculations directly within your stylesheets to determine property values dynamically. This means that you can create flexible and responsive user interfaces by calculating dimensions based on the viewport size or other elements.</p>
+<p>A function is a block of code that performs a specific task. Some functions are already defined in CSS, so you can use them directly and pass any necessary values to them to customize how their tasks will be performed.</p>
+<p>In the world of programming, when we run the task performed by a function, we say that we “call” the function. The values that we pass into the function are known as arguments.</p>
+<p>Like you can see in the code below, to call a function, you write its name followed by the arguments within parentheses, separated by commas. There shouldn’t be a space between the name of the function and the opening parenthesis:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">function</span><span class="o">(</span><span class="nt">argument1</span><span class="o">,</span><span class="w"> </span><span class="nt">argument2</span><span class="o">,</span><span class="w"> </span><span class="nt">argument3</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>A function may only need one value to know what to do. In that case, it will only take one argument. That’s what happens with the <code class="docutils literal notranslate"><span class="pre">calc()</span></code> function. It takes one argument because it needs to know what to calculate.</p>
+<p>For this, you pass something called an expression as an argument. An expression is a combination of values and operators that produces a result.</p>
+<p>This is how you can call the <code class="docutils literal notranslate"><span class="pre">calc()</span></code> function. You write the name <code class="docutils literal notranslate"><span class="pre">calc</span></code>, followed by parentheses, and within the parentheses, you write the expression:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">calc</span><span class="o">(</span><span class="nt">expression</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>The expression is evaluated to calculate the final result. “Evaluated” just means that the values and operators are converted into a single value behind the scenes. The result is assigned to the CSS property where the calculation is being made.</p>
+<p>You can perform calculations on values that represent length, angle, time, percentages, numbers, and colors. You can also combine different units like pixels, percentages, and ems.</p>
+<p>With numbers, all the values in the expression, also called the operands, must have their corresponding units, like <code class="docutils literal notranslate"><span class="pre">px</span></code>, <code class="docutils literal notranslate"><span class="pre">em</span></code>, and percentage (<code class="docutils literal notranslate"><span class="pre">%</span></code>). Depending on the operator, different operands may have different units.</p>
+<p>You can use the addition (<code class="docutils literal notranslate"><span class="pre">+</span></code>), subtraction (<code class="docutils literal notranslate"><span class="pre">-</span></code>), multiplication (<code class="docutils literal notranslate"><span class="pre">*</span></code>), and division (<code class="docutils literal notranslate"><span class="pre">/</span></code>) operators in the expression.</p>
+<p>If there are multiple operands and operators, <code class="docutils literal notranslate"><span class="pre">calc()</span></code> will follow the standard operator precedence rule. You can also add parentheses to establish the order of the operations if needed.</p>
+<p>In the example below, you can see a <code class="docutils literal notranslate"><span class="pre">div</span></code> with the text <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code>:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Hello, World!<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Using the CSS type selector for selecting the <code class="docutils literal notranslate"><span class="pre">div</span></code>, you can style it with white text and a dark blue background:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">div</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#1b1b32</span><span class="p">;</span>
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="nb">calc</span><span class="p">(</span><span class="mi">50</span><span class="kt">%</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>What’s new here is that the width is calculated dynamically. Notice how we are calling the <code class="docutils literal notranslate"><span class="pre">calc()</span></code> function and passing an expression as an argument. The expression has two operands with different units and one operator, the subtraction operator.</p>
+<p>Percentage is a relative unit. The value (<code class="docutils literal notranslate"><span class="pre">50%</span></code>) will be determined by the width of the parent container. Then, <code class="docutils literal notranslate"><span class="pre">20px</span></code> is subtracted from the value. The result of this expression will determine the width of the <code class="docutils literal notranslate"><span class="pre">div</span></code>.</p>
+<p>The width of the <code class="docutils literal notranslate"><span class="pre">div</span></code> is approximately half the total width of its container, and if you resize the parent container, the width will be recalculated automatically.</p>
+<p>That’s the key advantage of using <code class="docutils literal notranslate"><span class="pre">calc()</span></code>. You can determine the value of a CSS property dynamically based on different aspects of the application or viewport.</p>
+<p>The expression can also contain CSS functions and variables if you need to use them in your calculations.</p>
+<p>Great. Now that you know about the basics of the <code class="docutils literal notranslate"><span class="pre">calc()</span></code> function, let’s cover some of its best practices.</p>
+<ol class="arabic">
+<li><p>First, you must surround the addition (<code class="docutils literal notranslate"><span class="pre">+</span></code>) and subtraction (<code class="docutils literal notranslate"><span class="pre">-</span></code>) operators with whitespace.</p>
+<p>For example, the expression below would not be a valid expression because the subtraction operator is immediately before the second operand.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="w"> </span><span class="nt">incorrect</span>
+<span class="nt">calc</span><span class="o">(</span><span class="nt">100</span><span class="o">%</span><span class="w"> </span><span class="nt">-30px</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>The subtraction (<code class="docutils literal notranslate"><span class="pre">-</span></code>) operator must be surrounded by whitespace, like this. Adding the whitespace will create a valid expression.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="w"> </span><span class="nt">correct</span>
+<span class="nt">calc</span><span class="o">(</span><span class="nt">100</span><span class="o">%</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">30px</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>This is not necessary for the multiplication and division operators but it’s highly recommended.</p>
+</li>
+<li><p>You can also nest <code class="docutils literal notranslate"><span class="pre">calc()</span></code> function calls if you need to perform calculations and use those results in other calculations.</p></li>
+<li><p>Also, if you use the value zero to represent length in the expression that you pass into the <code class="docutils literal notranslate"><span class="pre">calc()</span></code> function, you must include the units. For example, this expression would not be valid:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="w"> </span><span class="nt">incorrect</span>
+<span class="nt">calc</span><span class="o">(</span><span class="nt">100</span><span class="o">%</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">0</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>You would need to add the units, like px.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="w"> </span><span class="nt">correct</span>
+<span class="nt">calc</span><span class="o">(</span><span class="nt">100</span><span class="o">%</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">0px</span><span class="o">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>You should also know that currently, if you use the multiplication or division operators, one of the operands has to be unitless. For the division operator, specifically the right operand has to be unitless. This would not be a valid expression because both operands have units (pixels). One of the operands, either 5 or 50, must be unitless:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="w"> </span><span class="nt">incorrect</span>
+<span class="nt">calc</span><span class="o">(</span><span class="nt">5px</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nt">50px</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>You would need to omit the units in one of them. Both of these alternatives would be valid:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="w"> </span><span class="nt">correct</span>
+<span class="nt">calc</span><span class="o">(</span><span class="nt">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nt">50px</span><span class="o">)</span>
+<span class="nt">calc</span><span class="o">(</span><span class="nt">5px</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nt">50</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>And this is an example with the division operator. This would not be a valid expression since they both have units:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="w"> </span><span class="nt">incorrect</span>
+<span class="nt">calc</span><span class="o">(</span><span class="nt">50</span><span class="o">%</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nt">5</span><span class="o">%)</span>
+</pre></div>
+</div>
+<p>You should remove the unit from the right operand when you have the division operator:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="w"> </span><span class="nt">correct</span>
+<span class="nt">calc</span><span class="o">(</span><span class="nt">50</span><span class="o">%</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nt">5</span><span class="o">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>The <code class="docutils literal notranslate"><span class="pre">calc()</span></code> function can be very helpful for you as a web developer. With this function, you can set property values dynamically to create flexible and responsive designs.</p>
+</div></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./css/3_absolute_n_relative_units"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../3_absolute_n_relative_units.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">1. CSS Relative and Absolute Units Summary</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Examples</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-absolute-units-in-css-and-when-should-you-use-them">1.1. What are absolute units in CSS and when should you use them?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-percentages-in-css-and-when-should-you-use-them">1.2. What are percentages in CSS and when should you use them?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-ems-and-rems-in-css-and-when-should-you-use-them">1.3. What are <code class="docutils literal notranslate"><span class="pre">em</span></code>s and <code class="docutils literal notranslate"><span class="pre">rem</span></code>s in CSS and when should you use them?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-vh-and-vw-units-and-when-should-you-use-them">1.3. What are <code class="docutils literal notranslate"><span class="pre">vh</span></code> and <code class="docutils literal notranslate"><span class="pre">vw</span></code> units and when should you use them?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-calc-function-and-how-does-it-work">1.4. What is the <code class="docutils literal notranslate"><span class="pre">calc()</span></code> function and how does it work?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mikaela González Pérez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
