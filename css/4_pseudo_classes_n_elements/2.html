@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'css/4_pseudo_classes_n_elements/2';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1. Variables and Strings Summary" href="../../javaScript/1_variables_n_strings.html" />
+    <link rel="next" title="5. Colors Summary" href="../5_colors.html" />
     <link rel="prev" title="1. Working with Pseudo-Classes and Pseudo-Elements in CSS" href="1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -207,6 +207,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/3.html">1. Importance of Accessibility and Good HTML Structure - III</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/4.html">1. Importance of Accessibility and Good HTML Structure - IV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/5.html">1. Importance of Accessibility and Good HTML Structure - V</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/6.html">Examples</a></li>
 </ul>
 </details></li>
 </ul>
@@ -226,14 +227,24 @@
 <li class="toctree-l2"><a class="reference internal" href="../2_design/3.html">3. Common Design Tools</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../3_absolute_n_relative_units.html">1. CSS Relative and Absolute Units Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3_absolute_n_relative_units.html">3. CSS Relative and Absolute Units Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../3_absolute_n_relative_units/1.html">1. Working  with Relative and Absolute Units</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3_absolute_n_relative_units/2.html">Examples</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../4_pseudo_classes_n_elements.html">1. CSS Pseudo-classes Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../4_pseudo_classes_n_elements.html">4. CSS Pseudo-classes Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1.html">1. Working with Pseudo-Classes and Pseudo-Elements in CSS</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../5_colors.html">5. Colors Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../5_colors/1.html">1. Working with color in CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../5_colors/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../6_styling_forms.html">6. Styling Forms Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../6_styling_forms/1.html">1. Best Practices for Styling Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../6_styling_forms/2.html">Examples</a></li>
 </ul>
 </details></li>
 </ul>
@@ -395,7 +406,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -411,6 +424,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-birthday-card">1. A Birthday Card</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-job-application-form">2. A Job Application Form</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -423,7 +445,231 @@ document.write(`
   <div style="text-align: justify">
 <section class="tex2jax_ignore mathjax_ignore" id="examples">
 <h1>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h1>
+<section id="a-birthday-card">
+<h2>1. A Birthday Card<a class="headerlink" href="#a-birthday-card" title="Link to this heading">#</a></h2>
+<p>html:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Greeting Card<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;styles.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;greeting-card&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Happy Birthday!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+      <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;message&quot;</span><span class="p">&gt;</span>
+        Wishing you all the happiness and joy on your special day!
+      <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-links&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#send&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;send-link&quot;</span><span class="p">&gt;</span>Send Card<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#share&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;share-link&quot;</span><span class="p">&gt;</span>Share on Social Media<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  	<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">section</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;send&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Sending your card...<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Card successfully sent to your recipient!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">section</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;share&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Sharing your card...<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Your card was shared on social media!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>styles.css:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">Arial</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">brown</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">card</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+<span class="w">  </span><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="w"> </span><span class="kc">gray</span><span class="p">;</span>
+<span class="w">  </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="k">transform</span><span class="w"> </span><span class="mf">0.3</span><span class="kt">s</span><span class="p">,</span><span class="w"> </span><span class="k">background-color</span><span class="w"> </span><span class="mf">0.3</span><span class="kt">s</span><span class="w"> </span><span class="kc">ease</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">card</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">khaki</span><span class="p">;</span>
+<span class="w">  </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">scale</span><span class="p">(</span><span class="mf">1.1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nt">h1</span><span class="p">::</span><span class="nd">before</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">content</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;🥳 &quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">h1</span><span class="p">::</span><span class="nd">after</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">content</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot; 🥳&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">message</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="kt">em</span><span class="p">;</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">gray</span><span class="p">;</span>
+<span class="w">  </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">card-links</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
+<span class="w">  </span><span class="k">justify-content</span><span class="p">:</span><span class="w"> </span><span class="kc">space-around</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">card-links</span><span class="w"> </span><span class="nt">a</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">midnightblue</span><span class="p">;</span>
+<span class="w">  </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="k">background-color</span><span class="w"> </span><span class="mf">0.3</span><span class="kt">s</span><span class="w"> </span><span class="kc">ease</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">card-links</span><span class="w"> </span><span class="nt">a</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">orangered</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">card-links</span><span class="w"> </span><span class="nt">a</span><span class="p">:</span><span class="nd">active</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">midnightblue</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">card-links</span><span class="w"> </span><span class="nt">a</span><span class="p">:</span><span class="nd">focus</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">outline</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">yellow</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">card-links</span><span class="w"> </span><span class="nt">a</span><span class="p">:</span><span class="nd">visited</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">crimson</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="nt">section</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
+<span class="w">  </span><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">whitesmoke</span><span class="p">;</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">section</span><span class="p">:</span><span class="nd">target</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">block</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">section</span><span class="p">:</span><span class="nd">hover</span><span class="p">{</span>
+<span class="w">  </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">skewX</span><span class="p">(</span><span class="mi">10</span><span class="kt">deg</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="a-job-application-form">
+<h2>2. A Job Application Form<a class="headerlink" href="#a-job-application-form" title="Link to this heading">#</a></h2>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Job Application Form<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;styles.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span><span class="p">&gt;</span>Full name:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;name&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;email&quot;</span><span class="p">&gt;</span>Contact email:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;email&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;pos&quot;</span><span class="p">&gt;</span>Position:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">select</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;position&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>CEO<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>Manager<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>Senior<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>Junior<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+
+            <span class="p">&lt;</span><span class="nt">fieldset</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;radio-group&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;full-option&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;availability&quot;</span> <span class="p">/&gt;</span>
+                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;full-option&quot;</span><span class="p">&gt;</span>Full-time<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;part-option&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;availability&quot;</span> <span class="p">/&gt;</span>
+                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;part-option&quot;</span><span class="p">&gt;</span>Part-time<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+
+            <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;message&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+
+            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">container</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="kt">vw</span><span class="p">;</span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="kc">grey</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">#</span><span class="nn">nombre</span><span class="o">,</span><span class="w"> </span><span class="p">#</span><span class="nn">email</span><span class="o">,</span><span class="w"> </span><span class="p">#</span><span class="nn">pos</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span>
+<span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">block</span><span class="p">;</span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">form</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">input</span><span class="o">,</span><span class="w"> </span><span class="nt">select</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">  </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">input</span><span class="p">:</span><span class="nd">focus</span><span class="o">,</span><span class="w"> </span><span class="nt">textarea</span><span class="p">:</span><span class="nd">focus</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">yellow</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">input</span><span class="p">:</span><span class="nd">invalid</span><span class="o">,</span><span class="w"> </span><span class="nt">select</span><span class="p">:</span><span class="nd">invalid</span><span class="o">,</span><span class="w"> </span><span class="nt">textarea</span><span class="p">:</span><span class="nd">invalid</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">input</span><span class="p">:</span><span class="nd">valid</span><span class="o">,</span><span class="w"> </span><span class="nt">select</span><span class="p">:</span><span class="nd">valid</span><span class="o">,</span><span class="w"> </span><span class="nt">textarea</span><span class="p">:</span><span class="nd">valid</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="kc">green</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">button</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">radio-group</span><span class="w"> </span><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;radio&quot;</span><span class="o">]</span><span class="p">:</span><span class="nd">checked</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="kc">green</span><span class="p">;</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightgreen</span><span class="p">;</span>
+<span class="w">  </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="kc">grey</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;radio&quot;</span><span class="o">]</span><span class="p">:</span><span class="nd">checked</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nt">label</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">green</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">input</span><span class="p">:</span><span class="nd">first-of-type</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div></section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -465,11 +711,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../../javaScript/1_variables_n_strings.html"
+       href="../5_colors.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">1. Variables and Strings Summary</p>
+        <p class="prev-next-title">5. Colors Summary</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -479,6 +725,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-birthday-card">1. A Birthday Card</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-job-application-form">2. A Job Application Form</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
