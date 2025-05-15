@@ -34,6 +34,7 @@ parts:
       - file: html/4_accessibility/3
       - file: html/4_accessibility/4
       - file: html/4_accessibility/5
+      - file: html/4_accessibility/6
     
   - caption: CSS
     maxdepth: 3

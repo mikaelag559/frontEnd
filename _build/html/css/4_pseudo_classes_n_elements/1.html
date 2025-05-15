@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Examples" href="2.html" />
-    <link rel="prev" title="1. CSS Pseudo-classes Summary" href="../4_pseudo_classes_n_elements.html" />
+    <link rel="prev" title="4. CSS Pseudo-classes Summary" href="../4_pseudo_classes_n_elements.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -226,14 +226,24 @@
 <li class="toctree-l2"><a class="reference internal" href="../2_design/3.html">3. Common Design Tools</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../3_absolute_n_relative_units.html">1. CSS Relative and Absolute Units Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3_absolute_n_relative_units.html">3. CSS Relative and Absolute Units Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../3_absolute_n_relative_units/1.html">1. Working  with Relative and Absolute Units</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3_absolute_n_relative_units/2.html">Examples</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../4_pseudo_classes_n_elements.html">1. CSS Pseudo-classes Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../4_pseudo_classes_n_elements.html">4. CSS Pseudo-classes Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1. Working with Pseudo-Classes and Pseudo-Elements in CSS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../5_colors.html">5. Colors Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../5_colors/1.html">1. Working with color in CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../5_colors/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../6_styling_forms.html">6. Styling Forms Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../6_styling_forms/1.html">1. Best Practices for Styling Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../6_styling_forms/2.html">Examples</a></li>
 </ul>
 </details></li>
 </ul>
@@ -419,6 +429,12 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-pseudo-classes-and-how-do-they-work">1.1. What are pseudo-classes, and how do they work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-examples-of-element-user-action-pseudo-classes">1.2. What are examples of element user action pseudo-classes?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-examples-of-input-pseudo-classes">1.3. What are examples of input pseudo-classes?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-examples-of-location-pseudo-classes">1.4. What are examples of location pseudo-classes?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-examples-of-tree-structural-pseudo-classes">1.5. What are examples of tree-structural pseudo-classes?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-examples-of-functional-pseudo-classes">1.6. What are examples of functional pseudo-classes?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-pseudo-elements-and-how-do-they-work">1.7. What are pseudo-elements, and how do they work?</a></li>
 </ul>
             </nav>
         </div>
@@ -520,6 +536,727 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">:checked</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">:required</span></code>, and more.</p></li>
 </ul>
+</section>
+<section id="what-are-examples-of-element-user-action-pseudo-classes">
+<h2>1.2. What are examples of element user action pseudo-classes?<a class="headerlink" href="#what-are-examples-of-element-user-action-pseudo-classes" title="Link to this heading">#</a></h2>
+<p>User feedback is a crucial element of web design. For instance, it’s important for users to receive visual cues when they interact with elements on a website, such as hovering over a button or clicking a link. This feedback helps users understand the state of interactive elements, like indicating whether a link has been visited or not.</p>
+<p>User action pseudo-classes in CSS are special keywords that allow you to provide this kind of feedback without needing JavaScript or other programming languages.</p>
+<p>These pseudo-classes include <code class="docutils literal notranslate"><span class="pre">:hover</span></code>, <code class="docutils literal notranslate"><span class="pre">:active</span></code>, <code class="docutils literal notranslate"><span class="pre">:focus</span></code>, and <code class="docutils literal notranslate"><span class="pre">:visited</span></code>, among others. They enable you to change the appearance of elements based on user interactions, improving the overall user experience.</p>
+<p>Let’s dive into some of the user action pseudo-classes we have and see how they work.</p>
+<ol class="arabic">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">:active</span></code> pseudo-class applies styles when an element is activated by the user. For example, when the user clicks a button or a link, it provides immediate visual feedback, showing users that their actions are being recognized.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">a</span><span class="p">:</span><span class="nd">active</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">crimson</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">:hover</span></code> pseudo-class is triggered when a user hovers over an element with their mouse or other pointing device. Developers often use it to create visual feedback for buttons, links, or any element that should respond to user attention. Here’s a button a user would hover over before clicking:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn&quot;</span><span class="p">&gt;</span>Hover Over Me<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Here’s the CSS that changes the color, background color, and cursor of the button once the user hovers over it:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">btn</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">darkgreen</span><span class="p">;</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+<span class="w">    </span><span class="k">cursor</span><span class="p">:</span><span class="w"> </span><span class="kc">pointer</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">:focus</span></code> pseudo-class applies styles when an element gains focus, typically through keyboard navigation or when a user clicks into a form input. This is not just for feedback but also crucial for accessibility. It ensures that users who rely heavily on keyboards can easily identify which element they are interacting with.</p>
+<p>Here’s an input element inside a form element:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Here’s the CSS that gives the input a solid dark green border and a <code class="docutils literal notranslate"><span class="pre">border-radius</span></code> when the user clicks into it:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">input</span><span class="p">:</span><span class="nd">focus</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">outline</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">darkgreen</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">:visited</span></code> pseudo-class targets a link the user has visited. This can be useful for helping users distinguish between pages they have already visited and the ones they are yet to visit. Here is an example of changing the anchor text color to cyan when the link is visited:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">a</span><span class="p">:</span><span class="nd">visited</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">cyan</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">:checked</span></code> pseudo-class in CSS allows you to style form elements such as checkboxes and radio buttons when they are selected (checked). This pseudo-class is useful for customizing the appearance of these elements to enhance user experience, even though browsers provide default styles for them.</p>
+<p>Here’s the kind of checkbox you usually check to agree to terms on a website:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+    Agree <span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Here’s how you can use the <code class="docutils literal notranslate"><span class="pre">:checked</span></code> pseudo-class to indicate to the user that it is checked:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">checkbox</span><span class="p">:</span><span class="nd">checked</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">appearance</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, we are using the <code class="docutils literal notranslate"><span class="pre">appearance</span></code> property set to <code class="docutils literal notranslate"><span class="pre">none</span></code> to remove the default styling applied by the browser to checkbox inputs. When the user checks the box, it will have a background color of <code class="docutils literal notranslate"><span class="pre">red</span></code>.</p>
+</li>
+</ol>
+<p>Other examples of action pseudo-classes are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">:focus-within</span></code>: for applying styles to an element when it or any of its descendants have focus.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:enabled</span></code>: for targeting form buttons or other elements that are currently enabled.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:disabled</span></code>: for targeting form buttons or other elements that are disabled.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:target</span></code>: for applying styles to an element that is the target of a URL fragment (the part of a URL after the <code class="docutils literal notranslate"><span class="pre">#</span></code> symbol).</p></li>
+</ul>
+</section>
+<section id="what-are-examples-of-input-pseudo-classes">
+<h2>1.3. What are examples of input pseudo-classes?<a class="headerlink" href="#what-are-examples-of-input-pseudo-classes" title="Link to this heading">#</a></h2>
+<p>The appearance and behavior of input elements matter when building web forms. A form with inputs that respond to user actions goes a long way in improving user experience and it should not cause confusion nor frustration.</p>
+<p>CSS provides several input pseudo-classes that can make your forms more intuitive and user-friendly. Let’s look at these pseudo-classes in detail.</p>
+<ol class="arabic">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">:focus</span></code> pseudo-class allows you to target an input element when a user selects or clicks on it, drawing attention to the active input field. This helps users easily identify where they’re currently typing:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">input</span><span class="p">:</span><span class="nd">focus</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">crimson</span><span class="p">;</span>
+<span class="w">    </span><span class="k">outline</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>As the name implies, the <code class="docutils literal notranslate"><span class="pre">:hover</span></code> pseudo-class is triggered when the user places the cursor over an element. It provides visual feedback before the user interacts with the input, effectively alerting them that the input is ready for action.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">input</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">orange</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In the example above, the input element background changes to an orange color when the user hovers over it, letting them know that the field is ready for interaction.</p>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">:checked</span></code> pseudo-class lets you style a radio button or checkbox differently when a user selects it. This way, the user can easily see which option they’ve chosen.</p>
+<p>Here is an example:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- html --&gt;</span>
+<span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+    I have read the terms<span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="c">/* css */</span>
+<span class="p">.</span><span class="nc">checkbox</span><span class="p">:</span><span class="nd">checked</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">appearance</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">coral</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:required</span></code> targets input elements that have the <code class="docutils literal notranslate"><span class="pre">required</span></code> attribute. It signals to the user that they must fill out the field to submit the form.</p>
+<p>The HTML below has a form with two required input elements:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;name&quot;</span><span class="p">&gt;</span>Name:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">required</span> <span class="p">/&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;email&quot;</span><span class="p">&gt;</span>Email:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">required</span> <span class="p">/&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;phone&quot;</span><span class="p">&gt;</span>Phone Number:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;tel&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;phone&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;phone&quot;</span> <span class="p">/&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>And this CSS applies an orange border of two pixels to the two required inputs:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">input</span><span class="p">:</span><span class="nd">required</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">orange</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>When validating forms, you can use the <code class="docutils literal notranslate"><span class="pre">:valid</span></code> pseudo-class to style the input fields that meet the validation criteria, and <code class="docutils literal notranslate"><span class="pre">:invalid</span></code> to style the input fields that do not meet the criteria. Typically, you will use green for a valid input and red for an invalid input.</p>
+<ul>
+<li><p>Here is an example using the <code class="docutils literal notranslate"><span class="pre">:valid</span></code> pseudo-class:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">input</span><span class="p">:</span><span class="nd">valid</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="kc">green</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Here is an example of using the <code class="docutils literal notranslate"><span class="pre">:invalid</span></code> pseudo-class:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">input</span><span class="p">:</span><span class="nd">invalid</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="kc">crimson</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">:disabled</span></code> pseudo-class allows you to select and style input elements that are disabled. These elements have the <code class="docutils literal notranslate"><span class="pre">disabled</span></code> attribute, which prevents users from interacting with them. When an input is disabled, it cannot be clicked, focused, or edited.</p>
+<p>Here is an example of a label and a disabled input element:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;name&quot;</span><span class="p">&gt;</span>Name:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-input&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">disabled</span> <span class="p">/&gt;</span>
+</pre></div>
+</div>
+<p>In the CSS, we are targeting that disabled input and giving it a background color of <code class="docutils literal notranslate"><span class="pre">lightgray</span></code> and changing the cursor pointer to <code class="docutils literal notranslate"><span class="pre">not-allowed</span></code>.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">text-input</span><span class="p">:</span><span class="nd">disabled</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightgray</span><span class="p">;</span>
+<span class="w">    </span><span class="k">cursor</span><span class="p">:</span><span class="w"> </span><span class="kc">not-allowed</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">cursor:</span> <span class="pre">not-allowed;</span></code> CSS property value changes the appearance of the cursor to indicate that an action is not permitted. When applied to an element, it shows a cursor with a circle-slash symbol (usually a circle with a diagonal line through it) to signal to users that the element is not interactive or cannot be clicked or interacted with.</p>
+</li>
+</ol>
+<p>Here are some other examples of input pseudo-classes and what they do:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">:autofill</span></code>: applies styles to input fields that the browser automatically fills with saved data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:optional</span></code>: styles input elements that are not required and can be left empty.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:in-range</span></code> and <code class="docutils literal notranslate"><span class="pre">:out-of-range</span></code>: style elements based on whether their values are within or outside specified range constraints.</p></li>
+</ul>
+</section>
+<section id="what-are-examples-of-location-pseudo-classes">
+<h2>1.4. What are examples of location pseudo-classes?<a class="headerlink" href="#what-are-examples-of-location-pseudo-classes" title="Link to this heading">#</a></h2>
+<p>Location pseudo-classes are used for styling links and elements that are targeted within the current document. They offer a way to apply styles based on whether a link is visited or whether an element is currently in focus.</p>
+<p>Examples of location pseudo-classes are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">:link</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:visited</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:any-link</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:local-link</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:target</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:target-within</span></code></p></li>
+</ul>
+<p>Let’s take a deeper look at each of these pseudo-classes.</p>
+<ol class="arabic">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">:link</span></code> pseudo-class allows you to target all unvisited links on a webpage. You can use it to style links differently before the user clicks on them. For example, you might want to make all unvisited links blue or your website’s primary color:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">a</span><span class="p">:</span><span class="nd">link</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">magenta</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this case, any link the user hasn’t clicked yet will appear magenta. Once the user clicks the link, the <code class="docutils literal notranslate"><span class="pre">:link</span></code> style no longer applies, and the <code class="docutils literal notranslate"><span class="pre">:visited</span></code> pseudo-class takes over.</p>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">:visited</span></code> pseudo-class comes into play after the user clicks the link, so you can use it to target links the user has already clicked.</p>
+<p>Here is an example of changing the visited link state to the color <code class="docutils literal notranslate"><span class="pre">purple</span></code>:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">a</span><span class="p">:</span><span class="nd">visited</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">purple</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">:visited</span></code> pseudo-class helps users distinguish between links they have visited and those they have not.</p>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">:any-link</span></code> pseudo-class is a combination of the <code class="docutils literal notranslate"><span class="pre">:link</span></code> and <code class="docutils literal notranslate"><span class="pre">:visited</span></code> pseudo-classes. So it matches any anchor element with an <code class="docutils literal notranslate"><span class="pre">href</span></code> attribute, regardless of whether it’s visited or not.</p>
+<p>Here is an example of changing the link color for the <code class="docutils literal notranslate"><span class="pre">:any-link</span></code> pseudo-class to <code class="docutils literal notranslate"><span class="pre">crimson</span></code>:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">a</span><span class="p">:</span><span class="nd">any-link</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">crimson</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">:local-link</span></code> pseudo-class targets links that point to the same document. It can be useful when you want to differentiate internal links from external ones. <div style="color:red;"> Currently, no browser supports the <code class="docutils literal notranslate"><span class="pre">:local-link</span></code> pseudo-class. </div></p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">:target</span></code> pseudo-class selects an element that matches the current URL fragment identifier, for example, <code class="docutils literal notranslate"><span class="pre">#section1</span></code>. It’s very useful for pages with in-page navigation.</p>
+<p>Here’s an HTML example that represents an in-page navigation:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;table-of-contents&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#section1&quot;</span><span class="p">&gt;</span>Introduction<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#section2&quot;</span><span class="p">&gt;</span>Features<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">section</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;section1&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Introduction<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is the introduction section.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">section</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;section2&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Features<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This section describes the features.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Here’s the CSS that uses the <code class="docutils literal notranslate"><span class="pre">:target</span></code> pseudo-class to style the section that matches where the user navigates to:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">section</span><span class="p">:</span><span class="nd">target</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">green</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">green</span><span class="p">;</span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>When the user clicks on one of the navigation links, the background color for that respective section will change to green.</p>
+</li>
+</ol>
+</section>
+<section id="what-are-examples-of-tree-structural-pseudo-classes">
+<h2>1.5. What are examples of tree-structural pseudo-classes?<a class="headerlink" href="#what-are-examples-of-tree-structural-pseudo-classes" title="Link to this heading">#</a></h2>
+<p>Tree-structural pseudo-classes allow you to target and style elements based on their position within the document tree. The document tree refers to the hierarchical structure of elements in an HTML document.</p>
+<p>Here is a list of tree-structural pseudo-classes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">:root</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:empty</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:nth-child(n)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:nth-last-child(n)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:first-child</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:last-child</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:only-child</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:nth-of-type</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:first-of-type</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:last-of-type</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:only-of-type</span></code></p></li>
+</ul>
+<p>Let’s take a closer look at each of the tree-structural pseudo-classes, accompanied by examples.
+​</p>
+<ol class="arabic">
+<li><p>​The <code class="docutils literal notranslate"><span class="pre">:root</span></code> pseudo-class is usually the root <code class="docutils literal notranslate"><span class="pre">html</span></code> element. It helps you target the highest level in the document so you can apply a common style to the entire document.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">aliceblue</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">:root</span></code> pseudo-class is also commonly used in setting CSS variables:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">--main-font</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Arial, sans-serif&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--primary-color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="nv">--secondary-color</span><span class="p">:</span><span class="w"> </span><span class="kc">green</span><span class="p">;</span><span class="w"> </span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>With CSS variables, you get to store values and reuse them in your stylesheet.</p>
+</li>
+<li><p>Empty elements, that is, elements with no children other than white space, are also included in the document tree. That’s why there’s an <code class="docutils literal notranslate"><span class="pre">:empty</span></code> pseudo-class to target empty elements. For example, this HTML code has two empty list items:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Item 1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> <span class="cm">&lt;!-- This list is empty --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Item 2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> <span class="cm">&lt;!-- Another empty list --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Item 3<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>With the <code class="docutils literal notranslate"><span class="pre">:empty</span></code> pseudo-class, you can style the empty list items differently:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="nd">empty</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The most practical thing to do with the empty list items is probably not displaying them at all:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="nd">empty</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:nth-child(n)</span></code> allows you to select elements based on their position within a parent, while <code class="docutils literal notranslate"><span class="pre">:nth-last-child(n)</span></code> enables you to select elements by counting from the end.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">n</span></code> can be a specific number or a keyword like <code class="docutils literal notranslate"><span class="pre">odd</span></code> or <code class="docutils literal notranslate"><span class="pre">even</span></code>. This is incredibly useful in styling table cells based on position: even and odd.</p>
+<p>Here’s an HTML example of a fruit price list table:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Item<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Price<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Apple<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>$1.00<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Banana<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>$0.50<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Orange<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>$0.80<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Here’s the CSS using the <code class="docutils literal notranslate"><span class="pre">:nth-child</span></code> pseudo-class to target the table cells based on odd and even positions:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">th</span><span class="o">,</span>
+<span class="nt">td</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">lightgray</span><span class="p">;</span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">tr</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">even</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">orangered</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">tr</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">odd</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightgreen</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">:first-child</span></code>, <code class="docutils literal notranslate"><span class="pre">:last-child</span></code>, and <code class="docutils literal notranslate"><span class="pre">:only-child</span></code> pseudo-classes all act on items within a parent container or the entire document.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">:first-child</span></code> selects the first element in a parent element or the document.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:last-child</span></code> selects the last element in a parent element or the document.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:only-child</span></code> selects the only element in a parent element or the document.</p></li>
+</ul>
+<p>Let’s see some examples to better understand these pseudo-clases.</p>
+<ul>
+<li><p>Using the <code class="docutils literal notranslate"><span class="pre">:first-child</span></code> and <code class="docutils literal notranslate"><span class="pre">:last-child</span></code> pseudo-classes will select both <code class="docutils literal notranslate"><span class="pre">Item</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">Item</span> <span class="pre">3</span></code> in this HTML:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Item 1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>  <span class="cm">&lt;!-- This will have orange background --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Item 2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Item 3<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>  <span class="cm">&lt;!-- This will have green  background --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Here’s the CSS:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">li</span><span class="p">:</span><span class="nd">first-child</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">orangered</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="nt">li</span><span class="p">:</span><span class="nd">last-child</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightgreen</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>CAUTION: If you have more unordered lists on the page, you have to be more specific with the selection:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">ul</span><span class="w"> </span><span class="nt">li</span><span class="p">:</span><span class="nd">first-child</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">orangered</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="nt">ul</span><span class="w"> </span><span class="nt">li</span><span class="p">:</span><span class="nd">last-child</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightgreen</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>To show you how the <code class="docutils literal notranslate"><span class="pre">:only-child</span></code> pseudo-class works, here’s an HTML example with two separate <code class="docutils literal notranslate"><span class="pre">div</span></code> elements:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>This is the only item in this container.<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> <span class="cm">&lt;!-- Affected by :only-child --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>This is one of two items in this container.<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Here is the second item.<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">:only-child</span></code> pseudo-class ensures only the <code class="docutils literal notranslate"><span class="pre">div</span></code> element with a single child is selected:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">container</span><span class="w"> </span><span class="nt">div</span><span class="p">:</span><span class="nd">only-child</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">crimson</span><span class="p">;</span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightblue</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">:first-of-type</span></code> and <code class="docutils literal notranslate"><span class="pre">:last-of-type</span></code> pseudo-classes select the first and last occurrence of a specific element type within its parent. They are useful for applying unique styles to the first or last instance of that element type among its siblings.</p>
+<p>In the HTML below, <code class="docutils literal notranslate"><span class="pre">:first-of-type</span></code> and <code class="docutils literal notranslate"><span class="pre">:last-of-type</span></code> applies to the first element and last element within the <code class="docutils literal notranslate"><span class="pre">section</span></code> element:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Introduction<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is the first paragraph in the first section<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>     <span class="cm">&lt;!-- green, :first-of-type --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is the second paragraph in the first section<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>    <span class="cm">&lt;!-- blue, :last-of-type --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Details<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is the first paragraph in the second section.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>   <span class="cm">&lt;!-- green, :first-of-type --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is the second paragraph in the second section.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is the third paragraph in the second section.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>   <span class="cm">&lt;!-- blue, :last-of-type --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Here’s the CSS:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">section</span><span class="w"> </span><span class="nt">p</span><span class="p">:</span><span class="nd">first-of-type</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightgreen</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">section</span><span class="w"> </span><span class="nt">p</span><span class="p">:</span><span class="nd">last-of-type</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="kc">lightblue</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:nth-of-type(n)</span></code> allows you to select a specific element within its parent based on its position among siblings of the same type. For instance, in the HTML below, <code class="docutils literal notranslate"><span class="pre">:nth-of-type(2)</span></code> targets the second element in the container:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>First paragraph<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>First heading<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Second paragraph<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>     <span class="cm">&lt;!-- Affected by :NTH-OF-TYPE(2) --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Third paragraph<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Second heading<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Here’s the CSS:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="p">:</span><span class="nd">nth-of-type</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:only-of-type</span></code> selects an element if it’s the only one of its type within its parent. This can be useful for emphasizing single items or ensuring that they are styled differently when they’re not part of a group.</p>
+<p>In the HTML below, there are two <code class="docutils literal notranslate"><span class="pre">div</span></code> elements with one having a single element:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>The only paragraph<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>The first paragraph<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>The second paragraph<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Here’s the CSS that only applies to the first container:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="p">:</span><span class="nd">only-of-type</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">green</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="what-are-examples-of-functional-pseudo-classes">
+<h2>1.6. What are examples of functional pseudo-classes?<a class="headerlink" href="#what-are-examples-of-functional-pseudo-classes" title="Link to this heading">#</a></h2>
+<p>Functional pseudo-classes allow you to select elements based on more complex conditions or relationships. Unlike regular pseudo-classes which target elements based on a state, for example, <code class="docutils literal notranslate"><span class="pre">:hover</span></code>, <code class="docutils literal notranslate"><span class="pre">:focus</span></code>, functional pseudo-classes accept arguments within parentheses, hence the name “functional pseudo-classes”.</p>
+<p>Examples of functional pseudo-classes are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">:is()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:where()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:has()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:not()</span></code></p></li>
+</ul>
+<p>Let’s take a deeper look at each of these functional pseudo-classes with examples.</p>
+<ol class="arabic">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">:is()</span></code> pseudo-class is useful when you want to style a group of elements that share some, but not all, characteristics. For example, you might want to style different types of buttons on your website, including <code class="docutils literal notranslate"><span class="pre">button</span></code> elements, links styled as buttons, and <code class="docutils literal notranslate"><span class="pre">input</span></code> elements with types <code class="docutils literal notranslate"><span class="pre">submit</span></code> and <code class="docutils literal notranslate"><span class="pre">reset</span></code>. Here’s an HTML example representing that:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Click Me<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;button&quot;</span><span class="p">&gt;</span>Click Me Too<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Submit&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;reset&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Reset&quot;</span> <span class="p">/&gt;</span>
+</pre></div>
+</div>
+<p>Without the <code class="docutils literal notranslate"><span class="pre">:is()</span></code> function, you would have to write a complex selector like this:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">button</span><span class="o">,</span>
+<span class="nt">a</span><span class="p">.</span><span class="nc">button</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">&#39;submit&#39;</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">&#39;reset&#39;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">darkblue</span><span class="p">;</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">darkblue</span><span class="p">;</span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">cursor</span><span class="p">:</span><span class="w"> </span><span class="kc">pointer</span><span class="p">;</span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline-block</span><span class="p">;</span>
+<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">button</span><span class="p">:</span><span class="nd">hover</span><span class="o">,</span>
+<span class="nt">a</span><span class="p">.</span><span class="nc">button</span><span class="p">:</span><span class="nd">hover</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">&#39;submit&#39;</span><span class="o">]</span><span class="p">:</span><span class="nd">hover</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">&#39;reset&#39;</span><span class="o">]</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightblue</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightblue</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>With the <code class="docutils literal notranslate"><span class="pre">:is()</span></code> function, you can write a more compact and understandable selector like this:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="nd">is</span><span class="o">(</span><span class="nt">button</span><span class="o">,</span><span class="w"> </span><span class="nt">a</span><span class="p">.</span><span class="nc">button</span><span class="o">,</span><span class="w"> </span><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">&#39;submit&#39;</span><span class="o">],</span><span class="w"> </span><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">&#39;reset&#39;</span><span class="o">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">darkblue</span><span class="p">;</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">darkblue</span><span class="p">;</span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">cursor</span><span class="p">:</span><span class="w"> </span><span class="kc">pointer</span><span class="p">;</span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline-block</span><span class="p">;</span>
+<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">:</span><span class="nd">is</span><span class="o">(</span><span class="nt">button</span><span class="o">,</span><span class="w"> </span><span class="nt">a</span><span class="p">.</span><span class="nc">button</span><span class="o">,</span><span class="w"> </span><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">&#39;submit&#39;</span><span class="o">],</span><span class="w"> </span><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">&#39;reset&#39;</span><span class="o">])</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">:where()</span></code> pseudo-class functions similarly to <code class="docutils literal notranslate"><span class="pre">:is()</span></code>, but it doesn’t increase the specificity of your selectors. This makes it ideal for applying styles without affecting the specificity of other rules.</p>
+<p>For example, you can use the <code class="docutils literal notranslate"><span class="pre">:where()</span></code> function to apply zero <code class="docutils literal notranslate"><span class="pre">margin</span></code> and <code class="docutils literal notranslate"><span class="pre">padding</span></code> to heading elements. This ensures that the reset won’t interfere with more specific styles you might apply later. Here’s the HTML for that:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Page Title<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Subtitle<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>A point<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>And this is the CSS:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="nd">where</span><span class="o">(</span><span class="nt">h1</span><span class="o">,</span><span class="w"> </span><span class="nt">h2</span><span class="o">,</span><span class="w"> </span><span class="nt">h3</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Styling a parent element based on its children’s states was previously challenging until the <code class="docutils literal notranslate"><span class="pre">:has()</span></code> pseudo-class was introduced. It allows you to apply styles to a parent element based on the presence or state of its child elements.</p>
+<p>For example, the CSS below will only apply to any <code class="docutils literal notranslate"><span class="pre">article</span></code> element that has an <code class="docutils literal notranslate"><span class="pre">h2</span></code> in it:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">article</span><span class="p">:</span><span class="nd">has</span><span class="o">(</span><span class="nt">h2</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">hotpink</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Here’s the HTML for that:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Subheading<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Lorem ipsum dolor sit amet.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>A point<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Lorem ipsum dolor sit amet.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Lorem ipsum dolor sit amet.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">:not()</span></code> pseudo-class is ideal for situations where you want to apply styles to a group of elements, excluding one or more specific exceptions. In the CSS below, any button that is not a primary button will have a grey background:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">button</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">cursor</span><span class="p">:</span><span class="w"> </span><span class="kc">pointer</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">button</span><span class="p">.</span><span class="nc">primary</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">deepskyblue</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">button</span><span class="p">:</span><span class="nd">not</span><span class="o">(</span><span class="p">.</span><span class="nc">primary</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">grey</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Here’s the HTML for the buttons:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;primary&quot;</span><span class="p">&gt;</span>Primary Button<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;secondary&quot;</span><span class="p">&gt;</span>Secondary Button<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;danger&quot;</span><span class="p">&gt;</span>Another Secondary Button<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="what-are-pseudo-elements-and-how-do-they-work">
+<h2>1.7. What are pseudo-elements, and how do they work?<a class="headerlink" href="#what-are-pseudo-elements-and-how-do-they-work" title="Link to this heading">#</a></h2>
+<p>One of the most interesting aspects of CSS is the use of pseudo-elements. In this context, “pseudo” means “not real”, so pseudo-elements are virtual or synthetic elements that don’t directly match any actual HTML elements. They allow you to style specific parts of an element or insert content without adding extra HTML.</p>
+<p>To apply a pseudo-element, attach it to the original element’s selector using a double colon (<code class="docutils literal notranslate"><span class="pre">::</span></code>). Note that the selector can be any type, such as a class or ID selector. Here’s what the basic syntax of pseudo-elements looks like:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">selector</span><span class="p">::</span><span class="nd">pseudo-element</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">property</span><span class="p">:</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This double colon is what distinguishes pseudo-elements from pseudo-classes, which use a single colon.</p>
+<p>Pseudo-elements allow you to style specific parts of an element’s content or insert content before or after it, but they cannot exist independently. The element to which a pseudo-element is attached is called its originating element.</p>
+<ol class="arabic">
+<li><p>Let’s start by looking at examples for the <code class="docutils literal notranslate"><span class="pre">::before</span></code> and <code class="docutils literal notranslate"><span class="pre">::after</span></code> pseudo-elements. As their names suggest, <code class="docutils literal notranslate"><span class="pre">::before</span></code> lets you insert content just before the element’s content while <code class="docutils literal notranslate"><span class="pre">::after</span></code> lets you insert content after it.</p>
+<p>Here is an example of a button element:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cta-button&quot;</span><span class="p">&gt;</span>Learn More<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>In the CSS, we will use absolute positioning and the <code class="docutils literal notranslate"><span class="pre">::before</span></code> pseudo-element to add a star before the button’s <code class="docutils literal notranslate"><span class="pre">Learn</span> <span class="pre">More</span></code> text. You will learn more about absolute positioning in future videos.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">cta-button</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightseagreen</span><span class="p">;</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">cursor</span><span class="p">:</span><span class="w"> </span><span class="kc">pointer</span><span class="p">;</span>
+<span class="w">    </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">relative</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">cta-button</span><span class="p">::</span><span class="nd">before</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">content</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;⭐&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">absolute</span><span class="p">;</span>
+<span class="w">    </span><span class="k">left</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">top</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75</span><span class="kt">rem</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">content</span></code> property is used to represent the content you wish to add before the button text. In this example, we are adding a star. You’ll notice that you can not only insert content but also style it. Here’s an example of the <code class="docutils literal notranslate"><span class="pre">::after</span></code> pseudo-element with the same button:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">cta-button</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">orange</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">cursor</span><span class="p">:</span><span class="w"> </span><span class="kc">pointer</span><span class="p">;</span>
+<span class="w">    </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">relative</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">cta-button</span><span class="p">::</span><span class="nd">after</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">content</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;➡️&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">absolute</span><span class="p">;</span>
+<span class="w">    </span><span class="k">right</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.125</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">    </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="k">transform</span><span class="w"> </span><span class="mf">0.3</span><span class="kt">s</span><span class="w"> </span><span class="kc">ease</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In the <code class="docutils literal notranslate"><span class="pre">::after</span></code> pseudo-element, the <code class="docutils literal notranslate"><span class="pre">transition</span></code> property is used to animate changes over 0.3 seconds with an easing effect, creating a smooth and gradual transformation rather than a sudden one. You will learn more about the <code class="docutils literal notranslate"><span class="pre">transition</span></code> property in future videos.</p>
+<p>You can also attach a pseudo-class to the content you insert into another content with the <code class="docutils literal notranslate"><span class="pre">::before</span></code> and <code class="docutils literal notranslate"><span class="pre">::after</span></code> pseudo-elements. For example, a hover state for the content. Here’s an example:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">cta-button</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">orange</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">cursor</span><span class="p">:</span><span class="w"> </span><span class="kc">pointer</span><span class="p">;</span>
+<span class="w">    </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">relative</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">cta-button</span><span class="p">::</span><span class="nd">after</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">content</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;➡️&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">absolute</span><span class="p">;</span>
+<span class="w">    </span><span class="k">right</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.125</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">    </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="k">transform</span><span class="w"> </span><span class="mf">0.3</span><span class="kt">s</span><span class="w"> </span><span class="kc">ease</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">cta-button</span><span class="p">:</span><span class="nd">hover</span><span class="p">::</span><span class="nd">after</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">translateX</span><span class="p">(</span><span class="mi">2</span><span class="kt">px</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>With <code class="docutils literal notranslate"><span class="pre">transform:</span> <span class="pre">translateX(2px)</span></code> in the hover state, the content gets pushed to the right by <code class="docutils literal notranslate"><span class="pre">2px</span></code> any time the user hovers on the button. The transition property in the <code class="docutils literal notranslate"><span class="pre">::after</span></code> itself ensures the process takes <code class="docutils literal notranslate"><span class="pre">0.3s</span></code>. That’s what the <code class="docutils literal notranslate"><span class="pre">transform</span></code> property does – it allows you to rotate, skew, scale, or translate an element in a particular direction.</p>
+</li>
+<li><p>In the next example, we will look at the <code class="docutils literal notranslate"><span class="pre">::first-letter</span></code> pseudo-element. The <code class="docutils literal notranslate"><span class="pre">::first-letter</span></code> pseudo-element targets the first letter of an element’s content, allowing you to style it. Here’s an example of some paragraph text:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>freeCodeCamp lets you learn to code without having to pay.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>If we want to style the first letter, we can use the <code class="docutils literal notranslate"><span class="pre">::first-letter</span></code> pseudo-element like this:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="p">::</span><span class="nd">first-letter</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">rem</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>In the last example, we will look at the <code class="docutils literal notranslate"><span class="pre">::marker</span></code> pseudo-element which lets you select the marker, bullet or numbering of list items for styling. The <code class="docutils literal notranslate"><span class="pre">::marker</span></code> pseudo-element offers a way to enhance your website’s brand identity by customizing list markers to match your color scheme.</p>
+<p>Here’s an example of an unordered list and an ordered list:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Unordered list item 1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Unordered list item 2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Unordered list item 3<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Unordered list item 4<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Ordered list item 1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Ordered list item 2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Ordered list item 3<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Ordered list item 4<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>To change the list item’s marker color and size, you can use the <code class="docutils literal notranslate"><span class="pre">::marker</span></code> pseudo-element like this:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">li</span><span class="p">::</span><span class="nd">marker</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">crimson</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">em</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>We have covered only a few pseudo-elements. But there are many more like the <code class="docutils literal notranslate"><span class="pre">::placeholder</span></code>, <code class="docutils literal notranslate"><span class="pre">::spelling-error</span></code> and <code class="docutils literal notranslate"><span class="pre">::selection</span></code> that I encourage you to explore on your own.</p>
 </div></section>
 </section>
 
@@ -559,7 +1296,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">1. CSS Pseudo-classes Summary</p>
+        <p class="prev-next-title">4. CSS Pseudo-classes Summary</p>
       </div>
     </a>
     <a class="right-next"
@@ -588,6 +1325,12 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-pseudo-classes-and-how-do-they-work">1.1. What are pseudo-classes, and how do they work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-examples-of-element-user-action-pseudo-classes">1.2. What are examples of element user action pseudo-classes?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-examples-of-input-pseudo-classes">1.3. What are examples of input pseudo-classes?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-examples-of-location-pseudo-classes">1.4. What are examples of location pseudo-classes?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-examples-of-tree-structural-pseudo-classes">1.5. What are examples of tree-structural pseudo-classes?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-examples-of-functional-pseudo-classes">1.6. What are examples of functional pseudo-classes?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-pseudo-elements-and-how-do-they-work">1.7. What are pseudo-elements, and how do they work?</a></li>
 </ul>
   </nav></div>
 
@@ -612,7 +1355,7 @@ By Mikaela González Pérez
 
   <p class="copyright">
     
-      © Copyright 2025.
+      © Copyright 2023.
       <br/>
     
   </p>

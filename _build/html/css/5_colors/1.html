@@ -1,0 +1,823 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Working with color in CSS &#8212; My Front End Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'css/5_colors/1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Examples" href="2.html" />
+    <link rel="prev" title="5. Colors Summary" href="../5_colors.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt="My Front End Notes - Home"/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="My Front End Notes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to my web development notes
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">HTML</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/1_basic_html.html">1. Basic HTML Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/1.html">1. What is HTML?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/2.html">2. HTML Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/3.html">3. Working with Media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/4.html">4. Working with Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/2_semantic_html.html">2. Semantic HTML Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/2_semantic_html/1.html">2. Semantic HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/2_semantic_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/3_forms_and_tables_html.html">3. HTML Tables and Forms Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/1.html">1. Working with Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/2.html">2. Working with Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/3.html">3. Working with HTML Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/4_accessibility.html">4. HTML Accessibility Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/1.html">1. Importance of Accessibility and Good HTML Structure - I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/2.html">1. Importance of Accessibility and Good HTML Structure - II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/3.html">1. Importance of Accessibility and Good HTML Structure - III</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/4.html">1. Importance of Accessibility and Good HTML Structure - IV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/5.html">1. Importance of Accessibility and Good HTML Structure - V</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1_basic_css.html">1. Basic CSS Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/1.html">1. What Is CSS?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/2.html">2. CSS Specificity, the Cascade Algorithm and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/3.html">3. Styling Lists and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/4.html">4. Working with Backgrounds and Borders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2_design.html">2. Design Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2_design/1.html">1. User Interface Design Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_design/2.html">2. User-Centered Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_design/3.html">3. Common Design Tools</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3_absolute_n_relative_units.html">3. CSS Relative and Absolute Units Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3_absolute_n_relative_units/1.html">1. Working  with Relative and Absolute Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_absolute_n_relative_units/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4_pseudo_classes_n_elements.html">4. CSS Pseudo-classes Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4_pseudo_classes_n_elements/1.html">1. Working with Pseudo-Classes and Pseudo-Elements in CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_pseudo_classes_n_elements/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../5_colors.html">5. Colors Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1. Working with color in CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../6_styling_forms.html">6. Styling Forms Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../6_styling_forms/1.html">1. Best Practices for Styling Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../6_styling_forms/2.html">Examples</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/1_variables_n_strings.html">1. Variables and Strings Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/1.html">1. Introduction to JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/2.html">2. Working with Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/3.html">3. Working with Strings in JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/4.html">4. Working with Common String Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers.html">2. Booleans and Numbers Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers/1.html">1. Working with Numbers, Booleans and the Math Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers/2.html">2. Working with Numbers and Common Number Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers/3.html">3. Understanding Comparisons and Conditional Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/3_functions.html">3. Functions Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/3_functions/1.html">1. Working with Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/3_functions/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/4_arrays.html">4. Arrays Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/4_functions/1.html">1. Working with Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/4_functions/2.html">2. Working with Common Array Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/4_functions/3.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/5_objects.html">5. Objects Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/5_objects/1.html">1. Working with Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/5_objects/2.html">Examples</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/css/5_colors/1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1. Working with color in CSS</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-color-theory-in-design">1.1. What is color theory in design?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-named-colors-in-css-and-when-to-use-them">1.2. What are named colors in CSS and when to use them?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-rgb-color-model-and-how-does-the-rgb-function-work-in-css">1.3. What is the RGB color model and how does the RGB function work in CSS?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-hsl-color-model-and-how-does-the-hsl-function-work-in-css">1.4. What is the HSL color model and how does the <code class="docutils literal notranslate"><span class="pre">hsl()</span></code> function work in CSS?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-hex-color-values-and-how-do-they-work-in-css">1.5. What are hex color values and how do they work in CSS?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-linear-and-radial-gradients-and-how-do-they-work-in-css">1.6. What are linear and radial gradients and how do they work in CSS?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div style="text-align: justify">
+<section class="tex2jax_ignore mathjax_ignore" id="working-with-color-in-css">
+<h1>1. Working with color in CSS<a class="headerlink" href="#working-with-color-in-css" title="Link to this heading">#</a></h1>
+<section id="what-is-color-theory-in-design">
+<h2>1.1. What is color theory in design?<a class="headerlink" href="#what-is-color-theory-in-design" title="Link to this heading">#</a></h2>
+<p>Color theory is the study of how colors interact with each other and how they affect our perception. It covers color relationships, color harmony, and the psychological impact of color. Let’s start diving into this world. Colors can be classified as either primary, secondary, or tertiary.</p>
+<ol class="arabic simple">
+<li><p><strong>Primary colors</strong>, yellow, blue, and red, are the fundamental hues from which all other colors are derived.</p></li>
+<li><p><strong>Secondary colors</strong> result from mixing equal amounts of two primary colors. Green, orange, and purple are examples of secondary colors. For example, green is the result of combining yellow and blue.</p></li>
+<li><p><strong>Tertiary colors</strong> result from combining a primary color with a neighboring secondary color. Yellow-Green, Blue-Green, and Blue-Violet, are examples of tertiary colors.</p></li>
+</ol>
+<p>This is a fundamental classification in the world of color theory, but there are other ways to classify colors. They can be classified as warm or cool, based on their temperature.</p>
+<ul class="simple">
+<li><p><strong>Warm colors</strong>, like reds, oranges, and yellows, evoke feelings of comfort, warmth, and coziness.</p></li>
+<li><p><strong>Cool colors</strong>, like blues, green, and purples, evoke feelings of calmness, serenity, and professionalism.</p></li>
+</ul>
+<p>Colors can also be represented through color models. They are essential for describing and reproducing colors in a standard way. Frequently used color models include the RGB model, the HSV model, and the HSL model. They represent colors based on different properties.</p>
+<hr style="height: 1px;">
+<p>A fundamental tool that designers use to represent colors and their relationships, <strong>the color wheel</strong>, is a circular diagram that shows how colors relate to each other. It’s an essential tool for designers because it helps them to select color combinations. This is very helpful for creating color palettes and color schemes.</p>
+<p><strong>A color scheme</strong> is the set of colors chosen for a specific design or project. They are usually based on the principles of color theory. By understanding the relationships between colors on the wheel, you can develop different types of color schemes. Let’s see some of them.</p>
+<ul>
+<li><p><strong>Analogous color</strong> schemes create cohesive and soothing experiences. They have analogous colors, which are adjacent to each other in the color wheel.</p></li>
+<li><p><strong>Complementary color</strong> schemes create high contrast and visual impact. Their colors are located on the opposite ends of the color wheel, relative to each other.</p>
+<p><strong>Color contrast</strong> is essential for web accessibility. It ensures that text and other important elements are clearly distinguishable from their background. This is especially important for people with visual disabilities.</p>
+<p>In an RGB color wheel, complementary colors are located at the opposite ends of the wheel. For example, magenta is complementary to green and blue is complementary to yellow and so on.</p>
+</li>
+<li><p><strong>A triadic color</strong> scheme has vibrant colors. They are made from colors that are approximately equidistant from each other. If they are connected, they form an equilateral triangle on the color wheel.</p></li>
+<li><p>And finally, we have the <strong>monochromatic color</strong> scheme. In this color scheme, all the colors are derived from the same base color by adjusting its lightness, darkness, and saturation. This evokes a feeling of unity and harmony while still creating contrast.</p></li>
+</ul>
+<p>And finally, here are some tips for using color effectively in web development:</p>
+<ul class="simple">
+<li><p>Create a color scheme that defines your website’s branding.</p></li>
+<li><p>Use colors to evoke the emotions and perceptions that align with your goals.</p></li>
+<li><p>Choose colors with enough contrast to make your website accessible for everyone.</p></li>
+<li><p>Use color to highlight important elements of your website, like buttons.</p></li>
+<li><p>Use color consistently and use it to create a visual hierarchy.</p></li>
+</ul>
+<p>Color theory is a core aspect of design. By understanding color psychology, harmonies, and accessibility, you can create effective designs, evoke emotions, and enhance user experience.</p>
+</section>
+<section id="what-are-named-colors-in-css-and-when-to-use-them">
+<h2>1.2. What are named colors in CSS and when to use them?<a class="headerlink" href="#what-are-named-colors-in-css-and-when-to-use-them" title="Link to this heading">#</a></h2>
+<p>In CSS, colors play a crucial role in designing web pages, enhancing readability, setting the mood, and improving user experience. One of the simplest ways to define colors in CSS is by using named colors. Named colors are predefined color names recognized by browsers. Here is an example of using a named color for a paragraph element:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, we’re using the named color <code class="docutils literal notranslate"><span class="pre">red</span></code> to style the text in a paragraph.</p>
+<p>Named colors in CSS are a collection of <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/CSS/named-color#syntax">140 standard color names</a> like <code class="docutils literal notranslate"><span class="pre">red</span></code>, <code class="docutils literal notranslate"><span class="pre">blue</span></code>, <code class="docutils literal notranslate"><span class="pre">yellow</span></code>, <code class="docutils literal notranslate"><span class="pre">aqua</span></code>, <code class="docutils literal notranslate"><span class="pre">fuchsia</span></code>, <code class="docutils literal notranslate"><span class="pre">black</span></code>, and so on. These names are simple to use and make your code more readable, and they are self-descriptive.</p>
+<p>Named colors are useful for quick prototyping, simple designs, and improving code readability. Here is an another example of using named colors for an <code class="docutils literal notranslate"><span class="pre">h1</span></code> selector:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">navy</span><span class="p">;</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightgray</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, the heading text will be styled in navy, with a light gray background. The readability of the code improves since named colors provide an immediate visual understanding of the intended style.</p>
+<p>Named colors in CSS are convenient but limited, with only 140 available options. They may not offer the precise shade needed for more detailed designs.</p>
+<p>Named colors in CSS are a great way to apply colors quickly and descriptively. While they are useful for basic designs, prototyping, and improving code readability, their limited range makes them less suitable for complex designs requiring precise color control.</p>
+<p>By understanding the strengths and limitations of named colors, you can determine when it’s best to use them over more detailed color models like RGB or HSL, which you will learn about in future videos.</p>
+</section>
+<section id="what-is-the-rgb-color-model-and-how-does-the-rgb-function-work-in-css">
+<h2>1.3. What is the RGB color model and how does the RGB function work in CSS?<a class="headerlink" href="#what-is-the-rgb-color-model-and-how-does-the-rgb-function-work-in-css" title="Link to this heading">#</a></h2>
+<p>When working with colors in CSS, understanding the RGB color model is essential. RGB stands for Red, Green, and Blue — the primary colors of light. These three colors are combined in different intensities to create a wide range of colors.</p>
+<p>The RGB color model is an additive color model, which means colors are created by combining light at varying intensities.</p>
+<p>The intensity of each color can range from <code class="docutils literal notranslate"><span class="pre">0</span></code> (which means no light) to <code class="docutils literal notranslate"><span class="pre">255</span></code> (which means full light). By mixing different levels of red, green, and blue, you can produce any color you see on your screen. For example:</p>
+<ul class="simple">
+<li><p>Black is represented by <code class="docutils literal notranslate"><span class="pre">rgb(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code>, which means no light for any of the three colors.</p></li>
+<li><p>White is represented by <code class="docutils literal notranslate"><span class="pre">rgb(255,</span> <span class="pre">255,</span> <span class="pre">255)</span></code>, which means full light intensity for all three colors.</p></li>
+<li><p>Red is represented by <code class="docutils literal notranslate"><span class="pre">rgb(255,</span> <span class="pre">0,</span> <span class="pre">0)</span></code>, with full intensity for red and none for green or blue.</p></li>
+</ul>
+<p>In CSS, the <code class="docutils literal notranslate"><span class="pre">rgb()</span></code> function allows you to define colors using the RGB color model. The function takes three values, each representing the intensity of red, green, and blue light, respectively. Here is the basic syntax:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">element</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="kc">red</span><span class="p">,</span><span class="w"> </span><span class="kc">green</span><span class="p">,</span><span class="w"> </span><span class="kc">blue</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The values for red, green, and blue can range from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">255</span></code>, where <code class="docutils literal notranslate"><span class="pre">0</span></code> represents the absence of that color, and <code class="docutils literal notranslate"><span class="pre">255</span></code> represents full saturation. Here is an example of how you might use the <code class="docutils literal notranslate"><span class="pre">rgb()</span></code> function in CSS:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This code would change the text color of the paragraph to red because the red value is set to <code class="docutils literal notranslate"><span class="pre">255</span></code>, while green and blue are set to <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>CSS also provides the <code class="docutils literal notranslate"><span class="pre">rgba()</span></code> function, which adds a fourth value —alpha— that controls the transparency of the color. The alpha value ranges from <code class="docutils literal notranslate"><span class="pre">0</span></code> (completely transparent) to <code class="docutils literal notranslate"><span class="pre">1</span></code> (completely opaque). Here is an example of using <code class="docutils literal notranslate"><span class="pre">rgba()</span></code>:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">div</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This code would apply a semi-transparent blue background to a <code class="docutils literal notranslate"><span class="pre">div</span></code> element because the red and green values are set to <code class="docutils literal notranslate"><span class="pre">0</span></code>, the blue value is set to <code class="docutils literal notranslate"><span class="pre">255</span></code>, and the alpha value is set to <code class="docutils literal notranslate"><span class="pre">0.5</span></code> (50% transparency).</p>
+<p>The RGB color model is especially useful for digital media because it directly corresponds to how screens display colors. Monitors and displays use tiny red, green, and blue pixels to create the colors you see. By controlling the intensity of these pixels through RGB values, you can achieve a wide range of colors for your web design.</p>
+<p>Additionally, the RGB model is ideal when working with dynamic designs. For instance, if you want to create animations or color effects that require real-time changes, the flexibility of the RGB function allows you to modify colors programmatically.</p>
+<p>By understanding the RGB color model and how to use the <code class="docutils literal notranslate"><span class="pre">rgb()</span></code> and <code class="docutils literal notranslate"><span class="pre">rgba()</span></code> functions in CSS, you’ll have greater control over how colors are displayed on your web pages. You can create vibrant designs, transparency, and even programmatically adjust colors for dynamic effects.</p>
+</section>
+<section id="what-is-the-hsl-color-model-and-how-does-the-hsl-function-work-in-css">
+<h2>1.4. What is the HSL color model and how does the <code class="docutils literal notranslate"><span class="pre">hsl()</span></code> function work in CSS?<a class="headerlink" href="#what-is-the-hsl-color-model-and-how-does-the-hsl-function-work-in-css" title="Link to this heading">#</a></h2>
+<p>When styling websites, one of the most versatile and intuitive ways to work with color is by using the HSL color model. HSL stands for Hue, Saturation, and Lightness — three key components that define a color.</p>
+<p>The HSL color model represents colors in a way that is more in line with how humans perceive color. In this lecture, we will explore what the HSL color model is and how the <code class="docutils literal notranslate"><span class="pre">hsl()</span></code> function is used in CSS.</p>
+<ul class="simple">
+<li><p><strong>The hue</strong> is the color type, represented as an angle on the color wheel, which ranges from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">360</span></code> degrees. For example, <code class="docutils literal notranslate"><span class="pre">0</span></code> degrees represents red, <code class="docutils literal notranslate"><span class="pre">120</span></code> degrees is green, and <code class="docutils literal notranslate"><span class="pre">240</span></code> degrees is blue. By adjusting the hue, you shift through different colors on the spectrum.</p></li>
+<li><p><strong>Saturation</strong> refers to the intensity or purity of the color. It is measured as a percentage from <code class="docutils literal notranslate"><span class="pre">0%</span></code> (a completely desaturated, grayscale color) to <code class="docutils literal notranslate"><span class="pre">100%</span></code> (the most vibrant form of that color). A color with <code class="docutils literal notranslate"><span class="pre">100%</span></code> saturation is fully vivid, while a color with <code class="docutils literal notranslate"><span class="pre">0%</span></code> saturation appears as a shade of gray.</p></li>
+<li><p><strong>Lightness</strong> determines how light or dark the color is, again measured as a percentage. A lightness value of <code class="docutils literal notranslate"><span class="pre">0%</span></code> will produce black, <code class="docutils literal notranslate"><span class="pre">50%</span></code> will give you the normal tone of the hue, and <code class="docutils literal notranslate"><span class="pre">100%</span></code> will result in white.</p></li>
+</ul>
+<p>In CSS, the <code class="docutils literal notranslate"><span class="pre">hsl()</span></code> function is used to define colors using the HSL color model. Here is the basic syntax:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">element</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="nb">hsl</span><span class="p">(</span><span class="kc">hue</span><span class="p">,</span><span class="w"> </span><span class="kc">saturation</span><span class="p">,</span><span class="w"> </span><span class="n">lightness</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Let’s break this down with an example:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="nb">hsl</span><span class="p">(</span><span class="mi">120</span><span class="p">,</span><span class="w"> </span><span class="mf">100.00</span><span class="kt">%</span><span class="p">,</span><span class="w"> </span><span class="mf">50.00</span><span class="kt">%</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this case, the hue is <code class="docutils literal notranslate"><span class="pre">120</span></code> degrees, which corresponds to green. The saturation is <code class="docutils literal notranslate"><span class="pre">100%</span></code>, so the green will be fully vivid. The lightness is <code class="docutils literal notranslate"><span class="pre">50%</span></code>, so it’s at its normal tone — neither too dark nor too light. As a result, the text color of the paragraph will be a bright green.</p>
+<p>One of the main advantages of the HSL color model is its intuitive nature. It makes it easy to adjust a color’s vibrancy or lightness by tweaking the saturation and lightness values without having to alter the core color (hue).</p>
+<p>For instance, if you want to create different shades or tints of the same color, you can simply adjust the lightness value.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">div</span><span class="p">.</span><span class="nc">light</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">hsl</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="kt">%</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nt">div</span><span class="p">.</span><span class="nc">dark</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">hsl</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Here, both <code class="docutils literal notranslate"><span class="pre">div</span></code> elements are using the same hue (<code class="docutils literal notranslate"><span class="pre">240</span></code> degrees, which is blue), but one has a lightness of <code class="docutils literal notranslate"><span class="pre">80%</span></code> (a lighter shade of blue), and the other has a lightness of <code class="docutils literal notranslate"><span class="pre">20%</span></code> (a darker shade of blue).</p>
+<p>Just like the RGB model has an <code class="docutils literal notranslate"><span class="pre">rgba()</span></code> function to include transparency, the HSL model has an <code class="docutils literal notranslate"><span class="pre">hsla()</span></code> function. The fourth parameter in this function represents the alpha value, which controls the opacity of the color. Here is the basic syntax:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">element</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">hsla</span><span class="p">(</span><span class="kc">hue</span><span class="p">,</span><span class="w"> </span><span class="kc">saturation</span><span class="p">,</span><span class="w"> </span><span class="n">lightness</span><span class="p">,</span><span class="w"> </span><span class="kc">alpha</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Let’s take a look at an example:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">div</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">hsla</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="kt">%</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This code would give the <code class="docutils literal notranslate"><span class="pre">div</span></code> a semi-transparent red background, where the hue is set to <code class="docutils literal notranslate"><span class="pre">0</span></code> degrees (red), saturation is <code class="docutils literal notranslate"><span class="pre">100%</span></code>, lightness is <code class="docutils literal notranslate"><span class="pre">50%</span></code>, and alpha is <code class="docutils literal notranslate"><span class="pre">0.5</span></code> (50% opacity).</p>
+<p>The HSL color model is particularly useful when you need to create color schemes and adjust shades or tints easily.</p>
+<p>Because HSL separates the hue from saturation and lightness, you can keep a consistent color theme while tweaking lightness for shadows or highlights. This level of flexibility makes HSL a favorite for designers and developers alike.</p>
+<p>Additionally, HSL makes color values more readable and understandable when compared to other methods like hex codes or RGB. You can more clearly see the intent behind the color and adjust accordingly, especially when experimenting with different designs.</p>
+<p>With the HSL color model, you gain more flexibility in controlling color tones, saturation, and lightness, making it a powerful tool for creating rich and dynamic designs in CSS.</p>
+</section>
+<section id="what-are-hex-color-values-and-how-do-they-work-in-css">
+<h2>1.5. What are hex color values and how do they work in CSS?<a class="headerlink" href="#what-are-hex-color-values-and-how-do-they-work-in-css" title="Link to this heading">#</a></h2>
+<p>When working with CSS to style a webpage, one of the most common methods for defining colors is by using hex color values. Hexadecimal color values, or hex codes, are a concise way to represent colors in the RGB color model. In this lecture, we’ll explore what hex codes are, how they work in CSS, and when to use them.</p>
+<p>A hex code (short for hexadecimal code) is a six-character string used to represent colors in the RGB color model. The “hex” refers to the base-16 numbering system, which uses digits <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">9</span></code> and letters <code class="docutils literal notranslate"><span class="pre">A</span></code> to <code class="docutils literal notranslate"><span class="pre">F</span></code>.</p>
+<p>In the context of colors, hex codes specify the amounts of red, green, and blue (RGB) that make up a particular color. Each hex code starts with a hash symbol (<code class="docutils literal notranslate"><span class="pre">#</span></code>), followed by six characters that define the intensity of red, green, and blue in the color.</p>
+<p>For example, the hex code for black is <code class="docutils literal notranslate"><span class="pre">#000000</span></code>, and the hex code for white is <code class="docutils literal notranslate"><span class="pre">#FFFFFF</span></code>. The first two characters represent the red value, the next two represent green, and the last two represent blue.</p>
+<p>In CSS, you can apply colors to elements by using hex codes. Here is the basic syntax:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">element</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#RRGGBB</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">#RRGGBB</span></code> is a placeholder for the actual hex code. The <code class="docutils literal notranslate"><span class="pre">RR</span></code>, <code class="docutils literal notranslate"><span class="pre">GG</span></code>, and <code class="docutils literal notranslate"><span class="pre">BB</span></code> pairs each represent the intensity of red, green, and blue, respectively.</p>
+<p>These pairs can range from <code class="docutils literal notranslate"><span class="pre">00</span></code> (the lowest intensity) to <code class="docutils literal notranslate"><span class="pre">FF</span></code> (the highest intensity). The higher the number, the more of that color will be present in the final mix. For example, let’s apply some hex colors to a few elements:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#FF5733</span><span class="p">;</span><span class="w"> </span><span class="c">/* A reddish-orange color */</span>
+<span class="p">}</span>
+<span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#4CAF50</span><span class="p">;</span><span class="w"> </span><span class="c">/* A shade of green */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In the first case, <code class="docutils literal notranslate"><span class="pre">#FF5733</span></code> is a reddish-orange color. Here’s the breakdown:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FF</span></code> is the highest value for red (fully saturated).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">57</span></code> is a moderate amount of green.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">33</span></code> is a small amount of blue.</p></li>
+</ul>
+<p>In the second case, <code class="docutils literal notranslate"><span class="pre">#4CAF50</span></code> is a shade of green:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">4C</span></code> is a low value for red.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AF</span></code> is a strong value for green.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">50</span></code> is a moderate value for blue.</p></li>
+</ul>
+<p>Hex codes are popular because they are precise and easy to use. They allow you to fine-tune your colors, making them ideal for designs where consistency is important.</p>
+<p>Most design software, such as Adobe Photoshop or Figma, provides hex codes for the colors you select, which makes it easy to copy and paste these values directly into your CSS files.</p>
+<p>In web development, hex codes are often used for defining text colors, backgrounds, borders, and other visual elements. For example:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#F0F0F0</span><span class="p">;</span><span class="w"> </span><span class="c">/* Light gray background */</span>
+<span class="p">}</span>
+<span class="nt">button</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#007BFF</span><span class="p">;</span><span class="w"> </span><span class="c">/* A shade of blue */</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#FFFFFF</span><span class="p">;</span><span class="w"> </span><span class="c">/* White text */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This ensures that your colors remain consistent across your entire website or application.</p>
+<p>In some cases, you may notice hex codes written in shorthand format, using only three characters instead of six. This is possible when both characters in each color pair are the same. For instance, <code class="docutils literal notranslate"><span class="pre">#FF5733</span></code> cannot be shortened, but <code class="docutils literal notranslate"><span class="pre">#FFFFFF</span></code> (white) can be written as <code class="docutils literal notranslate"><span class="pre">#FFF</span></code>.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">h2</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#FFF</span><span class="p">;</span><span class="w"> </span><span class="c">/* White in shorthand */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The shorthand <code class="docutils literal notranslate"><span class="pre">#FFF</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">#FFFFFF</span></code>. Similarly, <code class="docutils literal notranslate"><span class="pre">#000</span></code> would represent black which is <code class="docutils literal notranslate"><span class="pre">#000000</span></code> in full form.</p>
+<p>Hex codes are popular for their precision and compatibility, allowing for over 16 million colors across all browsers. They’re ideal when you need specific branding colors, want to control exact shades that aren’t easily defined by named colors or HSL, or when you’re copying colors from design software that provides hex codes by default.</p>
+</section>
+<section id="what-are-linear-and-radial-gradients-and-how-do-they-work-in-css">
+<h2>1.6. What are linear and radial gradients and how do they work in CSS?<a class="headerlink" href="#what-are-linear-and-radial-gradients-and-how-do-they-work-in-css" title="Link to this heading">#</a></h2>
+<p>In a previous lecture, you learned how to start working with linear and radial gradients. In this video, we are going to dive deeper into how to work with the CSS properties to create more visually appealing and complex designs.</p>
+<p>Gradients in CSS allow you to create smooth transitions between two or more specified colors. They are often used to add depth, texture, and visual interest to web designs without the need for image files.</p>
+<p>CSS supports two main types of gradients: linear gradients and radial gradients.</p>
+<p>Linear gradients create a gradual blend between colors along a straight line. You can control the direction of this line and the colors used. Here’s a basic example of a linear gradient:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">linear-gradient</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">to</span><span class="w"> </span><span class="kc">right</span><span class="p">,</span><span class="w"> </span><span class="kc">red</span><span class="p">,</span><span class="w"> </span><span class="kc">blue</span><span class="p">);</span>
+<span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="kt">vh</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This creates a gradient that transitions from red on the left to blue on the right. The <code class="docutils literal notranslate"><span class="pre">to</span> <span class="pre">right</span></code> parameter specifies the direction of the gradient. You can use other directions like <code class="docutils literal notranslate"><span class="pre">to</span> <span class="pre">left</span></code>, <code class="docutils literal notranslate"><span class="pre">to</span> <span class="pre">top</span></code>, <code class="docutils literal notranslate"><span class="pre">to</span> <span class="pre">bottom</span></code>, or even specify angles like <code class="docutils literal notranslate"><span class="pre">45deg</span></code>.</p>
+<p>You can also use multiple color stops in a linear gradient:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">multi-color-gradient</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">to</span><span class="w"> </span><span class="kc">right</span><span class="p">,</span><span class="w"> </span><span class="kc">red</span><span class="p">,</span><span class="w"> </span><span class="kc">yellow</span><span class="p">,</span><span class="w"> </span><span class="kc">blue</span><span class="p">);</span>
+<span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="kt">vh</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This creates a gradient that transitions from red to yellow to blue, evenly spaced across the element.</p>
+<p>Radial gradients, on the other hand, create circular or elliptical gradients that radiate from a central point. Here’s an example:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">radial-gradient</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">radial-gradient</span><span class="p">(</span><span class="kc">circle</span><span class="p">,</span><span class="w"> </span><span class="kc">red</span><span class="p">,</span><span class="w"> </span><span class="kc">blue</span><span class="p">);</span>
+<span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="kt">vh</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This creates a circular gradient that starts with red in the center and transitions to blue at the edges. You can also specify the shape and size of radial gradients:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">custom-radial-gradient</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">radial-gradient</span><span class="p">(</span><span class="n">ellipse</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="kc">top</span><span class="w"> </span><span class="kc">left</span><span class="p">,</span><span class="w"> </span><span class="kc">red</span><span class="p">,</span><span class="w"> </span><span class="kc">blue</span><span class="p">);</span>
+<span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="kt">vh</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This creates an elliptical gradient starting from the top left corner of the element. Both linear and radial gradients allow you to specify color stops at precise positions. For example:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">precise-gradient</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">to</span><span class="w"> </span><span class="kc">right</span><span class="p">,</span><span class="w"> </span><span class="kc">red</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="p">,</span><span class="w"> </span><span class="kc">yellow</span><span class="w"> </span><span class="mi">40</span><span class="kt">%</span><span class="p">,</span><span class="w"> </span><span class="kc">blue</span><span class="w"> </span><span class="mi">80</span><span class="kt">%</span><span class="p">);</span>
+<span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="kt">vh</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This creates a gradient where red takes up the first <code class="docutils literal notranslate"><span class="pre">20%</span></code>, then transitions to yellow at <code class="docutils literal notranslate"><span class="pre">40%</span></code>, and finally to blue at <code class="docutils literal notranslate"><span class="pre">80%</span></code>.</p>
+<p>Gradients can be used wherever you’d use an image in CSS. This makes them versatile for creating backgrounds, buttons, or even text effects when combined with other CSS properties.</p>
+<p>Remember, while gradients can enhance the visual appeal of your website, it’s important to ensure sufficient contrast for accessibility, especially when using gradients behind text.</p>
+</div></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./css/5_colors"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../5_colors.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">5. Colors Summary</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Examples</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-color-theory-in-design">1.1. What is color theory in design?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-named-colors-in-css-and-when-to-use-them">1.2. What are named colors in CSS and when to use them?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-rgb-color-model-and-how-does-the-rgb-function-work-in-css">1.3. What is the RGB color model and how does the RGB function work in CSS?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-hsl-color-model-and-how-does-the-hsl-function-work-in-css">1.4. What is the HSL color model and how does the <code class="docutils literal notranslate"><span class="pre">hsl()</span></code> function work in CSS?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-hex-color-values-and-how-do-they-work-in-css">1.5. What are hex color values and how do they work in CSS?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-linear-and-radial-gradients-and-how-do-they-work-in-css">1.6. What are linear and radial gradients and how do they work in CSS?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mikaela González Pérez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -225,14 +225,24 @@
 <li class="toctree-l2"><a class="reference internal" href="../../css/2_design/3.html">3. Common Design Tools</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/3_absolute_n_relative_units.html">1. CSS Relative and Absolute Units Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/3_absolute_n_relative_units.html">3. CSS Relative and Absolute Units Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../css/3_absolute_n_relative_units/1.html">1. Working  with Relative and Absolute Units</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../css/3_absolute_n_relative_units/2.html">Examples</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/4_pseudo_classes_n_elements.html">1. CSS Pseudo-classes Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/4_pseudo_classes_n_elements.html">4. CSS Pseudo-classes Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../css/4_pseudo_classes_n_elements/1.html">1. Working with Pseudo-Classes and Pseudo-Elements in CSS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../css/4_pseudo_classes_n_elements/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/5_colors.html">5. Colors Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/5_colors/1.html">1. Working with color in CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/5_colors/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/6_styling_forms.html">6. Styling Forms Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/6_styling_forms/1.html">1. Best Practices for Styling Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/6_styling_forms/2.html">Examples</a></li>
 </ul>
 </details></li>
 </ul>
@@ -564,6 +574,109 @@ All Recipes (Enriched):
 </section>
 <section id="a-quiz-game">
 <h2>2. A Quiz Game<a class="headerlink" href="#a-quiz-game" title="Link to this heading">#</a></h2>
+<p>script.js:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// --- Funciones utilitarias ---</span>
+
+<span class="c1">// Selecciona una pregunta aleatoria del array</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">getRandomQuestion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">array</span><span class="p">[</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">)];</span>
+<span class="p">}</span>
+
+<span class="c1">// Selecciona una opción aleatoria para la computadora</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">getRandomComputerChoice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">array</span><span class="p">[</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">)];</span>
+<span class="p">}</span>
+
+<span class="c1">// Evalúa si la elección de la computadora es correcta</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">getResults</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">question</span><span class="p">,</span><span class="w"> </span><span class="nx">choice</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">question</span><span class="p">.</span><span class="nx">answer</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">choice</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;¡La elección de la computadora es correcta!&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="sb">`La elección de la computadora es incorrecta. La respuesta correcta es: </span><span class="si">${</span><span class="nx">question</span><span class="p">.</span><span class="nx">answer</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// --- Preguntas ---</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">object1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">category</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Música&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">question</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;¿Qué instrumento se asocia típicamente con el flamenco?&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">choices</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Guitarra española&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Violín&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Piano&#39;</span><span class="p">],</span>
+<span class="w">  </span><span class="nx">answer</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Guitarra española&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">object2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">category</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Deportes&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">question</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;¿En qué país se originó el ajedrez moderno?&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">choices</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;India&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;España&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Persia&#39;</span><span class="p">],</span>
+<span class="w">  </span><span class="nx">answer</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;India&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">object3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">category</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Historia antigua&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">question</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;¿Cuál fue la capital del Imperio Romano en su apogeo?&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">choices</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Atenas&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Roma&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Alejandría&#39;</span><span class="p">],</span>
+<span class="w">  </span><span class="nx">answer</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Roma&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">object4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">category</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Ciencia ficción&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">question</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;¿Qué elemento ficticio da energía a los reactores en la saga Iron Man?&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">choices</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Vibranium&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Kryptonita&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Palladium&#39;</span><span class="p">],</span>
+<span class="w">  </span><span class="nx">answer</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Palladium&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">object5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">category</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Naturaleza&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">question</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;¿Qué animal es capaz de dormir con un ojo abierto?&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">choices</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Delfín&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Tigre&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Búho&#39;</span><span class="p">],</span>
+<span class="w">  </span><span class="nx">answer</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Delfín&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">object6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">category</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Ciencia&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">question</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;¿Cuál es el nombre del satélite natural de la Tierra?&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">choices</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Luna&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Io&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Europa&#39;</span><span class="p">],</span>
+<span class="w">  </span><span class="nx">answer</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Luna&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">object7</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">category</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Arte&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">question</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;¿Cuál es el color complementario del azul en teoría del color?&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">choices</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Rojo&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Naranja&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Naranja rojizo&#39;</span><span class="p">],</span>
+<span class="w">  </span><span class="nx">answer</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Naranja&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1">// --- Juego principal ---</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">questions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">object1</span><span class="p">,</span><span class="w"> </span><span class="nx">object2</span><span class="p">,</span><span class="w"> </span><span class="nx">object3</span><span class="p">,</span><span class="w"> </span><span class="nx">object4</span><span class="p">,</span><span class="w"> </span><span class="nx">object5</span><span class="p">,</span><span class="w"> </span><span class="nx">object6</span><span class="p">,</span><span class="w"> </span><span class="nx">object7</span><span class="p">];</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">pregunta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getRandomQuestion</span><span class="p">(</span><span class="nx">questions</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">respuesta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getRandomComputerChoice</span><span class="p">(</span><span class="nx">pregunta</span><span class="p">.</span><span class="nx">choices</span><span class="p">);</span>
+
+<span class="c1">// Mostrar resultados</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Categoría: </span><span class="si">${</span><span class="nx">pregunta</span><span class="p">.</span><span class="nx">category</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Pregunta: </span><span class="si">${</span><span class="nx">pregunta</span><span class="p">.</span><span class="nx">question</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Opción elegida por la computadora: </span><span class="si">${</span><span class="nx">respuesta</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getResults</span><span class="p">(</span><span class="nx">pregunta</span><span class="p">,</span><span class="w"> </span><span class="nx">respuesta</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>console:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Categoría: Ciencia
+Pregunta: ¿Cuál es el nombre del satélite natural de la Tierra?
+Opción elegida por la computadora: Europa
+La elección de la computadora es incorrecta. La respuesta correcta es: Luna
+
+Categoría: Deportes
+Pregunta: ¿En qué país se originó el ajedrez moderno?
+Opción elegida por la computadora: India
+¡La elección de la computadora es correcta!
+
+Categoría: Música
+Pregunta: ¿Qué instrumento se asocia típicamente con el flamenco?
+Opción elegida por la computadora: Violín
+La elección de la computadora es incorrecta. La respuesta correcta es: Guitarra española
+</pre></div>
+</div>
 </div></section>
 </section>
 
@@ -648,7 +761,7 @@ By Mikaela González Pérez
 
   <p class="copyright">
     
-      © Copyright 2025.
+      © Copyright 2023.
       <br/>
     
   </p>
