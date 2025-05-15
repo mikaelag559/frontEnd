@@ -58,6 +58,15 @@ parts:
       sections:
       - file: css/4_pseudo_classes_n_elements/1
       - file: css/4_pseudo_classes_n_elements/2
+    - file: css/5_colors 
+      sections:
+      - file: css/5_colors/1
+      - file: css/5_colors/2
+    - file: css/6_styling_forms
+      sections:
+      - file: css/6_styling_forms/1
+      - file: css/6_styling_forms/2
+
 
   - caption: JavaScript
     maxdepth: 3
