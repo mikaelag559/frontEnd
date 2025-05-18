@@ -67,6 +67,10 @@ parts:
       sections:
       - file: css/6_styling_forms/1
       - file: css/6_styling_forms/2
+    - file: css/7_the_box_model
+      sections:
+      - file: css/7_the_box_model/1
+      - file: css/7_the_box_model/2
 
 
   - caption: JavaScript
@@ -98,3 +102,7 @@ parts:
       sections: 
       - file: javaScript/5_objects/1
       - file: javaScript/5_objects/2
+    - file: javaScript/6_loops
+      sections: 
+      - file: javaScript/6_loops/1
+      - file: javaScript/6_loops/2
