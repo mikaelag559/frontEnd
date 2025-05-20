@@ -1,0 +1,906 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Working with Loops &#8212; My Front End Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'javaScript/6_loops/1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Examples" href="2.html" />
+    <link rel="prev" title="6. Loops Summary" href="../6_loops.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt="My Front End Notes - Home"/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="My Front End Notes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to my web development notes
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">HTML</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/1_basic_html.html">1. Basic HTML Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/1.html">1. What is HTML?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/2.html">2. HTML Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/3.html">3. Working with Media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/4.html">4. Working with Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/2_semantic_html.html">2. Semantic HTML Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/2_semantic_html/1.html">1. Semantic HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/2_semantic_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/3_forms_and_tables_html.html">3. HTML Tables and Forms Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/1.html">1. Working with Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/2.html">2. Working with Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/3.html">3. Working with HTML Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/4_accessibility.html">4. HTML Accessibility Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/1.html">1. Importance of Accessibility and Good HTML Structure - I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/2.html">1. Importance of Accessibility and Good HTML Structure - II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/3.html">1. Importance of Accessibility and Good HTML Structure - III</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/4.html">1. Importance of Accessibility and Good HTML Structure - IV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/5.html">1. Importance of Accessibility and Good HTML Structure - V</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/6.html">Examples</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/1_basic_css.html">1. Basic CSS Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/1.html">1. What Is CSS?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/2.html">2. CSS Specificity, the Cascade Algorithm and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/3.html">3. Styling Lists and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/4.html">4. Working with Backgrounds and Borders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/2_design.html">2. Design Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/2_design/1.html">1. User Interface Design Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/2_design/2.html">2. User-Centered Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/2_design/3.html">3. Common Design Tools</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/3_absolute_n_relative_units.html">3. CSS Relative and Absolute Units Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/3_absolute_n_relative_units/1.html">1. Working  with Relative and Absolute Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/3_absolute_n_relative_units/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/4_pseudo_classes_n_elements.html">4. CSS Pseudo-classes Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/4_pseudo_classes_n_elements/1.html">1. Working with Pseudo-Classes and Pseudo-Elements in CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/4_pseudo_classes_n_elements/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/5_colors.html">5. Colors Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/5_colors/1.html">1. Working with color in CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/5_colors/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/6_styling_forms.html">6. Styling Forms Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/6_styling_forms/1.html">1. Best Practices for Styling Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/6_styling_forms/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/7_the_box_model.html">7. CSS Layout and Effects Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/7_the_box_model/1.html">1. Working with CSS Transforms, Overflow and Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/7_the_box_model/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/8_the_flex_model.html">8. The Flex Model Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/8_the_flex_model/1.html">1. Working with CSS Flexbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/8_the_flex_model/2.html">Examples</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1_variables_n_strings.html">1. Variables and Strings Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1_variables_n_strings/1.html">1. Introduction to JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_variables_n_strings/2.html">2. Working with Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_variables_n_strings/3.html">3. Working with Strings in JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_variables_n_strings/4.html">4. Working with Common String Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_variables_n_strings/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2_booleans_n_numbers.html">2. Booleans and Numbers Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/1.html">1. Working with Numbers, Booleans and the Math Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/2.html">2. Working with Numbers and Common Number Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/3.html">3. Understanding Comparisons and Conditional Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3_functions.html">3. Functions Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3_functions/1.html">1. Working with Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_functions/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4_arrays.html">4. Arrays Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4_functions/1.html">1. Working with Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_functions/2.html">2. Working with Common Array Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_functions/3.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../5_objects.html">5. Objects Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../5_objects/1.html">1. Working with Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../5_objects/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../6_loops.html">6. Loops Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1. Working with Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../7_fundamentals/1.html">1. Understanding Core JavaScript Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7_fundamentals/2.html">2. The <code class="docutils literal notranslate"><span class="pre">var</span></code> Keyword and Hoisting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7_fundamentals/3.html">3. Understanding Modules, Imports and Exports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7_fundamentals/4.html">Examples</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/javaScript/6_loops/1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1. Working with Loops</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-loops-and-iteration-work-in-javascript">1.1. How do loops and iteration work in JavaScript?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-the-for-of-loop-work-and-when-should-you-use-it">1.2. How does the <code class="docutils literal notranslate"><span class="pre">for...of</span></code> loop work and when should you use it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-for-in-loop-and-when-should-you-use-it">1.3. What is the <code class="docutils literal notranslate"><span class="pre">for...in</span></code> loop and when should you use it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-while-loop-and-how-does-it-differ-from-the-do-while-loop">1.4. What is a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop and how does it differ from the <code class="docutils literal notranslate"><span class="pre">do...while</span></code> loop?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-break-and-continue-statements-used-for-in-loops">1.5. What are the <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> statements used for in loops?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div style="text-align: justify">
+<section class="tex2jax_ignore mathjax_ignore" id="working-with-loops">
+<h1>1. Working with Loops<a class="headerlink" href="#working-with-loops" title="Link to this heading">#</a></h1>
+<section id="how-do-loops-and-iteration-work-in-javascript">
+<h2>1.1. How do loops and iteration work in JavaScript?<a class="headerlink" href="#how-do-loops-and-iteration-work-in-javascript" title="Link to this heading">#</a></h2>
+<p>Loops in programming are used to repeat a block of code multiple times.</p>
+<ul class="simple">
+<li><p>An example of a loop would be when you are designing a program that needs to print out a list of items. You could use a loop to print out each one of the items in the list.</p></li>
+<li><p>Another example would be when you designing a game and you want to move a character across the screen. You could use a loop to move the character a certain number of pixels each time the loop runs.</p></li>
+</ul>
+<p>In JavaScript, there are several types of loops that you can use. In this section, we will cover the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. Here is the basic syntax for a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nx">initialization</span><span class="p">;</span><span class="w"> </span><span class="nx">condition</span><span class="p">;</span><span class="w"> </span><span class="nx">increment</span><span class="w"> </span><span class="nx">or</span><span class="w"> </span><span class="nx">decrement</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// code block to be executed</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Let’s break it down:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">initialization</span></code> statement is executed before the loop starts. It is typically used to initialize a counter variable. A <strong>counter variable</strong> is a variable that is used to keep track of how many times the loop has run.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">condition</span></code> statement is evaluated before each iteration of the loop. An iteration is a single pass through the loop.</p>
+<ul>
+<li><p>If the condition is true, the code block inside the loop is executed.</p></li>
+<li><p>If the condition is false, the loop stops and you move on to the next block of code.</p></li>
+</ul>
+</li>
+<li><p>The last part of the loop is the <code class="docutils literal notranslate"><span class="pre">increment/decrement</span> <span class="pre">statement</span></code>. This statement is executed after each iteration of the loop. It is typically used to increment or decrement the counter variable.</p></li>
+</ul>
+<p>Let’s see a real example of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop in JavaScript:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>In the first part of the example above, we initialize a counter variable <code class="docutils literal notranslate"><span class="pre">i</span></code> to <code class="docutils literal notranslate"><span class="pre">0</span></code>. It is common convention to use <code class="docutils literal notranslate"><span class="pre">i</span></code> as the counter variable in a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p></li>
+<li><p>The next part is to check the condition. In this case, the condition is checking if <code class="docutils literal notranslate"><span class="pre">i</span></code> is less than <code class="docutils literal notranslate"><span class="pre">5</span></code>. Since <code class="docutils literal notranslate"><span class="pre">i</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code>, the condition is true, and the code block inside the loop is executed.</p></li>
+<li><p>The code block inside the loop is to log the value of <code class="docutils literal notranslate"><span class="pre">i</span></code> to the console. The value of <code class="docutils literal notranslate"><span class="pre">i</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code>, so the console will show the value of <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p>Then the increment statement is executed. In this case, we are incrementing <code class="docutils literal notranslate"><span class="pre">i</span></code> by <code class="docutils literal notranslate"><span class="pre">1</span></code>. So <code class="docutils literal notranslate"><span class="pre">i</span></code> is now <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+<li><p>Then we check the condition again which is to check if <code class="docutils literal notranslate"><span class="pre">i</span></code> is less than <code class="docutils literal notranslate"><span class="pre">5</span></code>. Since <code class="docutils literal notranslate"><span class="pre">i</span></code> is now <code class="docutils literal notranslate"><span class="pre">1</span></code>, the condition is still true, and the code block inside the loop is executed again.</p></li>
+<li><p>We keep repeating this process until the condition is false. In this case, when <code class="docutils literal notranslate"><span class="pre">i</span></code> is <code class="docutils literal notranslate"><span class="pre">5</span></code>, the condition is false, and the loop stops.</p></li>
+</ol>
+<blockquote>
+<div><p>When you’re working with loops you should be careful not to create a condition that is always true. If you do, the loop will run forever and your program will crash. This is known as an <strong>infinite loop</strong>.</p>
+</div></blockquote>
+<p>It is possible to create nested <code class="docutils literal notranslate"><span class="pre">for</span></code> loops. A nested loop is when you place one loop inside of another. We will see examples of when you might want to do this later on.</p>
+<p>Loops can be beneficial in programming when you need to repeat a block of code a certain number of times. Even though working with <code class="docutils literal notranslate"><span class="pre">for</span></code> loops can be tricky at first, with practice you will get the hang of it.</p>
+</section>
+<section id="how-does-the-for-of-loop-work-and-when-should-you-use-it">
+<h2>1.2. How does the <code class="docutils literal notranslate"><span class="pre">for...of</span></code> loop work and when should you use it?<a class="headerlink" href="#how-does-the-for-of-loop-work-and-when-should-you-use-it" title="Link to this heading">#</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">for...of</span></code> loop is used when you need to loop over values from an iterable. Examples of iterables would be <strong>arrays and strings</strong>.</p>
+<p>Here is the basic syntax for a <code class="docutils literal notranslate"><span class="pre">for...of</span></code> loop:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nx">variable</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">iterable</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// code block to be executed</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">variable</span></code> in the example represents the current value of the iterable that is being looped over.</p>
+<p>If you have an array of numbers, the variable would be the current number in the array. If you have a string, the variable would be the current character in the string.</p>
+<p>Let’s take a look at a few examples so you can better understand how the <code class="docutils literal notranslate"><span class="pre">for...of</span></code> loop works.</p>
+<p>In this first example we have an array of numbers and we want to loop over each number and log it to the console.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>We have created a variable called <code class="docutils literal notranslate"><span class="pre">num</span></code> that will represent the current number in the array. For iteration 1, <code class="docutils literal notranslate"><span class="pre">num</span></code> will be <code class="docutils literal notranslate"><span class="pre">1</span></code>, for iteration 2, <code class="docutils literal notranslate"><span class="pre">num</span></code> will be <code class="docutils literal notranslate"><span class="pre">2</span></code>, and so on.</p></li>
+<li><p>Inside the loop, we are logging the current number to the console.</p></li>
+</ol>
+<p>Here is another example where we have a string and we want to loop over each character and log it to the console.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;freeCodeCamp&#39;</span><span class="p">;</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="kr">char</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">str</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kr">char</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>In this example, we have created a variable called <code class="docutils literal notranslate"><span class="pre">char</span></code> that will represent the current character in the string.</p></li>
+<li><p>For each iteration, the loop will log the current character to the console.</p></li>
+</ol>
+<p>It is important to note that you can use <code class="docutils literal notranslate"><span class="pre">let</span></code>, or <code class="docutils literal notranslate"><span class="pre">const</span></code> when declaring the variable in a <code class="docutils literal notranslate"><span class="pre">for...of</span></code> loop.</p>
+<p>If you are going to use <code class="docutils literal notranslate"><span class="pre">const</span></code> though, make sure that the value of the variable does not change inside the loop. If it does, you will get an error.</p>
+<p>Here is an example of using <code class="docutils literal notranslate"><span class="pre">const</span></code> that results in an error:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// This will cause an error because of `const num`</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, we are trying to change the value of <code class="docutils literal notranslate"><span class="pre">num</span></code> inside the loop. Since we declared <code class="docutils literal notranslate"><span class="pre">num</span></code> with <code class="docutils literal notranslate"><span class="pre">const</span></code>, we will get an error. So, if you need to change the value of the variable inside the loop, use <code class="docutils literal notranslate"><span class="pre">let</span></code> instead.</p>
+<p>Let’s take a look at one last example dealing with an array of objects.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">people</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;John&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Jane&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Jim&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">40</span><span class="w"> </span><span class="p">}</span>
+<span class="p">];</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">people</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">person</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> is </span><span class="si">${</span><span class="nx">person</span><span class="p">.</span><span class="nx">age</span><span class="si">}</span><span class="sb"> years old`</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>In this example, we have an array of objects called <code class="docutils literal notranslate"><span class="pre">people</span></code>. Each object has a <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code> property.</p></li>
+<li><p>When we loop through the array, we create a variable called <code class="docutils literal notranslate"><span class="pre">person</span></code> that will represent the current object in the array.</p></li>
+<li><p>Inside the loop, we are outputting a message to the console.</p></li>
+<li><p>The first message will be <code class="docutils literal notranslate"><span class="pre">John</span> <span class="pre">is</span> <span class="pre">30</span> <span class="pre">years</span> <span class="pre">old</span></code>, the second message will be <code class="docutils literal notranslate"><span class="pre">Jane</span> <span class="pre">is</span> <span class="pre">25</span> <span class="pre">years</span> <span class="pre">old</span></code>, and the third message will be <code class="docutils literal notranslate"><span class="pre">Jim</span> <span class="pre">is</span> <span class="pre">40</span> <span class="pre">years</span> <span class="pre">old</span></code>.</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">for...of</span></code> loops are really useful when you need to loop over values from an iterable like an array or a string. They are also easy to read and can make your code more concise.</p>
+</section>
+<section id="what-is-the-for-in-loop-and-when-should-you-use-it">
+<h2>1.3. What is the <code class="docutils literal notranslate"><span class="pre">for...in</span></code> loop and when should you use it?<a class="headerlink" href="#what-is-the-for-in-loop-and-when-should-you-use-it" title="Link to this heading">#</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">for...in</span></code> loop is best used when you need to loop over the <strong>properties of an object</strong>. This loop will iterate over all enumerable properties of an object, including inherited properties and non-numeric properties.</p>
+<p>An inherited property is a property that is inherited from the object’s prototype chain. A non-numeric property is a property that is not a number or a string that can be converted to a number.</p>
+<p>Here is the basic syntax of a <code class="docutils literal notranslate"><span class="pre">for...in</span></code> loop:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nx">variable</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">object</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// code block to be executed</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">variable</span></code> in the example represents the current property of the object that is being looped over.</p>
+<p>Let’s take a look at a few examples so you can better understand how the <code class="docutils literal notranslate"><span class="pre">for...in</span></code> loop works.</p>
+<p>In this first example we have a <code class="docutils literal notranslate"><span class="pre">fruit</span></code> object and we want to loop over each property and log the value to the console.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">fruit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;apple&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="mf">0.99</span>
+<span class="p">};</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">prop</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">fruit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fruit</span><span class="p">[</span><span class="nx">prop</span><span class="p">]);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">prop</span></code> variable represents the current property of the object. <code class="docutils literal notranslate"><span class="pre">fruit[prop]</span></code> is used to access the value of each property.</p></li>
+<li><p>For the first iteration, <code class="docutils literal notranslate"><span class="pre">prop</span></code> will be <code class="docutils literal notranslate"><span class="pre">name</span></code>. For the second iteration, <code class="docutils literal notranslate"><span class="pre">prop</span></code> will be <code class="docutils literal notranslate"><span class="pre">color</span></code>, and so on.</p></li>
+<li><p>The results logged to the console will be <code class="docutils literal notranslate"><span class="pre">apple</span></code>, <code class="docutils literal notranslate"><span class="pre">red</span></code>, and <code class="docutils literal notranslate"><span class="pre">0.99</span></code>.</p></li>
+</ol>
+<p>In this second example, we have a nested object and we want to loop over each property and log the value to the console.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;John&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">street</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;123 Main St&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Anytown&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;CA&#39;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">prop</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">person</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">[</span><span class="nx">prop</span><span class="p">]);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">address</span></code> property is an object itself. The <code class="docutils literal notranslate"><span class="pre">for...in</span></code> loop will also loop over the properties of the <code class="docutils literal notranslate"><span class="pre">person</span></code> object and log the entire <code class="docutils literal notranslate"><span class="pre">address</span></code> object to the console.</p>
+<p>Here is what the result will look like in the console:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>John
+30
+{ street: &#39;123 Main St&#39;, city: &#39;Anytown&#39;, state: &#39;CA&#39; }
+</pre></div>
+</div>
+<p>If you want to loop over the properties of the <code class="docutils literal notranslate"><span class="pre">address</span></code> object, you can nest another <code class="docutils literal notranslate"><span class="pre">for...in</span></code> loop inside the first one.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">isObject</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="ow">typeof</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;object&#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="nb">Array</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">prop</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">person</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isObject</span><span class="p">(</span><span class="nx">person</span><span class="p">[</span><span class="nx">prop</span><span class="p">]))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">nestedProp</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">person</span><span class="p">[</span><span class="nx">prop</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">[</span><span class="nx">prop</span><span class="p">][</span><span class="nx">nestedProp</span><span class="p">]);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">[</span><span class="nx">prop</span><span class="p">]);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>In this example have a custom function <code class="docutils literal notranslate"><span class="pre">isObject</span></code> that checks if the value is an object.</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Array.isArray</span></code> method is used to check if the value is an array. By placing the logical NOT operator (<code class="docutils literal notranslate"><span class="pre">!</span></code>) in front of the method, we are checking if the value is not an array.</p></li>
+<li><p>The reason why we can’t just use <code class="docutils literal notranslate"><span class="pre">typeof</span></code> equals <code class="docutils literal notranslate"><span class="pre">'object'</span></code> is because arrays are also considered objects in JavaScript. We want to exclude arrays from the check.</p></li>
+<li><p>Also, due to a historical bug in JavaScript, <code class="docutils literal notranslate"><span class="pre">typeof</span> <span class="pre">null</span></code> returns <code class="docutils literal notranslate"><span class="pre">'object'</span></code>. So we want to also exclude <code class="docutils literal notranslate"><span class="pre">null</span></code> values from the check.</p></li>
+</ul>
+</li>
+<li><p>If the condition is true, we nest another <code class="docutils literal notranslate"><span class="pre">for...in</span></code> loop that will loop over the properties of the nested object and log the value to the console.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">nestedProp</span></code> variable represents the current property of the nested object.</p></li>
+</ol>
+<p>Here is what the modified result will look like in the console:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>&quot;John&quot;
+30
+&quot;123 Main St&quot;
+&quot;Anytown&quot;
+&quot;CA&quot;
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">for...in</span></code> loop is useful when you need to loop over the properties of an object.</p>
+<p>It is not recommended to use a <code class="docutils literal notranslate"><span class="pre">for...in</span></code> loop to loop over the elements of an array. Instead, use a <code class="docutils literal notranslate"><span class="pre">for...of</span></code> loop or other array methods like <code class="docutils literal notranslate"><span class="pre">forEach</span></code>, <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code>, and <code class="docutils literal notranslate"><span class="pre">reduce</span></code>, which you will learn about in future lessons.</p>
+</section>
+<section id="what-is-a-while-loop-and-how-does-it-differ-from-the-do-while-loop">
+<h2>1.4. What is a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop and how does it differ from the <code class="docutils literal notranslate"><span class="pre">do...while</span></code> loop?<a class="headerlink" href="#what-is-a-while-loop-and-how-does-it-differ-from-the-do-while-loop" title="Link to this heading">#</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">while</span></code> loop will run a block of code as long as the condition is true. Here is the basic syntax for a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// code block to be executed</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The condition is checked before the block of code is executed. If the condition is false, the block of code will not be executed.</p>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code> loops are useful when you do not know how many times you need to run the block of code. Here is an example of using a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to validate user input:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">userInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Please enter a number between 1 and 10&quot;</span><span class="p">);</span>
+
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="nx">userInput</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">userInput</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">userInput</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">userInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Invalid input. Please enter a number between 1 and 10.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;You entered a valid number!&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>In this example, we are using the <code class="docutils literal notranslate"><span class="pre">prompt</span></code> method to ask for user input. Then, the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop first checks if the <code class="docutils literal notranslate"><span class="pre">userInput</span></code> is <code class="docutils literal notranslate"><span class="pre">NaN</span></code>. Remember that <code class="docutils literal notranslate"><span class="pre">NaN</span></code> is “Not a Number”. <code class="docutils literal notranslate"><span class="pre">isNaN</span></code> checks whether the value is <code class="docutils literal notranslate"><span class="pre">NaN</span></code> and that <code class="docutils literal notranslate"><span class="pre">NaN</span></code> is the result of an invalid number conversion because it’s not a number.</p></li>
+<li><p>So if the user types in random characters or nothing at all, then they will be prompted with the message again. The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is also checking if the <code class="docutils literal notranslate"><span class="pre">userInput</span></code>, when converted to a number, is between <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p></li>
+<li><p>We are using the <code class="docutils literal notranslate"><span class="pre">Number</span></code> constructor here because a prompt will return a string and we want only want to be explicitly checking numbers here.</p></li>
+<li><p>If the user input is not between <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">10</span></code>, the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop will continue to prompt the user to enter a number between <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p></li>
+<li><p>Once the user enters a valid number, the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop will exit and an alert will be displayed to the user.</p></li>
+</ol>
+<p>Another loop similar to the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop would be the <code class="docutils literal notranslate"><span class="pre">do...while</span></code> loop. Here is the basic syntax:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// code block to be executed</span>
+<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">condition</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>One key difference between a <code class="docutils literal notranslate"><span class="pre">do...while</span></code> loop and a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is that the <code class="docutils literal notranslate"><span class="pre">do...while</span></code> loop will execute the block of code at least once before checking the condition.</p>
+<p>If the condition is true, the block of code will continue to execute. If the condition is false, the block of code will stop executing.</p>
+<p>Here is an example of using a <code class="docutils literal notranslate"><span class="pre">do...while</span></code> loop to validate user input:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">userInput</span><span class="p">;</span>
+
+<span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">userInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Please enter a number between 1 and 10&quot;</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="nx">userInput</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">userInput</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span>
+
+<span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;You entered a valid number!&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>In this example, we have a variable called <code class="docutils literal notranslate"><span class="pre">userInput</span></code> and have not assigned a value to it. Then we have a <code class="docutils literal notranslate"><span class="pre">do...while</span></code> loop that will prompt the user to enter a number between <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p></li>
+<li><p>Then the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop will check if the user input is less <code class="docutils literal notranslate"><span class="pre">than</span></code> 1 or greater than <code class="docutils literal notranslate"><span class="pre">10</span></code>. If the input is not between <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">10</span></code>, the <code class="docutils literal notranslate"><span class="pre">do...while</span></code> loop will continue to prompt the user to enter a number between <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p></li>
+<li><p>Once the user complies and enters a valid number, the <code class="docutils literal notranslate"><span class="pre">do...while</span></code> loop will exit and an alert will be displayed to the user.</p></li>
+</ol>
+<p>In most cases, you will probably use the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop more often than the <code class="docutils literal notranslate"><span class="pre">do...while</span></code> loop. However, it is good to know both types of loops and when to use them.</p>
+</section>
+<section id="what-are-the-break-and-continue-statements-used-for-in-loops">
+<h2>1.5. What are the <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> statements used for in loops?<a class="headerlink" href="#what-are-the-break-and-continue-statements-used-for-in-loops" title="Link to this heading">#</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">break</span></code> statement is used to exit a loop early, while a <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement is used to skip the current iteration of a loop and move to the next one.</p>
+<p>Here is an example of using a <code class="docutils literal notranslate"><span class="pre">break</span></code> statement in a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>In the example above, the loop starts counting at <code class="docutils literal notranslate"><span class="pre">0</span></code> and while <code class="docutils literal notranslate"><span class="pre">i</span></code> is less then <code class="docutils literal notranslate"><span class="pre">10</span></code>, the loop will continue to run.</p></li>
+<li><p>Inside the loop, we check if <code class="docutils literal notranslate"><span class="pre">i</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">5</span></code>. If it is, we use the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement to exit the loop early. If not, we log the value of <code class="docutils literal notranslate"><span class="pre">i</span></code> to the console. So the output of the code will print the numbers <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code>, and <code class="docutils literal notranslate"><span class="pre">4</span></code>.</p></li>
+</ol>
+<p>The <code class="docutils literal notranslate"><span class="pre">break</span></code> statement is useful when you want to exit a loop early based on a certain condition. For example, if you are searching for a specific value in an array, you can use a <code class="docutils literal notranslate"><span class="pre">break</span></code> statement to exit the loop once you find the value.</p>
+<p>Sometimes you may want to skip a particular iteration of a loop without exiting the loop entirely. This is where the <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement comes in. Here is an example of using a <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement in a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Just like before, we have initialized <code class="docutils literal notranslate"><span class="pre">i</span></code> to <code class="docutils literal notranslate"><span class="pre">0</span></code> and have a condition that will run the loop as long as <code class="docutils literal notranslate"><span class="pre">i</span></code> is less than <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p></li>
+<li><p>Inside the loop, when <code class="docutils literal notranslate"><span class="pre">i</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">5</span></code>, we use the <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement to skip the current iteration and move to the next one.</p></li>
+</ol>
+<p>3 .The output of this code will print the numbers <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">4</span></code>, <code class="docutils literal notranslate"><span class="pre">6</span></code>, <code class="docutils literal notranslate"><span class="pre">7</span></code>, <code class="docutils literal notranslate"><span class="pre">8</span></code>, and <code class="docutils literal notranslate"><span class="pre">9</span></code>. The number <code class="docutils literal notranslate"><span class="pre">5</span></code> is skipped because of the <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement.</p>
+<p>Another thing you can do with both the <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> statements is to use labels to specify which loop you want to break or continue.</p>
+<p>This is useful when you have nested loops and you want to control the flow of the outer loop from within the inner loop.</p>
+<p>Here is an example of using labels with the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">outerLoop</span><span class="o">:</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">innerLoop</span><span class="o">:</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"> </span><span class="nx">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">break</span><span class="w"> </span><span class="nx">outerLoop</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`i: </span><span class="si">${</span><span class="nx">i</span><span class="si">}</span><span class="sb">, j: </span><span class="si">${</span><span class="nx">j</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p>In this example, we have an outer <code class="docutils literal notranslate"><span class="pre">for</span></code> loop labeled <code class="docutils literal notranslate"><span class="pre">outerLoop</span></code> and an inner <code class="docutils literal notranslate"><span class="pre">for</span></code> loop labeled <code class="docutils literal notranslate"><span class="pre">innerLoop</span></code>.</p></li>
+<li><p>When <code class="docutils literal notranslate"><span class="pre">i</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">1</span></code>, we use the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement with the <code class="docutils literal notranslate"><span class="pre">outerLoop</span></code> label to exit the outer loop early. This will exit both the inner and outer loops.</p></li>
+<li><p>The output of this code will log the following to the console:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>&quot;i: 0, j: 0&quot;
+&quot;i: 0, j: 1&quot;
+&quot;i: 0, j: 2&quot;
+&quot;i: 1, j: 0&quot;
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Most of the time you will not find the need to use labels with the <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> statements, but it is good to know that you have that option if you ever need it.</p>
+</div></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./javaScript/6_loops"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../6_loops.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">6. Loops Summary</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Examples</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-loops-and-iteration-work-in-javascript">1.1. How do loops and iteration work in JavaScript?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-the-for-of-loop-work-and-when-should-you-use-it">1.2. How does the <code class="docutils literal notranslate"><span class="pre">for...of</span></code> loop work and when should you use it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-for-in-loop-and-when-should-you-use-it">1.3. What is the <code class="docutils literal notranslate"><span class="pre">for...in</span></code> loop and when should you use it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-while-loop-and-how-does-it-differ-from-the-do-while-loop">1.4. What is a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop and how does it differ from the <code class="docutils literal notranslate"><span class="pre">do...while</span></code> loop?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-break-and-continue-statements-used-for-in-loops">1.5. What are the <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> statements used for in loops?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mikaela González Pérez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

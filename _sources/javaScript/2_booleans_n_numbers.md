@@ -7,7 +7,7 @@
 
 ## Working with the Number Data Type
 
-*   **Definition**: JavaScript's `Number` type includes integers, floating-point numbers, `Infinity` and `NaN`. Floating-point numbers are numbers with a decimal point. Positive `Infinity` is a number greater than any other number while `-Infinity` is a number smaller than any other number. `NaN` (`Not a Number`) represents an invalid numeric value like the string `"Jessica"`.
+**Definition**: JavaScript's `Number` type includes integers, floating-point numbers, `Infinity` and `NaN`. Floating-point numbers are numbers with a decimal point. Positive `Infinity` is a number greater than any other number while `-Infinity` is a number smaller than any other number. `NaN` (`Not a Number`) represents an invalid numeric value like the string `"Jessica"`.
 
 ## Common Arithmetic Operations
 
@@ -53,31 +53,31 @@
 
 ## Operator Precedence
 
-*   **Definition**: Operator precedence determines the order in which operations are evaluated in an expression. Operators with higher precedence are evaluated before those with lower precedence. Values inside the parenthesis will be evaluated first and multiplication/division will have higher precedence than addition/subtraction. If the operators have the same precedence, then JavaScript will use associativity.
+**Definition**: Operator precedence determines the order in which operations are evaluated in an expression. Operators with higher precedence are evaluated before those with lower precedence. Values inside the parenthesis will be evaluated first and multiplication/division will have higher precedence than addition/subtraction. If the operators have the same precedence, then JavaScript will use associativity.
 
 
-    ```js
-    const result = (2 + 3) * 4;
+```js
+const result = (2 + 3) * 4;
 
-    console.log(result); // 20
+console.log(result); // 20
 
-    const result2 = 10 - 2 + 3;
+const result2 = 10 - 2 + 3;
 
-    console.log(result2); // 11
+console.log(result2); // 11
 
-    const result3 = 2 ** 3 ** 2;
+const result3 = 2 ** 3 ** 2;
 
-    console.log(result3); // 512
-    ```
+console.log(result3); // 512
+```
 
-*   **Definition**: Associativity informs us the direction in which an expression is evaluated when multiple operators of the same type exist. It defines whether the expression should be evaluated from left-to-right (`left-associative`) or right-to-left (`right-associative`). For example, the exponent operator is also right to left associative:
+**Definition**: Associativity informs us the direction in which an expression is evaluated when multiple operators of the same type exist. It defines whether the expression should be evaluated from left-to-right (`left-associative`) or right-to-left (`right-associative`). For example, the exponent operator is also right to left associative:
 
 
-    ```js
-    const result4 = 5 ** 4 ** 1; // 625
+```js
+const result4 = 5 ** 4 ** 1; // 625
 
-    console.log(result4);
-    ```
+console.log(result4);
+```
 
 ## Increment and Decrement Operators
 
@@ -303,37 +303,37 @@
 
 ## `switch` Statements
 
-*   **Definition**: A `switch` statement evaluates an expression and matches its value against a series of `case` clauses. When a match is found, the code block associated with that case is executed. A `break` statement should be placed at the end of each case, to terminate its execution and continue with the next. The `default` case is an optional case and only executes if none of the other cases match. The `default` case is placed at the end of a `switch` statement.
+**Definition**: A `switch` statement evaluates an expression and matches its value against a series of `case` clauses. When a match is found, the code block associated with that case is executed. A `break` statement should be placed at the end of each case, to terminate its execution and continue with the next. The `default` case is an optional case and only executes if none of the other cases match. The `default` case is placed at the end of a `switch` statement.
 
 
-    ```js
-    const dayOfWeek = 3; 
+```js
+const dayOfWeek = 3; 
 
-    switch (dayOfWeek) {
-    case 1:
-        console.log("It's Monday! Time to start the week strong.");
-        break;
-    case 2:
-        console.log("It's Tuesday! Keep the momentum going.");
-        break;
-    case 3:
-        console.log("It's Wednesday! We're halfway there.");
-        break;
-    case 4:
-        console.log("It's Thursday! Almost the weekend.");
-        break;
-    case 5:
-        console.log("It's Friday! The weekend is near.");
-        break;
-    case 6:
-        console.log("It's Saturday! Enjoy your weekend.");
-        break;
-    case 7:
-        console.log("It's Sunday! Rest and recharge.");
-        break;
-    default:
-        console.log("Invalid day! Please enter a number between 1 and 7.");
-    }
-    ```
+switch (dayOfWeek) {
+case 1:
+    console.log("It's Monday! Time to start the week strong.");
+    break;
+case 2:
+    console.log("It's Tuesday! Keep the momentum going.");
+    break;
+case 3:
+    console.log("It's Wednesday! We're halfway there.");
+    break;
+case 4:
+    console.log("It's Thursday! Almost the weekend.");
+    break;
+case 5:
+    console.log("It's Friday! The weekend is near.");
+    break;
+case 6:
+    console.log("It's Saturday! Enjoy your weekend.");
+    break;
+case 7:
+    console.log("It's Sunday! Rest and recharge.");
+    break;
+default:
+    console.log("Invalid day! Please enter a number between 1 and 7.");
+}
+```
 
 </div>
