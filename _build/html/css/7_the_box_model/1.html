@@ -1,0 +1,1016 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Working with CSS Transforms, Overflow and Filters &#8212; My Front End Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'css/7_the_box_model/1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Examples" href="2.html" />
+    <link rel="prev" title="7. CSS Layout and Effects Summary" href="../7_the_box_model.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt="My Front End Notes - Home"/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="My Front End Notes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to my web development notes
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">HTML</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/1_basic_html.html">1. Basic HTML Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/1.html">1. What is HTML?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/2.html">2. HTML Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/3.html">3. Working with Media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/4.html">4. Working with Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/2_semantic_html.html">2. Semantic HTML Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/2_semantic_html/1.html">1. Semantic HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/2_semantic_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/3_forms_and_tables_html.html">3. HTML Tables and Forms Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/1.html">1. Working with Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/2.html">2. Working with Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/3.html">3. Working with HTML Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/4_accessibility.html">4. HTML Accessibility Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/1.html">1. Importance of Accessibility and Good HTML Structure - I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/2.html">1. Importance of Accessibility and Good HTML Structure - II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/3.html">1. Importance of Accessibility and Good HTML Structure - III</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/4.html">1. Importance of Accessibility and Good HTML Structure - IV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/5.html">1. Importance of Accessibility and Good HTML Structure - V</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/6.html">Examples</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1_basic_css.html">1. Basic CSS Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/1.html">1. What Is CSS?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/2.html">2. CSS Specificity, the Cascade Algorithm and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/3.html">3. Styling Lists and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/4.html">4. Working with Backgrounds and Borders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2_design.html">2. Design Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2_design/1.html">1. User Interface Design Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_design/2.html">2. User-Centered Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_design/3.html">3. Common Design Tools</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3_absolute_n_relative_units.html">3. CSS Relative and Absolute Units Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3_absolute_n_relative_units/1.html">1. Working  with Relative and Absolute Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_absolute_n_relative_units/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4_pseudo_classes_n_elements.html">4. CSS Pseudo-classes Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4_pseudo_classes_n_elements/1.html">1. Working with Pseudo-Classes and Pseudo-Elements in CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_pseudo_classes_n_elements/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../5_colors.html">5. Colors Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../5_colors/1.html">1. Working with color in CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../5_colors/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../6_styling_forms.html">6. Styling Forms Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../6_styling_forms/1.html">1. Best Practices for Styling Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../6_styling_forms/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../7_the_box_model.html">7. CSS Layout and Effects Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1. Working with CSS Transforms, Overflow and Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../8_the_flex_model.html">8. The Flex Model Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../8_the_flex_model/1.html">1. Working with CSS Flexbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../8_the_flex_model/2.html">Examples</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/1_variables_n_strings.html">1. Variables and Strings Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/1.html">1. Introduction to JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/2.html">2. Working with Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/3.html">3. Working with Strings in JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/4.html">4. Working with Common String Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers.html">2. Booleans and Numbers Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers/1.html">1. Working with Numbers, Booleans and the Math Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers/2.html">2. Working with Numbers and Common Number Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers/3.html">3. Understanding Comparisons and Conditional Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/3_functions.html">3. Functions Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/3_functions/1.html">1. Working with Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/3_functions/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/4_arrays.html">4. Arrays Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/4_functions/1.html">1. Working with Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/4_functions/2.html">2. Working with Common Array Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/4_functions/3.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/5_objects.html">5. Objects Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/5_objects/1.html">1. Working with Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/5_objects/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/6_loops.html">6. Loops Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/6_loops/1.html">1. Working with Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/6_loops/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../javaScript/7_fundamentals/1.html">1. Understanding Core JavaScript Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../javaScript/7_fundamentals/2.html">2. The <code class="docutils literal notranslate"><span class="pre">var</span></code> Keyword and Hoisting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../javaScript/7_fundamentals/3.html">3. Understanding Modules, Imports and Exports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../javaScript/7_fundamentals/4.html">Examples</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/css/7_the_box_model/1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1. Working with CSS Transforms, Overflow and Filters</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-overflow-in-css-and-how-does-it-work">1.1. What is overflow in CSS and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-css-transform-property-and-how-does-it-work">1.2. What is the CSS <code class="docutils literal notranslate"><span class="pre">transform</span></code> property and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-css-box-model-and-how-does-it-work">1.3. What is the CSS box model and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-margin-collapsing-and-how-does-it-work">1.4. What is margin collapsing and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-difference-between-content-box-and-border-box-in-css">1.5. What is the difference between <code class="docutils literal notranslate"><span class="pre">content-box</span></code> and <code class="docutils literal notranslate"><span class="pre">border-box</span></code> in CSS?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-css-reset-and-what-are-some-common-examples">1.6. What is a CSS reset and what are some common examples?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-css-filter-property-and-what-are-common-examples">1.7. What is the CSS <code class="docutils literal notranslate"><span class="pre">filter</span></code> property and what are common examples?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div style="text-align: justify">
+<section class="tex2jax_ignore mathjax_ignore" id="working-with-css-transforms-overflow-and-filters">
+<h1>1. Working with CSS Transforms, Overflow and Filters<a class="headerlink" href="#working-with-css-transforms-overflow-and-filters" title="Link to this heading">#</a></h1>
+<section id="what-is-overflow-in-css-and-how-does-it-work">
+<h2>1.1. What is overflow in CSS and how does it work?<a class="headerlink" href="#what-is-overflow-in-css-and-how-does-it-work" title="Link to this heading">#</a></h2>
+<p><strong>Overflow</strong> refers to the way elements handle content that exceeds or overflows the size of the containing element. For example, the text content of a <code class="docutils literal notranslate"><span class="pre">div</span></code> element can overflow out of its borders.</p>
+<div style="border:2px solid red; color: grey; height:80px;">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</div>
+<br>
+Overflow is two-dimensional, the x-axis determines horizontal overflow, and the y-axis determines vertical overflow.
+<p>Let’s fix the overflow on our example using the <code class="docutils literal notranslate"><span class="pre">overflow-y</span></code> CSS property. First we can hide the overflow entirely with <code class="docutils literal notranslate"><span class="pre">hidden</span></code> like this:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">div</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">overflow-y</span><span class="p">:</span><span class="w"> </span><span class="kc">hidden</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The result:</p>
+<div style="border:2px solid red; color: grey; height:80px; overflow:hidden;">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</div>
+<br>
+This resolves the overflow problem but now the extra content becomes completely unreachable. Instead we can use scroll to force the element to become scrollable:
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">div</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">overflow-y</span><span class="p">:</span><span class="w"> </span><span class="kc">scroll</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div style="border:2px solid red; color: grey; height:80px; overflow-y:scroll;">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</div>
+<br>
+<p>Now this turns the container into a scrollable element, allowing all the content to be viewed by scrolling the element independently of the page scroll. We could also let the browser handle it on its own with <code class="docutils literal notranslate"><span class="pre">auto</span></code> value. It’s worth noting that vertical scrolling is generally considered okay while horizontal scrolling might be questioned as it’s generally not a common design decision.</p>
+<p>With this knowledge, you can now control how your content overflows giving you more power over the layout of your pages.</p>
+</section>
+<section id="what-is-the-css-transform-property-and-how-does-it-work">
+<h2>1.2. What is the CSS <code class="docutils literal notranslate"><span class="pre">transform</span></code> property and how does it work?<a class="headerlink" href="#what-is-the-css-transform-property-and-how-does-it-work" title="Link to this heading">#</a></h2>
+<p>The CSS <code class="docutils literal notranslate"><span class="pre">transform</span></code> property is a powerful tool that allows you to modify the visual presentation of elements on your webpage without affecting the layout of other elements. It enables you to apply various transformations to elements such as rotating, scaling, skewing, or translating (moving) them in 2D or 3D space.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">transform</span></code> property works by applying a mathematical transformation to an element’s coordinate system. This means you can manipulate an element’s shape and position while keeping it’s original place and document flow intact.</p>
+<p>Let’s explore some common transform functions. Here’s an example of a box element:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">box</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>We have set the <code class="docutils literal notranslate"><span class="pre">body</span></code> to have a solid black border so that you can see the <code class="docutils literal notranslate"><span class="pre">.box</span></code> element nested inside the <code class="docutils literal notranslate"><span class="pre">body</span></code> element.</p>
+<ul>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">translate</span></code> function moves an element from its current position. Here’s an updated example using the <code class="docutils literal notranslate"><span class="pre">translate</span></code> function:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">box</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<span class="w">    </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">translate</span><span class="p">(</span><span class="mi">50</span><span class="kt">px</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This CSS rule will move the element with the class <code class="docutils literal notranslate"><span class="pre">box</span></code> 50 pixels to the right and 100 pixels down from its original position.</p>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">rotate</span></code> function rotates an element around a fixed point and this is an example of using the <code class="docutils literal notranslate"><span class="pre">rotate</span></code> function for the <code class="docutils literal notranslate"><span class="pre">.box</span></code> element from earlier:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">box</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<span class="w">    </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">rotate</span><span class="p">(</span><span class="mi">45</span><span class="kt">deg</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This will rotate the element forty five degrees clockwise.</p>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">scale</span></code> function allows you to change the size of an element. Here’s an example:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">box</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<span class="w">    </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">scale</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This will make the element one and a half times wider and twice as tall as its original size.</p>
+</li>
+</ul>
+<p>You can combine multiple transformations in a single declaration:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">box</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<span class="w">  </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">translate</span><span class="p">(</span><span class="mi">50</span><span class="kt">px</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="kt">px</span><span class="p">)</span><span class="w"> </span><span class="nb">rotate</span><span class="p">(</span><span class="mi">45</span><span class="kt">deg</span><span class="p">)</span><span class="w"> </span><span class="nb">scale</span><span class="p">(</span><span class="mf">1.5</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This will move the element 50 pixels to the right and down, rotate it 45 degrees, and scale it to be one and a half times its original size.</p>
+<p>While the <code class="docutils literal notranslate"><span class="pre">transform</span></code> property is powerful for creating visually appealing designs, it’s important to consider accessibility when using it. Here are some important accessibility concerns to keep in mind.</p>
+<ul class="simple">
+<li><p>Screen readers may not accurately convey transformed content. For example, if you use <code class="docutils literal notranslate"><span class="pre">transform</span></code> to rearrange the visual order of elements, screen readers will still read the content in the original DOM order. This can lead to confusion for users relying on screen readers.</p></li>
+<li><p>When using <code class="docutils literal notranslate"><span class="pre">scale</span></code> to resize text be cautious not to make it too small or too large. Extremely small text can be difficult to read while overly large text might overflow its container and become unreadable. It’s generally better to use proper font styling techniques for text resizing.</p></li>
+<li><p>If you are using <code class="docutils literal notranslate"><span class="pre">transform</span></code> for animations effects, be mindful of users who are sensitive to motion. Excessive or rapid animations can cause discomfort or even trigger seizures for some people. Consider providing a way for users to reduce or turn off animations. When using 3D transforms, remember that not all users perceive depth in the same way. Ensure any critical information conveyed through 3D effects is also available in a 2D format or through text.</p></li>
+<li><p>If you are using <code class="docutils literal notranslate"><span class="pre">transform</span></code> to hide or reveal content, make sure the content is still accessible to screen readers and keyboard navigation. Hidden content should be truly hidden such as by using <code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">none;</span></code> or <code class="docutils literal notranslate"><span class="pre">visibility:</span> <span class="pre">hidden;</span></code>, rather than just being visually moved offscreen.</p></li>
+<li><p>When applying <code class="docutils literal notranslate"><span class="pre">transform</span></code> to interactive elements like buttons or links, ensure that the clickable area remains intuitive and easily targetable. A drastically transformed button might be visually confusing or difficult to click especially for users with motor impairments.</p></li>
+</ul>
+<p>In conclusion, while the CSS <code class="docutils literal notranslate"><span class="pre">transform</span></code> property is a powerful for creating visually dynamic web designs, it’s essential to use it responsibly with accessibility in mind. Always test your transformed elements with various assisted technologies and consider providing alternative ways to access information or functionality that might be affected by transforms.</p>
+</section>
+<section id="what-is-the-css-box-model-and-how-does-it-work">
+<h2>1.3. What is the CSS box model and how does it work?<a class="headerlink" href="#what-is-the-css-box-model-and-how-does-it-work" title="Link to this heading">#</a></h2>
+<p>The CSS box model is a fundamental concept for web development. It defines how HTML elements are structured and positioned. If you understand this model you will be able to control the size, spacing and appearance of the elements on your website.</p>
+<p>In the CSS box model, every element is surrounded by a box. This box consists of four elements: the content area, the padding, the border, and the margin.</p>
+<div style="text-align:center">
+<p><img alt="box model in web tools" src="../../_images/css_7_1_3.png" /></p>
+</div>
+<ol class="arabic">
+<li><p>The <strong>content</strong> area is the innermost part of the box. It’s the space that contains the actual content of an element like text or images.</p></li>
+<li><p>The <strong>padding</strong> is the area immediately after the content area. It’s the space between the content area and the border of an element. With the padding you can add space around the content to improve it’s readability. You can set different values for the top, right, bottom and left padding with the <code class="docutils literal notranslate"><span class="pre">padding</span></code> property.</p>
+<p>This is an example with the <code class="docutils literal notranslate"><span class="pre">padding</span></code> shorthand property, where we set the top padding to fifteen pixels, the left padding to five pixels, the bottom padding to two pixels and the left padding to eight pixels:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">padding</span><span class="o">:</span><span class="w"> </span><span class="nt">15px</span><span class="w"> </span><span class="nt">5px</span><span class="w"> </span><span class="nt">2px</span><span class="w"> </span><span class="nt">8px</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Where we set the top padding to fifteen pixels, the left padding to five pixels, the bottom padding to two pixels and the left padding to eight pixels.</p>
+</li>
+<li><p>The <strong>border</strong> is the outer edge or outline of an element in the CSS box model. It’s the visual boundary of the element. You can customize the border style, width, color and other properties using the <code class="docutils literal notranslate"><span class="pre">border</span></code> property. Here’s an example where we set the border to a width of five pixels, a solid state and a color of blue:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">border</span><span class="o">:</span><span class="w"> </span><span class="nt">5px</span><span class="w"> </span><span class="nt">solid</span><span class="w"> </span><span class="nt">blue</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>If you omit a value the default property of that value will be used. That’s <code class="docutils literal notranslate"><span class="pre">medium</span></code> for the width, <code class="docutils literal notranslate"><span class="pre">none</span></code> for the style and the current color for the color.</p>
+<p>You can set this three properties directly in the shorthand <code class="docutils literal notranslate"><span class="pre">border</span></code> property if you want all sides to be exactly the same. But if you want to assign a different style to each side you can use the <code class="docutils literal notranslate"><span class="pre">border-width</span></code>, <code class="docutils literal notranslate"><span class="pre">border-style</span></code> and <code class="docutils literal notranslate"><span class="pre">border-color</span></code> properties.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">border-width</span><span class="o">:</span><span class="w"> </span><span class="nt">2px</span><span class="w"> </span><span class="nt">4px</span><span class="w"> </span><span class="nt">7px</span><span class="w"> </span><span class="nt">12px</span><span class="o">;</span>
+<span class="nt">border-style</span><span class="o">:</span><span class="w"> </span><span class="nt">dashed</span><span class="w"> </span><span class="nt">solid</span><span class="w"> </span><span class="nt">solid</span><span class="w"> </span><span class="nt">dashed</span><span class="o">;</span>
+<span class="nt">border-color</span><span class="o">:</span><span class="w"> </span><span class="nt">blue</span><span class="w"> </span><span class="nt">red</span><span class="w"> </span><span class="nt">green</span><span class="w"> </span><span class="nt">black</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>You can write up the four values for each one of these properties. They will be applied in a clockwise sequence starting from the top. If you only write one value it will be applied to all four sides.</p>
+</li>
+<li><p>Finally, the <strong>margin</strong> is the space outside the border of an element. It determines the distance between an element and other elements around it. You can set different margin values for the top, right, bottom and left sides of the element using the <code class="docutils literal notranslate"><span class="pre">margin</span></code> property.</p>
+<p>So in this example the top margin is three pixels, the right margin is twelve pixels, the bottom margin is nine pixels and the left margin is seven pixels:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">margin</span><span class="o">:</span><span class="w"> </span><span class="nt">3px</span><span class="w"> </span><span class="nt">12px</span><span class="w"> </span><span class="nt">9px</span><span class="w"> </span><span class="nt">7px</span><span class="o">;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>These four components are essential for calculating the total width and height of an element.</p>
+</section>
+<section id="what-is-margin-collapsing-and-how-does-it-work">
+<h2>1.4. What is margin collapsing and how does it work?<a class="headerlink" href="#what-is-margin-collapsing-and-how-does-it-work" title="Link to this heading">#</a></h2>
+<p>This behavior occurs when the vertical margins of adjacent elements overlap, resulting in a single margin equal to the larger of the two.</p>
+<p>Understanding margin collapsing is important for precise control over spacing and layout in web design. So, let’s get into how margin collapsing works and explore some common scenarios where it occurs.</p>
+<p>In CSS when two vertical margins come into contact with each other <strong>they’ll collapse</strong>, this means that instead of adding together the larger margin wins and determines the space between the elements.</p>
+<blockquote>
+<div><p><strong>This behavior applies only to vertical margins top and bottom</strong> and not horizontal margins, not the left and right.</p>
+</div></blockquote>
+<ul>
+<li><p>So, here’s an example to illustrate this concept on thwo adjacent siblings:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">.</span><span class="nc">box1</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightblue</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">box2</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightgreen</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;box1&quot;</span><span class="p">&gt;</span>Box 1<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;box2&quot;</span><span class="p">&gt;</span>Box 2<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>In this example, you might expect the total space between <code class="docutils literal notranslate"><span class="pre">.box1</span></code> and <code class="docutils literal notranslate"><span class="pre">.box2</span></code> to be 50 pixels (20 pixels plus 30 pixels). However, due to margin collapsing the actual space will be <strong>30 pixels</strong>, which is the larger of the two margins.</p>
+<p>As we saw in the previous examples, margins of the adjacent sibling elements will collapse. This is the most straight forward case of margin collapsing. Let’s explore more cases where margin collapsing can occur.</p>
+</li>
+<li><p>Margins can also collapse between a parent element and its first or last child. If there’s no border, padding, inline content, or clearance to separate the parent’s margin from the child’s, they will collapse.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">.</span><span class="nc">parent</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightyellow</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">child</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightpink</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;parent&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;child&quot;</span><span class="p">&gt;</span>Child element<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>In this case you might expect the child to be 70 pixels from the top (40 pixels plus 30 pixels). However, the margins collapse and the larger margin <strong>40 pixels</strong> is used.</p>
+</li>
+<li><p>If an element has no content, padding, or border, its top and bottom margins can collapse into a single margin.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">.</span><span class="nc">empty-block</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">next-block</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightgray</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;empty-block&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;next-block&quot;</span><span class="p">&gt;</span>Next block<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>In this example the <code class="docutils literal notranslate"><span class="pre">empty-block</span></code>s top and bottom margins collapse into <strong>a single 30 pixels margin</strong>, the larger of the two.</p>
+</li>
+<li><p>Here’s another example of preventing collapse using padding:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">.</span><span class="nc">parent</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">padding-top</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightyellow</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">child</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightpink</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;parent&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;child&quot;</span><span class="p">&gt;</span>Child element<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>In this case the one pixel padding on the parent prevents the margin from collapsing resulting in a total space of <strong>71 pixels</strong> from the top of the parent to the top of the child content.</p>
+</li>
+</ul>
+<p>Understanding margin collapsing is important for precise control over layout and spacing in CSS. While it can sometimes lead to unexpected results, it’s a feature designed to create more aesthetic and consistent spacing in documents. By knowing when margin collapsing occurs and how to prevent it when necessary, you can create more predictable and maintainable layouts in your web designs.</p>
+</section>
+<section id="what-is-the-difference-between-content-box-and-border-box-in-css">
+<h2>1.5. What is the difference between <code class="docutils literal notranslate"><span class="pre">content-box</span></code> and <code class="docutils literal notranslate"><span class="pre">border-box</span></code> in CSS?<a class="headerlink" href="#what-is-the-difference-between-content-box-and-border-box-in-css" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">box-sizing</span></code> property can be set to either <code class="docutils literal notranslate"><span class="pre">content-box</span></code> or <code class="docutils literal notranslate"><span class="pre">border-box</span></code> to control how the width and height of elements are calculated. Here you can see the <code class="docutils literal notranslate"><span class="pre">box-sizing</span></code> property and the two possible values:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">box-sizing</span><span class="o">:</span><span class="w"> </span><span class="nt">content-box</span><span class="o">;</span>
+</pre></div>
+</div>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">box-sizing</span><span class="o">:</span><span class="w"> </span><span class="nt">border-box</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>This property can be set on the universal selector (<code class="docutils literal notranslate"><span class="pre">*</span></code>) to apply to all the elements in the document:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">box-sizing</span><span class="p">:</span><span class="w"> </span><span class="kc">border-box</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The value of the <code class="docutils literal notranslate"><span class="pre">box-sizing</span></code> property is <code class="docutils literal notranslate"><span class="pre">content-box</span></code> by default, but you can choose <code class="docutils literal notranslate"><span class="pre">border-box</span></code> if you need to. We will explore <code class="docutils literal notranslate"><span class="pre">content-box</span></code> first and then we will go into <code class="docutils literal notranslate"><span class="pre">border-box</span></code>.</p>
+<p>To understand how this models work, you need to be familiar with the four core concepts from the CSS box model. Let’s review them quickly. The content area is the space occupied by the element’s content. The padding is the space between the content area and the border. The border is the outline that surrounds the content area and the padding. The margin is the space outside the border that separates the element from other elements.</p>
+<ul>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">content-box</span></code> model, the width and height that you set for an element determines the dimensions of the content area but they don’t include the padding, border or margin. You should use <code class="docutils literal notranslate"><span class="pre">content-box</span></code> when you need to have precise control over the dimensions of the content area. So, when you set the width and height of an element with <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> properties, you are only setting the dimensions of the content area. <code class="docutils literal notranslate"><span class="pre">width</span></code> is the width of the content, <code class="docutils literal notranslate"><span class="pre">height</span></code> is the height of the content.</p>
+<p>To find the total width of the element, what you will really see on the screen, you will still need to add the left and right padding, and the left and right borders.</p>
+<blockquote>
+<div><p>So, the total width equals the total width plus the padding left, plus padding right, plus border left, plus border right.</p>
+</div></blockquote>
+<p>Likewise, the total height of an element can be found by adding the content height, the top and bottom border padding, and the top and bottom borders.</p>
+<blockquote>
+<div><p>So, the total height equals the content height plus padding top, plus padding bottom, plus border top, plus border bottom.</p>
+</div></blockquote>
+<p>For example, here we have a CSS type selector for all the <code class="docutils literal notranslate"><span class="pre">div</span></code> elements.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">div</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this case, if <code class="docutils literal notranslate"><span class="pre">content-box</span></code> is used the content area will have a width of 300 pixels and a height of 200 pixels. However, the total width, what you will see on the screen, will be the result of adding the width of the content area, which is 300 pixels, plus the padding on both sides (40 pixels), and the borders on both sides (8 pixels).</p>
+<p>Likewise, the total height will be the result of adding the height of the content area (200 pixels), plus the top and bottom padding (40 pixels), plus the top and bottom borders (8 pixels).</p>
+</li>
+<li><p>Now let’s explore <code class="docutils literal notranslate"><span class="pre">border-box</span></code>. They are a bit different, with <code class="docutils literal notranslate"><span class="pre">border-box</span></code> the width and height of an element include the content area, the padding, and the border, but <strong>they don’t include the margin</strong>. You should use <code class="docutils literal notranslate"><span class="pre">border-box</span></code> when you need to keep a fixed element size regardless of changes in padding or borders. It’s also helpful for responsive web design since the content area will adjust automatically to fit the dimensions.</p>
+<p>The padding and border are inside the box, so when you set the <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> properties of an element, you’re really setting the width and height of the inner part of the box. Here’s our <code class="docutils literal notranslate"><span class="pre">div</span></code> example with the same properties and values that we had before:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">div</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>With <code class="docutils literal notranslate"><span class="pre">border-box</span></code> the value of the <code class="docutils literal notranslate"><span class="pre">width</span></code> property will be the result of adding the width of the content area, the left and right padding, and the left and right border.</p>
+<blockquote>
+<div><p>So, the width equals the width of the content, plus the left padding, plus the right padding, plus the left border, plus the right border.</p>
+</div></blockquote>
+<p>Likewise, the value of the <code class="docutils literal notranslate"><span class="pre">height</span></code> property is the result of adding the height of the content area, the top and bottom padding, and the top and bottom border.</p>
+<blockquote>
+<div><p>Height equals the height of the content, plus top padding, plus bottom padding, plus top border, plus bottom border. The margin is not included in the width or height.</p>
+</div></blockquote>
+</li>
+</ul>
+<p>If you check the size of the <code class="docutils literal notranslate"><span class="pre">div</span></code> in the browser using the <code class="docutils literal notranslate"><span class="pre">content-box</span></code> and <code class="docutils literal notranslate"><span class="pre">border-box</span></code> you will notice that there’s a very important difference. These are the two <code class="docutils literal notranslate"><span class="pre">div</span></code>s in HTML:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;red-div&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;blue-div&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>We assign them <code class="docutils literal notranslate"><span class="pre">id</span></code>s to select them individually in CSS. These are the CSS rules for the <code class="docutils literal notranslate"><span class="pre">#red-div</span></code> and the <code class="docutils literal notranslate"><span class="pre">#blue-div</span></code>:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">#</span><span class="nn">red-div</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">box-sizing</span><span class="p">:</span><span class="w"> </span><span class="kc">content-box</span><span class="p">;</span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
+<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">#</span><span class="nn">blue-div</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">box-sizing</span><span class="p">:</span><span class="w"> </span><span class="kc">border-box</span><span class="p">;</span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
+<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You can see that they both have the same <code class="docutils literal notranslate"><span class="pre">width</span></code>, <code class="docutils literal notranslate"><span class="pre">height</span></code>, <code class="docutils literal notranslate"><span class="pre">padding</span></code>, <code class="docutils literal notranslate"><span class="pre">border</span></code> and <code class="docutils literal notranslate"><span class="pre">margin</span></code>. The only differences are the colors and the value of the <code class="docutils literal notranslate"><span class="pre">box-sizing</span></code> property. This small difference has a very important impact on the final dimensions.</p>
+<div style="text-align:center">
+<p><img alt="box model in web tools" src="../../_images/css_7_1_5.png" /></p>
+</div>
+<p>Choosing between <code class="docutils literal notranslate"><span class="pre">content-box</span></code> and <code class="docutils literal notranslate"><span class="pre">border-box</span></code> really depends on the specific needs of your project. While <code class="docutils literal notranslate"><span class="pre">border-box</span></code> is becoming increasingly popular for its simplicity and flexibility, understanding both models is important for implementing effective CSS layouts.</p>
+</section>
+<section id="what-is-a-css-reset-and-what-are-some-common-examples">
+<h2>1.6. What is a CSS reset and what are some common examples?<a class="headerlink" href="#what-is-a-css-reset-and-what-are-some-common-examples" title="Link to this heading">#</a></h2>
+<p>A CSS reset is a stylesheet that removes all or some of the default formatting that web browsers apply to HTML elements. For example, you might have noticed that certain elements, like paragraphs and headings, already have margins by default even if you don’t define them explicitly in your custom stylesheets.</p>
+<p>You will also see this with various properties in a wide range of HTML elements. Different browsers may also apply different default styles to HTML elements. The default styles in Google Chrome may not be exactly the same as in Mozilla Firefox or Microsoft Edge. This can result in inconsistent styles across browsers which you should avoid as much as possible.</p>
+<p>To handle this, a CSS reset removes the default styles. By removing all or some of the default styles, you can get a consistent baseline for your design and minimize the potential inconsistencies across browsers and devices. Removing default styles can also make the styling process easier because you will only see the styles that you have applied explicitly in your custom stylesheets. There are two main approaches to CSS resets: you can either define custom CSS resets or use third-party CSS resets.</p>
+<ul>
+<li><p>Custom CSS resets are stylesheets that you create from scratch to fit the need of your project. This way you can control the specific styles that will be reset with a lot of room for flexibility. However, you also need to invest time to develop and maintain the stylesheets. Here’s an example of a very common CSS rule for resetting the margin and padding of all HTML elements:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>It’s usually written at the top of the CSS stylesheet. The asterisk star selector is a wildcard selector that matches all HTML elements, so they will have a default margin of zero and a default padding of zero on all four sides. This will give you a starting point and then you can customize them in more specific CSS selectors further down in the stylesheet.</p>
+<p>You can use this approach to select any HTML element and reset its default styles, just create a custom stylesheet and use the appropriate CSS selectors to match the elements and set the styles.</p>
+</li>
+<li><p>But this can be a time intensive process. If you want to save time you can also use a third-party CSS reset. These stylesheets are already pre-built so you can just download them and add them to your project directly.</p>
+<ul class="simple">
+<li><p>A great example of a third-party CSS reset is <code class="docutils literal notranslate"><span class="pre">Normalize.css</span></code>. This stylesheet normalizes styles for a wide range of HTML elements while still keeping some useful default styles especially those that are important for accessibility. It also corrects bugs and style inconsistencies.</p></li>
+<li><p>Another option is <code class="docutils literal notranslate"><span class="pre">sanitize.css</span></code>. This is a CSS library that you can use to ensure that default styles will be consistent across all major modern browsers. This library is developed alongside <code class="docutils literal notranslate"><span class="pre">Normalize.css</span></code> so they evolve together. It also has individual stylesheets that you can download for specific purposes like normalizing forms and typography.</p></li>
+</ul>
+<p>There are many options available but you should choose the ones that best fit the needs of your project. You can also combine both approaches using third-party CSS resets with custom resets.</p>
+</li>
+</ul>
+<p>When working with CSS resets, it’s also important to take accessibility into account. Your web application should be accessible to everyone. So, you shouldn’t reset styles that might be helpful for screen readers or other assistive technologies. You should also consider the impact that these additional stylesheets may have on your applications performance, because they have to be downloaded before the custom styles are applied.</p>
+<p>By removing the default styles, CSS resets give you a blank starting point to implement your design. This results in a more uniform and consistent user experience across browsers and across devices.</p>
+</section>
+<section id="what-is-the-css-filter-property-and-what-are-common-examples">
+<h2>1.7. What is the CSS <code class="docutils literal notranslate"><span class="pre">filter</span></code> property and what are common examples?<a class="headerlink" href="#what-is-the-css-filter-property-and-what-are-common-examples" title="Link to this heading">#</a></h2>
+<p>The CSS <code class="docutils literal notranslate"><span class="pre">filter</span></code> property is a powerful tool that allows you to apply graphical effects to elements on a web page. It’s particularly useful for adjusting the visual presentation of images, backgrounds and even text without modifying the original asset.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">filter</span></code> property can be used to create various effects, such as blurring, color shifting, and contrast adjustments. Let’s discuss how the filter property works and explore some common examples. The basic syntax for a <code class="docutils literal notranslate"><span class="pre">filter</span></code> property is straightforward:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">selector</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">filter</span><span class="p">:</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">amount</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">function</span></code> represents the specific filter effect you want to apply, and <code class="docutils literal notranslate"><span class="pre">amount</span></code> is typically a value that determines the intensity of the effect. Now let’s look at some common filter functions and their uses.</p>
+<ul>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">blur</span></code> function applies a gaussian blur to the element, the amount is specified in pixels and represents the radius of the blur. This CSS rule will apply a 5 pixel blur to all images on the page. The <code class="docutils literal notranslate"><span class="pre">blur</span></code> effect can be useful for creating depth in your design or for obscuring parts of an image.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">img</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">filter</span><span class="p">:</span><span class="w"> </span><span class="nb">blur</span><span class="p">(</span><span class="mi">5</span><span class="kt">px</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">brightness</span></code> function adjusts the brightness of the element. A value of <code class="docutils literal notranslate"><span class="pre">0%</span></code> will make the element completely black, while values over <code class="docutils literal notranslate"><span class="pre">100%</span></code> will increase the brightness.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">bright-image</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">filter</span><span class="p">:</span><span class="w"> </span><span class="nb">brightness</span><span class="p">(</span><span class="mi">150</span><span class="kt">%</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This CSS rule increases the brightness of elements with the class <code class="docutils literal notranslate"><span class="pre">bright-image</span></code> by <code class="docutils literal notranslate"><span class="pre">50%</span></code>. Brightness adjustments can be used to make images pop or create a washed-out effect.</p>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">grayscale</span></code> function converts the element to grayscale. The amount is defined as a percentage, where <code class="docutils literal notranslate"><span class="pre">100%</span></code> is completely grayscale and <code class="docutils literal notranslate"><span class="pre">0%</span></code> leaves the image unchanged.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">gray-image</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">filter</span><span class="p">:</span><span class="w"> </span><span class="nb">grayscale</span><span class="p">(</span><span class="mi">100</span><span class="kt">%</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This rule will convert elements with the class <code class="docutils literal notranslate"><span class="pre">gray-image</span></code> to complete grayscale. <code class="docutils literal notranslate"><span class="pre">grayscale</span></code> can be used to create a vintage look or de-emphasize certain elements on a page.</p>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">sepia</span></code> function applies a sepia tone to the element. Like grayscale, it uses a percentage value:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">old-photo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">filter</span><span class="p">:</span><span class="w"> </span><span class="nb">sepia</span><span class="p">(</span><span class="mi">80</span><span class="kt">%</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This rule applies an <code class="docutils literal notranslate"><span class="pre">80%</span></code> sepia effect to elements with the class <code class="docutils literal notranslate"><span class="pre">old-photo</span></code>. The sepia effect is great for creating a vintage or old-timey look.</p>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">hue-rotate</span></code> function applies the hue rotation to the element. The value is defined in degrees, and represents a rotation around the color circle.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">color-shift</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">filter</span><span class="p">:</span><span class="w"> </span><span class="nb">hue-rotate</span><span class="p">(</span><span class="mi">90</span><span class="kt">deg</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This rule rotates the hue of elements with the class <code class="docutils literal notranslate"><span class="pre">color-shift</span></code> by <code class="docutils literal notranslate"><span class="pre">90</span></code> degrees. Hue rotation can be used to create psychedelic effects or to adjust the overall color scheme of an image.</p>
+</li>
+</ul>
+<p>One of the most powerful aspects of the <code class="docutils literal notranslate"><span class="pre">filter</span></code> property is the ability to combine multiple effects. You can apply several filters to the same element by separating them with spaces:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">multi-filter</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<span class="w">  </span><span class="k">filter</span><span class="p">:</span><span class="w"> </span><span class="nb">contrast</span><span class="p">(</span><span class="mi">150</span><span class="kt">%</span><span class="p">)</span><span class="w"> </span><span class="nb">brightness</span><span class="p">(</span><span class="mi">110</span><span class="kt">%</span><span class="p">)</span><span class="w"> </span><span class="nb">sepia</span><span class="p">(</span><span class="mi">30</span><span class="kt">%</span><span class="p">);</span><span class="w">  </span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This rule applies increased contrast, slightly increased brightness, and a subtle sepia effect to elements with the class <code class="docutils literal notranslate"><span class="pre">multi-filter</span></code>.</p>
+<p>By combining filters you can create complex and unique visual effects tailored to your design needs. The CSS filter property is a versatile tool that allows for creative visual manipulation of web elements.</p>
+<p>While we have covered some of the most common filter functions, there are others available, such as <code class="docutils literal notranslate"><span class="pre">contrast</span></code>, <code class="docutils literal notranslate"><span class="pre">invert</span></code>, and <code class="docutils literal notranslate"><span class="pre">saturate</span></code>. As with any powerful feature, it’s important to kind of be careful with how you use the filters to enhance your design without overwhelming your users or compromising accessibility.</p>
+</div></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./css/7_the_box_model"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../7_the_box_model.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">7. CSS Layout and Effects Summary</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Examples</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-overflow-in-css-and-how-does-it-work">1.1. What is overflow in CSS and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-css-transform-property-and-how-does-it-work">1.2. What is the CSS <code class="docutils literal notranslate"><span class="pre">transform</span></code> property and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-css-box-model-and-how-does-it-work">1.3. What is the CSS box model and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-margin-collapsing-and-how-does-it-work">1.4. What is margin collapsing and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-difference-between-content-box-and-border-box-in-css">1.5. What is the difference between <code class="docutils literal notranslate"><span class="pre">content-box</span></code> and <code class="docutils literal notranslate"><span class="pre">border-box</span></code> in CSS?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-css-reset-and-what-are-some-common-examples">1.6. What is a CSS reset and what are some common examples?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-css-filter-property-and-what-are-common-examples">1.7. What is the CSS <code class="docutils literal notranslate"><span class="pre">filter</span></code> property and what are common examples?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mikaela González Pérez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

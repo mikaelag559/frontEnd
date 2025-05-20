@@ -217,7 +217,7 @@ Using the `typeof` Operator
 String Basics
 -------------
 
-*   **Definition**: A string is a sequence of characters wrapped in either single quotes, double quotes or backticks. Strings are primitive data types and they are immutable. Immutability means that once a string is created, is cannot be changed.
+**Definition**: A string is a sequence of characters wrapped in either single quotes, double quotes or backticks. Strings are primitive data types and they are immutable. Immutability means that once a string is created, is cannot be changed.
 *   **Accessing Characters from a String**: To access a character from a string you can use bracket notation and pass in the index number. An index is the position of a character within a string, and it is zero-based.
 
     ```JS
@@ -248,12 +248,12 @@ String Basics
 Template Literals (Template Strings) and String Interpolation
 -------------------------------------------------------------
 
-*   **Definition**: Template literals are defined with backticks (\`). They allow for easier string manipulation, including embedding variables directly inside a string, a feature known as string interpolation.
+**Definition**: Template literals are defined with backticks (\`). They allow for easier string manipulation, including embedding variables directly inside a string, a feature known as string interpolation.
 
-    ```JS
-    const name = "Jessica";
-    const greeting = `Hello, ${name}!`; // "Hello, Jessica!"
-    ```
+```JS
+const name = "Jessica";
+const greeting = `Hello, ${name}!`; // "Hello, Jessica!"
+```
 
 ASCII, the `charCodeAt()` Method and the `fromCharCode()` Method
 ----------------------------------------------------------------

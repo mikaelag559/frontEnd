@@ -71,6 +71,10 @@ parts:
       sections:
       - file: css/7_the_box_model/1
       - file: css/7_the_box_model/2
+    - file: css/8_the_flex_model
+      sections:
+      - file: css/8_the_flex_model/1
+      - file: css/8_the_flex_model/2
 
 
   - caption: JavaScript
@@ -106,3 +110,9 @@ parts:
       sections: 
       - file: javaScript/6_loops/1
       - file: javaScript/6_loops/2
+    - file: javaScript/7_fundamentals
+      sections: 
+      - file: javaScript/7_fundamentals/1
+      - file: javaScript/7_fundamentals/2
+      - file: javaScript/7_fundamentals/3
+      - file: javaScript/7_fundamentals/4
