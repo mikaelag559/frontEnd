@@ -47,10 +47,8 @@
 *   **`align-items: stretch;`**: This is used to stretch the flex items along the cross axis.
 
 
-<div style="margin: 10px auto; width: 60%; background-color: transparent !important;">
-    
-![box model in web tools](../img/css_8.svg)
-
+<div style="margin: 10px auto; width: 60%;">
+    <p><img style=" background-color: transparent;" alt="box model in web tools" src="../_images/css_8.svg"></p>
 </div>
 
 
