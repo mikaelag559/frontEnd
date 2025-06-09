@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'javaScript/7_fundamentals/4';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="8. Higher Order Functions Summary" href="../8_higher_order_functions.html" />
     <link rel="prev" title="3. Understanding Modules, Imports and Exports" href="3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -256,6 +257,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../../css/8_the_flex_model/2.html">Examples</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/9_typography.html">9. Typograpgy Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/9_typography/1.html">1. Working with CSS Fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/9_typography/2.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
 <ul class="current nav bd-sidenav">
@@ -295,10 +301,18 @@
 <li class="toctree-l2"><a class="reference internal" href="../6_loops/2.html">Examples</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="1.html">1. Understanding Core JavaScript Fundamentals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2.html">2. The <code class="docutils literal notranslate"><span class="pre">var</span></code> Keyword and Hoisting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3.html">3. Understanding Modules, Imports and Exports</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Examples</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../7_fundamentals.html">7. JavaScript Fundamentals Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1.html">1. Understanding Core JavaScript Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">2. The <code class="docutils literal notranslate"><span class="pre">var</span></code> Keyword and Hoisting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.html">3. Understanding Modules, Imports and Exports</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../8_higher_order_functions.html">8. Higher Order Functions Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../8_higher_order_functions/1.html">1. Working with Higher Order Functions and Callbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../8_higher_order_functions/2.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -447,8 +461,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-pyramid-generator">1. A Pyramid Generator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-gradebook-app">2. A Gradebook App</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-inventory-management">3. An Inventory Management</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-password-generator">4. A Password Generator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-summ-all-numbers-algorithm">5. A Summ All Numbers Algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-slice-and-splice-algorithm">6. The Slice and Splice Algorithm</a></li>
 </ul>
             </nav>
         </div>
@@ -463,25 +481,351 @@ document.write(`
   <div style="text-align: justify">
 <section class="tex2jax_ignore mathjax_ignore" id="examples">
 <h1>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h1>
-<section id="id1">
-<h2>1.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>index.html:</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>
+<section id="a-pyramid-generator">
+<h2>1. A Pyramid Generator<a class="headerlink" href="#a-pyramid-generator" title="Link to this heading">#</a></h2>
+<p>We want to generate a pyramid that can be either standing upright or upside down.</p>
+<p>Below is a simpler but more verbose version of the code:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">pyramid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">string</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="p">,</span><span class="w"> </span><span class="nx">bool</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">fillPyramid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">space</span><span class="p">,</span><span class="w"> </span><span class="nx">notSpace</span><span class="p">,</span><span class="w"> </span><span class="nx">string</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">pyramidArray</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="s2">&quot;\n&quot;</span><span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="nx">pyramidArray</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nb">Array</span><span class="p">(</span><span class="nx">space</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="nx">pyramidArray</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nb">Array</span><span class="p">(</span><span class="nx">notSpace</span><span class="o">*</span><span class="mf">2</span><span class="o">+</span><span class="mf">1</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="nx">string</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">));</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">standingPyramid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">string</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="o">=</span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">&lt;=</span><span class="kr">int</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="nx">space</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">i</span><span class="p">;</span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="nx">notSpace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="w">      </span><span class="nx">fillPyramid</span><span class="p">(</span><span class="nx">space</span><span class="p">,</span><span class="w"> </span><span class="nx">notSpace</span><span class="p">,</span><span class="w"> </span><span class="nx">string</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nx">pyramidArray</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="s2">&quot;\n&quot;</span><span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">pyramidArray</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">upsideDownPyramid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">string</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="o">=</span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">&lt;=</span><span class="kr">int</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="nx">notSpace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">i</span><span class="p">;</span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="nx">space</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="w">      </span><span class="nx">fillPyramid</span><span class="p">(</span><span class="nx">space</span><span class="p">,</span><span class="w"> </span><span class="nx">notSpace</span><span class="p">,</span><span class="w"> </span><span class="nx">string</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nx">pyramidArray</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="s2">&quot;\n&quot;</span><span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">pyramidArray</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">pyramidArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">bool</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">standingPyramid</span><span class="p">(</span><span class="nx">string</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="p">);</span><span class="w"> </span><span class="p">};</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">upsideDownPyramid</span><span class="p">(</span><span class="nx">string</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pyramid</span><span class="p">(</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pyramid</span><span class="p">(</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">));</span>
 </pre></div>
 </div>
-<p>styles.css:</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span>
+<p>Here is a more compact and efficient version of the same functionality:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">pyramid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kr">char</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="p">,</span><span class="w"> </span><span class="nx">upsideDown</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nx">height</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">upsideDown</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">height</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">i</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">spaces</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="nx">height</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">level</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">chars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">char</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="nx">level</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">lines</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">spaces</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">chars</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">lines</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;\n&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;\n&quot;</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pyramid</span><span class="p">(</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pyramid</span><span class="p">(</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Both versions produce the same output:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   o
+  ooo
+ ooooo
+ooooooo
+
+ooooooo
+ ooooo
+  ooo
+   o
+
 </pre></div>
 </div>
 </section>
-<section id="id2">
-<h2>2.<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>index.html:</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>
+<section id="a-gradebook-app">
+<h2>2. A Gradebook App<a class="headerlink" href="#a-gradebook-app" title="Link to this heading">#</a></h2>
+<p>script.js:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">getAverage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">accumulator</span><span class="p">,</span><span class="w"> </span><span class="nx">currentValue</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">accumulator</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">currentValue</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">getGrade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">score</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;A+&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">score</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">100</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">90</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;A&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">score</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">90</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">80</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;B&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">score</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">80</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">70</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;C&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">score</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">70</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">60</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;D&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;F&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">hasPassingGrade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">getGrade</span><span class="p">(</span><span class="nx">score</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;F&quot;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">studentMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">array</span><span class="p">,</span><span class="w"> </span><span class="nx">score</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`Class average: </span><span class="si">${</span><span class="nx">getAverage</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span><span class="si">}</span><span class="sb">. Your grade: </span><span class="si">${</span><span class="nx">getGrade</span><span class="p">(</span><span class="nx">score</span><span class="p">)</span><span class="si">}</span><span class="sb">. `</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">hasPassingGrade</span><span class="p">(</span><span class="nx">score</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">msg</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sb">`You passed the course.`</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">msg</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sb">`You failed the course.`</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">studentMsg</span><span class="p">([</span><span class="mf">92</span><span class="p">,</span><span class="w"> </span><span class="mf">88</span><span class="p">,</span><span class="w"> </span><span class="mf">12</span><span class="p">,</span><span class="w"> </span><span class="mf">77</span><span class="p">,</span><span class="w"> </span><span class="mf">57</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">67</span><span class="p">,</span><span class="w"> </span><span class="mf">38</span><span class="p">,</span><span class="w"> </span><span class="mf">97</span><span class="p">,</span><span class="w"> </span><span class="mf">89</span><span class="p">],</span><span class="w"> </span><span class="mf">37</span><span class="p">));</span>
 </pre></div>
 </div>
-<p>styles.css:</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span>
+<p>A more compact version:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">getAverage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">getGrade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="p">=&gt;</span>
+<span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">100</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;A+&quot;</span><span class="w"> </span><span class="o">:</span>
+<span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">90</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;A&quot;</span><span class="w"> </span><span class="o">:</span>
+<span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">80</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;B&quot;</span><span class="w"> </span><span class="o">:</span>
+<span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">70</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;C&quot;</span><span class="w"> </span><span class="o">:</span>
+<span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">60</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;D&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;F&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">hasPassingGrade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">getGrade</span><span class="p">(</span><span class="nx">score</span><span class="p">)</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s2">&quot;F&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">studentMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span><span class="w"> </span><span class="nx">score</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span>
+<span class="w">  </span><span class="sb">`Class average: </span><span class="si">${</span><span class="nx">getAverage</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span><span class="si">}</span><span class="sb">. Your grade: </span><span class="si">${</span><span class="nx">getGrade</span><span class="p">(</span><span class="nx">score</span><span class="p">)</span><span class="si">}</span><span class="sb">. `</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="p">(</span><span class="nx">hasPassingGrade</span><span class="p">(</span><span class="nx">score</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;You passed the course.&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;You failed the course.&quot;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">studentMsg</span><span class="p">([</span><span class="mf">92</span><span class="p">,</span><span class="w"> </span><span class="mf">88</span><span class="p">,</span><span class="w"> </span><span class="mf">12</span><span class="p">,</span><span class="w"> </span><span class="mf">77</span><span class="p">,</span><span class="w"> </span><span class="mf">57</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">67</span><span class="p">,</span><span class="w"> </span><span class="mf">38</span><span class="p">,</span><span class="w"> </span><span class="mf">97</span><span class="p">,</span><span class="w"> </span><span class="mf">89</span><span class="p">],</span><span class="w"> </span><span class="mf">37</span><span class="p">));</span>
+</pre></div>
+</div>
+</section>
+<section id="an-inventory-management">
+<h2>3. An Inventory Management<a class="headerlink" href="#an-inventory-management" title="Link to this heading">#</a></h2>
+<p>script.js:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// Suponiendo que este es tu código base ya definido antes de ejecutar los tests:</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">inventory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">findProductIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">productName</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">inventory</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">inventory</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">productName</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">i</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">addProduct</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">newProduct</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">findProductIndex</span><span class="p">(</span><span class="nx">newProduct</span><span class="p">.</span><span class="nx">name</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">());</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">index</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">inventory</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="nx">newProduct</span><span class="p">.</span><span class="nx">name</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">(),</span>
+<span class="w">      </span><span class="nx">quantity</span><span class="o">:</span><span class="w"> </span><span class="nx">newProduct</span><span class="p">.</span><span class="nx">quantity</span><span class="p">,</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">inventory</span><span class="p">[</span><span class="nx">inventory</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">].</span><span class="nx">name</span><span class="si">}</span><span class="sb"> added to inventory`</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">inventory</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">quantity</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">newProduct</span><span class="p">.</span><span class="nx">quantity</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">inventory</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">name</span><span class="si">}</span><span class="sb"> quantity updated`</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">removeProduct</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">quantity</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">productName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">name</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">findProductIndex</span><span class="p">(</span><span class="nx">productName</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">index</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">productName</span><span class="si">}</span><span class="sb"> not found`</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">remaining</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">inventory</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">quantity</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">quantity</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">remaining</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">inventory</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">remaining</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+<span class="w">      </span><span class="sb">`Not enough </span><span class="si">${</span><span class="nx">productName</span><span class="si">}</span><span class="sb"> available, remaining pieces: </span><span class="si">${</span><span class="nx">inventory</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">quantity</span><span class="si">}</span><span class="sb">`</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nx">inventory</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">quantity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">remaining</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Remaining </span><span class="si">${</span><span class="nx">productName</span><span class="si">}</span><span class="sb"> pieces: </span><span class="si">${</span><span class="nx">remaining</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">/////////////////////////////////////////////</span>
+<span class="c1">// 🔽 TESTS PASO A PASO CON SALIDA ESPERADA</span>
+<span class="c1">/////////////////////////////////////////////</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n--- TEST 1: Crear array vacío ---&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;inventory:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">inventory</span><span class="p">);</span><span class="w"> </span><span class="c1">// []</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n--- TEST 2: Definición de findProductIndex ---&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">findProductIndex</span><span class="p">);</span><span class="w"> </span><span class="c1">// function</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n--- TEST 3: findProductIndex(\&quot;flour\&quot;) después de agregarlo ---&quot;</span><span class="p">);</span>
+<span class="nx">addProduct</span><span class="p">({</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;FLOUR&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">quantity</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// flour added to inventory</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">findProductIndex</span><span class="p">(</span><span class="s2">&quot;flour&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// 0</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n--- TEST 4: findProductIndex(\&quot;FloUr\&quot;) ---&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">findProductIndex</span><span class="p">(</span><span class="s2">&quot;FloUr&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// 0</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n--- TEST 5: findProductIndex(\&quot;Flourish\&quot;) ---&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">findProductIndex</span><span class="p">(</span><span class="s2">&quot;Flourish&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// -1</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n--- TEST 6: Verificar addProduct ---&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">addProduct</span><span class="p">);</span><span class="w"> </span><span class="c1">// function</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n--- TEST 7-8: Agregar más FLOUR (actualiza cantidad) ---&quot;</span><span class="p">);</span>
+<span class="nx">addProduct</span><span class="p">({</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;FLOUR&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">quantity</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// flour quantity updated</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Cantidad actual de flour:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">inventory</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">quantity</span><span class="p">);</span><span class="w"> </span><span class="c1">// 10</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n--- TEST 9-10: Agregar nuevo producto que no existe ---&quot;</span><span class="p">);</span>
+<span class="nx">addProduct</span><span class="p">({</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;RICE&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">quantity</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// rice added to inventory</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">inventory</span><span class="p">);</span><span class="w"> </span><span class="c1">// [{name: &quot;flour&quot;, quantity: 10}, {name: &quot;rice&quot;, quantity: 3}]</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n--- TEST 11: Verificar removeProduct ---&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">removeProduct</span><span class="p">);</span><span class="w"> </span><span class="c1">// function</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n--- TEST 12: Intentar eliminar producto inexistente ---&quot;</span><span class="p">);</span>
+<span class="nx">removeProduct</span><span class="p">(</span><span class="s2">&quot;BANANA&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w"> </span><span class="c1">// banana not found</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n--- TEST 13-14: Eliminar 5 unidades de flour (queda 5) ---&quot;</span><span class="p">);</span>
+<span class="nx">removeProduct</span><span class="p">(</span><span class="s2">&quot;FLOUR&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">);</span><span class="w"> </span><span class="c1">// Remaining flour pieces: 5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Cantidad actual de flour:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">inventory</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">quantity</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n--- TEST 15: Eliminar todas las unidades de flour (queda eliminado) ---&quot;</span><span class="p">);</span>
+<span class="nx">removeProduct</span><span class="p">(</span><span class="s2">&quot;FLOUR&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">);</span><span class="w"> </span><span class="c1">// sin mensaje, producto eliminado</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;findProductIndex(\&quot;flour\&quot;):&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">findProductIndex</span><span class="p">(</span><span class="s2">&quot;flour&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// -1</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n--- TEST 16: Intentar eliminar más de lo que hay ---&quot;</span><span class="p">);</span>
+<span class="nx">addProduct</span><span class="p">({</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;FLOUR&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">quantity</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="p">});</span>
+<span class="nx">removeProduct</span><span class="p">(</span><span class="s2">&quot;FLOUR&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span><span class="w"> </span><span class="c1">// Not enough flour available, remaining pieces: 5</span>
+</pre></div>
+</div>
+<p>console:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--- TEST 1: Crear array vacío ---
+inventory: []
+
+--- TEST 2: Definición de findProductIndex ---
+function
+
+--- TEST 3: findProductIndex(&quot;flour&quot;) después de agregarlo ---
+flour added to inventory
+0
+
+--- TEST 4: findProductIndex(&quot;FloUr&quot;) ---
+0
+
+--- TEST 5: findProductIndex(&quot;Flourish&quot;) ---
+-1
+
+--- TEST 6: Verificar addProduct ---
+function
+
+--- TEST 7-8: Agregar más FLOUR (actualiza cantidad) ---
+flour quantity updated
+Cantidad actual de flour: 10
+
+--- TEST 9-10: Agregar nuevo producto que no existe ---
+rice added to inventory
+[
+  { name: &#39;flour&#39;, quantity: 10 },
+  { name: &#39;rice&#39;, quantity: 3 }
+]
+
+--- TEST 11: Verificar removeProduct ---
+function
+
+--- TEST 12: Intentar eliminar producto inexistente ---
+banana not found
+
+--- TEST 13-14: Eliminar 5 unidades de flour (queda 5) ---
+Remaining flour pieces: 5
+Cantidad actual de flour: 5
+
+--- TEST 15: Eliminar todas las unidades de flour (queda eliminado) ---
+findProductIndex(&quot;flour&quot;): -1
+
+--- TEST 16: Intentar eliminar más de lo que hay ---
+flour added to inventory
+Not enough flour available, remaining pieces: 5
+
+</pre></div>
+</div>
+</section>
+<section id="a-password-generator">
+<h2>4. A Password Generator<a class="headerlink" href="#a-password-generator" title="Link to this heading">#</a></h2>
+<p>script.js:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">generatePassword</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">length</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">chars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&amp;*()&quot;</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">password</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">chars</span><span class="p">[</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">chars</span><span class="p">.</span><span class="nx">length</span><span class="p">)]);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">password</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">generatePassword</span><span class="p">(</span><span class="mf">5</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Generated password: </span><span class="si">${</span><span class="nx">password</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="a-summ-all-numbers-algorithm">
+<h2>5. A Summ All Numbers Algorithm<a class="headerlink" href="#a-summ-all-numbers-algorithm" title="Link to this heading">#</a></h2>
+<p>script.js</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// Versión legible</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">sumAll</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">ordered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">  </span><span class="nx">array</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="o">&lt;=</span><span class="nx">array</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">ordered</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="nx">array</span><span class="p">[</span><span class="mf">1</span><span class="p">])</span>
+<span class="w">                     </span><span class="o">:</span><span class="w"> </span><span class="nx">ordered</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="nx">array</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span>
+
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">suma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="o">=</span><span class="nx">ordered</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span><span class="w"> </span><span class="nx">i</span><span class="o">&lt;=</span><span class="nx">ordered</span><span class="p">[</span><span class="mf">1</span><span class="p">];</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">suma</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">i</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">suma</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Versión más compacta</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">sumAll</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">min</span><span class="p">,</span><span class="w"> </span><span class="nx">max</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arr</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nx">arr</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="nx">arr</span><span class="p">[</span><span class="mf">0</span><span class="p">]];</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">Array</span><span class="p">.</span><span class="kr">from</span><span class="p">({</span><span class="nx">length</span><span class="o">:</span><span class="w"> </span><span class="nx">max</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">min</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">},</span><span class="w"> </span><span class="p">(</span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">min</span><span class="p">).</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="the-slice-and-splice-algorithm">
+<h2>6. The Slice and Splice Algorithm<a class="headerlink" href="#the-slice-and-splice-algorithm" title="Link to this heading">#</a></h2>
+<p>script.js</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">frankenSplice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">arr1</span><span class="p">,</span><span class="w"> </span><span class="nx">arr2</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="nx">arr2</span><span class="p">];</span>
+<span class="w">  </span><span class="nx">result</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">arr1</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">result</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// Casos de prueba</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;1.&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">frankenSplice</span><span class="p">([</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">],</span><span class="w"> </span><span class="mf">1</span><span class="p">));</span><span class="w"> </span>
+<span class="c1">// → [4, 1, 2, 3, 5]</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;2.&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">frankenSplice</span><span class="p">([</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;b&quot;</span><span class="p">],</span><span class="w"> </span><span class="mf">1</span><span class="p">));</span><span class="w"> </span>
+<span class="c1">// → [&quot;a&quot;, 1, 2, &quot;b&quot;]</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;3.&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">frankenSplice</span><span class="p">([</span><span class="s2">&quot;claw&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;tentacle&quot;</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;head&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;shoulders&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;knees&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;toes&quot;</span><span class="p">],</span><span class="w"> </span><span class="mf">2</span><span class="p">));</span><span class="w"> </span>
+<span class="c1">// → [&quot;head&quot;, &quot;shoulders&quot;, &quot;claw&quot;, &quot;tentacle&quot;, &quot;knees&quot;, &quot;toes&quot;]</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;4.&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">frankenSplice</span><span class="p">([</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">],</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="mf">0</span><span class="p">));</span><span class="w"> </span>
+<span class="c1">// → [1, 2, 3, 4]</span>
 </pre></div>
 </div>
 </div></section>
@@ -526,6 +870,15 @@ document.write(`
         <p class="prev-next-title">3. Understanding Modules, Imports and Exports</p>
       </div>
     </a>
+    <a class="right-next"
+       href="../8_higher_order_functions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">8. Higher Order Functions Summary</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -542,8 +895,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-pyramid-generator">1. A Pyramid Generator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-gradebook-app">2. A Gradebook App</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-inventory-management">3. An Inventory Management</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-password-generator">4. A Password Generator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-summ-all-numbers-algorithm">5. A Summ All Numbers Algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-slice-and-splice-algorithm">6. The Slice and Splice Algorithm</a></li>
 </ul>
   </nav></div>
 

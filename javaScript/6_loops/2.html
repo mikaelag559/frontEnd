@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'javaScript/6_loops/2';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="../7_fundamentals.html" />
+    <link rel="next" title="7. JavaScript Fundamentals Summary" href="../7_fundamentals.html" />
     <link rel="prev" title="1. Working with Loops" href="1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -257,6 +257,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../../css/8_the_flex_model/2.html">Examples</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/9_typography.html">9. Typograpgy Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/9_typography/1.html">1. Working with CSS Fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/9_typography/2.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
 <ul class="current nav bd-sidenav">
@@ -296,10 +301,18 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Examples</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../7_fundamentals/1.html">1. Understanding Core JavaScript Fundamentals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../7_fundamentals/2.html">2. The <code class="docutils literal notranslate"><span class="pre">var</span></code> Keyword and Hoisting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../7_fundamentals/3.html">3. Understanding Modules, Imports and Exports</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../7_fundamentals/4.html">Examples</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7_fundamentals.html">7. JavaScript Fundamentals Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../7_fundamentals/1.html">1. Understanding Core JavaScript Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../7_fundamentals/2.html">2. The <code class="docutils literal notranslate"><span class="pre">var</span></code> Keyword and Hoisting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../7_fundamentals/3.html">3. Understanding Modules, Imports and Exports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../7_fundamentals/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../8_higher_order_functions.html">8. Higher Order Functions Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../8_higher_order_functions/1.html">1. Working with Higher Order Functions and Callbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../8_higher_order_functions/2.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -450,6 +463,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sentence-analyzer">1. A Sentence Analyzer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-factorial-calculator">2. A Factorial Calculator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mutations-algorithm">3. The Mutations Algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-chunky-monkey-algorithm">4. The Chunky Monkey Algorithm</a></li>
 </ul>
             </nav>
         </div>
@@ -535,6 +550,41 @@ document.write(`
 </pre></div>
 </div>
 </section>
+<section id="the-mutations-algorithm">
+<h2>3. The Mutations Algorithm<a class="headerlink" href="#the-mutations-algorithm" title="Link to this heading">#</a></h2>
+<p>script.js</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">mutation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">array</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">array</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">includes</span><span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="mf">1</span><span class="p">][</span><span class="nx">i</span><span class="p">].</span><span class="nx">toLowerCase</span><span class="p">()))</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Más compacta</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">mutation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">([</span><span class="nx">str1</span><span class="p">,</span><span class="w"> </span><span class="nx">str2</span><span class="p">])</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">str1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">str1</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">str2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">str2</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">[...</span><span class="nx">str2</span><span class="p">].</span><span class="nx">every</span><span class="p">(</span><span class="kr">char</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">str1</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="kr">char</span><span class="p">));</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="the-chunky-monkey-algorithm">
+<h2>4. The Chunky Monkey Algorithm<a class="headerlink" href="#the-chunky-monkey-algorithm" title="Link to this heading">#</a></h2>
+<p>script.js</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">chunkArrayInGroups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">array</span><span class="p">,</span><span class="w"> </span><span class="nx">number</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">+=</span><span class="nx">number</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">result</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">array</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="o">+</span><span class="nx">number</span><span class="p">));</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -581,7 +631,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">7. JavaScript Fundamentals Summary</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -603,6 +653,8 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sentence-analyzer">1. A Sentence Analyzer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-factorial-calculator">2. A Factorial Calculator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mutations-algorithm">3. The Mutations Algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-chunky-monkey-algorithm">4. The Chunky Monkey Algorithm</a></li>
 </ul>
   </nav></div>
 

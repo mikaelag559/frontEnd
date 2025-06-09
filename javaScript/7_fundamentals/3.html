@@ -257,6 +257,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../../css/8_the_flex_model/2.html">Examples</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/9_typography.html">9. Typograpgy Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/9_typography/1.html">1. Working with CSS Fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/9_typography/2.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
 <ul class="current nav bd-sidenav">
@@ -296,10 +301,18 @@
 <li class="toctree-l2"><a class="reference internal" href="../6_loops/2.html">Examples</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="1.html">1. Understanding Core JavaScript Fundamentals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2.html">2. The <code class="docutils literal notranslate"><span class="pre">var</span></code> Keyword and Hoisting</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Understanding Modules, Imports and Exports</a></li>
-<li class="toctree-l1"><a class="reference internal" href="4.html">Examples</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../7_fundamentals.html">7. JavaScript Fundamentals Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1.html">1. Understanding Core JavaScript Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">2. The <code class="docutils literal notranslate"><span class="pre">var</span></code> Keyword and Hoisting</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3. Understanding Modules, Imports and Exports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../8_higher_order_functions.html">8. Higher Order Functions Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../8_higher_order_functions/1.html">1. Working with Higher Order Functions and Callbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../8_higher_order_functions/2.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -448,7 +461,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.1.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-module-in-javascript-and-how-can-you-import-and-export-modules-in-your-program">3.1. What is a module in JavaScript and how can you import and export modules in your program?</a></li>
 </ul>
             </nav>
         </div>
@@ -463,8 +476,69 @@ document.write(`
   <div style="text-align: justify">
 <section class="tex2jax_ignore mathjax_ignore" id="understanding-modules-imports-and-exports">
 <h1>3. Understanding Modules, Imports and Exports<a class="headerlink" href="#understanding-modules-imports-and-exports" title="Link to this heading">#</a></h1>
-<section id="id1">
-<h2>3.1.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="what-is-a-module-in-javascript-and-how-can-you-import-and-export-modules-in-your-program">
+<h2>3.1. What is a module in JavaScript and how can you import and export modules in your program?<a class="headerlink" href="#what-is-a-module-in-javascript-and-how-can-you-import-and-export-modules-in-your-program" title="Link to this heading">#</a></h2>
+<p>In JavaScript, a module is a self-contained unit of code that encapsulates related functions, classes, or variables.</p>
+<p>Think of a module as a building block for your application, much like a chapter in a book. Each module focuses on a specific functionality, making your code more organized, maintainable, and reusable. Modules help prevent naming conflicts and allow you to structure your application into separate, interconnected pieces.</p>
+<p>The concept of modules in JavaScript has evolved over time, but the most widely used and supported approach is the ES6 (ECMAScript 2015) module system. This system provides a standardized way to define and use modules across different JavaScript environments.</p>
+<p>To create a module, you write your JavaScript code in a separate file. Any variables, functions, or classes you want to make available to other parts of your application need to be explicitly exported. You can do this using the <code class="docutils literal notranslate"><span class="pre">export</span></code> keyword.</p>
+<p>For example, let’s say you have a file called <code class="docutils literal notranslate"><span class="pre">math.js</span></code> with some math functions:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">subtract</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159</span><span class="p">;</span>
+<span class="k">export</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PI</span><span class="w"> </span><span class="p">};</span>
+</pre></div>
+</div>
+<p>In this example, we’re exporting two functions (<code class="docutils literal notranslate"><span class="pre">add</span></code> and <code class="docutils literal notranslate"><span class="pre">subtract</span></code>) and a constant (<code class="docutils literal notranslate"><span class="pre">PI</span></code>). You can export as many items as you need from a single module.</p>
+<p>To use these exported items in another part of your application, you need to import them. This is done using the <code class="docutils literal notranslate"><span class="pre">import</span></code> keyword.</p>
+<ul>
+<li><p>Let’s say you want to use these math functions in a file called <code class="docutils literal notranslate"><span class="pre">app.js</span></code>:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">add</span><span class="p">,</span><span class="w"> </span><span class="nx">subtract</span><span class="p">,</span><span class="w"> </span><span class="nx">PI</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./math.js&#39;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add</span><span class="p">(</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">));</span><span class="w">        </span><span class="c1">// Outputs: 8</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">subtract</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">));</span><span class="w">  </span><span class="c1">// Outputs: 6</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">PI</span><span class="p">);</span><span class="w">               </span><span class="c1">// Outputs: 3.14159</span>
+</pre></div>
+</div>
+<p>Here, we’re importing the specific functions and constant we need from the <code class="docutils literal notranslate"><span class="pre">math.js</span></code> module. The <code class="docutils literal notranslate"><span class="pre">'./math.js'</span></code> part tells JavaScript where to find the module file relative to the current file.</p>
+</li>
+<li><p>Sometimes, you might want to import everything a module exports. You can do this using the asterisk (<code class="docutils literal notranslate"><span class="pre">*</span></code>) syntax:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nb">Math</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./math.js&#39;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">));</span><span class="w">        </span><span class="c1">// Outputs: 8</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">));</span><span class="w">  </span><span class="c1">// Outputs: 6</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">);</span><span class="w">               </span><span class="c1">// Outputs: 3.14159</span>
+</pre></div>
+</div>
+<p>In this case, all exports from <code class="docutils literal notranslate"><span class="pre">math.js</span></code> are imported as properties of an object called <code class="docutils literal notranslate"><span class="pre">Math</span></code>.</p>
+</li>
+<li><p>Another common pattern is to have a default export in a module. This is typically used when a module primarily exports a single function. You can only have one default export per module.</p>
+<p>Here’s how it looks:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// In math.js</span>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">multiply</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// In app.js</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">multiply</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./math.js&#39;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">));</span><span class="w">  </span><span class="c1">// Outputs: 20</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Notice that when importing a default export, you don’t need to use curly braces, and you can name the import whatever you want.</p>
+<p>It’s important to note that to use ES6 modules in the browser, you need to specify the <code class="docutils literal notranslate"><span class="pre">type</span></code> as <code class="docutils literal notranslate"><span class="pre">module</span></code> in your <code class="docutils literal notranslate"><span class="pre">script</span></code> tag:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;app.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Modules provide a powerful way to organize and structure your JavaScript code. They allow you to break your application into smaller, manageable pieces, promote code reuse, and help maintain a clean separation of concerns. As you build larger applications, you’ll find that modules become an essential tool in your JavaScript development toolkit.</p>
 </div></section>
 </section>
 
@@ -532,7 +606,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.1.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-module-in-javascript-and-how-can-you-import-and-export-modules-in-your-program">3.1. What is a module in JavaScript and how can you import and export modules in your program?</a></li>
 </ul>
   </nav></div>
 
