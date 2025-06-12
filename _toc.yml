@@ -75,6 +75,14 @@ parts:
       sections:
       - file: css/8_the_flex_model/1
       - file: css/8_the_flex_model/2
+    - file: css/9_typography
+      sections:
+      - file: css/9_typography/1
+      - file: css/9_typography/2
+    - file: css/10_accessibility
+      sections:
+      - file: css/10_accessibility/1
+      - file: css/10_accessibility/2
 
 
   - caption: JavaScript
@@ -116,3 +124,13 @@ parts:
       - file: javaScript/7_fundamentals/2
       - file: javaScript/7_fundamentals/3
       - file: javaScript/7_fundamentals/4
+    - file: javaScript/8_higher_order_functions
+      sections: 
+      - file: javaScript/8_higher_order_functions/1
+      - file: javaScript/8_higher_order_functions/2
+    - file: javaScript/9_DOM_manipulation
+      sections: 
+      - file: javaScript/9_DOM_manipulation/1
+      - file: javaScript/9_DOM_manipulation/2
+      - file: javaScript/9_DOM_manipulation/3
+      - file: javaScript/9_DOM_manipulation/4

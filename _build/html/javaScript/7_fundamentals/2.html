@@ -257,6 +257,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../../css/8_the_flex_model/2.html">Examples</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/9_typography.html">9. Typograpgy Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/9_typography/1.html">1. Working with CSS Fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/9_typography/2.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
 <ul class="current nav bd-sidenav">
@@ -296,10 +301,18 @@
 <li class="toctree-l2"><a class="reference internal" href="../6_loops/2.html">Examples</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="1.html">1. Understanding Core JavaScript Fundamentals</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. The <code class="docutils literal notranslate"><span class="pre">var</span></code> Keyword and Hoisting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3.html">3. Understanding Modules, Imports and Exports</a></li>
-<li class="toctree-l1"><a class="reference internal" href="4.html">Examples</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../7_fundamentals.html">7. JavaScript Fundamentals Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1.html">1. Understanding Core JavaScript Fundamentals</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2. The <code class="docutils literal notranslate"><span class="pre">var</span></code> Keyword and Hoisting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.html">3. Understanding Modules, Imports and Exports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../8_higher_order_functions.html">8. Higher Order Functions Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../8_higher_order_functions/1.html">1. Working with Higher Order Functions and Callbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../8_higher_order_functions/2.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -448,7 +461,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.1.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-var-keyword-and-why-is-it-no-longer-suggested-to-use-it">2.1. What is the <code class="docutils literal notranslate"><span class="pre">var</span></code> keyword and why is it no longer suggested to use it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-hoisting">2.2. What is hoisting?</a></li>
 </ul>
             </nav>
         </div>
@@ -463,8 +477,68 @@ document.write(`
   <div style="text-align: justify">
 <section class="tex2jax_ignore mathjax_ignore" id="the-var-keyword-and-hoisting">
 <h1>2. The <code class="docutils literal notranslate"><span class="pre">var</span></code> Keyword and Hoisting<a class="headerlink" href="#the-var-keyword-and-hoisting" title="Link to this heading">#</a></h1>
-<section id="id1">
-<h2>2.1.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="what-is-the-var-keyword-and-why-is-it-no-longer-suggested-to-use-it">
+<h2>2.1. What is the <code class="docutils literal notranslate"><span class="pre">var</span></code> keyword and why is it no longer suggested to use it?<a class="headerlink" href="#what-is-the-var-keyword-and-why-is-it-no-longer-suggested-to-use-it" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">var</span></code> keyword in JavaScript is one of the original ways to declare variables. It has been part of the language since its inception and for many years it remained the primary method for creating variables. However as JavaScript evolved and developers gained more experience with the language, certain drawbacks of using <code class="docutils literal notranslate"><span class="pre">var</span></code> became apparent leading to the introduction of <code class="docutils literal notranslate"><span class="pre">let</span></code> and <code class="docutils literal notranslate"><span class="pre">const</span></code> in 2015.</p>
+<p>When you declare a variable with <code class="docutils literal notranslate"><span class="pre">var</span></code>, it becomes function-scoped or globally-scoped. This means that if you declare a variable inside a function using <code class="docutils literal notranslate"><span class="pre">var</span></code> it’s only accessible within that function. However if you declare it outside any function, it becomes a global variable accessible throughout your entire script. This behavior can sometimes lead to unexpected results and make your code harder to reason about.</p>
+<ul>
+<li><p>A problem with <code class="docutils literal notranslate"><span class="pre">var</span></code> is that it allows you to redeclare the same variable multiple times without throwing an error. This can lead to accidental overwrites and make debugging more difficult.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+
+<span class="c1">// This is allowed and doesn&#39;t throw an error</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p>The most significant issue with <code class="docutils literal notranslate"><span class="pre">var</span></code> is its lack of block scoping. Variables declared with <code class="docutils literal notranslate"><span class="pre">var</span></code> inside a block like an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement or a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop are still accessible outside that block.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">){</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5</span>
+</pre></div>
+</div>
+<p>This behaviour can lead to unintended variable leaks and make your code more prone to bugs.</p>
+</li>
+</ul>
+<p>Due to this issues, modern JavaScript development has largely moved away from <code class="docutils literal notranslate"><span class="pre">var</span></code> in favor of <code class="docutils literal notranslate"><span class="pre">let</span></code> and <code class="docutils literal notranslate"><span class="pre">const</span></code>. These keywords provide block scoping which aligns more closely with how scoping works in many other programming languages.</p>
+<p>They also don’t allow redeclaration within the same scope helping to prevent accidental overrides.</p>
+<p>While <code class="docutils literal notranslate"><span class="pre">var</span></code> is still part of JavaScript and works in all browsers, it’s generally recommended to use <code class="docutils literal notranslate"><span class="pre">let</span></code> and <code class="docutils literal notranslate"><span class="pre">const</span></code> in modern JavaScript development. They provide clear scoping rules help prevent common pitfalls and make your code’s behavior more predictable.</p>
+</section>
+<section id="what-is-hoisting">
+<h2>2.2. What is hoisting?<a class="headerlink" href="#what-is-hoisting" title="Link to this heading">#</a></h2>
+<p>Hoisting is a behavior in JavaScript that often confuses beginners, but understanding it can help you avoid subtle bugs in your code. In simple terms hoisting is JavaScript’s default behavior of moving declarations to the top of their respective scopes during the compilation phase before the code is executed.</p>
+<p>To understand hoisting, it’s important to know that JavaScript runs in two phases: the compilation phase and the execution phase. During the compilation phase, the JavaScript engine goes through your code and sets up memory space for variables and functions. This is where hoisting comes into play.</p>
+<p>Let’s start with variables hoisting, when you declare a variable using the <code class="docutils literal notranslate"><span class="pre">var</span></code> keyword, JavaScript hoists the declaration to the top of its scope. However it’s crucial to note that only the declaration is hoisted, not the initialization. This means you can use a variable in your code before you have declared it, but its value will be <code class="docutils literal notranslate"><span class="pre">undefined</span></code> until you actually assign a value to it.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// undefined</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">5</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5</span>
+</pre></div>
+</div>
+<p>In this code even though we use <code class="docutils literal notranslate"><span class="pre">x</span></code> before declaring it we don’t get an error, instead we get <code class="docutils literal notranslate"><span class="pre">undefined</span></code>. This is because JavaScript hoists the declaration <code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">x</span></code> to the top of its scope but not the initialization <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">5</span></code>. It’s as if the code were rewritten like this:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// undefined</span>
+<span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5</span>
+</pre></div>
+</div>
+<p>Function hoisting works a bit differently. When you declare a function using the <code class="docutils literal notranslate"><span class="pre">function</span></code> declaration syntax both the function name and the function body are hoisted. This means you can call a function before you’ve declared it in your code. Here’s an example of function hoisting:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">sayHello</span><span class="p">();</span><span class="w"> </span><span class="c1">// &quot;Hello, World!&quot;</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">sayHello</span><span class="p">(){</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this case, we can call <code class="docutils literal notranslate"><span class="pre">sayHello()</span></code> before its declaration because the entire function is hoisted to the top of its scope.</p>
+<blockquote>
+<div><p>It’s important to note that hoisting works differently with <code class="docutils literal notranslate"><span class="pre">let</span></code> and <code class="docutils literal notranslate"><span class="pre">const</span></code> declarations introduced in ES6.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">y</span><span class="p">);</span><span class="w"> </span><span class="c1">// Throws a ReferenceError</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>These declarations are hoisted but they are not initialized and you can’t access them before the actual declaration in your code. This is often referred to as the <strong>temporal dead zone</strong>.</p>
+<p>Understanding hoisting can help you write cleaner, more predictable code. However, relying on hoisting can make your code harder to read and maintain. As a best practice, it’s recommended to declare your variables at the top of their scope and your functions before you use them regardless of hoisting. This make your code’s behavior more explicit and easier for other including your future self to understand.</p>
 </div></section>
 </section>
 
@@ -532,7 +606,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.1.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-var-keyword-and-why-is-it-no-longer-suggested-to-use-it">2.1. What is the <code class="docutils literal notranslate"><span class="pre">var</span></code> keyword and why is it no longer suggested to use it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-hoisting">2.2. What is hoisting?</a></li>
 </ul>
   </nav></div>
 

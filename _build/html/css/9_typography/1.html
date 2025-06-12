@@ -1,0 +1,944 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Working with CSS Fonts &#8212; My Front End Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'css/9_typography/1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Examples" href="2.html" />
+    <link rel="prev" title="9. Typograpgy Summary" href="../9_typography.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt="My Front End Notes - Home"/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="My Front End Notes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to my web development notes
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">HTML</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/1_basic_html.html">1. Basic HTML Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/1.html">1. What is HTML?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/2.html">2. HTML Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/3.html">3. Working with Media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/4.html">4. Working with Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/2_semantic_html.html">2. Semantic HTML Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/2_semantic_html/1.html">1. Semantic HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/2_semantic_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/3_forms_and_tables_html.html">3. HTML Tables and Forms Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/1.html">1. Working with Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/2.html">2. Working with Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/3.html">3. Working with HTML Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/4_accessibility.html">4. HTML Accessibility Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/1.html">1. Importance of Accessibility and Good HTML Structure - I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/2.html">1. Importance of Accessibility and Good HTML Structure - II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/3.html">1. Importance of Accessibility and Good HTML Structure - III</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/4.html">1. Importance of Accessibility and Good HTML Structure - IV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/5.html">1. Importance of Accessibility and Good HTML Structure - V</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/6.html">Examples</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1_basic_css.html">1. Basic CSS Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/1.html">1. What Is CSS?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/2.html">2. CSS Specificity, the Cascade Algorithm and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/3.html">3. Styling Lists and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/4.html">4. Working with Backgrounds and Borders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_basic_css/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2_design.html">2. Design Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2_design/1.html">1. User Interface Design Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_design/2.html">2. User-Centered Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_design/3.html">3. Common Design Tools</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3_absolute_n_relative_units.html">3. CSS Relative and Absolute Units Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3_absolute_n_relative_units/1.html">1. Working  with Relative and Absolute Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_absolute_n_relative_units/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4_pseudo_classes_n_elements.html">4. CSS Pseudo-classes Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4_pseudo_classes_n_elements/1.html">1. Working with Pseudo-Classes and Pseudo-Elements in CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_pseudo_classes_n_elements/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../5_colors.html">5. Colors Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../5_colors/1.html">1. Working with color in CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../5_colors/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../6_styling_forms.html">6. Styling Forms Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../6_styling_forms/1.html">1. Best Practices for Styling Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../6_styling_forms/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7_the_box_model.html">7. CSS Layout and Effects Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../7_the_box_model/1.html">1. Working with CSS Transforms, Overflow and Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../7_the_box_model/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../8_the_flex_model.html">8. The Flex Model Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../8_the_flex_model/1.html">1. Working with CSS Flexbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../8_the_flex_model/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../9_typography.html">9. Typograpgy Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1. Working with CSS Fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">Examples</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/1_variables_n_strings.html">1. Variables and Strings Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/1.html">1. Introduction to JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/2.html">2. Working with Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/3.html">3. Working with Strings in JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/4.html">4. Working with Common String Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/1_variables_n_strings/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers.html">2. Booleans and Numbers Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers/1.html">1. Working with Numbers, Booleans and the Math Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers/2.html">2. Working with Numbers and Common Number Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers/3.html">3. Understanding Comparisons and Conditional Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/2_booleans_n_numbers/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/3_functions.html">3. Functions Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/3_functions/1.html">1. Working with Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/3_functions/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/4_arrays.html">4. Arrays Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/4_functions/1.html">1. Working with Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/4_functions/2.html">2. Working with Common Array Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/4_functions/3.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/5_objects.html">5. Objects Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/5_objects/1.html">1. Working with Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/5_objects/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/6_loops.html">6. Loops Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/6_loops/1.html">1. Working with Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/6_loops/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/7_fundamentals.html">7. JavaScript Fundamentals Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/7_fundamentals/1.html">1. Understanding Core JavaScript Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/7_fundamentals/2.html">2. The <code class="docutils literal notranslate"><span class="pre">var</span></code> Keyword and Hoisting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/7_fundamentals/3.html">3. Understanding Modules, Imports and Exports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/7_fundamentals/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/8_higher_order_functions.html">8. Higher Order Functions Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/8_higher_order_functions/1.html">1. Working with Higher Order Functions and Callbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/8_higher_order_functions/2.html">Examples</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/css/9_typography/1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1. Working with CSS Fonts</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-fundamentals-of-typography">1.1. What are the fundamentals of typography?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-some-best-practices-for-working-with-typography-in-your-designs">1.2. What are some best practices for working with typography in your designs?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-font-families-and-how-do-they-work">1.3. What are font families and how do they work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-web-safe-fonts">1.4. What are web-safe fonts?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-font-face-at-rule-and-how-does-it-work">1.5. What is the <code class="docutils literal notranslate"><span class="pre">@font-face</span></code> at-rule and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-work-with-external-fonts-like-font-squirrel-and-google-fonts">1.6. How do you work with external fonts like Font Squirrel and Google Fonts?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-text-shadow-property-and-how-does-it-work">1.7. What is the <code class="docutils literal notranslate"><span class="pre">text-shadow</span></code> property and how does it work?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div style="text-align: justify">
+<section class="tex2jax_ignore mathjax_ignore" id="working-with-css-fonts">
+<h1>1. Working with CSS Fonts<a class="headerlink" href="#working-with-css-fonts" title="Link to this heading">#</a></h1>
+<section id="what-are-the-fundamentals-of-typography">
+<h2>1.1. What are the fundamentals of typography?<a class="headerlink" href="#what-are-the-fundamentals-of-typography" title="Link to this heading">#</a></h2>
+<p>Typography is the art of choosing the right fonts and format to make text visually appealing and easy to read. “Type” refers to how the individual characters are designed and arranged. By choosing the right fonts for your project, you can evoke emotions, establish hierarchy, and reinforce your brand’s identity.</p>
+<p>We’ll start by talking about typefaces and fonts.</p>
+<ul class="simple">
+<li><p>A <strong>typeface</strong> is the overall design and style of a set of characters, numbers, and symbols. It’s like a blueprint for a family of fonts.</p></li>
+<li><p>A <strong>font</strong> is a specific variation of a typeface with specific characteristics, such as size, weight, style, and width.</p></li>
+</ul>
+<p>Two very important examples of typefaces are Serif and Sans Serif.</p>
+<ul class="simple">
+<li><p>The <strong>Serif typeface</strong> has a classical style with small lines at the end of characters. Serif typefaces are commonly used for printed materials, like books. Some examples are Times New Roman, Georgia, and Garamond.</p></li>
+<li><p>In contrast, the <strong>Sans Serif typeface</strong> has a more modern look, without the small lines at the end of characters. Sans Serif typefaces are commonly used in digital design because they are easy to read on screen. Some examples include Helvetica, Arial, and Roboto. There are other typeface classifications, like Script, Blackletter, Monospaced, and Decorative.</p></li>
+</ul>
+<p>We mentioned that typefaces are like blueprints for fonts, right? Well, fonts can also be grouped if they share a similar design. Different weights and styles can be combined. For example, Times New Roman includes variations like Times New Roman Bold, Times New Roman Italic, and Times New Roman Bold Italic. These variations within the same font family typically include:</p>
+<ul class="simple">
+<li><p>Weight: The thickness of the characters, including light, regular, bold, and black.</p></li>
+<li><p>Style: The slant and orientation of the characters, like italic and oblique.</p></li>
+<li><p>Width: The horizontal space occupied by characters, condensed and expanded.</p></li>
+</ul>
+<p>Great. Now let’s explore the fundamental elements of typography:</p>
+<ul class="simple">
+<li><p>The <strong>baseline</strong> is the imaginary line on which most characters rest.</p></li>
+<li><p>The <strong>cap height</strong> is the height of uppercase letters, measured from the baseline to the top.</p></li>
+<li><p>The <strong>x-height</strong> is the average height of lowercase letters, excluding ascenders and descenders.</p></li>
+<li><p><strong>Ascenders</strong> are the parts of lowercase letters that extend above the x-height, such as the tops of the letters <code class="docutils literal notranslate"><span class="pre">h</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">d</span></code>, and <code class="docutils literal notranslate"><span class="pre">f</span></code>.</p></li>
+<li><p><strong>Descenders</strong> are the parts of lowercase letters that extend below the baseline, such as the tails of <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">g</span></code>, <code class="docutils literal notranslate"><span class="pre">p</span></code>, and <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p></li>
+</ul>
+<p>There are more advanced concepts too, like kerning, tracking, and leading.</p>
+<ul class="simple">
+<li><p><strong>Kerning</strong> is how space is adjusted between specific pairs of characters to improve their readability and aesthetics. For example, reducing the space between the letters <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">V</span></code>.</p></li>
+<li><p><strong>Tracking</strong> is how space is adjusted between all characters in a block of text. It’s essentially the distance between the characters. It affects how dense and open the text will be.</p></li>
+<li><p><strong>Leading</strong> is the vertical space between lines of text. It’s measured from the baseline of one line to the baseline of the next line.</p></li>
+</ul>
+<p>Being familiar with these concepts is essential for choosing the right font for your project.</p>
+<p>Line length can also have a significant impact on readability. If the text is too narrow, readers will need to refocus too often. If the text is too wide, they may experience fatigue. You should find the optimal line length for comfortable reading.</p>
+<p>With typography, you can also create a visual hierarchy, helping readers understand what parts of the text or user interface are most important. Larger fonts usually indicate that text is more important. Making the text bold is also helpful for emphasizing it.</p>
+<p>Underlining text or presenting it in italics is helpful for highlighting key points. Providing accurate spacing around the text can highlight its importance. And color contrast can bring readers’ attention to specific parts of the text.</p>
+<p>Having basic knowledge of typography is essential for designing visually engaging applications. By understanding fonts, spacing, and hierarchy, you can create visual experiences that enhance the readability of your content and reinforce your brand’s identity</p>
+</section>
+<section id="what-are-some-best-practices-for-working-with-typography-in-your-designs">
+<h2>1.2. What are some best practices for working with typography in your designs?<a class="headerlink" href="#what-are-some-best-practices-for-working-with-typography-in-your-designs" title="Link to this heading">#</a></h2>
+<p>Typography is the art and technique of arranging type to communicate effectively. It involves formatting text and selecting appropriate fonts. In this lecture, you will learn best practices for using typography in a way that enhances readability, hierarchy, and accessibility.</p>
+<ol class="arabic">
+<li><p>Let’s start with <strong>readability</strong>. You should choose clear and simple fonts to make your designs easy to understand. This is particularly important for the main text of your website. Users are more likely to engage with your content if the font is easy to read. Some frequently used fonts for web development are Roboto, Open Sans, Poppins, Lato, and Barlow. But there are many to choose from and you will definitely find one that fits your needs.</p>
+<p>Text should also be large enough for everyone to read it. You should try to keep lines relatively short. The specific number of characters per line really depends on your project. But keeping lines short will make the content easier to read.</p>
+</li>
+<li><p>You can use font size to create a visual <strong>hierarchy</strong> for headings, subheadings, paragraphs, and other elements. For example, the main heading on a webpage should have a larger font, followed by subheadings with smaller font sizes. This will give every element in the hierarchy a specific font size that helps users navigate through the structure visually.</p>
+<p>You should use two or three fonts at most to create a visual consistency. Using too many fonts can make the text more difficult to read and weaken your branding’s identity. This can also impact the user experience by increasing the load time of the website.</p>
+<p>Once you choose these two or three fonts, use them consistently across different pages and elements. These fonts should be consistent with the overall design of your web application, product, or service. You should also use whitespace to create a visual balance and enhance readability.</p>
+</li>
+<li><p>For <strong>accessibility</strong> purposes, you should follow the Web Content Accessibility Guidelines. These guidelines set the recommended contrast ratio for text. A higher contrast ratio makes text easier to read, especially for people with visual disabilities.</p>
+<p>You should also provide options to adjust font size and avoid complex fonts as much as possible. As a general rule, you should use simple fonts whenever possible. If your content is easy to read, users are more likely to engage with it. A final tip for working with typography is making sure that your fonts are displayed correctly on different screen sizes and devices.</p>
+</li>
+</ol>
+<p>Typography is a powerful tool for creating beautiful designs and engaging user experiences. By understanding the fundamentals of typography and applying these best practices, you can create effective designs.</p>
+</section>
+<section id="what-are-font-families-and-how-do-they-work">
+<h2>1.3. What are font families and how do they work?<a class="headerlink" href="#what-are-font-families-and-how-do-they-work" title="Link to this heading">#</a></h2>
+<p>A font family is a group of fonts that share a common design. All the fonts that belong to the same family are based on the same core typeface, but they also have variations in their style, weight, and width. You can think of them as siblings who share similar characteristics but also have some differences. For example, Arial is a font family that includes variations like Arial Bold and Arial Italic.</p>
+<p>In CSS, you can set the font family with the <code class="docutils literal notranslate"><span class="pre">font-family</span></code> property. That is, you write the property followed by a colon, a space, and the font family that will be assigned:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">font-family</span><span class="o">:</span><span class="w"> </span><span class="nt">Arial</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>But what if the font family is not found? You can specify multiple font families in order of priority, from highest to lowest, by separating them with commas. These alternative fonts will act as fallback options. In this example, Arial is a primary font and Lato is an alternative font:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">font-family</span><span class="o">:</span><span class="w"> </span><span class="nt">Arial</span><span class="o">,</span><span class="w"> </span><span class="nt">Lato</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>The browser will render the first font (Arial) if it’s found on the device. If not, the second font (Lato) will be rendered.</p>
+<p>You should also know how this process works behind the scenes. The selection process doesn’t stop if the first font is available. The font family is chosen one character at a time, so if a font lacks a specific character, the browser looks for it in the lower-priority fonts. Interesting, right?</p>
+<p>In the context of web development, you’ll also find generic font families. They’re very important. A <strong>generic font family</strong> is a default font that web browsers will render when the higher priority fonts are not available. To ensure that the content is still readable, the browser replaces the original font with the most appropriate font found, based on the generic font family specified. Some of the most commonly used ones are:</p>
+<ul class="simple">
+<li><p>serif</p></li>
+<li><p>sans-serif</p></li>
+<li><p>monospace</p></li>
+<li><p>cursive</p></li>
+<li><p>fantasy</p></li>
+</ul>
+<p>But there are more options to choose from. In the code below, we have three alternative font families:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">font-family</span><span class="o">:</span><span class="w"> </span><span class="nt">Arial</span><span class="o">,</span><span class="w"> </span><span class="nt">Lato</span><span class="o">,</span><span class="w"> </span><span class="nt">sans-serif</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Arial has the highest priority. If Arial is not found, then the browser will try to render Lato. If neither is found, the browser will use the generic sans-serif font family, selecting a font with these characteristics from those installed on the user’s system.</p>
+<p>You should always include a generic font family at the end of the font-family list. Keep in mind that the generic font may look different from the font that you originally envisioned in your design, so it’s always helpful to check how these fallback fonts look on different browsers.</p>
+<p>To make the user experience as consistent as possible, it’s also recommended to use web-safe fonts. These font families are usually installed on most devices, so they’re very likely to be found and rendered correctly for most users. You’ll learn more about them in the next lectures.</p>
+<p>Font families are essential in the world of web design. By using the font-family property, you can instantly transform the look and feel of your text.</p>
+</section>
+<section id="what-are-web-safe-fonts">
+<h2>1.4. What are web-safe fonts?<a class="headerlink" href="#what-are-web-safe-fonts" title="Link to this heading">#</a></h2>
+<p>Web-safe fonts are a subset of fonts that are very likely to be installed on a computer or device. They are widely supported across different operating systems and web browsers, so it’s very likely that they will be rendered and displayed consistently. Let’s see how this works.</p>
+<p>Browsers are responsible for interpreting and displaying fonts on a website. When the browser has to render a font, it tries to find the font file on the user’s system. But if the font is not found, it will usually fall back to a default system font. This ensures that the content is still readable, even if the specific font that should be rendered on the website is missing.</p>
+<p>However, the fallback font selected by the browser may look very different from the font that was originally supposed to be rendered. This can have a critical impact on the overall design and user experience. To avoid this, you should use web-safe fonts whenever possible. You have two options. You can either use them as your primary fonts or you can use custom fonts with a web-safe font as a fallback option. This way, you can control how the website will look in case the custom font is not found.</p>
+<p>Let’s check out some examples of web-safe fonts. In a previous lecture, you learned that sans-serif fonts are commonly used for web development because they don’t have small “feet” or lines at the end of the characters, so they’re easy to read on screen. Some examples of web-safe sans-serif fonts are:</p>
+<ul class="simple">
+<li><p>Arial</p></li>
+<li><p>Verdana</p></li>
+<li><p>Trebuchet MS</p></li>
+</ul>
+<p>In contrast, serif fonts do have small “feet” at the end of the characters, so they’re commonly used for traditional print. But if you ever need to use them for web development purposes, web-safe serif fonts include:</p>
+<ul class="simple">
+<li><p>Times New Roman</p></li>
+<li><p>Georgia</p></li>
+</ul>
+<p>By using web-safe fonts, you can make sure that your design looks consistent across devices and platforms. They can also enhance accessibility for users with visual disabilities, since they are simple and easy to read. And finally, web-safe fonts can reduce page load time, since they don’t have to be downloaded if they’re already installed.</p>
+<p>Now that you know what web-safe fonts are, you can start using them and assigning them as fallbacks to create reliable user experiences across browsers and platforms.</p>
+</section>
+<section id="what-is-the-font-face-at-rule-and-how-does-it-work">
+<h2>1.5. What is the <code class="docutils literal notranslate"><span class="pre">&#64;font-face</span></code> at-rule and how does it work?<a class="headerlink" href="#what-is-the-font-face-at-rule-and-how-does-it-work" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>Before we dive in, you should know what an at-rule is in CSS. <strong>At-rules</strong> are statements that provide instructions to the browser. You can use them to define various aspects of the stylesheet, such as media queries, keyframes, font faces, and more. You’ll learn more about concepts like media queries and keyframes in future lectures. This time, you’ll learn about the <code class="docutils literal notranslate"><span class="pre">&#64;font-face</span></code> at-rule.</p>
+</div></blockquote>
+<p>With <code class="docutils literal notranslate"><span class="pre">&#64;font-face</span></code>, you can define a custom font by specifying the font file, format, and other important properties, like weight and style. This is the basic syntax. You can see <code class="docutils literal notranslate"><span class="pre">&#64;font-face</span></code> followed by a block enclosed by curly brackets:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">font-face</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c">/* Descriptors */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Within the curly brackets, you will need to include descriptors to customize your font face. Let’s see some of the most commonly used ones. The font-family descriptor specifies the name that you will use throughout the spreadsheet to refer to that font. For example, let’s say that you define this <code class="docutils literal notranslate"><span class="pre">&#64;font-face</span> <span class="pre">rule</span></code>. It has the <code class="docutils literal notranslate"><span class="pre">font-family</span></code> descriptor defined and its value is <code class="docutils literal notranslate"><span class="pre">MyCustomFont</span></code>:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">font-face</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">font-family</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;MyCustomFont&quot;</span><span class="o">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In that case, you would need to use that name in your stylesheet wherever you want to assign that custom font family to all the elements matched by a CSS selector. For example, you would use it as the value of <code class="docutils literal notranslate"><span class="pre">font-family</span></code>:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">  </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MyCustomFont&quot;</span><span class="p">;</span><span class="w"> </span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>But for the <code class="docutils literal notranslate"><span class="pre">&#64;font-face</span></code> at-rule to be valid, you also need to specify the <code class="docutils literal notranslate"><span class="pre">src</span></code>. This contains references to the font resources. It’s basically a list of external references or locally-installed font face names separated by commas. It can also include hints about the format and technology of the font resources.</p>
+<p>In the code below, the <code class="docutils literal notranslate"><span class="pre">src</span></code> is defined. The value is a list of URLs separated by commas and placed on separate lines to improve readability:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">font-face</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">font-family</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;MyCustomFont&quot;</span><span class="o">;</span><span class="w"> </span>
+<span class="w">  </span><span class="nt">src</span><span class="o">:</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s2">&quot;path/to/font.woff2&quot;</span><span class="o">),</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s2">&quot;path/to/font.woff&quot;</span><span class="o">),</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s2">&quot;path/to/font.otf&quot;</span><span class="o">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You can call the <code class="docutils literal notranslate"><span class="pre">url()</span></code> function to include a file in your stylesheet. In this case, we are including the font files. You’ll need to write the file path within parentheses and quotation marks, including the file extension. To improve readability, you can write each resource on a different line, but the last one should end with a semicolon.</p>
+<p>For each font resource, you can also specify the format. This is optional. It’s a hint for the browser on the font format. If the format is omitted, the resource will be downloaded and the format will be detected after it’s downloaded. If the format is invalid, the resource will not be downloaded.</p>
+<p>Possible font formats include <code class="docutils literal notranslate"><span class="pre">collection</span></code>, <code class="docutils literal notranslate"><span class="pre">embedded-opentype</span></code>, <code class="docutils literal notranslate"><span class="pre">opentype</span></code>, <code class="docutils literal notranslate"><span class="pre">svg</span></code>, <code class="docutils literal notranslate"><span class="pre">truetype</span></code>, <code class="docutils literal notranslate"><span class="pre">woff</span></code>, and <code class="docutils literal notranslate"><span class="pre">woff2</span></code>.</p>
+<p>Here’s an example with font formats. Notice how we write the specific format within parentheses and quotes:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">font-face</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">font-family</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;MyCustomFont&quot;</span><span class="o">;</span><span class="w"> </span>
+<span class="w">  </span><span class="nt">src</span><span class="o">:</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s2">&quot;path/to/font.woff2&quot;</span><span class="o">)</span><span class="w"> </span><span class="nt">format</span><span class="o">(</span><span class="s2">&quot;woff2&quot;</span><span class="o">),</span>
+<span class="w">       </span><span class="nt">url</span><span class="o">(</span><span class="s2">&quot;path/to/font.otf&quot;</span><span class="o">)</span><span class="w"> </span><span class="nt">format</span><span class="o">(</span><span class="s2">&quot;opentype&quot;</span><span class="o">),</span>
+<span class="w">       </span><span class="nt">url</span><span class="o">(</span><span class="s2">&quot;path/to/font.woff&quot;</span><span class="o">)</span><span class="w"> </span><span class="nt">format</span><span class="o">(</span><span class="s2">&quot;woff&quot;</span><span class="o">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, you can see that we’re specifying the WOFF2 format, the OpenType format, and the WOFF format.</p>
+<ul class="simple">
+<li><p>woff stands for “Web Open Font Format.” The difference between WOFF and WOFF2 is the algorithm used to compress the data.</p></li>
+<li><p>OpenType is a format for scalable computer fonts developed by Microsoft and Adobe that allows users to access additional features in a font. It’s widely used across major operating systems.</p></li>
+</ul>
+<p>In addition to specifying the format, you can also specify the technology of the font resource. This is optional too. Here’s an example where we specify the technology of the second font resource.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">font-face</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">font-family</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;MyCustomFont&quot;</span><span class="o">;</span><span class="w"> </span>
+<span class="w">  </span><span class="nt">src</span><span class="o">:</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s2">&quot;path/to/font.woff2&quot;</span><span class="o">)</span><span class="w"> </span><span class="nt">format</span><span class="o">(</span><span class="s2">&quot;woff2&quot;</span><span class="o">),</span>
+<span class="w">       </span><span class="nt">url</span><span class="o">(</span><span class="s2">&quot;path/to/font.otf&quot;</span><span class="o">)</span><span class="w"> </span><span class="nt">format</span><span class="o">(</span><span class="s2">&quot;opentype&quot;</span><span class="o">)</span><span class="w"> </span><span class="nt">tech</span><span class="o">(</span><span class="nt">color-COLRv1</span><span class="o">),</span>
+<span class="w">       </span><span class="nt">url</span><span class="o">(</span><span class="s2">&quot;path/to/font.woff&quot;</span><span class="o">)</span><span class="w"> </span><span class="nt">format</span><span class="o">(</span><span class="s2">&quot;woff&quot;</span><span class="o">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>These are the fundamentals of the <code class="docutils literal notranslate"><span class="pre">&#64;font-face</span></code> rule. With this at-rule, you can specify the font file to define custom fonts for your unique designs.</p>
+</section>
+<section id="how-do-you-work-with-external-fonts-like-font-squirrel-and-google-fonts">
+<h2>1.6. How do you work with external fonts like Font Squirrel and Google Fonts?<a class="headerlink" href="#how-do-you-work-with-external-fonts-like-font-squirrel-and-google-fonts" title="Link to this heading">#</a></h2>
+<p>An external font is a font file that is not included directly within your project files. They’re usually hosted on a separate server. A server is a computer that provides data or services to other computers over a network. You will learn more about servers in future lectures. External fonts give you more flexibility because you can use custom fonts that may not be installed on the user’s device.</p>
+<p>Google Fonts and Font Squirrel are popular online resources for finding and using free fonts for web development purposes. You can incorporate them into your projects very easily.</p>
+<ol class="arabic">
+<li><p>Let’s start with Google Fonts. This is a Google service that offers a collection of fonts, many of which are designed specifically for web development. On the Google Fonts user interface, you can see many different elements. Let’s go through them one by one. On the left sidebar, you will find:</p>
+<ul class="simple">
+<li><p>A section to see, find, and filter fonts.</p></li>
+<li><p>A special section on Noto, a collection of high-quality fonts with various weights, widths, and styles that are perfect for communicating in more than 1,000 languages and over 150 writing systems.</p></li>
+<li><p>A section where you can find and download icons for your web projects.</p></li>
+<li><p>A section where you can learn more about fonts and their best practices, followed by frequently asked questions.</p></li>
+</ul>
+<p>To add a Google Font to your website, you should go to the first section (Fonts). You can customize the preview text on the left sidebar, where it says “Preview.” Just write the text that you would like to see and it will be updated automatically. This is helpful to preview the font with the text that you already have in mind for your website. You can also adjust the font size and filter the fonts based on their characteristics.</p>
+<p>To see more information about a font, just click on it and you will see important information about the font, like who designed it, preview text, and different styles, like light, regular, medium, bold, and black. If you click on the options at the top, you can go to the type tester, see individual glyphs, and learn more about the font and its license.</p>
+<p>You can customize the font size of the preview text with the blue slider located next to the field where you can enter the preview text. Once you’re ready to add the font to your project, click on the blue “Get font” button at the top. You’ll be taken to a summary page where you’ll see the fonts that you currently have selected. You can have multiple fonts selected simultaneously.</p>
+<p>Next, you have to choose if you would like to download the font files to add them to your project as local files or if you would like to use them as external fonts and download them from Google’s servers when a user enters your website. Click on “Download all” if you want to download them but if you prefer to use them as external fonts on Google’s servers, click on “Get embed code.” If you click on “Get embed code,” you’ll see the instructions that you should follow to add these external fonts to your project.</p>
+<p>For web development projects, you have two options. You can either use a <code class="docutils literal notranslate"><span class="pre">link</span></code> element or <code class="docutils literal notranslate"><span class="pre">&#64;import</span></code>. If you choose the <code class="docutils literal notranslate"><span class="pre">link</span></code> element option, you can copy and paste the HTML snippet and the CSS rules to add them to your project. You should embed the code in the <code class="docutils literal notranslate"><span class="pre">head</span></code> element of your HTML file and add the CSS rules that fit your needs. For example, this is what you would add to your HTML file to add all Roboto styles:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;preconnect&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://fonts.googleapis.com&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;preconnect&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://fonts.gstatic.com&quot;</span> <span class="na">crossorigin</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>And this is the CSS:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">roboto-thin</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Roboto&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">normal</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">roboto-light</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Roboto&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">normal</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">roboto-regular</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Roboto&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">normal</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">roboto-medium</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Roboto&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">normal</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">roboto-bold</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Roboto&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">700</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">normal</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">roboto-black</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Roboto&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">900</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">normal</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">roboto-thin-italic</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Roboto&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">italic</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">roboto-light-italic</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Roboto&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">italic</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">roboto-regular-italic</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Roboto&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">italic</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">roboto-medium-italic</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Roboto&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">italic</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">roboto-bold-italic</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Roboto&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">700</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">italic</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">roboto-black-italic</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Roboto&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">900</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">italic</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>There’s a CSS rule for each font style. Each rule assigns the custom fonts with fallback fonts in case the custom fonts are not loaded properly.</p>
+<p>If you choose the <code class="docutils literal notranslate"><span class="pre">&#64;import</span></code> option instead, you will need to add that rule to your CSS file. Here is an example:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap&#39;</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The CSS rules are exactly the same.</p>
+<p>If you only want to include specific font styles, you also have the option to remove them from these snippets. The HTML and CSS snippets will be updated automatically.</p>
+<p>And this is Google Fonts. It’s one of the most popular options for finding free and open source fonts for web development projects.</p>
+</li>
+<li><p>Another great option is Font Squirrel, where you can find and download the custom fonts that you envision for your design. If you search for a font and click on a result, you’ll see more details about the font, including specimens, test drive, glyphs, and Webfont kit. You can also see samples of the different styles and variations of the font, like thin, light, medium, bold, and black.</p>
+<p>Once you’ve decided on a font that you want to use in your project, go to the “Webfont Kit” tab. Here, you can check if the font’s license allows you to use it in <code class="docutils literal notranslate"><span class="pre">&#64;font-face</span></code> CSS embeddings. You can also choose the subset and format.</p>
+<p>Clicking on the “Download &#64;font-face Kit” button will download a compressed (zip) file. If you unzip it, you’ll find a “web fonts” folder, the license as a text file, and an HTML file with instructions on how to use web fonts. The web fonts folder will have all the font files that you need for your project. You will find them grouped into specific folders for the different fonts styles.</p>
+<p>If you open the HTML file on a browser, it has instructions on how to add the fonts to your project, how to include them in the stylesheet with the <code class="docutils literal notranslate"><span class="pre">&#64;font-face</span></code> declaration, and how to use them in the CSS rules.</p>
+<p>This is how you can add custom Font Squirrel fonts to your project. You can also host them on a separate server and use them as external fonts. External fonts are very helpful for customizing the overall look and design of your website. They can make your website truly unique.</p>
+</li>
+</ol>
+<p>However, you should also keep in mind that using multiple external fonts can increase the load time of the website, affecting its overall performance. You should always strive to find a balance between style and efficiency.</p>
+</section>
+<section id="what-is-the-text-shadow-property-and-how-does-it-work">
+<h2>1.7. What is the <code class="docutils literal notranslate"><span class="pre">text-shadow</span></code> property and how does it work?<a class="headerlink" href="#what-is-the-text-shadow-property-and-how-does-it-work" title="Link to this heading">#</a></h2>
+<p>CSS doesn’t apply any shadows to the text by default. This is an example of a paragraph without any shadows. But if you do need to add shadows, you can use the <code class="docutils literal notranslate"><span class="pre">text-shadow</span></code> property.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">text-shadow</span><span class="o">:</span><span class="w"> </span><span class="c">/* Values */</span>
+</pre></div>
+</div>
+<p>In CSS, you can describe a shadow through a combination of its <code class="docutils literal notranslate"><span class="pre">X</span></code> offset, <code class="docutils literal notranslate"><span class="pre">Y</span></code> offset, blur radius, and color. First, you need to specify the <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">Y</span></code> offset, which represent the horizontal and vertical distance of the shadow from the text, respectively. These values are required.</p>
+<p>Here’s an example of how to apply an <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">Y</span></code> offset on a shadow. We apply the <code class="docutils literal notranslate"><span class="pre">text-shadow</span></code> property with an x-offset of <code class="docutils literal notranslate"><span class="pre">3px</span></code> and a y-offset of <code class="docutils literal notranslate"><span class="pre">2px</span></code>:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello, World!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">text-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In the browser, the text and the shadow will look similar but we can also customize the color of the shadow by specifying the value before or after the offset. Let’s set the shadow color. We will use a hexadecimal color here but you can use any valid color format.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">text-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="mh">#00ffc3</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>We are writing the color after the offset but you can also write the color before the offset if you prefer. It’s equivalent:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">text-shadow</span><span class="p">:</span><span class="w"> </span><span class="mh">#00ffc3</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In the browser, the shadow will have a specific color, so we can distinguish it very easily from the text. Now that we can differentiate the shadow from the text, it’s also important to see how positive and negative values affect the shadow offset. Positive values of the <code class="docutils literal notranslate"><span class="pre">X</span></code> offset and <code class="docutils literal notranslate"><span class="pre">Y</span></code> offset will move the shadow right and down, respectively, while negative values will move the shadow left and up. Here’s an example that uses negative values instead:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">text-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">-3</span><span class="kt">px</span><span class="w"> </span><span class="mi">-2</span><span class="kt">px</span><span class="w"> </span><span class="mh">#00ffc3</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now the shadow will move left and up in relation to the text. Great. But the shadow is not looking very nice, because it looks exactly like the original text but placed behind it. To make it look nicer, we need to add a third value, the blur radius. This value is optional but makes the shadow look a lot smoother and more subtle. The default value of the radius blur is zero. The higher the value, the bigger the blur, which means that the shadow becomes lighter.</p>
+<p>Here, we are setting the blur radius to <code class="docutils literal notranslate"><span class="pre">3px</span></code> and we’re back to positive values for the offset:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">text-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="w"> </span><span class="mh">#00ffc3</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now it’s starting to look like a shadow. It’s more blurry and subtle, so we can focus on the main text while the shadow adds some style in the background. From here, we can tweak the values a little bit until we find a combination of offset, color, and blur radius that fits our needs.</p>
+<p>It’s also helpful to know that the text can have more than one shadow. You just need to write them in the same <code class="docutils literal notranslate"><span class="pre">text-shadow</span></code> property separated by commas. They will be applied in layers, from front to back, with the first shadow at the top.</p>
+<p>Here’s an example of a paragraph with three shadows applied in layers. Notice that all these shadows are defined in the same <code class="docutils literal notranslate"><span class="pre">text-shadow</span></code> property and separated by commas:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">text-shadow</span><span class="p">:</span><span class="w"> </span>
+<span class="w">    </span><span class="mi">3</span><span class="kt">px</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="w"> </span><span class="mh">#00ffc3</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="mi">-3</span><span class="kt">px</span><span class="w"> </span><span class="mi">-2</span><span class="kt">px</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="w"> </span><span class="mh">#0077ff</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="mi">5</span><span class="kt">px</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="w"> </span><span class="mh">#dee7e5</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">text-shadow</span></code> is a powerful CSS property for making your text stand out. It can also enhance the overall design of your web application. By choosing the offset, blur, and color, you can create a wide range of shadow effects.</p>
+</div></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./css/9_typography"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../9_typography.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">9. Typograpgy Summary</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Examples</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-fundamentals-of-typography">1.1. What are the fundamentals of typography?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-some-best-practices-for-working-with-typography-in-your-designs">1.2. What are some best practices for working with typography in your designs?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-font-families-and-how-do-they-work">1.3. What are font families and how do they work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-web-safe-fonts">1.4. What are web-safe fonts?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-font-face-at-rule-and-how-does-it-work">1.5. What is the <code class="docutils literal notranslate"><span class="pre">@font-face</span></code> at-rule and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-work-with-external-fonts-like-font-squirrel-and-google-fonts">1.6. How do you work with external fonts like Font Squirrel and Google Fonts?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-text-shadow-property-and-how-does-it-work">1.7. What is the <code class="docutils literal notranslate"><span class="pre">text-shadow</span></code> property and how does it work?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mikaela González Pérez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,842 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Working with Higher Order Functions and Callbacks &#8212; My Front End Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'javaScript/8_higher_order_functions/1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Examples" href="2.html" />
+    <link rel="prev" title="8. Higher Order Functions Summary" href="../8_higher_order_functions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt="My Front End Notes - Home"/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="My Front End Notes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to my web development notes
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">HTML</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/1_basic_html.html">1. Basic HTML Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/1.html">1. What is HTML?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/2.html">2. HTML Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/3.html">3. Working with Media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/4.html">4. Working with Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/2_semantic_html.html">2. Semantic HTML Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/2_semantic_html/1.html">1. Semantic HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/2_semantic_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/3_forms_and_tables_html.html">3. HTML Tables and Forms Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/1.html">1. Working with Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/2.html">2. Working with Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/3.html">3. Working with HTML Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/4_accessibility.html">4. HTML Accessibility Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/1.html">1. Importance of Accessibility and Good HTML Structure - I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/2.html">1. Importance of Accessibility and Good HTML Structure - II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/3.html">1. Importance of Accessibility and Good HTML Structure - III</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/4.html">1. Importance of Accessibility and Good HTML Structure - IV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/5.html">1. Importance of Accessibility and Good HTML Structure - V</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/6.html">Examples</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/1_basic_css.html">1. Basic CSS Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/1.html">1. What Is CSS?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/2.html">2. CSS Specificity, the Cascade Algorithm and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/3.html">3. Styling Lists and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/4.html">4. Working with Backgrounds and Borders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/2_design.html">2. Design Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/2_design/1.html">1. User Interface Design Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/2_design/2.html">2. User-Centered Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/2_design/3.html">3. Common Design Tools</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/3_absolute_n_relative_units.html">3. CSS Relative and Absolute Units Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/3_absolute_n_relative_units/1.html">1. Working  with Relative and Absolute Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/3_absolute_n_relative_units/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/4_pseudo_classes_n_elements.html">4. CSS Pseudo-classes Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/4_pseudo_classes_n_elements/1.html">1. Working with Pseudo-Classes and Pseudo-Elements in CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/4_pseudo_classes_n_elements/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/5_colors.html">5. Colors Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/5_colors/1.html">1. Working with color in CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/5_colors/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/6_styling_forms.html">6. Styling Forms Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/6_styling_forms/1.html">1. Best Practices for Styling Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/6_styling_forms/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/7_the_box_model.html">7. CSS Layout and Effects Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/7_the_box_model/1.html">1. Working with CSS Transforms, Overflow and Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/7_the_box_model/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/8_the_flex_model.html">8. The Flex Model Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/8_the_flex_model/1.html">1. Working with CSS Flexbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/8_the_flex_model/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/9_typography.html">9. Typograpgy Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/9_typography/1.html">1. Working with CSS Fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/9_typography/2.html">Examples</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1_variables_n_strings.html">1. Variables and Strings Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1_variables_n_strings/1.html">1. Introduction to JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_variables_n_strings/2.html">2. Working with Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_variables_n_strings/3.html">3. Working with Strings in JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_variables_n_strings/4.html">4. Working with Common String Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_variables_n_strings/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2_booleans_n_numbers.html">2. Booleans and Numbers Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/1.html">1. Working with Numbers, Booleans and the Math Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/2.html">2. Working with Numbers and Common Number Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/3.html">3. Understanding Comparisons and Conditional Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3_functions.html">3. Functions Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3_functions/1.html">1. Working with Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_functions/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4_arrays.html">4. Arrays Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4_functions/1.html">1. Working with Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_functions/2.html">2. Working with Common Array Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_functions/3.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../5_objects.html">5. Objects Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../5_objects/1.html">1. Working with Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../5_objects/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../6_loops.html">6. Loops Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../6_loops/1.html">1. Working with Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../6_loops/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7_fundamentals.html">7. JavaScript Fundamentals Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../7_fundamentals/1.html">1. Understanding Core JavaScript Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../7_fundamentals/2.html">2. The <code class="docutils literal notranslate"><span class="pre">var</span></code> Keyword and Hoisting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../7_fundamentals/3.html">3. Understanding Modules, Imports and Exports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../7_fundamentals/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../8_higher_order_functions.html">8. Higher Order Functions Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1. Working with Higher Order Functions and Callbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">Examples</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/javaScript/8_higher_order_functions/1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1. Working with Higher Order Functions and Callbacks</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-callback-function-and-how-does-it-work-with-the-foreach-method">1.1. What is a callback function and how does it work with the <code class="docutils literal notranslate"><span class="pre">forEach</span></code> method?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-higher-order-functions">1.2. What are higher order functions?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-map-method-and-how-does-it-work">1.3. What is the <code class="docutils literal notranslate"><span class="pre">map</span></code> method and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-filter-method-and-how-does-it-work">1.4. What is the <code class="docutils literal notranslate"><span class="pre">filter</span></code> method and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-reduce-method-and-how-does-it-work">1.5. What is the <code class="docutils literal notranslate"><span class="pre">reduce</span></code> method and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.6.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.7.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.8.</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div style="text-align: justify">
+<section class="tex2jax_ignore mathjax_ignore" id="working-with-higher-order-functions-and-callbacks">
+<h1>1. Working with Higher Order Functions and Callbacks<a class="headerlink" href="#working-with-higher-order-functions-and-callbacks" title="Link to this heading">#</a></h1>
+<section id="what-is-a-callback-function-and-how-does-it-work-with-the-foreach-method">
+<h2>1.1. What is a callback function and how does it work with the <code class="docutils literal notranslate"><span class="pre">forEach</span></code> method?<a class="headerlink" href="#what-is-a-callback-function-and-how-does-it-work-with-the-foreach-method" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>In JavaScript, a <strong>callback function</strong> is a function that is passed as an argument to another function and is executed after the main function has finished its execution. It’s a way to ensure that certain code doesn’t execute until a previous operation has been completed. This concept is fundamental to understanding many aspects of JavaScript, including how the <code class="docutils literal notranslate"><span class="pre">forEach</span></code> method works.</p>
+<p>Let’s start by understanding what a callback function is in a simple context. Imagine you have a function that performs a task, and you want to do something after that task is complete. Instead of writing all the code in one big function, you can pass a second function (the callback) to be executed when the first function is done. This allows for more flexible and modular code.</p>
+</div></blockquote>
+<p>Now, let’s introduce the <code class="docutils literal notranslate"><span class="pre">forEach</span></code> method. <code class="docutils literal notranslate"><span class="pre">forEach</span></code> is a built-in method for arrays in JavaScript. It allows you to iterate over each element in an array and perform an operation on each element. The operation you want to perform is defined in a callback function that you provide to <code class="docutils literal notranslate"><span class="pre">forEach</span></code>.</p>
+<ul>
+<li><p>Here’s an example of how <code class="docutils literal notranslate"><span class="pre">forEach</span></code> works with a callback function:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
+
+<span class="nx">numbers</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">number</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p>In this example, we have an array of numbers. We use the <code class="docutils literal notranslate"><span class="pre">forEach</span></code> method on this array, and we provide a callback function as an argument to <code class="docutils literal notranslate"><span class="pre">forEach</span></code>.</p></li>
+<li><p>This callback function takes one parameter, which represents each element in the array. The <code class="docutils literal notranslate"><span class="pre">forEach</span></code> method will call this callback function once for each element in the array.</p></li>
+<li><p>The callback function in this case multiplies each number by <code class="docutils literal notranslate"><span class="pre">2</span></code> and logs the result. So, when this code runs, it will output:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>2
+4
+6
+8
+10
+</pre></div>
+</div>
+</li>
+</ol>
+<p>It’s important to understand that the callback function is called once for each element in the array, in order. <code class="docutils literal notranslate"><span class="pre">forEach</span></code> takes care of the looping for you, so you don’t have to write a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop yourself.</p>
+</li>
+<li><p>You can also use an arrow function as the callback, which can make your code even more concise:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
+<span class="nx">numbers</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">number</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">number</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">));</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>This does exactly the same thing as the previous example, but with less code.</p></li>
+</ol>
+</li>
+<li><p>The callback function in <code class="docutils literal notranslate"><span class="pre">forEach</span></code> can actually take up to three arguments: the current element, the index of the current element, and the array that <code class="docutils literal notranslate"><span class="pre">forEach</span></code> was called upon.</p>
+<p>Here’s an example using all three:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
+<span class="nx">numbers</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">number</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">,</span><span class="w"> </span><span class="nx">array</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Element </span><span class="si">${</span><span class="nx">number</span><span class="si">}</span><span class="sb"> is at index </span><span class="si">${</span><span class="nx">index</span><span class="si">}</span><span class="sb"> in array </span><span class="si">${</span><span class="nx">array</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>This would log information about each element, its index, and the original array.</p></li>
+</ol>
+</li>
+</ul>
+<p>Understanding callback functions and methods like <code class="docutils literal notranslate"><span class="pre">forEach</span></code> is important as you progress in JavaScript. They form the basis for many more advanced concepts in the language, particularly in asynchronous programming.</p>
+</section>
+<section id="what-are-higher-order-functions">
+<h2>1.2. What are higher order functions?<a class="headerlink" href="#what-are-higher-order-functions" title="Link to this heading">#</a></h2>
+<p>Higher order functions are a powerful concept in JavaScript that can significantly enhance your coding abilities and make your code more flexible and reusable.</p>
+<p>In essence, a <strong>higher order function</strong> is a function that either takes one or more functions as arguments, returns a function, or both.</p>
+<p>To understand higher order functions, let’s first consider functions as first-class citizens in JavaScript. This means that functions can be treated like any other value – they can be assigned to variables, passed as arguments to other functions, and returned from functions. This flexibility is what enables the creation and use of higher order functions.</p>
+<p>One common use of higher order functions is to abstract away complex operations.</p>
+<p>For example, you might have a function that performs a specific operation on each element of an array. Instead of writing separate functions for different operations, you can create a higher order function that takes the operation as an argument. This allows you to reuse the same function structure with different behaviors.</p>
+<p>Here’s an example to illustrate this concept:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">operateOnArray</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span><span class="w"> </span><span class="nx">operation</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">result</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">operation</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]));</span>
+<span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="kr">double</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">doubledNumbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">operateOnArray</span><span class="p">(</span><span class="nx">numbers</span><span class="p">,</span><span class="w"> </span><span class="kr">double</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">doubledNumbers</span><span class="p">);</span><span class="w"> </span><span class="c1">// Outputs: [2, 4, 6, 8, 10]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>In this example, <code class="docutils literal notranslate"><span class="pre">operateOnArray</span></code> is a higher order function. It takes an array and a function (<code class="docutils literal notranslate"><span class="pre">operation</span></code>) as arguments. It then applies the operation to each element of the array. The double function is passed as an argument to <code class="docutils literal notranslate"><span class="pre">operateOnArray</span></code>, demonstrating how functions can be used as values.</p></li>
+</ul>
+<p>Higher order functions can also return functions. This is particularly useful for creating specialized functions based on more general ones. This concept is often referred to as function factories. Here’s an example:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">multiplyBy</span><span class="p">(</span><span class="nx">factor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">number</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">factor</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="kr">double</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">multiplyBy</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">triple</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">multiplyBy</span><span class="p">(</span><span class="mf">3</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kr">double</span><span class="p">(</span><span class="mf">5</span><span class="p">));</span><span class="w"> </span><span class="c1">// Outputs: 10</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">triple</span><span class="p">(</span><span class="mf">5</span><span class="p">));</span><span class="w"> </span><span class="c1">// Outputs: 15</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>In this case, <code class="docutils literal notranslate"><span class="pre">multiplyBy</span></code> is a higher order function that returns a new function. This new function is specialized based on the factor passed to <code class="docutils literal notranslate"><span class="pre">multiplyBy</span></code>. This allows us to create custom multiplication functions with ease.</p></li>
+</ul>
+<p>Higher order functions are not just a theoretical concept – they’re widely used in JavaScript.</p>
+<p>Many built-in methods for arrays in JavaScript, such as <code class="docutils literal notranslate"><span class="pre">map()</span></code>, <code class="docutils literal notranslate"><span class="pre">filter()</span></code>, and <code class="docutils literal notranslate"><span class="pre">reduce()</span></code>, are higher order functions. These methods take a function as an argument and apply it to the elements of the array in various ways.</p>
+<p>The use of higher order functions can lead to more declarative and easier-to-understand code.</p>
+<p>Instead of describing step-by-step how to accomplish a task (imperative programming), higher order functions allow you to describe what you want to accomplish (declarative programming). This can make your code more readable and maintainable.</p>
+<p>As you continue to work with JavaScript, you’ll encounter and use higher order functions frequently. They’re a key part of functional programming in JavaScript and are essential for writing clean, efficient, and flexible code.</p>
+</section>
+<section id="what-is-the-map-method-and-how-does-it-work">
+<h2>1.3. What is the <code class="docutils literal notranslate"><span class="pre">map</span></code> method and how does it work?<a class="headerlink" href="#what-is-the-map-method-and-how-does-it-work" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">map</span></code> method is a powerful and widely used function in JavaScript that operates on arrays. It is designed to create a new array by applying a given function to each element of the original array.</p>
+<blockquote>
+<div><p>This method <strong>does not modify the original array</strong> but instead returns a new array containing the results of the function applied to each element.</p>
+</div></blockquote>
+<p>Here is an example of using the <code class="docutils literal notranslate"><span class="pre">map</span></code> method on an array of numbers:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">doubled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">num</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">);</span><span class="w"> </span><span class="c1">// [1, 2, 3, 4, 5]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">doubled</span><span class="p">);</span><span class="w"> </span><span class="c1">// [2, 4, 6, 8, 10]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>To create a new array where each number is doubled, we are using the <code class="docutils literal notranslate"><span class="pre">map</span></code> method. The <code class="docutils literal notranslate"><span class="pre">map</span></code> method accepts a callback function where the function is called on every single element in the array.</p></li>
+<li><p>In this case, each number in the array will be multiplied by <code class="docutils literal notranslate"><span class="pre">2</span></code>. The result will be a new array of the numbers <code class="docutils literal notranslate"><span class="pre">2,4,6,8,10</span></code>.</p></li>
+</ul>
+<p>The callback function can accept up to three arguments.</p>
+<ol class="arabic">
+<li><p>The first argument is the current element being processed.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">7</span><span class="p">].</span><span class="nx">map</span><span class="p">((</span><span class="nx">element</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Element:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">element</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</li>
+<li><p>The second argument is the index of the current element being processed.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">7</span><span class="p">].</span><span class="nx">map</span><span class="p">((</span><span class="nx">element</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Element:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">element</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Index:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</li>
+<li><p>The third argument is the array where <code class="docutils literal notranslate"><span class="pre">map</span></code> is being called on.</p></li>
+</ol>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">7</span><span class="p">].</span><span class="nx">map</span><span class="p">((</span><span class="nx">element</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">,</span><span class="w"> </span><span class="nx">array</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Element:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">element</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Index:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Array:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">array</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Understanding and effectively using the <code class="docutils literal notranslate"><span class="pre">map</span></code> method can significantly improve your ability to work with arrays in JavaScript. In future lecture videos, we’ll dive deeper into more advanced uses of <code class="docutils literal notranslate"><span class="pre">map</span></code> and explore how it can be a powerful tool for building dynamic and efficient programs.</p>
+</section>
+<section id="what-is-the-filter-method-and-how-does-it-work">
+<h2>1.4. What is the <code class="docutils literal notranslate"><span class="pre">filter</span></code> method and how does it work?<a class="headerlink" href="#what-is-the-filter-method-and-how-does-it-work" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">filter</span></code> method is used to create a new array with elements that pass a specified test, making it useful for selectively extracting items based on criteria.</p>
+<p>In this example, we are using the <code class="docutils literal notranslate"><span class="pre">filter</span></code> method, to create a new array of only even numbers:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">7</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">,</span><span class="w"> </span><span class="mf">9</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">evenNumbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numbers</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">num</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">evenNumbers</span><span class="p">);</span><span class="w"> </span><span class="c1">// [2, 4, 6, 8, 10]</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>In this example, the <code class="docutils literal notranslate"><span class="pre">filter</span></code> method applies a callback function to each element of the <code class="docutils literal notranslate"><span class="pre">numbers</span></code> array. The callback checks whether each number is even using the modulo operator (<code class="docutils literal notranslate"><span class="pre">%</span></code>).</p></li>
+<li><p>If the number is even, the function returns <code class="docutils literal notranslate"><span class="pre">true</span></code> and that number is included in the new array. If it’s odd, the function returns <code class="docutils literal notranslate"><span class="pre">false</span></code> and that number is excluded.</p></li>
+</ol>
+<p>Just like the <code class="docutils literal notranslate"><span class="pre">map</span></code> method, the callback function for the <code class="docutils literal notranslate"><span class="pre">filter</span></code> method accepts the same three arguments: the current element being processed, the index, and the array.</p>
+<blockquote>
+<div><p>It’s important to note that if no elements pass the test, the <code class="docutils literal notranslate"><span class="pre">filter</span></code> method returns an empty array.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">].</span><span class="nx">filter</span><span class="p">((</span><span class="nx">num</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">);</span><span class="w"> </span><span class="c1">// []</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">filter</span></code> is incredibly versatile and can be used in many scenarios. You can use it to remove <code class="docutils literal notranslate"><span class="pre">null</span></code> or <code class="docutils literal notranslate"><span class="pre">undefined</span></code> values from an array, to filter objects based on their properties, or to implement search functionality.</p>
+<p>Here’s an example of using the <code class="docutils literal notranslate"><span class="pre">filter</span></code> method to return an array of objects for individuals younger than <code class="docutils literal notranslate"><span class="pre">30</span></code> years old.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">developers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Charlie&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">35</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;David&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="w"> </span><span class="p">}</span>
+<span class="p">];</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">youngPeople</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">developers</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">person</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">person</span><span class="p">.</span><span class="nx">age</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">30</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">youngPeople</span><span class="p">);</span>
+
+<span class="c1">// [{ name: &quot;Alice&quot;, age: 25 }, { name: &quot;David&quot;, age: 25 }]</span>
+</pre></div>
+</div>
+<p>Throughout the rest of this curriculum, you will be using the <code class="docutils literal notranslate"><span class="pre">map</span></code> and <code class="docutils literal notranslate"><span class="pre">filter</span></code> methods very frequently. So, building familiarity with them will not only streamline your coding process but also help you write cleaner and more efficient code.</p>
+</section>
+<section id="what-is-the-reduce-method-and-how-does-it-work">
+<h2>1.5. What is the <code class="docutils literal notranslate"><span class="pre">reduce</span></code> method and how does it work?<a class="headerlink" href="#what-is-the-reduce-method-and-how-does-it-work" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">reduce</span></code> method is a function in JavaScript that allows you to process an array and condense it into a single value. This single value can be a number, a string, an object, or even another array.</p>
+<p>It’s called <code class="docutils literal notranslate"><span class="pre">reduce</span></code> because it reduces an array to a single output. While it might seem complicated at first, understanding <code class="docutils literal notranslate"><span class="pre">reduce</span></code> can greatly simplify your code in many situations.</p>
+<p>At its core, <code class="docutils literal notranslate"><span class="pre">reduce</span></code> works by applying a function to each element in the array, in order, passing the result of each calculation on to the next. This function is often called the reducer function.</p>
+<p>The reducer function takes two main parameters: an accumulator and the current value. The accumulator is where you store the running result of your operations, and the current value is the array element being processed.</p>
+<p>Let’s look at an example to illustrate how <code class="docutils literal notranslate"><span class="pre">reduce</span></code> works:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numbers</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span>
+<span class="w">  </span><span class="p">(</span><span class="nx">accumulator</span><span class="p">,</span><span class="w"> </span><span class="nx">currentValue</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">accumulator</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">currentValue</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span>
+<span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">);</span><span class="w"> </span><span class="c1">// 15</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>In this example, we’re using <code class="docutils literal notranslate"><span class="pre">reduce</span></code> to get the sum of all the numbers in the array.</p></li>
+<li><p>The reducer function takes the accumulator (which starts at <code class="docutils literal notranslate"><span class="pre">0</span></code>, as specified by the second argument to <code class="docutils literal notranslate"><span class="pre">reduce</span></code>) and adds each number to it.</p></li>
+<li><p>The result of each addition becomes the new accumulator for the next iteration.</p></li>
+</ol>
+<p>The <code class="docutils literal notranslate"><span class="pre">reduce</span></code> method can also take an initial value as its second argument. This is the value that the accumulator starts with. In the example above, we set it to <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>If you don’t provide an initial value, <code class="docutils literal notranslate"><span class="pre">reduce</span></code> will use the first element of the array as the initial accumulator and start the process from the second element.</p>
+<p>One of the great things about <code class="docutils literal notranslate"><span class="pre">reduce</span></code> is its flexibility. Because you define the reducer function, you have complete control over how the array is processed and what kind of result you want to produce. This makes <code class="docutils literal notranslate"><span class="pre">reduce</span></code> extremely powerful, but it can also make it a bit challenging to understand at first.</p>
+<p>With practice, you will get the hang of working with the <code class="docutils literal notranslate"><span class="pre">reduce</span></code> method.</p>
+</section>
+<section id="id1">
+<h2>1.6.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+</section>
+<section id="id2">
+<h2>1.7.<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+</section>
+<section id="id3">
+<h2>1.8.<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+</div></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./javaScript/8_higher_order_functions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../8_higher_order_functions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">8. Higher Order Functions Summary</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Examples</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-callback-function-and-how-does-it-work-with-the-foreach-method">1.1. What is a callback function and how does it work with the <code class="docutils literal notranslate"><span class="pre">forEach</span></code> method?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-higher-order-functions">1.2. What are higher order functions?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-map-method-and-how-does-it-work">1.3. What is the <code class="docutils literal notranslate"><span class="pre">map</span></code> method and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-filter-method-and-how-does-it-work">1.4. What is the <code class="docutils literal notranslate"><span class="pre">filter</span></code> method and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-reduce-method-and-how-does-it-work">1.5. What is the <code class="docutils literal notranslate"><span class="pre">reduce</span></code> method and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.6.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.7.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.8.</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mikaela González Pérez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
