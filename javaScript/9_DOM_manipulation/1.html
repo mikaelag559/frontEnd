@@ -1,0 +1,1239 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Working with the DOM, Click Events and Web APIs - I &#8212; My Front End Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'javaScript/9_DOM_manipulation/1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1. Working with the DOM, Click Events and Web APIs - II" href="2.html" />
+    <link rel="prev" title="9. DOM Manipulation and Click Events Summary" href="../9_DOM_manipulation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt="My Front End Notes - Home"/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="My Front End Notes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to my web development notes
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">HTML</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/1_basic_html.html">1. Basic HTML Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/1.html">1. What is HTML?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/2.html">2. HTML Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/3.html">3. Working with Media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/4.html">4. Working with Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/1_basic_html/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/2_semantic_html.html">2. Semantic HTML Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/2_semantic_html/1.html">1. Semantic HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/2_semantic_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/3_forms_and_tables_html.html">3. HTML Tables and Forms Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/1.html">1. Working with Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/2.html">2. Working with Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/3.html">3. Working with HTML Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/3_forms_and_tables_html/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../html/4_accessibility.html">4. HTML Accessibility Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/1.html">1. Importance of Accessibility and Good HTML Structure - I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/2.html">1. Importance of Accessibility and Good HTML Structure - II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/3.html">1. Importance of Accessibility and Good HTML Structure - III</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/4.html">1. Importance of Accessibility and Good HTML Structure - IV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/5.html">1. Importance of Accessibility and Good HTML Structure - V</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../html/4_accessibility/6.html">Examples</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CSS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/1_basic_css.html">1. Basic CSS Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/1.html">1. What Is CSS?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/2.html">2. CSS Specificity, the Cascade Algorithm and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/3.html">3. Styling Lists and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/4.html">4. Working with Backgrounds and Borders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/1_basic_css/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/2_design.html">2. Design Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/2_design/1.html">1. User Interface Design Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/2_design/2.html">2. User-Centered Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/2_design/3.html">3. Common Design Tools</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/3_absolute_n_relative_units.html">3. CSS Relative and Absolute Units Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/3_absolute_n_relative_units/1.html">1. Working  with Relative and Absolute Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/3_absolute_n_relative_units/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/4_pseudo_classes_n_elements.html">4. CSS Pseudo-classes Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/4_pseudo_classes_n_elements/1.html">1. Working with Pseudo-Classes and Pseudo-Elements in CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/4_pseudo_classes_n_elements/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/5_colors.html">5. Colors Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/5_colors/1.html">1. Working with color in CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/5_colors/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/6_styling_forms.html">6. Styling Forms Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/6_styling_forms/1.html">1. Best Practices for Styling Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/6_styling_forms/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/7_the_box_model.html">7. CSS Layout and Effects Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/7_the_box_model/1.html">1. Working with CSS Transforms, Overflow and Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/7_the_box_model/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/8_the_flex_model.html">8. The Flex Model Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/8_the_flex_model/1.html">1. Working with CSS Flexbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/8_the_flex_model/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/9_typography.html">9. Typograpgy Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/9_typography/1.html">1. Working with CSS Fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/9_typography/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/10_accessibility.html">10. Accessibility Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/10_accessibility/1.html">1. Best Practices for Accessibility and CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/10_accessibility/2.html">Examples</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1_variables_n_strings.html">1. Variables and Strings Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1_variables_n_strings/1.html">1. Introduction to JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_variables_n_strings/2.html">2. Working with Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_variables_n_strings/3.html">3. Working with Strings in JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_variables_n_strings/4.html">4. Working with Common String Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_variables_n_strings/5.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2_booleans_n_numbers.html">2. Booleans and Numbers Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/1.html">1. Working with Numbers, Booleans and the Math Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/2.html">2. Working with Numbers and Common Number Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/3.html">3. Understanding Comparisons and Conditional Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_booleans_n_numbers/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3_functions.html">3. Functions Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3_functions/1.html">1. Working with Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_functions/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4_arrays.html">4. Arrays Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4_functions/1.html">1. Working with Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_functions/2.html">2. Working with Common Array Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_functions/3.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../5_objects.html">5. Objects Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../5_objects/1.html">1. Working with Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../5_objects/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../6_loops.html">6. Loops Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../6_loops/1.html">1. Working with Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../6_loops/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7_fundamentals.html">7. JavaScript Fundamentals Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../7_fundamentals/1.html">1. Understanding Core JavaScript Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../7_fundamentals/2.html">2. The <code class="docutils literal notranslate"><span class="pre">var</span></code> Keyword and Hoisting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../7_fundamentals/3.html">3. Understanding Modules, Imports and Exports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../7_fundamentals/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../8_higher_order_functions.html">8. Higher Order Functions Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../8_higher_order_functions/1.html">1. Working with Higher Order Functions and Callbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../8_higher_order_functions/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../9_DOM_manipulation.html">9. DOM Manipulation and Click Events Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1. Working with the DOM, Click Events and Web APIs - I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">1. Working with the DOM, Click Events and Web APIs - II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.html">2. Understanding the Event Object and Event Delegation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.html">Examples</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/javaScript/9_DOM_manipulation/1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1. Working with the DOM, Click Events and Web APIs - I</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-api-and-what-are-web-apis">1.1. What is an API and what are web APIs?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-dom-and-how-do-you-access-elements">1.2. What is the DOM and how do you access elements?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-dom-nodes-exist-relative-to-each-other-in-the-dom-tree">1.3. How do DOM nodes exist relative to each other in the DOM Tree?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-queryselectorall-method-and-when-should-you-use-it">1.4. What is the <code class="docutils literal notranslate"><span class="pre">querySelectorAll()</span></code> method and when should you use it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-create-new-nodes-using-innerhtml-and-createelement">1.5. How do you create new nodes using <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code> and <code class="docutils literal notranslate"><span class="pre">createElement()</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-difference-between-innertext-textcontent-and-innerhtml">1.6. What is the difference between <code class="docutils literal notranslate"><span class="pre">innerText</span></code>, <code class="docutils literal notranslate"><span class="pre">textContent</span></code> and <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-add-and-remove-nodes-from-the-dom-with-appendchild-and-removechild">1.7. How do you add and remove nodes from the DOM with <code class="docutils literal notranslate"><span class="pre">appendChild()</span></code> and <code class="docutils literal notranslate"><span class="pre">removeChild()</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-the-navigator-window-and-document-work">1.8. How do the <code class="docutils literal notranslate"><span class="pre">Navigator</span></code>, <code class="docutils literal notranslate"><span class="pre">Window</span></code> and <code class="docutils literal notranslate"><span class="pre">Document</span></code> work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-add-attributes-with-setattribute">1.9. How do you add attributes with <code class="docutils literal notranslate"><span class="pre">setAttribute()</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-event-object">1.10. What is the <code class="docutils literal notranslate"><span class="pre">Event</span></code> object?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div style="text-align: justify">
+<section class="tex2jax_ignore mathjax_ignore" id="working-with-the-dom-click-events-and-web-apis-i">
+<h1>1. Working with the DOM, Click Events and Web APIs - I<a class="headerlink" href="#working-with-the-dom-click-events-and-web-apis-i" title="Link to this heading">#</a></h1>
+<section id="what-is-an-api-and-what-are-web-apis">
+<h2>1.1. What is an API and what are web APIs?<a class="headerlink" href="#what-is-an-api-and-what-are-web-apis" title="Link to this heading">#</a></h2>
+<p>API stands for <strong>Application Programming Interface</strong>. APIs establish a set of rules and protocols that allow software applications to communicate with each other and exchange data efficiently. You can think of them as constructs that allow developers to create more complex functionality based on simpler building blocks that are already implemented.</p>
+<p>There are various types of APIs. Web APIs are specifically designed for web applications. There are different types of web APIs for client-side JavaScript development. They are not part of JavaScript itself.</p>
+<p>These types of APIs are often divided into two main categories: browser APIs and third-party APIs.</p>
+<ul>
+<li><p><strong>Browser APIs</strong> expose data from the browser. As a web developer, you can access and manipulate this data using JavaScript.</p>
+<p>They also provide access to various functionalities, such as manipulating the structure of the website, handling events, working with storage, and communicating with the network.</p>
+<p>Some examples of commonly used Browser APIs include:</p>
+<ul class="simple">
+<li><p>The DOM API, which you can use to manipulate HTML elements, their styles, and attributes. It’s a core concept in web development.</p></li>
+<li><p>The Storage API, to store data locally on the user’s device.</p></li>
+<li><p>And more.</p></li>
+</ul>
+<p>There are various browser APIs that you can use to handle user interactions and to get more information from the browser, like the user’s current location.</p>
+<p>You can also work with other types of elements, such as video and audio.</p>
+<p>Browser APIs can be helpful tools for building powerful web applications. They already come built into the browser.</p>
+</li>
+<li><p>But you can also use <strong>third-party APIs</strong>, which are not built into the browser by default. To use them, you need to retrieve their code in some way. Typically, they come with detailed documentation explaining how to use their services.</p>
+<p>An example is the Google Maps API, which you can use to display interactive maps on your website.</p>
+<p>There are various types of third-party web APIs, including weather APIs, social media APIs, payment APIs, data APIs, translation APIs, and more. You just need to find the API that fits your needs.</p>
+</li>
+</ul>
+<p>Web APIs are essential tools for building modern web applications that can interact with various services and data sources.</p>
+</section>
+<section id="what-is-the-dom-and-how-do-you-access-elements">
+<h2>1.2. What is the DOM and how do you access elements?<a class="headerlink" href="#what-is-the-dom-and-how-do-you-access-elements" title="Link to this heading">#</a></h2>
+<p>DOM stands for <strong>Document Object Model</strong>. It’s a programming interface that lets us interact with HTML documents. With the DOM, you can add, modify, or delete elements on a webpage. You can even make your website interactive by making elements listen to and respond to events.</p>
+<p>In the DOM, an HTML document is represented as a tree of nodes. Each node represents an HTML element from the HTML document:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>DOM Example<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>What is the DOM?<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Let&#39;s learn about the DOM<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>This is a diagram representing the basic DOM structure of our example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Document
+  |
+  |--&gt; HTML
+        |
+        |--&gt; Head
+        |     |
+        |     |--&gt; Title
+        |
+        |--&gt; Body
+              |--&gt; H1
+              |--&gt; H2
+</pre></div>
+</div>
+<p>Of course, this can be more detailed and complex based on the structure of the HTML markup of a webpage.</p>
+<ul>
+<li><p>The HTML document is the root node in the DOM hierarchy. It has one child node, the <code class="docutils literal notranslate"><span class="pre">html</span></code> element. This is the root element of the HTML document, since all other nodes descend from it.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">html</span></code> element has two children: <code class="docutils literal notranslate"><span class="pre">head</span></code> and <code class="docutils literal notranslate"><span class="pre">body</span></code>.</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">head</span></code> element contains metadata about the document. It provides essential information about the webpage.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">body</span></code> element contains the visible content of the webpage.</p></li>
+</ul>
+</li>
+</ul>
+<p>You can access these elements with JavaScript, work with them in your code and even modify them dynamically. That’s the power of the DOM and web APIs.</p>
+<p>To access these elements in JavaScript, you can use <code class="docutils literal notranslate"><span class="pre">getElementById()</span></code> and <code class="docutils literal notranslate"><span class="pre">querySelector()</span></code> methods. These methods are web APIs because they provide standardized ways to interact with the DOM using JavaScript.</p>
+<ul>
+<li><p>With <code class="docutils literal notranslate"><span class="pre">getElementById()</span></code>, you can get an object that represents the HTML element with the specified <code class="docutils literal notranslate"><span class="pre">id</span></code>. Remember that <code class="docutils literal notranslate"><span class="pre">id</span></code>s must be unique in every HTML document, so this method will only return one <code class="docutils literal notranslate"><span class="pre">Element</span></code> object. Here you can see an example:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;container&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This line of JavaScript code gets an element with the <code class="docutils literal notranslate"><span class="pre">id</span></code> value of <code class="docutils literal notranslate"><span class="pre">container</span></code> and assigns that object to a JavaScript constant. You must pass the <code class="docutils literal notranslate"><span class="pre">id</span></code> within quotation marks as an argument. If you log this object to the console, you will see it in the output:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">container</span><span class="p">);</span><span class="w"> </span><span class="c1">// &lt;div id=&quot;container&quot;&gt;...&lt;/div&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">querySelector()</span></code> is broader than <code class="docutils literal notranslate"><span class="pre">getElementById()</span></code>. With <code class="docutils literal notranslate"><span class="pre">querySelector()</span></code>, you can get the first element in the HTML document that matches the CSS selector passed as argument. In this example, you will get the first element with the class <code class="docutils literal notranslate"><span class="pre">section</span></code> and assign it to a variable:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">section</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;.section&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p>You also have other methods to match multiple elements, like <code class="docutils literal notranslate"><span class="pre">getElementsByClassName()</span></code> and <code class="docutils literal notranslate"><span class="pre">querySelectorAll()</span></code>. You’ll learn more about them in a coming module.</p></li>
+</ul>
+</section>
+<section id="how-do-dom-nodes-exist-relative-to-each-other-in-the-dom-tree">
+<h2>1.3. How do DOM nodes exist relative to each other in the DOM Tree?<a class="headerlink" href="#how-do-dom-nodes-exist-relative-to-each-other-in-the-dom-tree" title="Link to this heading">#</a></h2>
+<p>Let’s learn about DOM nodes and their relationships in the DOM tree.</p>
+<p>Just as a real tree has large and small branches connected in a hierarchical structure, DOM nodes also have direct and indirect relationships with one another. We will use this example to illustrate these relationships:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>DOM Tree Example<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Heading 1<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Paragraph 1<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>List item 1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>List item 2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Let’s start with the direct relationships:</p>
+<ol class="arabic">
+<li><p>The <strong>root</strong> of the DOM tree is the <code class="docutils literal notranslate"><span class="pre">html</span></code> element. It’s the top-level container for all the content of an HTML document. All other nodes are descendants of this root node.</p></li>
+<li><p>Then, below the root node, we find other nodes in the hierarchy. A <strong>parent node</strong> is an element that contains other elements. A <strong>child node</strong> is an element that is contained within another element.</p>
+<p>In this example, the <code class="docutils literal notranslate"><span class="pre">body</span></code> element is the parent of the paragraph element while the paragraph element is a child of the <code class="docutils literal notranslate"><span class="pre">body</span></code> element. These elements are represented as nodes in the DOM tree with the same relationships.</p>
+</li>
+<li><p>Just like we have parent nodes and child nodes, we also have <strong>sibling nodes</strong>. Sibling nodes are elements that share the same parent.</p>
+<p>In our example, two list item elements share the same unordered list parent, so they are siblings.</p>
+<p>Similarly, the <code class="docutils literal notranslate"><span class="pre">h1</span></code> and paragraph elements are siblings because they share the same parent, the <code class="docutils literal notranslate"><span class="pre">body</span></code> element.</p>
+</li>
+</ol>
+<p>We also have indirect relationships across different levels in the hierarchy.</p>
+<ul>
+<li><p><strong>Descendant nodes</strong> are elements that are contained within another element, either directly or indirectly. An element is considered a descendant of another one if it can be reached by going through the DOM tree downwards from its ancestor.</p>
+<p>In our example, the list item <code class="docutils literal notranslate"><span class="pre">li</span></code> elements are descendants of the <code class="docutils literal notranslate"><span class="pre">body</span></code> element, since they are indirectly contained within it.</p>
+</li>
+<li><p>An <strong>ancestor node</strong> is an element that is higher up in the DOM tree hierarchy than another element.</p>
+<p>In our example, the <code class="docutils literal notranslate"><span class="pre">body</span></code> element is an ancestor of the list item <code class="docutils literal notranslate"><span class="pre">li</span></code> elements.</p>
+</li>
+</ul>
+</section>
+<section id="what-is-the-queryselectorall-method-and-when-should-you-use-it">
+<h2>1.4. What is the <code class="docutils literal notranslate"><span class="pre">querySelectorAll()</span></code> method and when should you use it?<a class="headerlink" href="#what-is-the-queryselectorall-method-and-when-should-you-use-it" title="Link to this heading">#</a></h2>
+<p>You can use this method to get a list of all the DOM elements that match a specific CSS selector. This is how you can call the <code class="docutils literal notranslate"><span class="pre">querySelectorAll()</span></code> method:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="nx">selectors</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Call it on the <code class="docutils literal notranslate"><span class="pre">document</span></code> object and pass a string with the CSS selectors as an argument. The argument must be a valid CSS selector string. Otherwise, a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> exception will be thrown.</p>
+<p><code class="docutils literal notranslate"><span class="pre">querySelectorAll()</span></code> returns a <code class="docutils literal notranslate"><span class="pre">NodeList</span></code> object, a collection of nodes that match the specified CSS selector. The list will contain one <code class="docutils literal notranslate"><span class="pre">Element</span></code> object for each element that matches the CSS selectors. If no matches are found, the list will be empty.</p>
+<p>The elements will be in the order in which they appear in the HTML document.</p>
+<ul>
+<li><p>For example, you can match all elements of a specific type:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p>All elements with a specific class:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&quot;.rounded&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p>All elements with a specific ID:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&quot;#logo&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p>Or all elements with a specific attribute, like all links that take users to a specific URL:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&quot;a[href=&#39;https://www.freecodecamp.org/&#39;]&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p>You can also use more complex CSS selectors, like this one, which matches all list items within an unordered list element with the class <code class="docutils literal notranslate"><span class="pre">ingredients</span></code>:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&quot;ul.ingredients li&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Since the method will return a collection of nodes, you can assign this collection to a variable and use it in your programs to work with the individual elements, like you can see in this example with the general syntax:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">matches</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="nx">selectors</span><span class="p">);</span><span class="w"> </span>
+</pre></div>
+</div>
+<p>For example, if you have this unordered list with three list items:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ingredients&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Flour<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Cheese<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Water<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>You can call the <code class="docutils literal notranslate"><span class="pre">querySelectorAll()</span></code> method to match all list items within the unordered list with the class <code class="docutils literal notranslate"><span class="pre">ingredients</span></code> and assign the return value to the <code class="docutils literal notranslate"><span class="pre">matches</span></code> constant:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">matches</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&quot;ul.ingredients li&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This will return a collection of three nodes. Each node represents a list item element:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// NodeList(3)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="mf">0</span><span class="o">:</span><span class="w"> </span><span class="sb">`&lt;li&gt;Flour&lt;/li&gt;`</span><span class="p">,</span>
+<span class="w">  </span><span class="mf">1</span><span class="o">:</span><span class="w"> </span><span class="sb">`&lt;li&gt;Cheese&lt;/li&gt;`</span><span class="p">,</span>
+<span class="w">  </span><span class="mf">2</span><span class="o">:</span><span class="w"> </span><span class="sb">`&lt;li&gt;Water&lt;/li&gt;`</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">length</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You can work with this collection exactly like you would work with any other JavaScript array.</p>
+<ul>
+<li><p>For example, you can show it in the console with <code class="docutils literal notranslate"><span class="pre">console.log()</span></code>:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">matches</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p>You can also check the length of the collection with the <code class="docutils literal notranslate"><span class="pre">length</span></code> property:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">matches</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The output will be an integer representing the number of nodes in the collection:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</li>
+<li><p>You can also access the individual elements of the collection with their corresponding indices. The first element will be at index <code class="docutils literal notranslate"><span class="pre">0</span></code>:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">matches</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">matches</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">matches</span><span class="p">[</span><span class="mf">2</span><span class="p">]);</span>
+</pre></div>
+</div>
+<p>This is the output:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Flour<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Cheese<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Water<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>The elements are printed one by one on the console.</p>
+</li>
+<li><p>You can also iterate over the elements with a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">matches</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">matches</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span><span class="w">    </span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The output will be exactly the same in this case. But this can be very powerful for working with all the elements of the collection.</p>
+</li>
+</ul>
+</section>
+<section id="how-do-you-create-new-nodes-using-innerhtml-and-createelement">
+<h2>1.5. How do you create new nodes using <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code> and <code class="docutils literal notranslate"><span class="pre">createElement()</span></code>?<a class="headerlink" href="#how-do-you-create-new-nodes-using-innerhtml-and-createelement" title="Link to this heading">#</a></h2>
+<p>Let’s see how you can create nodes with <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code> and <code class="docutils literal notranslate"><span class="pre">createElement()</span></code>.</p>
+<ol class="arabic">
+<li><p>We’ll start with <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">innerHTML</span></code> is a property of <code class="docutils literal notranslate"><span class="pre">Element</span></code> objects that you can use to set their HTML markup. With <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code>, you can set the HTML structure of an existing element with a string, creating all the necessary nodes.</p>
+<p>This is an example. We have an empty <code class="docutils literal notranslate"><span class="pre">div</span></code> and we’ll add some elements within it using the <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code> property:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+    <span class="cm">&lt;!-- Add new elements here --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p>First, we need to select the element by its ID:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;container&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p>Then, we set the <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code> property of the container to a string. This string has to have all the markup necessary to represent the nodes and the structure that you want to create. You can think of it as writing HTML within a string.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">container</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;ul&gt;&lt;li&gt;Cheese&lt;/li&gt;&lt;li&gt;Tomato&lt;/li&gt;&lt;/ul&gt;&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>We will set the <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code> of this element to an unordered list of pizza ingredients (cheese and tomato).</p>
+</li>
+</ol>
+<p>You can also write the string on multiple lines if it makes the markup easier to understand. The important thing is that the markup accurately represents the HTML structure you want to create.</p>
+<p>After running this code, you will see the following HTML structure if you inspect your markup.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Cheese<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Tomato<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>The new nodes were created and added dynamically to the DOM after the string was parsed.</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">innerHTML</span></code> can be very helpful for certain scenarios. However, it does have some security risks that you should be familiar with. You shouldn’t use it if you won’t have full control over the string.</p>
+<p>For example, if the string will be entered by the user, you shouldn’t use <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code> because the user might insert malicious content into your website. Because of this, it’s usually recommended to use <code class="docutils literal notranslate"><span class="pre">textContent</span></code> instead, to insert plain text.</p>
+</div></blockquote>
+</li>
+<li><p>Another way to create a new node is by using the <code class="docutils literal notranslate"><span class="pre">createElement()</span></code> method. With this new method, you can create a new element by specifying its tag name.</p>
+<ol class="arabic">
+<li><p>For example, if you want to create an image element, you would pass the <code class="docutils literal notranslate"><span class="pre">img</span></code> tag as a string when calling this method:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p>And you can assign this new object to a variable:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">img</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">createElement()</span></code> method returns a new <code class="docutils literal notranslate"><span class="pre">HTMLElement</span></code> object if the document is an <code class="docutils literal notranslate"><span class="pre">HTMLDocument</span></code>. Else, it returns an <code class="docutils literal notranslate"><span class="pre">Element</span></code> object.</p>
+</li>
+<li><p>Once you have this new element ready, you can add it to the DOM as a child of another existing element using the <code class="docutils literal notranslate"><span class="pre">appendChild()</span></code> method, or you can insert it at a specific location using other methods. Choose the one that best fits your needs.</p></li>
+</ol>
+</li>
+</ol>
+<p>Creating nodes with <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code> and <code class="docutils literal notranslate"><span class="pre">createElement()</span></code> allows you to dynamically manipulate the structure and content of your websites. By combining these techniques, you can build interactive web applications.</p>
+</section>
+<section id="what-is-the-difference-between-innertext-textcontent-and-innerhtml">
+<h2>1.6. What is the difference between <code class="docutils literal notranslate"><span class="pre">innerText</span></code>, <code class="docutils literal notranslate"><span class="pre">textContent</span></code> and <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code>?<a class="headerlink" href="#what-is-the-difference-between-innertext-textcontent-and-innerhtml" title="Link to this heading">#</a></h2>
+<p>Let’s learn about <code class="docutils literal notranslate"><span class="pre">innerText</span></code>, <code class="docutils literal notranslate"><span class="pre">textContent</span></code>, and <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code>.</p>
+<p>These are properties that you can access in JavaScript to get or change the content of an HTML element. Even if they may look very similar at first, they do have key differences. Choosing the right one depends on your specific use case, so let’s dive in.</p>
+<ol class="arabic">
+<li><p>Let’s start with <code class="docutils literal notranslate"><span class="pre">innerText</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">innerText</span></code> represents the visible text content of the HTML element and its descendants. This property doesn’t include hidden text or HTML tags, only rendered text.</p>
+<p>For example, here you can see a <code class="docutils literal notranslate"><span class="pre">div</span></code> element that contains two paragraphs:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello, World!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>I&#39;m learning JavaScript<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>If we get a reference to this HTML element in our JavaScript code using <code class="docutils literal notranslate"><span class="pre">getElementById()</span></code>, we can access the <code class="docutils literal notranslate"><span class="pre">innerText</span></code> property of this element:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;container&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">container</span><span class="p">.</span><span class="nx">innerText</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This is the inner text of this element:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>Hello, World!
+I&#39;m learning JavaScript
+</pre></div>
+</div>
+<p>The property returns a string with the text contained within the element, including text from its descendants.</p>
+<ul>
+<li><p>You should know that <code class="docutils literal notranslate"><span class="pre">innerText</span></code> only returns the text that is visible at the particular moment when the string is requested. If a child element is hidden, its text won’t be visible.</p>
+<p>This is an example where the second paragraph is hidden:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello, World!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">hidden</span><span class="p">&gt;</span>I&#39;m learning JavaScript<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>If we try to log the <code class="docutils literal notranslate"><span class="pre">innerText</span></code> again, now the output won’t have the text of the second paragraph:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">container</span><span class="p">.</span><span class="nx">innerText</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This will be the output:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>Hello, World!
+</pre></div>
+</div>
+</li>
+</ul>
+<p>You can set the <code class="docutils literal notranslate"><span class="pre">innerText</span></code> of an HTML element like this, but this will replace the existing text and add a line break element (<code class="docutils literal notranslate"><span class="pre">br</span></code>) element for every line break:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">container</span><span class="p">.</span><span class="nx">innerText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;JavaScript is awesome!&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Since <code class="docutils literal notranslate"><span class="pre">innerText</span></code> takes visibility into account, getting its value triggers a process called “reflow”, that recalculates the position of certain elements on the website. This process can be computationally intensive, so you should avoid triggering it if possible.</p>
+</div></blockquote>
+</li>
+<li><p>Great. Now let’s talk about <code class="docutils literal notranslate"><span class="pre">textContent</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">textContent</span></code> returns the plain text content of an element, including all the text within its descendants.</p>
+<p>The most important difference between <code class="docutils literal notranslate"><span class="pre">innerText</span></code> and <code class="docutils literal notranslate"><span class="pre">textContent</span></code> is that <code class="docutils literal notranslate"><span class="pre">textContent</span></code> always returns the full text content of an HTML element and its descendants, regardless of whether it’s visible or hidden.</p>
+<p>Here we have the same example in HTML:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello, World!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>I&#39;m learning JavaScript<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>If you try to access this property, you’ll see the text of the element and its descendants as the output, keeping the indentation and spacing:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;container&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">container</span><span class="p">.</span><span class="nx">textContent</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>Hello, World!
+I&#39;m learning JavaScript
+</pre></div>
+</div>
+<p>If an HTML element is not visible, like you can see over here, where we’ve hidden the second paragraph, its text will still be included in this property:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello, World!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">hidden</span><span class="p">&gt;</span>I&#39;m learning JavaScript<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>You will see the same output:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>Hello, World!
+I&#39;m learning JavaScript
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">textContent</span></code> will also include the content of elements like <code class="docutils literal notranslate"><span class="pre">script</span></code> and <code class="docutils literal notranslate"><span class="pre">style</span></code>.</p>
+<p>If you try to replace the value of <code class="docutils literal notranslate"><span class="pre">textContent</span></code> on a node, it will remove all its child nodes and replace them with a single text node containing the new string:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;container&quot;</span><span class="p">);</span>
+<span class="nx">container</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p>And finally, let’s talk about how <code class="docutils literal notranslate"><span class="pre">textContent</span></code> and <code class="docutils literal notranslate"><span class="pre">innerText</span></code> differs from <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code>.</p>
+<p>Remember that with <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code> you can set the inner HTML content of an element. This is helpful for injecting new HTML into the DOM dynamically.</p>
+<p>However, remember that this poses a security risk if you don’t have control over the string, such as strings containing data entered by the user. If that data is malicious, it can lead to serious security issues.</p>
+<p>To avoid this, it’s recommended to use the <code class="docutils literal notranslate"><span class="pre">textContent</span></code> property to insert plain text instead.</p>
+</li>
+</ol>
+<p>The <code class="docutils literal notranslate"><span class="pre">innerText</span></code>, <code class="docutils literal notranslate"><span class="pre">textContent</span></code>, and <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code> properties in JavaScript provide different ways to access and manipulate the content of HTML elements.</p>
+</section>
+<section id="how-do-you-add-and-remove-nodes-from-the-dom-with-appendchild-and-removechild">
+<h2>1.7. How do you add and remove nodes from the DOM with <code class="docutils literal notranslate"><span class="pre">appendChild()</span></code> and <code class="docutils literal notranslate"><span class="pre">removeChild()</span></code>?<a class="headerlink" href="#how-do-you-add-and-remove-nodes-from-the-dom-with-appendchild-and-removechild" title="Link to this heading">#</a></h2>
+<p>There will be times where you will need to add or remove nodes from the DOM and there are a couple of Web APIs you can use.</p>
+<p>In this lecture video, we will cover the <code class="docutils literal notranslate"><span class="pre">appendChild()</span></code> and <code class="docutils literal notranslate"><span class="pre">removeChild()</span></code> methods.</p>
+<ol class="arabic">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">appendChild()</span></code> method is used to add a node to the end of the list of children of a specified parent node.</p>
+<p>Here is the basic syntax for the <code class="docutils literal notranslate"><span class="pre">appendChild()</span></code> method:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">newNode</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Let’s take a look at an example to better understand how to use the <code class="docutils literal notranslate"><span class="pre">appendChild()</span></code> method.</p>
+<p>In this example, we have an unordered list element with an ID of <code class="docutils literal notranslate"><span class="pre">desserts</span></code> inside the HTML. This list contains two list items of <code class="docutils literal notranslate"><span class="pre">Cake</span></code> and <code class="docutils literal notranslate"><span class="pre">Pie</span></code>:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;desserts&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Cake<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Pie<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p>To access that list inside the JavaScript file, we can use the <code class="docutils literal notranslate"><span class="pre">getElementById()</span></code> method:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">dessertsList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;desserts&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>We have a variable called <code class="docutils literal notranslate"><span class="pre">dessertsList</span></code> that stores the reference to the <code class="docutils literal notranslate"><span class="pre">ul</span></code> element with the ID of <code class="docutils literal notranslate"><span class="pre">desserts</span></code>.</p>
+</li>
+<li><p>Then we need to create a new list item element using the <code class="docutils literal notranslate"><span class="pre">createElement()</span></code> method:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">dessertsList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;desserts&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">listItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The following code will create a new list item element and store it in a variable called <code class="docutils literal notranslate"><span class="pre">listItem</span></code>.</p>
+</li>
+<li><p>To add that node to the end of the list of children of the <code class="docutils literal notranslate"><span class="pre">ul</span></code> element, we can use the <code class="docutils literal notranslate"><span class="pre">appendChild()</span></code> method:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">dessertsList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;desserts&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">listItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
+
+<span class="nx">dessertsList</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">listItem</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>If you were to run this code, you will see that a new list item element is added to the end of the list of children of the <code class="docutils literal notranslate"><span class="pre">ul</span></code> element.</p>
+<p>The problem is that the new list item element is empty.</p>
+</li>
+<li><p>To add text content to the new list item element, you can use the <code class="docutils literal notranslate"><span class="pre">textContent</span></code> property:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">dessertsList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;desserts&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">listItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
+
+<span class="nx">listItem</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Cookies&quot;</span><span class="p">;</span>
+<span class="nx">dessertsList</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">listItem</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Now the list will show <code class="docutils literal notranslate"><span class="pre">Cake</span></code>, <code class="docutils literal notranslate"><span class="pre">Pie</span></code>, and <code class="docutils literal notranslate"><span class="pre">Cookies</span></code>.</p>
+</li>
+</ol>
+</li>
+<li><p>To remove a node from the DOM, you can use the <code class="docutils literal notranslate"><span class="pre">removeChild()</span></code> method.</p>
+<p>Here is the basic syntax for the <code class="docutils literal notranslate"><span class="pre">removeChild()</span></code> method:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">childNode</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Let’s take look at an example where we want to remove that last paragraph element from this <code class="docutils literal notranslate"><span class="pre">section</span></code> element:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">section</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;example-section&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Example sub heading<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>first paragraph<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>second paragraph<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p>We can access the <code class="docutils literal notranslate"><span class="pre">section</span></code> element inside of the JavaScript file using the <code class="docutils literal notranslate"><span class="pre">getElementById()</span></code> method:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">sectionEl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;example-section&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p>Once we have the reference to the <code class="docutils literal notranslate"><span class="pre">section</span></code> element, we can then access that last paragraph using the <code class="docutils literal notranslate"><span class="pre">querySelector()</span></code> method:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">sectionEl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;example-section&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">lastParagraph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#example-section p:last-of-type&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>We are using the <code class="docutils literal notranslate"><span class="pre">:last-of-type</span></code> pseudo-class to select the last paragraph element inside the <code class="docutils literal notranslate"><span class="pre">section</span></code> element.</p>
+</li>
+<li><p>Now that we have the parent and child nodes, we can remove the last paragraph element from the <code class="docutils literal notranslate"><span class="pre">section</span></code> element using the <code class="docutils literal notranslate"><span class="pre">removeChild()</span></code> method:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">sectionEl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;example-section&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">lastParagraph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#example-section p:last-of-type&quot;</span><span class="p">);</span>
+
+<span class="nx">sectionEl</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">lastParagraph</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Here is the new HTML markup after removing the last paragraph element:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">section</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;example-section&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Example sub heading<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>first paragraph<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+<p>So, when might you want to add or remove nodes from the DOM?</p>
+<p>If you’re working with dynamic content, you might need to add or remove nodes from the DOM. Real world examples include shopping carts, to-do lists, and social media feeds.</p>
+</section>
+<section id="how-do-the-navigator-window-and-document-work">
+<h2>1.8. How do the <code class="docutils literal notranslate"><span class="pre">Navigator</span></code>, <code class="docutils literal notranslate"><span class="pre">Window</span></code> and <code class="docutils literal notranslate"><span class="pre">Document</span></code> work?<a class="headerlink" href="#how-do-the-navigator-window-and-document-work" title="Link to this heading">#</a></h2>
+<p>When working with the DOM, you will often come across the <code class="docutils literal notranslate"><span class="pre">Navigator</span></code>, <code class="docutils literal notranslate"><span class="pre">Window</span></code>, and <code class="docutils literal notranslate"><span class="pre">Document</span></code> interfaces. An interface is a collection of methods and properties that define a particular object.</p>
+<p>In this lecture, we will explore how these interfaces work and how you can use them in your web applications.</p>
+<ol class="arabic">
+<li><p>Let’s start by looking at the <code class="docutils literal notranslate"><span class="pre">Navigator</span></code> interface.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Navigator</span></code> interface provides information about the browser environment, such as the user agent string, the platform, and the version of the browser. A user agent string is a text string that identifies the browser and operating system being used.</p>
+<ul>
+<li><p>Here is an example of how to access the user agent string using the <code class="docutils literal notranslate"><span class="pre">Navigator</span></code> interface:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The result will be a string that contains information about the browser and operating system being used. Here is an example string that you might see:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+</pre></div>
+</div>
+<p>This could be helpful if you want to display different content based on the user’s browser or operating system.</p>
+</li>
+<li><p>Another useful property of the <code class="docutils literal notranslate"><span class="pre">Navigator</span></code> interface is the <code class="docutils literal notranslate"><span class="pre">language</span></code> property, which returns the language of the browser. You can use this property to display content in the user’s preferred language.</p>
+<p>Here is an example of using the <code class="docutils literal notranslate"><span class="pre">language</span></code> property:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">language</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The result will be a string that contains the language code of the browser. If your preferred language is English, it will return <code class="docutils literal notranslate"><span class="pre">en-US</span></code>.</p>
+</li>
+</ul>
+</li>
+<li><p>Next, let’s look at the <code class="docutils literal notranslate"><span class="pre">Window</span></code> interface.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Window</span></code> interface represents the browser window that contains the DOM document. It provides methods and properties for interacting with the browser window, such as resizing the window, opening new windows, and navigating to different URLs.</p>
+<ul>
+<li><p>Here is an example of working with the <code class="docutils literal notranslate"><span class="pre">innerWidth</span></code> property of the <code class="docutils literal notranslate"><span class="pre">Window</span></code> interface:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The result will be the width of the browser window in pixels. For example, if the browser window is 800 pixels wide, it will return <code class="docutils literal notranslate"><span class="pre">800</span></code>.</p>
+</li>
+<li><p>Another example would be the <code class="docutils literal notranslate"><span class="pre">location</span></code> property of the <code class="docutils literal notranslate"><span class="pre">Window</span></code> interface, which provides information about the current URL of the browser window:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The result will be an object that contains information about the current URL, such as the protocol, hostname, and pathname.</p>
+</li>
+</ul>
+<p>Most of the time you won’t need to interact with the <code class="docutils literal notranslate"><span class="pre">Window</span></code> interface directly, as it is automatically available in the global scope of your JavaScript code.</p>
+<p>For example, you can access the <code class="docutils literal notranslate"><span class="pre">location</span></code> property directly without using the <code class="docutils literal notranslate"><span class="pre">window</span></code> object:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">location</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>You will see the same results as before when you were using <code class="docutils literal notranslate"><span class="pre">window.location</span></code>.</p>
+</li>
+<li><p>Finally, let’s look at the <code class="docutils literal notranslate"><span class="pre">Document</span></code> interface.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Document</span></code> interface represents the DOM document that is displayed in the browser window. It provides methods and properties for interacting with the DOM, such as selecting elements, creating new elements, and modifying the content of elements.</p>
+<p>Here is an example of using the <code class="docutils literal notranslate"><span class="pre">document.children</span></code> property:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">children</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The result will be an <code class="docutils literal notranslate"><span class="pre">HTMLCollection</span></code> object that contains all the child elements of the document.</p>
+</li>
+</ol>
+</section>
+<section id="how-do-you-add-attributes-with-setattribute">
+<h2>1.9. How do you add attributes with <code class="docutils literal notranslate"><span class="pre">setAttribute()</span></code>?<a class="headerlink" href="#how-do-you-add-attributes-with-setattribute" title="Link to this heading">#</a></h2>
+<p>You have been used to working with attributes in your HTML and CSS projects. But did you know that you can add attributes to your HTML elements in your JavaScript file?</p>
+<p>In this lecture, you will learn how to work with the <code class="docutils literal notranslate"><span class="pre">setAttribute()</span></code> method to add attributes to your HTML elements.</p>
+<p>Here is the basic syntax:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">setAttribute</span><span class="p">(</span><span class="nx">attribute</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Let’s take a look at a few examples to better understand how to use the <code class="docutils literal notranslate"><span class="pre">setAttribute()</span></code> method.</p>
+<ol class="arabic">
+<li><p>In this first example, we have a <code class="docutils literal notranslate"><span class="pre">p</span></code> element inside the HTML:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;para&quot;</span><span class="p">&gt;</span>I am a paragraph<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>To add a <code class="docutils literal notranslate"><span class="pre">class</span></code> attribute we first need to access that <code class="docutils literal notranslate"><span class="pre">p</span></code> element using the <code class="docutils literal notranslate"><span class="pre">getElementById()</span></code> method. Then we can use the <code class="docutils literal notranslate"><span class="pre">setAttribute()</span></code> method to add the <code class="docutils literal notranslate"><span class="pre">class</span></code> attribute and set the value to <code class="docutils literal notranslate"><span class="pre">my-class</span></code>:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">para</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;para&quot;</span><span class="p">);</span>
+<span class="nx">para</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&quot;class&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;my-class&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p>If we inspect the element inside the browser, we will see that the <code class="docutils literal notranslate"><span class="pre">class</span></code> attribute has been added to the <code class="docutils literal notranslate"><span class="pre">p</span></code> element.</p></li>
+</ol>
+<p>If you have an existing attribute on an HTML element, you can update its value using the <code class="docutils literal notranslate"><span class="pre">setAttribute()</span></code> method.</p>
+<ol class="arabic">
+<li><p>In this example we have a <code class="docutils literal notranslate"><span class="pre">div</span></code> element with a <code class="docutils literal notranslate"><span class="pre">class</span></code> attribute set to <code class="docutils literal notranslate"><span class="pre">my-class</span></code>:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;my-class&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>To update the <code class="docutils literal notranslate"><span class="pre">class</span></code> attribute value to example, we can use the <code class="docutils literal notranslate"><span class="pre">setAttribute()</span></code> method again:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">divEl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;.my-class&quot;</span><span class="p">);</span>
+<span class="nx">divEl</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&quot;class&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;example&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p>If we inspect the element inside the browser, we will see that the <code class="docutils literal notranslate"><span class="pre">class</span></code> attribute value has been updated to example.</p></li>
+</ol>
+<p>So, what are some real-world examples of when to use the <code class="docutils literal notranslate"><span class="pre">setAttribute()</span></code> method?</p>
+<ul class="simple">
+<li><p>If you were building a dynamic image gallery, you might need to update the <code class="docutils literal notranslate"><span class="pre">src</span></code> attribute of an image element when a user clicks on a thumbnail.</p></li>
+<li><p>Another example would be if you’re dealing with form validation and need to add certain attributes like <code class="docutils literal notranslate"><span class="pre">required</span></code> or <code class="docutils literal notranslate"><span class="pre">minlength</span></code> to an <code class="docutils literal notranslate"><span class="pre">input</span></code> element.</p></li>
+</ul>
+</section>
+<section id="what-is-the-event-object">
+<h2>1.10. What is the <code class="docutils literal notranslate"><span class="pre">Event</span></code> object?<a class="headerlink" href="#what-is-the-event-object" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">Event</span></code> object is a payload that triggers when a user interacts with your web page in some way. These interactions can be anything from clicking on a button or focusing an input to shaking their mobile device.</p>
+<p>Like all JavaScript objects, the <code class="docutils literal notranslate"><span class="pre">Event</span></code> object has a number of properties that might be helpful. The properties available depend on the event that triggered this payload.</p>
+<ul class="simple">
+<li><p>All <code class="docutils literal notranslate"><span class="pre">Event</span></code> objects will have the <code class="docutils literal notranslate"><span class="pre">type</span></code> property. This property reveals the type of event that triggered the payload, such as <code class="docutils literal notranslate"><span class="pre">&quot;keydown&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;click&quot;</span></code>. These values will correspond to the same values you might pass to <code class="docutils literal notranslate"><span class="pre">addEventListener()</span></code>, where you can capture and utilize the <code class="docutils literal notranslate"><span class="pre">Event</span></code> object.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Event</span></code> objects will always have the <code class="docutils literal notranslate"><span class="pre">target</span></code> property. The <code class="docutils literal notranslate"><span class="pre">target</span></code> property is a reference to whatever object triggered the event. Most commonly, this will be some sort of <code class="docutils literal notranslate"><span class="pre">HTMLElement</span></code> object, or the <code class="docutils literal notranslate"><span class="pre">Document</span></code> or <code class="docutils literal notranslate"><span class="pre">Window</span></code> objects. But it can also be something more specific, like an <code class="docutils literal notranslate"><span class="pre">AudioContext</span></code>.</p></li>
+</ul>
+<p>Events also have methods, which are functions exposed as properties on the object.</p>
+<ul>
+<li><p>One commonly used method is <code class="docutils literal notranslate"><span class="pre">preventDefault()</span></code>, which prevents the default behavior of the event when called.</p>
+<p>If you want to handle form submissions yourself, for example, you might call <code class="docutils literal notranslate"><span class="pre">preventDefault()</span></code> to keep the browser from trying to submit the form data as a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request. You will learn more about <code class="docutils literal notranslate"><span class="pre">POST</span></code> requests in future lecture videos.</p>
+</li>
+<li><p>You’ll also likely run in to the <code class="docutils literal notranslate"><span class="pre">stopPropagation()</span></code> method. This method prevents the event from bubbling up or propagating to parent elements.</p></li>
+</ul>
+<p>There are also a large number of properties that are specific to certain implementations of the <code class="docutils literal notranslate"><span class="pre">Event</span></code> object. For example, a <code class="docutils literal notranslate"><span class="pre">FetchEvent</span></code> will have a request property to contain the request that triggered the event.</p>
+<p>If you are ever unsure of what properties are available, you can log the <code class="docutils literal notranslate"><span class="pre">Event</span></code> object in question or even check the documentation.</p>
+</div></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./javaScript/9_DOM_manipulation"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../9_DOM_manipulation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">9. DOM Manipulation and Click Events Summary</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">1. Working with the DOM, Click Events and Web APIs - II</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-api-and-what-are-web-apis">1.1. What is an API and what are web APIs?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-dom-and-how-do-you-access-elements">1.2. What is the DOM and how do you access elements?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-dom-nodes-exist-relative-to-each-other-in-the-dom-tree">1.3. How do DOM nodes exist relative to each other in the DOM Tree?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-queryselectorall-method-and-when-should-you-use-it">1.4. What is the <code class="docutils literal notranslate"><span class="pre">querySelectorAll()</span></code> method and when should you use it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-create-new-nodes-using-innerhtml-and-createelement">1.5. How do you create new nodes using <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code> and <code class="docutils literal notranslate"><span class="pre">createElement()</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-difference-between-innertext-textcontent-and-innerhtml">1.6. What is the difference between <code class="docutils literal notranslate"><span class="pre">innerText</span></code>, <code class="docutils literal notranslate"><span class="pre">textContent</span></code> and <code class="docutils literal notranslate"><span class="pre">innerHTML</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-add-and-remove-nodes-from-the-dom-with-appendchild-and-removechild">1.7. How do you add and remove nodes from the DOM with <code class="docutils literal notranslate"><span class="pre">appendChild()</span></code> and <code class="docutils literal notranslate"><span class="pre">removeChild()</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-the-navigator-window-and-document-work">1.8. How do the <code class="docutils literal notranslate"><span class="pre">Navigator</span></code>, <code class="docutils literal notranslate"><span class="pre">Window</span></code> and <code class="docutils literal notranslate"><span class="pre">Document</span></code> work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-add-attributes-with-setattribute">1.9. How do you add attributes with <code class="docutils literal notranslate"><span class="pre">setAttribute()</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-event-object">1.10. What is the <code class="docutils literal notranslate"><span class="pre">Event</span></code> object?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mikaela González Pérez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

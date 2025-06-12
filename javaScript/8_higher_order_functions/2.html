@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'javaScript/8_higher_order_functions/2';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="9. DOM Manipulation and Click Events Summary" href="../9_DOM_manipulation.html" />
     <link rel="prev" title="1. Working with Higher Order Functions and Callbacks" href="1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -261,6 +262,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../../css/9_typography/2.html">Examples</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/10_accessibility.html">10. Accessibility Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/10_accessibility/1.html">1. Best Practices for Accessibility and CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/10_accessibility/2.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
 <ul class="current nav bd-sidenav">
@@ -310,6 +316,13 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../8_higher_order_functions.html">8. Higher Order Functions Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1.html">1. Working with Higher Order Functions and Callbacks</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../9_DOM_manipulation.html">9. DOM Manipulation and Click Events Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../9_DOM_manipulation/1.html">1. Working with the DOM, Click Events and Web APIs - I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../9_DOM_manipulation/2.html">1. Working with the DOM, Click Events and Web APIs - II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../9_DOM_manipulation/3.html">2. Understanding the Event Object and Event Delegation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../9_DOM_manipulation/4.html">Examples</a></li>
 </ul>
 </details></li>
 </ul>
@@ -478,23 +491,176 @@ document.write(`
 <h1>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h1>
 <section id="a-library-manager">
 <h2>1. A Library Manager<a class="headerlink" href="#a-library-manager" title="Link to this heading">#</a></h2>
-<p>index.html</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>
+<p>script.js</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">/////////////////////// Base de datos ///////////////////////</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">library</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Your Next Five Moves: Master the Art of Business Strategy&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">author</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Patrick Bet-David and Greg Dinkin&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">about</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;A book on how to plan ahead&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">pages</span><span class="o">:</span><span class="w"> </span><span class="mf">320</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Atomic Habits&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">author</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;James Clear&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">about</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;A practical book about discarding bad habits and building good ones&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">pages</span><span class="o">:</span><span class="w"> </span><span class="mf">320</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Choose Your Enemies Wisely: Business Planning for the Audacious Few&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">author</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Patrick Bet-David&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">about</span><span class="o">:</span>
+<span class="w">      </span><span class="s2">&quot;A book that emphasizes the importance of identifying and understanding one&#39;s adversaries to succeed in the business world&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">pages</span><span class="o">:</span><span class="w"> </span><span class="mf">304</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;The Embedded Entrepreneur&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">author</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Arvid Kahl&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">about</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;A book focusing on how to build an audience-driven business&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">pages</span><span class="o">:</span><span class="w"> </span><span class="mf">308</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;How to Be a Coffee Bean: 111 Life-Changing Ways to Create Positive Change&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">author</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Jon Gordon&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">about</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;A book about effective ways to lead a coffee bean lifestyle&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">pages</span><span class="o">:</span><span class="w"> </span><span class="mf">256</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;The Creative Mindset: Mastering the Six Skills That Empower Innovation&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">author</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Jeff DeGraff and Staney DeGraff&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">about</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;A book on how to develop creativity and  innovation skills&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">pages</span><span class="o">:</span><span class="w"> </span><span class="mf">168</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Rich Dad Poor Dad&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">author</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Robert Kiyosaki and Sharon Lechter&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">about</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;A book about financial literacy, financial independence, and building wealth. &#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">pages</span><span class="o">:</span><span class="w"> </span><span class="mf">336</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Zero to Sold&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">author</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Arvid Kahl&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">about</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;A book on how to bootstrap a business&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">pages</span><span class="o">:</span><span class="w"> </span><span class="mf">500</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="p">];</span>
+
+
+<span class="c1">/////////////////////// Funciones ///////////////////////</span>
+
+<span class="c1">// Mi versión</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">displayBooks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">book</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="sb">`The author of the book &quot;</span><span class="si">${</span><span class="nx">book</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="sb">&quot; whith </span><span class="si">${</span><span class="nx">book</span><span class="p">.</span><span class="nx">pages</span><span class="si">}</span><span class="sb"> pages is </span><span class="si">${</span><span class="nx">book</span><span class="p">.</span><span class="nx">author</span><span class="si">}</span><span class="sb">`</span><span class="p">).</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">total</span><span class="p">,</span><span class="w"> </span><span class="nx">current</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">current</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// La de freeCodeCamp</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">displayBooks</span><span class="p">(</span><span class="nx">catalog</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Books in the Library:\n&#39;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nx">catalog</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">book</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">output</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="sb">`- </span><span class="si">${</span><span class="nx">book</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="sb"> by </span><span class="si">${</span><span class="nx">book</span><span class="p">.</span><span class="nx">author</span><span class="si">}</span><span class="sb"> (</span><span class="si">${</span><span class="nx">book</span><span class="p">.</span><span class="nx">pages</span><span class="si">}</span><span class="sb"> pages)\n`</span><span class="p">;</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">output</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">getBookSummaries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">book</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">book</span><span class="p">.</span><span class="nx">about</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">getBooksByAuthor</span><span class="p">(</span><span class="nx">catalog</span><span class="p">,</span><span class="w"> </span><span class="nx">author</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">catalog</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">book</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">book</span><span class="p">.</span><span class="nx">author</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">author</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">getTotalPages</span><span class="p">(</span><span class="nx">catalog</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">catalog</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span><span class="w"> </span><span class="nx">book</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">acc</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">book</span><span class="p">.</span><span class="nx">pages</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">/////////////////////// console.log ///////////////////////</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">libraryBooks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">displayBooks</span><span class="p">(</span><span class="nx">library</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">bookSummaries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getBookSummaries</span><span class="p">(</span><span class="nx">library</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">booksByArvidKahl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getBooksByAuthor</span><span class="p">(</span><span class="nx">library</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Arvid Kahl&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">totalPagesOfBooksInLibrary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getTotalPages</span><span class="p">(</span><span class="nx">library</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">libraryBooks</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">bookSummaries</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">booksByArvidKahl</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">totalPagesOfBooksInLibrary</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>script.js</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>
+<p>console</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Books in the Library:
+- Your Next Five Moves: Master the Art of Business Strategy by Patrick Bet-David and Greg Dinkin (320 pages)
+- Atomic Habits by James Clear (320 pages)
+- Choose Your Enemies Wisely: Business Planning for the Audacious Few by Patrick Bet-David (304 pages)
+- The Embedded Entrepreneur by Arvid Kahl (308 pages)
+- How to Be a Coffee Bean: 111 Life-Changing Ways to Create Positive Change by Jon Gordon (256 pages)
+- The Creative Mindset: Mastering the Six Skills That Empower Innovation by Jeff DeGraff and Staney DeGraff (168 pages)
+- Rich Dad Poor Dad by Robert Kiyosaki and Sharon Lechter (336 pages)
+- Zero to Sold by Arvid Kahl (500 pages)
+
+[ &#39;A book on how to plan ahead&#39;,
+  &#39;A practical book about discarding bad habits and building good ones&#39;,
+  &#39;A book that emphasizes the importance of identifying and understanding one\&#39;s adversaries to succeed in the business world&#39;,
+  &#39;A book focusing on how to build an audience-driven business&#39;,
+  &#39;A book about effective ways to lead a coffee bean lifestyle&#39;,
+  &#39;A book on how to develop creativity and  innovation skills&#39;,
+  &#39;A book about financial literacy, financial independence, and building wealth. &#39;,
+  &#39;A book on how to bootstrap a business&#39; ]
+
+[ { title: &#39;The Embedded Entrepreneur&#39;,
+    author: &#39;Arvid Kahl&#39;,
+    about: &#39;A book focusing on how to build an audience-driven business&#39;,
+    pages: 308 },
+  { title: &#39;Zero to Sold&#39;,
+    author: &#39;Arvid Kahl&#39;,
+    about: &#39;A book on how to bootstrap a business&#39;,
+    pages: 500 } ]
+
+2512
 </pre></div>
 </div>
 </section>
 <section id="a-book-organizer">
 <h2>2. A Book Organizer<a class="headerlink" href="#a-book-organizer" title="Link to this heading">#</a></h2>
-<p>index.html</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>
+<p>script.js</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">books</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;title&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;title1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;authorName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;author1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;releaseYear&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">2000</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;title&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;title2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;authorName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;author2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;releaseYear&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1900</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;title&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;title3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;authorName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;author3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;releaseYear&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">2010</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;title&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;title3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;authorName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;author3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;releaseYear&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1970</span><span class="p">,</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">]</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">sortByYear</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">book1</span><span class="p">,</span><span class="w"> </span><span class="nx">book2</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">book1</span><span class="p">.</span><span class="nx">releaseYear</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">book2</span><span class="p">.</span><span class="nx">releaseYear</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">book1</span><span class="p">.</span><span class="nx">releaseYear</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">book2</span><span class="p">.</span><span class="nx">releaseYear</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">filterBooks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">array</span><span class="p">,</span><span class="w"> </span><span class="nx">year</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">book</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">book</span><span class="p">.</span><span class="nx">releaseYear</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">year</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">filteredBooks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">filterBooks</span><span class="p">(</span><span class="nx">books</span><span class="p">,</span><span class="w"> </span><span class="mf">1950</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">orderedfilteredBooks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">filteredBooks</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">sortByYear</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>script.js</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>
+<p>console</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div></section>
@@ -538,6 +704,15 @@ document.write(`
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">1. Working with Higher Order Functions and Callbacks</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../9_DOM_manipulation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">9. DOM Manipulation and Click Events Summary</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
