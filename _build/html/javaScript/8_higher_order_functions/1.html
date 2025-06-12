@@ -262,6 +262,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../../css/9_typography/2.html">Examples</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/10_accessibility.html">10. Accessibility Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/10_accessibility/1.html">1. Best Practices for Accessibility and CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/10_accessibility/2.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
 <ul class="current nav bd-sidenav">
@@ -311,6 +316,13 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../8_higher_order_functions.html">8. Higher Order Functions Summary</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1. Working with Higher Order Functions and Callbacks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../9_DOM_manipulation.html">9. DOM Manipulation and Click Events Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../9_DOM_manipulation/1.html">1. Working with the DOM, Click Events and Web APIs - I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../9_DOM_manipulation/2.html">1. Working with the DOM, Click Events and Web APIs - II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../9_DOM_manipulation/3.html">2. Understanding the Event Object and Event Delegation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../9_DOM_manipulation/4.html">Examples</a></li>
 </ul>
 </details></li>
 </ul>
@@ -466,9 +478,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-map-method-and-how-does-it-work">1.3. What is the <code class="docutils literal notranslate"><span class="pre">map</span></code> method and how does it work?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-filter-method-and-how-does-it-work">1.4. What is the <code class="docutils literal notranslate"><span class="pre">filter</span></code> method and how does it work?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-reduce-method-and-how-does-it-work">1.5. What is the <code class="docutils literal notranslate"><span class="pre">reduce</span></code> method and how does it work?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.6.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.7.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.8.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-method-chaining-and-how-does-it-work">1.6. What is method chaining and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-the-sort-method-work-in-javascript">1.7. How does the <code class="docutils literal notranslate"><span class="pre">sort</span></code> method work in JavaScript?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-the-every-and-some-methods-work-in-javascript">1.8. How do the <code class="docutils literal notranslate"><span class="pre">every()</span></code> and <code class="docutils literal notranslate"><span class="pre">some()</span></code> methods work in JavaScript?</a></li>
 </ul>
             </nav>
         </div>
@@ -702,14 +714,134 @@ document.write(`
 <p>One of the great things about <code class="docutils literal notranslate"><span class="pre">reduce</span></code> is its flexibility. Because you define the reducer function, you have complete control over how the array is processed and what kind of result you want to produce. This makes <code class="docutils literal notranslate"><span class="pre">reduce</span></code> extremely powerful, but it can also make it a bit challenging to understand at first.</p>
 <p>With practice, you will get the hang of working with the <code class="docutils literal notranslate"><span class="pre">reduce</span></code> method.</p>
 </section>
-<section id="id1">
-<h2>1.6.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="what-is-method-chaining-and-how-does-it-work">
+<h2>1.6. What is method chaining and how does it work?<a class="headerlink" href="#what-is-method-chaining-and-how-does-it-work" title="Link to this heading">#</a></h2>
+<p>Method chaining is a programming technique that allows you to call multiple methods on the same object in a single line of code. This technique can make your code more readable and concise, especially when performing a series of operations on the same object.</p>
+<p>Let’s look at an example using different string methods:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;  Hello, World!  &quot;</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">trim</span><span class="p">()</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&quot;world&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;JavaScript&quot;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;hello, JavaScript!&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>In this example, we start with a string and perform three operations in sequence: trim whitespace, convert to lowercase, and replace the string <code class="docutils literal notranslate"><span class="pre">world</span></code> with <code class="docutils literal notranslate"><span class="pre">JavaScript</span></code>. Each method returns a new string, which becomes the target of the next method call.</p></li>
+</ol>
+<p>Method chaining can significantly improve code readability when working with complex operations.</p>
+<p>For instance, consider this example using the <code class="docutils literal notranslate"><span class="pre">filter</span></code>, <code class="docutils literal notranslate"><span class="pre">map</span></code> and <code class="docutils literal notranslate"><span class="pre">reduce</span></code> methods:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">transactions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;credit&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cash&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="mf">150</span><span class="p">,</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;credit&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cash&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="mf">75</span><span class="p">,</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;credit&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">];</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">totalCreditWithBonus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">transactions</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">transaction</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">transaction</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;credit&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">transaction</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">transaction</span><span class="p">.</span><span class="nx">amount</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.1</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">sum</span><span class="p">,</span><span class="w"> </span><span class="nx">amount</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">amount</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">totalCreditWithBonus</span><span class="p">);</span><span class="w"> </span><span class="c1">// 357.5</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>In this example, we have an array of transactions where each object has an amount and a credit card or cash type.</p></li>
+<li><p>We first filter through the transactions and create a new array of just credit card transactions. Then, we chain the <code class="docutils literal notranslate"><span class="pre">map</span></code> method to the filtered result and for each transaction amount, we multiply it by <code class="docutils literal notranslate"><span class="pre">1.1</span></code> which represents a <code class="docutils literal notranslate"><span class="pre">10%</span></code> bonus.</p></li>
+<li><p>Then, we take that result and chain the <code class="docutils literal notranslate"><span class="pre">reduce</span></code> method to add up each of the amounts which results in <code class="docutils literal notranslate"><span class="pre">357.5</span></code>.</p></li>
+</ol>
+<p>While method chaining can make code more concise and readable, it’s important to use it judiciously.</p>
+<p>Very long chains can become difficult to debug, as it’s not immediately clear which step in the chain might be causing an issue. It’s often a good practice to break very long chains into multiple steps for better clarity and easier debugging.</p>
 </section>
-<section id="id2">
-<h2>1.7.<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="how-does-the-sort-method-work-in-javascript">
+<h2>1.7. How does the <code class="docutils literal notranslate"><span class="pre">sort</span></code> method work in JavaScript?<a class="headerlink" href="#how-does-the-sort-method-work-in-javascript" title="Link to this heading">#</a></h2>
+<p>There are many different ways to sort your data in programming. In this lecture video, we will focus on the built-in <code class="docutils literal notranslate"><span class="pre">sort</span></code> method in JavaScript.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">sort</span></code> method is used to arrange the elements of an array and returns a reference to the sorted array. No copy is made because the elements are sorted in place.</p>
+<p>Here is the basic syntax for the <code class="docutils literal notranslate"><span class="pre">sort</span></code> method:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">array</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">compareFunction</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">compareFunction</span></code> is an optional parameter that specifies a function that defines the sort order. We will take a look later on how to use a compare function when sorting numbers.</p>
+<p>In this first example, we have an array of strings in random order.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">fruits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Banana&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Orange&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Apple&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Mango&quot;</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>Our goal is to sort the array in alphabetical order. We can do this by calling the <code class="docutils literal notranslate"><span class="pre">sort</span></code> method on the <code class="docutils literal notranslate"><span class="pre">fruits</span></code> array.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">fruits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Banana&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Orange&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Apple&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Mango&quot;</span><span class="p">];</span>
+<span class="nx">fruits</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fruits</span><span class="p">);</span><span class="w"> </span><span class="c1">// [&quot;Apple&quot;, &quot;Banana&quot;, &quot;Mango&quot;, &quot;Orange&quot;]</span>
+</pre></div>
+</div>
+<p>The result will be a sorted array of fruits in alphabetical order starting with the fruit <code class="docutils literal notranslate"><span class="pre">Apple</span></code>.</p>
+<p>In this next example, we want to sort the following array of numbers:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">414</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>If we try to use the <code class="docutils literal notranslate"><span class="pre">sort</span></code> method on this <code class="docutils literal notranslate"><span class="pre">numbers</span></code> array, we will get unexpected results.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">414</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">];</span>
+<span class="nx">numbers</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">);</span><span class="w"> </span><span class="c1">// [10, 200, 3, 414, 5]</span>
+</pre></div>
+</div>
+<p>We expected to see the result <code class="docutils literal notranslate"><span class="pre">[3,</span> <span class="pre">5,</span> <span class="pre">10,</span> <span class="pre">200,</span> <span class="pre">414]</span></code>, but instead we got <code class="docutils literal notranslate"><span class="pre">[10,</span> <span class="pre">200,</span> <span class="pre">3,</span> <span class="pre">414,</span> <span class="pre">5]</span></code>.</p>
+<p>This is because the <code class="docutils literal notranslate"><span class="pre">sort</span></code> method converts the elements to strings and then compares their sequences of UTF-16 code units values.</p>
+<p>UTF-16 code units are the numeric values that represent the characters in the string. Examples of UTF-16 code units are the numbers <code class="docutils literal notranslate"><span class="pre">65</span></code>, <code class="docutils literal notranslate"><span class="pre">66</span></code>, and <code class="docutils literal notranslate"><span class="pre">67</span></code> which represent the characters <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code>, and <code class="docutils literal notranslate"><span class="pre">C</span></code> respectively.</p>
+<p>So, the number <code class="docutils literal notranslate"><span class="pre">200</span></code> appears before the number <code class="docutils literal notranslate"><span class="pre">3</span></code> in the array, because the string <code class="docutils literal notranslate"><span class="pre">200</span></code> comes before the string <code class="docutils literal notranslate"><span class="pre">3</span></code> when comparing their UTF-16 code units.</p>
+<p>The solution to this problem is to provide a compare function to the <code class="docutils literal notranslate"><span class="pre">sort</span></code> method.</p>
+<p>Here is an example of how to sort the <code class="docutils literal notranslate"><span class="pre">numbers</span></code> array using a compare function:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">414</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">];</span>
+
+<span class="nx">numbers</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">);</span><span class="w"> </span><span class="c1">// [3, 5, 10, 200, 414]</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>The parameters <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are the two elements being compared. The compare function should return a negative value if <code class="docutils literal notranslate"><span class="pre">a</span></code> should come before <code class="docutils literal notranslate"><span class="pre">b</span></code>, a positive value if <code class="docutils literal notranslate"><span class="pre">a</span></code> should come after <code class="docutils literal notranslate"><span class="pre">b</span></code>, and zero if <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are equal.</p></li>
+<li><p>The first comparison is between the numbers <code class="docutils literal notranslate"><span class="pre">414</span></code> and <code class="docutils literal notranslate"><span class="pre">200</span></code>. The result of <code class="docutils literal notranslate"><span class="pre">414</span> <span class="pre">-</span> <span class="pre">200</span></code> is <code class="docutils literal notranslate"><span class="pre">214</span></code>, which is a positive value. This means that <code class="docutils literal notranslate"><span class="pre">414</span></code> should come after <code class="docutils literal notranslate"><span class="pre">200</span></code> in the sorted array.</p></li>
+<li><p>The next comparison is between the numbers <code class="docutils literal notranslate"><span class="pre">200</span></code> and <code class="docutils literal notranslate"><span class="pre">5</span></code>. The result of <code class="docutils literal notranslate"><span class="pre">200</span> <span class="pre">-</span> <span class="pre">5</span></code> is <code class="docutils literal notranslate"><span class="pre">195</span></code>, which is a positive value. This means that <code class="docutils literal notranslate"><span class="pre">200</span></code> should come after <code class="docutils literal notranslate"><span class="pre">5</span></code> in the sorted array.</p></li>
+<li><p>We repeat this process for all the elements in the array, and the result is a sorted array of numbers.</p></li>
+</ol>
+<p>Even though there are many more ways to sort data in programming, the <code class="docutils literal notranslate"><span class="pre">sort</span></code> method in JavaScript can be useful and efficient in a lot of cases when you need to sort an array of elements.</p>
 </section>
-<section id="id3">
-<h2>1.8.<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="how-do-the-every-and-some-methods-work-in-javascript">
+<h2>1.8. How do the <code class="docutils literal notranslate"><span class="pre">every()</span></code> and <code class="docutils literal notranslate"><span class="pre">some()</span></code> methods work in JavaScript?<a class="headerlink" href="#how-do-the-every-and-some-methods-work-in-javascript" title="Link to this heading">#</a></h2>
+<p>When you’re working with arrays in JavaScript, there are often times when you want to check if all elements in an array meet a certain condition, or if at least one element meets a condition. This is where the <code class="docutils literal notranslate"><span class="pre">every()</span></code> and <code class="docutils literal notranslate"><span class="pre">some()</span></code> methods come in handy. These methods are powerful tools that can simplify your code and make it more readable.</p>
+<ul>
+<li><p>Let’s start with the <code class="docutils literal notranslate"><span class="pre">every()</span></code> method. This method tests whether all elements in an array pass a test implemented by a provided function. In simpler terms, it checks if every single item in your array satisfies a condition you specify.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">every()</span></code> method returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the provided function returns <code class="docutils literal notranslate"><span class="pre">true</span></code> for all elements in the array. If any element fails the test, the method immediately returns <code class="docutils literal notranslate"><span class="pre">false</span></code> and stops checking the remaining elements.</p>
+<p>Here’s an example to illustrate how <code class="docutils literal notranslate"><span class="pre">every()</span></code> works:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">hasAllEvenNumbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numbers</span><span class="p">.</span><span class="nx">every</span><span class="p">((</span><span class="nx">num</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hasAllEvenNumbers</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</pre></div>
+</div>
+<p>In this example, we’re checking if all numbers in the array are even. The function we provide to <code class="docutils literal notranslate"><span class="pre">every()</span></code> checks if each number is divisible by <code class="docutils literal notranslate"><span class="pre">2</span></code> with no remainder. Since all numbers in our array are indeed even, <code class="docutils literal notranslate"><span class="pre">hasAllEvenNumbers</span></code> will be true.</p>
+</li>
+<li><p>Now, let’s look at the <code class="docutils literal notranslate"><span class="pre">some()</span></code> method.</p>
+<p>While <code class="docutils literal notranslate"><span class="pre">every()</span></code> checks if all elements pass a test, <code class="docutils literal notranslate"><span class="pre">some()</span></code> checks if at least one element passes the test. The <code class="docutils literal notranslate"><span class="pre">some()</span></code> method returns <code class="docutils literal notranslate"><span class="pre">true</span></code> as soon as it finds an element that passes the test. If no elements pass the test, it returns <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<blockquote>
+<div><p>If you use the <code class="docutils literal notranslate"><span class="pre">some()</span></code> method on an empty array, it will return <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+</div></blockquote>
+<p>Here’s an example of how <code class="docutils literal notranslate"><span class="pre">some()</span></code> works:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">7</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">,</span><span class="w"> </span><span class="mf">9</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">hasSomeEvenNumbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numbers</span><span class="p">.</span><span class="nx">some</span><span class="p">((</span><span class="nx">num</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hasSomeEvenNumbers</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</pre></div>
+</div>
+<p>In this example, we’re checking whether any number in the array is even. The function we pass to <code class="docutils literal notranslate"><span class="pre">some()</span></code> is the same as before. Even though most numbers in our array are odd, <code class="docutils literal notranslate"><span class="pre">hasEven</span></code> will be <code class="docutils literal notranslate"><span class="pre">true</span></code> because there’s at least one even number (<code class="docutils literal notranslate"><span class="pre">8</span></code>) in the array.</p>
+</li>
+</ul>
+<p>Both <code class="docutils literal notranslate"><span class="pre">every()</span></code> and <code class="docutils literal notranslate"><span class="pre">some()</span></code> are very useful when you need to validate data or check for certain conditions in your arrays. They can often replace more verbose loops and conditional statements, making your code cleaner and more expressive.</p>
+<blockquote>
+<div><p>It’s important to note that both methods stop executing as soon as they can determine the result. For <code class="docutils literal notranslate"><span class="pre">every()</span></code>, this means it stops as soon as it finds a <code class="docutils literal notranslate"><span class="pre">false</span></code> result. For <code class="docutils literal notranslate"><span class="pre">some()</span></code>, it stops as soon as it finds a <code class="docutils literal notranslate"><span class="pre">true</span></code> result. This can be beneficial for performance, especially with large arrays.</p>
+</div></blockquote>
 </div></section>
 </section>
 
@@ -782,9 +914,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-map-method-and-how-does-it-work">1.3. What is the <code class="docutils literal notranslate"><span class="pre">map</span></code> method and how does it work?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-filter-method-and-how-does-it-work">1.4. What is the <code class="docutils literal notranslate"><span class="pre">filter</span></code> method and how does it work?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-reduce-method-and-how-does-it-work">1.5. What is the <code class="docutils literal notranslate"><span class="pre">reduce</span></code> method and how does it work?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.6.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.7.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.8.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-method-chaining-and-how-does-it-work">1.6. What is method chaining and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-the-sort-method-work-in-javascript">1.7. How does the <code class="docutils literal notranslate"><span class="pre">sort</span></code> method work in JavaScript?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-the-every-and-some-methods-work-in-javascript">1.8. How do the <code class="docutils literal notranslate"><span class="pre">every()</span></code> and <code class="docutils literal notranslate"><span class="pre">some()</span></code> methods work in JavaScript?</a></li>
 </ul>
   </nav></div>
 
