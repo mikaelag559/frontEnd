@@ -134,3 +134,7 @@ parts:
       - file: javaScript/9_DOM_manipulation/2
       - file: javaScript/9_DOM_manipulation/3
       - file: javaScript/9_DOM_manipulation/4
+    - file: javaScript/10_debugging
+      sections: 
+      - file: javaScript/10_debugging/1
+      - file: javaScript/10_debugging/2
