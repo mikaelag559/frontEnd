@@ -48,7 +48,7 @@
 
 
 <div style="margin: 10px auto; width: 60%;">
-    <p><img style=" background-color: transparent;" alt="box model in web tools" src="../_images/css_8.svg"></p>
+    <p><img style=" background-color: transparent;" alt="box model in web tools" src="../img/css_8.svg"></p>
 </div>
 
 

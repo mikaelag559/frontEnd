@@ -83,6 +83,10 @@ parts:
       sections:
       - file: css/10_accessibility/1
       - file: css/10_accessibility/2
+    - file: css/11_positioning
+      sections:
+      - file: css/11_positioning/1
+      - file: css/11_positioning/2
 
 
   - caption: JavaScript
@@ -138,3 +142,7 @@ parts:
       sections: 
       - file: javaScript/10_debugging/1
       - file: javaScript/10_debugging/2
+    - file: javaScript/11_regex
+      sections: 
+      - file: javaScript/11_regex/1
+      - file: javaScript/11_regex/2
