@@ -267,6 +267,16 @@
 <li class="toctree-l2"><a class="reference internal" href="2.html">Examples</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../11_positioning.html">11. Positioning Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../11_positioning/1.html">1. Understanding How to Work with Floats and Positioning in CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11_positioning/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../12_attribute_selectors.html">12. Attribute Selectors Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../12_attribute_selectors/1.html">1. Working with Attribute Selectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12_attribute_selectors/2.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
 <ul class="nav bd-sidenav">
@@ -323,6 +333,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../../javaScript/9_DOM_manipulation/2.html">1. Working with the DOM, Click Events and Web APIs - II</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../javaScript/9_DOM_manipulation/3.html">2. Understanding the Event Object and Event Delegation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../javaScript/9_DOM_manipulation/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/10_debugging.html">10. Debugging Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/10_debugging/1.html">10. Debugging Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/10_debugging/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../javaScript/11_regex.html">11. Basic Regex Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/11_regex/1.html">11. Working with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../javaScript/11_regex/2.html">Examples</a></li>
 </ul>
 </details></li>
 </ul>
@@ -473,8 +493,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-some-tools-to-check-for-good-color-contrast-on-sites">1.1. What are some tools to check for good color contrast on sites?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-best-practices-for-hiding-content-so-it-doesn-t-become-inaccessible">1.2. What are best practices for hiding content so it doesn’t become inaccessible?</a></li>
 </ul>
             </nav>
         </div>
@@ -489,11 +509,73 @@ document.write(`
   <div style="text-align: justify">
 <section class="tex2jax_ignore mathjax_ignore" id="best-practices-for-accessibility-and-css">
 <h1>1. Best Practices for Accessibility and CSS<a class="headerlink" href="#best-practices-for-accessibility-and-css" title="Link to this heading">#</a></h1>
-<section id="id1">
-<h2>1.1.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="what-are-some-tools-to-check-for-good-color-contrast-on-sites">
+<h2>1.1. What are some tools to check for good color contrast on sites?<a class="headerlink" href="#what-are-some-tools-to-check-for-good-color-contrast-on-sites" title="Link to this heading">#</a></h2>
+<p>When designing websites, ensuring good color contrast is crucial for accessibility and readability. Several tools are available to help developers and designers check and maintain appropriate color contrast ratios on their sites.</p>
+<ul>
+<li><p>One popular tool is <a class="reference external" href="https://webaim.org/resources/contrastchecker/">WebAIM’s Color Contrast Checker</a>.</p>
+<p>This online tool allows you to input the foreground and background colors of your design and instantly see if they meet the Web Content Accessibility Guidelines (WCAG) standards. It’s user-friendly and provides immediate feedback on whether your color choices pass or fail the contrast requirements.</p>
+<p>To use WebAIM’s Color Contrast Checker, simply visit their website and enter the hexadecimal codes for your foreground and background colors. The tool will then calculate the contrast ratio and indicate whether it meets the WCAG 2.0 level AA or AAA standards. Here’s an example of how you might use color values in your CSS:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#FFFFFF</span><span class="p">;</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#333333</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, we’ve set a white background (<code class="docutils literal notranslate"><span class="pre">#FFFFFF</span></code>) and dark gray text (<code class="docutils literal notranslate"><span class="pre">#333333</span></code>). You can input these color codes into the WebAIM tool to check their contrast ratio.</p>
+</li>
+<li><p>Another valuable tool is the <a class="reference external" href="https://www.tpgi.com/color-contrast-checker/">TPGi Colour Contrast Analyzer</a>. This desktop application offers more advanced features compared to online tools. It allows you to analyze entire web pages, not just individual color pairs. You can use its color picker to select colors directly from your screen, making it easier to check contrast ratios for existing designs.</p>
+<p>The TPGi Colour Contrast Analyzer also provides simulations for different types of color vision deficiencies, helping you ensure your design is accessible to users with various forms of color blindness.</p>
+<p>To use the TPGi Colour Contrast Analyzer, download and install the application on your computer. Once installed, you can use its eyedropper tool to select colors from your screen and instantly see the contrast ratio. This is particularly useful when working with complex designs or checking contrast on live websites.</p>
+</li>
+</ul>
+<p>Both these tools are invaluable for creating accessible and readable websites. They help ensure that your text is legible against its background, which is essential for all users but particularly important for those with visual impairments. Remember, while these tools are extremely helpful, they should be used in conjunction with manual testing and user feedback. Different contexts and user needs may require adjustments beyond what automated tools can suggest.</p>
+<p>By regularly using tools like WebAIM’s Color Contrast Checker and the TPGi Colour Contrast Analyzer, you can create designs that are not only visually appealing but also inclusive and accessible to a wider audience. This attention to detail in color contrast can significantly improve the user experience of your website for all visitors.</p>
 </section>
-<section id="id2">
-<h2>1.2.<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="what-are-best-practices-for-hiding-content-so-it-doesn-t-become-inaccessible">
+<h2>1.2. What are best practices for hiding content so it doesn’t become inaccessible?<a class="headerlink" href="#what-are-best-practices-for-hiding-content-so-it-doesn-t-become-inaccessible" title="Link to this heading">#</a></h2>
+<p>Hiding content on a webpage is a common practice in web development, but it’s crucial to do it in a way that doesn’t compromise accessibility. Different hiding techniques can have varying impacts on how assistive technologies interpret and present the content to users. Let’s explore some best practices for hiding content while maintaining accessibility.</p>
+<ul>
+<li><p>One common method to hide content is using <code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">none</span></code>. Here’s an example:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">hidden</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>While this effectively hides the content visually, it also removes it from the accessibility tree. The accessibility tree is a structure used by assistive technologies, such as screen readers, to interpret and interact with the content on a web page. It represents the content and its semantic meaning in a way that assistive technology can understand and present to the user.</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">none</span></code> means that screen readers and other assistive technologies won’t be able to access this content, as it is not included in the accessibility tree. Therefore, it is important to use this method only when you want to completely remove content from both visual presentation and accessibility.</p>
+</li>
+<li><p>Another approach to hiding content is using <code class="docutils literal notranslate"><span class="pre">visibility:</span> <span class="pre">hidden</span></code>:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">hidden</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">visibility</span><span class="p">:</span><span class="w"> </span><span class="kc">hidden</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">visibility:</span> <span class="pre">hidden</span></code> hides the content visually but keeps it in the document flow, meaning it still occupies space on the page. Like <code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">none</span></code>, <code class="docutils literal notranslate"><span class="pre">visibility:</span> <span class="pre">hidden</span></code> also removes content from the accessibility tree. This means that assistive technologies, like screen readers, will not be able to access the hidden content. Only use <code class="docutils literal notranslate"><span class="pre">visibility:</span> <span class="pre">hidden</span></code> when you want to hide content from everyone, including people who use assistive technology.</p>
+</li>
+<li><p>For content that should be hidden visually but remain accessible to screen readers, you can use a technique often referred to as “visually hidden” or “screen reader only”. Here is an example using the <code class="docutils literal notranslate"><span class="pre">.sr-only</span></code> CSS class which is a common technique used to visually hide content while keeping it accessible to screen readers:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">sr-only</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">absolute</span><span class="p">;</span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">overflow</span><span class="p">:</span><span class="w"> </span><span class="kc">hidden</span><span class="p">;</span>
+<span class="w">    </span><span class="k">clip</span><span class="p">:</span><span class="w"> </span><span class="nb">rect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="k">white-space</span><span class="p">:</span><span class="w"> </span><span class="kc">nowrap</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, we are using properties like <code class="docutils literal notranslate"><span class="pre">position</span></code>, <code class="docutils literal notranslate"><span class="pre">clip</span></code>, and <code class="docutils literal notranslate"><span class="pre">white-space</span></code>, which you will learn about in future lecture videos. For now, just know that this CSS rule effectively hides the content visually while keeping it accessible to screen readers. It’s useful for providing additional context to screen reader users without affecting the visual layout.</p>
+</li>
+<li><p>For toggling content visibility, consider using the <code class="docutils literal notranslate"><span class="pre">hidden</span></code> attribute:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">hidden</span><span class="p">&gt;</span>This content is hidden<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">hidden</span></code> attribute is supported by most modern browsers and hides content both visually and from the accessibility tree. It can be easily toggled with JavaScript. Lastly, be cautious about hiding important content. If information is crucial for understanding or using the website, it should be visible and accessible to all users. Only hide content when doing so genuinely enhances the user experience. By following these best practices, you can ensure that your content remains accessible to all users, regardless of how they interact with your website.</p>
+</li>
+</ul>
 </div></section>
 </section>
 
@@ -561,8 +643,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-some-tools-to-check-for-good-color-contrast-on-sites">1.1. What are some tools to check for good color contrast on sites?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-best-practices-for-hiding-content-so-it-doesn-t-become-inaccessible">1.2. What are best practices for hiding content so it doesn’t become inaccessible?</a></li>
 </ul>
   </nav></div>
 

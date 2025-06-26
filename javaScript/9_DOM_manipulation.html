@@ -267,6 +267,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../css/10_accessibility/2.html">Examples</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../css/11_positioning.html">11. Positioning Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../css/11_positioning/1.html">1. Understanding How to Work with Floats and Positioning in CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/11_positioning/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../css/12_attribute_selectors.html">12. Attribute Selectors Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../css/12_attribute_selectors/1.html">1. Working with Attribute Selectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/12_attribute_selectors/2.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
 <ul class="current nav bd-sidenav">
@@ -323,6 +333,16 @@
 <li class="toctree-l2"><a class="reference internal" href="9_DOM_manipulation/2.html">1. Working with the DOM, Click Events and Web APIs - II</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_DOM_manipulation/3.html">2. Understanding the Event Object and Event Delegation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_DOM_manipulation/4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="10_debugging.html">10. Debugging Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="10_debugging/1.html">10. Debugging Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_debugging/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="11_regex.html">11. Basic Regex Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="11_regex/1.html">11. Working with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_regex/2.html">Examples</a></li>
 </ul>
 </details></li>
 </ul>
@@ -450,7 +470,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -466,6 +488,30 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-the-dom-and-web-apis">Working with the DOM and Web APIs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-the-queryselector-queryselectorall-and-getelementbyid-methods">Working with the <code class="docutils literal notranslate"><span class="pre">querySelector()</span></code>, <code class="docutils literal notranslate"><span class="pre">querySelectorAll()</span></code> and <code class="docutils literal notranslate"><span class="pre">getElementById()</span></code> Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-the-innertext-innerhtml-createelement-and-textcontent-methods">Working with the <code class="docutils literal notranslate"><span class="pre">innerText()</span></code>, <code class="docutils literal notranslate"><span class="pre">innerHTML()</span></code>, <code class="docutils literal notranslate"><span class="pre">createElement()</span></code> and <code class="docutils literal notranslate"><span class="pre">textContent()</span></code> Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-the-appendchild-and-removechild-methods">Working with the <code class="docutils literal notranslate"><span class="pre">appendChild()</span></code> and <code class="docutils literal notranslate"><span class="pre">removeChild()</span></code> Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#work-with-the-setattribute-method">Work with the <code class="docutils literal notranslate"><span class="pre">setAttribute()</span></code> Method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#event-object">Event Object</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#addeventlistener-and-removeeventlistener-methods"><code class="docutils literal notranslate"><span class="pre">addEventListener()</span></code> and <code class="docutils literal notranslate"><span class="pre">removeEventListener()</span></code> Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-change-event">The Change Event</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#event-bubbling">Event Bubbling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#event-delegation">Event Delegation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domcontentloaded">DOMContentLoaded</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-style-and-classlist">Working with <code class="docutils literal notranslate"><span class="pre">style</span></code> and <code class="docutils literal notranslate"><span class="pre">classList</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-the-settimeout-and-setinterval-methods">Working with the <code class="docutils literal notranslate"><span class="pre">setTimeout()</span></code> and <code class="docutils literal notranslate"><span class="pre">setInterval()</span></code> Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-requestanimationframe-method">The <code class="docutils literal notranslate"><span class="pre">requestAnimationFrame()</span></code> Method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-animations-api">Web Animations API</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-canvas-api">The Canvas API</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-and-closing-dialogs-and-modals-with-javascript">Opening and Closing Dialogs and Modals with JavaScript</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -481,10 +527,399 @@ document.write(`
 <nav class="contents" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#dom-manipulation-and-click-events-summary" id="id1">9. DOM Manipulation and Click Events Summary</a></p></li>
+<li><p><a class="reference internal" href="#dom-manipulation-and-click-events-summary" id="id1">9. DOM Manipulation and Click Events Summary</a></p>
+<ul>
+<li><p><a class="reference internal" href="#working-with-the-dom-and-web-apis" id="id2">Working with the DOM and Web APIs</a></p></li>
+<li><p><a class="reference internal" href="#working-with-the-queryselector-queryselectorall-and-getelementbyid-methods" id="id3">Working with the <code class="docutils literal notranslate"><span class="pre">querySelector()</span></code>, <code class="docutils literal notranslate"><span class="pre">querySelectorAll()</span></code> and <code class="docutils literal notranslate"><span class="pre">getElementById()</span></code> Methods</a></p></li>
+<li><p><a class="reference internal" href="#working-with-the-innertext-innerhtml-createelement-and-textcontent-methods" id="id4">Working with the <code class="docutils literal notranslate"><span class="pre">innerText()</span></code>, <code class="docutils literal notranslate"><span class="pre">innerHTML()</span></code>, <code class="docutils literal notranslate"><span class="pre">createElement()</span></code> and <code class="docutils literal notranslate"><span class="pre">textContent()</span></code> Methods</a></p></li>
+<li><p><a class="reference internal" href="#working-with-the-appendchild-and-removechild-methods" id="id5">Working with the <code class="docutils literal notranslate"><span class="pre">appendChild()</span></code> and <code class="docutils literal notranslate"><span class="pre">removeChild()</span></code> Methods</a></p></li>
+<li><p><a class="reference internal" href="#work-with-the-setattribute-method" id="id6">Work with the <code class="docutils literal notranslate"><span class="pre">setAttribute()</span></code> Method</a></p></li>
+<li><p><a class="reference internal" href="#event-object" id="id7">Event Object</a></p></li>
+<li><p><a class="reference internal" href="#addeventlistener-and-removeeventlistener-methods" id="id8"><code class="docutils literal notranslate"><span class="pre">addEventListener()</span></code> and <code class="docutils literal notranslate"><span class="pre">removeEventListener()</span></code> Methods</a></p></li>
+<li><p><a class="reference internal" href="#the-change-event" id="id9">The Change Event</a></p></li>
+<li><p><a class="reference internal" href="#event-bubbling" id="id10">Event Bubbling</a></p></li>
+<li><p><a class="reference internal" href="#event-delegation" id="id11">Event Delegation</a></p></li>
+<li><p><a class="reference internal" href="#domcontentloaded" id="id12">DOMContentLoaded</a></p></li>
+<li><p><a class="reference internal" href="#working-with-style-and-classlist" id="id13">Working with <code class="docutils literal notranslate"><span class="pre">style</span></code> and <code class="docutils literal notranslate"><span class="pre">classList</span></code></a></p></li>
+<li><p><a class="reference internal" href="#working-with-the-settimeout-and-setinterval-methods" id="id14">Working with the <code class="docutils literal notranslate"><span class="pre">setTimeout()</span></code> and <code class="docutils literal notranslate"><span class="pre">setInterval()</span></code> Methods</a></p></li>
+<li><p><a class="reference internal" href="#the-requestanimationframe-method" id="id15">The <code class="docutils literal notranslate"><span class="pre">requestAnimationFrame()</span></code> Method</a></p></li>
+<li><p><a class="reference internal" href="#web-animations-api" id="id16">Web Animations API</a></p></li>
+<li><p><a class="reference internal" href="#the-canvas-api" id="id17">The Canvas API</a></p></li>
+<li><p><a class="reference internal" href="#opening-and-closing-dialogs-and-modals-with-javascript" id="id18">Opening and Closing Dialogs and Modals with JavaScript</a></p></li>
+</ul>
+</li>
 </ul>
 </nav>
-</div><div class="toctree-wrapper compound">
+<section id="working-with-the-dom-and-web-apis">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Working with the DOM and Web APIs</a><a class="headerlink" href="#working-with-the-dom-and-web-apis" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>API</strong>: An API (Application Programming Interface) is a set of rules and protocols that allow software applications to communicate with each other and exchange data efficiently.</p></li>
+<li><p><strong>Web API</strong>: Web APIs are specifically designed for web applications. These types of APIs are often divided into two main categories: browser APIs and third-party APIs.</p></li>
+<li><p><strong>Browser APIs</strong>: These APIs expose data from the browser. As a web developer, you can access and manipulate this data using JavaScript.</p></li>
+<li><p><strong>Third-Party APIs</strong>: These are not built into the browser by default. You have to retrieve their code in some way. Usually, they will have detailed documentation explaining how to use their services. An example is the Google Maps API, which you can use to display interactive maps on your website.</p></li>
+<li><p><strong>DOM</strong>: The DOM stands for Document Object Model. It’s a programming interface that lets you interact with HTML documents. With the DOM, you can add, modify, or delete elements on a webpage. The root of the DOM tree is the <code class="docutils literal notranslate"><span class="pre">html</span></code> element. It’s the top-level container for all the content of an HTML document. All other nodes are descendants of this root node. Then, below the root node, we find other nodes in the hierarchy. A parent node is an element that contains other elements. A child node is an element that is contained within another element.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">navigator</span></code> Interface</strong>: This provides information about the browser environment, such as the user agent string, the platform, and the version of the browser. A user agent string is a text string that identifies the browser and operating system being used.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">window</span></code> Interface</strong>: This represents the browser window that contains the DOM document. It provides methods and properties for interacting with the browser window, such as resizing the window, opening new windows, and navigating to different URLs.</p></li>
+</ul>
+</section>
+<section id="working-with-the-queryselector-queryselectorall-and-getelementbyid-methods">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Working with the <code class="docutils literal notranslate"><span class="pre">querySelector()</span></code>, <code class="docutils literal notranslate"><span class="pre">querySelectorAll()</span></code> and <code class="docutils literal notranslate"><span class="pre">getElementById()</span></code> Methods</a><a class="headerlink" href="#working-with-the-queryselector-queryselectorall-and-getelementbyid-methods" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">getElementById()</span></code> Method</strong>: This method is used to get an object that represents the HTML element with the specified <code class="docutils literal notranslate"><span class="pre">id</span></code>. Remember that ids must be unique in every HTML document, so this method will only return one Element object.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;container&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">querySelector()</span></code> Method</strong>: This method is used to get the first element in the HTML document that matches the CSS selector passed as an argument.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">section</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;section&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">section</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;.section&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">querySelectorAll()</span></code> Method</strong>: You can use this method to get a list of all the DOM elements that match a specific CSS selector.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ingredients&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Sugar<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Milk<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Eggs<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">ingredients</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;ul.ingredients li&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="working-with-the-innertext-innerhtml-createelement-and-textcontent-methods">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Working with the <code class="docutils literal notranslate"><span class="pre">innerText()</span></code>, <code class="docutils literal notranslate"><span class="pre">innerHTML()</span></code>, <code class="docutils literal notranslate"><span class="pre">createElement()</span></code> and <code class="docutils literal notranslate"><span class="pre">textContent()</span></code> Methods</a><a class="headerlink" href="#working-with-the-innertext-innerhtml-createelement-and-textcontent-methods" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">innerHTML</span></code> Property</strong>: This is a property of the <code class="docutils literal notranslate"><span class="pre">Element</span></code> that is used to set or update parts of the HTML markup.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+    <span class="cm">&lt;!-- Add new elements here --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;container&quot;</span><span class="p">);</span>
+<span class="nx">container</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;ul&gt;&lt;li&gt;Cheese&lt;/li&gt;&lt;li&gt;Tomato&lt;/li&gt;&lt;/ul&gt;&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">createElement</span></code> Method</strong>: This is used to create an HTML element.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">img</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">innerText</span></code></strong>: This represents the visible text content of the HTML element and its descendants.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello, World!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>I&#39;m learning JavaScript<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;container&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">container</span><span class="p">.</span><span class="nx">innerText</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">textContent</span></code></strong>: This returns the plain text content of an element, including all the text within its descendants.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello, World!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>I&#39;m learning JavaScript<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;container&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">container</span><span class="p">.</span><span class="nx">textContent</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="working-with-the-appendchild-and-removechild-methods">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Working with the <code class="docutils literal notranslate"><span class="pre">appendChild()</span></code> and <code class="docutils literal notranslate"><span class="pre">removeChild()</span></code> Methods</a><a class="headerlink" href="#working-with-the-appendchild-and-removechild-methods" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">appendChild()</span></code> Method</strong>: This method is used to add a node to the end of the list of children of a specified parent node.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;desserts&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Cake<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Pie<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">dessertsList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;desserts&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">listItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
+
+<span class="nx">listItem</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Cookies&quot;</span><span class="p">;</span>
+<span class="nx">dessertsList</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">listItem</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">removeChild()</span></code> Method</strong>: This method is used to remove a node from the DOM.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">section</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;example-section&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Example sub heading<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>first paragraph<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>second paragraph<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">sectionEl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;example-section&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">lastParagraph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#example-section p:last-of-type&quot;</span><span class="p">);</span>
+
+<span class="nx">sectionEl</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">lastParagraph</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="work-with-the-setattribute-method">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Work with the <code class="docutils literal notranslate"><span class="pre">setAttribute()</span></code> Method</a><a class="headerlink" href="#work-with-the-setattribute-method" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>Definition</strong>: This method is used to set the attribute for a given element. If the attribute already exists, then the value is updated. Otherwise, a new attribute is added with a value.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;para&quot;</span><span class="p">&gt;</span>I am a paragraph<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">para</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;para&quot;</span><span class="p">);</span>
+<span class="nx">para</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&quot;class&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;my-class&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="event-object">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Event Object</a><a class="headerlink" href="#event-object" title="Link to this heading">#</a></h2>
+<p><strong>Definition</strong>: The <code class="docutils literal notranslate"><span class="pre">Event</span></code> object is a payload that triggers when a user interacts with your web page in some way. These interactions can be anything from clicking on a button or focusing an input to shaking their mobile device. All <code class="docutils literal notranslate"><span class="pre">Event</span></code> objects will have the <code class="docutils literal notranslate"><span class="pre">type</span></code> property. This property reveals the type of event that triggered the payload, such as keydown or click. These values will correspond to the same values you might pass to <code class="docutils literal notranslate"><span class="pre">addEventListener</span></code>(), where you can capture and utilize the <code class="docutils literal notranslate"><span class="pre">Event</span></code> object.</p>
+</section>
+<section id="addeventlistener-and-removeeventlistener-methods">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink"><code class="docutils literal notranslate"><span class="pre">addEventListener()</span></code> and <code class="docutils literal notranslate"><span class="pre">removeEventListener()</span></code> Methods</a><a class="headerlink" href="#addeventlistener-and-removeeventlistener-methods" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">addEventListener</span></code> Method</strong>: This method is used to listen for events. It takes two arguments: the event you want to listen for and a function that will be called when the event occurs. Some common examples of events would be click events, input events, and change events.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">btn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;btn&quot;</span><span class="p">);</span>
+
+<span class="nx">btn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;You clicked the button&quot;</span><span class="p">));</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">removeEventListener()</span></code> Method</strong>: This method is used to remove an event listener that was previously added to an element using the <code class="docutils literal notranslate"><span class="pre">addEventListener()</span></code> method. This is useful when you want to stop listening for a particular event on an element.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">bodyEl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">para</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;para&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">btn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;btn&quot;</span><span class="p">);</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">isBgColorGrey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">toggleBgColor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">bodyEl</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">isBgColorGrey</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;blue&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;grey&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">isBgColorGrey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="nx">isBgColorGrey</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">btn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">toggleBgColor</span><span class="p">);</span>
+
+<span class="nx">para</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;mouseover&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">btn</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">toggleBgColor</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Inline Event Handlers</strong>: Inline event handlers are special attributes on an HTML element that are used to execute JavaScript code when an event occurs. In modern JavaScript, inline event handlers are not considered best practice. It is preferred to use the <code class="docutils literal notranslate"><span class="pre">addEventListener</span></code> method instead.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;alert(&#39;Hello World!&#39;)&quot;</span><span class="p">&gt;</span>Show alert<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="the-change-event">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">The Change Event</a><a class="headerlink" href="#the-change-event" title="Link to this heading">#</a></h2>
+<p><strong>Definition</strong>: The change event is a special event which is fired when the user modifies the value of certain input elements. Examples would include when a checkbox or a radio button is ticked. Or when the user makes a selection from something like a date picker or dropdown menu.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>
+  Choose a programming language:
+  <span class="p">&lt;</span><span class="nt">select</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;language&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;language&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>---Select One---<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;JavaScript&quot;</span><span class="p">&gt;</span>JavaScript<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Python&quot;</span><span class="p">&gt;</span>Python<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;C++&quot;</span><span class="p">&gt;</span>C++<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;result&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">selectEl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;.language&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;.result&quot;</span><span class="p">);</span>
+
+<span class="nx">selectEl</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;change&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">result</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`You enjoy programming in </span><span class="si">${</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span><span class="sb">.`</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</section>
+<section id="event-bubbling">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Event Bubbling</a><a class="headerlink" href="#event-bubbling" title="Link to this heading">#</a></h2>
+<p><strong>Definition</strong>: Event bubbling, or propagation, refers to how an event “bubbles up” to parent objects when triggered.</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">stopPropagation()</span></code> Method</strong>: This method prevents further propagation for an event.</p></li>
+</ul>
+</section>
+<section id="event-delegation">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Event Delegation</a><a class="headerlink" href="#event-delegation" title="Link to this heading">#</a></h2>
+<p><strong>Definition</strong>: Event delegation is the process of listening to events that have bubbled up to a parent, rather than handling them directly on the element that triggered them.</p>
+</section>
+<section id="domcontentloaded">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">DOMContentLoaded</a><a class="headerlink" href="#domcontentloaded" title="Link to this heading">#</a></h2>
+<p><strong>Definition</strong>: The <code class="docutils literal notranslate"><span class="pre">DOMContentLoaded</span></code> event is fired when everything in the HTML document has been loaded and parsed. If you have external stylesheets, or images, the <code class="docutils literal notranslate"><span class="pre">DOMContentLoaded</span></code> event will not wait for those to be loaded. It will only wait for the HTML to be loaded.</p>
+</section>
+<section id="working-with-style-and-classlist">
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">Working with <code class="docutils literal notranslate"><span class="pre">style</span></code> and <code class="docutils literal notranslate"><span class="pre">classList</span></code></a><a class="headerlink" href="#working-with-style-and-classlist" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Element.style</span></code> Property</strong>: This property is a read-only property that represents the inline style of an element. You can use this property to get or set the style of an element.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">paraEl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;para&quot;</span><span class="p">);</span>
+<span class="nx">paraEl</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;red&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Element.classList</span></code> Property</strong>: This property is a read-only property that can be used to add, remove, or toggle classes on an element.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// Example adding a class</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">paraEl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;para&quot;</span><span class="p">);</span>
+<span class="nx">paraEl</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+
+<span class="c1">// Example removing a class</span>
+<span class="nx">paraEl</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">&quot;blue-background&quot;</span><span class="p">);</span>
+
+<span class="c1">// Example toggling a class</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">menu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;menu&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">toggleBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;toggle-btn&quot;</span><span class="p">);</span>
+
+<span class="nx">toggleBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">menu</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">toggle</span><span class="p">(</span><span class="s2">&quot;show&quot;</span><span class="p">));</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="working-with-the-settimeout-and-setinterval-methods">
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">Working with the <code class="docutils literal notranslate"><span class="pre">setTimeout()</span></code> and <code class="docutils literal notranslate"><span class="pre">setInterval()</span></code> Methods</a><a class="headerlink" href="#working-with-the-settimeout-and-setinterval-methods" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">setTimeout()</span></code> Method</strong>: This method lets you delay an action for a specified time.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;This runs after 3 seconds&#39;</span><span class="p">);</span><span class="w"> </span>
+<span class="p">},</span><span class="w"> </span><span class="mf">3000</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">setInterval()</span></code> Method</strong>: This method keeps runs a piece of code repeatedly at a set interval. Since <code class="docutils literal notranslate"><span class="pre">setInterval()</span></code> keeps executing the provided function at the specified interval, you might want to stop it. For this, you have to use the <code class="docutils literal notranslate"><span class="pre">clearInterval()</span></code> method.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">setInterval</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;This runs every 2 seconds&#39;</span><span class="p">);</span>
+<span class="p">},</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span>
+
+<span class="c1">// Example using clearInterval</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">intervalID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setInterval</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;This will stop after 5 seconds&#39;</span><span class="p">);</span>
+<span class="p">},</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+
+<span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">clearInterval</span><span class="p">(</span><span class="nx">intervalID</span><span class="p">);</span>
+<span class="p">},</span><span class="w"> </span><span class="mf">5000</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="the-requestanimationframe-method">
+<h2><a class="toc-backref" href="#id15" role="doc-backlink">The <code class="docutils literal notranslate"><span class="pre">requestAnimationFrame()</span></code> Method</a><a class="headerlink" href="#the-requestanimationframe-method" title="Link to this heading">#</a></h2>
+<p><strong>Definition</strong>: This method allows you to schedule the next step of your animation before the next screen repaint, resulting in a fluid and visually appealing experience. The next screen repaint refers to the moment when the browser refreshes the visual display of the web page. This happens multiple times per second, typically around 60 times (or 60 frames per second) on most displays.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">animate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="c1">// Update the animation...</span>
+<span class="c1">// for example, move an element, change a style, and more.</span>
+<span class="nx">update</span><span class="p">();</span>
+<span class="c1">// Request the next frame</span>
+<span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">animate</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="web-animations-api">
+<h2><a class="toc-backref" href="#id16" role="doc-backlink">Web Animations API</a><a class="headerlink" href="#web-animations-api" title="Link to this heading">#</a></h2>
+<p><strong>Definition</strong>: The Web Animations API lets you create and control animations directly inside JavaScript.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#square&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">animation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">square</span><span class="p">.</span><span class="nx">animate</span><span class="p">(</span>
+<span class="p">[{</span><span class="w"> </span><span class="nx">transform</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;translateX(0px)&#39;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">transform</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;translateX(100px)&#39;</span><span class="w"> </span><span class="p">}],</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nx">duration</span><span class="o">:</span><span class="w"> </span><span class="mf">2000</span><span class="p">,</span><span class="w"> </span><span class="c1">// makes animation lasts 2 seconds</span>
+<span class="w">    </span><span class="nx">iterations</span><span class="o">:</span><span class="w"> </span><span class="kc">Infinity</span><span class="p">,</span><span class="w"> </span><span class="c1">// loops indefinitely</span>
+<span class="w">    </span><span class="nx">direction</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;alternate&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// moves back and forth</span>
+<span class="w">    </span><span class="nx">easing</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ease-in-out&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// smooth easing</span>
+<span class="p">}</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="the-canvas-api">
+<h2><a class="toc-backref" href="#id17" role="doc-backlink">The Canvas API</a><a class="headerlink" href="#the-canvas-api" title="Link to this heading">#</a></h2>
+<p><strong>Definition</strong>: The Canvas API is a powerful tool that lets you manipulate graphics right inside your JavaScript file. To work with the Canvas API, you first need to provide a <code class="docutils literal notranslate"><span class="pre">canvas</span></code> element in HTML. This element acts as a drawing surface you can manipulate with the instance methods and properties of the interfaces in the Canvas API. This API has interfaces like <code class="docutils literal notranslate"><span class="pre">HTMLCanvasElement</span></code>, <code class="docutils literal notranslate"><span class="pre">CanvasRenderingContext2D</span></code>, <code class="docutils literal notranslate"><span class="pre">CanvasGradient</span></code>, <code class="docutils literal notranslate"><span class="pre">CanvasPattern</span></code>, and <code class="docutils literal notranslate"><span class="pre">TextMetrics</span></code> which contain methods and properties you can use to create graphics in your JavaScript file.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">canvas</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;my-canvas&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;400&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;400&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">canvas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;my-canvas&#39;</span><span class="p">);</span>
+
+<span class="c1">// Access the drawing context of the canvas. </span>
+<span class="c1">// &quot;2d&quot; allows you to draw in two dimensions </span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">&#39;2d&#39;</span><span class="p">);</span>
+
+<span class="c1">// Set the background color</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;crimson&#39;</span><span class="p">;</span>
+
+<span class="c1">// Draw a rectangle</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">150</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="opening-and-closing-dialogs-and-modals-with-javascript">
+<h2><a class="toc-backref" href="#id18" role="doc-backlink">Opening and Closing Dialogs and Modals with JavaScript</a><a class="headerlink" href="#opening-and-closing-dialogs-and-modals-with-javascript" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>Modal and Dialog Definitions</strong>: Dialogs let you display important information or actions to users. With the HTML built-in dialog element, you can easily create these dialogs (both modal and non-modal dialogs) in your web apps. A modal dialog is a type of dialog that forces the user to interact with it before they can access the rest of the application or webpage. In contrast, a non-modal dialog allows the user to continue interacting with other parts of the page or application even when the dialog is open. It doesn’t prevent access to the rest of the content.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">showModal()</span></code> Method</strong>: This method is used to open a modal.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">dialog</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;my-modal&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is a modal dialog.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">dialog</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;open-modal&quot;</span><span class="p">&gt;</span>Open Modal Dialog<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">dialog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;my-modal&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">openButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;open-modal&#39;</span><span class="p">);</span>
+
+<span class="nx">openButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">dialog</span><span class="p">.</span><span class="nx">showModal</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">close()</span></code> Method</strong>: This method is used to close the modal.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">dialog</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;my-modal&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is a modal dialog.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;close-modal&quot;</span><span class="p">&gt;</span>Close Modal<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">dialog</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;open-modal&quot;</span><span class="p">&gt;</span>Open Modal Dialog<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">dialog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;my-modal&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">openButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;open-modal&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">closeButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;close-modal&#39;</span><span class="p">);</span>
+
+<span class="nx">openButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">dialog</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+<span class="p">});</span>
+
+<span class="nx">closeButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">dialog</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div></section>
+<div class="toctree-wrapper compound">
 </div>
 </section>
 
@@ -542,6 +977,37 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-the-dom-and-web-apis">Working with the DOM and Web APIs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-the-queryselector-queryselectorall-and-getelementbyid-methods">Working with the <code class="docutils literal notranslate"><span class="pre">querySelector()</span></code>, <code class="docutils literal notranslate"><span class="pre">querySelectorAll()</span></code> and <code class="docutils literal notranslate"><span class="pre">getElementById()</span></code> Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-the-innertext-innerhtml-createelement-and-textcontent-methods">Working with the <code class="docutils literal notranslate"><span class="pre">innerText()</span></code>, <code class="docutils literal notranslate"><span class="pre">innerHTML()</span></code>, <code class="docutils literal notranslate"><span class="pre">createElement()</span></code> and <code class="docutils literal notranslate"><span class="pre">textContent()</span></code> Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-the-appendchild-and-removechild-methods">Working with the <code class="docutils literal notranslate"><span class="pre">appendChild()</span></code> and <code class="docutils literal notranslate"><span class="pre">removeChild()</span></code> Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#work-with-the-setattribute-method">Work with the <code class="docutils literal notranslate"><span class="pre">setAttribute()</span></code> Method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#event-object">Event Object</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#addeventlistener-and-removeeventlistener-methods"><code class="docutils literal notranslate"><span class="pre">addEventListener()</span></code> and <code class="docutils literal notranslate"><span class="pre">removeEventListener()</span></code> Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-change-event">The Change Event</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#event-bubbling">Event Bubbling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#event-delegation">Event Delegation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domcontentloaded">DOMContentLoaded</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-style-and-classlist">Working with <code class="docutils literal notranslate"><span class="pre">style</span></code> and <code class="docutils literal notranslate"><span class="pre">classList</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-the-settimeout-and-setinterval-methods">Working with the <code class="docutils literal notranslate"><span class="pre">setTimeout()</span></code> and <code class="docutils literal notranslate"><span class="pre">setInterval()</span></code> Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-requestanimationframe-method">The <code class="docutils literal notranslate"><span class="pre">requestAnimationFrame()</span></code> Method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-animations-api">Web Animations API</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-canvas-api">The Canvas API</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-and-closing-dialogs-and-modals-with-javascript">Opening and Closing Dialogs and Modals with JavaScript</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

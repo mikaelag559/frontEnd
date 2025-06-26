@@ -16,6 +16,12 @@ styles.css:
 
 ```
 
+script.js:
+
+```js
+
+```
+
 ## 2.
 
 index.html: 
@@ -27,6 +33,12 @@ index.html:
 styles.css: 
 
 ```css
+
+```
+
+script.js:
+
+```js
 
 ```
 
