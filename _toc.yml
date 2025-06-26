@@ -87,7 +87,10 @@ parts:
       sections:
       - file: css/11_positioning/1
       - file: css/11_positioning/2
-
+    - file: css/12_attribute_selectors
+      sections:
+      - file: css/12_attribute_selectors/1
+      - file: css/12_attribute_selectors/2
 
   - caption: JavaScript
     maxdepth: 3
