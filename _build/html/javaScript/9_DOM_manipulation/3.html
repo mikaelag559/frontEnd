@@ -267,6 +267,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../../css/10_accessibility/2.html">Examples</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/11_positioning.html">11. Positioning Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/11_positioning/1.html">1. Understanding How to Work with Floats and Positioning in CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/11_positioning/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/12_attribute_selectors.html">12. Attribute Selectors Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/12_attribute_selectors/1.html">1. Working with Attribute Selectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/12_attribute_selectors/2.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
 <ul class="current nav bd-sidenav">
@@ -323,6 +333,16 @@
 <li class="toctree-l2"><a class="reference internal" href="2.html">1. Working with the DOM, Click Events and Web APIs - II</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2. Understanding the Event Object and Event Delegation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10_debugging.html">10. Debugging Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10_debugging/1.html">10. Debugging Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_debugging/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../11_regex.html">11. Basic Regex Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../11_regex/1.html">11. Working with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11_regex/2.html">Examples</a></li>
 </ul>
 </details></li>
 </ul>
@@ -473,8 +493,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-change-event-and-how-does-it-work">2.1. What is the <code class="docutils literal notranslate"><span class="pre">change</span></code> event and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-event-bubbling-and-event-delegation-work">2.2. How do event bubbling and event delegation work?</a></li>
 </ul>
             </nav>
         </div>
@@ -489,11 +509,113 @@ document.write(`
   <div style="text-align: justify">
 <section class="tex2jax_ignore mathjax_ignore" id="understanding-the-event-object-and-event-delegation">
 <h1>2. Understanding the Event Object and Event Delegation<a class="headerlink" href="#understanding-the-event-object-and-event-delegation" title="Link to this heading">#</a></h1>
-<section id="id1">
-<h2>2.1.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="what-is-the-change-event-and-how-does-it-work">
+<h2>2.1. What is the <code class="docutils literal notranslate"><span class="pre">change</span></code> event and how does it work?<a class="headerlink" href="#what-is-the-change-event-and-how-does-it-work" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">change</span></code> event is a special event which is fired when the user modifies the value of certain input elements. More specifically:</p>
+<ul class="simple">
+<li><p>When a checkbox is ticked or unticked.</p></li>
+<li><p>When a radio button is ticked.</p></li>
+<li><p>When the user makes a selection from something like a date picker or dropdown menu.</p></li>
+<li><p>When an input loses focus (the user tabs to the next field, or clicks out of the form) after the user has changed the value.</p></li>
+<li><p>When the user otherwise confirms the value, such as by hitting enter after typing some text.</p></li>
+</ul>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">change</span></code> event does NOT fire when your user types in an input. The <code class="docutils literal notranslate"><span class="pre">change</span></code> event will only fire after they have focused on another element.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">change</span></code> event still generates an <code class="docutils literal notranslate"><span class="pre">Event</span></code> object, but unlike most other events it does not generate a custom implementation – the only properties and methods you will have access to are those on the base <code class="docutils literal notranslate"><span class="pre">Event</span></code> object.</p>
+<p>This differs from the <code class="docutils literal notranslate"><span class="pre">input</span></code> event, which generates a dedicated <code class="docutils literal notranslate"><span class="pre">InputEvent</span></code> object. The change event also differs in a few ways. An <code class="docutils literal notranslate"><span class="pre">input</span></code> event WILL trigger when a user types content into a field, for example.</p>
+<p>These differences are important to remember, as you might get tripped up by the timing of these events firing.</p>
 </section>
-<section id="id2">
-<h2>2.2.<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="how-do-event-bubbling-and-event-delegation-work">
+<h2>2.2. How do event bubbling and event delegation work?<a class="headerlink" href="#how-do-event-bubbling-and-event-delegation-work" title="Link to this heading">#</a></h2>
+<p>Event bubbling, or propagation, refers to how an event “bubbles up” to parent objects when triggered. For example, consider this code:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Click me~!<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">p</span></code> element here would be considered the parent of the <code class="docutils literal notranslate"><span class="pre">span</span></code> element.
+When you click on the <code class="docutils literal notranslate"><span class="pre">span</span></code> element, like you are instructed to, the <code class="docutils literal notranslate"><span class="pre">span</span></code> element becomes the target of a <code class="docutils literal notranslate"><span class="pre">click</span></code> event. That event, however, also bubbles up to the parent – the <code class="docutils literal notranslate"><span class="pre">p</span></code> element can receive and consume that event as needed.</p>
+<p>But what does this actually mean? Well, you could attach an event listener to the <code class="docutils literal notranslate"><span class="pre">p</span></code> element:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span>
+<span class="nx">p</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Then, when you click on the <code class="docutils literal notranslate"><span class="pre">span</span></code> element you will see the text <code class="docutils literal notranslate"><span class="pre">Click</span> <span class="pre">me~!</span></code> logged to the console.</p>
+<p>The event propagates to the parent <code class="docutils literal notranslate"><span class="pre">p</span></code> element, which consumes it in an event listener to display the target of the event.</p>
+<p>Notice how the target is still the <code class="docutils literal notranslate"><span class="pre">span</span></code> element. This is because the <code class="docutils literal notranslate"><span class="pre">span</span></code> element received the initial click.</p>
+<p>Just to be sure how things are working, let’s expand our code:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">span</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">);</span>
+<span class="nx">p</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;P listener: &quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nx">span</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Span listener: &quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>To give you an idea of how the event bubbles up, here’s what you’ll see in the console after clicking the <code class="docutils literal notranslate"><span class="pre">span</span></code> element:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>&quot;Span listener: &quot;
+<span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Click me~!<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+&quot;P listener: &quot;
+<span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Click me~!<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Now let’s see what happens when you prevent the propagation of an event with <code class="docutils literal notranslate"><span class="pre">stopPropagation()</span></code>. We’ll call it in our <code class="docutils literal notranslate"><span class="pre">span</span></code>’s event listener:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">span</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">);</span>
+<span class="nx">p</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;P listener: &quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nx">span</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Span listener: &quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>And then click our <code class="docutils literal notranslate"><span class="pre">span</span></code> again:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>&quot;Span listener: &quot;
+<span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Click me~!<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>This time, we don’t see our <code class="docutils literal notranslate"><span class="pre">p</span></code> listener trigger. The event never fires for the <code class="docutils literal notranslate"><span class="pre">p</span></code> element, because we told it to stop propagation while it was being processed for the child <code class="docutils literal notranslate"><span class="pre">span</span></code> element.</p>
+<p>Event delegation can be thought of as the opposite. It’s the process of taking a captured event, and delegating it to another element.</p>
+<p>Going back to our code, let’s update it so clicking on a <code class="docutils literal notranslate"><span class="pre">span</span></code> element changes it to red:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">span</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">);</span>
+<span class="nx">p</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{});</span>
+<span class="nx">span</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;red&quot;</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>But what if you have twenty <code class="docutils literal notranslate"><span class="pre">span</span></code> elements? Or maybe you use JavaScript to create more <code class="docutils literal notranslate"><span class="pre">span</span></code> elements on the fly?</p>
+<p>Rather than having to attach an event listener to every single <code class="docutils literal notranslate"><span class="pre">span</span></code> element, you can actually use the listener on the <code class="docutils literal notranslate"><span class="pre">p</span></code> element for all of them. In other words, you can delegate the handling of the <code class="docutils literal notranslate"><span class="pre">span</span></code> clicks to the parent <code class="docutils literal notranslate"><span class="pre">p</span></code> element.</p>
+<p>Our code might now look something like this:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span>
+<span class="nx">p</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;red&quot;</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Notice how we no longer have any listener attached to the <code class="docutils literal notranslate"><span class="pre">span</span></code> element at all. You have properly delegated the event handling to the <code class="docutils literal notranslate"><span class="pre">p</span></code> element. But does it work?</p>
+<p>Let’s generate a few extra <code class="docutils literal notranslate"><span class="pre">span</span></code> elements and see:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Click me~!<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Click me~!<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Click me~!<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Click me~!<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Now, each time we click on a <code class="docutils literal notranslate"><span class="pre">span</span></code>, that element’s text will become red.
+And just like that, with a single event listener we’ve properly allowed a <code class="docutils literal notranslate"><span class="pre">click</span></code> event to bubble up from <code class="docutils literal notranslate"><span class="pre">span</span></code> elements to the parent <code class="docutils literal notranslate"><span class="pre">p</span></code>, and delegated the logic for that <code class="docutils literal notranslate"><span class="pre">click</span></code> event to the <code class="docutils literal notranslate"><span class="pre">p</span></code> element.</p>
+<p>Event propagation and delegation can be a complex topic, especially as you get into heavily nested elements like tables. You are encouraged to explore this further and experiment with some of the code we’ve written here.</p>
 </div></section>
 </section>
 
@@ -561,8 +683,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-change-event-and-how-does-it-work">2.1. What is the <code class="docutils literal notranslate"><span class="pre">change</span></code> event and how does it work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-event-bubbling-and-event-delegation-work">2.2. How do event bubbling and event delegation work?</a></li>
 </ul>
   </nav></div>
 
