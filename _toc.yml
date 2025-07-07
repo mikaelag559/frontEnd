@@ -91,6 +91,10 @@ parts:
       sections:
       - file: css/12_attribute_selectors/1
       - file: css/12_attribute_selectors/2
+    - file: css/13_responsive_design
+      sections:
+      - file: css/13_responsive_design/1
+      - file: css/13_responsive_design/2
 
   - caption: JavaScript
     maxdepth: 3

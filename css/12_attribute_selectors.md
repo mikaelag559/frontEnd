@@ -60,4 +60,64 @@ a[href] {
     }
     ```
 
+
+## Special Attribute Selectors in CSS
+
+* **`[attr]` — Presence Selector**: Selects elements that have a specific attribute, regardless of its value.
+
+  ```css
+  input[type] {
+      border: 1px solid gray;
+  }
+  ```
+
+* **`[attr="value"]` — Exact Match**: Targets elements where the attribute value matches exactly.
+
+  ```css
+  input[type="checkbox"] {
+      margin-right: 10px;
+  }
+  ```
+
+* **`[attr^="value"]` — Starts With**: Selects elements whose attribute value **starts with** the specified string.
+
+  ```css
+  span[class^="rate"] {
+      color: gold;
+  }
+  ```
+
+* **`[attr$="value"]` — Ends With**: Selects elements whose attribute value **ends with** the specified string.
+
+  ```css
+  a[href$=".pdf"] {
+      text-decoration: underline;
+  }
+  ```
+
+* **`[attr*="value"]` — Contains Substring**: Selects elements whose attribute value **contains** the given substring anywhere.
+
+  ```css
+  div[class*="item"] {
+      background-color: #f9f9f9;
+  }
+  ```
+
+* **`[attr~="value"]` — Contains Whole Word**: Targets elements where the attribute value contains a specific **whole word**, separated by spaces (useful with `class`).
+
+  ```css
+  button[class~="active"] {
+      background-color: green;
+  }
+  ```
+
+* **`[attr|="value"]` — Language or Hyphenated Prefix Match**: Selects elements whose attribute value matches exactly or starts with the value followed by a hyphen.
+
+  ```css
+  p[lang|="en"] {
+      font-family: Arial, sans-serif;
+  }
+  ```
+
+
 </div>
