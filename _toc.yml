@@ -95,6 +95,10 @@ parts:
       sections:
       - file: css/13_responsive_design/1
       - file: css/13_responsive_design/2
+    - file: css/14_variables
+      sections:
+      - file: css/14_variables/1
+      - file: css/14_variables/2
 
   - caption: JavaScript
     maxdepth: 3
