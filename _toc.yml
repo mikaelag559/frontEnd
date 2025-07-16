@@ -99,6 +99,15 @@ parts:
       sections:
       - file: css/14_variables/1
       - file: css/14_variables/2
+    - file: css/15_grid
+      sections:
+      - file: css/15_grid/1
+      - file: css/15_grid/2
+      - file: css/15_grid/3
+    - file: css/16_animations
+      sections:
+      - file: css/16_animations/1
+      - file: css/16_animations/2
 
   - caption: JavaScript
     maxdepth: 3
