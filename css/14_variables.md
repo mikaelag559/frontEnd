@@ -11,18 +11,18 @@
 
 ```css
 :root {
-  --bg-color: white;
-  --text-color: black;
+    --bg-color: white;
+    --text-color: black;
 }
 
 .dark-theme {
-  --bg-color: #333;
-  --text-color: white;
+    --bg-color: #333;
+    --text-color: white;
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 ```
 
@@ -32,9 +32,9 @@ body {
 
 ```css
 @property --property-name {
-  syntax: '<type>';
-  inherits: true | false;
-  initial-value: <value>;
+    syntax: '<type>';
+    inherits: true | false;
+    initial-value: <value>;
 }
 ```
 

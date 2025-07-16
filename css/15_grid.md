@@ -12,7 +12,7 @@
 
 ```css
 .container {
-  display: grid;
+    display: grid;
 }
 ```
 
@@ -20,13 +20,13 @@
 - **Creating Gaps Between Tracks**: There are three ways to create gaps between tracks in CSS grid. You can use the `column-gap` property to create gaps between columns. You can use the `row-gap` property to create gaps between rows. Or you can use the `gap` shorthand property to create gaps between both rows and columns.
 - **`grid-template-columns`**: This is used to set lines names and sizing for the grid track columns.
 
-  ```css
-  .container {
-    display: grid;
-    width: 100%;
-    grid-template-columns: 30px 1fr;
-  }
-  ```
+    ```css
+    .container {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 30px 1fr;
+    }
+    ```
 
 - **`grid-template-rows`**: This is used to set lines names and sizing for the grid track rows.
 - **`grid-auto-flow`**: The determines how auto placed items fit in the grid.
