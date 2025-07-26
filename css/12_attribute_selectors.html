@@ -277,6 +277,27 @@
 <li class="toctree-l2"><a class="reference internal" href="12_attribute_selectors/2.html">Examples</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="13_responsive_design.html">13. Responsive Design Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="13_responsive_design/1.html">1. Best Practices for Responsive Web Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_responsive_design/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="14_variables.html">14. CSS Variables Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="14_variables/1.html">1. Working with CSS Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_variables/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="15_grid.html">15. Grid Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="15_grid/1.html">1. Working with CSS Grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15_grid/2.html">2. Debugging CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15_grid/3.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="16_animations.html">16. Animations Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="16_animations/1.html">1. Animations and Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16_animations/2.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
 <ul class="nav bd-sidenav">
@@ -470,7 +491,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -486,6 +509,17 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-different-attribute-selectors-and-links">Working with Different Attribute Selectors and Links</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#targeting-elements-with-the-lang-and-data-lang-attribute">Targeting Elements with the <code class="docutils literal notranslate"><span class="pre">lang</span></code> and <code class="docutils literal notranslate"><span class="pre">data-lang</span></code> Attribute</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-the-attribute-selector-ordered-list-elements-and-the-type-attribute">Working with the Attribute Selector, Ordered List Elements and the <code class="docutils literal notranslate"><span class="pre">type</span></code> Attribute</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-attribute-selectors-in-css">Special Attribute Selectors in CSS</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -501,10 +535,129 @@ document.write(`
 <nav class="contents" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#attribute-selectors-summary" id="id1">12. Attribute Selectors Summary</a></p></li>
+<li><p><a class="reference internal" href="#attribute-selectors-summary" id="id1">12. Attribute Selectors Summary</a></p>
+<ul>
+<li><p><a class="reference internal" href="#working-with-different-attribute-selectors-and-links" id="id2">Working with Different Attribute Selectors and Links</a></p></li>
+<li><p><a class="reference internal" href="#targeting-elements-with-the-lang-and-data-lang-attribute" id="id3">Targeting Elements with the <code class="docutils literal notranslate"><span class="pre">lang</span></code> and <code class="docutils literal notranslate"><span class="pre">data-lang</span></code> Attribute</a></p></li>
+<li><p><a class="reference internal" href="#working-with-the-attribute-selector-ordered-list-elements-and-the-type-attribute" id="id4">Working with the Attribute Selector, Ordered List Elements and the <code class="docutils literal notranslate"><span class="pre">type</span></code> Attribute</a></p></li>
+<li><p><a class="reference internal" href="#special-attribute-selectors-in-css" id="id5">Special Attribute Selectors in CSS</a></p></li>
+</ul>
+</li>
 </ul>
 </nav>
-</div><div class="toctree-wrapper compound">
+<section id="working-with-different-attribute-selectors-and-links">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Working with Different Attribute Selectors and Links</a><a class="headerlink" href="#working-with-different-attribute-selectors-and-links" title="Link to this heading">#</a></h2>
+<p><strong>Definition</strong>: The <code class="docutils literal notranslate"><span class="pre">attribute</span></code> selector allows you to target HTML elements based on their attributes like the <code class="docutils literal notranslate"><span class="pre">href</span></code> or <code class="docutils literal notranslate"><span class="pre">title</span></code> attributes.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
+<span class="w">    </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">underline</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">title</span></code> Attribute</strong>: This attribute provides additional information about an element. Here is how you can target links with the <code class="docutils literal notranslate"><span class="pre">title</span></code> attribute:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">a</span><span class="o">[</span><span class="nt">title</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span>
+<span class="w">    </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="targeting-elements-with-the-lang-and-data-lang-attribute">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Targeting Elements with the <code class="docutils literal notranslate"><span class="pre">lang</span></code> and <code class="docutils literal notranslate"><span class="pre">data-lang</span></code> Attribute</a><a class="headerlink" href="#targeting-elements-with-the-lang-and-data-lang-attribute" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">lang</span></code> Attribute</strong>: This attribute is used in HTML to specify the language of the content within an element. You might want to style elements differently based on the language they are written in, especially on a multilingual website.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="o">[</span><span class="nt">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">italic</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">data-lang</span></code> Attribute</strong>: Custom data attributes like the <code class="docutils literal notranslate"><span class="pre">data-lang</span></code> attribute are commonly used to store additional information in elements, such as specifying the language used within a specific section of text. Here is how you can style elements based on the <code class="docutils literal notranslate"><span class="pre">data-lang</span></code> attribute:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">div</span><span class="o">[</span><span class="nt">data-lang</span><span class="o">=</span><span class="s2">&quot;fr&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="working-with-the-attribute-selector-ordered-list-elements-and-the-type-attribute">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Working with the Attribute Selector, Ordered List Elements and the <code class="docutils literal notranslate"><span class="pre">type</span></code> Attribute</a><a class="headerlink" href="#working-with-the-attribute-selector-ordered-list-elements-and-the-type-attribute" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">type</span></code> Attribute</strong>: When working with ordered lists in HTML, the <code class="docutils literal notranslate"><span class="pre">type</span></code> attribute allows you to specify the style of numbering used, such as numerical, alphabetical, or Roman numerals.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="c">/*Example targeting uppercase alphabetical numbering*/</span>
+<span class="nt">ol</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">purple</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/*Example targeting lowercase Roman numerals*/</span>
+<span class="nt">ol</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;i&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">green</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="special-attribute-selectors-in-css">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Special Attribute Selectors in CSS</a><a class="headerlink" href="#special-attribute-selectors-in-css" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">[attr]</span></code> — Presence Selector</strong>: Selects elements that have a specific attribute, regardless of its value.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">gray</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">[attr=&quot;value&quot;]</span></code> — Exact Match</strong>: Targets elements where the attribute value matches exactly.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;checkbox&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">margin-right</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">[attr^=&quot;value&quot;]</span></code> — Starts With</strong>: Selects elements whose attribute value <strong>starts with</strong> the specified string.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">span</span><span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s2">&quot;rate&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">gold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">[attr$=&quot;value&quot;]</span></code> — Ends With</strong>: Selects elements whose attribute value <strong>ends with</strong> the specified string.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">$=</span><span class="s2">&quot;.pdf&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">underline</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">[attr*=&quot;value&quot;]</span></code> — Contains Substring</strong>: Selects elements whose attribute value <strong>contains</strong> the given substring anywhere.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">div</span><span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s2">&quot;item&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#f9f9f9</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">[attr~=&quot;value&quot;]</span></code> — Contains Whole Word</strong>: Targets elements where the attribute value contains a specific <strong>whole word</strong>, separated by spaces (useful with <code class="docutils literal notranslate"><span class="pre">class</span></code>).</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">button</span><span class="o">[</span><span class="nt">class</span><span class="o">~=</span><span class="s2">&quot;active&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">green</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">[attr|=&quot;value&quot;]</span></code> — Language or Hyphenated Prefix Match</strong>: Selects elements whose attribute value matches exactly or starts with the value followed by a hyphen.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="o">[</span><span class="nt">lang</span><span class="o">|=</span><span class="s2">&quot;en&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">Arial</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div></section>
+<div class="toctree-wrapper compound">
 </div>
 </section>
 
@@ -562,6 +715,24 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-different-attribute-selectors-and-links">Working with Different Attribute Selectors and Links</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#targeting-elements-with-the-lang-and-data-lang-attribute">Targeting Elements with the <code class="docutils literal notranslate"><span class="pre">lang</span></code> and <code class="docutils literal notranslate"><span class="pre">data-lang</span></code> Attribute</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-the-attribute-selector-ordered-list-elements-and-the-type-attribute">Working with the Attribute Selector, Ordered List Elements and the <code class="docutils literal notranslate"><span class="pre">type</span></code> Attribute</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-attribute-selectors-in-css">Special Attribute Selectors in CSS</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

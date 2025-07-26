@@ -277,6 +277,27 @@
 <li class="toctree-l2"><a class="reference internal" href="2.html">Examples</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../13_responsive_design.html">13. Responsive Design Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../13_responsive_design/1.html">1. Best Practices for Responsive Web Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13_responsive_design/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../14_variables.html">14. CSS Variables Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../14_variables/1.html">1. Working with CSS Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../14_variables/2.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../15_grid.html">15. Grid Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../15_grid/1.html">1. Working with CSS Grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../15_grid/2.html">2. Debugging CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../15_grid/3.html">Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../16_animations.html">16. Animations Summary</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../16_animations/1.html">1. Animations and Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16_animations/2.html">Examples</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
 <ul class="nav bd-sidenav">
@@ -493,9 +514,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.2.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.3.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-attribute-selector-and-how-can-it-be-used-to-target-links-with-the-href-and-title-attribute">1.1. What is the attribute selector and how can it be used to target links with the <code class="docutils literal notranslate"><span class="pre">href</span></code> and <code class="docutils literal notranslate"><span class="pre">title</span></code> attribute?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-the-attribute-selector-to-target-elements-with-the-lang-and-data-lang-attribute">1.2. How to use the attribute selector to target elements with the <code class="docutils literal notranslate"><span class="pre">lang</span></code> and <code class="docutils literal notranslate"><span class="pre">data-lang</span></code> attribute?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-the-attribute-selector-to-target-ordered-list-elements-with-the-type-attribute">1.3. How to use the attribute selector to target ordered list elements with the <code class="docutils literal notranslate"><span class="pre">type</span></code> attribute?</a></li>
 </ul>
             </nav>
         </div>
@@ -510,14 +531,90 @@ document.write(`
   <div style="text-align: justify">
 <section class="tex2jax_ignore mathjax_ignore" id="working-with-attribute-selectors">
 <h1>1. Working with Attribute Selectors<a class="headerlink" href="#working-with-attribute-selectors" title="Link to this heading">#</a></h1>
-<section id="id1">
-<h2>1.1.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="what-is-the-attribute-selector-and-how-can-it-be-used-to-target-links-with-the-href-and-title-attribute">
+<h2>1.1. What is the attribute selector and how can it be used to target links with the <code class="docutils literal notranslate"><span class="pre">href</span></code> and <code class="docutils literal notranslate"><span class="pre">title</span></code> attribute?<a class="headerlink" href="#what-is-the-attribute-selector-and-how-can-it-be-used-to-target-links-with-the-href-and-title-attribute" title="Link to this heading">#</a></h2>
+<p>The attribute selector in CSS is a powerful tool that allows you to target HTML elements based on their attributes. This means you can apply styles to elements that have specific attributes or even certain values for those attributes.</p>
+<p>It’s particularly useful when you want to style elements dynamically or when class names alone don’t provide enough specificity.</p>
+<p>For example, you can use the attribute selector to target all links that have an <code class="docutils literal notranslate"><span class="pre">href</span></code> attribute. This is especially handy when you want to apply a uniform style to all links on a page.</p>
+<p>Here’s how you can use the attribute selector to target links with the <code class="docutils literal notranslate"><span class="pre">href</span></code> attribute:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
+<span class="w">    </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">underline</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This CSS rule will apply a blue color and an underline to any link that includes an <code class="docutils literal notranslate"><span class="pre">href</span></code> attribute, ensuring that all clickable links are styled consistently.</p>
+<p>But attribute selectors can be more specific. Suppose you want to target only the links that have a <code class="docutils literal notranslate"><span class="pre">title</span></code> attribute. The <code class="docutils literal notranslate"><span class="pre">title</span></code> attribute often provides additional information about the link, and you might want to style these links differently to indicate that they have extra information available. Here’s how you can do it:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">a</span><span class="o">[</span><span class="nt">title</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span>
+<span class="w">    </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This rule applies bold text and removes the underline from any link with a <code class="docutils literal notranslate"><span class="pre">title</span></code> attribute. It’s a great way to visually differentiate these links from others on the page.</p>
+<p>You can also combine attribute selectors to get even more precise. For example, if you want to style links that have both <code class="docutils literal notranslate"><span class="pre">href</span></code> and <code class="docutils literal notranslate"><span class="pre">title</span></code> attributes, you can do this:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">][</span><span class="nt">title</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">green</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this case, only links that contain both <code class="docutils literal notranslate"><span class="pre">href</span></code> and <code class="docutils literal notranslate"><span class="pre">title</span></code> attributes will be styled with green text. This level of control is what makes attribute selectors so powerful in CSS.</p>
+<p>Using attribute selectors not only enhances the styling of your webpage but also improves accessibility by making interactive elements like links more distinguishable based on their attributes.</p>
 </section>
-<section id="id2">
-<h2>1.2.<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="how-to-use-the-attribute-selector-to-target-elements-with-the-lang-and-data-lang-attribute">
+<h2>1.2. How to use the attribute selector to target elements with the <code class="docutils literal notranslate"><span class="pre">lang</span></code> and <code class="docutils literal notranslate"><span class="pre">data-lang</span></code> attribute?<a class="headerlink" href="#how-to-use-the-attribute-selector-to-target-elements-with-the-lang-and-data-lang-attribute" title="Link to this heading">#</a></h2>
+<p>When building multilingual websites or handling custom data attributes, you often need to style elements based on the language they contain or specific data values.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">lang</span></code> and <code class="docutils literal notranslate"><span class="pre">data-lang</span></code> attributes are commonly used for these purposes, and the attribute selector in CSS allows you to apply styles based on these attributes effectively.</p>
+<ul>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">lang</span></code> attribute is used in HTML to specify the language of the content within an element. You might want to style elements differently based on the language they are written in, especially on a multilingual website.</p>
+<p>Here’s an example of how you can use the attribute selector to target elements with a specific <code class="docutils literal notranslate"><span class="pre">lang</span></code> attribute:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="o">[</span><span class="nt">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">italic</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This CSS rule applies italic styling to any paragraph element where the <code class="docutils literal notranslate"><span class="pre">lang</span></code> attribute is set to English (<code class="docutils literal notranslate"><span class="pre">en</span></code>). This could be useful for emphasizing English text in a document that includes multiple languages.</p>
+</li>
+<li><p>Similarly, you can use the attribute selector to target elements with a <code class="docutils literal notranslate"><span class="pre">data-lang</span></code> attribute.</p>
+<p>Custom data attributes like <code class="docutils literal notranslate"><span class="pre">data-lang</span></code> are commonly used to store additional information in elements, such as specifying the language used within a specific section of text.</p>
+<p>Here’s how you can use CSS to target and style elements based on the <code class="docutils literal notranslate"><span class="pre">data-lang</span></code> attribute:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">div</span><span class="o">[</span><span class="nt">data-lang</span><span class="o">=</span><span class="s2">&quot;fr&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this case, any <code class="docutils literal notranslate"><span class="pre">div</span></code> element with a <code class="docutils literal notranslate"><span class="pre">data-lang</span></code> attribute set to French (<code class="docutils literal notranslate"><span class="pre">fr</span></code>) will have its text color changed to blue. This allows you to quickly identify and style sections of content based on the language information stored in the <code class="docutils literal notranslate"><span class="pre">data-lang</span></code> attribute.</p>
+</li>
+</ul>
+<p>Attribute selectors like these provide a powerful way to apply conditional styling based on the metadata embedded within your HTML, making your web pages more dynamic and context-aware.</p>
 </section>
-<section id="id3">
-<h2>1.3.<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="how-to-use-the-attribute-selector-to-target-ordered-list-elements-with-the-type-attribute">
+<h2>1.3. How to use the attribute selector to target ordered list elements with the <code class="docutils literal notranslate"><span class="pre">type</span></code> attribute?<a class="headerlink" href="#how-to-use-the-attribute-selector-to-target-ordered-list-elements-with-the-type-attribute" title="Link to this heading">#</a></h2>
+<p>When working with ordered lists in HTML, the <code class="docutils literal notranslate"><span class="pre">type</span></code> attribute allows you to specify the style of numbering used, such as numerical, alphabetical, or Roman numerals.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">type</span></code> attribute can be set on an <code class="docutils literal notranslate"><span class="pre">ol</span></code> (ordered list) element to control the numbering format:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> for numerical lists (such as 1, 2, 3, …),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A</span></code> for uppercase alphabetical lists (such as A, B, C, …),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> for lowercase alphabetical lists (such as a, b, c, …),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">I</span></code> for uppercase Roman numerals (such as I, II, III, …),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code> for lowercase Roman numerals (such as i, ii, iii, …).</p></li>
+</ul>
+<p>Here’s how you can use the attribute selector to target an ordered list with a specific <code class="docutils literal notranslate"><span class="pre">type</span></code> attribute:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">ol</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">purple</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, the CSS rule will apply purple text and bold font weight to any ordered list that uses uppercase alphabetical numbering, which is specified by <code class="docutils literal notranslate"><span class="pre">type=&quot;A&quot;</span></code>.</p>
+<p>Similarly, you can target ordered lists that use lowercase Roman numerals by selecting those with <code class="docutils literal notranslate"><span class="pre">type=&quot;i&quot;</span></code>:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">ol</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;i&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">green</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This rule will change the text color to green for any ordered list that uses lowercase Roman numerals.</p>
+<p>The ability to style ordered lists based on their <code class="docutils literal notranslate"><span class="pre">type</span></code> attribute gives you greater control over the appearance of lists in your document, allowing for customization based on how content is structured.</p>
 </div></section>
 </section>
 
@@ -585,9 +682,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.2.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.3.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-attribute-selector-and-how-can-it-be-used-to-target-links-with-the-href-and-title-attribute">1.1. What is the attribute selector and how can it be used to target links with the <code class="docutils literal notranslate"><span class="pre">href</span></code> and <code class="docutils literal notranslate"><span class="pre">title</span></code> attribute?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-the-attribute-selector-to-target-elements-with-the-lang-and-data-lang-attribute">1.2. How to use the attribute selector to target elements with the <code class="docutils literal notranslate"><span class="pre">lang</span></code> and <code class="docutils literal notranslate"><span class="pre">data-lang</span></code> attribute?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-the-attribute-selector-to-target-ordered-list-elements-with-the-type-attribute">1.3. How to use the attribute selector to target ordered list elements with the <code class="docutils literal notranslate"><span class="pre">type</span></code> attribute?</a></li>
 </ul>
   </nav></div>
 
